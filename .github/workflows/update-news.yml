@@ -1,1 +1,71 @@
-# update-news workflow
+name: Daily News Pipeline
+
+on:
+
+  schedule:
+
+      - cron: '0 10 * * *'   # 6AM ET = 10AM UTC, every day
+
+        workflow_dispatch:         # manual trigger for testing
+
+        jobs:
+
+          update:
+
+              runs-on: ubuntu-latest
+
+                  steps:
+
+                        - uses: actions/checkout@v4
+
+                                with:
+
+                                          token: ${{ secrets.GITHUB_TOKEN }}
+
+                                                - uses: actions/setup-node@v4
+
+                                                        with:
+
+                                                                  node-version: '20'
+
+                                                                        - name: Install dependencies
+
+                                                                                working-directory: scripts
+
+                                                                                        run: npm install
+
+                                                                                              - name: Run news pipeline
+
+                                                                                                      env:
+                                                                                                      
+                                                                                                                ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+                                                                                                                
+                                                                                                                          UNSPLASH_ACCESS_KEY:  ${{ secrets.UNSPLASH_ACCESS_KEY }}
+                                                                                                                          
+                                                                                                                                    SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+                                                                                                                                    
+                                                                                                                                              SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+                                                                                                                                              
+                                                                                                                                                        RESEND_API_KEY:       ${{ secrets.RESEND_API_KEY }}
+                                                                                                                                                        
+                                                                                                                                                                  RESEND_AUDIENCE_ID:   ${{ secrets.RESEND_AUDIENCE_ID }}
+                                                                                                                                                                  
+                                                                                                                                                                          run: node scripts/update-news.js
+                                                                                                                                                                          
+                                                                                                                                                                                - name: Commit news.json and weekly-brief.json
+                                                                                                                                                                                
+                                                                                                                                                                                        run: |
+                                                                                                                                                                                        
+                                                                                                                                                                                                  git config user.name "skAIshift Bot"
+                                                                                                                                                                                                  
+                                                                                                                                                                                                            git config user.email "bot@skaishift.com"
+                                                                                                                                                                                                            
+                                                                                                                                                                                                                      git add public/news.json public/weekly-brief.json
+                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                git diff --staged --quiet || git commit -m "Daily update $(date -u '+%Y-%m-%d')"
+                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                          git push
+                                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                                - name: Trigger Netlify redeploy
+                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                        run: curl -s -X POST "${{ secrets.NETLIFY_DEPLOY_HOOK }}" | echo "Netlify deploy triggered"
