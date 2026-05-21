@@ -95,8 +95,9 @@ Return ONLY valid JSON (no markdown, no extra text):
 }`,
       }],
     });
-    const raw = msg.content[0].text.trim().replace(/^```json\s*/, '').replace(/^```\s*/, '');
-    return JSON.parse(raw);
+    const cleaned = msg.content[0].text.trim().replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'');
+
+    return JSON.parse(cleaned);
   } catch (e) {
     console.warn(`  ✗ summarize: ${e.message}`);
     return null;
@@ -213,8 +214,9 @@ Write a weekly brief in this EXACT JSON format (no markdown):
   });
 
   try {
-    const raw = msg.content[0].text.trim().replace(/^```json\s*/, '').replace(/^```\s*/, '');
-    return JSON.parse(raw);
+    const cleaned = msg.content[0].text.trim().replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'');
+
+    return JSON.parse(cleaned);
   } catch (e) {
     console.warn('  ✗ Weekly brief parse error:', e.message);
     return null;
