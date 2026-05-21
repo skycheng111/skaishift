@@ -76,12 +76,7 @@ async function fetchFeed(feed) {
 // ── STEP 2: SUMMARIZE WITH CLAUDE HAIKU ──────────────────────────────────────
 async function summarize(raw, index) {
   try {
-    const msg = await claude.messages.create({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 1200,
-      messages: [{
-        role: 'user',
-        content: `You write in-depth news articles for skAIshift — a daily AI news platform for entrepreneurs earning money with AI.
+    const prompt = `You write in-depth news articles for skAIshift — a daily AI news platform for entrepreneurs earning money with AI.
 
 RAW ARTICLE:
 Title: ${raw.title}
@@ -99,11 +94,12 @@ Return ONLY valid JSON (no markdown, no extra text):
   "significance": <integer 1-10. MUST be 9-10 for: ANY new model release or version (GPT, Claude, Gemini, Mistral, DeepSeek, Llama, etc), new AI capability (video editing, real-time voice, coding agents, multimodal), API launch, or benchmark record. 7-8 for funding over $100M or major product launches. 5-6 for business/strategy news. 1-4 for minor updates. When in doubt about a model release, rate it 9>,
   "time": "${Math.floor(Math.random()*10)+1}h",
   "source": "${raw.source}"
-}`,
-      }],
-    }),
-      new Promise((_,reject) => setTimeout(() => reject(new Error('Claude timeout')), 28000))
-    ]);
+}`;
+    const msg = await claude.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1200,
+      messages: [{ role: 'user', content: prompt }],
+    });
     const cleaned = msg.content[0].text.trim().replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'');
     return JSON.parse(cleaned);
   } catch (e) {
