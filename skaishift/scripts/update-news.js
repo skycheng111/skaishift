@@ -374,12 +374,22 @@ async function main() {
   // 6b. Accumulate weekly top articles
   console.log('\n[5b] Updating weekly articles...');
   const weeklyPath = path.join(__dirname,'../public/weekly-articles.json');
+  const lastWeekPath = path.join(__dirname,'../public/last-week-articles.json');
   let weeklyArticles = [];
   try {
     if (fs.existsSync(weeklyPath)) {
       const existing = JSON.parse(fs.readFileSync(weeklyPath,'utf8'));
-      weeklyArticles = etNow.getDay() === 1 ? [] : (existing.articles || []);
-      if (etNow.getDay() === 1) console.log('    Monday reset');
+      if (etNow.getDay() === 1) {
+        // Monday: archive this week → last-week-articles.json, then reset
+        if ((existing.articles||[]).length > 0) {
+          fs.writeFileSync(lastWeekPath, JSON.stringify({ updated: now.toISOString(), articles: existing.articles }, null, 2));
+          console.log(`    Archived ${existing.articles.length} articles to last-week-articles.json`);
+        }
+        weeklyArticles = [];
+        console.log('    Monday reset — new week started');
+      } else {
+        weeklyArticles = existing.articles || [];
+      }
     }
   } catch(e) { weeklyArticles = []; }
   const wCombined = [...summaries, ...weeklyArticles];
