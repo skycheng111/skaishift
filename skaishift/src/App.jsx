@@ -153,23 +153,25 @@ const BRIEF_CARDS = [
   {id:"watch",   label:"WATCH LIST",  color:CATS.Strategy,bg:"#FFFBEB",dark:false,headline:"On the Horizon",                      items:["Spot + Claude open-source","EU AI Act enforcement","AGI timeline pressure","Image-to-3D maturing"]},
 ];
 
-function BriefStrip({ onNav }) {
+function BriefStrip({ onNav, weeklyArticles }) {
+  if (!weeklyArticles || weeklyArticles.length === 0) return null;
   return (
     <div style={{background:"linear-gradient(180deg,#F0EEF8 0%,#F4F4F0 100%)",paddingBottom:16}}>
-      <SectionHeader label="Weekly Brief" action="See all" onAction={()=>onNav("brief")}/>
-      <div style={{display:"flex",overflowX:"auto",scrollSnapType:"x mandatory",scrollbarWidth:"none",gap:10,paddingLeft:INSET,paddingRight:INSET,scrollPaddingLeft:INSET,boxSizing:"content-box"}}>
-        {BRIEF_CARDS.map(card=>(
-          <div key={card.id} onClick={()=>onNav("brief")}
-            style={{minWidth:196,flexShrink:0,scrollSnapAlign:"start",background:card.dark?"#0F0F0F":card.bg,borderRadius:14,padding:"14px",cursor:"pointer",display:"flex",flexDirection:"column",gap:8,border:card.dark?"none":`1px solid ${T.light}`,minHeight:172,boxShadow:"0 1px 6px rgba(0,0,0,0.07)"}}>
-            <span style={{background:card.dark?T.red:card.color,color:"#fff",fontFamily:"'Bebas Neue',sans-serif",fontSize:9,letterSpacing:"0.12em",padding:"2px 8px",borderRadius:3,alignSelf:"flex-start"}}>{card.label}</span>
-            <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:13,color:card.dark?"#fff":T.ink,lineHeight:1.3,margin:0}}>{card.headline}</p>
-            <div style={{display:"flex",flexDirection:"column",gap:5,flex:1}}>
-              {card.items.map((item,j)=>(
-                <div key={j} style={{display:"flex",gap:7,alignItems:"flex-start"}}>
-                  <div style={{width:4,height:4,borderRadius:"50%",background:card.dark?T.amber:card.color,flexShrink:0,marginTop:5}}/>
-                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:card.dark?"rgba(255,255,255,0.7)":"#3A3A3A",lineHeight:1.4}}>{item}</span>
-                </div>
-              ))}
+      <SectionHeader label="Best of This Week" action="See all" onAction={()=>onNav("brief")}/>
+      <div style={{display:"flex",overflowX:"auto",scrollSnapType:"x mandatory",scrollbarWidth:"none",gap:10,paddingLeft:INSET,paddingRight:INSET}}>
+        {weeklyArticles.slice(0,8).map((story,i)=>(
+          <div key={story.id||i} onClick={()=>onNav("brief")}
+            style={{minWidth:200,maxWidth:220,flexShrink:0,scrollSnapAlign:"start",borderRadius:14,overflow:"hidden",cursor:"pointer",boxShadow:"0 1px 8px rgba(0,0,0,0.1)",background:"#fff",border:T.border}}>
+            <div style={{position:"relative",height:110,overflow:"hidden"}}>
+              <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+              <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 60%)"}}/>
+              <div style={{position:"absolute",top:7,left:7,background:i<3?T.red:"rgba(0,0,0,0.55)",borderRadius:20,padding:"2px 8px"}}>
+                <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:"#fff",letterSpacing:"0.08em"}}>#{i+1}</span>
+              </div>
+            </div>
+            <div style={{padding:"10px 12px"}}>
+              <CatBadge cat={story.cat}/>
+              <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:12,color:T.ink,lineHeight:1.35,margin:"7px 0 0",display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{story.headline}</p>
             </div>
           </div>
         ))}
@@ -244,7 +246,7 @@ function ArticleDetail({ story, onBack }) {
 }
 
 // ── HOME VIEW (responsive: mobile stacked, desktop 2-col) ─────────────────────
-function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav }) {
+function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles }) {
   const feed = (cat==="All" ? articles.filter(a=>!a.feat) : articles.filter(a=>a.cat===cat));
   const shown = feed.slice(0,(page+1)*6);
   const more = (page+1)*6 < feed.length;
@@ -252,7 +254,7 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav 
   return (
     <div>
       <HeroCarousel articles={articles} onSelect={onSelect}/>
-      <BriefStrip onNav={onNav}/>
+      <BriefStrip onNav={onNav} weeklyArticles={weeklyArticles}/>
       <div style={{background:T.bg,maxWidth:1200,margin:"0 auto"}}>
         <div style={{height:1,background:T.light,margin:`0 ${INSET}px`}}/>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:`16px ${INSET}px 6px`}}>
@@ -321,24 +323,24 @@ const BRIEF_FULL=[
     {h:"Image-to-3D maturing",s:"Tools that convert photos or 2D images into 3D models are improving rapidly. Current quality is approaching professional-grade for architectural visualization, product design, and game development. Real estate firms and e-commerce brands are the first buyers — watch for a freelance market to emerge in the next 60–90 days."},
   ]},
 ];
-function BriefPage({ weeklyArticles, onSelect }) {
-  const articles = weeklyArticles || [];
+function BriefPage({ articles, onSelect }) {
+  const items = articles || [];
   return (
     <div style={{background:T.bg,paddingBottom:40}}>
       <div style={{background:T.ink,padding:`28px ${INSET}px 24px`}}>
         <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>WEEKLY INTELLIGENCE BRIEF</span>
-        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:22,color:"#fff",lineHeight:1.2,margin:"8px 0 6px"}}>The Most Important AI Stories This Week</h1>
-        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.5)",margin:0}}>Top stories ranked by significance — updated daily</p>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:22,color:"#fff",lineHeight:1.2,margin:"8px 0 6px"}}>Last Week's Most Important AI Stories</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.5)",margin:0}}>Catch up on the top stories you may have missed</p>
       </div>
 
-      {articles.length === 0 ? (
+      {items.length === 0 ? (
         <div style={{padding:`40px ${INSET}px`,textAlign:"center"}}>
-          <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 8px"}}>Building this week's brief...</p>
-          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>Check back after 6AM ET — stories are added daily.</p>
+          <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 8px"}}>Last week's brief is being compiled...</p>
+          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>Check back Monday — it updates each week.</p>
         </div>
       ) : (
         <div style={{maxWidth:800,margin:"0 auto"}}>
-          {articles.map((story,i)=>(
+          {items.map((story,i)=>(
             <div key={story.id||i} onClick={()=>onSelect(story)}
               style={{cursor:"pointer",borderBottom:T.border}}>
               <div style={{position:"relative",height:"clamp(180px,45vw,260px)",overflow:"hidden"}}>
@@ -632,6 +634,7 @@ export default function App() {
   const [newsData,setNewsData]=useState(FALLBACK);
   const [briefData,setBriefData]=useState(null);
   const [weeklyArticles,setWeeklyArticles]=useState([]);
+  const [lastWeekArticles,setLastWeekArticles]=useState([]);
 
   // Load fresh news.json + weekly-brief.json (updated daily by GitHub Actions)
   useEffect(()=>{
@@ -646,6 +649,10 @@ export default function App() {
     fetch("/weekly-articles.json")
       .then(r=>{ if(r.ok) return r.json(); throw new Error(); })
       .then(d=>{ if(d?.articles?.length) setWeeklyArticles(d.articles); })
+      .catch(()=>{});
+    fetch("/last-week-articles.json")
+      .then(r=>{ if(r.ok) return r.json(); throw new Error(); })
+      .then(d=>{ if(d?.articles?.length) setLastWeekArticles(d.articles); })
       .catch(()=>{});
   },[]);
 
@@ -694,9 +701,9 @@ export default function App() {
       <Header onNav={onNav} onBack={view==="article"?onBack:null}/>
 
       <main style={{flex:1}}>
-        {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav}/>}
+        {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav} weeklyArticles={weeklyArticles}/>}
         {view==="article"   &&art&&<ArticleDetail story={art} onBack={onBack} onNav={onNav}/>}
-        {view==="brief"     &&<BriefPage briefData={briefData} weeklyArticles={weeklyArticles} onBack={()=>setView('home')} onSelect={onSelect}/>}
+        {view==="brief"     &&<BriefPage articles={lastWeekArticles} onBack={()=>setView('home')} onSelect={onSelect}/>}
         {view==="subscribe" &&<SubPage/>}
         {view==="learn"      &&<LearnPage onNav={onNav}/>}
       </main>
