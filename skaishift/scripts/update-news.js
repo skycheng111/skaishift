@@ -371,6 +371,29 @@ async function main() {
   fs.writeFileSync(path.join(__dirname, '../public/news.json'), JSON.stringify(newsData, null, 2));
   console.log(`    ✓ ${summaries.length} articles`);
 
+  // 6b. Accumulate weekly top articles
+  console.log('\n[5b] Updating weekly articles...');
+  const weeklyPath = path.join(__dirname,'../public/weekly-articles.json');
+  let weeklyArticles = [];
+  try {
+    if (fs.existsSync(weeklyPath)) {
+      const existing = JSON.parse(fs.readFileSync(weeklyPath,'utf8'));
+      weeklyArticles = etNow.getDay() === 1 ? [] : (existing.articles || []);
+      if (etNow.getDay() === 1) console.log('    Monday reset');
+    }
+  } catch(e) { weeklyArticles = []; }
+  const wCombined = [...summaries, ...weeklyArticles];
+  const wSeen = new Set();
+  const wDeduped = wCombined.filter(a => {
+    const k = a.headline.slice(0,50).toLowerCase();
+    if (wSeen.has(k)) return false;
+    wSeen.add(k); return true;
+  });
+  wDeduped.sort((a,b)=>(b.significance||0)-(a.significance||0));
+  const topWeekly = wDeduped.slice(0,20);
+  fs.writeFileSync(weeklyPath, JSON.stringify({ updated: now.toISOString(), articles: topWeekly }, null, 2));
+  console.log(`    ✓ ${topWeekly.length} weekly articles`);
+
   // 7. Send daily email
   console.log('\n[6] Broadcasting daily email...');
   const breaking = summaries.filter(a => (a.significance||0) >= 9).length;
