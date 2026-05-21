@@ -50,10 +50,19 @@ const FALLBACK_IMGS = {
   Robotics: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&h=500&fit=crop&auto=format',
 };
 
-// ── STEP 1: FETCH RSS ─────────────────────────────────────────────────────────
+// ── STEP 1: FETCH RSS — AbortController hard-kills hanging connections ────────
 async function fetchFeed(feed) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 8000);
   try {
-    const result = await parser.parseURL(feed.url);
+    const res = await fetch(feed.url, {
+      signal: controller.signal,
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; skAIshift/1.0)' }
+    });
+    const xml = await res.text();
+    clearTimeout(timer);
+    const p = new Parser();
+    const result = await p.parseString(xml);
     return result.items.slice(0, 5).map(item => ({
       title:   item.title || '',
       summary: (item.contentSnippet || item.content || '').slice(0, 600),
@@ -61,6 +70,7 @@ async function fetchFeed(feed) {
       link:    item.link || '',
     }));
   } catch (e) {
+    clearTimeout(timer);
     console.warn(`  ✗ ${feed.source}: ${e.message}`);
     return [];
   }
