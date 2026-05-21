@@ -233,17 +233,22 @@ function ArticleDetail({ story, onBack }) {
             <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,color:"#3A3020",lineHeight:1.75,margin:0}}>{story.build}</p>
           </div>
 
-          <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 12px"}}>Why This Matters Now</h2>
-          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 16px"}}>The pace of AI development means early movers capture disproportionate market share. When a new capability drops — whether it's video generation, voice cloning, or autonomous coding — the first people to package it into a service own that category in their local market and vertical for months before competition catches up.</p>
-          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 24px"}}>Specialists consistently outperform generalists in AI services. The operators making the most money have narrowed to one niche, built a repeatable offer around it, and are iterating faster than anyone else in that space.</p>
+          <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 12px"}}>Why This Matters</h2>
+          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 16px"}}>The pace of AI development means early movers capture disproportionate market share. When a new capability drops — whether it's a model update, a new tool, or a platform shift — the first people to understand and package it establish price anchors, case studies, and client trust before competition appears.</p>
+          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 24px"}}>This is happening across every vertical simultaneously. Healthcare, legal, real estate, e-commerce, logistics — all are at different stages of AI adoption but all are accelerating. The gap between operators who understand what's happening and those who don't is widening every week.</p>
+
+          <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 12px"}}>The Broader Context</h2>
+          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 16px"}}>Stories like this one don't exist in isolation. Each model release, funding round, and product launch is a data point in a larger pattern: AI capability is compounding faster than most organizations can adapt. The businesses and individuals positioned to benefit most are those who are learning in public, shipping quickly, and adjusting based on what's working.</p>
+          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 24px"}}>The operators generating the most consistent income from AI have one thing in common: they picked one niche, went deep on it, and built a repeatable system before the market got crowded. That window still exists — but it narrows with each passing week.</p>
 
           <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 12px"}}>How to Act On This</h2>
           <div style={{display:"flex",flexDirection:"column",gap:12,marginBottom:24}}>
             {[
-              "Identify which part of this story maps to your existing skills or client base.",
-              "Research what others are already charging for this capability — price anchors exist even in new markets.",
-              "Build a minimum viable offer this week. One deliverable, one price, one target client type.",
-              "Document your process from the first client. That documentation becomes your scalable system."
+              "Map this development to your current clients or skills. Where does it intersect with work you're already doing?",
+              "Check what others are charging for related services — price anchors exist even in brand new markets.",
+              "Build a minimum viable offer this week: one deliverable, one price, one target client type.",
+              "Document your process from the first client — that documentation becomes your scalable system and your marketing.",
+              "Revisit this category in 30 days. The second wave of opportunity often comes after the initial hype settles."
             ].map((step,i)=>(
               <div key={i} style={{display:"flex",gap:14,alignItems:"flex-start"}}>
                 <div style={{width:26,height:26,borderRadius:"50%",background:T.ink,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Bebas Neue',sans-serif",fontSize:13,flexShrink:0,marginTop:1}}>{i+1}</div>
@@ -252,19 +257,10 @@ function ArticleDetail({ story, onBack }) {
             ))}
           </div>
 
-          <div style={{background:"#F8F8F6",borderRadius:12,padding:"16px 18px",marginBottom:24,border:T.border}}>
-            <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:T.mid,letterSpacing:"0.14em",margin:"0 0 8px"}}>BACKGROUND — WHAT IS THIS?</p>
-            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.ink,lineHeight:1.7,margin:0}}>{
-              ({
-                Earn:"The AI income opportunity space covers ways that individuals and small teams are monetizing AI capabilities directly — through services, products, and automation. Unlike traditional software, AI income opportunities often require no coding: the barrier is packaging and distribution, not technical skill. Early movers in each niche establish price anchors and client trust before the market saturates.",
-                Tools:"AI tools are software applications that give users access to AI capabilities — image generation, voice cloning, code completion, research automation, and more. The landscape changes weekly. Understanding which tools are production-ready versus experimental is a core skill for anyone building an AI-based service business.",
-                Models:"Large language models (LLMs) are the AI systems that power most modern AI products — ChatGPT, Claude, Gemini, and others. They're trained on massive datasets and can generate text, code, images, and more. Model updates matter because they directly change what's possible in your products and pipelines — often dramatically.",
-                Business:"Enterprise and SMB adoption of AI is accelerating. Businesses are integrating AI into operations, customer service, marketing, and decision-making. Understanding where businesses are in their AI journey tells you where the consulting, implementation, and training opportunities are.",
-                Strategy:"AI strategy covers how individuals and organizations position themselves relative to AI's advancement — which skills to build, which markets to enter, how to price services, and how to think about the next 1–3 years. Getting strategy right is more valuable than any single tool or model.",
-                Robotics:"Physical AI refers to AI systems embedded in robots and hardware — humanoid robots, autonomous vehicles, drones, and industrial machines. While still early, the companies building in this space are moving fast. Understanding physical AI is increasingly relevant for consultants advising manufacturing, logistics, and operations clients.",
-              })[story.cat] || "This category covers one of the fastest-moving areas in AI — a space where new capabilities, products, and income opportunities are emerging weekly."
-            }</p>
-          </div>
+          <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 12px"}}>What to Watch Next</h2>
+          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 24px"}}>Developments in the <strong>{story.cat}</strong> space tend to cluster. When one significant shift happens, related announcements typically follow within days or weeks. Check back tomorrow and filter by <strong>{story.cat}</strong> in the Stories feed to track the full picture as it unfolds.</p>
+
+
 
         </div>
       </div>
@@ -503,8 +499,12 @@ export default function App() {
           .desktop-nav{
             display:flex !important;
           }
+          .mobile-hamburger{
+            display:none !important;
+          }
 
         }
+        .desktop-nav{ display:none; }
       `}</style>
 
       <Header onNav={onNav} onBack={view==="article"?onBack:null}/>
