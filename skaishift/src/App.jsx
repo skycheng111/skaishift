@@ -409,24 +409,26 @@ function LearnTeaser({ onNav }) {
     {l:"Key Companies",    d:"OpenAI, Anthropic, Google & more"},
   ];
   return (
-    <div style={{background:"#0F0F0F",padding:`28px ${INSET}px`}}>
-      <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:6}}>
-        <div style={{width:3,height:16,background:T.amber,borderRadius:2}}/>
-        <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:"#fff"}}>New to AI?</span>
+    <div style={{background:T.bg,padding:`12px ${INSET}px`}}>
+      <div style={{background:"#0F0F0F",borderRadius:16,padding:"20px 16px"}}>
+        <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:6}}>
+          <div style={{width:3,height:16,background:T.amber,borderRadius:2}}/>
+          <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:"#fff"}}>New to AI?</span>
+        </div>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.55)",lineHeight:1.6,margin:"0 0 14px"}}>Everything you need to understand AI — from what it is to how people are making money with it.</p>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:14}}>
+          {TOPICS.map((t,i)=>(
+            <div key={i} onClick={()=>onNav("learn")} style={{background:"rgba(255,255,255,0.06)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:10,padding:"12px",cursor:"pointer"}}>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:12,color:"#fff",margin:"0 0 3px"}}>{t.l}</p>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.45)",margin:0}}>{t.d}</p>
+            </div>
+          ))}
+        </div>
+        <button onClick={()=>onNav("learn")}
+          style={{width:"100%",background:T.amber,border:"none",borderRadius:24,padding:"11px 0",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,fontWeight:600,cursor:"pointer",color:"#0F0F0F"}}>
+          Start Learning →
+        </button>
       </div>
-      <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.55)",lineHeight:1.6,margin:"0 0 16px"}}>Everything you need to understand AI — from what it is to how people are making money with it.</p>
-      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:16}}>
-        {TOPICS.map((t,i)=>(
-          <div key={i} onClick={()=>onNav("learn")} style={{background:"rgba(255,255,255,0.06)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:10,padding:"12px",cursor:"pointer"}}>
-            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:12,color:"#fff",margin:"0 0 3px"}}>{t.l}</p>
-            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.45)",margin:0}}>{t.d}</p>
-          </div>
-        ))}
-      </div>
-      <button onClick={()=>onNav("learn")}
-        style={{width:"100%",background:T.amber,border:"none",borderRadius:24,padding:"11px 0",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,fontWeight:600,cursor:"pointer",color:"#0F0F0F"}}>
-        Start Learning →
-      </button>
     </div>
   );
 }
