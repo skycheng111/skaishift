@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "skAIshift Bot"
           git config user.email "bot@skaishift.com"
-          git add skaishift/public/news.json skaishift/public/weekly-brief.json
+          git add skaishift/public/news.json skaishift/public/weekly-articles.json skaishift/public/last-week-articles.json skaishift/public/weekly-brief.json
           git diff --staged --quiet || git commit -m "Daily update $(date -u '+%Y-%m-%d')"
           git push
 
