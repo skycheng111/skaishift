@@ -1,1 +1,109 @@
-{"updated":"","articles":[]}
+{
+  "updated": "2026-05-18T10:00:00.000Z",
+  "articles": [
+    {
+      "id": "lw1",
+      "cat": "Models",
+      "headline": "OpenAI Releases GPT-5.5 Instant as New Default ChatGPT Model",
+      "body": "OpenAI released GPT-5.5 Instant as the new default model powering ChatGPT, replacing GPT-5.4 across all tiers. The model is optimized for speed and cost efficiency while maintaining near-identical quality on most everyday tasks. OpenAI described it as a distilled version of the full GPT-5.5, trained to run at roughly 3x the throughput at half the latency. The release was paired with API pricing cuts — input tokens dropped 40% for GPT-5.5 Instant vs the previous default. Developers building on the API can switch by updating the model string to gpt-5.5-instant.",
+      "build": "Developers are rebuilding cost projections — apps that were marginal at GPT-5.4 pricing are now profitable. One automation builder reported their monthly API bill dropped from $2,400 to $890 overnight with no quality change on their client workflows.",
+      "img": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=500&fit=crop&auto=format",
+      "source": "TechCrunch",
+      "significance": 9,
+      "time": "3d",
+      "feat": true,
+      "published_date": "2026-05-15"
+    },
+    {
+      "id": "lw2",
+      "cat": "Business",
+      "headline": "Anthropic Raises $900B Valuation Round, Partners with Gates Foundation for $200M",
+      "body": "Anthropic's latest funding round is progressing at a reported $900 billion valuation, which would make it one of the most valuable private companies in history. Separately, Anthropic announced a $200 million partnership with the Gates Foundation focused on deploying Claude in global health and education applications across low-income countries. The Gates Foundation partnership includes commitments to provide Claude access at reduced or no cost to healthcare workers and educators in 50 countries. Anthropic also launched Claude for Small Business — a new pricing tier targeting companies under 50 employees with simplified onboarding and lower monthly minimums.",
+      "build": "Consultants positioning themselves as Claude implementation specialists for SMBs are seeing a surge in inbound — the small business tier removes the pricing friction that was blocking deals under $500/month in AI spend.",
+      "img": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=500&fit=crop&auto=format",
+      "source": "VentureBeat",
+      "significance": 9,
+      "time": "4d",
+      "feat": true,
+      "published_date": "2026-05-14"
+    },
+    {
+      "id": "lw3",
+      "cat": "Models",
+      "headline": "Gemini 4.0 Confirmed for Google I/O — Expected to Match Claude Mythos on GPQA",
+      "body": "Google confirmed Gemini 4.0 will be the centerpiece of Google I/O 2026, with improvements across multimodal reasoning, Workspace integrations, and agentic reliability. Leaked benchmarks circulating in ML circles suggest Gemini 4.0 scores around 94% on GPQA — matching or exceeding Claude Mythos Preview's 94.6% score. The model is expected to power a new generation of Workspace AI features including autonomous document drafting, meeting summarization, and multi-step spreadsheet operations. Google is also previewing the Google Cloud Agentic Toolkit — expanded APIs for enterprise agent deployments with new pricing tiers.",
+      "build": "Google Workspace consultants are preparing implementation packages ahead of the Gemini 4.0 rollout. Early partners are pricing Workspace AI setup at $3,000–$8,000 for SMBs — a market that barely existed 12 months ago.",
+      "img": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=900&h=500&fit=crop&auto=format",
+      "source": "Google AI",
+      "significance": 9,
+      "time": "5d",
+      "feat": false,
+      "published_date": "2026-05-13"
+    },
+    {
+      "id": "lw4",
+      "cat": "Business",
+      "headline": "Standard Chartered Cuts 3,000 Roles as AI Agents Take Over Back-Office Operations",
+      "body": "Standard Chartered announced it is eliminating approximately 3,000 positions across its operations and technology divisions as AI agents take over document processing, compliance checking, and transaction monitoring tasks. The bank said the roles being eliminated primarily involve repetitive knowledge work that AI systems now handle with greater speed and accuracy. This follows Meta's earlier announcement of moving 7,000 employees into AI-focused teams. Enterprise AI is visibly shifting from assistant to replacement — the transition from AI augmenting workers to AI replacing them is now showing up in public earnings calls and headcount announcements at major institutions.",
+      "build": "AI implementation consultants working in financial services are closing deals at $15K–$50K to help banks and credit unions build compliance and operations automation — the exact workflows being cut at Standard Chartered.",
+      "img": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=900&h=500&fit=crop&auto=format",
+      "source": "VentureBeat",
+      "significance": 8,
+      "time": "5d",
+      "feat": false,
+      "published_date": "2026-05-13"
+    },
+    {
+      "id": "lw5",
+      "cat": "Tools",
+      "headline": "Cursor Releases Composer 2.5 — Trained on xAI Colossus 2 Supercomputer",
+      "body": "Cursor released Composer 2.5, a major upgrade to its AI coding agent optimized specifically for agentic coding loops — the failure modes of task persistence, instruction adherence across many files, and context drift on large codebases. A surprising detail emerged: Elon Musk confirmed on X that Composer 2.5 was partially trained on xAI's Colossus 2 supercomputer, the same infrastructure used for Grok. This confirms that xAI's compute is being offered to third-party model trainers. For the first week following launch, Cursor is doubling included Composer 2.5 usage at no extra cost across all paid plans.",
+      "build": "Developers billing $8K–$15K/month in client work are crediting Cursor's agent features as the primary reason they can manage that volume solo. The Composer 2.5 upgrade specifically helps on projects with large, complex codebases.",
+      "img": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&h=500&fit=crop&auto=format",
+      "source": "Ars Technica",
+      "significance": 8,
+      "time": "2d",
+      "feat": false,
+      "published_date": "2026-05-16"
+    },
+    {
+      "id": "lw6",
+      "cat": "Business",
+      "headline": "Apple and Google Partner — Gemini to Power Next-Generation Apple Intelligence Features",
+      "body": "Google Cloud CEO Thomas Kurian confirmed at Google Cloud Next '26 that Gemini technology will power future Apple Intelligence features, with Google serving as Apple's preferred cloud provider for foundation model infrastructure. The partnership is significant — Apple had previously relied on OpenAI for ChatGPT integration in iOS, but this deal suggests a deeper, longer-term arrangement with Google's models underpinning Siri's next evolution. The deal gives Google access to Apple's massive installed base for Gemini inference while giving Apple best-in-class multimodal capabilities without building its own frontier model from scratch.",
+      "build": "iOS developers building AI-powered apps now have a clearer signal: optimize for Gemini's API patterns, not just OpenAI's. Early movers building Gemini-native iOS features have a window before this becomes mainstream knowledge.",
+      "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format",
+      "source": "VentureBeat",
+      "significance": 9,
+      "time": "2d",
+      "feat": false,
+      "published_date": "2026-05-16"
+    },
+    {
+      "id": "lw7",
+      "cat": "Earn",
+      "headline": "US AI Startups Raised $18.2B in Q1 2026 — 40% to Underrepresented Founders",
+      "body": "PitchBook data shows US AI startups raised $18.2 billion in Q1 2026 alone, the largest single quarter in AI venture history. 40% of that capital went to companies founded by underrepresented groups — a significant shift from the 2023-2024 period when the figure was closer to 12%. The concentration of capital is shifting away from pure model development toward applied AI: vertical software, agents, and automation tools solving specific industry problems. Healthcare AI, legal AI, and financial services automation attracted the most capital outside of model infrastructure.",
+      "build": "Applied AI founders with domain expertise in healthcare, legal, or finance are raising pre-seed and seed rounds at 2–4x the valuations of generic AI tool startups. Niche beats breadth at every stage right now.",
+      "img": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&h=500&fit=crop&auto=format",
+      "source": "VentureBeat",
+      "significance": 7,
+      "time": "4d",
+      "feat": false,
+      "published_date": "2026-05-14"
+    },
+    {
+      "id": "lw8",
+      "cat": "Strategy",
+      "headline": "EU AI Act Moves Into Active Enforcement as US Policy Remains Stalled",
+      "body": "The European Union AI Act is moving into active enforcement — the world's first comprehensive AI regulatory framework is now requiring documentation, auditing, and transparency from companies deploying AI in high-risk categories including healthcare, hiring, and credit scoring. US companies selling to EU customers must now comply or face fines of up to 3% of global annual revenue. Meanwhile, the White House AI executive action remains stalled by internal disagreements between tech advocates pushing for minimal oversight and consumer protection groups demanding guardrails. The regulatory divergence is creating a compliance market: US companies need help navigating EU requirements.",
+      "build": "US consultants with AI policy knowledge are being hired by EU-facing companies at $250–$400/hour to document AI systems and build compliance frameworks. This is a near-zero-competition niche right now.",
+      "img": "https://images.unsplash.com/photo-1553413077-190dd305871c?w=900&h=500&fit=crop&auto=format",
+      "source": "MIT Tech Review",
+      "significance": 7,
+      "time": "5d",
+      "feat": false,
+      "published_date": "2026-05-13"
+    }
+  ]
+}
