@@ -799,57 +799,103 @@ const LEARN_SECTIONS = [
 ];
 
 function LearnPage({ onNav }) {
-  const [openId,setOpenId]=useState(null);
-  const [openQ,setOpenQ]=useState(null);
+  const [activeId, setActiveId] = useState(null);
+  const [openQ, setOpenQ] = useState(null);
+  const active = LEARN_SECTIONS.find(s => s.id === activeId);
 
-  return (
+  // Unsplash images for each section
+  const SECTION_IMGS = {
+    "what-is-ai":    "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=400&fit=crop&auto=format",
+    "what-is-llm":   "https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=800&h=400&fit=crop&auto=format",
+    "what-is-ml":    "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=400&fit=crop&auto=format",
+    "what-is-genai": "https://images.unsplash.com/photo-1686191128892-3b37add4c844?w=800&h=400&fit=crop&auto=format",
+    "prompting":     "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop&auto=format",
+    "rag-agents":    "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&auto=format",
+    "agentic":       "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&auto=format",
+    "companies":     "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=400&fit=crop&auto=format",
+    "glossary":      "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&h=400&fit=crop&auto=format",
+  };
+
+  // If a section is open, show the detail view
+  if (activeId && active) return (
     <div style={{background:T.bg,paddingBottom:40,maxWidth:800,margin:"0 auto"}}>
-      {/* Header */}
-      <div style={{background:T.ink,padding:`28px ${INSET}px 24px`}}>
-        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>SKAISHIFT LEARN</span>
-        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:26,color:"#fff",lineHeight:1.2,margin:"8px 0 10px"}}>Everything You Need to Know About AI</h1>
-        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,color:"rgba(255,255,255,0.6)",lineHeight:1.6,margin:0}}>Plain-English explanations of AI concepts — from the basics to what builders and entrepreneurs actually need to understand.</p>
+      {/* Section hero image */}
+      <div style={{position:"relative",height:200,overflow:"hidden"}}>
+        <NewsImg src={SECTION_IMGS[active.id]} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+        <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.2) 60%)"}}/>
+        <div style={{position:"absolute",bottom:16,left:20,right:60}}>
+          <div style={{display:"inline-block",background:active.color,borderRadius:20,padding:"2px 10px",marginBottom:8}}>
+            <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:"#fff",letterSpacing:"0.12em"}}>SKAISHIFT LEARN</span>
+          </div>
+          <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.2,margin:0}}>{active.label}</h1>
+        </div>
+        <button onClick={()=>{setActiveId(null);setOpenQ(null);}}
+          style={{position:"absolute",top:14,right:16,background:"rgba(0,0,0,0.5)",border:"none",borderRadius:20,padding:"6px 14px",color:"#fff",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,cursor:"pointer"}}>
+          ← Back
+        </button>
       </div>
 
-      {/* Section list */}
+      {/* Intro */}
       <div style={{padding:`16px ${INSET}px 0`}}>
-        {LEARN_SECTIONS.map(sec=>(
-          <div key={sec.id} style={{marginBottom:12,borderRadius:14,overflow:"hidden",border:T.border,boxShadow:"0 1px 4px rgba(0,0,0,0.05)"}}>
-            {/* Section header */}
-            <button onClick={()=>setOpenId(openId===sec.id?null:sec.id)}
-              style={{width:"100%",background:openId===sec.id?"#0F0F0F":"#fff",border:"none",padding:"16px 18px",display:"flex",alignItems:"center",justifyContent:"space-between",cursor:"pointer",gap:12}}>
-              <div style={{display:"flex",alignItems:"center",gap:10,textAlign:"left"}}>
-                <div style={{width:10,height:10,borderRadius:"50%",background:sec.color,flexShrink:0}}/>
-                <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:openId===sec.id?"#fff":T.ink}}>{sec.label}</span>
-              </div>
-              <span style={{color:openId===sec.id?"rgba(255,255,255,0.5)":T.mid,fontSize:18,flexShrink:0}}>{openId===sec.id?"↑":"↓"}</span>
-            </button>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,color:"#3A3A3A",lineHeight:1.75,margin:"0 0 16px",padding:"14px 16px",background:"#F0EEF8",borderRadius:10,borderLeft:`3px solid ${active.color}`}}>{active.intro}</p>
 
-            {/* Section content */}
-            {openId===sec.id&&(
-              <div style={{background:"#FAFAFA",padding:"0 18px 16px"}}>
-                <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,color:"#3A3A3A",lineHeight:1.75,margin:"16px 0",padding:"14px 16px",background:"#F0EEF8",borderRadius:10,borderLeft:`3px solid ${sec.color}`}}>{sec.intro}</p>
-                {sec.content.map((item,i)=>(
-                  <div key={i} style={{marginBottom:8,borderRadius:10,overflow:"hidden",border:T.border}}>
-                    <button onClick={()=>setOpenQ(openQ===`${sec.id}-${i}`?null:`${sec.id}-${i}`)}
-                      style={{width:"100%",background:openQ===`${sec.id}-${i}`?"#F8F8F6":"#fff",border:"none",padding:"12px 14px",display:"flex",alignItems:"center",justifyContent:"space-between",cursor:"pointer",gap:8,textAlign:"left"}}>
-                      <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:T.ink}}>{item.q}</span>
-                      <span style={{color:T.mid,fontSize:14,flexShrink:0}}>{openQ===`${sec.id}-${i}`?"−":"+"}</span>
-                    </button>
-                    {openQ===`${sec.id}-${i}`&&(
-                      <div style={{padding:"0 14px 14px",background:"#F8F8F6"}}>
-                        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#2A2620",lineHeight:1.8,margin:0}}>{item.a}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
+        {/* Q&A accordion */}
+        {active.content.map((item,i)=>(
+          <div key={i} style={{marginBottom:8,borderRadius:12,overflow:"hidden",border:T.border}}>
+            <button onClick={()=>setOpenQ(openQ===i?null:i)}
+              style={{width:"100%",background:openQ===i?"#0F0F0F":"#fff",border:"none",padding:"14px 16px",display:"flex",alignItems:"center",justifyContent:"space-between",cursor:"pointer",gap:8,textAlign:"left"}}>
+              <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:openQ===i?"#fff":T.ink,lineHeight:1.4}}>{item.q}</span>
+              <span style={{color:openQ===i?"rgba(255,255,255,0.5)":T.mid,fontSize:18,flexShrink:0,fontWeight:300}}>{openQ===i?"−":"+"}</span>
+            </button>
+            {openQ===i&&(
+              <div style={{padding:"14px 16px",background:"#F8F8F6",borderTop:T.border}}>
+                <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#2A2620",lineHeight:1.85,margin:0}}>{item.a}</p>
               </div>
             )}
           </div>
         ))}
       </div>
 
-      {/* Footer CTA */}
+      {/* CTA */}
+      <div style={{margin:`24px ${INSET}px 0`,background:T.ink,borderRadius:16,padding:"20px",textAlign:"center"}}>
+        <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:"#fff",margin:"0 0 12px"}}>See how this plays out in today's news.</p>
+        <button onClick={()=>onNav("home")} style={{background:T.red,color:"#fff",border:"none",borderRadius:24,padding:"10px 24px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,fontWeight:600,cursor:"pointer"}}>Read Today's Stories →</button>
+      </div>
+    </div>
+  );
+
+  // Default: topic card grid
+  return (
+    <div style={{background:T.bg,paddingBottom:40,maxWidth:800,margin:"0 auto"}}>
+      {/* Header */}
+      <div style={{background:T.ink,padding:`28px ${INSET}px 24px`}}>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>SKAISHIFT LEARN</span>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:24,color:"#fff",lineHeight:1.2,margin:"8px 0 8px"}}>Learn AI — From Scratch</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.55)",lineHeight:1.6,margin:0}}>Pick a topic. Plain English. No jargon.</p>
+      </div>
+
+      {/* Topic cards — visual grid */}
+      <div style={{padding:`16px ${INSET}px 0`,display:"flex",flexDirection:"column",gap:12}}>
+        {LEARN_SECTIONS.map(sec=>(
+          <div key={sec.id} onClick={()=>{setActiveId(sec.id);setOpenQ(null);window.scrollTo(0,0);}}
+            style={{borderRadius:14,overflow:"hidden",border:T.border,cursor:"pointer",boxShadow:"0 1px 6px rgba(0,0,0,0.07)",display:"flex",height:90}}>
+            {/* Thumbnail */}
+            <div style={{width:110,flexShrink:0,position:"relative",overflow:"hidden"}}>
+              <NewsImg src={SECTION_IMGS[sec.id]} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+              <div style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.25)"}}/>
+              <div style={{position:"absolute",bottom:8,left:8,width:10,height:10,borderRadius:"50%",background:sec.color,border:"2px solid #fff"}}/>
+            </div>
+            {/* Text */}
+            <div style={{flex:1,padding:"12px 14px",display:"flex",flexDirection:"column",justifyContent:"center",background:"#fff"}}>
+              <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:14,color:T.ink,margin:"0 0 4px",lineHeight:1.3}}>{sec.label}</p>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid,margin:"0 0 6px",lineHeight:1.4}}>{sec.intro.slice(0,70)}...</p>
+              <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:sec.color,fontWeight:600}}>{sec.content.length} topics →</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA */}
       <div style={{margin:`24px ${INSET}px 0`,background:T.ink,borderRadius:16,padding:"24px 20px",textAlign:"center"}}>
         <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em",margin:"0 0 8px"}}>STAY CURRENT</p>
         <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:"#fff",margin:"0 0 12px",lineHeight:1.3}}>Now that you know the concepts, track the daily shifts.</p>
