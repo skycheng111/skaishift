@@ -398,7 +398,8 @@ async function main() {
     wSeen.add(k); return true;
   });
   wDeduped.sort((a,b)=>(b.significance||0)-(a.significance||0));
-  const topWeekly = wDeduped.slice(0,20);
+  // 2 top articles per day x 7 days = 14 max
+  const topWeekly = wDeduped.slice(0,14);
   fs.writeFileSync(weeklyPath, JSON.stringify({ updated: now.toISOString(), articles: topWeekly }, null, 2));
   console.log(`    ✓ ${topWeekly.length} weekly articles`);
 
