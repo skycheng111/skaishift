@@ -1,15 +1,6 @@
 /**
  * skAIshift Daily News Pipeline
  * Runs via GitHub Actions at 6AM ET every day
- *
- * Steps:
- *  1. Fetch articles from RSS feeds
- *  2. Summarize + categorize each with Claude Haiku
- *  3. Fetch a relevant photo from Unsplash for each article
- *  4. Save today's articles to Supabase (for weekly accumulation)
- *  5. Write public/news.json (site reads this on load)
- *  6. Broadcast daily email to all subscribers via Resend
- *  7. On Sundays: generate weekly brief + send weekly email
  */
 
 const Parser    = require('rss-parser');
@@ -28,35 +19,26 @@ const RESEND_AUDIENCE = process.env.RESEND_AUDIENCE_ID;
 const FROM_EMAIL      = 'skAIshift <news@skaishift.com>';
 
 const claude   = new Anthropic({ apiKey: ANTHROPIC_KEY });
-const parser   = new Parser({ timeout: 12000 });
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // ── RSS FEEDS ──────────────────────────────────────────────────────────────────
 const FEEDS = [
-  // Major model labs (primary sources — catch releases first)
   { url: 'https://openai.com/blog/rss.xml',                                        source: 'OpenAI' },
   { url: 'https://blog.google/technology/ai/rss/',                                 source: 'Google AI' },
   { url: 'https://huggingface.co/blog/feed.xml',                                  source: 'HuggingFace' },
   { url: 'https://engineering.fb.com/category/ml-applications/feed/',              source: 'Meta AI' },
   { url: 'https://elevenlabs.io/rss.xml',                                          source: 'ElevenLabs' },
-  { url: 'https://kimi.moonshot.cn/rss',                                           source: 'Kimi AI' },
-
-  // News & analysis
   { url: 'https://venturebeat.com/category/ai/feed/',                              source: 'VentureBeat' },
   { url: 'https://techcrunch.com/category/artificial-intelligence/feed/',          source: 'TechCrunch' },
   { url: 'https://www.technologyreview.com/feed/',                                 source: 'MIT Tech Review' },
   { url: 'https://aibusiness.com/rss.xml',                                         source: 'AI Business' },
   { url: 'https://towardsai.net/feed',                                             source: 'Towards AI' },
-
-  // Money & VC intelligence
   { url: 'https://www.sequoiacap.com/feed/?category=artificial-intelligence',      source: 'Sequoia' },
-
-  // Deep technical (where practitioners break news first)
   { url: 'https://importai.substack.com/feed',                                     source: 'Import AI' },
-  { url: 'https://hnrss.org/frontpage?q=AI+LLM+OpenAI+Anthropic+Gemini+GPT+Claude+DeepSeek+Mistral+Kimi', source: 'Hacker News' },
+  { url: 'https://hnrss.org/frontpage?q=AI+LLM+OpenAI+Anthropic+Gemini+GPT+Claude+DeepSeek+Mistral', source: 'Hacker News' },
 ];
 
-// ── FALLBACK IMAGES (if Unsplash fails) ──────────────────────────────────────
+// ── FALLBACK IMAGES ───────────────────────────────────────────────────────────
 const FALLBACK_IMGS = {
   Earn:     'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=900&h=500&fit=crop&auto=format',
   Tools:    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format',
@@ -66,10 +48,20 @@ const FALLBACK_IMGS = {
   Robotics: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&h=500&fit=crop&auto=format',
 };
 
+// ── FETCH WITH HARD TIMEOUT ───────────────────────────────────────────────────
+// Wraps any promise with a max wait time — if it takes longer, we skip it
+function withTimeout(promise, ms, label) {
+  const timeout = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error(`Timeout after ${ms}ms`)), ms)
+  );
+  return Promise.race([promise, timeout]);
+}
+
 // ── STEP 1: FETCH RSS ─────────────────────────────────────────────────────────
 async function fetchFeed(feed) {
   try {
-    const result = await parser.parseURL(feed.url);
+    const parser = new Parser({ timeout: 8000 });
+    const result = await withTimeout(parser.parseURL(feed.url), 10000, feed.source);
     return result.items.slice(0, 5).map(item => ({
       title:   item.title || '',
       summary: (item.contentSnippet || item.content || '').slice(0, 600),
@@ -85,12 +77,13 @@ async function fetchFeed(feed) {
 // ── STEP 2: SUMMARIZE WITH CLAUDE HAIKU ──────────────────────────────────────
 async function summarize(rawArticle, index) {
   try {
-    const msg = await claude.messages.create({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 450,
-      messages: [{
-        role: 'user',
-        content: `You write for skAIshift — a daily AI news platform for entrepreneurs earning money with AI.
+    const msg = await withTimeout(
+      claude.messages.create({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 450,
+        messages: [{
+          role: 'user',
+          content: `You write for skAIshift — a daily AI news platform for entrepreneurs earning money with AI.
 
 RAW ARTICLE:
 Title: ${rawArticle.title}
@@ -104,14 +97,20 @@ Return ONLY valid JSON (no markdown, no extra text):
   "headline": "<punchy max-90-char headline, lead with the most surprising fact>",
   "body": "<2 sentences: what happened and why it matters, factual, no hype>",
   "build": "<1-2 sentences starting with a dollar amount or specific action: how people are making money RIGHT NOW>",
-  "unsplash_query": "<3-4 specific words to find a relevant photo, e.g. 'artificial intelligence robot arm' or 'startup office funding'>",
-  "significance": <integer 1-10. MUST be 9-10 for: ANY new model release or version (GPT, Claude, Gemini, Mistral, DeepSeek, Kimi, Llama, etc), new AI capability (video editing, real-time voice, coding agents, multimodal), API launch, or benchmark record. 7-8 for funding over $100M or major product launches. 5-6 for business/strategy news. 1-4 for minor updates. When in doubt about a model release, rate it 9>,
+  "unsplash_query": "<3-4 specific words to find a relevant photo, e.g. 'artificial intelligence robot arm'>",
+  "significance": <integer 1-10. MUST be 9-10 for: ANY new model release or version (GPT, Claude, Gemini, Mistral, DeepSeek, Llama, etc), new AI capability (video editing, real-time voice, coding agents, multimodal), API launch, or benchmark record. 7-8 for funding over $100M or major product launches. 5-6 for business/strategy news. 1-4 for minor updates. When in doubt about a model release, rate it 9>,
   "time": "${Math.floor(Math.random()*10)+1}h",
   "source": "${rawArticle.source}"
 }`,
-      }],
-    });
-    const cleaned = msg.content[0].text.trim().replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'');
+        }],
+      }),
+      30000,
+      'Claude'
+    );
+    const cleaned = msg.content[0].text.trim()
+      .replace(/^```json\s*/, '')
+      .replace(/^```\s*/, '')
+      .replace(/\s*```$/, '');
     return JSON.parse(cleaned);
   } catch (e) {
     console.warn(`  ✗ summarize: ${e.message}`);
@@ -124,11 +123,9 @@ async function getUnsplashImage(query, cat) {
   if (!UNSPLASH_KEY) return FALLBACK_IMGS[cat] || FALLBACK_IMGS.Tools;
   try {
     const url = `https://api.unsplash.com/photos/random?query=${encodeURIComponent(query)}&orientation=landscape&content_filter=high&client_id=${UNSPLASH_KEY}`;
-    const res  = await fetch(url);
+    const res  = await withTimeout(fetch(url), 8000, 'Unsplash');
     const data = await res.json();
-    if (data?.urls?.regular) {
-      return data.urls.regular + '&w=900&h=500&fit=crop';
-    }
+    if (data?.urls?.regular) return data.urls.regular + '&w=900&h=500&fit=crop';
     return FALLBACK_IMGS[cat] || FALLBACK_IMGS.Tools;
   } catch {
     return FALLBACK_IMGS[cat] || FALLBACK_IMGS.Tools;
@@ -138,14 +135,10 @@ async function getUnsplashImage(query, cat) {
 // ── STEP 4: SAVE TO SUPABASE ──────────────────────────────────────────────────
 async function saveToSupabase(articles, today) {
   if (!SUPABASE_URL || !SUPABASE_KEY) {
-    console.log('  ⚠ No Supabase credentials — skipping persistence');
+    console.log('  ⚠ No Supabase credentials — skipping');
     return;
   }
-  const rows = articles.map(a => ({
-    ...a,
-    published_date: today,
-    created_at: new Date().toISOString(),
-  }));
+  const rows = articles.map(a => ({ ...a, published_date: today, created_at: new Date().toISOString() }));
   const { error } = await supabase.from('skaishift_articles').upsert(rows, { onConflict: 'id' });
   if (error) console.warn('  ✗ Supabase save error:', error.message);
   else console.log(`  ✓ ${articles.length} articles saved to Supabase`);
@@ -154,94 +147,42 @@ async function saveToSupabase(articles, today) {
 // ── STEP 5: GENERATE WEEKLY BRIEF (Sundays only) ──────────────────────────────
 async function generateWeeklyBrief(today) {
   if (!SUPABASE_URL) return null;
-
   const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
   const { data: articles, error } = await supabase
-    .from('skaishift_articles')
-    .select('*')
-    .gte('published_date', weekAgo)
-    .order('significance', { ascending: false });
-
-  if (error || !articles?.length) {
-    console.warn('  ✗ Weekly brief: could not fetch articles');
-    return null;
-  }
-
-  console.log(`  → Summarizing ${articles.length} articles from the past week...`);
-
-  const articleList = articles.slice(0, 20).map((a, i) =>
-    `${i+1}. [${a.cat}] ${a.headline} — ${a.build}`
-  ).join('\n');
-
+    .from('skaishift_articles').select('*')
+    .gte('published_date', weekAgo).order('significance', { ascending: false });
+  if (error || !articles?.length) { console.warn('  ✗ Weekly brief: no articles'); return null; }
+  console.log(`  → ${articles.length} articles this week`);
+  const articleList = articles.slice(0, 20).map((a, i) => `${i+1}. [${a.cat}] ${a.headline} — ${a.build}`).join('\n');
   const msg = await claude.messages.create({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 2000,
-    messages: [{
-      role: 'user',
-      content: `You write the weekly intelligence brief for skAIshift — a platform for entrepreneurs using AI to earn money.
+    model: 'claude-sonnet-4-6', max_tokens: 2000,
+    messages: [{ role: 'user', content: `You write the weekly intelligence brief for skAIshift.
 
-Here are this week's top articles:
+Articles this week:
 ${articleList}
 
-Write a weekly brief in this EXACT JSON format (no markdown):
+Return ONLY valid JSON (no markdown):
 {
-  "week": "<e.g. May 12–18, 2025>",
-  "headline": "<punchy 8-10 word headline summarizing the week's theme>",
+  "week": "<date range e.g. May 12–18, 2025>",
+  "headline": "<punchy 8-10 word headline summarizing the week>",
   "sections": [
-    {
-      "id": "glance",
-      "label": "At a Glance",
-      "items": ["<7 bullet strings — the most important facts of the week>"]
-    },
-    {
-      "id": "money",
-      "label": "Money Moves",
-      "items": [
-        {"h": "<opportunity headline>", "s": "<1 sentence: why and how much>"},
-        ... (5 items)
-      ]
-    },
-    {
-      "id": "models",
-      "label": "Model Updates",
-      "items": [
-        {"h": "<model name or update>", "s": "<1 sentence: practical impact>"},
-        ... (4 items)
-      ]
-    },
-    {
-      "id": "tools",
-      "label": "Tools to Know",
-      "items": [
-        {"h": "<tool name>", "s": "<1 sentence: what it does and why it matters>"},
-        ... (4 items)
-      ]
-    },
-    {
-      "id": "watch",
-      "label": "Watch List",
-      "items": ["<4 bullet strings — things to watch next week>"]
-    }
+    { "id": "glance", "label": "At a Glance", "items": ["<7 key facts as strings>"] },
+    { "id": "money",  "label": "Money Moves",  "items": [{"h":"<title>","s":"<1 sentence>"},{"h":"<title>","s":"<1 sentence>"},{"h":"<title>","s":"<1 sentence>"},{"h":"<title>","s":"<1 sentence>"},{"h":"<title>","s":"<1 sentence>"}] },
+    { "id": "models", "label": "Model Updates","items": [{"h":"<title>","s":"<1 sentence>"},{"h":"<title>","s":"<1 sentence>"},{"h":"<title>","s":"<1 sentence>"},{"h":"<title>","s":"<1 sentence>"}] },
+    { "id": "tools",  "label": "Tools to Know","items": [{"h":"<title>","s":"<1 sentence>"},{"h":"<title>","s":"<1 sentence>"},{"h":"<title>","s":"<1 sentence>"},{"h":"<title>","s":"<1 sentence>"}] },
+    { "id": "watch",  "label": "Watch List",   "items": ["<4 things to watch as strings>"] }
   ]
-}`,
-    }],
+}` }],
   });
-
   try {
     const cleaned = msg.content[0].text.trim().replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'');
     return JSON.parse(cleaned);
-  } catch (e) {
-    console.warn('  ✗ Weekly brief parse error:', e.message);
-    return null;
-  }
+  } catch (e) { console.warn('  ✗ Weekly brief parse error:', e.message); return null; }
 }
 
-// ── STEP 6: SEND EMAIL ────────────────────────────────────────────────────────
+// ── STEP 6: EMAIL ─────────────────────────────────────────────────────────────
 async function sendEmail(subject, html, label) {
-  if (!RESEND_KEY || !RESEND_AUDIENCE) {
-    console.log(`  ⚠ No Resend credentials — skipping ${label} email`);
-    return;
-  }
+  if (!RESEND_KEY || !RESEND_AUDIENCE) { console.log(`  ⚠ No Resend — skipping ${label}`); return; }
   try {
     const res = await fetch('https://api.resend.com/broadcasts', {
       method: 'POST',
@@ -251,15 +192,11 @@ async function sendEmail(subject, html, label) {
     const bc = await res.json();
     if (bc.id) {
       await fetch(`https://api.resend.com/broadcasts/${bc.id}/send`, {
-        method: 'POST',
-        headers: { 'Authorization': `Bearer ${RESEND_KEY}`, 'Content-Type': 'application/json' },
-        body: '{}',
+        method: 'POST', headers: { 'Authorization': `Bearer ${RESEND_KEY}`, 'Content-Type': 'application/json' }, body: '{}',
       });
       console.log(`  ✓ ${label} email sent (${bc.id})`);
-    }
-  } catch (e) {
-    console.error(`  ✗ ${label} email error:`, e.message);
-  }
+    } else { console.warn('  ✗ Broadcast failed:', JSON.stringify(bc)); }
+  } catch (e) { console.error(`  ✗ ${label} email error:`, e.message); }
 }
 
 function buildDailyEmail(articles, date) {
@@ -277,7 +214,6 @@ function buildDailyEmail(articles, date) {
         </div>
       </div>
     </div>`).join('');
-
   return `<!DOCTYPE html><html><body style="margin:0;padding:0;background:#F4F4F0;font-family:Arial,sans-serif;">
 <div style="max-width:600px;margin:0 auto;padding:20px 16px;">
   <div style="background:#0F0F0F;border-radius:16px 16px 0 0;padding:24px 28px 20px;text-align:center;">
@@ -307,7 +243,6 @@ function buildWeeklyEmail(brief) {
       ${isList ? `<ul style="padding-left:16px;margin:0;">${itemsHTML}</ul>` : itemsHTML}
     </div>`;
   }).join('');
-
   return `<!DOCTYPE html><html><body style="margin:0;padding:0;background:#F4F4F0;font-family:Arial,sans-serif;">
 <div style="max-width:600px;margin:0 auto;padding:20px 16px;">
   <div style="background:#0F0F0F;border-radius:16px 16px 0 0;padding:28px;">
@@ -338,7 +273,7 @@ async function main() {
 
   console.log(`\nskAIshift pipeline — ${today}${isSunday ? ' (SUNDAY: weekly brief)' : ''}`);
 
-  // 1. Fetch feeds
+  // 1. Fetch all feeds in parallel with per-feed 10s timeout
   console.log('\n[1] Fetching RSS feeds...');
   const rawItems = (await Promise.all(FEEDS.map(fetchFeed))).flat();
   const seen = new Set();
@@ -360,8 +295,8 @@ async function main() {
     await new Promise(r => setTimeout(r, 350));
   }
 
-  // 3. Fetch Unsplash images
-  console.log('\n[3] Fetching article images from Unsplash...');
+  // 3. Unsplash images
+  console.log('\n[3] Fetching images from Unsplash...');
   for (const a of summaries) {
     process.stdout.write(`    "${a.unsplash_query}" → `);
     a.img = await getUnsplashImage(a.unsplash_query, a.cat);
@@ -369,26 +304,24 @@ async function main() {
     await new Promise(r => setTimeout(r, 200));
   }
 
-  // 4. Sort by significance, mark top 2 as featured
+  // 4. Sort + feature
   summaries.sort((a,b) => (b.significance||0) - (a.significance||0));
   summaries.forEach((a,i) => { a.feat = i < 2; a.published_date = todayISO; });
 
-  // 5. Save to Supabase
+  // 5. Supabase
   console.log('\n[4] Saving to Supabase...');
   await saveToSupabase(summaries, todayISO);
 
-  // 6. Write public/news.json
+  // 6. Write news.json
   console.log('\n[5] Writing news.json...');
   const newsData = { updated: now.toISOString(), date: today, articles: summaries };
   fs.writeFileSync(path.join(__dirname, '../public/news.json'), JSON.stringify(newsData, null, 2));
   console.log(`    ✓ ${summaries.length} articles`);
 
-  // 7. Send daily email
+  // 7. Daily email
   console.log('\n[6] Broadcasting daily email...');
   const breaking = summaries.filter(a => (a.significance||0) >= 9).length;
-  const subject = breaking > 0
-    ? `${breaking} major AI shift${breaking>1?'s':''} today — ${today}`
-    : `Today in AI — ${today}`;
+  const subject = breaking > 0 ? `${breaking} major AI shift${breaking>1?'s':''} today — ${today}` : `Today in AI — ${today}`;
   await sendEmail(subject, buildDailyEmail(summaries, today), 'daily');
 
   // 8. Weekly brief (Sundays only)
