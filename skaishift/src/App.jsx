@@ -58,7 +58,7 @@ function SectionHeader({ label, action, onAction }) {
 // ── HEADER (mobile: name | LOGO | subscribe) ──────────────────────────────────
 function Header({ onNav, onBack }) {
   const [open,setOpen]=useState(false);
-  const NAV=[{l:"Home",v:"home"},{l:"Weekly Brief",v:"brief"},{l:"Subscribe",v:"subscribe"}];
+  const NAV=[{l:"Home",v:"home"},{l:"Brief",v:"brief"},{l:"Learn",v:"learn"},{l:"Subscribe",v:"subscribe"}];
   return (
     <header style={{background:"#0F0F0F",position:"sticky",top:0,zIndex:200,borderBottom:"1px solid #1A1A1A"}}>
       <div style={{maxWidth:1200,margin:"0 auto",padding:"10px 20px",display:"flex",alignItems:"center",justifyContent:"space-between",gap:12}}>
@@ -443,6 +443,180 @@ function SubPage() {
 // ── BOTTOM NAV (mobile only, hidden on desktop) ────────────────────────────────
 // BottomNav removed — replaced by hamburger menu in Header
 
+
+// ── LEARN PAGE ────────────────────────────────────────────────────────────────
+const LEARN_SECTIONS = [
+  {
+    id:"what-is-ai",
+    label:"What is AI?",
+    color:CATS.Models,
+    intro:"Artificial Intelligence (AI) is software that can perform tasks that normally require human intelligence — understanding language, recognizing images, writing, reasoning, and making decisions.",
+    content:[
+      {q:"The simple version",a:"AI is a program that learns from examples instead of following fixed rules. Instead of a programmer writing out every possible scenario, an AI system is trained on massive amounts of data and learns to find patterns on its own. Show it millions of photos of cats and dogs, and it learns to tell them apart. Show it billions of sentences, and it learns to write."},
+      {q:"Where it came from",a:"AI research started in the 1950s, but for decades it was limited by computing power and data availability. The modern AI boom began around 2012 when deep learning — a technique inspired by the human brain — suddenly became dramatically more powerful. By 2022, AI had become capable enough that regular people could use it directly through tools like ChatGPT."},
+      {q:"What AI can and can't do",a:"Today's AI is excellent at: generating text, images, audio, and video; summarizing and analyzing documents; writing and reviewing code; answering questions; and automating repetitive knowledge work. It still struggles with: consistent logical reasoning on novel problems, understanding physical reality, long-term planning, and tasks requiring true common sense. It has no consciousness, opinions, or desires — it's a very sophisticated pattern-matching system."},
+      {q:"Why it matters right now",a:"The cost of AI capability has dropped 99%+ in the last three years. Tasks that required a team of specialists now cost pennies and take seconds. This is creating a massive economic shift — businesses that adopt AI gain enormous speed and cost advantages over those that don't. The window to get ahead of this curve is open now, and narrowing."},
+    ]
+  },
+  {
+    id:"what-is-llm",
+    label:"What is an LLM?",
+    color:CATS.Models,
+    intro:"A Large Language Model (LLM) is the type of AI that powers ChatGPT, Claude, Gemini, and most AI writing and reasoning tools. It's trained to understand and generate human language at a very high level.",
+    content:[
+      {q:"How it works",a:"An LLM is trained by reading an enormous amount of text — websites, books, code, articles — and learning to predict what word comes next in a sentence. Done at massive scale (billions of examples, billions of parameters), this simple task produces a system that can write, reason, answer questions, summarize, translate, and hold conversations. The 'large' in LLM refers to both the size of the training data and the number of parameters (internal settings) the model uses."},
+      {q:"What 'parameters' means",a:"Parameters are the numerical values inside the model that determine how it responds to any input. A model with 70 billion parameters has 70 billion internal dials that were tuned during training. More parameters generally means a more capable model, but also more computing power required to run it. GPT-4 is estimated to have around 1.8 trillion parameters."},
+      {q:"Context window",a:"The context window is how much text an LLM can 'see' at once — its short-term memory. Early models had context windows of around 4,000 tokens (about 3,000 words). Today's best models handle 1 million tokens or more — equivalent to about 750,000 words, or several large novels. Larger context windows let you feed the model entire codebases, legal documents, or research papers."},
+      {q:"The main LLMs and who makes them",a:"OpenAI makes GPT-4o and the o-series reasoning models. Anthropic makes Claude (Haiku, Sonnet, Opus). Google makes Gemini. Meta makes Llama (open-source). Mistral makes models that run locally. xAI (Elon Musk) makes Grok. DeepSeek (China) makes powerful open-source models. Each has different strengths — some are faster and cheaper, others are better at reasoning, coding, or handling long documents."},
+      {q:"Tokens — what they are",a:"LLMs don't read word by word — they read in 'tokens,' which are chunks of text roughly 3-4 characters long. '1,000 tokens' is about 750 words. Token limits matter for pricing (you pay per token) and context length. When people say a model 'runs out of context,' it means it's processed too many tokens and can no longer see earlier parts of the conversation."},
+    ]
+  },
+  {
+    id:"what-is-ml",
+    label:"Machine Learning & Neural Networks",
+    color:CATS.Strategy,
+    intro:"Machine learning is the broader field that includes LLMs. A neural network is the underlying architecture that makes modern AI work. Understanding these terms helps you read AI news intelligently.",
+    content:[
+      {q:"Machine learning vs. AI",a:"AI is the broad goal: build machines that can do intelligent things. Machine learning is the main method used to achieve that goal today. Instead of programming rules manually, machine learning systems learn from data. Deep learning is a subset of machine learning that uses neural networks with many layers — it's what powers image recognition, speech recognition, and LLMs."},
+      {q:"What a neural network is",a:"A neural network is a system loosely inspired by the human brain. It consists of layers of 'neurons' (mathematical functions) connected to each other. Data flows through these layers, getting transformed at each step. During training, the network adjusts the strength of these connections based on whether it got the right answer. After enough training, it gets very good at the task. Modern AI uses networks with hundreds of layers — hence 'deep' learning."},
+      {q:"Training vs. inference",a:"Training is when a model is learning — processing massive datasets and adjusting its parameters. This happens once (or periodically) and is extremely expensive computationally. Inference is when the trained model is actually used — generating a response when you ask it a question. Inference is much cheaper and faster than training. When you use ChatGPT, you're doing inference on a model that was trained months earlier."},
+      {q:"Supervised vs. unsupervised learning",a:"In supervised learning, the AI is trained on labeled examples — 'this image is a cat, that one is a dog.' In unsupervised learning, the AI finds patterns in data without labels. LLMs primarily use self-supervised learning — the training data labels itself (predict the next word in a real sentence). This is why they can learn from so much data without humans needing to label everything."},
+    ]
+  },
+  {
+    id:"what-is-genai",
+    label:"Generative AI",
+    color:CATS.Tools,
+    intro:"Generative AI refers to AI systems that create new content — text, images, audio, video, and code — rather than just analyzing or classifying existing content.",
+    content:[
+      {q:"What it generates",a:"Generative AI can produce: text (articles, emails, code, scripts), images (photos, illustrations, logos), audio (voices, music, sound effects), video (short clips, animations), and 3D models. Each modality has specialized models: GPT-4o and Claude for text, DALL-E and Midjourney for images, ElevenLabs and Suno for audio, Sora and Runway for video."},
+      {q:"How image generation works",a:"Image generation models (like DALL-E, Midjourney, Stable Diffusion) work differently from LLMs. They're typically trained using a process called diffusion — starting with random noise and learning to gradually remove that noise to produce a coherent image that matches a text description. The result is a model that can generate an image matching almost any text prompt."},
+      {q:"Multimodal AI",a:"Multimodal AI can handle multiple types of input and output simultaneously. GPT-4o can see images and hear audio as input, and respond with text or speech. This is a significant advancement — earlier AI was siloed into text-only or image-only. Multimodal models are better at tasks like describing photos, reading handwritten notes, analyzing charts, and having voice conversations."},
+      {q:"Hallucination",a:"Hallucination is when an AI generates confident-sounding text that is factually wrong. It happens because LLMs are trained to produce plausible text, not necessarily true text. They don't have a fact-checker — they predict what a good response looks like based on patterns. Always verify specific facts, dates, names, and statistics that come from an AI. Newer models with web search access hallucinate less, but the problem isn't solved."},
+    ]
+  },
+  {
+    id:"prompting",
+    label:"Prompts & Prompt Engineering",
+    color:CATS.Earn,
+    intro:"A prompt is the input you give an AI — your question, instruction, or request. Prompt engineering is the skill of writing prompts that get reliably good results.",
+    content:[
+      {q:"What makes a good prompt",a:"Good prompts are specific, give context, and tell the AI what format you want the answer in. Bad: 'Write me an email.' Good: 'Write a 3-paragraph follow-up email to a potential client who attended our product demo yesterday. Tone: professional but warm. Include a specific next step asking them to schedule a 30-minute call. Sign off as Sky from Ten18 Design.' The more context you give, the better the output."},
+      {q:"System prompts",a:"A system prompt is an instruction given to an AI before the conversation starts — it sets the rules, persona, and context for the entire interaction. When you build an AI product, the system prompt is where you define the AI's role ('You are a customer service agent for Red Angel Detailing'), the rules it should follow, and the format of its responses. Users typically don't see system prompts."},
+      {q:"Temperature and randomness",a:"Most AI APIs let you control 'temperature' — a setting that determines how random or predictable the AI's responses are. Low temperature (0–0.3): very consistent, predictable, good for factual tasks. High temperature (0.7–1.0): more creative and varied, good for brainstorming. Most production applications use moderate temperatures (0.3–0.7) to balance quality and variety."},
+      {q:"Few-shot prompting",a:"Few-shot prompting means including examples of the output you want in your prompt. Instead of just describing what you want, you show the AI 2-3 examples. Example: 'Here are 3 product descriptions I've written: [examples]. Now write one for this product: [new product].' This dramatically improves output quality because the AI can match the exact style, format, and tone of your examples."},
+      {q:"Chain of thought",a:"Chain-of-thought prompting asks the AI to reason through a problem step by step before giving an answer. Adding 'Let's think through this step by step' or 'Show your reasoning' to a prompt makes AI significantly better at complex problems — math, logic, legal analysis, debugging. The reasoning process itself improves the answer."},
+    ]
+  },
+  {
+    id:"rag-agents",
+    label:"RAG, Agents & Fine-tuning",
+    color:CATS.Business,
+    intro:"These are more advanced AI concepts that come up constantly in product and business conversations. Understanding them helps you have informed discussions with developers and clients.",
+    content:[
+      {q:"What is RAG?",a:"RAG stands for Retrieval-Augmented Generation. It's a technique where an AI retrieves relevant information from a database or document collection before generating a response — instead of relying only on what it learned during training. Example: a customer service chatbot backed by your company's knowledge base. When a customer asks a question, the system first finds the relevant help articles, then feeds them to the LLM to generate an accurate answer. RAG is how you build AI that knows about your specific business."},
+      {q:"What is an AI agent?",a:"An AI agent is a system where an AI doesn't just answer a single question — it takes a sequence of actions to accomplish a goal. Agents can use tools (search the web, run code, read files, send emails), make decisions, and loop until the task is done. Example: instead of asking an AI 'what's the weather in Paris,' an agent would check a weather API, compare it to the forecast, and automatically update your calendar if rain is expected. Most 'AI automation' products are agent systems."},
+      {q:"What is fine-tuning?",a:"Fine-tuning is the process of taking a pre-trained model (like GPT-4) and training it further on your specific data to make it better at your specific task. A customer service model fine-tuned on your company's past support tickets will outperform a generic model on your use case. Fine-tuning is expensive and complex — most businesses get better results from good prompting and RAG before investing in fine-tuning."},
+      {q:"What is an embedding?",a:"An embedding is a numerical representation of text (or images, audio) that captures its meaning. Similar things have similar embeddings. This is the technology behind semantic search — finding documents that mean the same thing even if they use different words. Embeddings are the foundation of RAG systems: you convert all your documents into embeddings, store them in a vector database, and when a question comes in, find the documents whose embeddings are closest to the question's embedding."},
+      {q:"Vector databases",a:"A vector database stores embeddings and lets you search them by similarity rather than exact match. Examples: Pinecone, Weaviate, Supabase pgvector, Chroma. When someone asks your RAG-powered chatbot a question, the system converts the question into an embedding, searches the vector database for the most similar document embeddings, retrieves those documents, and passes them to the LLM to generate an answer grounded in your actual content."},
+    ]
+  },
+  {
+    id:"companies",
+    label:"Key Companies & Their Models",
+    color:CATS.Robotics,
+    intro:"The AI landscape is dominated by a handful of companies whose model releases directly affect what's possible in any AI product. Knowing who makes what helps you follow the news intelligently.",
+    content:[
+      {q:"Anthropic — Claude",a:"Anthropic is an AI safety company founded by former OpenAI researchers including Dario and Daniela Amodei. They make the Claude family of models: Claude Haiku (fast, cheap, good for automation), Claude Sonnet (balanced performance and cost, best for most applications), and Claude Opus (most capable, premium pricing). Claude is known for being particularly good at nuanced writing, following complex instructions, and refusing genuinely harmful requests while staying helpful."},
+      {q:"OpenAI — GPT & o-series",a:"OpenAI is the most prominent AI company, known for ChatGPT and the GPT model series. Their current lineup includes GPT-4o (their primary model, multimodal), the o-series reasoning models (o1, o3 — slower but much better at complex logic and math), and DALL-E for image generation. OpenAI also built Sora (video generation) and Whisper (speech recognition). They pioneered the current AI boom with ChatGPT in late 2022."},
+      {q:"Google — Gemini",a:"Google DeepMind makes the Gemini model family: Gemini Flash (fast/cheap), Gemini Pro (balanced), and Gemini Ultra (most capable). Gemini 1.5 Pro has a 1-million-token context window, making it best-in-class for processing very long documents. Google also has unique advantages in search integration, YouTube data, and Android distribution. Their AI is embedded in Google Workspace (Docs, Gmail, Sheets) as 'Gemini' features."},
+      {q:"Meta — Llama (open-source)",a:"Meta releases Llama models as open-source — meaning anyone can download, run, and modify them for free. This is significant because it enables private AI deployments with no API costs, and has spawned thousands of specialized models fine-tuned from Llama. Llama 3 70B runs on a single high-end GPU and performs competitively with commercial models. Meta's open-source strategy is intentional — they benefit from the AI ecosystem improving while giving the models away free."},
+      {q:"Mistral — efficient & local",a:"Mistral is a French AI company making highly efficient models — particularly good at running on limited hardware. Their models can run on a laptop or small server with no internet connection, making them ideal for regulated industries where data can't leave the building. Mistral also makes Mixtral, a mixture-of-experts model that punches well above its size."},
+      {q:"xAI — Grok",a:"xAI is Elon Musk's AI company, making the Grok model. Grok is integrated into X (Twitter) and has real-time access to posts on the platform. It's positioned as a less restricted alternative to ChatGPT. Grok 3 is competitive with top-tier models on benchmarks. xAI raised $6B in 2024 and is building massive GPU clusters in Memphis, Tennessee."},
+      {q:"DeepSeek",a:"DeepSeek is a Chinese AI company that released highly capable open-source models — including DeepSeek-V3 and DeepSeek-R1 — that match or beat frontier US models at a fraction of the training cost. DeepSeek R1's release in January 2025 caused significant market disruption and drew comparisons to Sputnik. Their efficiency innovations are being adopted across the industry. The models are free and open-source, running on the same Llama infrastructure as Meta's models."},
+    ]
+  },
+  {
+    id:"glossary",
+    label:"AI Glossary",
+    color:CATS.Strategy,
+    intro:"A quick-reference glossary of terms you'll encounter in AI news, product discussions, and client conversations.",
+    content:[
+      {q:"API (Application Programming Interface)",a:"The way developers connect to an AI model programmatically. When someone says 'the Claude API,' they mean the service that lets software directly send prompts to Claude and receive responses — as opposed to using the Claude.ai chat interface. Most AI products are built on top of these APIs."},
+      {q:"Inference cost",a:"The cost of running a trained AI model to generate a response. Measured in cost per token (per 1,000 or 1,000,000 tokens). Inference costs have dropped 99%+ since 2020, making AI economically viable for consumer products. This is why AI tools are getting cheaper — the underlying model costs are falling rapidly."},
+      {q:"Open-source vs. closed-source",a:"Closed-source models (GPT-4, Claude, Gemini) are proprietary — you access them via API and pay per use, but you can't see or modify the underlying model. Open-source models (Llama, Mistral, DeepSeek) are publicly available — you can download them, run them locally, modify them, and build on them without licensing fees or API costs."},
+      {q:"Benchmark",a:"A standardized test used to compare AI model performance. Common benchmarks: MMLU (general knowledge), HumanEval (coding), MATH (mathematics), GPQA (graduate-level reasoning). When a company says their model 'tops the benchmark,' take it with some skepticism — companies often optimize for specific benchmarks and real-world performance may differ."},
+      {q:"Foundation model",a:"A large AI model trained on broad data that can be adapted to many different tasks. GPT-4, Claude, and Gemini are foundation models. They're called 'foundation' because they serve as the base for building more specialized applications — fine-tuned versions, RAG systems, agents, etc."},
+      {q:"Latency",a:"How long an AI takes to respond. For real-time applications (voice assistants, chat), latency matters enormously — users expect responses in under 1-2 seconds. For batch processing (summarizing 1,000 documents overnight), latency is less important than cost and accuracy. Different models are optimized for different latency/quality tradeoffs."},
+      {q:"Multimodal",a:"An AI model that can process multiple types of input (text, images, audio, video) or produce multiple types of output. GPT-4o is multimodal — it can see images, hear audio, and respond with text or speech. Earlier models were unimodal — text only, or image only."},
+      {q:"On-premise / on-device AI",a:"Running AI locally on your own hardware rather than sending data to a cloud API. Important for: privacy (data never leaves your server), regulated industries (healthcare, legal, finance), offline use cases, and cost reduction at scale. Mistral and Llama are commonly used for on-premise deployments."},
+      {q:"Quantization",a:"A technique to reduce model size and memory requirements by using lower-precision numbers internally. A quantized model runs faster and uses less RAM, with minimal quality loss. This is what makes large models practical to run on consumer hardware — a 70B parameter model normally requires 140GB of RAM, but a 4-bit quantized version needs only about 40GB."},
+      {q:"RLHF (Reinforcement Learning from Human Feedback)",a:"The technique used to make AI models behave helpfully and safely. After initial training, human raters compare pairs of AI responses and say which is better. The model is then further trained to produce responses like the ones humans preferred. This is a major reason why ChatGPT and Claude feel more natural and helpful than earlier AI systems."},
+    ]
+  },
+];
+
+function LearnPage({ onNav }) {
+  const [openId,setOpenId]=useState(null);
+  const [openQ,setOpenQ]=useState(null);
+
+  return (
+    <div style={{background:T.bg,paddingBottom:40,maxWidth:800,margin:"0 auto"}}>
+      {/* Header */}
+      <div style={{background:T.ink,padding:`28px ${INSET}px 24px`}}>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>SKAISHIFT LEARN</span>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:26,color:"#fff",lineHeight:1.2,margin:"8px 0 10px"}}>Everything You Need to Know About AI</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,color:"rgba(255,255,255,0.6)",lineHeight:1.6,margin:0}}>Plain-English explanations of AI concepts — from the basics to what builders and entrepreneurs actually need to understand.</p>
+      </div>
+
+      {/* Section list */}
+      <div style={{padding:`16px ${INSET}px 0`}}>
+        {LEARN_SECTIONS.map(sec=>(
+          <div key={sec.id} style={{marginBottom:12,borderRadius:14,overflow:"hidden",border:T.border,boxShadow:"0 1px 4px rgba(0,0,0,0.05)"}}>
+            {/* Section header */}
+            <button onClick={()=>setOpenId(openId===sec.id?null:sec.id)}
+              style={{width:"100%",background:openId===sec.id?"#0F0F0F":"#fff",border:"none",padding:"16px 18px",display:"flex",alignItems:"center",justifyContent:"space-between",cursor:"pointer",gap:12}}>
+              <div style={{display:"flex",alignItems:"center",gap:10,textAlign:"left"}}>
+                <div style={{width:10,height:10,borderRadius:"50%",background:sec.color,flexShrink:0}}/>
+                <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:openId===sec.id?"#fff":T.ink}}>{sec.label}</span>
+              </div>
+              <span style={{color:openId===sec.id?"rgba(255,255,255,0.5)":T.mid,fontSize:18,flexShrink:0}}>{openId===sec.id?"↑":"↓"}</span>
+            </button>
+
+            {/* Section content */}
+            {openId===sec.id&&(
+              <div style={{background:"#FAFAFA",padding:"0 18px 16px"}}>
+                <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,color:"#3A3A3A",lineHeight:1.75,margin:"16px 0",padding:"14px 16px",background:"#F0EEF8",borderRadius:10,borderLeft:`3px solid ${sec.color}`}}>{sec.intro}</p>
+                {sec.content.map((item,i)=>(
+                  <div key={i} style={{marginBottom:8,borderRadius:10,overflow:"hidden",border:T.border}}>
+                    <button onClick={()=>setOpenQ(openQ===`${sec.id}-${i}`?null:`${sec.id}-${i}`)}
+                      style={{width:"100%",background:openQ===`${sec.id}-${i}`?"#F8F8F6":"#fff",border:"none",padding:"12px 14px",display:"flex",alignItems:"center",justifyContent:"space-between",cursor:"pointer",gap:8,textAlign:"left"}}>
+                      <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:T.ink}}>{item.q}</span>
+                      <span style={{color:T.mid,fontSize:14,flexShrink:0}}>{openQ===`${sec.id}-${i}`?"−":"+"}</span>
+                    </button>
+                    {openQ===`${sec.id}-${i}`&&(
+                      <div style={{padding:"0 14px 14px",background:"#F8F8F6"}}>
+                        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#2A2620",lineHeight:1.8,margin:0}}>{item.a}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Footer CTA */}
+      <div style={{margin:`24px ${INSET}px 0`,background:T.ink,borderRadius:16,padding:"24px 20px",textAlign:"center"}}>
+        <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em",margin:"0 0 8px"}}>STAY CURRENT</p>
+        <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:"#fff",margin:"0 0 12px",lineHeight:1.3}}>Now that you know the concepts, track the daily shifts.</p>
+        <button onClick={()=>onNav("home")} style={{background:T.red,color:"#fff",border:"none",borderRadius:24,padding:"10px 24px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,fontWeight:600,cursor:"pointer"}}>Read Today's News →</button>
+      </div>
+    </div>
+  );
+}
+
 // ── APP ───────────────────────────────────────────────────────────────────────
 export default function App() {
   const [view,setView]=useState("home");
@@ -463,6 +637,9 @@ export default function App() {
       .then(d=>{ if(d?.sections?.length) setBriefData(d); })
       .catch(()=>{});
   },[]);
+
+  // Scroll to top whenever view changes
+  useEffect(()=>{ window.scrollTo(0,0); },[view]);
 
   const onSelect=a=>{setArt(a);setView("article");};
   const onBack=()=>{setArt(null);setView("home");};
@@ -510,6 +687,7 @@ export default function App() {
         {view==="article"   &&art&&<ArticleDetail story={art} onBack={onBack} onNav={onNav}/>}
         {view==="brief"     &&<BriefPage briefData={briefData} onBack={()=>setView('home')}/>}
         {view==="subscribe" &&<SubPage/>}
+        {view==="learn"      &&<LearnPage onNav={onNav}/>}
       </main>
 
 
