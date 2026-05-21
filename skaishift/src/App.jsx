@@ -70,7 +70,7 @@ function Header({ onNav, onBack }) {
           )}
           <div style={{display:"flex",alignItems:"center",gap:10,cursor:"pointer"}} onClick={()=>onNav("home")}>
             <img src={LOGO_SRC} alt="skAIshift" style={{height:40,width:"auto",display:"block"}}/>
-            <span style={{fontFamily:"'Barlow Semi Condensed',sans-serif",fontSize:22,letterSpacing:"0.15em",fontWeight:500,lineHeight:1,whiteSpace:"nowrap"}}>
+            <span style={{fontFamily:"'Barlow Semi Condensed',sans-serif",fontSize:22,letterSpacing:"0.15em",fontWeight:700,lineHeight:1,whiteSpace:"nowrap"}}>
               <span style={{color:"#FFFFFF"}}>SK</span>
               <span style={{color:T.amber}}>AI</span>
               <span style={{color:"#FFFFFF"}}>SHIFT</span>
