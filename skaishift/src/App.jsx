@@ -56,34 +56,31 @@ function SectionHeader({ label, action, onAction }) {
 }
 
 // ── HEADER (mobile: name | LOGO | subscribe) ──────────────────────────────────
-function Header({ onSubscribe, onNav }) {
+function Header({ onNav, onBack }) {
+  const [open,setOpen]=useState(false);
+  const NAV=[{l:"Home",v:"home"},{l:"Weekly Brief",v:"brief"},{l:"Subscribe",v:"subscribe"}];
   return (
-    <header style={{
-      background:"#0F0F0F",
-      position:"sticky",top:0,zIndex:100,
-      borderBottom:"1px solid #1A1A1A",
-    }}>
-      <div style={{
-        maxWidth:1200,margin:"0 auto",
-        padding:"10px 20px",
-        display:"flex",
-        alignItems:"center",
-        justifyContent:"space-between",
-        gap:12,
-      }}>
-        {/* Left: logo + wordmark — always visible */}
+    <header style={{background:"#0F0F0F",position:"sticky",top:0,zIndex:200,borderBottom:"1px solid #1A1A1A"}}>
+      <div style={{maxWidth:1200,margin:"0 auto",padding:"10px 20px",display:"flex",alignItems:"center",justifyContent:"space-between",gap:12}}>
+
+        {/* Left: back arrow (article only) + logo + wordmark */}
         <div style={{display:"flex",alignItems:"center",gap:10,flexShrink:0}}>
-          <img src={LOGO_SRC} alt="skAIshift" style={{height:44,width:"auto",display:"block"}}/>
-          <span style={{fontFamily:"'Barlow Semi Condensed',sans-serif",fontSize:22,letterSpacing:"0.15em",fontWeight:500,lineHeight:1,whiteSpace:"nowrap"}}>
-            <span style={{color:"#FFFFFF"}}>SK</span>
-            <span style={{color:T.amber}}>AI</span>
-            <span style={{color:"#FFFFFF"}}>SHIFT</span>
-          </span>
+          {onBack&&(
+            <button onClick={onBack} style={{background:"transparent",border:"none",color:"rgba(255,255,255,0.6)",cursor:"pointer",padding:"4px 8px 4px 0",fontSize:18,lineHeight:1}}>←</button>
+          )}
+          <div style={{display:"flex",alignItems:"center",gap:10,cursor:"pointer"}} onClick={()=>onNav("home")}>
+            <img src={LOGO_SRC} alt="skAIshift" style={{height:40,width:"auto",display:"block"}}/>
+            <span style={{fontFamily:"'Barlow Semi Condensed',sans-serif",fontSize:22,letterSpacing:"0.15em",fontWeight:500,lineHeight:1,whiteSpace:"nowrap"}}>
+              <span style={{color:"#FFFFFF"}}>SK</span>
+              <span style={{color:T.amber}}>AI</span>
+              <span style={{color:"#FFFFFF"}}>SHIFT</span>
+            </span>
+          </div>
         </div>
 
-        {/* Center: desktop nav only */}
+        {/* Center: desktop nav */}
         <nav className="desktop-nav" style={{display:"none",alignItems:"center",gap:4}}>
-          {[{l:"Home",v:"home"},{l:"Brief",v:"brief"},{l:"Subscribe",v:"subscribe"}].map(it=>(
+          {NAV.map(it=>(
             <button key={it.v} onClick={()=>onNav(it.v)}
               style={{background:"transparent",color:"rgba(255,255,255,0.7)",border:"none",padding:"8px 18px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,cursor:"pointer",fontWeight:500,borderRadius:20,transition:"all 0.15s"}}
               onMouseEnter={e=>{e.currentTarget.style.color="#fff";e.currentTarget.style.background="rgba(255,255,255,0.08)";}}
@@ -93,14 +90,26 @@ function Header({ onSubscribe, onNav }) {
           ))}
         </nav>
 
-        {/* Right: subscribe — always visible */}
-        <button onClick={onSubscribe}
-          style={{background:"transparent",color:"#FFFFFF",border:"1px solid rgba(255,255,255,0.4)",borderRadius:20,padding:"8px 16px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,cursor:"pointer",fontWeight:600,whiteSpace:"nowrap",transition:"all 0.15s",flexShrink:0}}
-          onMouseEnter={e=>{e.currentTarget.style.background="rgba(255,255,255,0.1)";e.currentTarget.style.borderColor="rgba(255,255,255,0.7)";}}
-          onMouseLeave={e=>{e.currentTarget.style.background="transparent";e.currentTarget.style.borderColor="rgba(255,255,255,0.4)";}}>
-          Subscribe
+        {/* Right: hamburger (mobile) */}
+        <button className="mobile-hamburger" onClick={()=>setOpen(o=>!o)}
+          style={{background:"transparent",border:"none",cursor:"pointer",padding:"6px",display:"flex",flexDirection:"column",gap:5,flexShrink:0}}>
+          <span style={{display:"block",width:22,height:2,background:open?"transparent":"#fff",transition:"all 0.2s"}}/>
+          <span style={{display:"block",width:22,height:2,background:"#fff",transform:open?"rotate(45deg) translate(5px,5px)":"none",transition:"all 0.2s"}}/>
+          <span style={{display:"block",width:22,height:2,background:"#fff",transform:open?"rotate(-45deg) translate(5px,-5px)":"none",transition:"all 0.2s"}}/>
         </button>
       </div>
+
+      {/* Mobile dropdown menu */}
+      {open&&(
+        <div className="mobile-hamburger" style={{background:"#0F0F0F",borderTop:"1px solid #1A1A1A",padding:"8px 0 16px"}}>
+          {NAV.map(it=>(
+            <button key={it.v} onClick={()=>{onNav(it.v);setOpen(false);}}
+              style={{display:"block",width:"100%",background:"transparent",border:"none",color:"#fff",padding:"14px 24px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:16,cursor:"pointer",textAlign:"left",fontWeight:500,borderBottom:"1px solid #1A1A1A"}}>
+              {it.l}
+            </button>
+          ))}
+        </div>
+      )}
     </header>
   );
 }
@@ -206,9 +215,7 @@ function CategoryPills({ cat, setCat }) {
 function ArticleDetail({ story, onBack }) {
   return (
     <div style={{background:T.bg,minHeight:"100vh"}}>
-      <div style={{position:"sticky",top:0,zIndex:50,background:"#0F0F0F",borderBottom:"1px solid #1A1A1A",padding:`12px ${INSET}px`}}>
-        <button onClick={onBack} style={{background:"transparent",border:"1px solid rgba(255,255,255,0.3)",borderRadius:20,padding:"6px 14px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"#fff",cursor:"pointer",fontWeight:500}}>← Back</button>
-      </div>
+
       <div style={{maxWidth:720,margin:"0 auto"}}>
         <div style={{borderRadius:20,overflow:"hidden",margin:`16px ${INSET}px 0`,boxShadow:"0 2px 12px rgba(0,0,0,0.1)"}}>
           <NewsImg src={story.img} style={{width:"100%",aspectRatio:"16/9",objectFit:"cover"}}/>
@@ -246,8 +253,17 @@ function ArticleDetail({ story, onBack }) {
           </div>
 
           <div style={{background:"#F8F8F6",borderRadius:12,padding:"16px 18px",marginBottom:24,border:T.border}}>
-            <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:T.mid,letterSpacing:"0.14em",margin:"0 0 8px"}}>CATEGORY</p>
-            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.ink,lineHeight:1.6,margin:0}}>Filed under <strong>{story.cat}</strong> — one of the fastest-moving income verticals in AI services right now.</p>
+            <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:T.mid,letterSpacing:"0.14em",margin:"0 0 8px"}}>BACKGROUND — WHAT IS THIS?</p>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.ink,lineHeight:1.7,margin:0}}>{
+              ({
+                Earn:"The AI income opportunity space covers ways that individuals and small teams are monetizing AI capabilities directly — through services, products, and automation. Unlike traditional software, AI income opportunities often require no coding: the barrier is packaging and distribution, not technical skill. Early movers in each niche establish price anchors and client trust before the market saturates.",
+                Tools:"AI tools are software applications that give users access to AI capabilities — image generation, voice cloning, code completion, research automation, and more. The landscape changes weekly. Understanding which tools are production-ready versus experimental is a core skill for anyone building an AI-based service business.",
+                Models:"Large language models (LLMs) are the AI systems that power most modern AI products — ChatGPT, Claude, Gemini, and others. They're trained on massive datasets and can generate text, code, images, and more. Model updates matter because they directly change what's possible in your products and pipelines — often dramatically.",
+                Business:"Enterprise and SMB adoption of AI is accelerating. Businesses are integrating AI into operations, customer service, marketing, and decision-making. Understanding where businesses are in their AI journey tells you where the consulting, implementation, and training opportunities are.",
+                Strategy:"AI strategy covers how individuals and organizations position themselves relative to AI's advancement — which skills to build, which markets to enter, how to price services, and how to think about the next 1–3 years. Getting strategy right is more valuable than any single tool or model.",
+                Robotics:"Physical AI refers to AI systems embedded in robots and hardware — humanoid robots, autonomous vehicles, drones, and industrial machines. While still early, the companies building in this space are moving fast. Understanding physical AI is increasingly relevant for consultants advising manufacturing, logistics, and operations clients.",
+              })[story.cat] || "This category covers one of the fastest-moving areas in AI — a space where new capabilities, products, and income opportunities are emerging weekly."
+            }</p>
           </div>
 
         </div>
@@ -299,11 +315,40 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav 
 
 // ── BRIEF PAGE ────────────────────────────────────────────────────────────────
 const BRIEF_FULL=[
-  {id:"glance",label:"At a Glance", color:T.ink,       items:["Claude 4 Sonnet — faster, longer context, 20% cheaper","OpenAI image API fixes text rendering","Figure AI: 142,649 packages, 114 hours, zero humans","Copilot: 100M daily users","Gemini 2.5 Pro leads on long-document processing","Mistral runs locally — regulated industries now accessible","Sam Altman: AGI within a year"]},
-  {id:"money", label:"Money Moves", color:CATS.Earn,   items:[{h:"AI Brand Kits $500–$1,500",s:"OpenAI's text fix made this viable this week."},{h:"VA replacement $1,500 setup + $300/mo",s:"14 clients in 60 days."},{h:"ElevenLabs voice add-on $300–$500/mo",s:"$4,200 MRR in 30 days."},{h:"Copilot implementation $2K–$5K",s:"100M users means clients are already sold."},{h:"Prompt courses $397–$797",s:"Niche-specific. Build audience 5 weeks first."}]},
-  {id:"models",label:"Model Updates",color:CATS.Models, items:[{h:"Claude 4 Sonnet",s:"Switch now. Same API, better output, lower cost."},{h:"Gemini 2.5 Pro",s:"Use for any doc over 50 pages."},{h:"OpenAI o3 (API live)",s:"Premium reasoning. Route high-stakes tasks here."},{h:"Mistral local",s:"On-device frontier capability."}]},
-  {id:"tools", label:"Tools to Know",color:CATS.Tools,  items:[{h:"Cursor Background Agents",s:"Code overnight. Review in the morning."},{h:"Perplexity Pro Research",s:"10-min reports. Add analysis. Charge $2,500+."},{h:"Luma AI + Blender",s:"Photo to 3D. $500–$2K per scene."},{h:"Make.com + Claude",s:"No-code automation. Avg deal $4,800."}]},
-  {id:"watch", label:"Watch List",   color:CATS.Strategy,items:["Spot + Claude open-source — robotics consulting niche forming","EU AI Act enforcement active","AGI timeline pressure","Image-to-3D maturing — game studio market opening"]},
+  {id:"glance",label:"At a Glance",color:T.ink,items:[
+    {h:"Claude 4 Sonnet launched",s:"Anthropic released Claude 4 Sonnet — the new default model in their API. It handles 100K+ token contexts without losing coherence, costs ~20% less per token than the previous version, and is measurably faster on multi-step tasks. If your pipeline uses Claude, switching model strings is the only change needed."},
+    {h:"OpenAI image API fixes text rendering",s:"GPT-4o's image generation can now render logos, headlines, and branded text with near-zero errors — a problem that plagued every AI image tool for years. This opens the door to AI-generated marketing materials, branded mockups, and social content at scale."},
+    {h:"Figure AI: 142,649 packages sorted in 114 hours, no humans",s:"Figure AI planned an 8-hour humanoid robot demo. The robots ran for 114 consecutive hours, sorting over 142,000 packages in a real warehouse. No human intervention. This is the first documented case of humanoid robots running an industrial operation end-to-end."},
+    {h:"Copilot: 100M daily active users",s:"Microsoft confirmed GitHub Copilot now has 100 million daily active users — tripling in 12 months. The growth was driven by deep integration into Teams, Excel, and Word. This means your clients are already using AI whether they told you or not."},
+    {h:"Gemini 2.5 Pro leads on long documents",s:"Google's Gemini 2.5 Pro now tops benchmarks for processing documents over 50 pages — outperforming GPT-4o and Claude on dense technical content, legal docs, and financial reports. Practically: use Gemini for anything that requires reading large files end-to-end."},
+    {h:"Mistral runs fully on-device",s:"Mistral's latest model runs locally on consumer hardware with no internet connection required. This is significant for regulated industries (healthcare, legal, finance) where data can't leave the building — and for builders who want to offer offline-capable AI tools."},
+    {h:"Sam Altman: AGI within a year",s:"OpenAI's CEO said publicly that artificial general intelligence — AI that can do most knowledge work at human level — could arrive within a year. Whether or not the timeline is accurate, it signals that frontier AI labs believe we're in the final phase of the transition. Build now."},
+  ]},
+  {id:"money",label:"Money Moves",color:CATS.Earn,items:[
+    {h:"AI Brand Kits: $500–$1,500",s:"OpenAI's text-rendering fix made AI-generated logos and branded mockups viable for the first time. Designers and marketers are packaging this into fixed-price brand kit offers — logo variants, social templates, color palettes — and closing in under 3 hours. One designer reported $11K in her first week."},
+    {h:"VA Replacement: $1,500 setup + $300/mo",s:"Small businesses are replacing full-time virtual assistants with n8n + Claude pipelines that handle inbox triage, lead follow-up, appointment scheduling, and invoice processing. The pitch: same output, lower cost, zero sick days. One operator closed 14 clients in 60 days at this price point."},
+    {h:"ElevenLabs Voice Add-On: $300–$500/mo",s:"ElevenLabs' voice cloning now passes quality checks for client-facing audio — narration, training videos, podcast-style content. Agencies are adding it as a monthly retainer add-on on top of existing web or content packages. One agency added $4,200 MRR in 30 days with zero new hires."},
+    {h:"Copilot Implementation: $2K–$5K",s:"With 100M daily Copilot users, clients are no longer skeptical — they want someone to set it up properly. Done-for-you Copilot implementation packages covering Teams, Excel, and Outlook are closing at $2K–$5K. The sell is easy because the product already has social proof at scale."},
+    {h:"Prompt Engineering Courses: $397–$797",s:"Niche-specific prompt courses (for real estate agents, lawyers, e-commerce operators) are outperforming generic AI courses 10-to-1. The formula: build an audience in one vertical for 5 weeks, document real results, sell a course that solves one specific workflow. Price anchors at $397–$797."},
+  ]},
+  {id:"models",label:"Model Updates",color:CATS.Models,items:[
+    {h:"Claude 4 Sonnet — switch now",s:"Claude 4 Sonnet is Anthropic's new mid-tier model — positioned between Haiku (fast/cheap) and Opus (most capable). It's now the best value in the Claude lineup: 20% cheaper than Claude 3 Sonnet, faster response times, and better performance on multi-step reasoning tasks. Update your API calls from claude-3-sonnet to claude-sonnet-4-6."},
+    {h:"Gemini 2.5 Pro — use for long documents",s:"Google's Gemini 2.5 Pro has a 1M token context window and currently leads all benchmarks on long-document comprehension — legal contracts, technical manuals, financial filings. If you're building anything that needs to read and reason across large files, Gemini 2.5 Pro is the current best choice."},
+    {h:"OpenAI o3 — API now live",s:"o3 is OpenAI's reasoning-specialized model. Unlike standard models that respond immediately, o3 'thinks' before answering — working through complex logic step by step. This makes it significantly better at math, code review, legal analysis, and any task where correctness matters more than speed. Available via API now."},
+    {h:"Mistral — runs locally, no internet",s:"Mistral's latest model can run entirely on local hardware — a MacBook Pro or a small server — with no API calls, no data leaving the device. This is the first frontier-quality model that works in air-gapped environments. Opens up healthcare, government, and legal markets that were previously inaccessible."},
+  ]},
+  {id:"tools",label:"Tools to Know",color:CATS.Tools,items:[
+    {h:"Cursor Background Agents",s:"Cursor is an AI-first code editor. Background Agents is a new feature that lets you assign coding tasks that run asynchronously while you're doing other work — you come back to a completed pull request. One developer documented running 9 simultaneous client projects at $40K/month using this workflow alone."},
+    {h:"Perplexity Pro Research Mode",s:"Perplexity's Pro tier includes a research agent that autonomously searches, reads, and synthesizes information from multiple sources into a structured report — in about 10 minutes. It's not a replacement for expert analysis, but it's an excellent first draft. Consultants are using it to reduce research time by 80% and charging the same rate."},
+    {h:"Luma AI + Blender",s:"Luma AI generates 3D scenes from photos or text prompts. Combined with Blender (free, industry-standard 3D software), it creates a pipeline for architectural visualization, product renders, and game assets. Freelancers are charging $500–$2K per scene for real estate and e-commerce clients."},
+    {h:"Make.com + Claude",s:"Make.com (formerly Integromat) is a no-code automation platform similar to Zapier but with more flexibility. When connected to Claude via API, it enables complex multi-step AI workflows — intake forms that auto-respond, CRMs that write their own follow-ups, support tickets that self-triage. Average deal size for these buildouts: $4,800."},
+  ]},
+  {id:"watch",label:"Watch List",color:CATS.Strategy,items:[
+    {h:"Spot + Claude open-source",s:"Boston Dynamics' Spot robot now has an open-source Claude integration — meaning anyone can program the robot using plain English commands. This is early, but it signals a coming wave of AI-controlled physical robots that non-engineers can deploy. A robotics consulting niche is forming around this."},
+    {h:"EU AI Act enforcement begins",s:"The EU AI Act — the world's first comprehensive AI regulation — is moving into active enforcement. US companies selling to EU customers, or EU companies using AI tools, must now document their AI systems and demonstrate compliance. US consultants with AI expertise are already being hired by EU firms to help navigate this."},
+    {h:"AGI timeline pressure",s:"Multiple frontier lab leaders have stated AGI could arrive within 1–2 years. Whether or not that's accurate, it's creating urgency: businesses that don't have AI workflows established now will face a much steeper learning curve when capabilities accelerate. The window to build expertise and systems is open now."},
+    {h:"Image-to-3D maturing",s:"Tools that convert photos or 2D images into 3D models are improving rapidly. Current quality is approaching professional-grade for architectural visualization, product design, and game development. Real estate firms and e-commerce brands are the first buyers — watch for a freelance market to emerge in the next 60–90 days."},
+  ]},
 ];
 function BriefPage({ briefData, onBack }) {
   const sections = briefData?.sections || BRIEF_FULL;
@@ -311,9 +356,7 @@ function BriefPage({ briefData, onBack }) {
   const weekLabel = briefData?.week      || "May 12–18, 2025";
   return (
     <div style={{background:T.bg,paddingBottom:24}}>
-      <div style={{position:"sticky",top:0,zIndex:50,background:"#0F0F0F",borderBottom:"1px solid #1A1A1A",padding:`12px ${INSET}px`}}>
-        <button onClick={onBack} style={{background:"transparent",border:"1px solid rgba(255,255,255,0.3)",borderRadius:20,padding:"6px 14px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"#fff",cursor:"pointer",fontWeight:500}}>← Back</button>
-      </div>
+
       <div style={{background:T.ink,padding:`28px ${INSET}px 24px`}}>
         <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>WEEKLY INTELLIGENCE BRIEF · {weekLabel.toUpperCase()}</span>
         <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:22,color:"#fff",lineHeight:1.2,margin:"8px 0 0"}}>{headline}</h1>
@@ -329,7 +372,13 @@ function BriefPage({ briefData, onBack }) {
               {sec.items.map((item,i)=>
                 typeof item==="string"
                   ?<div key={i} style={{display:"flex",gap:10,alignItems:"flex-start"}}><div style={{width:5,height:5,borderRadius:"50%",background:sec.color,flexShrink:0,marginTop:7}}/><p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#2A2620",lineHeight:1.6,margin:0}}>{item}</p></div>
-                  :<div key={i} style={{background:"#F8F8F6",borderRadius:10,padding:"12px 14px",border:T.border}}><p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:T.ink,margin:"0 0 3px"}}>{item.h}</p><p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid,margin:0,lineHeight:1.5}}>{item.s}</p></div>
+                  :<div key={i} style={{background:"#F8F8F6",borderRadius:12,padding:"16px",border:T.border}}>
+                    <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8}}>
+                      <div style={{width:8,height:8,borderRadius:"50%",background:sec.color,flexShrink:0}}/>
+                      <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:14,color:T.ink,margin:0}}>{item.h}</p>
+                    </div>
+                    <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#3A3A3A",margin:0,lineHeight:1.7}}>{item.s}</p>
+                  </div>
               )}
             </div>
           </div>
@@ -388,7 +437,7 @@ function SubPage() {
       )}
 
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginTop:24}}>
-        {[{n:"10K+",l:"Subscribers"},{n:"Daily",l:"Issues"},{n:"6 AM",l:"Delivery"},{n:"Free",l:"Forever"}].map(s=>(
+        {[{n:"10K+",l:"Subscribers"},{n:"6 AM",l:"Delivery ET"},{n:"Daily",l:"Updates"},{n:"Free",l:"Forever"}].map(s=>(
           <div key={s.l} style={{background:"#F8F8F6",border:T.border,borderRadius:14,padding:"16px 14px"}}>
             <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:22,color:T.ink,margin:"0 0 2px"}}>{s.n}</p>
             <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid,margin:0}}>{s.l}</p>
@@ -400,18 +449,7 @@ function SubPage() {
 }
 
 // ── BOTTOM NAV (mobile only, hidden on desktop) ────────────────────────────────
-function BottomNav({ view, setView }) {
-  return (
-    <nav className="bottom-nav" style={{position:"fixed",bottom:0,left:0,right:0,zIndex:200,background:"#0F0F0F",borderTop:"1px solid #1A1A1A",display:"flex",paddingBottom:"env(safe-area-inset-bottom)"}}>
-      {[{id:"home",l:"Home"},{id:"brief",l:"Brief"},{id:"subscribe",l:"Subscribe"}].map(it=>(
-        <button key={it.id} onClick={()=>setView(it.id)} style={{flex:1,background:"none",border:"none",padding:"12px 0 10px",cursor:"pointer",display:"flex",flexDirection:"column",alignItems:"center",gap:3}}>
-          <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:view===it.id?"#FFFFFF":"rgba(255,255,255,0.4)",fontWeight:view===it.id?600:400}}>{it.l}</span>
-          {view===it.id&&<div style={{width:20,height:2,borderRadius:1,background:T.amber}}/>}
-        </button>
-      ))}
-    </nav>
-  );
-}
+// BottomNav removed — replaced by hamburger menu in Header
 
 // ── APP ───────────────────────────────────────────────────────────────────────
 export default function App() {
@@ -469,16 +507,16 @@ export default function App() {
         }
       `}</style>
 
-      {view!=="article"&&<Header onSubscribe={()=>setView("subscribe")} onNav={onNav}/>}
+      <Header onNav={onNav} onBack={view==="article"?onBack:null}/>
 
-      <main style={{flex:1,paddingBottom:view!=="article"?64:0}}>
+      <main style={{flex:1}}>
         {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav}/>}
-        {view==="article"   &&art&&<ArticleDetail story={art} onBack={onBack}/>}
+        {view==="article"   &&art&&<ArticleDetail story={art} onBack={onBack} onNav={onNav}/>}
         {view==="brief"     &&<BriefPage briefData={briefData} onBack={()=>setView('home')}/>}
         {view==="subscribe" &&<SubPage/>}
       </main>
 
-      {view!=="article"&&<BottomNav view={view} setView={setView}/>}
+
     </div>
   );
 }
