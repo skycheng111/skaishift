@@ -5,6 +5,7 @@
     "rss-parser": "^3.13.0",
     "@anthropic-ai/sdk": "^0.32.0",
     "@supabase/supabase-js": "^2.49.0",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "openai": "^4.0.0"
   }
 }
