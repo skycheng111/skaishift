@@ -408,7 +408,7 @@ function SubPage() {
       )}
 
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginTop:24}}>
-        {[{n:"10K+",l:"Subscribers"},{n:"6 AM",l:"Delivery ET"},{n:"Daily",l:"Updates"},{n:"Free",l:"Forever"}].map(s=>(
+        {[{n:"6 AM",l:"Delivery ET"},{n:"Daily",l:"Updates"},{n:"Zero",l:"Fluff"},{n:"Free",l:"Forever"}].map(s=>(
           <div key={s.l} style={{background:"#F8F8F6",border:T.border,borderRadius:14,padding:"16px 14px"}}>
             <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:22,color:T.ink,margin:"0 0 2px"}}>{s.n}</p>
             <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid,margin:0}}>{s.l}</p>
