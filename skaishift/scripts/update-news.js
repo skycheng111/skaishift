@@ -102,8 +102,8 @@ Return ONLY valid JSON (no markdown, no extra text):
 }`,
       }],
     });
-    const raw = msg.content[0].text.trim().replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'');
-    return JSON.parse(raw);
+    const cleaned = msg.content[0].text.trim().replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'');
+    return JSON.parse(cleaned);
   } catch (e) {
     console.warn(`  ✗ summarize: ${e.message}`);
     return null;
