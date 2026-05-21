@@ -240,6 +240,9 @@ function ArticleDetail({ story, onBack }) {
 
 
         </div>
+        <div style={{padding:`0 0 32px`}}>
+          <NewsletterCTA compact={true}/>
+        </div>
       </div>
     </div>
   );
@@ -356,7 +359,113 @@ function Marquee() {
   );
 }
 
-function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles }) {
+
+function LastWeekSection({ lastWeekArticles, onSelect, onNav }) {
+  if (!lastWeekArticles || lastWeekArticles.length === 0) return null;
+  const top2 = lastWeekArticles.slice(0,2);
+  return (
+    <div style={{background:"#F8F8F6",padding:`24px ${INSET}px`}}>
+      <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:16}}>
+        <div style={{display:"flex",alignItems:"center",gap:8}}>
+          <div style={{width:3,height:16,background:"#7C3AED",borderRadius:2}}/>
+          <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:T.ink}}>Last Week's Highlights</span>
+        </div>
+        <button onClick={()=>onNav("brief")} style={{background:"none",border:"none",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:CATS.Tools,cursor:"pointer",padding:0,fontWeight:600}}>See all →</button>
+      </div>
+      <div style={{display:"flex",flexDirection:"column",gap:12}}>
+        {top2.map((story,i)=>(
+          <div key={i} onClick={()=>onSelect(story)} style={{display:"flex",gap:12,cursor:"pointer",background:"#fff",borderRadius:12,overflow:"hidden",border:T.border,boxShadow:"0 1px 4px rgba(0,0,0,0.06)"}}>
+            <div style={{width:90,height:90,flexShrink:0}}>
+              <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+            </div>
+            <div style={{flex:1,padding:"10px 12px 10px 0",display:"flex",flexDirection:"column",gap:4,minWidth:0}}>
+              <CatBadge cat={story.cat}/>
+              <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:13,color:T.ink,lineHeight:1.3,margin:"4px 0 0",display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{story.headline}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button onClick={()=>onNav("brief")}
+        style={{marginTop:14,width:"100%",background:"#fff",border:"1px solid #7C3AED",color:"#7C3AED",borderRadius:24,padding:"10px 0",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,fontWeight:600,cursor:"pointer"}}>
+        View Full Weekly Brief
+      </button>
+    </div>
+  );
+}
+
+function LearnTeaser({ onNav }) {
+  const TOPICS = [
+    {l:"What is AI?",      d:"From scratch — no jargon"},
+    {l:"What is an LLM?",  d:"GPT, Claude, Gemini explained"},
+    {l:"Prompts & Agents", d:"How to actually use AI"},
+    {l:"Key Companies",    d:"OpenAI, Anthropic, Google & more"},
+  ];
+  return (
+    <div style={{background:"#0F0F0F",padding:`28px ${INSET}px`}}>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:6}}>
+        <div style={{width:3,height:16,background:T.amber,borderRadius:2}}/>
+        <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:"#fff"}}>New to AI?</span>
+      </div>
+      <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.55)",lineHeight:1.6,margin:"0 0 16px"}}>Everything you need to understand AI — from what it is to how people are making money with it.</p>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8,marginBottom:16}}>
+        {TOPICS.map((t,i)=>(
+          <div key={i} onClick={()=>onNav("learn")} style={{background:"rgba(255,255,255,0.06)",border:"1px solid rgba(255,255,255,0.1)",borderRadius:10,padding:"12px",cursor:"pointer"}}>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:12,color:"#fff",margin:"0 0 3px"}}>{t.l}</p>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.45)",margin:0}}>{t.d}</p>
+          </div>
+        ))}
+      </div>
+      <button onClick={()=>onNav("learn")}
+        style={{width:"100%",background:T.amber,border:"none",borderRadius:24,padding:"11px 0",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,fontWeight:600,cursor:"pointer",color:"#0F0F0F"}}>
+        Start Learning →
+      </button>
+    </div>
+  );
+}
+
+function NewsletterCTA({ compact=false }) {
+  const [email,setEmail]=useState("");
+  const [status,setStatus]=useState("idle");
+
+  const handleSubmit = async () => {
+    if(!email||status==="sending") return;
+    setStatus("sending");
+    try {
+      const res = await fetch("/.netlify/functions/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})});
+      const data = await res.json();
+      setStatus(data.success?"done":"error");
+    } catch { setStatus("error"); }
+  };
+
+  if (status==="done") return (
+    <div style={{background:compact?"#F0FDF4":"#0F0F0F",padding:`${compact?16:28}px ${INSET}px`,borderRadius:compact?12:0}}>
+      <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:compact?T.ink:"#fff",margin:"0 0 4px",textAlign:"center"}}>You're in.</p>
+      <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:compact?"#6B6B6B":"rgba(255,255,255,0.5)",margin:0,textAlign:"center"}}>First issue tomorrow at 6AM ET.</p>
+    </div>
+  );
+
+  return (
+    <div style={{background:compact?"#F8F8F6":"#0F0F0F",padding:`${compact?20:28}px ${INSET}px`,borderRadius:compact?12:0,border:compact?T.border:"none"}}>
+      {!compact&&<span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:T.amber,letterSpacing:"0.18em",display:"block",marginBottom:8}}>FREE · DAILY · 6AM ET</span>}
+      <h3 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:compact?15:19,color:compact?T.ink:"#fff",lineHeight:1.25,margin:`0 0 ${compact?10:12}px`}}>
+        {compact?"Get AI news delivered every morning.":"The AI shift in your inbox before the market opens."}
+      </h3>
+      {!compact&&<p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.5)",lineHeight:1.6,margin:"0 0 16px"}}>What moved in AI, who's making money, and what to do next. Free.</p>}
+      <div style={{display:"flex",flexDirection:"column",gap:8}}>
+        <input type="email" placeholder="your@email.com" value={email}
+          onChange={e=>setEmail(e.target.value)}
+          onKeyDown={e=>e.key==="Enter"&&handleSubmit()}
+          style={{width:"100%",background:compact?"#fff":"rgba(255,255,255,0.08)",border:compact?"1px solid #E4E4E0":"1px solid rgba(255,255,255,0.15)",borderRadius:24,color:compact?T.ink:"#fff",padding:"11px 16px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,outline:"none",boxSizing:"border-box"}}/>
+        <button onClick={handleSubmit} disabled={!email||status==="sending"}
+          style={{width:"100%",background:email?T.red:"#333",border:"none",borderRadius:24,color:"#fff",padding:"11px 0",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,cursor:email?"pointer":"not-allowed",fontWeight:600,transition:"all 0.2s"}}>
+          {status==="sending"?"Subscribing...":"Get the daily shift →"}
+        </button>
+        {status==="error"&&<p style={{textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.red,margin:0}}>Something went wrong. Try again.</p>}
+      </div>
+    </div>
+  );
+}
+function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles, lastWeekArticles }) {
   const feed = (cat==="All" ? articles.filter(a=>!a.feat) : articles.filter(a=>a.cat===cat));
   const shown = feed.slice(0,(page+1)*6);
   const more = (page+1)*6 < feed.length;
@@ -366,6 +475,8 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
       <Marquee/>
       <HeroCarousel articles={articles} onSelect={onSelect}/>
       <BriefStrip onNav={onNav} weeklyArticles={weeklyArticles}/>
+      <LastWeekSection lastWeekArticles={lastWeekArticles} onSelect={onSelect} onNav={onNav}/>
+      <LearnTeaser onNav={onNav}/>
       <div style={{background:T.bg,maxWidth:1200,margin:"0 auto"}}>
         <div style={{height:1,background:T.light,margin:`0 ${INSET}px`}}/>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:`16px ${INSET}px 6px`}}>
@@ -391,8 +502,10 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
             ?<button onClick={()=>setPage(p=>p+1)} style={{width:"100%",background:T.card,border:T.border,borderRadius:24,padding:"12px 0",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.ink,cursor:"pointer",fontWeight:500}}>Load more stories</button>
             :<p style={{textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid,margin:0}}>You're all caught up · Check back tomorrow</p>
           }
+          <div style={{height:1,background:T.light,margin:`16px 0 0`}}/>
         </div>
       </div>
+      <NewsletterCTA/>
     </div>
   );
 }
@@ -832,7 +945,7 @@ export default function App() {
       <Header onNav={onNav} onBack={view==="article"?onBack:null}/>
 
       <main style={{flex:1}}>
-        {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav} weeklyArticles={weeklyArticles}/>}
+        {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav} weeklyArticles={weeklyArticles} lastWeekArticles={lastWeekArticles}/>}
         {view==="article"   &&art&&<ArticleDetail story={art} onBack={onBack} onNav={onNav}/>}
         {view==="brief"     &&<BriefPage articles={lastWeekArticles} onBack={()=>setView('home')} onSelect={onSelect}/>}
         {view==="subscribe" &&<SubPage/>}
