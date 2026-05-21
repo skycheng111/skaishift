@@ -237,10 +237,6 @@ function ArticleDetail({ story, onBack }) {
           <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 16px"}}>The pace of AI development means early movers capture disproportionate market share. When a new capability drops — whether it's a model update, a new tool, or a platform shift — the first people to understand and package it establish price anchors, case studies, and client trust before competition appears.</p>
           <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 24px"}}>This is happening across every vertical simultaneously. Healthcare, legal, real estate, e-commerce, logistics — all are at different stages of AI adoption but all are accelerating. The gap between operators who understand what's happening and those who don't is widening every week.</p>
 
-          <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 12px"}}>The Broader Context</h2>
-          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 16px"}}>Stories like this one don't exist in isolation. Each model release, funding round, and product launch is a data point in a larger pattern: AI capability is compounding faster than most organizations can adapt. The businesses and individuals positioned to benefit most are those who are learning in public, shipping quickly, and adjusting based on what's working.</p>
-          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 24px"}}>The operators generating the most consistent income from AI have one thing in common: they picked one niche, went deep on it, and built a repeatable system before the market got crowded. That window still exists — but it narrows with each passing week.</p>
-
           <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 12px"}}>How to Act On This</h2>
           <div style={{display:"flex",flexDirection:"column",gap:12,marginBottom:24}}>
             {[
