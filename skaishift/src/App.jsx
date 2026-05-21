@@ -361,7 +361,15 @@ function Marquee() {
 
 
 function LastWeekSection({ lastWeekArticles, onSelect, onNav }) {
-  if (!lastWeekArticles || lastWeekArticles.length === 0) return null;
+  if (!lastWeekArticles || lastWeekArticles.length === 0) return (
+    <div style={{background:"#F8F8F6",padding:`24px ${INSET}px`,borderBottom:T.border}}>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8}}>
+        <div style={{width:3,height:16,background:"#7C3AED",borderRadius:2}}/>
+        <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:T.ink}}>Last Week's Highlights</span>
+      </div>
+      <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>Last week's top stories will appear here every Monday.</p>
+    </div>
+  );
   const top2 = lastWeekArticles.slice(0,2);
   return (
     <div style={{background:"#F8F8F6",padding:`24px ${INSET}px`}}>
