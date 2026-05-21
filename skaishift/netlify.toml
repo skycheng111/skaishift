@@ -8,11 +8,19 @@
   to = "/index.html"
   status = 200
 
+# Tell browsers: always revalidate news.json, never serve stale cache
 [[headers]]
   for = "/news.json"
   [headers.values]
-    Cache-Control = "public, max-age=3600"
+    Cache-Control = "no-cache, must-revalidate"
 
-# Environment variables needed (set in Netlify dashboard):
-# RESEND_API_KEY       — from resend.com
-# RESEND_AUDIENCE_ID   — from Resend Audiences tab
+[[headers]]
+  for = "/weekly-brief.json"
+  [headers.values]
+    Cache-Control = "no-cache, must-revalidate"
+
+# JS/CSS assets are hashed by Vite so can be cached long-term
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
