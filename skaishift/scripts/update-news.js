@@ -71,7 +71,7 @@ async function summarize(raw, index) {
   try {
     const msg = await claude.messages.create({
       model: 'claude-haiku-4-5-20251001',
-      max_tokens: 800,
+      max_tokens: 1200,
       messages: [{
         role: 'user',
         content: `You write in-depth news articles for skAIshift — a daily AI news platform for entrepreneurs earning money with AI.
@@ -86,7 +86,7 @@ Return ONLY valid JSON (no markdown, no extra text):
   "id": "a${index}",
   "cat": "<Earn|Tools|Models|Business|Strategy|Robotics>",
   "headline": "<punchy max-90-char headline, lead with the most surprising fact>",
-  "body": "<Write 5-7 detailed sentences. Cover: exactly what was announced or released, who made it, what specific capability or improvement it brings, what numbers or benchmarks are involved, how it compares to what existed before, and what the immediate real-world impact is. Be specific — name the model version, the feature, the company, the metric. No filler phrases. Readers want to fully understand the story from this field alone.>",
+  "body": "<Write as many sentences as needed — 5 minimum, no maximum. Cover everything relevant: exactly what was announced or released, who made it, what specific capability or improvement it brings, what numbers or benchmarks are involved, how it compares to what existed before, the real-world impact, and any important context or caveats. Be specific — name the model version, the feature, the company, the metric. The goal is for a reader to fully understand the story without needing to click the original source. More detail is always better than less.>",
   "build": "<Write 2-3 sentences. Describe specific, concrete ways people are making money from this RIGHT NOW. Include dollar amounts, client types, and timeframes. Name the exact service or offer being sold. Make it immediately actionable.>",
   "unsplash_query": "<3-4 specific words to find a relevant photo, e.g. 'artificial intelligence robot arm' or 'startup office funding'>",
   "significance": <integer 1-10. MUST be 9-10 for: ANY new model release or version (GPT, Claude, Gemini, Mistral, DeepSeek, Llama, etc), new AI capability (video editing, real-time voice, coding agents, multimodal), API launch, or benchmark record. 7-8 for funding over $100M or major product launches. 5-6 for business/strategy news. 1-4 for minor updates. When in doubt about a model release, rate it 9>,
