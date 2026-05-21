@@ -857,6 +857,66 @@ function LearnPage({ onNav }) {
   );
 }
 
+
+function Footer({ onNav }) {
+  const year = new Date().getFullYear();
+  return (
+    <footer style={{background:"#0F0F0F",borderTop:"1px solid #1A1A1A",padding:"32px 20px 40px"}}>
+      <div style={{maxWidth:1200,margin:"0 auto"}}>
+
+        {/* Logo + tagline */}
+        <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:8}}>
+          <img src={LOGO_SRC} alt="skAIshift" style={{height:32,width:"auto",display:"block"}}/>
+          <span style={{fontFamily:"'Barlow Semi Condensed',sans-serif",fontSize:18,letterSpacing:"0.15em",fontWeight:500,lineHeight:1}}>
+            <span style={{color:"#fff"}}>SK</span><span style={{color:T.amber}}>AI</span><span style={{color:"#fff"}}>SHIFT</span>
+          </span>
+        </div>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"rgba(255,255,255,0.4)",margin:"0 0 24px",lineHeight:1.5}}>
+          Daily AI intelligence for entrepreneurs and builders.<br/>Delivered every morning at 6AM ET.
+        </p>
+
+        {/* Nav links */}
+        <div style={{display:"flex",flexWrap:"wrap",gap:"8px 24px",marginBottom:24}}>
+          {[
+            {l:"Home",v:"home"},
+            {l:"Weekly Brief",v:"brief"},
+            {l:"Learn",v:"learn"},
+            {l:"Subscribe",v:"subscribe"},
+          ].map(item=>(
+            <button key={item.v} onClick={()=>onNav(item.v)}
+              style={{background:"none",border:"none",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.6)",cursor:"pointer",padding:0,fontWeight:500}}>
+              {item.l}
+            </button>
+          ))}
+        </div>
+
+        {/* Divider */}
+        <div style={{height:1,background:"#1A1A1A",marginBottom:20}}/>
+
+        {/* Legal row */}
+        <div style={{display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"space-between",gap:12}}>
+          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.3)",margin:0}}>
+            © {year} skAIshift. All rights reserved.
+          </p>
+          <div style={{display:"flex",gap:16,flexWrap:"wrap"}}>
+            {[
+              {l:"Privacy Policy", href:"#privacy"},
+              {l:"Terms of Service", href:"#terms"},
+              {l:"Contact", href:"mailto:hello@skaishift.com"},
+            ].map(link=>(
+              <a key={link.l} href={link.href}
+                style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.35)",textDecoration:"none"}}>
+                {link.l}
+              </a>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
+}
+
 // ── APP ───────────────────────────────────────────────────────────────────────
 export default function App() {
   const [view,setView]=useState("home");
@@ -960,6 +1020,7 @@ export default function App() {
         {view==="learn"      &&<LearnPage onNav={onNav}/>}
       </main>
 
+      <Footer onNav={onNav}/>
 
     </div>
   );
