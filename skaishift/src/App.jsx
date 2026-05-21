@@ -321,40 +321,49 @@ const BRIEF_FULL=[
     {h:"Image-to-3D maturing",s:"Tools that convert photos or 2D images into 3D models are improving rapidly. Current quality is approaching professional-grade for architectural visualization, product design, and game development. Real estate firms and e-commerce brands are the first buyers — watch for a freelance market to emerge in the next 60–90 days."},
   ]},
 ];
-function BriefPage({ briefData, onBack }) {
-  const sections = briefData?.sections || BRIEF_FULL;
-  const headline  = briefData?.headline  || "7 Shifts That Will Define the Next 90 Days";
-  const weekLabel = briefData?.week      || "May 12–18, 2025";
+function BriefPage({ weeklyArticles, onSelect }) {
+  const articles = weeklyArticles || [];
   return (
-    <div style={{background:T.bg,paddingBottom:24}}>
-
+    <div style={{background:T.bg,paddingBottom:40}}>
       <div style={{background:T.ink,padding:`28px ${INSET}px 24px`}}>
-        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>WEEKLY INTELLIGENCE BRIEF · {weekLabel.toUpperCase()}</span>
-        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:22,color:"#fff",lineHeight:1.2,margin:"8px 0 0"}}>{headline}</h1>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>WEEKLY INTELLIGENCE BRIEF</span>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:22,color:"#fff",lineHeight:1.2,margin:"8px 0 6px"}}>The Most Important AI Stories This Week</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.5)",margin:0}}>Top stories ranked by significance — updated daily</p>
       </div>
-      <div style={{maxWidth:800,margin:"0 auto"}}>
-        {sections.map(sec=>(
-          <div key={sec.id} style={{padding:`18px ${INSET}px`,borderBottom:T.border}}>
-            <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:14}}>
-              <div style={{width:10,height:10,borderRadius:2,background:sec.color}}/>
-              <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:15,color:T.ink}}>{sec.label}</span>
+
+      {articles.length === 0 ? (
+        <div style={{padding:`40px ${INSET}px`,textAlign:"center"}}>
+          <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 8px"}}>Building this week's brief...</p>
+          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>Check back after 6AM ET — stories are added daily.</p>
+        </div>
+      ) : (
+        <div style={{maxWidth:800,margin:"0 auto"}}>
+          {articles.map((story,i)=>(
+            <div key={story.id||i} onClick={()=>onSelect(story)}
+              style={{cursor:"pointer",borderBottom:T.border}}>
+              <div style={{position:"relative",height:"clamp(180px,45vw,260px)",overflow:"hidden"}}>
+                <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
+                <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(0,0,0,0.75) 0%,transparent 55%)"}}/>
+                <div style={{position:"absolute",top:12,left:12,background:i<3?T.red:"rgba(0,0,0,0.55)",backdropFilter:"blur(6px)",borderRadius:20,padding:"3px 10px"}}>
+                  <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:11,color:"#fff",letterSpacing:"0.08em"}}>#{i+1} THIS WEEK</span>
+                </div>
+                <div style={{position:"absolute",bottom:10,left:12}}>
+                  <CatBadge cat={story.cat}/>
+                </div>
+              </div>
+              <div style={{padding:`14px ${INSET}px`}}>
+                <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:6}}>
+                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.source}</span>
+                  <span style={{color:T.light}}>·</span>
+                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.time} ago</span>
+                </div>
+                <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:17,color:T.ink,lineHeight:1.3,margin:"0 0 8px"}}>{story.headline}</h2>
+                <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#4A4A4A",lineHeight:1.65,margin:0,WebkitLineClamp:3,display:"-webkit-box",WebkitBoxOrient:"vertical",overflow:"hidden"}}>{story.body}</p>
+              </div>
             </div>
-            <div style={{display:"flex",flexDirection:"column",gap:10}}>
-              {sec.items.map((item,i)=>
-                typeof item==="string"
-                  ?<div key={i} style={{display:"flex",gap:10,alignItems:"flex-start"}}><div style={{width:5,height:5,borderRadius:"50%",background:sec.color,flexShrink:0,marginTop:7}}/><p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#2A2620",lineHeight:1.6,margin:0}}>{item}</p></div>
-                  :<div key={i} style={{background:"#F8F8F6",borderRadius:12,padding:"16px",border:T.border}}>
-                    <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:8}}>
-                      <div style={{width:8,height:8,borderRadius:"50%",background:sec.color,flexShrink:0}}/>
-                      <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:14,color:T.ink,margin:0}}>{item.h}</p>
-                    </div>
-                    <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#3A3A3A",margin:0,lineHeight:1.7}}>{item.s}</p>
-                  </div>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -622,6 +631,7 @@ export default function App() {
   const [art,setArt]=useState(null);
   const [newsData,setNewsData]=useState(FALLBACK);
   const [briefData,setBriefData]=useState(null);
+  const [weeklyArticles,setWeeklyArticles]=useState([]);
 
   // Load fresh news.json + weekly-brief.json (updated daily by GitHub Actions)
   useEffect(()=>{
@@ -632,6 +642,10 @@ export default function App() {
     fetch("/weekly-brief.json")
       .then(r=>{ if(r.ok) return r.json(); throw new Error(); })
       .then(d=>{ if(d?.sections?.length) setBriefData(d); })
+      .catch(()=>{});
+    fetch("/weekly-articles.json")
+      .then(r=>{ if(r.ok) return r.json(); throw new Error(); })
+      .then(d=>{ if(d?.articles?.length) setWeeklyArticles(d.articles); })
       .catch(()=>{});
   },[]);
 
@@ -682,7 +696,7 @@ export default function App() {
       <main style={{flex:1}}>
         {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav}/>}
         {view==="article"   &&art&&<ArticleDetail story={art} onBack={onBack} onNav={onNav}/>}
-        {view==="brief"     &&<BriefPage briefData={briefData} onBack={()=>setView('home')}/>}
+        {view==="brief"     &&<BriefPage briefData={briefData} weeklyArticles={weeklyArticles} onBack={()=>setView('home')} onSelect={onSelect}/>}
         {view==="subscribe" &&<SubPage/>}
         {view==="learn"      &&<LearnPage onNav={onNav}/>}
       </main>
