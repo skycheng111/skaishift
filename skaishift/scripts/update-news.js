@@ -18,6 +18,9 @@ const { createClient } = require('@supabase/supabase-js');
 const fs        = require('fs');
 const path      = require('path');
 
+// Use node-fetch for HTTP requests (works in all Node versions on GitHub Actions)
+const nodeFetch = (...args) => import('node-fetch').then(({default: f}) => f(...args));
+
 // ── ENV ────────────────────────────────────────────────────────────────────────
 const ANTHROPIC_KEY   = process.env.ANTHROPIC_API_KEY;
 const UNSPLASH_KEY    = process.env.UNSPLASH_ACCESS_KEY;
@@ -50,19 +53,14 @@ const FALLBACK_IMGS = {
   Robotics: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&h=500&fit=crop&auto=format',
 };
 
-// ── STEP 1: FETCH RSS — AbortController hard-kills hanging connections ────────
+// ── STEP 1: FETCH RSS — timeout via Promise.race + parseURL ──────────────────
 async function fetchFeed(feed) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 8000);
+  const p = new Parser({ timeout: 8000, headers: { 'User-Agent': 'Mozilla/5.0 (compatible; skAIshift/1.0)' } });
   try {
-    const res = await fetch(feed.url, {
-      signal: controller.signal,
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; skAIshift/1.0)' }
-    });
-    const xml = await res.text();
-    clearTimeout(timer);
-    const p = new Parser();
-    const result = await p.parseString(xml);
+    const result = await Promise.race([
+      p.parseURL(feed.url),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 9000))
+    ]);
     return result.items.slice(0, 5).map(item => ({
       title:   item.title || '',
       summary: (item.contentSnippet || item.content || '').slice(0, 600),
@@ -70,7 +68,6 @@ async function fetchFeed(feed) {
       link:    item.link || '',
     }));
   } catch (e) {
-    clearTimeout(timer);
     console.warn(`  ✗ ${feed.source}: ${e.message}`);
     return [];
   }
@@ -118,7 +115,7 @@ async function getUnsplashImage(query, cat) {
   if (!UNSPLASH_KEY) return FALLBACK_IMGS[cat] || FALLBACK_IMGS.Tools;
   try {
     const url = `https://api.unsplash.com/photos/random?query=${encodeURIComponent(query)}&orientation=landscape&content_filter=high&client_id=${UNSPLASH_KEY}`;
-    const res  = await fetch(url);
+    const res  = await nodeFetch(url);
     const data = await res.json();
     if (data?.urls?.regular) {
       return data.urls.regular + '&w=900&h=500&fit=crop';
@@ -238,14 +235,14 @@ async function sendEmail(subject, html, label) {
     return;
   }
   try {
-    const res = await fetch('https://api.resend.com/broadcasts', {
+    const res = await nodeFetch('https://api.resend.com/broadcasts', {
       method: 'POST',
       headers: { 'Authorization': `Bearer ${RESEND_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ audience_id: RESEND_AUDIENCE, from: FROM_EMAIL, subject, html }),
     });
     const bc = await res.json();
     if (bc.id) {
-      await fetch(`https://api.resend.com/broadcasts/${bc.id}/send`, {
+      await nodeFetch(`https://api.resend.com/broadcasts/${bc.id}/send`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${RESEND_KEY}`, 'Content-Type': 'application/json' },
         body: '{}',
