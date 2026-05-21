@@ -25,7 +25,7 @@ const SUPABASE_URL    = process.env.SUPABASE_URL;
 const SUPABASE_KEY    = process.env.SUPABASE_SERVICE_KEY;
 const RESEND_KEY      = process.env.RESEND_API_KEY;
 const RESEND_AUDIENCE = process.env.RESEND_AUDIENCE_ID;
-const ALERT_EMAIL     = 'sky@brizski.com';
+const ALERT_EMAIL     = 'skycheng11104@gmail.com';
 const FROM_EMAIL      = 'skAIshift <news@skaishift.com>';
 
 const claude   = new Anthropic({ apiKey: ANTHROPIC_KEY, timeout: 25000, maxRetries: 0 });
