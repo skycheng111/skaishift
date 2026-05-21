@@ -315,8 +315,9 @@ function buildWeeklyEmail(brief) {
 // ── MAIN ──────────────────────────────────────────────────────────────────────
 async function main() {
   const now      = new Date();
-  const today    = now.toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
-  const todayISO = now.toISOString().split('T')[0];
+  const etNow    = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  const today    = etNow.toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
+  const todayISO = etNow.toISOString().split('T')[0];
   const isSunday = now.getDay() === 0;
 
   console.log(`\nskAIshift pipeline — ${today}${isSunday ? ' (SUNDAY: weekly brief)' : ''}`);
