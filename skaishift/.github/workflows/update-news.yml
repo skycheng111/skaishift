@@ -15,7 +15,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install dependencies
         working-directory: scripts
@@ -31,13 +31,13 @@ jobs:
           RESEND_AUDIENCE_ID:   ${{ secrets.RESEND_AUDIENCE_ID }}
         run: node scripts/update-news.js
 
-      - name: Commit news.json and weekly-brief.json
+      - name: Commit updated files
         run: |
           git config user.name "skAIshift Bot"
           git config user.email "bot@skaishift.com"
-          git add public/news.json public/weekly-brief.json
+          git add public/news.json public/weekly-articles.json public/last-week-articles.json public/weekly-brief.json
           git diff --staged --quiet || git commit -m "Daily update $(date -u '+%Y-%m-%d')"
           git push
 
       - name: Trigger Netlify redeploy
-        run: curl -s -X POST "${{ secrets.NETLIFY_DEPLOY_HOOK }}" | echo "Netlify deploy triggered"
+        run: curl -s -X POST "${{ secrets.NETLIFY_DEPLOY_HOOK }}"
