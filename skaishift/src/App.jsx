@@ -246,6 +246,48 @@ function ArticleDetail({ story, onBack }) {
 }
 
 // ── HOME VIEW (responsive: mobile stacked, desktop 2-col) ─────────────────────
+function Marquee() {
+  const ITEMS = [
+    "⚡ AI News — Daily at 6AM ET",
+    "🧠 Learn AI from scratch",
+    "📬 Free newsletter",
+    "📊 Weekly intelligence brief",
+    "🔥 Model releases & updates",
+    "💰 How to make money with AI",
+    "🤖 LLMs, Agents & Tools",
+    "🌍 Covering OpenAI, Google, Anthropic & more",
+    "📈 AI business & strategy",
+    "🚀 No fluff. Just shifts.",
+  ];
+  const repeated = [...ITEMS, ...ITEMS]; // duplicate for seamless loop
+  return (
+    <div style={{
+      background:"#0F0F0F",
+      borderBottom:"1px solid #1A1A1A",
+      overflow:"hidden",
+      padding:"9px 0",
+    }}>
+      <div className="marquee-track">
+        {repeated.map((item,i)=>(
+          <span key={i} style={{
+            fontFamily:"'IBM Plex Sans',sans-serif",
+            fontSize:12,
+            color:"rgba(255,255,255,0.7)",
+            whiteSpace:"nowrap",
+            padding:"0 32px",
+            display:"flex",
+            alignItems:"center",
+            gap:8,
+          }}>
+            {item}
+            <span style={{color:"#333",marginLeft:32}}>|</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles }) {
   const feed = (cat==="All" ? articles.filter(a=>!a.feat) : articles.filter(a=>a.cat===cat));
   const shown = feed.slice(0,(page+1)*6);
@@ -253,6 +295,7 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
 
   return (
     <div>
+      <Marquee/>
       <HeroCarousel articles={articles} onSelect={onSelect}/>
       <BriefStrip onNav={onNav} weeklyArticles={weeklyArticles}/>
       <div style={{background:T.bg,maxWidth:1200,margin:"0 auto"}}>
@@ -670,6 +713,18 @@ export default function App() {
         *{box-sizing:border-box;margin:0;padding:0;}
         img{display:block;} button{-webkit-tap-highlight-color:transparent;}
         ::-webkit-scrollbar{display:none;}
+        @keyframes marquee{
+          0%{transform:translateX(0)}
+          100%{transform:translateX(-50%)}
+        }
+        .marquee-track{
+          display:flex;
+          width:max-content;
+          animation:marquee 30s linear infinite;
+        }
+        .marquee-track:hover{
+          animation-play-state:paused;
+        }
 
         /* Desktop layout */
         @media(min-width:768px){
