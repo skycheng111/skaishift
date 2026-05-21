@@ -233,28 +233,7 @@ function ArticleDetail({ story, onBack }) {
             <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,color:"#3A3020",lineHeight:1.75,margin:0}}>{story.build}</p>
           </div>
 
-          <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 12px"}}>Why This Matters</h2>
-          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 16px"}}>The pace of AI development means early movers capture disproportionate market share. When a new capability drops — whether it's a model update, a new tool, or a platform shift — the first people to understand and package it establish price anchors, case studies, and client trust before competition appears.</p>
-          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 24px"}}>This is happening across every vertical simultaneously. Healthcare, legal, real estate, e-commerce, logistics — all are at different stages of AI adoption but all are accelerating. The gap between operators who understand what's happening and those who don't is widening every week.</p>
 
-          <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 12px"}}>How to Act On This</h2>
-          <div style={{display:"flex",flexDirection:"column",gap:12,marginBottom:24}}>
-            {[
-              "Map this development to your current clients or skills. Where does it intersect with work you're already doing?",
-              "Check what others are charging for related services — price anchors exist even in brand new markets.",
-              "Build a minimum viable offer this week: one deliverable, one price, one target client type.",
-              "Document your process from the first client — that documentation becomes your scalable system and your marketing.",
-              "Revisit this category in 30 days. The second wave of opportunity often comes after the initial hype settles."
-            ].map((step,i)=>(
-              <div key={i} style={{display:"flex",gap:14,alignItems:"flex-start"}}>
-                <div style={{width:26,height:26,borderRadius:"50%",background:T.ink,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Bebas Neue',sans-serif",fontSize:13,flexShrink:0,marginTop:1}}>{i+1}</div>
-                <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,color:"#2A2620",lineHeight:1.75,margin:0}}>{step}</p>
-              </div>
-            ))}
-          </div>
-
-          <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:18,color:T.ink,margin:"0 0 12px"}}>What to Watch Next</h2>
-          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,color:"#2A2620",lineHeight:1.85,margin:"0 0 24px"}}>Developments in the <strong>{story.cat}</strong> space tend to cluster. When one significant shift happens, related announcements typically follow within days or weeks. Check back tomorrow and filter by <strong>{story.cat}</strong> in the Stories feed to track the full picture as it unfolds.</p>
 
 
 
