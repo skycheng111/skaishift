@@ -317,7 +317,10 @@ async function main() {
   const now      = new Date();
   const etNow    = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
   const today    = etNow.toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
-  const todayISO = etNow.toISOString().split('T')[0];
+  const yyyy     = etNow.getFullYear();
+  const mm       = String(etNow.getMonth() + 1).padStart(2, '0');
+  const dd       = String(etNow.getDate()).padStart(2, '0');
+  const todayISO = `${yyyy}-${mm}-${dd}`;
   const isSunday = now.getDay() === 0;
 
   console.log(`\nskAIshift pipeline — ${today}${isSunday ? ' (SUNDAY: weekly brief)' : ''}`);
