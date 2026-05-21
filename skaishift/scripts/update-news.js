@@ -30,7 +30,7 @@ const RESEND_KEY      = process.env.RESEND_API_KEY;
 const RESEND_AUDIENCE = process.env.RESEND_AUDIENCE_ID;
 const FROM_EMAIL      = 'skAIshift <news@skaishift.com>';
 
-const claude   = new Anthropic({ apiKey: ANTHROPIC_KEY });
+const claude   = new Anthropic({ apiKey: ANTHROPIC_KEY, timeout: 25000, maxRetries: 0 });
 const parser   = new Parser({ timeout: 12000 });
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -101,7 +101,9 @@ Return ONLY valid JSON (no markdown, no extra text):
   "source": "${raw.source}"
 }`,
       }],
-    });
+    }),
+      new Promise((_,reject) => setTimeout(() => reject(new Error('Claude timeout')), 28000))
+    ]);
     const cleaned = msg.content[0].text.trim().replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'');
     return JSON.parse(cleaned);
   } catch (e) {
