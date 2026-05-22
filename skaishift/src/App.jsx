@@ -1181,20 +1181,82 @@ function Footer({ onNav }) {
           </p>
           <div style={{display:"flex",gap:16,flexWrap:"wrap"}}>
             {[
-              {l:"Privacy Policy", href:"#privacy"},
-              {l:"Terms of Service", href:"#terms"},
+              {l:"Privacy Policy", onClick:()=>onNav("privacy")},
+              {l:"Terms of Service", onClick:()=>onNav("terms")},
               {l:"Contact", href:"mailto:hello@skaishift.com"},
             ].map(link=>(
-              <a key={link.l} href={link.href}
-                style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.35)",textDecoration:"none"}}>
-                {link.l}
-              </a>
+              link.href
+                ? <a key={link.l} href={link.href} style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.35)",textDecoration:"none"}}>{link.l}</a>
+                : <button key={link.l} onClick={link.onClick} style={{background:"none",border:"none",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.35)",cursor:"pointer",padding:0}}>{link.l}</button>
             ))}
           </div>
         </div>
 
       </div>
     </footer>
+  );
+}
+
+
+function PrivacyPage() {
+  return (
+    <div style={{background:T.bg,paddingBottom:60,maxWidth:800,margin:"0 auto"}}>
+      <div style={{background:T.ink,padding:`32px ${INSET}px 24px`}}>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>LEGAL</span>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:24,color:"#fff",margin:"8px 0 0"}}>Privacy Policy</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"rgba(255,255,255,0.4)",margin:"8px 0 0"}}>Last updated: May 22, 2026</p>
+      </div>
+      <div style={{padding:`24px ${INSET}px`}}>
+        {[
+          {h:"Overview",b:"skAIshift ('we', 'us', or 'our') operates skaishift.com. This Privacy Policy explains how we collect, use, and protect your information when you visit our site or subscribe to our newsletter. By using skAIshift, you agree to the terms described below."},
+          {h:"Information We Collect",b:"We collect your email address when you voluntarily subscribe to our newsletter. We also collect standard usage data through Google Analytics, including pages visited, time on site, device type, and approximate geographic location. We do not collect your name, payment information, or any other personally identifying information."},
+          {h:"How We Use Your Information",b:"Your email address is used solely to send you our daily AI news newsletter and related updates. Usage data collected through Google Analytics is used to understand how visitors interact with the site so we can improve content and experience. We do not sell, rent, or share your personal information with third parties for marketing purposes."},
+          {h:"Email & Newsletter",b:"By subscribing, you consent to receive daily emails from skAIshift at news@skaishift.com. You can unsubscribe at any time by clicking the unsubscribe link at the bottom of any email. We use Resend to manage our email list and broadcasts."},
+          {h:"Cookies & Tracking",b:"We use Google Analytics which sets cookies to track site usage. These cookies are anonymous and do not identify you personally. You can opt out of Google Analytics tracking by using the Google Analytics Opt-out Browser Add-on available at tools.google.com/dlpage/gaoptout."},
+          {h:"Data Retention",b:"We retain your email address for as long as you are subscribed to our newsletter. Upon unsubscribing, your email is removed from our active mailing list. Analytics data is retained per Google Analytics default settings."},
+          {h:"Third-Party Services",b:"skAIshift uses the following third-party services: Google Analytics (usage tracking), Resend (email delivery), Netlify (hosting), Supabase (data storage), Unsplash (images), and Anthropic/OpenAI APIs (content generation). Each of these services has its own privacy policy."},
+          {h:"Children's Privacy",b:"skAIshift is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will delete it."},
+          {h:"Changes to This Policy",b:"We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of the site after changes constitutes acceptance of the updated policy."},
+          {h:"Contact",b:"Questions about this Privacy Policy? Email us at hello@skaishift.com."},
+        ].map((s,i)=>(
+          <div key={i} style={{marginBottom:24}}>
+            <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:T.ink,margin:"0 0 8px"}}>{s.h}</h2>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#3A3A3A",lineHeight:1.85,margin:0}}>{s.b}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TermsPage() {
+  return (
+    <div style={{background:T.bg,paddingBottom:60,maxWidth:800,margin:"0 auto"}}>
+      <div style={{background:T.ink,padding:`32px ${INSET}px 24px`}}>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>LEGAL</span>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:24,color:"#fff",margin:"8px 0 0"}}>Terms of Service</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"rgba(255,255,255,0.4)",margin:"8px 0 0"}}>Last updated: May 22, 2026</p>
+      </div>
+      <div style={{padding:`24px ${INSET}px`}}>
+        {[
+          {h:"Acceptance of Terms",b:"By accessing or using skaishift.com, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the site. We reserve the right to modify these terms at any time, and your continued use of the site constitutes acceptance of any changes."},
+          {h:"Use of the Site",b:"skAIshift is an AI news and learning platform. You may use the site for personal, non-commercial purposes. You agree not to scrape, reproduce, or redistribute our content without written permission. You agree not to use the site in any way that could damage, disable, or impair it."},
+          {h:"Content & Accuracy",b:"skAIshift publishes AI-generated and editorially reviewed news summaries. While we strive for accuracy, we make no warranties that content is complete, current, or error-free. Content is provided for informational purposes only and should not be relied upon as professional, legal, financial, or technical advice. Always verify important information with primary sources."},
+          {h:"Newsletter",b:"By subscribing to our newsletter, you agree to receive daily emails from skAIshift. You can unsubscribe at any time. We are not responsible for emails that go to spam or are blocked by your email provider."},
+          {h:"Intellectual Property",b:"All content on skaishift.com — including articles, summaries, design, and branding — is the property of skAIshift unless otherwise noted. Images sourced from Unsplash are used under the Unsplash License. You may not reproduce, distribute, or create derivative works from our content without written permission."},
+          {h:"Third-Party Links",b:"skAIshift links to third-party news sources and websites. We are not responsible for the content, accuracy, or privacy practices of those sites. Links do not constitute endorsement."},
+          {h:"Disclaimer of Warranties",b:"skAIshift is provided 'as is' without warranties of any kind, express or implied. We do not warrant that the site will be uninterrupted, error-free, or free of viruses. Your use of the site is at your own risk."},
+          {h:"Limitation of Liability",b:"To the fullest extent permitted by law, skAIshift and its operators shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the site or reliance on its content."},
+          {h:"Governing Law",b:"These Terms are governed by the laws of the Commonwealth of Pennsylvania, United States, without regard to conflict of law principles."},
+          {h:"Contact",b:"Questions about these Terms? Email us at hello@skaishift.com."},
+        ].map((s,i)=>(
+          <div key={i} style={{marginBottom:24}}>
+            <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:T.ink,margin:"0 0 8px"}}>{s.h}</h2>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#3A3A3A",lineHeight:1.85,margin:0}}>{s.b}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -1350,6 +1412,8 @@ export default function App() {
         {view==="brief"     &&<BriefPage articles={lastWeekArticles} onBack={()=>setView('home')} onSelect={onSelect}/>}
         {view==="subscribe" &&<SubPage/>}
         {view==="learn"      &&<LearnPage onNav={onNav}/>}
+        {view==="privacy"    &&<PrivacyPage/>}
+        {view==="terms"      &&<TermsPage/>}
       </main>
 
       <Footer onNav={onNav}/>
