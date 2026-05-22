@@ -567,7 +567,7 @@ function LiveSection() {
   const STATUS_DOT   = { operational:"#22C55E", degraded_performance:"#F59E0B", partial_outage:"#F59E0B", major_outage:"#EF4444", unknown:"#9CA3AF" };
   const STATUS_LABEL = { operational:"Operational", degraded_performance:"Degraded", partial_outage:"Partial Outage", major_outage:"Outage", unknown:"Unknown" };
 
-  const TABS = [{id:"hn",label:"HN Trending"},{id:"status",label:"Model Status"},{id:"gh",label:"GitHub"}];
+  const TABS = [{id:"hn",label:"HN Trending"},{id:"gh",label:"GitHub Trending"}];
 
   return (
     <div style={{background:T.bg,padding:`16px ${INSET}px`}}>
@@ -596,6 +596,9 @@ function LiveSection() {
         {/* HN Tab */}
         {tab==="hn"&&(
           <div>
+            <div style={{padding:"12px 16px",background:"#FFFBF0",borderBottom:T.border}}>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"#3A3020",margin:0,lineHeight:1.6}}><strong>Hacker News</strong> is where AI developers, researchers, and founders discuss what's happening in tech — often before it hits mainstream news. These are the AI-related posts getting the most traction right now, ranked by upvotes.</p>
+            </div>
             {hnLoading ? (
               <div style={{padding:"20px",textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid}}>Loading Hacker News...</div>
             ) : hnPosts.length===0 ? (
@@ -623,31 +626,14 @@ function LiveSection() {
           </div>
         )}
 
-        {/* Status Tab */}
-        {tab==="status"&&(
-          <div style={{background:"#fff"}}>
-            {statusLoad ? (
-              <div style={{padding:"20px",textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid}}>Checking statuses...</div>
-            ) : Object.values(statuses).map((s,i)=>(
-              <div key={i} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"13px 16px",borderBottom:T.border}}>
-                <div style={{display:"flex",alignItems:"center",gap:10}}>
-                  <div style={{width:9,height:9,borderRadius:"50%",background:STATUS_DOT[s.status]||STATUS_DOT.unknown,flexShrink:0}}/>
-                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:T.ink}}>{s.name}</span>
-                </div>
-                <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:STATUS_COLOR[s.status]||STATUS_COLOR.unknown,fontWeight:600,background:s.status==="operational"?"#F0FDF4":"#FFF7ED",padding:"2px 8px",borderRadius:20}}>
-                  {STATUS_LABEL[s.status]||"Unknown"}
-                </span>
-              </div>
-            ))}
-            <div style={{padding:"10px 16px",textAlign:"center"}}>
-              <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:T.mid}}>Updates every 5 minutes · Click a provider to view their full status page</span>
-            </div>
-          </div>
-        )}
+
 
         {/* GitHub Tab */}
         {tab==="gh"&&(
           <div>
+            <div style={{padding:"12px 16px",background:"#FFFBF0",borderBottom:T.border}}>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"#3A3020",margin:0,lineHeight:1.6}}><strong>GitHub</strong> is where developers publish their AI projects and tools as open-source code. These are the most-starred AI repositories created this week — a signal of what builders are actively working on and excited about right now.</p>
+            </div>
             {ghLoading ? (
               <div style={{padding:"20px",textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid}}>Loading GitHub trending...</div>
             ) : ghRepos.length===0 ? (
