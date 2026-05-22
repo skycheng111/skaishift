@@ -1164,6 +1164,8 @@ export default function App() {
   const [cat,setCat]=useState("All");
   const [page,setPage]=useState(0);
   const [art,setArt]=useState(null);
+  const swipeStartX = React.useRef(null);
+  const swipeStartY = React.useRef(null);
   const [newsData,setNewsData]=useState(FALLBACK);
   const [showPopup,setShowPopup]=useState(false);
   const [briefData,setBriefData]=useState(null);
@@ -1199,8 +1201,9 @@ export default function App() {
     return ()=>clearTimeout(t);
   },[]);
 
-  const onSelect=a=>{setArt(a);setView("article");};
-  const onBack=()=>{setArt(null);setView("home");};
+  const [prevView,setPrevView]=useState("home");
+  const onSelect=a=>{setPrevView(view);setArt(a);setView("article");};
+  const onBack=()=>{setArt(null);setView(prevView);};
   const onNav=v=>setView(v);
 
   return (
