@@ -270,7 +270,7 @@ function buildDailyEmail(articles, date) {
   <div style="background:#E8001C;height:4px;"></div>
   <div style="background:#F4F4F0;padding:16px 0;">${cards}</div>
   <div style="background:#0F0F0F;border-radius:0 0 16px 16px;padding:24px 28px;text-align:center;">
-    <a href="https://skaishift.netlify.app" style="display:inline-block;background:#E8001C;color:#fff;text-decoration:none;padding:12px 28px;border-radius:24px;font-size:13px;font-weight:700;">READ TODAY'S FULL BRIEF →</a>
+    <a href="https://skaishift.com" style="display:inline-block;background:#E8001C;color:#fff;text-decoration:none;padding:12px 28px;border-radius:24px;font-size:13px;font-weight:700;">READ TODAY'S FULL BRIEF →</a>
     <p style="color:rgba(255,255,255,0.3);font-size:10px;margin:16px 0 0;">You subscribed to skAIshift · <a href="{{unsubscribe_url}}" style="color:rgba(255,255,255,0.3);">Unsubscribe</a></p>
   </div>
 </div></body></html>`;
