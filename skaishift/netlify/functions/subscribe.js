@@ -86,7 +86,7 @@ function welcomeEmail(email) {
     <div style="background:#F0FDF4;border-left:3px solid #16A34A;border-radius:8px;padding:16px;margin-bottom:20px;">
       <p style="font-size:11px;color:#16A34A;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 6px;">WHAT TO EXPECT</p>
       <p style="color:#2A2620;font-size:13px;line-height:1.7;margin:0;">
-        Top stories of the day · Model updates that change your pipeline · Real income moves from builders in the AI space · Weekly brief with everything that matters
+        Top stories of the day · Model updates that change your pipeline · Real income moves from builders in the AI space
       </p>
     </div>
     <p style="color:#6B6B6B;font-size:13px;line-height:1.7;margin:0;">See you at 6AM.</p>
