@@ -1236,8 +1236,9 @@ export default function App() {
   // Scroll to top whenever view changes
   useEffect(()=>{ window.scrollTo(0,0); },[view]);
 
-  // Newsletter popup after 10 seconds (only once per session)
+  // Newsletter popup after 10 seconds — only once per browser (stored in localStorage)
   useEffect(()=>{
+    if(localStorage.getItem("skaishift_popup_seen")) return;
     const t = setTimeout(()=>setShowPopup(true), 10000);
     return ()=>clearTimeout(t);
   },[]);
@@ -1337,7 +1338,10 @@ export default function App() {
         .desktop-nav{ display:none; }
       `}</style>
 
-      {showPopup&&<NewsletterPopup onClose={()=>setShowPopup(false)}/>}
+      {showPopup&&<NewsletterPopup onClose={()=>{
+        setShowPopup(false);
+        localStorage.setItem("skaishift_popup_seen","1");
+      }}/>}
       <Header onNav={onNav} onBack={view==="article"?onBack:null}/>
 
       <main style={{flex:1}}>
