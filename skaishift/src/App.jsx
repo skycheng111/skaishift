@@ -667,6 +667,44 @@ function LiveSection() {
   );
 }
 
+
+function APIPriceMarquee() {
+  const PRICES = [
+    { model:"GPT-5.4",            input:"$1.75", output:"$14.00", color:"#10A37F" },
+    { model:"GPT-4.1 Nano",       input:"$0.10", output:"$0.40",  color:"#10A37F" },
+    { model:"Claude Opus 4.6",    input:"$5.00", output:"$25.00", color:"#CC785C" },
+    { model:"Claude Sonnet 4.6",  input:"$3.00", output:"$15.00", color:"#CC785C" },
+    { model:"Claude Haiku 4.5",   input:"$0.80", output:"$4.00",  color:"#CC785C" },
+    { model:"Gemini 3.1 Pro",     input:"$2.00", output:"$12.00", color:"#4285F4" },
+    { model:"Gemini 2.5 Flash",   input:"$0.15", output:"$0.60",  color:"#4285F4" },
+    { model:"Grok 4.1",           input:"$0.20", output:"$0.50",  color:"#fff"    },
+    { model:"DeepSeek V4 Flash",  input:"$0.14", output:"$0.28",  color:"#4D9EFF" },
+    { model:"Mistral Large 3",    input:"$2.00", output:"$6.00",  color:"#FF7000" },
+    { model:"Llama 3.3 70B",      input:"$0.88", output:"$0.88",  color:"#0866FF" },
+  ];
+  const repeated = [...PRICES, ...PRICES];
+  return (
+    <div style={{background:"#0F0F0F",borderTop:"1px solid #1A1A1A",borderBottom:"1px solid #1A1A1A",padding:"10px 0",overflow:"hidden"}}>
+      <div style={{display:"flex",alignItems:"center",gap:0,marginBottom:4,padding:"0 16px 6px"}}>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:"rgba(255,255,255,0.35)",letterSpacing:"0.18em"}}>LIVE API PRICES — PER 1M TOKENS</span>
+        <span style={{marginLeft:8,fontFamily:"'IBM Plex Sans',sans-serif",fontSize:9,color:"rgba(255,255,255,0.2)"}}>IN / OUT</span>
+      </div>
+      <div className="marquee-track" style={{animationDuration:"40s"}}>
+        {repeated.map((p,i)=>(
+          <span key={i} style={{display:"inline-flex",alignItems:"center",gap:8,padding:"0 24px",whiteSpace:"nowrap"}}>
+            <span style={{width:6,height:6,borderRadius:"50%",background:p.color,flexShrink:0,display:"inline-block"}}/>
+            <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:12,color:"#fff"}}>{p.model}</span>
+            <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"#22C55E"}}>{p.input}</span>
+            <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:"rgba(255,255,255,0.25)"}}>/</span>
+            <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"#F87171"}}>{p.output}</span>
+            <span style={{color:"#1A1A1A",marginLeft:16}}>|</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles, lastWeekArticles }) {
   const feed = (cat==="All" ? articles.filter(a=>!a.feat) : articles.filter(a=>a.cat===cat));
   const shown = feed.slice(0,(page+1)*6);
@@ -706,6 +744,7 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
           <div style={{height:1,background:T.light,margin:`16px 0 0`}}/>
         </div>
       </div>
+      <APIPriceMarquee/>
       <LiveSection/>
       <LearnTeaser onNav={onNav}/>
       <NewsletterCTA/>
