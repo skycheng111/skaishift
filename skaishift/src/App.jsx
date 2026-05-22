@@ -917,8 +917,8 @@ function SubPage() {
       <div style={{maxWidth:560,margin:"0 auto",padding:`0 ${INSET}px`}}>
 
         {/* Stats row */}
-        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8,margin:"20px 0"}}>
-          {[{n:"6AM",l:"Daily delivery"},{n:"Free",l:"Forever"},{n:"0",l:"Fluff"},{n:"2min",l:"Read time"}].map(s=>(
+        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,margin:"20px 0"}}>
+          {[{n:"6AM",l:"Daily delivery"},{n:"Free",l:"Forever"},{n:"2min",l:"Read time"}].map(s=>(
             <div key={s.l} style={{background:"#fff",border:T.border,borderRadius:12,padding:"14px 10px",textAlign:"center"}}>
               <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:T.ink,margin:"0 0 2px"}}>{s.n}</p>
               <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:T.mid,margin:0}}>{s.l}</p>
@@ -930,13 +930,13 @@ function SubPage() {
         <div style={{background:"#fff",border:T.border,borderRadius:16,padding:"20px",marginBottom:16}}>
           <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:T.red,letterSpacing:"0.18em",margin:"0 0 14px"}}>WHAT YOU GET EVERY MORNING</p>
           {[
-            {icon:"🔥", title:"Top AI Stories", desc:"The 2-3 most important things that happened in AI overnight — explained in plain English."},
-            {icon:"💰", title:"What People Are Building", desc:"Concrete examples of how builders and entrepreneurs are making money with AI right now."},
-            {icon:"⚡", title:"Model & Tool Updates", desc:"Every major model release, API change, and tool launch that affects your workflow."},
-            {icon:"📊", title:"Weekly Intelligence Brief", desc:"Every Monday, a full recap of last week's most important shifts — all in one place."},
+            {title:"Top AI Stories", desc:"The 2-3 most important things that happened in AI overnight — explained in plain English."},
+            {title:"What People Are Building", desc:"Concrete examples of how builders and entrepreneurs are making money with AI right now."},
+            {title:"Model & Tool Updates", desc:"Every major model release, API change, and tool launch that affects your workflow."},
+            {title:"Weekly Intelligence Brief", desc:"Every Monday, a full recap of last week's most important shifts — all in one place."},
           ].map((item,i)=>(
             <div key={i} style={{display:"flex",gap:12,marginBottom:i<3?16:0}}>
-              <span style={{fontSize:18,flexShrink:0,lineHeight:1.4}}>{item.icon}</span>
+              <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:13,color:T.red,flexShrink:0,lineHeight:1.4,minWidth:16}}>{i+1}</span>
               <div>
                 <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:T.ink,margin:"0 0 2px"}}>{item.title}</p>
                 <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid,lineHeight:1.6,margin:0}}>{item.desc}</p>
@@ -954,7 +954,7 @@ function SubPage() {
           </div>
         ) : status==="already" ? (
           <div style={{background:"#FFFBF0",border:"1px solid #F5A623",borderRadius:16,padding:"28px",textAlign:"center"}}>
-            <p style={{fontSize:32,margin:"0 0 8px"}}>👋</p>
+            
             <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:T.ink,margin:"0 0 6px"}}>You're already subscribed.</p>
             <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>We'll see you at 6AM ET every morning.</p>
           </div>
