@@ -13,10 +13,17 @@
     <!-- Apple Safari / iOS home screen icon -->
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="apple-touch-icon-precomposed" href="/favicon.png" />
-
-    <!-- Prevent Safari from using a cached version -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="skAIshift" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NEK1KBMSPB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NEK1KBMSPB');
+    </script>
   </head>
   <body>
     <div id="root"></div>
