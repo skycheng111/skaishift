@@ -670,24 +670,66 @@ function LiveSection() {
 
 
 function APIPriceMarquee() {
-  const PRICES = [
-    { model:"GPT-5.4",            input:"$1.75", output:"$14.00", color:"#10A37F" },
-    { model:"GPT-4.1 Nano",       input:"$0.10", output:"$0.40",  color:"#10A37F" },
-    { model:"Claude Opus 4.6",    input:"$5.00", output:"$25.00", color:"#CC785C" },
-    { model:"Claude Sonnet 4.6",  input:"$3.00", output:"$15.00", color:"#CC785C" },
-    { model:"Claude Haiku 4.5",   input:"$0.80", output:"$4.00",  color:"#CC785C" },
-    { model:"Gemini 3.1 Pro",     input:"$2.00", output:"$12.00", color:"#4285F4" },
-    { model:"Gemini 2.5 Flash",   input:"$0.15", output:"$0.60",  color:"#4285F4" },
-    { model:"Grok 4.1",           input:"$0.20", output:"$0.50",  color:"#fff"    },
-    { model:"DeepSeek V4 Flash",  input:"$0.14", output:"$0.28",  color:"#4D9EFF" },
-    { model:"Mistral Large 3",    input:"$2.00", output:"$6.00",  color:"#FF7000" },
-    { model:"Llama 3.3 70B",      input:"$0.88", output:"$0.88",  color:"#0866FF" },
+  // Fallback prices if API fails
+  const FALLBACK = [
+    { model:"GPT-5.4",           input:"$1.75", output:"$14.00", color:"#10A37F" },
+    { model:"GPT-4.1 Nano",      input:"$0.10", output:"$0.40",  color:"#10A37F" },
+    { model:"Claude Sonnet 4.6", input:"$3.00", output:"$15.00", color:"#CC785C" },
+    { model:"Claude Haiku 4.5",  input:"$1.00", output:"$5.00",  color:"#CC785C" },
+    { model:"Gemini 2.5 Flash",  input:"$0.30", output:"$2.50",  color:"#4285F4" },
+    { model:"Gemini 2.5 Pro",    input:"$1.25", output:"$10.00", color:"#4285F4" },
+    { model:"DeepSeek Chat V3",  input:"$0.20", output:"$0.77",  color:"#4D9EFF" },
+    { model:"Mistral Large",     input:"$2.00", output:"$6.00",  color:"#FF7000" },
+    { model:"Llama 3.3 70B",     input:"$0.10", output:"$0.32",  color:"#0866FF" },
   ];
-  const repeated = [...PRICES, ...PRICES];
+
+  // OpenRouter model IDs → display names + colors
+  const MODEL_MAP = [
+    { id:"openai/gpt-5.4",                      name:"GPT-5.4",           color:"#10A37F" },
+    { id:"openai/gpt-4.1-nano",                 name:"GPT-4.1 Nano",      color:"#10A37F" },
+    { id:"anthropic/claude-sonnet-4.6",         name:"Claude Sonnet 4.6", color:"#CC785C" },
+    { id:"anthropic/claude-haiku-4.5",          name:"Claude Haiku 4.5",  color:"#CC785C" },
+    { id:"anthropic/claude-opus-4",             name:"Claude Opus 4",     color:"#CC785C" },
+    { id:"google/gemini-2.5-flash",             name:"Gemini 2.5 Flash",  color:"#4285F4" },
+    { id:"google/gemini-2.5-pro",               name:"Gemini 2.5 Pro",    color:"#4285F4" },
+    { id:"deepseek/deepseek-chat-v3-0324",      name:"DeepSeek Chat V3",  color:"#4D9EFF" },
+    { id:"mistralai/mistral-large-2411",        name:"Mistral Large",     color:"#FF7000" },
+    { id:"meta-llama/llama-3.3-70b-instruct",  name:"Llama 3.3 70B",     color:"#0866FF" },
+  ];
+
+  const [prices, setPrices] = useState(FALLBACK);
+  const [live, setLive] = useState(false);
+
+  useEffect(()=>{
+    const fetchPrices = async () => {
+      try {
+        const res = await fetch("https://openrouter.ai/api/v1/models");
+        const data = await res.json();
+        const modelMap = {};
+        (data.data||[]).forEach(m=>{ modelMap[m.id]=m; });
+        const updated = MODEL_MAP.map(entry=>{
+          const m = modelMap[entry.id];
+          if(!m?.pricing) return null;
+          const inp = (parseFloat(m.pricing.prompt||0)*1000000);
+          const out = (parseFloat(m.pricing.completion||0)*1000000);
+          return { model:entry.name, color:entry.color, input:`$${inp.toFixed(2)}`, output:`$${out.toFixed(2)}` };
+        }).filter(Boolean);
+        if(updated.length>0){ setPrices(updated); setLive(true); }
+      } catch(e){ console.warn("Price fetch failed, using fallback"); }
+    };
+    fetchPrices();
+    const interval = setInterval(fetchPrices, 60*60*1000); // refresh hourly
+    return ()=>clearInterval(interval);
+  },[]);
+
+  const repeated = [...prices, ...prices];
   return (
     <div style={{background:"#0F0F0F",borderTop:"1px solid #1A1A1A",borderBottom:"1px solid #1A1A1A",padding:"10px 0",overflow:"hidden"}}>
       <div style={{display:"flex",alignItems:"center",gap:0,marginBottom:4,padding:"0 16px 6px"}}>
-        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:"rgba(255,255,255,0.35)",letterSpacing:"0.18em"}}>LIVE API PRICES — PER 1M TOKENS</span>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:"rgba(255,255,255,0.35)",letterSpacing:"0.18em"}}>
+          {live?"LIVE":"CACHED"} API PRICES — PER 1M TOKENS
+        </span>
+        {live&&<span style={{marginLeft:8,width:5,height:5,borderRadius:"50%",background:"#22C55E",display:"inline-block"}}/>}
         <span style={{marginLeft:8,fontFamily:"'IBM Plex Sans',sans-serif",fontSize:9,color:"rgba(255,255,255,0.2)"}}>IN / OUT</span>
       </div>
       <div className="marquee-track" style={{animationDuration:"40s"}}>
