@@ -75,6 +75,7 @@ function Header({ onNav, onBack }) {
               <span style={{color:T.amber}}>AI</span>
               <span style={{color:"#FFFFFF"}}>SHIFT</span>
             </span>
+            <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,fontWeight:300,color:"rgba(255,255,255,0.3)",letterSpacing:"0.02em",whiteSpace:"nowrap",marginLeft:2}}>— AI News & Learning</span>
           </div>
         </div>
 
