@@ -678,7 +678,6 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
       <HeroCarousel articles={articles} onSelect={onSelect}/>
       <BriefStrip onNav={onNav} weeklyArticles={weeklyArticles}/>
       <LastWeekSection lastWeekArticles={lastWeekArticles} onSelect={onSelect} onNav={onNav}/>
-      <LearnTeaser onNav={onNav}/>
       <LiveSection/>
       <div style={{background:T.bg,maxWidth:1200,margin:"0 auto"}}>
         <div style={{height:1,background:T.light,margin:`0 ${INSET}px`}}/>
@@ -708,6 +707,7 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
           <div style={{height:1,background:T.light,margin:`16px 0 0`}}/>
         </div>
       </div>
+      <LearnTeaser onNav={onNav}/>
       <NewsletterCTA/>
     </div>
   );
