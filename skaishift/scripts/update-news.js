@@ -398,6 +398,7 @@ async function main() {
   }
 
   console.log('\n✓ Pipeline complete.\n');
+  process.exit(0); // Force exit — Supabase realtime client keeps process alive otherwise
 }
 
 main().catch(async e => {
