@@ -882,7 +882,7 @@ function BriefPage({ articles, onSelect }) {
 // ── SUBSCRIBE PAGE (wired to Web3Forms → captures real emails) ─────────────────
 function SubPage() {
   const [email,setEmail]=useState("");
-  const [status,setStatus]=useState("idle"); // idle | sending | done | error
+  const [status,setStatus]=useState("idle");
 
   const handleSubmit = async () => {
     if(!email || status==="sending") return;
@@ -901,39 +901,85 @@ function SubPage() {
   };
 
   return (
-    <div style={{padding:`32px ${INSET}px`,maxWidth:560,margin:"0 auto"}}>
-      <div style={{background:T.ink,borderRadius:20,padding:"28px 20px",marginBottom:24}}>
-        <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em",margin:"0 0 8px"}}>FREE · DAILY · 6AM ET</p>
-        <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:24,color:"#fff",lineHeight:1.15,margin:"0 0 12px"}}>The AI shift in your inbox before the market opens.</h2>
-        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.6)",lineHeight:1.65,margin:0}}>What moved in AI, who's making money, and what you should do next. Every morning. Free.</p>
+    <div style={{background:T.bg,paddingBottom:60}}>
+
+      {/* Hero */}
+      <div style={{background:T.ink,padding:`40px ${INSET}px 36px`,textAlign:"center"}}>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>FREE · DAILY · 6AM ET</span>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:28,color:"#fff",lineHeight:1.2,margin:"12px 0 14px"}}>
+          The AI shift in your inbox before the market opens.
+        </h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,color:"rgba(255,255,255,0.55)",lineHeight:1.7,margin:"0 auto",maxWidth:420}}>
+          What moved in AI, who's making money from it, and what you should do next. Plain English. Every morning. Free.
+        </p>
       </div>
 
-      {status==="done" ? (
-        <div style={{background:"#F0FDF4",border:"1px solid #16A34A",borderRadius:16,padding:"24px",textAlign:"center"}}>
-          <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:T.ink,margin:"0 0 6px"}}>You're in.</p>
-          <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>First issue hits your inbox tomorrow at 6AM ET.</p>
-        </div>
-      ) : (
-        <div style={{display:"flex",flexDirection:"column",gap:10}}>
-          <input type="email" placeholder="your@email.com" value={email}
-            onChange={e=>setEmail(e.target.value)}
-            onKeyDown={e=>e.key==="Enter"&&handleSubmit()}
-            style={{width:"100%",background:"#F8F8F6",border:T.border,borderRadius:24,color:T.ink,padding:"14px 18px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,outline:"none",boxSizing:"border-box"}}/>
-          <button onClick={handleSubmit} disabled={!email||status==="sending"}
-            style={{width:"100%",background:email&&status!=="sending"?T.ink:T.light,border:"none",borderRadius:24,color:email&&status!=="sending"?"#fff":T.mid,padding:"14px 0",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,cursor:email&&status!=="sending"?"pointer":"not-allowed",fontWeight:600,transition:"all 0.2s"}}>
-            {status==="sending" ? "Subscribing..." : "Get the daily shift"}
-          </button>
-          {status==="error"&&<p style={{textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.red,margin:0}}>Something went wrong. Try again.</p>}
-        </div>
-      )}
+      <div style={{maxWidth:560,margin:"0 auto",padding:`0 ${INSET}px`}}>
 
-      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginTop:24}}>
-        {[{n:"6 AM",l:"Delivery ET"},{n:"Daily",l:"Updates"},{n:"Zero",l:"Fluff"},{n:"Free",l:"Forever"}].map(s=>(
-          <div key={s.l} style={{background:"#F8F8F6",border:T.border,borderRadius:14,padding:"16px 14px"}}>
-            <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:22,color:T.ink,margin:"0 0 2px"}}>{s.n}</p>
-            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid,margin:0}}>{s.l}</p>
+        {/* Stats row */}
+        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8,margin:"20px 0"}}>
+          {[{n:"6AM",l:"Daily delivery"},{n:"Free",l:"Forever"},{n:"0",l:"Fluff"},{n:"2min",l:"Read time"}].map(s=>(
+            <div key={s.l} style={{background:"#fff",border:T.border,borderRadius:12,padding:"14px 10px",textAlign:"center"}}>
+              <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:T.ink,margin:"0 0 2px"}}>{s.n}</p>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:T.mid,margin:0}}>{s.l}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* What you get */}
+        <div style={{background:"#fff",border:T.border,borderRadius:16,padding:"20px",marginBottom:16}}>
+          <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:T.red,letterSpacing:"0.18em",margin:"0 0 14px"}}>WHAT YOU GET EVERY MORNING</p>
+          {[
+            {icon:"🔥", title:"Top AI Stories", desc:"The 2-3 most important things that happened in AI overnight — explained in plain English."},
+            {icon:"💰", title:"What People Are Building", desc:"Concrete examples of how builders and entrepreneurs are making money with AI right now."},
+            {icon:"⚡", title:"Model & Tool Updates", desc:"Every major model release, API change, and tool launch that affects your workflow."},
+            {icon:"📊", title:"Weekly Intelligence Brief", desc:"Every Monday, a full recap of last week's most important shifts — all in one place."},
+          ].map((item,i)=>(
+            <div key={i} style={{display:"flex",gap:12,marginBottom:i<3?16:0}}>
+              <span style={{fontSize:18,flexShrink:0,lineHeight:1.4}}>{item.icon}</span>
+              <div>
+                <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:T.ink,margin:"0 0 2px"}}>{item.title}</p>
+                <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid,lineHeight:1.6,margin:0}}>{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Form */}
+        {status==="done" ? (
+          <div style={{background:"#F0FDF4",border:"1px solid #16A34A",borderRadius:16,padding:"28px",textAlign:"center"}}>
+            <p style={{fontSize:32,margin:"0 0 8px"}}>✓</p>
+            <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:T.ink,margin:"0 0 6px"}}>You're in.</p>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>First issue hits your inbox tomorrow at 6AM ET.</p>
           </div>
-        ))}
+        ) : status==="already" ? (
+          <div style={{background:"#FFFBF0",border:"1px solid #F5A623",borderRadius:16,padding:"28px",textAlign:"center"}}>
+            <p style={{fontSize:32,margin:"0 0 8px"}}>👋</p>
+            <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:T.ink,margin:"0 0 6px"}}>You're already subscribed.</p>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>We'll see you at 6AM ET every morning.</p>
+          </div>
+        ) : (
+          <div style={{background:T.ink,borderRadius:16,padding:"24px",marginBottom:16}}>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.6)",margin:"0 0 14px",textAlign:"center"}}>Join for free. Unsubscribe anytime.</p>
+            <div style={{display:"flex",flexDirection:"column",gap:10}}>
+              <input type="email" placeholder="your@email.com" value={email}
+                onChange={e=>setEmail(e.target.value)}
+                onKeyDown={e=>e.key==="Enter"&&handleSubmit()}
+                style={{width:"100%",background:"rgba(255,255,255,0.08)",border:"1px solid rgba(255,255,255,0.15)",borderRadius:24,color:"#fff",padding:"14px 18px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,outline:"none",boxSizing:"border-box"}}/>
+              <button onClick={handleSubmit} disabled={!email||status==="sending"}
+                style={{width:"100%",background:email?T.red:"#333",border:"none",borderRadius:24,color:"#fff",padding:"14px 0",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:14,cursor:email?"pointer":"not-allowed",fontWeight:600,transition:"all 0.2s"}}>
+                {status==="sending" ? "Subscribing..." : "Get the daily shift →"}
+              </button>
+              {status==="error"&&<p style={{textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.red,margin:0}}>Something went wrong. Try again.</p>}
+            </div>
+          </div>
+        )}
+
+        {/* From line */}
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid,textAlign:"center",lineHeight:1.6,margin:"12px 0 0"}}>
+          Sent from <strong>news@skaishift.com</strong> · No spam, ever · <span style={{color:T.red}}>Unsubscribe anytime</span>
+        </p>
+
       </div>
     </div>
   );
