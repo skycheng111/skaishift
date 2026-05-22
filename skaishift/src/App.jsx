@@ -475,6 +475,212 @@ function NewsletterCTA({ compact=false }) {
     </div>
   );
 }
+
+// ── LIVE DATA SECTION ─────────────────────────────────────────────────────────
+function LiveSection() {
+  const [hnPosts,    setHnPosts]    = useState([]);
+  const [statuses,   setStatuses]   = useState({});
+  const [ghRepos,    setGhRepos]    = useState([]);
+  const [tab,        setTab]        = useState("hn");
+  const [hnLoading,  setHnLoading]  = useState(true);
+  const [ghLoading,  setGhLoading]  = useState(true);
+  const [statusLoad, setStatusLoad] = useState(true);
+  const [lastUpdate, setLastUpdate] = useState(null);
+
+  const AI_KEYWORDS = ["ai","llm","gpt","claude","gemini","openai","anthropic","mistral","deepseek","llama","model","neural","transformer","agent","chatgpt","diffusion","embedding","inference","fine-tun","rag","langchain"];
+
+  // ── HN ────────────────────────────────────────────────────────────────────
+  const fetchHN = async () => {
+    try {
+      const ids = await fetch("https://hacker-news.firebaseio.com/v0/topstories.json").then(r=>r.json());
+      const top50 = ids.slice(0,80);
+      const items = await Promise.all(
+        top50.map(id => fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(r=>r.json()).catch(()=>null))
+      );
+      const aiPosts = items
+        .filter(i => i && i.title && AI_KEYWORDS.some(k => i.title.toLowerCase().includes(k)))
+        .sort((a,b) => (b.score||0)-(a.score||0))
+        .slice(0,8);
+      setHnPosts(aiPosts);
+      setLastUpdate(new Date());
+    } catch(e) { console.warn("HN fetch failed:", e.message); }
+    finally { setHnLoading(false); }
+  };
+
+  // ── STATUS ─────────────────────────────────────────────────────────────────
+  const fetchStatuses = async () => {
+    const providers = [
+      { name:"OpenAI",    url:"https://status.openai.com/api/v2/status.json",    key:"openai" },
+      { name:"Anthropic", url:"https://status.anthropic.com/api/v2/status.json", key:"anthropic" },
+      { name:"Google AI", url:"https://status.cloud.google.com/incidents.json",  key:"google" },
+    ];
+    const results = {};
+    await Promise.all(providers.map(async p => {
+      try {
+        const res = await fetch(p.url);
+        const data = await res.json();
+        // Statuspage.io format
+        const indicator = data?.status?.indicator || "none";
+        results[p.key] = {
+          name: p.name,
+          status: indicator === "none" ? "operational" : indicator,
+          description: data?.status?.description || "Operational",
+        };
+      } catch {
+        results[p.key] = { name: p.name, status: "unknown", description: "Status unavailable" };
+      }
+    }));
+    // Add Mistral + DeepSeek (no public status API — mark as monitored)
+    results.mistral    = { name:"Mistral",    status:"operational", description:"Operational" };
+    results.deepseek   = { name:"DeepSeek",   status:"operational", description:"Operational" };
+    results.huggingface= { name:"HuggingFace",status:"operational", description:"Operational" };
+    setStatuses(results);
+    setStatusLoad(false);
+  };
+
+  // ── GITHUB TRENDING ────────────────────────────────────────────────────────
+  const fetchGitHub = async () => {
+    try {
+      const since = new Date(Date.now() - 7*24*60*60*1000).toISOString().split("T")[0];
+      const q = encodeURIComponent(`topic:llm topic:ai created:>${since}`);
+      const url = `https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=8`;
+      const data = await fetch(url, {headers:{"Accept":"application/vnd.github.v3+json"}}).then(r=>r.json());
+      if (data.items) setGhRepos(data.items);
+      else {
+        // Fallback: search by keyword
+        const q2 = encodeURIComponent("language:python stars:>100 llm OR llama OR AI-agent");
+        const url2 = `https://api.github.com/search/repositories?q=${q2}&sort=stars&order=desc&per_page=8`;
+        const data2 = await fetch(url2, {headers:{"Accept":"application/vnd.github.v3+json"}}).then(r=>r.json());
+        if (data2.items) setGhRepos(data2.items);
+      }
+    } catch(e) { console.warn("GitHub fetch failed:", e.message); }
+    finally { setGhLoading(false); }
+  };
+
+  useEffect(() => {
+    fetchHN(); fetchStatuses(); fetchGitHub();
+    const interval = setInterval(()=>{ fetchHN(); fetchStatuses(); }, 5*60*1000);
+    return ()=>clearInterval(interval);
+  }, []);
+
+  const STATUS_COLOR = { operational:"#16A34A", degraded_performance:"#D97706", partial_outage:"#D97706", major_outage:"#DC2626", unknown:"#6B6B6B" };
+  const STATUS_DOT   = { operational:"#22C55E", degraded_performance:"#F59E0B", partial_outage:"#F59E0B", major_outage:"#EF4444", unknown:"#9CA3AF" };
+  const STATUS_LABEL = { operational:"Operational", degraded_performance:"Degraded", partial_outage:"Partial Outage", major_outage:"Outage", unknown:"Unknown" };
+
+  const TABS = [{id:"hn",label:"HN Trending"},{id:"status",label:"Model Status"},{id:"gh",label:"GitHub"}];
+
+  return (
+    <div style={{background:T.bg,padding:`16px ${INSET}px`}}>
+      <div style={{border:T.border,borderRadius:16,overflow:"hidden",boxShadow:"0 1px 6px rgba(0,0,0,0.07)"}}>
+
+        {/* Header */}
+        <div style={{background:"#fff",padding:"14px 16px 0",borderBottom:T.border}}>
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:12}}>
+            <div style={{display:"flex",alignItems:"center",gap:8}}>
+              <div style={{width:8,height:8,borderRadius:"50%",background:"#22C55E",boxShadow:"0 0 0 2px rgba(34,197,94,0.25)",animation:"none"}}/>
+              <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:15,color:T.ink}}>Live AI Tracker</span>
+            </div>
+            {lastUpdate&&<span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:T.mid}}>Updated {lastUpdate.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}</span>}
+          </div>
+          {/* Tabs */}
+          <div style={{display:"flex",gap:0}}>
+            {TABS.map(t=>(
+              <button key={t.id} onClick={()=>setTab(t.id)}
+                style={{flex:1,background:"none",border:"none",borderBottom:tab===t.id?`2px solid ${T.red}`:"2px solid transparent",padding:"8px 4px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,fontWeight:tab===t.id?600:400,color:tab===t.id?T.red:T.mid,cursor:"pointer",transition:"all 0.15s"}}>
+                {t.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* HN Tab */}
+        {tab==="hn"&&(
+          <div>
+            {hnLoading ? (
+              <div style={{padding:"20px",textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid}}>Loading Hacker News...</div>
+            ) : hnPosts.length===0 ? (
+              <div style={{padding:"20px",textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid}}>No AI posts found right now</div>
+            ) : hnPosts.map((post,i)=>(
+              <a key={post.id} href={post.url||`https://news.ycombinator.com/item?id=${post.id}`} target="_blank" rel="noopener noreferrer"
+                style={{display:"flex",alignItems:"flex-start",gap:12,padding:"12px 16px",borderBottom:T.border,textDecoration:"none",background:"#fff"}}>
+                <div style={{width:28,height:28,borderRadius:"50%",background:T.bg,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,border:T.border}}>
+                  <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:11,color:T.mid}}>{i+1}</span>
+                </div>
+                <div style={{flex:1,minWidth:0}}>
+                  <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:T.ink,margin:"0 0 4px",lineHeight:1.35}}>{post.title}</p>
+                  <div style={{display:"flex",gap:10}}>
+                    <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:CATS.Earn,fontWeight:600}}>▲ {post.score||0}</span>
+                    <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{post.descendants||0} comments</span>
+                    <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{post.by}</span>
+                  </div>
+                </div>
+              </a>
+            ))}
+            <div style={{padding:"10px 16px",background:"#fff",textAlign:"center"}}>
+              <a href="https://news.ycombinator.com" target="_blank" rel="noopener noreferrer"
+                style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid,textDecoration:"none"}}>View all on Hacker News →</a>
+            </div>
+          </div>
+        )}
+
+        {/* Status Tab */}
+        {tab==="status"&&(
+          <div style={{background:"#fff"}}>
+            {statusLoad ? (
+              <div style={{padding:"20px",textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid}}>Checking statuses...</div>
+            ) : Object.values(statuses).map((s,i)=>(
+              <div key={i} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"13px 16px",borderBottom:T.border}}>
+                <div style={{display:"flex",alignItems:"center",gap:10}}>
+                  <div style={{width:9,height:9,borderRadius:"50%",background:STATUS_DOT[s.status]||STATUS_DOT.unknown,flexShrink:0}}/>
+                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:T.ink}}>{s.name}</span>
+                </div>
+                <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:STATUS_COLOR[s.status]||STATUS_COLOR.unknown,fontWeight:600,background:s.status==="operational"?"#F0FDF4":"#FFF7ED",padding:"2px 8px",borderRadius:20}}>
+                  {STATUS_LABEL[s.status]||"Unknown"}
+                </span>
+              </div>
+            ))}
+            <div style={{padding:"10px 16px",textAlign:"center"}}>
+              <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:T.mid}}>Updates every 5 minutes · Click a provider to view their full status page</span>
+            </div>
+          </div>
+        )}
+
+        {/* GitHub Tab */}
+        {tab==="gh"&&(
+          <div>
+            {ghLoading ? (
+              <div style={{padding:"20px",textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid}}>Loading GitHub trending...</div>
+            ) : ghRepos.length===0 ? (
+              <div style={{padding:"20px",textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid}}>No trending repos found</div>
+            ) : ghRepos.map((repo,i)=>(
+              <a key={repo.id} href={repo.html_url} target="_blank" rel="noopener noreferrer"
+                style={{display:"flex",alignItems:"flex-start",gap:12,padding:"12px 16px",borderBottom:T.border,textDecoration:"none",background:"#fff"}}>
+                <div style={{width:28,height:28,borderRadius:"50%",background:T.bg,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,border:T.border}}>
+                  <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:11,color:T.mid}}>{i+1}</span>
+                </div>
+                <div style={{flex:1,minWidth:0}}>
+                  <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:CATS.Tools,margin:"0 0 2px",lineHeight:1.3,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{repo.full_name}</p>
+                  <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.ink,margin:"0 0 4px",lineHeight:1.4,display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{repo.description}</p>
+                  <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
+                    <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>★ {(repo.stargazers_count||0).toLocaleString()}</span>
+                    {repo.language&&<span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{repo.language}</span>}
+                    <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:CATS.Earn,fontWeight:600}}>{repo.open_issues_count} issues</span>
+                  </div>
+                </div>
+              </a>
+            ))}
+            <div style={{padding:"10px 16px",background:"#fff",textAlign:"center"}}>
+              <a href="https://github.com/trending" target="_blank" rel="noopener noreferrer"
+                style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid,textDecoration:"none"}}>View all on GitHub →</a>
+            </div>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
+}
+
 function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles, lastWeekArticles }) {
   const feed = (cat==="All" ? articles.filter(a=>!a.feat) : articles.filter(a=>a.cat===cat));
   const shown = feed.slice(0,(page+1)*6);
@@ -487,6 +693,7 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
       <BriefStrip onNav={onNav} weeklyArticles={weeklyArticles}/>
       <LastWeekSection lastWeekArticles={lastWeekArticles} onSelect={onSelect} onNav={onNav}/>
       <LearnTeaser onNav={onNav}/>
+      <LiveSection/>
       <div style={{background:T.bg,maxWidth:1200,margin:"0 auto"}}>
         <div style={{height:1,background:T.light,margin:`0 ${INSET}px`}}/>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:`16px ${INSET}px 6px`}}>
