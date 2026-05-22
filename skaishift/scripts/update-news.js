@@ -262,6 +262,7 @@ function buildDailyEmail(articles, date) {
   return `<!DOCTYPE html><html><body style="margin:0;padding:0;background:#F4F4F0;font-family:Arial,sans-serif;">
 <div style="max-width:600px;margin:0 auto;padding:20px 16px;">
   <div style="background:#0F0F0F;border-radius:16px 16px 0 0;padding:24px 28px 20px;text-align:center;">
+    <img src="https://skaishift.com/logo.png" width="48" height="48" style="display:inline-block;border-radius:10px;margin-bottom:10px;" alt="skAIshift"/>
     <p style="font-size:30px;font-weight:900;letter-spacing:0.1em;color:#fff;margin:0 0 4px;">SK<span style="color:#F5A623;">AI</span>SHIFT</p>
     <p style="color:rgba(255,255,255,0.45);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;margin:0 0 12px;">AI Intelligence Daily</p>
     <p style="color:rgba(255,255,255,0.7);font-size:13px;margin:0;background:rgba(255,255,255,0.08);padding:8px 16px;border-radius:8px;"><strong style="color:#fff;">${date}</strong> — Today's most important AI shifts</p>
