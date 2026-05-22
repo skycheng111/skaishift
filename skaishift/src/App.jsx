@@ -933,9 +933,8 @@ function SubPage() {
             {title:"Top AI Stories", desc:"The 2-3 most important things that happened in AI overnight — explained in plain English."},
             {title:"What People Are Building", desc:"Concrete examples of how builders and entrepreneurs are making money with AI right now."},
             {title:"Model & Tool Updates", desc:"Every major model release, API change, and tool launch that affects your workflow."},
-            {title:"Weekly Intelligence Brief", desc:"Every Monday, a full recap of last week's most important shifts — all in one place."},
           ].map((item,i)=>(
-            <div key={i} style={{display:"flex",gap:12,marginBottom:i<3?16:0}}>
+            <div key={i} style={{display:"flex",gap:12,marginBottom:i<2?16:0}}>
               <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:13,color:T.red,flexShrink:0,lineHeight:1.4,minWidth:16}}>{i+1}</span>
               <div>
                 <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:600,fontSize:13,color:T.ink,margin:"0 0 2px"}}>{item.title}</p>
