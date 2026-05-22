@@ -1207,7 +1207,22 @@ export default function App() {
   const onNav=v=>setView(v);
 
   return (
-    <div style={{background:T.bg,minHeight:"100vh",display:"flex",flexDirection:"column"}}>
+    <div style={{background:T.bg,minHeight:"100vh",display:"flex",flexDirection:"column"}}
+      onTouchStart={e=>{
+        swipeStartX.current=e.touches[0].clientX;
+        swipeStartY.current=e.touches[0].clientY;
+      }}
+      onTouchEnd={e=>{
+        if(swipeStartX.current===null) return;
+        const dx=e.changedTouches[0].clientX - swipeStartX.current;
+        const dy=Math.abs(e.changedTouches[0].clientY - swipeStartY.current);
+        if(dx>80 && dy<120 && swipeStartX.current < window.innerWidth*0.3 && view==="article"){
+          onBack();
+        }
+        swipeStartX.current=null;
+        swipeStartY.current=null;
+      }}
+    >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600&family=Lora:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
         *{box-sizing:border-box;margin:0;padding:0;}
