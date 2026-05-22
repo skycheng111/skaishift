@@ -264,7 +264,7 @@ function NewsletterPopup({ onClose }) {
         body:JSON.stringify({email}),
       });
       const data = await res.json();
-      setStatus(data.success?"done":"error");
+      if(data.success && data.already) setStatus("already"); else setStatus(data.success?"done":"error");
     } catch { setStatus("error"); }
   };
 
@@ -293,10 +293,10 @@ function NewsletterPopup({ onClose }) {
         {/* Body */}
         <div style={{padding:"20px 24px 24px"}}>
           <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#4A4A4A",lineHeight:1.6,margin:"0 0 16px"}}>What moved in AI, who's making money from it, and what you should do next. Free. Every day.</p>
-          {status==="done" ? (
-            <div style={{background:"#F0FDF4",border:"1px solid #16A34A",borderRadius:12,padding:"16px",textAlign:"center"}}>
-              <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:"#0F0F0F",margin:"0 0 4px"}}>You're in.</p>
-              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"#6B6B6B",margin:0}}>First issue tomorrow at 6AM ET.</p>
+          {(status==="done"||status==="already") ? (
+            <div style={{background:status==="already"?"#FFFBF0":"#F0FDF4",border:`1px solid ${status==="already"?"#F5A623":"#16A34A"}`,borderRadius:12,padding:"16px",textAlign:"center"}}>
+              <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:"#0F0F0F",margin:"0 0 4px"}}>{status==="already"?"You're already subscribed.":"You're in."}</p>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"#6B6B6B",margin:0}}>{status==="already"?"We'll see you at 6AM ET every morning.":"First issue tomorrow at 6AM ET."}</p>
             </div>
           ) : (
             <div style={{display:"flex",flexDirection:"column",gap:8}}>
@@ -444,14 +444,14 @@ function NewsletterCTA({ compact=false }) {
     try {
       const res = await fetch("/.netlify/functions/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email})});
       const data = await res.json();
-      setStatus(data.success?"done":"error");
+      if(data.success && data.already) setStatus("already"); else setStatus(data.success?"done":"error");
     } catch { setStatus("error"); }
   };
 
-  if (status==="done") return (
-    <div style={{background:compact?"#F0FDF4":"#0F0F0F",padding:`${compact?16:28}px ${INSET}px`,borderRadius:compact?12:0}}>
-      <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:compact?T.ink:"#fff",margin:"0 0 4px",textAlign:"center"}}>You're in.</p>
-      <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:compact?"#6B6B6B":"rgba(255,255,255,0.5)",margin:0,textAlign:"center"}}>First issue tomorrow at 6AM ET.</p>
+  if (status==="done"||status==="already") return (
+    <div style={{background:compact?"#FFFBF0":"#0F0F0F",padding:`${compact?16:28}px ${INSET}px`,borderRadius:compact?12:0}}>
+      <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:compact?T.ink:"#fff",margin:"0 0 4px",textAlign:"center"}}>{status==="already"?"Already subscribed.":"You're in."}</p>
+      <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:compact?"#6B6B6B":"rgba(255,255,255,0.5)",margin:0,textAlign:"center"}}>{status==="already"?"We'll see you at 6AM ET every morning.":"First issue tomorrow at 6AM ET."}</p>
     </div>
   );
 
@@ -852,7 +852,7 @@ function SubPage() {
         body:JSON.stringify({ email }),
       });
       const data = await res.json();
-      setStatus(data.success ? "done" : "error");
+      if(data.success && data.already) setStatus("already"); else setStatus(data.success ? "done" : "error");
     } catch {
       setStatus("error");
     }
