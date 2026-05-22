@@ -68,6 +68,7 @@ function welcomeEmail(email) {
 <body style="margin:0;padding:0;background:#F4F4F0;font-family:'IBM Plex Sans',Arial,sans-serif;">
 <div style="max-width:600px;margin:0 auto;padding:24px 16px;">
   <div style="background:#0F0F0F;border-radius:16px;padding:32px 28px;margin-bottom:20px;text-align:center;">
+    <img src="https://skaishift.com/logo.png" width="56" height="56" style="display:inline-block;border-radius:12px;margin-bottom:12px;" alt="skAIshift"/>
     <p style="font-family:Arial,sans-serif;font-size:28px;font-weight:900;letter-spacing:0.1em;color:#fff;margin:0 0 8px;">
       SK<span style="color:#F5A623;">AI</span>SHIFT
     </p>
