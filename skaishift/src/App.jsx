@@ -218,18 +218,9 @@ function CategoryPills({ cat, setCat }) {
 function ArticleDetail({ story, onBack }) {
   return (
     <div style={{background:T.bg,minHeight:"100vh"}}>
-      {/* Mini header inside overlay */}
-      <div style={{background:"#0F0F0F",padding:"12px 16px",display:"flex",alignItems:"center",gap:12,position:"sticky",top:0,zIndex:10}}>
-        <button onClick={onBack} style={{background:"none",border:"none",cursor:"pointer",display:"flex",alignItems:"center",gap:6,padding:0}}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        </button>
-        <img src={LOGO_SRC} alt="skAIshift" style={{height:28,width:"auto",borderRadius:6}}/>
-        <span style={{fontFamily:"'Barlow Semi Condensed',sans-serif",fontSize:17,letterSpacing:"0.15em",fontWeight:700}}>
-          <span style={{color:"#fff"}}>SK</span><span style={{color:T.amber}}>AI</span><span style={{color:"#fff"}}>SHIFT</span>
-        </span>
-      </div>
+
       <div style={{maxWidth:720,margin:"0 auto"}}>
-        <div style={{overflow:"hidden",margin:`16px ${INSET}px 0`,borderRadius:16,boxShadow:"0 2px 12px rgba(0,0,0,0.1)"}}>
+        <div style={{borderRadius:20,overflow:"hidden",margin:`16px ${INSET}px 0`,boxShadow:"0 2px 12px rgba(0,0,0,0.1)"}}>
           <NewsImg src={story.img} style={{width:"100%",aspectRatio:"16/9",objectFit:"cover"}}/>
         </div>
         <div style={{padding:`20px ${INSET}px`}}>
@@ -1363,6 +1354,7 @@ export default function App() {
   const [page,setPage]=useState(0);
   const [art,setArt]=useState(null);
   const swipeStartX = useRef(null);
+  const [animClass, setAnimClass] = useState("");
   const swipeStartY = useRef(null);
   const [newsData,setNewsData]=useState(FALLBACK);
   const [showPopup,setShowPopup]=useState(false);
@@ -1408,19 +1400,20 @@ export default function App() {
   },[]);
 
   const [prevView,setPrevView]=useState("home");
-  const [articleOpen,setArticleOpen]=useState(false);
   const onSelect=a=>{
     setPrevView(view);
     setArt(a);
     setView("article");
-    requestAnimationFrame(()=>requestAnimationFrame(()=>setArticleOpen(true)));
+    setAnimClass("slide-in-right");
+    setTimeout(()=>setAnimClass(""),300);
   };
   const onBack=()=>{
-    setArticleOpen(false);
+    setAnimClass("slide-out-right");
     setTimeout(()=>{
+      setAnimClass("");
       setArt(null);
       setView(prevView);
-    },320);
+    },220);
   };
   const onNav=v=>setView(v);
 
@@ -1446,21 +1439,21 @@ export default function App() {
         *{box-sizing:border-box;margin:0;padding:0;}
         img{display:block;} button{-webkit-tap-highlight-color:transparent;}
         ::-webkit-scrollbar{display:none;}
-        .article-slide{
-          position:fixed;
-          top:0; left:0; right:0; bottom:0;
-          z-index:300;
-          background:#F4F4F0;
-          opacity:0;
-          pointer-events:none;
-          transition:opacity 0.22s ease;
-          overflow-y:auto;
-          -webkit-overflow-scrolling:touch;
+        @keyframes slideInRight{
+          from{transform:translateX(100%);opacity:0;}
+          to{transform:translateX(0);opacity:1;}
         }
-        .article-slide.open{
-          opacity:1;
-          pointer-events:auto;
+        @keyframes slideOutRight{
+          from{transform:translateX(0);opacity:1;}
+          to{transform:translateX(100%);opacity:0;}
         }
+        @keyframes slideInLeft{
+          from{transform:translateX(-30%);opacity:0;}
+          to{transform:translateX(0);opacity:1;}
+        }
+        .slide-in-right{animation:slideInRight 0.28s cubic-bezier(0.25,0.46,0.45,0.94) both;}
+        .slide-out-right{animation:slideOutRight 0.25s cubic-bezier(0.55,0,1,0.45) both;}
+        .slide-in-left{animation:slideInLeft 0.28s cubic-bezier(0.25,0.46,0.45,0.94) both;}
         @keyframes marquee{
           0%{transform:translateX(0)}
           100%{transform:translateX(-50%)}
@@ -1505,20 +1498,17 @@ export default function App() {
         setShowPopup(false);
         localStorage.setItem("skaishift_popup_seen","1");
       }}/>}
-      <Header onNav={onNav} onBack={null}/>
+      <Header onNav={onNav} onBack={view==="article"?onBack:null}/>
 
       <main style={{flex:1}}>
         {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav} weeklyArticles={weeklyArticles} lastWeekArticles={lastWeekArticles}/>}
+        {view==="article"   &&art&&<div className={animClass} style={{flex:1}}><ArticleDetail story={art} onBack={onBack} onNav={onNav}/></div>}
         {view==="brief"     &&<BriefPage articles={lastWeekArticles} onBack={()=>setView('home')} onSelect={onSelect}/>}
         {view==="subscribe" &&<SubPage/>}
         {view==="learn"      &&<LearnPage onNav={onNav}/>}
         {view==="privacy"    &&<PrivacyPage/>}
         {view==="terms"      &&<TermsPage/>}
       </main>
-      {/* Article overlay — outside main, always mounted when art exists, fades in/out */}
-      {art&&<div className={"article-slide"+(articleOpen?" open":"")}>
-        <ArticleDetail story={art} onBack={onBack} onNav={onNav}/>
-      </div>}
 
       <Footer onNav={onNav}/>
 
