@@ -1354,7 +1354,6 @@ export default function App() {
   const [page,setPage]=useState(0);
   const [art,setArt]=useState(null);
   const swipeStartX = useRef(null);
-  const [animClass, setAnimClass] = useState("");
   const swipeStartY = useRef(null);
   const [newsData,setNewsData]=useState(FALLBACK);
   const [showPopup,setShowPopup]=useState(false);
@@ -1400,20 +1399,19 @@ export default function App() {
   },[]);
 
   const [prevView,setPrevView]=useState("home");
+  const [articleOpen,setArticleOpen]=useState(false);
   const onSelect=a=>{
     setPrevView(view);
     setArt(a);
     setView("article");
-    setAnimClass("slide-in-right");
-    setTimeout(()=>setAnimClass(""),300);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>setArticleOpen(true)));
   };
   const onBack=()=>{
-    setAnimClass("slide-out-right");
+    setArticleOpen(false);
     setTimeout(()=>{
-      setAnimClass("");
       setArt(null);
       setView(prevView);
-    },220);
+    },320);
   };
   const onNav=v=>setView(v);
 
@@ -1439,21 +1437,19 @@ export default function App() {
         *{box-sizing:border-box;margin:0;padding:0;}
         img{display:block;} button{-webkit-tap-highlight-color:transparent;}
         ::-webkit-scrollbar{display:none;}
-        @keyframes slideInRight{
-          from{transform:translateX(100%);opacity:0;}
-          to{transform:translateX(0);opacity:1;}
+        .article-slide{
+          position:fixed;
+          inset:0;
+          z-index:100;
+          background:#F4F4F0;
+          transform:translateX(100%);
+          transition:transform 0.32s cubic-bezier(0.32,0.72,0,1);
+          overflow-y:auto;
+          -webkit-overflow-scrolling:touch;
         }
-        @keyframes slideOutRight{
-          from{transform:translateX(0);opacity:1;}
-          to{transform:translateX(100%);opacity:0;}
+        .article-slide.open{
+          transform:translateX(0);
         }
-        @keyframes slideInLeft{
-          from{transform:translateX(-30%);opacity:0;}
-          to{transform:translateX(0);opacity:1;}
-        }
-        .slide-in-right{animation:slideInRight 0.28s cubic-bezier(0.25,0.46,0.45,0.94) both;}
-        .slide-out-right{animation:slideOutRight 0.25s cubic-bezier(0.55,0,1,0.45) both;}
-        .slide-in-left{animation:slideInLeft 0.28s cubic-bezier(0.25,0.46,0.45,0.94) both;}
         @keyframes marquee{
           0%{transform:translateX(0)}
           100%{transform:translateX(-50%)}
@@ -1502,7 +1498,9 @@ export default function App() {
 
       <main style={{flex:1}}>
         {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav} weeklyArticles={weeklyArticles} lastWeekArticles={lastWeekArticles}/>}
-        {view==="article"   &&art&&<div className={animClass} style={{flex:1}}><ArticleDetail story={art} onBack={onBack} onNav={onNav}/></div>}
+        {art&&<div
+          className={"article-slide" + (articleOpen?" open":"")}
+        ><ArticleDetail story={art} onBack={onBack} onNav={onNav}/></div>}
         {view==="brief"     &&<BriefPage articles={lastWeekArticles} onBack={()=>setView('home')} onSelect={onSelect}/>}
         {view==="subscribe" &&<SubPage/>}
         {view==="learn"      &&<LearnPage onNav={onNav}/>}
