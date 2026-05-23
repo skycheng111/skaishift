@@ -1374,7 +1374,14 @@ export default function App() {
       .catch(()=>{});
     fetch("/weekly-articles.json")
       .then(r=>{ if(r.ok) return r.json(); throw new Error(); })
-      .then(d=>{ if(d?.articles?.length) setWeeklyArticles(d.articles); })
+      .then(d=>{
+        if(d?.articles?.length) {
+          // Only show articles from previous days — not today
+          const today = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD in local time
+          const filtered = d.articles.filter(a => !a.published_date || a.published_date < today);
+          setWeeklyArticles(filtered);
+        }
+      })
       .catch(()=>{});
     fetch("/last-week-articles.json")
       .then(r=>{ if(r.ok) return r.json(); throw new Error(); })
