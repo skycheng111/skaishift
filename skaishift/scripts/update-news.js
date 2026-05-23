@@ -33,19 +33,26 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // ── RSS FEEDS ──────────────────────────────────────────────────────────────────
 const FEEDS = [
+  // Original working feeds
   { url: 'https://openai.com/blog/rss.xml',                                        source: 'OpenAI' },
   { url: 'https://blog.google/technology/ai/rss/',                                 source: 'Google AI' },
   { url: 'https://huggingface.co/blog/feed.xml',                                  source: 'HuggingFace' },
   { url: 'https://engineering.fb.com/category/ml-applications/feed/',              source: 'Meta AI' },
-  { url: 'https://elevenlabs.io/rss.xml',                                          source: 'ElevenLabs' },
   { url: 'https://venturebeat.com/category/ai/feed/',                              source: 'VentureBeat' },
   { url: 'https://techcrunch.com/category/artificial-intelligence/feed/',          source: 'TechCrunch' },
   { url: 'https://www.technologyreview.com/feed/',                                 source: 'MIT Tech Review' },
   { url: 'https://aibusiness.com/rss.xml',                                         source: 'AI Business' },
   { url: 'https://towardsai.net/feed',                                             source: 'Towards AI' },
-  { url: 'https://www.sequoiacap.com/feed/?category=artificial-intelligence',      source: 'Sequoia' },
   { url: 'https://importai.substack.com/feed',                                     source: 'Import AI' },
   { url: 'https://hnrss.org/frontpage?q=AI+LLM+OpenAI+Anthropic+Gemini+GPT+Claude+DeepSeek+Mistral', source: 'Hacker News' },
+  // New verified feeds
+  { url: 'https://www.artificialintelligence-news.com/feed/',                      source: 'AI News' },
+  { url: 'https://news.mit.edu/rss/topic/artificial-intelligence2',                source: 'MIT AI' },
+  { url: 'https://blogs.nvidia.com/feed/',                                         source: 'NVIDIA' },
+  { url: 'https://simonwillison.net/atom/everything/',                             source: 'Simon Willison' },
+  { url: 'https://hai.stanford.edu/news/feed',                                     source: 'Stanford HAI' },
+  { url: 'https://jack-clark.net/feed/',                                           source: 'Import AI Newsletter' },
+  { url: 'https://www.sequoiacap.com/feed/?category=artificial-intelligence',      source: 'Sequoia' },
 ];
 
 // ── FALLBACK IMAGES ───────────────────────────────────────────────────────────
