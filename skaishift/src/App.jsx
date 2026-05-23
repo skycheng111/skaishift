@@ -218,15 +218,6 @@ function CategoryPills({ cat, setCat }) {
 function ArticleDetail({ story, onBack }) {
   return (
     <div style={{background:T.bg,minHeight:"100vh"}}>
-      {/* Own header with back button - sits above everything */}
-      <div style={{position:"sticky",top:0,zIndex:10,background:"#0F0F0F",padding:"12px 16px",display:"flex",alignItems:"center",gap:12}}>
-        <button onClick={onBack} style={{background:"none",border:"none",color:"#fff",cursor:"pointer",padding:"4px 8px 4px 0",display:"flex",alignItems:"center",gap:6}}>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-          <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.8)"}}>Back</span>
-        </button>
-        <span style={{fontFamily:"'Barlow Semi Condensed',sans-serif",fontSize:16,letterSpacing:"0.15em",fontWeight:700,color:"#fff"}}>SK<span style={{color:T.amber}}>AI</span>SHIFT</span>
-      </div>
-
       <div style={{maxWidth:720,margin:"0 auto"}}>
         <div style={{overflow:"hidden",margin:`16px ${INSET}px 0`,borderRadius:16,boxShadow:"0 2px 12px rgba(0,0,0,0.1)"}}>
           <NewsImg src={story.img} style={{width:"100%",aspectRatio:"16/9",objectFit:"cover"}}/>
@@ -1447,17 +1438,19 @@ export default function App() {
         ::-webkit-scrollbar{display:none;}
         .article-slide{
           position:fixed;
-          inset:0;
-          z-index:200;
+          top:0; left:0; right:0; bottom:0;
+          z-index:150;
           background:#F4F4F0;
           transform:translateX(100%);
           transition:transform 0.32s cubic-bezier(0.32,0.72,0,1);
           overflow-y:auto;
           -webkit-overflow-scrolling:touch;
           will-change:transform;
+          visibility:hidden;
         }
         .article-slide.open{
           transform:translateX(0);
+          visibility:visible;
         }
         @keyframes marquee{
           0%{transform:translateX(0)}
@@ -1499,11 +1492,11 @@ export default function App() {
         .desktop-nav{ display:none; }
       `}</style>
 
-      {!articleOpen&&showPopup&&<NewsletterPopup onClose={()=>{
+      {showPopup&&<NewsletterPopup onClose={()=>{
         setShowPopup(false);
         localStorage.setItem("skaishift_popup_seen","1");
       }}/>}
-      {!art&&<Header onNav={onNav} onBack={null}/>}
+      <Header onNav={onNav} onBack={articleOpen?onBack:null}/>
 
       <main style={{flex:1}}>
         {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav} weeklyArticles={weeklyArticles} lastWeekArticles={lastWeekArticles}/>}
