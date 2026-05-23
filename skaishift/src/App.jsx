@@ -154,14 +154,14 @@ const BRIEF_CARDS = [
   {id:"watch",   label:"WATCH LIST",  color:CATS.Strategy,bg:"#FFFBEB",dark:false,headline:"On the Horizon",                      items:["Spot + Claude open-source","EU AI Act enforcement","AGI timeline pressure","Image-to-3D maturing"]},
 ];
 
-function BriefStrip({ onNav, weeklyArticles }) {
+function BriefStrip({ onNav, onSelect, weeklyArticles }) {
   if (!weeklyArticles || weeklyArticles.length === 0) return null;
   return (
     <div style={{background:"linear-gradient(180deg,#F0EEF8 0%,#F4F4F0 100%)",paddingBottom:16}}>
       <SectionHeader label="Best of This Week" action="See all" onAction={()=>onNav("brief")}/>
       <div style={{display:"flex",overflowX:"auto",scrollSnapType:"x mandatory",scrollbarWidth:"none",gap:10,paddingLeft:INSET,paddingRight:INSET}}>
         {weeklyArticles.slice(0,8).map((story,i)=>(
-          <div key={story.id||i} onClick={()=>onNav("brief")}
+          <div key={story.id||i} onClick={()=>onSelect(story)}
             style={{minWidth:200,maxWidth:220,flexShrink:0,scrollSnapAlign:"start",borderRadius:14,overflow:"hidden",cursor:"pointer",boxShadow:"0 1px 8px rgba(0,0,0,0.1)",background:"#fff",border:T.border}}>
             <div style={{position:"relative",height:110,overflow:"hidden"}}>
               <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
@@ -757,7 +757,7 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
     <div>
       <Marquee/>
       <HeroCarousel articles={articles} onSelect={onSelect}/>
-      <BriefStrip onNav={onNav} weeklyArticles={weeklyArticles}/>
+      <BriefStrip onNav={onNav} onSelect={onSelect} weeklyArticles={weeklyArticles}/>
       <LastWeekSection lastWeekArticles={lastWeekArticles} onSelect={onSelect} onNav={onNav}/>
       <div style={{background:T.bg,maxWidth:1200,margin:"0 auto"}}>
         <div style={{height:1,background:T.light,margin:`0 ${INSET}px`}}/>
