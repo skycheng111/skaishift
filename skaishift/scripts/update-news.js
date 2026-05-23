@@ -308,7 +308,7 @@ async function main() {
   for (let i = 0; i < unique.length; i++) {
     process.stdout.write(`    [${i+1}/${unique.length}]`);
     const s = await summarize(unique[i], i+1);
-    if (s) { summaries.push(s); process.stdout.write(` ✓ ${s.cat}\n`); }
+    if (s) { s.link = unique[i].link || ''; summaries.push(s); process.stdout.write(` ✓ ${s.cat}\n`); }
     else process.stdout.write(' ✗\n');
     await new Promise(r => setTimeout(r, 350));
   }
@@ -366,11 +366,27 @@ async function main() {
   } catch(e) { weeklyArticles = []; }
 
   const wCombined = [...summaries, ...weeklyArticles];
-  const wSeen = new Set();
+  const wSeenUrls = new Set();
+  const wSeenKeys = new Set();
+
+  // Extract 3-4 distinctive keywords from a headline for fuzzy matching
+  const headlineKey = (h='') => h.toLowerCase()
+    .replace(/[^a-z0-9 ]/g,'')
+    .split(' ')
+    .filter(w => w.length > 4 && !['about','after','could','would','their','there','where','which','while'].includes(w))
+    .slice(0,4)
+    .sort()
+    .join('|');
+
   const wDeduped = wCombined.filter(a => {
-    const k = a.headline.slice(0,50).toLowerCase();
-    if (wSeen.has(k)) return false;
-    wSeen.add(k); return true;
+    // Primary: deduplicate by source URL
+    if (a.link && wSeenUrls.has(a.link)) return false;
+    // Secondary: deduplicate by distinctive headline keywords
+    const hk = headlineKey(a.headline);
+    if (hk && wSeenKeys.has(hk)) return false;
+    if (a.link) wSeenUrls.add(a.link);
+    if (hk) wSeenKeys.add(hk);
+    return true;
   });
   wDeduped.sort((a,b) => (b.significance||0)-(a.significance||0));
   // 2 top articles per day x 7 days = 14 max
