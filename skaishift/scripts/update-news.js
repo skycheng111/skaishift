@@ -372,7 +372,14 @@ async function main() {
     }
   } catch(e) { weeklyArticles = []; }
 
-  const wCombined = [...summaries, ...weeklyArticles];
+  // Weekly strip only includes articles from previous days, not today.
+  // Today's articles appear in the hero/feed. They enter Best of This Week tomorrow
+  // when this run reads them from the existing weeklyArticles pool.
+  // So we simply don't add today's summaries to the weekly strip at all —
+  // yesterday's articles are already in weeklyArticles from the previous run.
+  const wCombined = [...weeklyArticles, ...summaries]; // summaries included so next run can dedup against them
+  // But only keep articles NOT from today in the displayed strip
+  const wNotToday = wCombined.filter(a => a.published_date !== todayISO);
   const wSeenUrls = new Set();
   const wSeenKeys = new Set();
 
@@ -385,7 +392,7 @@ async function main() {
     .sort()
     .join('|');
 
-  const wDeduped = wCombined.filter(a => {
+  const wDeduped = wNotToday.filter(a => {
     // Primary: deduplicate by source URL
     if (a.link && wSeenUrls.has(a.link)) return false;
     // Secondary: deduplicate by distinctive headline keywords
@@ -396,10 +403,15 @@ async function main() {
     return true;
   });
   wDeduped.sort((a,b) => (b.significance||0)-(a.significance||0));
-  // 2 top articles per day x 7 days = 14 max
+  // 2 top articles per day x 7 days = 14 max for display
   const topWeekly = wDeduped.slice(0,14);
-  fs.writeFileSync(weeklyPath, JSON.stringify({ updated: now.toISOString(), articles: topWeekly }, null, 2));
-  console.log(`    ✓ ${topWeekly.length} weekly articles`);
+  // Also store today's summaries in the pool so tomorrow's run can pick them up
+  // Combine displayed articles + today's articles (deduped by URL/key) for storage
+  const allForStorage = [...topWeekly, ...summaries].filter((a,i,arr) =>
+    arr.findIndex(b => b.id===a.id) === i
+  ).slice(0,20);
+  fs.writeFileSync(weeklyPath, JSON.stringify({ updated: now.toISOString(), articles: allForStorage }, null, 2));
+  console.log(`    ✓ ${topWeekly.length} weekly articles displayed, ${allForStorage.length} stored for tomorrow`);
 
   // 8. Daily email
   console.log('\n[6] Broadcasting daily email...');
