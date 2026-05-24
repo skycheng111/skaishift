@@ -169,7 +169,7 @@ function BriefStrip({ onNav, onSelect, weeklyArticles }) {
   if (!weeklyArticles || weeklyArticles.length === 0) return null;
   return (
     <div style={{background:"linear-gradient(180deg,#F0EEF8 0%,#F4F4F0 100%)",paddingBottom:16}}>
-      <SectionHeader label="Best of This Week" action="See all" onAction={()=>onNav("brief")}/>
+      <SectionHeader label="Best of This Week"/>
       <div style={{display:"flex",overflowX:"auto",scrollSnapType:"x mandatory",scrollbarWidth:"none",gap:10,paddingLeft:INSET,paddingRight:INSET}}>
         {weeklyArticles.slice(0,8).map((story,i)=>(
           <div key={story.id||i} onClick={()=>onSelect(story)}
