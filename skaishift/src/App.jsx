@@ -59,6 +59,7 @@ function SectionHeader({ label, action, onAction }) {
 function Header({ onNav, onBack }) {
   const [open,setOpen]=useState(false);
   const NAV=[{l:"Home",v:"home"},{l:"Brief",v:"brief"},{l:"Learn",v:"learn"},{l:"Subscribe",v:"subscribe"}];
+  const EXPLORE=[{l:"Tool Directory",v:"tools"},{l:"Earn with AI",v:"earn"},{l:"Model Compare",v:"models"},{l:"Community",v:"community"}];
   return (
     <header style={{background:"#0F0F0F",position:"sticky",top:0,zIndex:200,borderBottom:"1px solid #1A1A1A"}}>
       <div style={{maxWidth:1200,margin:"0 auto",padding:"10px 20px",display:"flex",alignItems:"center",justifyContent:"space-between",gap:12}}>
@@ -106,6 +107,16 @@ function Header({ onNav, onBack }) {
           {NAV.map(it=>(
             <button key={it.v} onClick={()=>{onNav(it.v);setOpen(false);}}
               style={{display:"block",width:"100%",background:"transparent",border:"none",color:"#fff",padding:"14px 24px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:16,cursor:"pointer",textAlign:"left",fontWeight:500,borderBottom:"1px solid #1A1A1A"}}>
+              {it.l}
+            </button>
+          ))}
+          {/* Explore More section */}
+          <div style={{padding:"14px 24px 6px",borderBottom:"1px solid #1A1A1A"}}>
+            <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:T.amber,letterSpacing:"0.18em"}}>EXPLORE MORE</span>
+          </div>
+          {EXPLORE.map(it=>(
+            <button key={it.v} onClick={()=>{onNav(it.v);setOpen(false);}}
+              style={{display:"block",width:"100%",background:"transparent",border:"none",color:"rgba(255,255,255,0.7)",padding:"12px 24px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:15,cursor:"pointer",textAlign:"left",fontWeight:400,borderBottom:"1px solid #1A1A1A"}}>
               {it.l}
             </button>
           ))}
