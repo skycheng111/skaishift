@@ -1402,29 +1402,45 @@ function TermsPage() {
 
 // ── TOOL DIRECTORY ────────────────────────────────────────────────────────────
 const AI_TOOLS = [
-  { name:"ChatGPT",       cat:"Chat",       desc:"OpenAI's flagship conversational AI. Best all-rounder for writing, research, and ideation.", url:"https://chat.openai.com", badge:"Popular" },
-  { name:"Claude",        cat:"Chat",       desc:"Anthropic's AI. Excellent for long documents, nuanced writing, and complex reasoning.", url:"https://claude.ai", badge:"" },
-  { name:"Gemini",        cat:"Chat",       desc:"Google's AI, deeply integrated with Google Workspace and Search.", url:"https://gemini.google.com", badge:"" },
-  { name:"Perplexity",    cat:"Research",   desc:"AI-powered search engine that cites sources. Best for real-time research.", url:"https://perplexity.ai", badge:"Popular" },
-  { name:"Cursor",        cat:"Coding",     desc:"AI-native code editor built on VS Code. Best tool for AI-assisted development.", url:"https://cursor.sh", badge:"Top Pick" },
-  { name:"GitHub Copilot",cat:"Coding",     desc:"AI pair programmer built into your editor. Suggests code as you type.", url:"https://github.com/features/copilot", badge:"" },
-  { name:"Windsurf",      cat:"Coding",     desc:"Agentic IDE that can write and run entire features autonomously.", url:"https://codeium.com/windsurf", badge:"" },
-  { name:"Midjourney",    cat:"Image",      desc:"Best-in-class AI image generation. Produces photorealistic and artistic images.", url:"https://midjourney.com", badge:"Popular" },
-  { name:"DALL-E 3",      cat:"Image",      desc:"OpenAI's image generator, integrated into ChatGPT. Great for quick iterations.", url:"https://openai.com/dall-e-3", badge:"" },
-  { name:"Ideogram",      cat:"Image",      desc:"Excels at text-in-image generation. Best for logos and graphic design.", url:"https://ideogram.ai", badge:"" },
-  { name:"ElevenLabs",    cat:"Voice",      desc:"Best AI voice cloning and text-to-speech. Used by podcasters and content creators.", url:"https://elevenlabs.io", badge:"Top Pick" },
-  { name:"Suno",          cat:"Music",      desc:"Generate full songs with vocals from a text prompt in seconds.", url:"https://suno.com", badge:"Popular" },
-  { name:"Udio",          cat:"Music",      desc:"High-quality AI music generation. Strong at specific genres and instruments.", url:"https://udio.com", badge:"" },
-  { name:"Runway",        cat:"Video",      desc:"AI video generation and editing. Industry standard for AI video production.", url:"https://runwayml.com", badge:"Popular" },
-  { name:"Kling AI",      cat:"Video",      desc:"High-quality AI video generation from text or image. Strong at realistic motion.", url:"https://klingai.com", badge:"" },
-  { name:"Zapier",        cat:"Automation", desc:"Connect 6,000+ apps with AI-powered workflows. No code required.", url:"https://zapier.com", badge:"Popular" },
-  { name:"Make",          cat:"Automation", desc:"Visual workflow builder for complex automations. More powerful than Zapier.", url:"https://make.com", badge:"" },
-  { name:"n8n",           cat:"Automation", desc:"Open-source workflow automation. Self-host or cloud. Preferred by developers.", url:"https://n8n.io", badge:"" },
-  { name:"Notion AI",     cat:"Productivity",desc:"AI built into Notion. Summarize, write, and organize inside your workspace.", url:"https://notion.so/product/ai", badge:"" },
-  { name:"Descript",      cat:"Video",      desc:"Edit video and podcast by editing the transcript. Includes AI voice and filler removal.", url:"https://descript.com", badge:"" },
+  // Chat
+  { name:"ChatGPT",         cat:"Chat",        desc:"OpenAI's flagship conversational AI. Best all-rounder for writing, research, and ideation.", url:"https://chat.openai.com" },
+  { name:"Claude",          cat:"Chat",        desc:"Anthropic's AI. Excellent for long documents, nuanced writing, and complex reasoning.", url:"https://claude.ai" },
+  { name:"Gemini",          cat:"Chat",        desc:"Google's AI, deeply integrated with Google Workspace and Search.", url:"https://gemini.google.com" },
+  { name:"Grok",            cat:"Chat",        desc:"xAI's conversational model. Strong at real-time information and uncensored analysis.", url:"https://grok.com" },
+  // Research
+  { name:"Perplexity",      cat:"Research",    desc:"AI-powered search engine that cites sources. Best for real-time research.", url:"https://perplexity.ai" },
+  // Coding
+  { name:"Cursor",          cat:"Coding",      desc:"AI-native code editor built on VS Code. Best tool for AI-assisted development.", url:"https://cursor.sh" },
+  { name:"GitHub Copilot",  cat:"Coding",      desc:"AI pair programmer built into your editor. Suggests code as you type.", url:"https://github.com/features/copilot" },
+  { name:"Windsurf",        cat:"Coding",      desc:"Agentic IDE that can write and run entire features autonomously.", url:"https://codeium.com/windsurf" },
+  { name:"Claude Code",     cat:"Coding",      desc:"Anthropic's agentic coding tool. Runs in the terminal and can edit entire codebases autonomously.", url:"https://claude.ai/code" },
+  { name:"Codex",           cat:"Coding",      desc:"OpenAI's cloud-based software engineering agent. Runs tasks in parallel in isolated environments.", url:"https://openai.com/codex" },
+  // Image
+  { name:"Midjourney",      cat:"Image",       desc:"Best-in-class AI image generation. Produces photorealistic and artistic images.", url:"https://midjourney.com" },
+  { name:"GPT Image 2.0",   cat:"Image",       desc:"OpenAI's latest image model. Exceptional at following complex instructions and text-in-image.", url:"https://openai.com/research/gpt-image" },
+  { name:"DALL-E 3",        cat:"Image",       desc:"OpenAI's image generator, integrated into ChatGPT. Great for quick iterations.", url:"https://openai.com/dall-e-3" },
+  { name:"Ideogram",        cat:"Image",       desc:"Excels at text-in-image generation. Best for logos and graphic design.", url:"https://ideogram.ai" },
+  { name:"Flux",            cat:"Image",       desc:"Open-weight image model from Black Forest Labs. Highly customizable, popular with developers.", url:"https://blackforestlabs.ai" },
+  // Voice
+  { name:"ElevenLabs",      cat:"Voice",       desc:"Best AI voice cloning and text-to-speech. Used by podcasters and content creators.", url:"https://elevenlabs.io" },
+  { name:"Suno",            cat:"Music",       desc:"Generate full songs with vocals from a text prompt in seconds.", url:"https://suno.com" },
+  { name:"Udio",            cat:"Music",       desc:"High-quality AI music generation. Strong at specific genres and instruments.", url:"https://udio.com" },
+  // Video
+  { name:"Runway",          cat:"Video",       desc:"AI video generation and editing. Industry standard for AI video production.", url:"https://runwayml.com" },
+  { name:"Kling AI",        cat:"Video",       desc:"High-quality AI video generation from text or image. Strong at realistic motion.", url:"https://klingai.com" },
+  { name:"Seedance 2.0",    cat:"Video",       desc:"ByteDance's latest AI video model. Produces highly realistic motion and cinematic quality.", url:"https://seedance.bytedance.com" },
+  { name:"Sora",            cat:"Video",       desc:"OpenAI's video generation model. Strong at consistency and complex scene composition.", url:"https://sora.com" },
+  { name:"Descript",        cat:"Video",       desc:"Edit video and podcast by editing the transcript. Includes AI voice and filler removal.", url:"https://descript.com" },
+  // Automation
+  { name:"Zapier",          cat:"Automation",  desc:"Connect 6,000+ apps with AI-powered workflows. No code required.", url:"https://zapier.com" },
+  { name:"Make",            cat:"Automation",  desc:"Visual workflow builder for complex automations. More powerful than Zapier.", url:"https://make.com" },
+  { name:"n8n",             cat:"Automation",  desc:"Open-source workflow automation. Self-host or cloud. Preferred by developers.", url:"https://n8n.io" },
+  // Productivity
+  { name:"Notion AI",       cat:"Productivity",desc:"AI built into Notion. Summarize, write, and organize inside your workspace.", url:"https://notion.so/product/ai" },
+  { name:"Gamma",           cat:"Productivity",desc:"AI presentation builder. Generate polished decks from a prompt in seconds.", url:"https://gamma.app" },
 ];
 
-const TOOL_CATS = ["All","Chat","Coding","Image","Voice","Video","Music","Automation","Research","Productivity"];
+const TOOL_CATS = ["All","Chat","Coding","Image","Voice","Music","Video","Automation","Research","Productivity"];
 const CAT_COLORS = {Chat:"#2563EB",Coding:"#16A34A",Image:"#7C3AED",Voice:"#CC785C",Video:"#E8001C",Music:"#0891B2",Automation:"#D97706",Research:"#4285F4",Productivity:"#6B7280"};
 
 function ToolsPage() {
@@ -1461,7 +1477,6 @@ function ToolsPage() {
               <div style={{flex:1,minWidth:0}}>
                 <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:3}}>
                   <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:700,fontSize:14,color:T.ink}}>{tool.name}</span>
-                  {tool.badge&&<span style={{background:tool.badge==="Top Pick"?T.amber:tool.badge==="Popular"?T.red:"#E4E4E0",color:"#fff",fontSize:9,fontWeight:700,padding:"1px 6px",borderRadius:10,letterSpacing:"0.05em"}}>{tool.badge}</span>}
                 </div>
                 <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:CAT_COLORS[tool.cat]||T.mid,letterSpacing:"0.1em"}}>{tool.cat}</span>
                 <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid,lineHeight:1.6,margin:"4px 0 0"}}>{tool.desc}</p>
