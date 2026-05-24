@@ -1531,7 +1531,7 @@ const MODELS_META = [
   { id:"openai/gpt-4.1-nano",                name:"GPT-4.1 Nano",     maker:"OpenAI",    best:"Speed, cost-sensitive tasks",       speed:"Fastest", tier:"Budget" },
   { id:"anthropic/claude-opus-4",            name:"Claude Opus 4",    maker:"Anthropic", best:"Long docs, deep analysis",          speed:"Slow",    tier:"Frontier" },
   { id:"anthropic/claude-sonnet-4.6",        name:"Claude Sonnet 4.6",maker:"Anthropic", best:"Everyday tasks, best value",        speed:"Fast",    tier:"Standard" },
-  { id:"anthropic/claude-haiku-4-5",         name:"Claude Haiku 4.5", maker:"Anthropic", best:"Fast, cheap, high volume",          speed:"Fastest", tier:"Budget" },
+  { id:"anthropic/claude-haiku-4.5",         name:"Claude Haiku 4.5", maker:"Anthropic", best:"Fast, cheap, high volume",          speed:"Fastest", tier:"Budget" },
   { id:"google/gemini-2.5-pro",              name:"Gemini 2.5 Pro",   maker:"Google",    best:"Huge context, multimodal",          speed:"Medium",  tier:"Frontier" },
   { id:"google/gemini-2.5-flash",            name:"Gemini 2.5 Flash", maker:"Google",    best:"Speed + large context",             speed:"Fastest", tier:"Budget" },
   { id:"deepseek/deepseek-chat-v3-0324",     name:"DeepSeek Chat V3", maker:"DeepSeek",  best:"Open source, ultra cheap",          speed:"Fast",    tier:"Budget" },
