@@ -1715,7 +1715,7 @@ export default function App() {
     setTimeout(()=>{
       setArt(null);
       setView(prevView);
-    },320);
+    },220);
   };
   const onNav=v=>setView(v);
 
@@ -1796,11 +1796,11 @@ export default function App() {
         .desktop-nav{ display:none; }
       `}</style>
 
-      {showPopup&&<NewsletterPopup onClose={()=>{
+      {showPopup&&!art&&<NewsletterPopup onClose={()=>{
         setShowPopup(false);
         localStorage.setItem("skaishift_popup_seen","1");
       }}/>}
-      <Header onNav={onNav} onBack={null}/>
+      {!art&&<Header onNav={onNav} onBack={null}/>}
 
       <main style={{flex:1}}>
         {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav} weeklyArticles={weeklyArticles} lastWeekArticles={lastWeekArticles}/>}
@@ -1814,12 +1814,12 @@ export default function App() {
         {view==="models"     &&<ModelsPage/>}
         {view==="community"  &&<CommunityPage/>}
       </main>
-      {/* Article overlay — outside main, always mounted when art exists, fades in/out */}
+      {/* Article overlay — covers header and footer while open */}
       {art&&<div className={"article-slide"+(articleOpen?" open":"")}>
         <ArticleDetail story={art} onBack={onBack} onNav={onNav}/>
       </div>}
 
-      <Footer onNav={onNav}/>
+      {!art&&<Footer onNav={onNav}/>}
 
     </div>
   );
