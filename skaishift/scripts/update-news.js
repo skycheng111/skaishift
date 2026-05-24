@@ -306,16 +306,48 @@ async function main() {
     const k = a.title.slice(0,40).toLowerCase();
     if (seen.has(k)) return false;
     seen.add(k); return true;
-  }).slice(0, 16);
-  console.log(`    ${unique.length} unique articles`);
+  }).slice(0, 20);
+  console.log(`    ${unique.length} unique articles from feeds`);
+
+  // Filter out articles already published in the last 2 days
+  const newsPath = path.join(__dirname,'../public/news.json');
+  const prevUrls = new Set();
+  const prevKeys = new Set();
+  const headlineKey = (h='') => h.toLowerCase()
+    .replace(/[^a-z0-9 ]/g,'')
+    .split(' ')
+    .filter(w => w.length > 4 && !['about','after','could','would','their','there','where','which','while','announces','launches','releases'].includes(w))
+    .slice(0,4).sort().join('|');
+
+  try {
+    if (fs.existsSync(newsPath)) {
+      const prev = JSON.parse(fs.readFileSync(newsPath,'utf8'));
+      (prev.articles||[]).forEach(a => {
+        if (a.link) prevUrls.add(a.link);
+        const hk = headlineKey(a.headline);
+        if (hk) prevKeys.add(hk);
+      });
+      console.log(`    Loaded ${prevUrls.size} previously published URLs to skip`);
+    }
+  } catch(e) { console.warn('    Could not load previous news.json'); }
+
+  const fresh = unique.filter(a => {
+    if (a.link && prevUrls.has(a.link)) return false;
+    const hk = headlineKey(a.title);
+    if (hk && prevKeys.has(hk)) return false;
+    return true;
+  });
+  console.log(`    ${fresh.length} fresh articles after cross-day dedup (${unique.length - fresh.length} skipped as repeats)`);
 
   // 2. Summarize with fallback
   console.log('\n[2] Summarizing...');
   const summaries = [];
-  for (let i = 0; i < unique.length; i++) {
-    process.stdout.write(`    [${i+1}/${unique.length}]`);
-    const s = await summarize(unique[i], i+1);
-    if (s) { s.link = unique[i].link || ''; summaries.push(s); process.stdout.write(` ✓ ${s.cat}\n`); }
+  const toSummarize = fresh.length >= 5 ? fresh : unique; // fallback to all if too few fresh
+  if (fresh.length < 5) console.log(`    Only ${fresh.length} fresh articles — including some repeats to fill today's feed`);
+  for (let i = 0; i < toSummarize.length; i++) {
+    process.stdout.write(`    [${i+1}/${toSummarize.length}]`);
+    const s = await summarize(toSummarize[i], i+1);
+    if (s) { s.link = toSummarize[i].link || ''; summaries.push(s); process.stdout.write(` ✓ ${s.cat}\n`); }
     else process.stdout.write(' ✗\n');
     await new Promise(r => setTimeout(r, 350));
   }
