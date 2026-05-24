@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-23T11:10:55.469Z",
+  "updated": "2026-05-24T11:16:12.961Z",
   "articles": [
     {
       "id": "a4",
@@ -156,34 +156,6 @@
       "published_date": "2026-05-23"
     },
     {
-      "id": "a4",
-      "cat": "Tools",
-      "headline": "Ramp cuts code review time from hours to minutes with Codex AI",
-      "body": "Ramp engineers have integrated OpenAI's Codex with GPT-5.5 into their development workflow to dramatically accelerate code review cycles. The implementation allows developers to receive substantive feedback on code submissions in minutes rather than hours, a significant productivity gain for a fintech platform handling payment infrastructure. Codex, OpenAI's code-generation model, analyzes pull requests and provides detailed review comments, identifying potential bugs, suggesting optimizations, and flagging architectural concerns automatically. This capability reduces the review bottleneck that typically slows down shipping cycles at scale—engineers no longer need to wait for human reviewers to be available, and complex code changes get immediate intelligent feedback. The real-world impact for Ramp is faster deployment of features and fixes to their payment processing platform, which directly translates to quicker iterations on product improvements. This represents a practical application of AI-assisted development tools that go beyond code generation to address the often-overlooked problem of review velocity.",
-      "build": "Agencies are selling 'AI code review integration services' to engineering teams at $5K-$15K per implementation, handling Codex setup, custom rule configuration, and team training. Freelancers are offering 'AI code review automation' as managed services for $500-$2K monthly, reviewing client codebases and flagging issues before human review. Startups are building specialized code review SaaS products layered on Codex, targeting enterprise engineering teams at $10K-$50K annually with custom workflow integration.",
-      "unsplash_query": "developer code review laptop programming",
-      "significance": 8,
-      "time": "3h",
-      "source": "OpenAI",
-      "img": "https://images.unsplash.com/photo-1763568258676-4820da595b60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Nzk0NTkyMTN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-05-22"
-    },
-    {
-      "id": "a13",
-      "cat": "Tools",
-      "headline": "Fine-tune NVIDIA's video generation model with LoRA for custom robot training",
-      "body": "NVIDIA has released guidance on fine-tuning Cosmos Predict 2.5, its advanced video generation model, using LoRA (Low-Rank Adaptation) and DoRA (Directional Rank-Decomposition Adaptation) techniques. This enables developers to customize the model for specific robotics applications without requiring massive computational resources or full model retraining. Cosmos Predict 2.5 is NVIDIA's flagship video prediction model designed to generate realistic future frames based on initial video input—a critical capability for robot training and simulation. By using LoRA/DoRA fine-tuning, entrepreneurs can adapt the base model to their specific robot morphologies, environments, and task requirements with significantly reduced training time and cost compared to traditional fine-tuning. The approach allows practitioners to maintain 99%+ of the original model's capabilities while injecting domain-specific knowledge through parameter-efficient adapters. This democratizes access to industrial-grade video generation for robotics, which previously required either massive datasets, enormous computational budgets, or custom model development. The technique is particularly valuable for companies training robots in simulation before real-world deployment, as custom video prediction models improve policy learning and reduce costly physical trial-and-error cycles.",
-      "build": "AI robotics consultants are charging $5,000–$15,000 to fine-tune Cosmos Predict 2.5 on customer robot datasets, delivering custom models within 2–4 weeks that improve simulation-to-reality transfer by 20–40%. Service providers are packaging this as 'simulation acceleration' for manufacturers running robot training pipelines, with monthly retainer models ($2,000–$5,000) for ongoing model updates. Freelance ML engineers on Upwork and Fiverr are already listing Cosmos fine-tuning services starting at $3,000, targeting robotics startups that can't justify hiring full-time simulation engineers.",
-      "unsplash_query": "robot training simulation AI video",
-      "significance": 8,
-      "time": "5h",
-      "source": "HuggingFace",
-      "img": "https://images.unsplash.com/photo-1601132359864-c974e79890ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Nzk0NTkyMjB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-05-22"
-    },
-    {
       "id": "a6",
       "cat": "Tools",
       "headline": "Google kills 25-year search box design, launches multimodal AI search interface",
@@ -196,6 +168,51 @@
       "img": "https://images.unsplash.com/photo-1678483789887-e7a72d6b872f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzkzOTY4NzR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": true,
       "published_date": "2026-05-21"
+    },
+    {
+      "id": "a2",
+      "cat": "Tools",
+      "headline": "Virgin Atlantic ships app 10x faster with Codex, hits zero P1 defects",
+      "body": "Virgin Atlantic used OpenAI's Codex to accelerate development of its revamped mobile app while meeting a fixed holiday travel deadline, achieving near-total unit test coverage and shipping with zero priority-one defects. Codex, OpenAI's code-generation model trained on publicly available code from GitHub, automatically generated large portions of the app's codebase, allowing the engineering team to focus on architecture, testing, and quality assurance rather than boilerplate and routine coding tasks. The deployment represents a real-world case study in how AI coding assistants can compress development timelines without sacrificing quality—typically a major tradeoff in software delivery. Virgin Atlantic's success metric of near-total unit test coverage combined with zero P1 defects (the most critical production issues) suggests Codex-generated code met enterprise-grade reliability standards. The holiday deadline context is critical: the airline needed to ship a fully functional mobile experience during peak travel season, making both speed and stability non-negotiable. This case demonstrates that AI code generation isn't just a developer convenience tool—it's becoming a viable strategy for enterprises to meet hard business constraints while maintaining production stability.",
+      "build": "Software agencies and dev shops are charging clients 30-50% premiums for 'AI-accelerated development' using Codex and GitHub Copilot, compressing 3-month projects into 6-8 weeks and capturing the time savings as margin. Freelance developers on Upwork are marketing 'Codex-powered rapid prototyping' at $150-300/hour for startups needing MVPs in weeks instead of months. Some boutique dev firms are offering fixed-price app builds (typically $50K-200K) with AI-assisted coding as the differentiator, competing on speed and cost against traditional software houses.",
+      "unsplash_query": "mobile app development coding productivity",
+      "significance": 7,
+      "time": "10h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/virgin-atlantic",
+      "img": "https://images.unsplash.com/photo-1604622245449-5be82bd4c294?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Nzk2MjE0NzV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-05-24"
+    },
+    {
+      "id": "a16",
+      "cat": "Tools",
+      "headline": "Meta's Friend Bubbles turns social graphs into discovery engine for billions",
+      "body": "Meta has launched Friend Bubbles, a new feature within Instagram Reels that surfaces content your friends have watched and reacted to, transforming social connections into a personalized discovery mechanism. The feature appears deceptively simple on the surface but required significant engineering infrastructure to function at Meta's scale of billions of users. On the Meta Tech Podcast, engineers Subasree and Joseph discussed the technical challenges of building social discovery that can handle Meta's massive user base and content volume. Friend Bubbles leverages existing friend networks and engagement signals to create a secondary discovery layer beyond algorithmic recommendations, giving users another pathway to find content through trusted social connections rather than purely algorithmic feeds. The engineering team had to optimize for performance, scalability, and relevance while processing billions of user interactions and reactions across the platform. This approach potentially reduces reliance on pure algorithmic ranking by introducing a social-graph-based alternative, which could appeal to users seeking more human-curated discovery experiences.",
+      "build": "AI agencies are monetizing enhanced recommendation systems by building custom Friend Bubbles-style discovery layers for mid-market social platforms and e-commerce sites, charging $8K-$25K/month for implementation and optimization. Freelance ML engineers are offering consulting on social graph algorithms to startups building competing features, billing at $150-$300/hour for 2-4 week engagements to help clients replicate Meta's architecture. Content creators are partnering with agencies to optimize their content for Friend Bubbles visibility, with agencies charging creators $2K-$10K monthly retainers to analyze friend network engagement and refine posting strategies.",
+      "unsplash_query": "social network connection friends digital",
+      "significance": 6,
+      "time": "7h",
+      "source": "Meta AI",
+      "link": "https://engineering.fb.com/2026/05/13/ml-applications/reel-friends-building-social-discovery-that-scales-to-billions/",
+      "img": "https://images.unsplash.com/photo-1758273706129-8f9be5e2dce4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Nzk2MjE0ODJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-05-24"
+    },
+    {
+      "id": "a5",
+      "cat": "Strategy",
+      "headline": "OpenAI scales AI education globally with new teacher training and school partnerships",
+      "body": "OpenAI has announced the next phase of its Education for Countries initiative, a program designed to accelerate AI adoption in educational institutions worldwide. The expansion includes new partnerships with schools and education systems, comprehensive teacher training programs, and purpose-built tools aimed at improving learning outcomes. While OpenAI did not disclose specific countries or institutions in this announcement, the initiative represents a broader strategy to position AI literacy as a foundational skill in global education. The program appears to focus on practical implementation rather than theoretical instruction, providing educators with resources to integrate AI tools into curricula. This move comes as schools globally grapple with how to prepare students for an AI-augmented workforce, and positions OpenAI as a key player in educational AI infrastructure beyond its consumer and enterprise products.",
+      "build": "Entrepreneurs are monetizing this by offering AI-literacy consulting to schools at $5,000-$25,000 per implementation project, positioning themselves as intermediaries between OpenAI's tools and underfunded school districts. Others are building custom lesson plans and teacher workshops using OpenAI's APIs, charging schools $2,000-$10,000 annually for curriculum packages. Education consultants are selling integration services that help schools adopt OpenAI's education tools into existing systems, capturing margins of 30-50% on projects that typically range $15,000-$100,000 depending on school size.",
+      "unsplash_query": "classroom technology students learning AI",
+      "significance": 5,
+      "time": "9h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/the-next-phase-of-education-for-countries",
+      "img": "https://images.unsplash.com/photo-1764720572656-e605ed35c28d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Nzk2MjE0Nzd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-05-24"
     }
   ]
 }
