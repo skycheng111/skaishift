@@ -1525,34 +1525,64 @@ function EarnPage() {
   );
 }
 
-// ── MODEL COMPARISON ──────────────────────────────────────────────────────────
-const MODELS_DATA = [
-  { name:"GPT-5.4",       maker:"OpenAI",    ctx:"128K",  best:"Complex reasoning, coding",    inp:"$1.75",  out:"$14.00", speed:"Fast",   tier:"Frontier" },
-  { name:"GPT-4.1 Nano",  maker:"OpenAI",    ctx:"128K",  best:"Speed, cost-sensitive tasks",  inp:"$0.10",  out:"$0.40",  speed:"Fastest",tier:"Budget" },
-  { name:"Claude Opus 4", maker:"Anthropic", ctx:"200K",  best:"Long documents, deep analysis",inp:"$15.00", out:"$75.00", speed:"Slow",   tier:"Frontier" },
-  { name:"Claude Sonnet 4.6",maker:"Anthropic",ctx:"200K",best:"Everyday tasks, best value",   inp:"$3.00",  out:"$15.00", speed:"Fast",   tier:"Standard" },
-  { name:"Claude Haiku 4.5",maker:"Anthropic",ctx:"200K",best:"Fast, cheap, high volume",      inp:"$0.80",  out:"$4.00",  speed:"Fastest",tier:"Budget" },
-  { name:"Gemini 2.5 Pro",maker:"Google",    ctx:"1M",    best:"Huge context, multimodal",     inp:"$1.25",  out:"$10.00", speed:"Medium", tier:"Frontier" },
-  { name:"Gemini 2.5 Flash",maker:"Google",  ctx:"1M",    best:"Speed + large context",        inp:"$0.15",  out:"$0.60",  speed:"Fastest",tier:"Budget" },
-  { name:"DeepSeek Chat V3",maker:"DeepSeek",ctx:"64K",   best:"Open source, ultra cheap",     inp:"$0.20",  out:"$0.77",  speed:"Fast",   tier:"Budget" },
-  { name:"Llama 3.3 70B", maker:"Meta",      ctx:"128K",  best:"Self-hosted, no API costs",    inp:"$0.10",  out:"$0.32",  speed:"Fast",   tier:"Open Source" },
-  { name:"Mistral Large", maker:"Mistral",   ctx:"128K",  best:"European data residency, coding",inp:"$2.00",out:"$6.00",speed:"Fast",   tier:"Standard" },
+// ── MODEL COMPARISON (live prices from OpenRouter) ────────────────────────────
+const MODELS_META = [
+  { id:"openai/gpt-5.4",                     name:"GPT-5.4",          maker:"OpenAI",    best:"Complex reasoning, coding",         speed:"Fast",    tier:"Frontier" },
+  { id:"openai/gpt-4.1-nano",                name:"GPT-4.1 Nano",     maker:"OpenAI",    best:"Speed, cost-sensitive tasks",       speed:"Fastest", tier:"Budget" },
+  { id:"anthropic/claude-opus-4",            name:"Claude Opus 4",    maker:"Anthropic", best:"Long docs, deep analysis",          speed:"Slow",    tier:"Frontier" },
+  { id:"anthropic/claude-sonnet-4.6",        name:"Claude Sonnet 4.6",maker:"Anthropic", best:"Everyday tasks, best value",        speed:"Fast",    tier:"Standard" },
+  { id:"anthropic/claude-haiku-4-5",         name:"Claude Haiku 4.5", maker:"Anthropic", best:"Fast, cheap, high volume",          speed:"Fastest", tier:"Budget" },
+  { id:"google/gemini-2.5-pro",              name:"Gemini 2.5 Pro",   maker:"Google",    best:"Huge context, multimodal",          speed:"Medium",  tier:"Frontier" },
+  { id:"google/gemini-2.5-flash",            name:"Gemini 2.5 Flash", maker:"Google",    best:"Speed + large context",             speed:"Fastest", tier:"Budget" },
+  { id:"deepseek/deepseek-chat-v3-0324",     name:"DeepSeek Chat V3", maker:"DeepSeek",  best:"Open source, ultra cheap",          speed:"Fast",    tier:"Budget" },
+  { id:"meta-llama/llama-3.3-70b-instruct",  name:"Llama 3.3 70B",    maker:"Meta",      best:"Self-hosted, no API costs",         speed:"Fast",    tier:"Open Source" },
+  { id:"mistralai/mistral-large-2411",       name:"Mistral Large",    maker:"Mistral",   best:"European data residency, coding",   speed:"Fast",    tier:"Standard" },
 ];
 const TIER_COLOR={Frontier:T?.red||"#E8001C",Standard:"#2563EB",Budget:"#16A34A","Open Source":"#7C3AED"};
 
+function fmtCtx(n){ if(!n) return "—"; if(n>=1000000) return Math.round(n/1000)+"K"; if(n>=1000) return Math.round(n/1000)+"K"; return n+""; }
+function fmtPrice(n){ if(!n&&n!==0) return "—"; const v=n*1000000; return "$"+v.toFixed(v<1?2:v<10?2:0); }
+
 function ModelsPage() {
   const [sort,setSort]=useState("name");
-  const sorted=[...MODELS_DATA].sort((a,b)=>{
-    if(sort==="inp") return parseFloat(a.inp.replace("$",""))-parseFloat(b.inp.replace("$",""));
-    if(sort==="out") return parseFloat(a.out.replace("$",""))-parseFloat(b.out.replace("$",""));
+  const [models,setModels]=useState(MODELS_META.map(m=>({...m,inp:null,out:null,ctx:null})));
+  const [live,setLive]=useState(false);
+
+  useEffect(()=>{
+    fetch("https://openrouter.ai/api/v1/models")
+      .then(r=>r.json())
+      .then(data=>{
+        const map={};
+        (data.data||[]).forEach(m=>{ map[m.id]=m; });
+        setModels(MODELS_META.map(meta=>{
+          const m=map[meta.id];
+          return {
+            ...meta,
+            inp: m?.pricing?.prompt!=null ? parseFloat(m.pricing.prompt) : null,
+            out: m?.pricing?.completion!=null ? parseFloat(m.pricing.completion) : null,
+            ctx: m?.context_length || null,
+          };
+        }));
+        setLive(true);
+      })
+      .catch(()=>{});
+  },[]);
+
+  const sorted=[...models].sort((a,b)=>{
+    if(sort==="inp") return (a.inp??999)-(b.inp??999);
+    if(sort==="out") return (a.out??999)-(b.out??999);
     return a[sort]?.localeCompare?.(b[sort])||0;
   });
+
   return (
     <div style={{background:T.bg,paddingBottom:60,maxWidth:900,margin:"0 auto"}}>
       <div style={{background:T.ink,padding:`32px ${INSET}px 24px`}}>
-        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>COMPARISON</span>
-        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:24,color:"#fff",margin:"8px 0 8px"}}>AI Model Comparison</h1>
-        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.5)",margin:0}}>Top models compared by price, context, and best use case. Per 1M tokens.</p>
+        <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
+          <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>COMPARISON</span>
+          {live&&<span style={{width:6,height:6,borderRadius:"50%",background:"#22C55E",display:"inline-block"}}/>}
+        </div>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:24,color:"#fff",margin:"0 0 8px"}}>AI Model Comparison</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.5)",margin:0}}>{live?"Live prices from OpenRouter. Updates on page load.":"Loading live prices..."} Per 1M tokens.</p>
       </div>
       <div style={{padding:`12px ${INSET}px 0`,display:"flex",alignItems:"center",gap:8,flexWrap:"wrap"}}>
         <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>Sort by:</span>
@@ -1574,7 +1604,12 @@ function ModelsPage() {
               <span style={{background:TIER_COLOR[m.tier]||"#666",color:"#fff",fontSize:9,fontWeight:700,padding:"2px 8px",borderRadius:10,letterSpacing:"0.05em",flexShrink:0}}>{m.tier}</span>
             </div>
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr 1fr",gap:8,marginBottom:8}}>
-              {[["Context",m.ctx],["Input",m.inp+"/M"],["Output",m.out+"/M"],["Speed",m.speed]].map(([l,v])=>(
+              {[
+                ["Context", m.ctx!=null?fmtCtx(m.ctx):"—"],
+                ["Input",   m.inp!=null?fmtPrice(m.inp)+"/M":"—"],
+                ["Output",  m.out!=null?fmtPrice(m.out)+"/M":"—"],
+                ["Speed",   m.speed],
+              ].map(([l,v])=>(
                 <div key={l} style={{background:T.bg,borderRadius:8,padding:"8px 10px"}}>
                   <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:8,color:T.mid,letterSpacing:"0.1em",margin:"0 0 2px"}}>{l}</p>
                   <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:700,fontSize:12,color:l==="Input"?"#16A34A":l==="Output"?"#DC2626":T.ink,margin:0}}>{v}</p>
@@ -1586,7 +1621,7 @@ function ModelsPage() {
         ))}
       </div>
       <div style={{margin:`16px ${INSET}px 0`,background:"#FFFBF0",border:"1px solid #F5A623",borderRadius:12,padding:"14px 16px"}}>
-        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"#78350F",lineHeight:1.6,margin:0}}>Prices are per 1 million tokens in/out via each provider's API. Context window shown is max input. Prices update regularly — check the live marquee on the homepage for latest pricing.</p>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"#78350F",lineHeight:1.6,margin:0}}>Prices pulled live from OpenRouter on page load. Context window is max input tokens. Speed ratings are relative estimates. New models appear automatically when added to OpenRouter.</p>
       </div>
     </div>
   );
