@@ -218,9 +218,18 @@ function CategoryPills({ cat, setCat }) {
 function ArticleDetail({ story, onBack }) {
   return (
     <div style={{background:T.bg,minHeight:"100vh"}}>
-
+      {/* Mini header inside overlay */}
+      <div style={{background:"#0F0F0F",padding:"12px 16px",display:"flex",alignItems:"center",gap:12,position:"sticky",top:0,zIndex:10}}>
+        <button onClick={onBack} style={{background:"none",border:"none",cursor:"pointer",display:"flex",alignItems:"center",gap:6,padding:0}}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </button>
+        <img src={LOGO_SRC} alt="skAIshift" style={{height:28,width:"auto",borderRadius:6}}/>
+        <span style={{fontFamily:"'Barlow Semi Condensed',sans-serif",fontSize:17,letterSpacing:"0.15em",fontWeight:700}}>
+          <span style={{color:"#fff"}}>SK</span><span style={{color:T.amber}}>AI</span><span style={{color:"#fff"}}>SHIFT</span>
+        </span>
+      </div>
       <div style={{maxWidth:720,margin:"0 auto"}}>
-        <div style={{borderRadius:20,overflow:"hidden",margin:`16px ${INSET}px 0`,boxShadow:"0 2px 12px rgba(0,0,0,0.1)"}}>
+        <div style={{overflow:"hidden",margin:`16px ${INSET}px 0`,borderRadius:16,boxShadow:"0 2px 12px rgba(0,0,0,0.1)"}}>
           <NewsImg src={story.img} style={{width:"100%",aspectRatio:"16/9",objectFit:"cover"}}/>
         </div>
         <div style={{padding:`20px ${INSET}px`}}>
@@ -748,6 +757,33 @@ function APIPriceMarquee() {
   );
 }
 
+
+function ResourcesTeaser({ onNav }) {
+  const TILES = [
+    { label:"AI Tool Directory", sub:"Find the right tool for any job", v:"tools", color:"#2563EB" },
+    { label:"Earn with AI",      sub:"Income streams & how to start",  v:"earn",  color:T.red },
+    { label:"Model Compare",     sub:"Side-by-side pricing & specs",   v:"models",color:T.amber },
+    { label:"Community",         sub:"Where AI builders hang out",     v:"community",color:"#7C3AED" },
+  ];
+  return (
+    <div style={{background:T.bg,padding:`8px ${INSET}px 16px`}}>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
+        <div style={{width:3,height:16,background:T.ink,borderRadius:2}}/>
+        <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:T.ink}}>Explore More</span>
+      </div>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
+        {TILES.map((tile,i)=>(
+          <button key={i} onClick={()=>onNav(tile.v)}
+            style={{background:"#fff",border:T.border,borderRadius:12,padding:"14px",textAlign:"left",cursor:"pointer",borderLeft:`3px solid ${tile.color}`}}>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:700,fontSize:12,color:T.ink,margin:"0 0 3px"}}>{tile.label}</p>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:T.mid,margin:0,lineHeight:1.4}}>{tile.sub}</p>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles, lastWeekArticles }) {
   const feed = (cat==="All" ? articles.filter(a=>!a.feat) : articles.filter(a=>a.cat===cat));
   const shown = feed.slice(0,(page+1)*6);
@@ -790,6 +826,7 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
       <APIPriceMarquee/>
       <LiveSection/>
       <LearnTeaser onNav={onNav}/>
+      <ResourcesTeaser onNav={onNav}/>
       <NewsletterCTA/>
     </div>
   );
@@ -1249,6 +1286,10 @@ function Footer({ onNav }) {
             {l:"Home",v:"home"},
             {l:"Weekly Brief",v:"brief"},
             {l:"Learn",v:"learn"},
+            {l:"Tool Directory",v:"tools"},
+            {l:"Earn with AI",v:"earn"},
+            {l:"Model Compare",v:"models"},
+            {l:"Community",v:"community"},
             {l:"Subscribe",v:"subscribe"},
           ].map(item=>(
             <button key={item.v} onClick={()=>onNav(item.v)}
@@ -1347,6 +1388,269 @@ function TermsPage() {
   );
 }
 
+
+// ── TOOL DIRECTORY ────────────────────────────────────────────────────────────
+const AI_TOOLS = [
+  { name:"ChatGPT",       cat:"Chat",       desc:"OpenAI's flagship conversational AI. Best all-rounder for writing, research, and ideation.", url:"https://chat.openai.com", badge:"Popular" },
+  { name:"Claude",        cat:"Chat",       desc:"Anthropic's AI. Excellent for long documents, nuanced writing, and complex reasoning.", url:"https://claude.ai", badge:"" },
+  { name:"Gemini",        cat:"Chat",       desc:"Google's AI, deeply integrated with Google Workspace and Search.", url:"https://gemini.google.com", badge:"" },
+  { name:"Perplexity",    cat:"Research",   desc:"AI-powered search engine that cites sources. Best for real-time research.", url:"https://perplexity.ai", badge:"Popular" },
+  { name:"Cursor",        cat:"Coding",     desc:"AI-native code editor built on VS Code. Best tool for AI-assisted development.", url:"https://cursor.sh", badge:"Top Pick" },
+  { name:"GitHub Copilot",cat:"Coding",     desc:"AI pair programmer built into your editor. Suggests code as you type.", url:"https://github.com/features/copilot", badge:"" },
+  { name:"Windsurf",      cat:"Coding",     desc:"Agentic IDE that can write and run entire features autonomously.", url:"https://codeium.com/windsurf", badge:"" },
+  { name:"Midjourney",    cat:"Image",      desc:"Best-in-class AI image generation. Produces photorealistic and artistic images.", url:"https://midjourney.com", badge:"Popular" },
+  { name:"DALL-E 3",      cat:"Image",      desc:"OpenAI's image generator, integrated into ChatGPT. Great for quick iterations.", url:"https://openai.com/dall-e-3", badge:"" },
+  { name:"Ideogram",      cat:"Image",      desc:"Excels at text-in-image generation. Best for logos and graphic design.", url:"https://ideogram.ai", badge:"" },
+  { name:"ElevenLabs",    cat:"Voice",      desc:"Best AI voice cloning and text-to-speech. Used by podcasters and content creators.", url:"https://elevenlabs.io", badge:"Top Pick" },
+  { name:"Suno",          cat:"Music",      desc:"Generate full songs with vocals from a text prompt in seconds.", url:"https://suno.com", badge:"Popular" },
+  { name:"Udio",          cat:"Music",      desc:"High-quality AI music generation. Strong at specific genres and instruments.", url:"https://udio.com", badge:"" },
+  { name:"Runway",        cat:"Video",      desc:"AI video generation and editing. Industry standard for AI video production.", url:"https://runwayml.com", badge:"Popular" },
+  { name:"Kling AI",      cat:"Video",      desc:"High-quality AI video generation from text or image. Strong at realistic motion.", url:"https://klingai.com", badge:"" },
+  { name:"Zapier",        cat:"Automation", desc:"Connect 6,000+ apps with AI-powered workflows. No code required.", url:"https://zapier.com", badge:"Popular" },
+  { name:"Make",          cat:"Automation", desc:"Visual workflow builder for complex automations. More powerful than Zapier.", url:"https://make.com", badge:"" },
+  { name:"n8n",           cat:"Automation", desc:"Open-source workflow automation. Self-host or cloud. Preferred by developers.", url:"https://n8n.io", badge:"" },
+  { name:"Notion AI",     cat:"Productivity",desc:"AI built into Notion. Summarize, write, and organize inside your workspace.", url:"https://notion.so/product/ai", badge:"" },
+  { name:"Descript",      cat:"Video",      desc:"Edit video and podcast by editing the transcript. Includes AI voice and filler removal.", url:"https://descript.com", badge:"" },
+];
+
+const TOOL_CATS = ["All","Chat","Coding","Image","Voice","Video","Music","Automation","Research","Productivity"];
+const CAT_COLORS = {Chat:"#2563EB",Coding:"#16A34A",Image:"#7C3AED",Voice:"#CC785C",Video:"#E8001C",Music:"#0891B2",Automation:"#D97706",Research:"#4285F4",Productivity:"#6B7280"};
+
+function ToolsPage() {
+  const [cat,setCat]=useState("All");
+  const [search,setSearch]=useState("");
+  const filtered = AI_TOOLS.filter(t =>
+    (cat==="All"||t.cat===cat) &&
+    (search===""||t.name.toLowerCase().includes(search.toLowerCase())||t.desc.toLowerCase().includes(search.toLowerCase()))
+  );
+  return (
+    <div style={{background:T.bg,paddingBottom:60,maxWidth:800,margin:"0 auto"}}>
+      <div style={{background:T.ink,padding:`32px ${INSET}px 24px`}}>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>DIRECTORY</span>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:24,color:"#fff",margin:"8px 0 8px"}}>AI Tool Directory</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.5)",margin:"0 0 16px"}}>Curated tools for builders and entrepreneurs. Updated regularly.</p>
+        <input placeholder="Search tools..." value={search} onChange={e=>setSearch(e.target.value)}
+          style={{width:"100%",background:"rgba(255,255,255,0.08)",border:"1px solid rgba(255,255,255,0.15)",borderRadius:24,color:"#fff",padding:"10px 16px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,outline:"none",boxSizing:"border-box"}}/>
+      </div>
+      <div style={{display:"flex",gap:8,overflowX:"auto",scrollbarWidth:"none",padding:`12px ${INSET}px`}}>
+        {TOOL_CATS.map(c=>(
+          <button key={c} onClick={()=>setCat(c)}
+            style={{background:cat===c?T.ink:"#fff",border:cat===c?"none":T.border,borderRadius:20,padding:"6px 14px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,fontWeight:600,color:cat===c?"#fff":T.mid,cursor:"pointer",whiteSpace:"nowrap",flexShrink:0}}>
+            {c}
+          </button>
+        ))}
+      </div>
+      <div style={{padding:`0 ${INSET}px`,display:"flex",flexDirection:"column",gap:10}}>
+        {filtered.map((tool,i)=>(
+          <a key={i} href={tool.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
+            <div style={{background:"#fff",border:T.border,borderRadius:14,padding:"14px 16px",display:"flex",alignItems:"flex-start",gap:12}}>
+              <div style={{width:40,height:40,borderRadius:10,background:CAT_COLORS[tool.cat]||"#666",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+                <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:11,color:"#fff",letterSpacing:"0.05em"}}>{tool.cat.slice(0,3).toUpperCase()}</span>
+              </div>
+              <div style={{flex:1,minWidth:0}}>
+                <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:3}}>
+                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:700,fontSize:14,color:T.ink}}>{tool.name}</span>
+                  {tool.badge&&<span style={{background:tool.badge==="Top Pick"?T.amber:tool.badge==="Popular"?T.red:"#E4E4E0",color:"#fff",fontSize:9,fontWeight:700,padding:"1px 6px",borderRadius:10,letterSpacing:"0.05em"}}>{tool.badge}</span>}
+                </div>
+                <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:CAT_COLORS[tool.cat]||T.mid,letterSpacing:"0.1em"}}>{tool.cat}</span>
+                <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid,lineHeight:1.6,margin:"4px 0 0"}}>{tool.desc}</p>
+              </div>
+              <span style={{color:T.mid,fontSize:16,flexShrink:0}}>→</span>
+            </div>
+          </a>
+        ))}
+        {filtered.length===0&&<p style={{textAlign:"center",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,padding:"24px 0"}}>No tools found for "{search}"</p>}
+      </div>
+    </div>
+  );
+}
+
+// ── EARN PAGE ─────────────────────────────────────────────────────────────────
+const EARN_STREAMS = [
+  { n:"AI Automation Agency", range:"$3K–$20K/mo", diff:"Medium", desc:"Build custom AI workflows for businesses — lead qualification, customer service, document processing. Package as monthly retainers. Target: SMBs in one vertical (legal, real estate, medical).", steps:["Pick one industry","Build 1 demo solving a common pain point","Cold outreach to 20 businesses per week","Charge $150–$500 setup + $100–$400/month retainer"] },
+  { n:"AI Content Creation", range:"$2K–$10K/mo", diff:"Easy", desc:"Use AI tools to produce content at scale for clients — social media, blog posts, email newsletters, ad copy. Position as a 'content studio' not a freelancer.", steps:["Pick 2-3 content types you'll specialize in","Build a portfolio of 5 samples using AI tools","Price per deliverable or on retainer","Automate your own workflow to increase margins"] },
+  { n:"Prompt Engineering Services", range:"$1K–$8K/mo", diff:"Easy", desc:"Businesses using AI need their prompts optimized. Audit existing prompts, build prompt libraries, and train teams. Often done as a one-time project.", steps:["Learn advanced prompting techniques","Offer a free prompt audit to get first clients","Package into: audit ($500), library build ($1500), training ($2000)","Target companies already using AI tools"] },
+  { n:"AI SaaS Product", range:"$0–$50K+/mo", diff:"Hard", desc:"Build a niche software product powered by AI — a specific tool for a specific audience. High upside, high effort. Examples: AI for real estate listings, AI for personal trainers, AI for HR.", steps:["Find a niche with a painful repetitive task","Validate with 5 conversations before building","Build MVP in 2-4 weeks using Claude/GPT APIs","Charge $29–$199/month per user"] },
+  { n:"AI Consulting", range:"$5K–$30K/mo", diff:"Medium", desc:"Help businesses develop an AI strategy — what tools to use, what to automate, how to train staff. Usually project-based. Requires credibility and case studies.", steps:["Define your consulting niche (marketing, ops, HR, etc.)","Do 3 free or discounted engagements to build case studies","Package: AI Audit ($2K), Strategy ($5K), Implementation ($15K+)","Market through LinkedIn content and speaking"] },
+  { n:"Online Course or Community", range:"$1K–$30K/mo", diff:"Medium", desc:"Teach what you know about AI. Courses, cohorts, or paid communities around specific skills — prompting, building agents, using specific tools.", steps:["Pick a specific skill you can teach","Validate with a $97 workshop before building a full course","Use Gumroad, Podia, or Circle to host","Promote through social content and email list"] },
+];
+
+function EarnPage() {
+  const [open,setOpen]=useState(null);
+  const DIFF_COLOR={Easy:"#16A34A",Medium:"#D97706",Hard:"#DC2626"};
+  return (
+    <div style={{background:T.bg,paddingBottom:60,maxWidth:800,margin:"0 auto"}}>
+      <div style={{background:T.ink,padding:`32px ${INSET}px 24px`}}>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>INCOME STREAMS</span>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:24,color:"#fff",margin:"8px 0 8px"}}>How to Make Money with AI</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.5)",margin:0}}>Concrete income streams people are using right now. Real numbers, real steps.</p>
+      </div>
+      <div style={{padding:`16px ${INSET}px 0`,display:"flex",flexDirection:"column",gap:10}}>
+        {EARN_STREAMS.map((s,i)=>(
+          <div key={i} style={{background:"#fff",border:T.border,borderRadius:14,overflow:"hidden"}}>
+            <button onClick={()=>setOpen(open===i?null:i)}
+              style={{width:"100%",background:"none",border:"none",padding:"16px",display:"flex",alignItems:"flex-start",gap:12,cursor:"pointer",textAlign:"left"}}>
+              <div style={{flex:1}}>
+                <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4,flexWrap:"wrap"}}>
+                  <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:15,color:T.ink}}>{s.n}</span>
+                </div>
+                <div style={{display:"flex",gap:8,alignItems:"center"}}>
+                  <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:11,color:CATS.Earn,letterSpacing:"0.08em"}}>{s.range}</span>
+                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:"#fff",background:DIFF_COLOR[s.diff],padding:"1px 7px",borderRadius:10,fontWeight:700}}>{s.diff}</span>
+                </div>
+              </div>
+              <span style={{color:T.mid,fontSize:18,fontWeight:300,flexShrink:0}}>{open===i?"−":"+"}</span>
+            </button>
+            {open===i&&(
+              <div style={{padding:"0 16px 16px",borderTop:T.border}}>
+                <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"#3A3A3A",lineHeight:1.75,margin:"14px 0 14px"}}>{s.desc}</p>
+                <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:T.red,letterSpacing:"0.14em",margin:"0 0 10px"}}>HOW TO START</p>
+                {s.steps.map((step,j)=>(
+                  <div key={j} style={{display:"flex",gap:10,marginBottom:8}}>
+                    <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:12,color:T.red,flexShrink:0,minWidth:16}}>{j+1}</span>
+                    <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid,lineHeight:1.6,margin:0}}>{step}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      <div style={{margin:`24px ${INSET}px 0`,background:T.ink,borderRadius:16,padding:"20px",textAlign:"center"}}>
+        <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:"#fff",margin:"0 0 10px"}}>See real examples every morning.</p>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"rgba(255,255,255,0.5)",margin:"0 0 14px"}}>Every article on skAIshift includes a "What People Are Building" section with concrete income moves.</p>
+        <button style={{background:T.red,color:"#fff",border:"none",borderRadius:24,padding:"10px 24px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,fontWeight:600,cursor:"pointer"}}>Read Today's News →</button>
+      </div>
+    </div>
+  );
+}
+
+// ── MODEL COMPARISON ──────────────────────────────────────────────────────────
+const MODELS_DATA = [
+  { name:"GPT-5.4",       maker:"OpenAI",    ctx:"128K",  best:"Complex reasoning, coding",    inp:"$1.75",  out:"$14.00", speed:"Fast",   tier:"Frontier" },
+  { name:"GPT-4.1 Nano",  maker:"OpenAI",    ctx:"128K",  best:"Speed, cost-sensitive tasks",  inp:"$0.10",  out:"$0.40",  speed:"Fastest",tier:"Budget" },
+  { name:"Claude Opus 4", maker:"Anthropic", ctx:"200K",  best:"Long documents, deep analysis",inp:"$15.00", out:"$75.00", speed:"Slow",   tier:"Frontier" },
+  { name:"Claude Sonnet 4.6",maker:"Anthropic",ctx:"200K",best:"Everyday tasks, best value",   inp:"$3.00",  out:"$15.00", speed:"Fast",   tier:"Standard" },
+  { name:"Claude Haiku 4.5",maker:"Anthropic",ctx:"200K",best:"Fast, cheap, high volume",      inp:"$0.80",  out:"$4.00",  speed:"Fastest",tier:"Budget" },
+  { name:"Gemini 2.5 Pro",maker:"Google",    ctx:"1M",    best:"Huge context, multimodal",     inp:"$1.25",  out:"$10.00", speed:"Medium", tier:"Frontier" },
+  { name:"Gemini 2.5 Flash",maker:"Google",  ctx:"1M",    best:"Speed + large context",        inp:"$0.15",  out:"$0.60",  speed:"Fastest",tier:"Budget" },
+  { name:"DeepSeek Chat V3",maker:"DeepSeek",ctx:"64K",   best:"Open source, ultra cheap",     inp:"$0.20",  out:"$0.77",  speed:"Fast",   tier:"Budget" },
+  { name:"Llama 3.3 70B", maker:"Meta",      ctx:"128K",  best:"Self-hosted, no API costs",    inp:"$0.10",  out:"$0.32",  speed:"Fast",   tier:"Open Source" },
+  { name:"Mistral Large", maker:"Mistral",   ctx:"128K",  best:"European data residency, coding",inp:"$2.00",out:"$6.00",speed:"Fast",   tier:"Standard" },
+];
+const TIER_COLOR={Frontier:T?.red||"#E8001C",Standard:"#2563EB",Budget:"#16A34A","Open Source":"#7C3AED"};
+
+function ModelsPage() {
+  const [sort,setSort]=useState("name");
+  const sorted=[...MODELS_DATA].sort((a,b)=>{
+    if(sort==="inp") return parseFloat(a.inp.replace("$",""))-parseFloat(b.inp.replace("$",""));
+    if(sort==="out") return parseFloat(a.out.replace("$",""))-parseFloat(b.out.replace("$",""));
+    return a[sort]?.localeCompare?.(b[sort])||0;
+  });
+  return (
+    <div style={{background:T.bg,paddingBottom:60,maxWidth:900,margin:"0 auto"}}>
+      <div style={{background:T.ink,padding:`32px ${INSET}px 24px`}}>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>COMPARISON</span>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:24,color:"#fff",margin:"8px 0 8px"}}>AI Model Comparison</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.5)",margin:0}}>Top models compared by price, context, and best use case. Per 1M tokens.</p>
+      </div>
+      <div style={{padding:`12px ${INSET}px 0`,display:"flex",alignItems:"center",gap:8,flexWrap:"wrap"}}>
+        <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>Sort by:</span>
+        {[["name","Name"],["inp","Input $"],["out","Output $"],["maker","Maker"],["tier","Tier"]].map(([k,l])=>(
+          <button key={k} onClick={()=>setSort(k)}
+            style={{background:sort===k?T.ink:"#fff",border:T.border,borderRadius:16,padding:"4px 12px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,fontWeight:600,color:sort===k?"#fff":T.mid,cursor:"pointer"}}>
+            {l}
+          </button>
+        ))}
+      </div>
+      <div style={{padding:`12px ${INSET}px 0`,display:"flex",flexDirection:"column",gap:8}}>
+        {sorted.map((m,i)=>(
+          <div key={i} style={{background:"#fff",border:T.border,borderRadius:12,padding:"14px 16px"}}>
+            <div style={{display:"flex",alignItems:"flex-start",justifyContent:"space-between",gap:8,marginBottom:8}}>
+              <div>
+                <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:700,fontSize:14,color:T.ink}}>{m.name}</span>
+                <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid,marginLeft:6}}>{m.maker}</span>
+              </div>
+              <span style={{background:TIER_COLOR[m.tier]||"#666",color:"#fff",fontSize:9,fontWeight:700,padding:"2px 8px",borderRadius:10,letterSpacing:"0.05em",flexShrink:0}}>{m.tier}</span>
+            </div>
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr 1fr",gap:8,marginBottom:8}}>
+              {[["Context",m.ctx],["Input",m.inp+"/M"],["Output",m.out+"/M"],["Speed",m.speed]].map(([l,v])=>(
+                <div key={l} style={{background:T.bg,borderRadius:8,padding:"8px 10px"}}>
+                  <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:8,color:T.mid,letterSpacing:"0.1em",margin:"0 0 2px"}}>{l}</p>
+                  <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:700,fontSize:12,color:l==="Input"?"#16A34A":l==="Output"?"#DC2626":T.ink,margin:0}}>{v}</p>
+                </div>
+              ))}
+            </div>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid,margin:0,lineHeight:1.5}}>Best for: {m.best}</p>
+          </div>
+        ))}
+      </div>
+      <div style={{margin:`16px ${INSET}px 0`,background:"#FFFBF0",border:"1px solid #F5A623",borderRadius:12,padding:"14px 16px"}}>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"#78350F",lineHeight:1.6,margin:0}}>Prices are per 1 million tokens in/out via each provider's API. Context window shown is max input. Prices update regularly — check the live marquee on the homepage for latest pricing.</p>
+      </div>
+    </div>
+  );
+}
+
+// ── COMMUNITY PAGE ─────────────────────────────────────────────────────────────
+const COMMUNITIES = [
+  { name:"r/MachineLearning", type:"Reddit", desc:"The largest ML research community. Where papers get discussed the day they drop.", url:"https://reddit.com/r/MachineLearning", members:"4M+" },
+  { name:"r/artificial", type:"Reddit", desc:"General AI news and discussion. Good mix of technical and business coverage.", url:"https://reddit.com/r/artificial", members:"1.5M+" },
+  { name:"Hugging Face Discord", type:"Discord", desc:"The AI developer community. Model releases, datasets, and implementation help.", url:"https://discord.gg/hugging-face-879548962464493619", members:"100K+" },
+  { name:"Latent Space", type:"Discord", desc:"AI engineers and researchers. High signal, low noise.", url:"https://discord.gg/latentspacepod", members:"20K+" },
+  { name:"AI Jason Community", type:"Discord", desc:"Focused on building with AI. Automation, agents, and making money with AI tools.", url:"https://discord.gg/aijason", members:"30K+" },
+  { name:"OpenAI Developer Forum", type:"Forum", desc:"Official forum for developers building on OpenAI's API. Direct answers from OpenAI staff.", url:"https://community.openai.com", members:"Official" },
+  { name:"Anthropic Discord", type:"Discord", desc:"Claude API developers and prompt engineers.", url:"https://discord.gg/anthropic", members:"Active" },
+  { name:"Simon Willison's Blog", type:"Blog", desc:"The most consistently useful writing on practical AI. Updated daily.", url:"https://simonwillison.net", members:"" },
+  { name:"AI Twitter/X", type:"Social", desc:"Follow: @sama, @karpathy, @ylecun, @emollick, @goodside, @gdb, @swyx", url:"https://x.com", members:"" },
+  { name:"The Rundown AI", type:"Newsletter", desc:"Daily AI newsletter with 600K+ subscribers. Good benchmark for what mainstream is covering.", url:"https://therundown.ai", members:"600K+" },
+  { name:"TLDR AI", type:"Newsletter", desc:"Technical AI newsletter. Model papers and research in plain English.", url:"https://tldr.tech/ai", members:"500K+" },
+];
+const TYPE_COLOR={Reddit:"#FF4500",Discord:"#5865F2",Forum:"#16A34A",Blog:"#0F0F0F",Social:"#1D9BF0",Newsletter:"#7C3AED"};
+
+function CommunityPage() {
+  const [filter,setFilter]=useState("All");
+  const types=["All","Reddit","Discord","Forum","Blog","Social","Newsletter"];
+  const filtered=COMMUNITIES.filter(c=>filter==="All"||c.type===filter);
+  return (
+    <div style={{background:T.bg,paddingBottom:60,maxWidth:800,margin:"0 auto"}}>
+      <div style={{background:T.ink,padding:`32px ${INSET}px 24px`}}>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>COMMUNITY</span>
+        <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:24,color:"#fff",margin:"8px 0 8px"}}>AI Communities & Resources</h1>
+        <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:"rgba(255,255,255,0.5)",margin:0}}>Where AI people actually hang out. Curated for builders and entrepreneurs.</p>
+      </div>
+      <div style={{display:"flex",gap:8,overflowX:"auto",scrollbarWidth:"none",padding:`12px ${INSET}px`}}>
+        {types.map(t=>(
+          <button key={t} onClick={()=>setFilter(t)}
+            style={{background:filter===t?T.ink:"#fff",border:filter===t?"none":T.border,borderRadius:20,padding:"6px 14px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,fontWeight:600,color:filter===t?"#fff":T.mid,cursor:"pointer",whiteSpace:"nowrap",flexShrink:0}}>
+            {t}
+          </button>
+        ))}
+      </div>
+      <div style={{padding:`0 ${INSET}px`,display:"flex",flexDirection:"column",gap:10}}>
+        {filtered.map((c,i)=>(
+          <a key={i} href={c.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
+            <div style={{background:"#fff",border:T.border,borderRadius:14,padding:"14px 16px",display:"flex",gap:12,alignItems:"flex-start"}}>
+              <div style={{width:40,height:40,borderRadius:10,background:TYPE_COLOR[c.type]||"#666",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+                <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:"#fff",letterSpacing:"0.05em",textAlign:"center"}}>{c.type.slice(0,4).toUpperCase()}</span>
+              </div>
+              <div style={{flex:1,minWidth:0}}>
+                <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:2,flexWrap:"wrap"}}>
+                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontWeight:700,fontSize:14,color:T.ink}}>{c.name}</span>
+                  {c.members&&<span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:T.mid}}>{c.members}</span>}
+                </div>
+                <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:TYPE_COLOR[c.type],letterSpacing:"0.1em"}}>{c.type}</span>
+                <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.mid,lineHeight:1.6,margin:"4px 0 0"}}>{c.desc}</p>
+              </div>
+              <span style={{color:T.mid,fontSize:16,flexShrink:0}}>→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ── APP ───────────────────────────────────────────────────────────────────────
 export default function App() {
   const [view,setView]=useState("home");
@@ -1354,7 +1658,6 @@ export default function App() {
   const [page,setPage]=useState(0);
   const [art,setArt]=useState(null);
   const swipeStartX = useRef(null);
-  const [animClass, setAnimClass] = useState("");
   const swipeStartY = useRef(null);
   const [newsData,setNewsData]=useState(FALLBACK);
   const [showPopup,setShowPopup]=useState(false);
@@ -1400,20 +1703,19 @@ export default function App() {
   },[]);
 
   const [prevView,setPrevView]=useState("home");
+  const [articleOpen,setArticleOpen]=useState(false);
   const onSelect=a=>{
     setPrevView(view);
     setArt(a);
     setView("article");
-    setAnimClass("slide-in-right");
-    setTimeout(()=>setAnimClass(""),300);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>setArticleOpen(true)));
   };
   const onBack=()=>{
-    setAnimClass("slide-out-right");
+    setArticleOpen(false);
     setTimeout(()=>{
-      setAnimClass("");
       setArt(null);
       setView(prevView);
-    },220);
+    },320);
   };
   const onNav=v=>setView(v);
 
@@ -1439,21 +1741,21 @@ export default function App() {
         *{box-sizing:border-box;margin:0;padding:0;}
         img{display:block;} button{-webkit-tap-highlight-color:transparent;}
         ::-webkit-scrollbar{display:none;}
-        @keyframes slideInRight{
-          from{transform:translateX(100%);opacity:0;}
-          to{transform:translateX(0);opacity:1;}
+        .article-slide{
+          position:fixed;
+          top:0; left:0; right:0; bottom:0;
+          z-index:300;
+          background:#F4F4F0;
+          opacity:0;
+          pointer-events:none;
+          transition:opacity 0.22s ease;
+          overflow-y:auto;
+          -webkit-overflow-scrolling:touch;
         }
-        @keyframes slideOutRight{
-          from{transform:translateX(0);opacity:1;}
-          to{transform:translateX(100%);opacity:0;}
+        .article-slide.open{
+          opacity:1;
+          pointer-events:auto;
         }
-        @keyframes slideInLeft{
-          from{transform:translateX(-30%);opacity:0;}
-          to{transform:translateX(0);opacity:1;}
-        }
-        .slide-in-right{animation:slideInRight 0.28s cubic-bezier(0.25,0.46,0.45,0.94) both;}
-        .slide-out-right{animation:slideOutRight 0.25s cubic-bezier(0.55,0,1,0.45) both;}
-        .slide-in-left{animation:slideInLeft 0.28s cubic-bezier(0.25,0.46,0.45,0.94) both;}
         @keyframes marquee{
           0%{transform:translateX(0)}
           100%{transform:translateX(-50%)}
@@ -1498,17 +1800,24 @@ export default function App() {
         setShowPopup(false);
         localStorage.setItem("skaishift_popup_seen","1");
       }}/>}
-      <Header onNav={onNav} onBack={view==="article"?onBack:null}/>
+      <Header onNav={onNav} onBack={null}/>
 
       <main style={{flex:1}}>
         {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav} weeklyArticles={weeklyArticles} lastWeekArticles={lastWeekArticles}/>}
-        {view==="article"   &&art&&<div className={animClass} style={{flex:1}}><ArticleDetail story={art} onBack={onBack} onNav={onNav}/></div>}
         {view==="brief"     &&<BriefPage articles={lastWeekArticles} onBack={()=>setView('home')} onSelect={onSelect}/>}
         {view==="subscribe" &&<SubPage/>}
         {view==="learn"      &&<LearnPage onNav={onNav}/>}
         {view==="privacy"    &&<PrivacyPage/>}
         {view==="terms"      &&<TermsPage/>}
+        {view==="tools"      &&<ToolsPage/>}
+        {view==="earn"       &&<EarnPage/>}
+        {view==="models"     &&<ModelsPage/>}
+        {view==="community"  &&<CommunityPage/>}
       </main>
+      {/* Article overlay — outside main, always mounted when art exists, fades in/out */}
+      {art&&<div className={"article-slide"+(articleOpen?" open":"")}>
+        <ArticleDetail story={art} onBack={onBack} onNav={onNav}/>
+      </div>}
 
       <Footer onNav={onNav}/>
 
