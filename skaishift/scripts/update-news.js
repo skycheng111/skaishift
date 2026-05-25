@@ -415,14 +415,6 @@ async function main() {
   const wSeenUrls = new Set();
   const wSeenKeys = new Set();
 
-  // Extract 3-4 distinctive keywords from a headline for fuzzy matching
-  const headlineKey = (h='') => h.toLowerCase()
-    .replace(/[^a-z0-9 ]/g,'')
-    .split(' ')
-    .filter(w => w.length > 4 && !['about','after','could','would','their','there','where','which','while'].includes(w))
-    .slice(0,4)
-    .sort()
-    .join('|');
 
   const wDeduped = wNotToday.filter(a => {
     // Primary: deduplicate by source URL
