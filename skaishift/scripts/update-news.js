@@ -309,8 +309,7 @@ async function main() {
   }).slice(0, 20);
   console.log(`    ${unique.length} unique articles from feeds`);
 
-  // Filter out articles already published in the last 2 days
-  const newsPath = path.join(__dirname,'../public/news.json');
+  // Filter out articles already published in the last 7 days (reads from Supabase)
   const prevUrls = new Set();
   const prevKeys = new Set();
   const headlineKey = (h='') => h.toLowerCase()
@@ -320,16 +319,35 @@ async function main() {
     .slice(0,4).sort().join('|');
 
   try {
-    if (fs.existsSync(newsPath)) {
-      const prev = JSON.parse(fs.readFileSync(newsPath,'utf8'));
-      (prev.articles||[]).forEach(a => {
-        if (a.link) prevUrls.add(a.link);
-        const hk = headlineKey(a.headline);
-        if (hk) prevKeys.add(hk);
-      });
-      console.log(`    Loaded ${prevUrls.size} previously published URLs to skip`);
-    }
-  } catch(e) { console.warn('    Could not load previous news.json'); }
+    const sevenDaysAgo = new Date(etNow);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    const cutoff = sevenDaysAgo.toISOString().split('T')[0];
+    const { data: recentArticles, error } = await supabase
+      .from('skaishift_articles')
+      .select('headline, id')
+      .gte('published_date', cutoff);
+    if (error) throw error;
+    (recentArticles||[]).forEach(a => {
+      const hk = headlineKey(a.headline);
+      if (hk) prevKeys.add(hk);
+    });
+    console.log(`    Loaded ${recentArticles?.length||0} articles from Supabase (last 7 days) to skip`);
+  } catch(e) {
+    console.warn('    Could not load Supabase history, falling back to news.json');
+    // Fallback: read yesterday's news.json
+    const newsPath = path.join(__dirname,'../public/news.json');
+    try {
+      if (fs.existsSync(newsPath)) {
+        const prev = JSON.parse(fs.readFileSync(newsPath,'utf8'));
+        (prev.articles||[]).forEach(a => {
+          if (a.link) prevUrls.add(a.link);
+          const hk = headlineKey(a.headline);
+          if (hk) prevKeys.add(hk);
+        });
+        console.log(`    Fallback: loaded ${prevUrls.size} URLs from news.json`);
+      }
+    } catch(e2) { console.warn('    Could not load news.json either'); }
+  }
 
   const fresh = unique.filter(a => {
     if (a.link && prevUrls.has(a.link)) return false;
@@ -337,7 +355,7 @@ async function main() {
     if (hk && prevKeys.has(hk)) return false;
     return true;
   });
-  console.log(`    ${fresh.length} fresh articles after cross-day dedup (${unique.length - fresh.length} skipped as repeats)`);
+  console.log(`    ${fresh.length} fresh articles after 7-day dedup (${unique.length - fresh.length} skipped as repeats)`);
 
   // 2. Summarize with fallback
   console.log('\n[2] Summarizing...');
