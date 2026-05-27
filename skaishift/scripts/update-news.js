@@ -123,6 +123,7 @@ Return ONLY valid JSON (no markdown, no extra text):
   "build": "<Write 2-3 sentences. Describe specific, concrete ways people are making money from this RIGHT NOW. Include dollar amounts, client types, and timeframes. Name the exact service or offer being sold. Make it immediately actionable.>",
   "unsplash_query": "<3-4 specific words to find a relevant photo, e.g. 'artificial intelligence robot arm' or 'startup office funding'>",
   "significance": <integer 1-10. MUST be 9-10 for: ANY new model release or version (GPT, Claude, Gemini, Mistral, DeepSeek, Llama, etc), new AI capability (video editing, real-time voice, coding agents, multimodal), API launch, or benchmark record. 7-8 for funding over $100M or major product launches. 5-6 for business/strategy news. 1-4 for minor updates. When in doubt about a model release, rate it 9>,
+  "visual": <true if this story involves something people can SEE or DEMO — a new AI model capability, video/image/voice generation, a product people can try, or creative tools. false for funding news, policy, business strategy, or executive moves>,
   "time": "${Math.floor(Math.random()*10)+1}h",
   "source": "${article.source}"
 }`;
@@ -408,14 +409,17 @@ async function main() {
     process.stdout.write('✓ ');
     await new Promise(r => setTimeout(r, 200));
   }
-  // Fetch YouTube videos for top 3 articles (for slideshow)
-  console.log('\n    Fetching YouTube videos for top stories...');
-  const topForVideo = summaries.filter(a => (a.significance||0) >= 8).slice(0,3);
-  for (const a of topForVideo) {
-    const query = `${a.headline.slice(0,60)} AI demo`;
+  // Fetch YouTube videos for the best visual story (slideshow)
+  console.log('\n    Fetching YouTube videos for slideshow...');
+  // Prefer: visual=true stories, then high significance tools/models, then anything significant
+  const visualStory = summaries.find(a => a.visual === true) ||
+    summaries.find(a => (a.significance||0) >= 8 && ['Models','Tools','Earn','Robotics'].includes(a.cat)) ||
+    summaries.find(a => (a.significance||0) >= 8);
+  if (visualStory) {
+    const query = `${visualStory.headline.slice(0,60)} AI demo tutorial`;
     const videos = await getYouTubeVideos(query, 3);
-    a.videos = videos;
-    process.stdout.write(`    YouTube: ${videos.length} videos for "${a.headline.slice(0,40)}..."\n`);
+    visualStory.videos = videos;
+    process.stdout.write(`    YouTube: ${videos.length} videos for "${visualStory.headline.slice(0,40)}..."\n`);
     await new Promise(r => setTimeout(r, 300));
   }
 
