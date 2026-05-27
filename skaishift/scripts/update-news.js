@@ -181,6 +181,27 @@ async function summarize(article, index) {
   }
 }
 
+
+// ── STEP: YOUTUBE VIDEO SEARCH ────────────────────────────────────────────────
+async function getYouTubeVideos(query, maxResults=3) {
+  const YOUTUBE_KEY = process.env.YOUTUBE_API_KEY;
+  if (!YOUTUBE_KEY) return [];
+  try {
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=${maxResults}&videoDuration=short&key=${YOUTUBE_KEY}`;
+    const res = await nodeFetch(url);
+    const data = await res.json();
+    if (!data.items) return [];
+    return data.items.map(item => ({
+      videoId: item.id.videoId,
+      title: item.snippet.title,
+      channel: item.snippet.channelTitle,
+    }));
+  } catch(e) {
+    console.warn('    YouTube fetch failed:', e.message);
+    return [];
+  }
+}
+
 // ── STEP 4: UNSPLASH ──────────────────────────────────────────────────────────
 async function getUnsplashImage(query, cat) {
   if (!UNSPLASH_KEY) return FALLBACK_IMGS[cat] || FALLBACK_IMGS.Tools;
@@ -379,13 +400,23 @@ async function main() {
     process.exit(1);
   }
 
-  // 3. Unsplash images
-  console.log('\n[3] Fetching images...');
+  // 3. Unsplash images + YouTube videos for top articles
+  console.log('\n[3] Fetching images and videos...');
   for (const a of summaries) {
     process.stdout.write(`    "${a.unsplash_query}" → `);
     a.img = await getUnsplashImage(a.unsplash_query, a.cat);
-    process.stdout.write('✓\n');
+    process.stdout.write('✓ ');
     await new Promise(r => setTimeout(r, 200));
+  }
+  // Fetch YouTube videos for top 3 articles (for slideshow)
+  console.log('\n    Fetching YouTube videos for top stories...');
+  const topForVideo = summaries.filter(a => (a.significance||0) >= 8).slice(0,3);
+  for (const a of topForVideo) {
+    const query = `${a.headline.slice(0,60)} AI demo`;
+    const videos = await getYouTubeVideos(query, 3);
+    a.videos = videos;
+    process.stdout.write(`    YouTube: ${videos.length} videos for "${a.headline.slice(0,40)}..."\n`);
+    await new Promise(r => setTimeout(r, 300));
   }
 
   // 4. Sort + feature
