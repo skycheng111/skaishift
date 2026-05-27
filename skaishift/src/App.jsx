@@ -862,7 +862,6 @@ function StorySlideshow({ articles, onSelect }) {
               <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,fontWeight:600,color:"#fff",margin:"0 0 2px",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{slide.title}</p>
               <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:"rgba(255,255,255,0.4)",margin:0}}>{slide.channel}</p>
             </div>
-            {slideIdx===total-1&&<button onClick={()=>onSelect(story)} style={{background:T.red,border:"none",borderRadius:16,padding:"6px 14px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,fontWeight:600,color:"#fff",cursor:"pointer",flexShrink:0}}>Full story →</button>}
           </div>
         </div>
       )}
@@ -874,7 +873,6 @@ function StorySlideshow({ articles, onSelect }) {
           <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 28px"}}>
             <div style={{width:32,height:3,background:T.amber,borderRadius:2,marginBottom:12}}/>
             <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.4,margin:"0 0 12px"}}>{slide.text}</p>
-            {slideIdx===total-1&&<button onClick={()=>onSelect(story)} style={{background:T.red,border:"none",borderRadius:20,padding:"8px 18px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,fontWeight:600,color:"#fff",cursor:"pointer"}}>Read full story →</button>}
           </div>
           <div onClick={goPrev} style={{position:"absolute",left:0,top:0,width:"30%",height:"100%",cursor:"pointer"}}/>
           <div onClick={goNext} style={{position:"absolute",right:0,top:0,width:"30%",height:"100%",cursor:"pointer"}}/>
