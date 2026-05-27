@@ -835,17 +835,7 @@ function StorySlideshow({ articles, onSelect }) {
   const videoH = slideH - TITLE_H;
   const videoW = Math.round(videoH * 16/9);
 
-  const ArrowBtn = ({dir, onClick, disabled}) => (
-    <button onClick={onClick} disabled={disabled}
-      style={{position:"absolute",top:"50%",transform:"translateY(-50%)",
-        [dir==="left"?"left":"right"]:10,
-        zIndex:10,background:disabled?"rgba(0,0,0,0.15)":"rgba(0,0,0,0.55)",
-        border:"none",borderRadius:"50%",width:36,height:36,cursor:disabled?"default":"pointer",
-        display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",
-        fontSize:16,transition:"all 0.15s",backdropFilter:"blur(4px)"}}>
-      {dir==="left"?"‹":"›"}
-    </button>
-  );
+
 
   return (
     <div style={{background:"#0F0F0F",userSelect:"none"}}
@@ -864,7 +854,7 @@ function StorySlideshow({ articles, onSelect }) {
           <>
             <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.4}}/>
             <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.88) 100%)"}}/>
-            <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 56px 24px 20px"}}>
+            <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 24px 20px"}}>
               <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:10}}>
                 <CatBadge cat={story.cat}/>
                 <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.55)"}}>{story.source}</span>
@@ -899,26 +889,29 @@ function StorySlideshow({ articles, onSelect }) {
           <>
             <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.35}}/>
             <div style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.75)"}}/>
-            <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 56px 24px 20px"}}>
+            <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 24px 20px"}}>
               <div style={{width:32,height:3,background:T.amber,borderRadius:2,marginBottom:12}}/>
               <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.4,margin:0}}>{slide.text}</p>
             </div>
           </>
         )}
 
-        {/* Nav arrows */}
-        <ArrowBtn dir="left"  onClick={goPrev} disabled={slideIdx===0}/>
-        <ArrowBtn dir="right" onClick={goNext} disabled={slideIdx===total-1}/>
       </div>
 
-      {/* Progress dots */}
-      <div style={{display:"flex",justifyContent:"center",gap:4,padding:"8px 0",background:"#0F0F0F"}}>
+      {/* Arrows + dots row */}
+      <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:12,padding:"8px 0",background:"#0F0F0F"}}>
+        <button onClick={goPrev} disabled={slideIdx===0}
+          style={{background:"none",border:"none",color:slideIdx===0?"rgba(255,255,255,0.2)":"rgba(255,255,255,0.8)",
+            fontSize:22,cursor:slideIdx===0?"default":"pointer",padding:"0 4px",lineHeight:1}}>‹</button>
         {slides.map((_,i)=>(
           <div key={i} onClick={()=>setSlideIdx(i)}
             style={{width:i===slideIdx?16:5,height:5,borderRadius:3,
               background:i===slideIdx?"#fff":"rgba(255,255,255,0.25)",
               transition:"all 0.2s",cursor:"pointer"}}/>
         ))}
+        <button onClick={goNext} disabled={slideIdx===total-1}
+          style={{background:"none",border:"none",color:slideIdx===total-1?"rgba(255,255,255,0.2)":"rgba(255,255,255,0.8)",
+            fontSize:22,cursor:slideIdx===total-1?"default":"pointer",padding:"0 4px",lineHeight:1}}>›</button>
       </div>
     </div>
   );
