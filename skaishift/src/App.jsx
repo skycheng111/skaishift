@@ -795,6 +795,103 @@ function ResourcesTeaser({ onNav }) {
   );
 }
 
+
+// ── STORY SLIDESHOW (Instagram-style) ─────────────────────────────────────────
+function StorySlideshow({ articles, onSelect }) {
+  const [storyIdx, setStoryIdx] = useState(0);
+  const [slideIdx, setSlideIdx] = useState(0);
+  const touchStartX = useRef(null);
+
+  const featured = articles.filter(a => a.feat || a.significance >= 8).slice(0, 3);
+  if (!featured.length) return null;
+
+  const story = featured[storyIdx];
+
+  // Build slides from article data
+  const buildSlides = (a) => {
+    const examples = Array.isArray(a.examples) && a.examples.length
+      ? a.examples
+      : (a.body||'').split(/\.\s+/).filter(s=>s.trim().length>40).slice(0,3).map(s=>s.trim());
+    return [
+      { type:'hook', text: a.headline, sub: a.source },
+      ...examples.map(e => ({ type:'fact', text: e })),
+    ];
+  };
+
+  const slides = buildSlides(story);
+  const totalSlides = slides.length;
+  const slide = slides[slideIdx];
+
+  const goNext = () => {
+    if (slideIdx < totalSlides - 1) setSlideIdx(s => s+1);
+    else if (storyIdx < featured.length - 1) { setStoryIdx(s => s+1); setSlideIdx(0); }
+  };
+  const goPrev = () => {
+    if (slideIdx > 0) setSlideIdx(s => s-1);
+    else if (storyIdx > 0) { setStoryIdx(s => s-1); setSlideIdx(0); }
+  };
+
+  const totalDots = featured.reduce((acc,a) => acc + buildSlides(a).length, 0);
+  const dotOffset = featured.slice(0, storyIdx).reduce((acc,a) => acc + buildSlides(a).length, 0);
+  const currentDot = dotOffset + slideIdx;
+
+  return (
+    <div style={{position:"relative",overflow:"hidden",background:"#0F0F0F",userSelect:"none"}}
+      onTouchStart={e=>{touchStartX.current=e.touches[0].clientX;}}
+      onTouchEnd={e=>{
+        if(touchStartX.current===null) return;
+        const dx=e.changedTouches[0].clientX-touchStartX.current;
+        if(dx<-40) goNext();
+        else if(dx>40) goPrev();
+        touchStartX.current=null;
+      }}>
+
+      {/* Background image with overlay */}
+      <div style={{position:"relative",height:460}}>
+        <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.35}}/>
+        <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%)"}}/>
+
+        {/* Slide content */}
+        <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 28px"}}>
+
+          {/* Category + source */}
+          <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
+            <CatBadge cat={story.cat}/>
+            <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.6)"}}>{story.source}</span>
+          </div>
+
+          {/* Slide type content */}
+          {slide.type==="hook" && (
+            <div>
+              <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:32,color:"#fff",lineHeight:1.1,margin:"0 0 8px",letterSpacing:"0.02em"}}>{slide.text}</p>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.amber,fontWeight:600,margin:0,letterSpacing:"0.08em",textTransform:"uppercase"}}>Swipe to see more →</p>
+            </div>
+          )}
+          {slide.type==="fact" && (
+            <div>
+              <div style={{width:32,height:3,background:T.amber,borderRadius:2,marginBottom:12}}/>
+              <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.35,margin:"0 0 12px"}}>{slide.text}</p>
+              {slideIdx===totalSlides-1&&<button onClick={()=>onSelect(story)} style={{background:T.red,border:"none",borderRadius:20,padding:"8px 18px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,fontWeight:600,color:"#fff",cursor:"pointer"}}>Read full story →</button>}
+            </div>
+          )}
+
+        </div>
+
+        {/* Tap zones */}
+        <div onClick={goPrev} style={{position:"absolute",left:0,top:0,width:"30%",height:"100%",cursor:"pointer"}}/>
+        <div onClick={goNext} style={{position:"absolute",right:0,top:0,width:"30%",height:"100%",cursor:"pointer"}}/>
+      </div>
+
+      {/* Progress dots */}
+      <div style={{display:"flex",justifyContent:"center",gap:4,padding:"10px 0",background:"#0F0F0F"}}>
+        {Array.from({length:Math.min(totalDots,12)}).map((_,i)=>(
+          <div key={i} style={{width:i===currentDot?16:5,height:5,borderRadius:3,background:i===currentDot?"#fff":"rgba(255,255,255,0.25)",transition:"all 0.2s"}}/>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles, lastWeekArticles }) {
   const feed = (cat==="All" ? articles.filter(a=>!a.feat) : articles.filter(a=>a.cat===cat));
   const shown = feed.slice(0,(page+1)*6);
@@ -803,15 +900,13 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
   return (
     <div>
       <Marquee/>
-      <HeroCarousel articles={articles} onSelect={onSelect}/>
-      <BriefStrip onNav={onNav} onSelect={onSelect} weeklyArticles={weeklyArticles}/>
-      <LastWeekSection lastWeekArticles={lastWeekArticles} onSelect={onSelect} onNav={onNav}/>
+      <StorySlideshow articles={articles} onSelect={onSelect}/>
       <div style={{background:T.bg,maxWidth:1200,margin:"0 auto"}}>
         <div style={{height:1,background:T.light,margin:`0 ${INSET}px`}}/>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:`16px ${INSET}px 6px`}}>
           <div style={{display:"flex",alignItems:"center",gap:8}}>
             <div style={{width:3,height:16,background:T.red,borderRadius:2}}/>
-            <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:T.ink}}>Stories for you</span>
+            <span style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:T.ink}}>Stories Today</span>
           </div>
           <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{date}</span>
         </div>
@@ -835,6 +930,8 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
         </div>
       </div>
       <APIPriceMarquee/>
+      <BriefStrip onNav={onNav} onSelect={onSelect} weeklyArticles={weeklyArticles}/>
+      <LastWeekSection lastWeekArticles={lastWeekArticles} onSelect={onSelect} onNav={onNav}/>
       <LiveSection/>
       <LearnTeaser onNav={onNav}/>
       <ResourcesTeaser onNav={onNav}/>
