@@ -425,7 +425,7 @@ async function main() {
 
   // 4. Sort + feature
   summaries.sort((a,b) => (b.significance||0)-(a.significance||0));
-  summaries.forEach((a,i) => { a.feat = i < 2; a.published_date = todayISO; });
+  summaries.forEach((a,i) => { a.id = `${todayISO}-a${i+1}`; a.feat = i < 2; a.published_date = todayISO; });
 
   // 5. Supabase
   console.log('\n[4] Saving to Supabase...');
