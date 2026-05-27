@@ -797,10 +797,19 @@ function ResourcesTeaser({ onNav }) {
 
 
 
-// ── STORY SLIDESHOW (Instagram-style with YouTube videos) ─────────────────────
+
+// ── STORY SLIDESHOW (consistent height, YouTube videos, nav arrows) ─────────────
 function StorySlideshow({ articles, onSelect }) {
   const [slideIdx, setSlideIdx] = useState(0);
+  const [slideH, setSlideH] = useState(460);
   const touchStartX = useRef(null);
+
+  useEffect(()=>{
+    const update = () => setSlideH(window.innerWidth < 640 ? 300 : 460);
+    update();
+    window.addEventListener('resize', update);
+    return ()=>window.removeEventListener('resize', update);
+  },[]);
 
   const story = articles.find(a => a.videos && a.videos.length) ||
                 articles.find(a => a.feat || a.significance >= 8);
@@ -820,6 +829,22 @@ function StorySlideshow({ articles, onSelect }) {
   const goNext = () => { if(slideIdx<total-1) setSlideIdx(s=>s+1); };
   const goPrev = () => { if(slideIdx>0) setSlideIdx(s=>s-1); };
 
+  const TITLE_H = 52;
+  const videoH = slideH - TITLE_H;
+  const videoW = Math.round(videoH * 16/9);
+
+  const ArrowBtn = ({dir, onClick, disabled}) => (
+    <button onClick={onClick} disabled={disabled}
+      style={{position:"absolute",top:"50%",transform:"translateY(-50%)",
+        [dir==="left"?"left":"right"]:10,
+        zIndex:10,background:disabled?"rgba(0,0,0,0.15)":"rgba(0,0,0,0.55)",
+        border:"none",borderRadius:"50%",width:36,height:36,cursor:disabled?"default":"pointer",
+        display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",
+        fontSize:16,transition:"all 0.15s",backdropFilter:"blur(4px)"}}>
+      {dir==="left"?"‹":"›"}
+    </button>
+  );
+
   return (
     <div style={{background:"#0F0F0F",userSelect:"none"}}
       onTouchStart={e=>{touchStartX.current=e.touches[0].clientX;}}
@@ -830,63 +855,73 @@ function StorySlideshow({ articles, onSelect }) {
         touchStartX.current=null;
       }}>
 
-      {slide.type==="hook"&&(
-        <div style={{position:"relative",height:460,overflow:"hidden"}}>
-          <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.4}}/>
-          <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.9) 100%)"}}/>
-          <div onClick={goNext} style={{position:"absolute",inset:0,cursor:"pointer"}}/>
-          <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 28px",pointerEvents:"none"}}>
-            <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
-              <CatBadge cat={story.cat}/>
-              <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.6)"}}>{story.source}</span>
-            </div>
-            <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:34,color:"#fff",lineHeight:1.08,margin:"0 0 10px",letterSpacing:"0.02em"}}>{story.headline}</p>
-            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.amber,fontWeight:700,margin:0,letterSpacing:"0.1em",textTransform:"uppercase"}}>
-              {videos.length>0?`${videos.length} demo videos →`:"Swipe to see more →"}
-            </p>
-          </div>
-        </div>
-      )}
+      {/* Fixed-height slide container */}
+      <div style={{height:slideH,position:"relative",overflow:"hidden"}}>
 
-      {slide.type==="video"&&(
-        <div style={{background:"#000"}}>
-          <div style={{position:"relative",paddingBottom:"56.25%",height:0}}>
-            <iframe
-              src={`https://www.youtube.com/embed/${slide.videoId}?rel=0&modestbranding=1`}
-              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",border:"none"}}
-              allowFullScreen allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            />
-          </div>
-          <div style={{background:"#111",padding:"12px 16px",display:"flex",alignItems:"center",justifyContent:"space-between",gap:12}}>
-            <div style={{flex:1,minWidth:0}}>
+        {slide.type==="hook"&&(
+          <>
+            <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.4}}/>
+            <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.88) 100%)"}}/>
+            <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 56px 24px 20px"}}>
+              <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:10}}>
+                <CatBadge cat={story.cat}/>
+                <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.55)"}}>{story.source}</span>
+              </div>
+              <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:slideH<350?26:34,color:"#fff",lineHeight:1.08,margin:"0 0 10px",letterSpacing:"0.02em"}}>{story.headline}</p>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.amber,fontWeight:700,margin:0,letterSpacing:"0.1em",textTransform:"uppercase"}}>
+                {videos.length>0?`${videos.length} demo videos — tap arrow or swipe`:"Swipe or tap arrow to see more"}
+              </p>
+            </div>
+          </>
+        )}
+
+        {slide.type==="video"&&(
+          <div style={{height:"100%",display:"flex",flexDirection:"column",background:"#000"}}>
+            <div style={{flex:1,display:"flex",alignItems:"center",justifyContent:"center",overflow:"hidden"}}>
+              <iframe
+                src={`https://www.youtube.com/embed/${slide.videoId}?rel=0&modestbranding=1`}
+                width={Math.min(videoW, 9999)}
+                height={videoH}
+                style={{border:"none",maxWidth:"100%",display:"block"}}
+                allowFullScreen allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              />
+            </div>
+            <div style={{height:TITLE_H,background:"#111",padding:"0 56px 0 16px",display:"flex",flexDirection:"column",justifyContent:"center",flexShrink:0}}>
               <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,fontWeight:600,color:"#fff",margin:"0 0 2px",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{slide.title}</p>
               <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:"rgba(255,255,255,0.4)",margin:0}}>{slide.channel}</p>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {slide.type==="fact"&&(
-        <div style={{position:"relative",height:400,overflow:"hidden"}}>
-          <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.35}}/>
-          <div style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.75)"}}/>
-          <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 28px"}}>
-            <div style={{width:32,height:3,background:T.amber,borderRadius:2,marginBottom:12}}/>
-            <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.4,margin:"0 0 12px"}}>{slide.text}</p>
-          </div>
-          <div onClick={goPrev} style={{position:"absolute",left:0,top:0,width:"30%",height:"100%",cursor:"pointer"}}/>
-          <div onClick={goNext} style={{position:"absolute",right:0,top:0,width:"30%",height:"100%",cursor:"pointer"}}/>
-        </div>
-      )}
+        {slide.type==="fact"&&(
+          <>
+            <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.35}}/>
+            <div style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.75)"}}/>
+            <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 56px 24px 20px"}}>
+              <div style={{width:32,height:3,background:T.amber,borderRadius:2,marginBottom:12}}/>
+              <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.4,margin:0}}>{slide.text}</p>
+            </div>
+          </>
+        )}
 
+        {/* Nav arrows */}
+        <ArrowBtn dir="left"  onClick={goPrev} disabled={slideIdx===0}/>
+        <ArrowBtn dir="right" onClick={goNext} disabled={slideIdx===total-1}/>
+      </div>
+
+      {/* Progress dots */}
       <div style={{display:"flex",justifyContent:"center",gap:4,padding:"8px 0",background:"#0F0F0F"}}>
         {slides.map((_,i)=>(
-          <div key={i} onClick={()=>setSlideIdx(i)} style={{width:i===slideIdx?16:5,height:5,borderRadius:3,background:i===slideIdx?"#fff":"rgba(255,255,255,0.25)",transition:"all 0.2s",cursor:"pointer"}}/>
+          <div key={i} onClick={()=>setSlideIdx(i)}
+            style={{width:i===slideIdx?16:5,height:5,borderRadius:3,
+              background:i===slideIdx?"#fff":"rgba(255,255,255,0.25)",
+              transition:"all 0.2s",cursor:"pointer"}}/>
         ))}
       </div>
     </div>
   );
 }
+
 
 
 function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles, lastWeekArticles }) {
