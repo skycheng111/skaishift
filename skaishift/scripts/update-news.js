@@ -123,7 +123,7 @@ Return ONLY valid JSON (no markdown, no extra text):
   "build": "<Write 2-3 sentences. Describe specific, concrete ways people are making money from this RIGHT NOW. Include dollar amounts, client types, and timeframes. Name the exact service or offer being sold. Make it immediately actionable.>",
   "unsplash_query": "<3-4 specific words to find a relevant photo, e.g. 'artificial intelligence robot arm' or 'startup office funding'>",
   "significance": <integer 1-10. MUST be 9-10 for: ANY new model release or version (GPT, Claude, Gemini, Mistral, DeepSeek, Llama, etc), new AI capability (video editing, real-time voice, coding agents, multimodal), API launch, or benchmark record. 7-8 for funding over $100M or major product launches. 5-6 for business/strategy news. 1-4 for minor updates. When in doubt about a model release, rate it 9>,
-  "visual": <true if this story involves something people can SEE or DEMO — a new AI model capability, video/image/voice generation, a product people can try, or creative tools. false for funding news, policy, business strategy, or executive moves>,
+  "visual": <true ONLY if this story is about something people can literally watch being demonstrated — a new AI model generating video/images/audio/code, a creative tool people can try, a robot doing something physical, or a product with jaw-dropping output examples. NEVER true for: funding rounds, IPOs, valuations, executive moves, policy, regulation, lawsuits, partnerships, or business strategy — even if the company is exciting. Ask: "Would a YouTube search for this return cool demo videos?" If no, set false.>,
   "time": "${Math.floor(Math.random()*10)+1}h",
   "source": "${article.source}"
 }`;
