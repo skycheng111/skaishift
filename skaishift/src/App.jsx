@@ -796,101 +796,100 @@ function ResourcesTeaser({ onNav }) {
 }
 
 
-// ── STORY SLIDESHOW (Instagram-style) ─────────────────────────────────────────
+
+// ── STORY SLIDESHOW (Instagram-style with YouTube videos) ─────────────────────
 function StorySlideshow({ articles, onSelect }) {
-  const [storyIdx, setStoryIdx] = useState(0);
   const [slideIdx, setSlideIdx] = useState(0);
   const touchStartX = useRef(null);
 
-  const featured = articles.filter(a => a.feat || a.significance >= 8).slice(0, 3);
-  if (!featured.length) return null;
+  const story = articles.find(a => a.videos && a.videos.length) ||
+                articles.find(a => a.feat || a.significance >= 8);
+  if (!story) return null;
 
-  const story = featured[storyIdx];
+  const videos = story.videos || [];
+  const slides = [{ type:'hook' }, ...videos.map(v=>({ type:'video', ...v }))];
+  if (videos.length === 0) {
+    const examples = Array.isArray(story.examples) && story.examples.length
+      ? story.examples
+      : (story.body||'').split('. ').filter(s=>s.trim().length>40).slice(0,3);
+    examples.forEach(e => slides.push({ type:'fact', text: e.trim() }));
+  }
 
-  // Build slides from article data
-  const buildSlides = (a) => {
-    const examples = Array.isArray(a.examples) && a.examples.length
-      ? a.examples
-      : (a.body||'').split(/\.\s+/).filter(s=>s.trim().length>40).slice(0,3).map(s=>s.trim());
-    return [
-      { type:'hook', text: a.headline, sub: a.source },
-      ...examples.map(e => ({ type:'fact', text: e })),
-    ];
-  };
-
-  const slides = buildSlides(story);
-  const totalSlides = slides.length;
+  const total = slides.length;
   const slide = slides[slideIdx];
-
-  const goNext = () => {
-    if (slideIdx < totalSlides - 1) setSlideIdx(s => s+1);
-    else if (storyIdx < featured.length - 1) { setStoryIdx(s => s+1); setSlideIdx(0); }
-  };
-  const goPrev = () => {
-    if (slideIdx > 0) setSlideIdx(s => s-1);
-    else if (storyIdx > 0) { setStoryIdx(s => s-1); setSlideIdx(0); }
-  };
-
-  const totalDots = featured.reduce((acc,a) => acc + buildSlides(a).length, 0);
-  const dotOffset = featured.slice(0, storyIdx).reduce((acc,a) => acc + buildSlides(a).length, 0);
-  const currentDot = dotOffset + slideIdx;
+  const goNext = () => { if(slideIdx<total-1) setSlideIdx(s=>s+1); };
+  const goPrev = () => { if(slideIdx>0) setSlideIdx(s=>s-1); };
 
   return (
-    <div style={{position:"relative",overflow:"hidden",background:"#0F0F0F",userSelect:"none"}}
+    <div style={{background:"#0F0F0F",userSelect:"none"}}
       onTouchStart={e=>{touchStartX.current=e.touches[0].clientX;}}
       onTouchEnd={e=>{
         if(touchStartX.current===null) return;
         const dx=e.changedTouches[0].clientX-touchStartX.current;
-        if(dx<-40) goNext();
-        else if(dx>40) goPrev();
+        if(dx<-40) goNext(); else if(dx>40) goPrev();
         touchStartX.current=null;
       }}>
 
-      {/* Background image with overlay */}
-      <div style={{position:"relative",height:460}}>
-        <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.35}}/>
-        <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%)"}}/>
-
-        {/* Slide content */}
-        <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 28px"}}>
-
-          {/* Category + source */}
-          <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
-            <CatBadge cat={story.cat}/>
-            <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.6)"}}>{story.source}</span>
+      {slide.type==="hook"&&(
+        <div style={{position:"relative",height:460,overflow:"hidden"}}>
+          <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.4}}/>
+          <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.9) 100%)"}}/>
+          <div onClick={goNext} style={{position:"absolute",inset:0,cursor:"pointer"}}/>
+          <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 28px",pointerEvents:"none"}}>
+            <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:12}}>
+              <CatBadge cat={story.cat}/>
+              <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.6)"}}>{story.source}</span>
+            </div>
+            <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:34,color:"#fff",lineHeight:1.08,margin:"0 0 10px",letterSpacing:"0.02em"}}>{story.headline}</p>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.amber,fontWeight:700,margin:0,letterSpacing:"0.1em",textTransform:"uppercase"}}>
+              {videos.length>0?`${videos.length} demo videos →`:"Swipe to see more →"}
+            </p>
           </div>
-
-          {/* Slide type content */}
-          {slide.type==="hook" && (
-            <div>
-              <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:32,color:"#fff",lineHeight:1.1,margin:"0 0 8px",letterSpacing:"0.02em"}}>{slide.text}</p>
-              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.amber,fontWeight:600,margin:0,letterSpacing:"0.08em",textTransform:"uppercase"}}>Swipe to see more →</p>
-            </div>
-          )}
-          {slide.type==="fact" && (
-            <div>
-              <div style={{width:32,height:3,background:T.amber,borderRadius:2,marginBottom:12}}/>
-              <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.35,margin:"0 0 12px"}}>{slide.text}</p>
-              {slideIdx===totalSlides-1&&<button onClick={()=>onSelect(story)} style={{background:T.red,border:"none",borderRadius:20,padding:"8px 18px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,fontWeight:600,color:"#fff",cursor:"pointer"}}>Read full story →</button>}
-            </div>
-          )}
-
         </div>
+      )}
 
-        {/* Tap zones */}
-        <div onClick={goPrev} style={{position:"absolute",left:0,top:0,width:"30%",height:"100%",cursor:"pointer"}}/>
-        <div onClick={goNext} style={{position:"absolute",right:0,top:0,width:"30%",height:"100%",cursor:"pointer"}}/>
-      </div>
+      {slide.type==="video"&&(
+        <div style={{background:"#000"}}>
+          <div style={{position:"relative",paddingBottom:"56.25%",height:0}}>
+            <iframe
+              src={`https://www.youtube.com/embed/${slide.videoId}?rel=0&modestbranding=1`}
+              style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",border:"none"}}
+              allowFullScreen allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            />
+          </div>
+          <div style={{background:"#111",padding:"12px 16px",display:"flex",alignItems:"center",justifyContent:"space-between",gap:12}}>
+            <div style={{flex:1,minWidth:0}}>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,fontWeight:600,color:"#fff",margin:"0 0 2px",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{slide.title}</p>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:"rgba(255,255,255,0.4)",margin:0}}>{slide.channel}</p>
+            </div>
+            {slideIdx===total-1&&<button onClick={()=>onSelect(story)} style={{background:T.red,border:"none",borderRadius:16,padding:"6px 14px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,fontWeight:600,color:"#fff",cursor:"pointer",flexShrink:0}}>Full story →</button>}
+          </div>
+        </div>
+      )}
 
-      {/* Progress dots */}
-      <div style={{display:"flex",justifyContent:"center",gap:4,padding:"10px 0",background:"#0F0F0F"}}>
-        {Array.from({length:Math.min(totalDots,12)}).map((_,i)=>(
-          <div key={i} style={{width:i===currentDot?16:5,height:5,borderRadius:3,background:i===currentDot?"#fff":"rgba(255,255,255,0.25)",transition:"all 0.2s"}}/>
+      {slide.type==="fact"&&(
+        <div style={{position:"relative",height:400,overflow:"hidden"}}>
+          <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.35}}/>
+          <div style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.75)"}}/>
+          <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 28px"}}>
+            <div style={{width:32,height:3,background:T.amber,borderRadius:2,marginBottom:12}}/>
+            <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.4,margin:"0 0 12px"}}>{slide.text}</p>
+            {slideIdx===total-1&&<button onClick={()=>onSelect(story)} style={{background:T.red,border:"none",borderRadius:20,padding:"8px 18px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,fontWeight:600,color:"#fff",cursor:"pointer"}}>Read full story →</button>}
+          </div>
+          <div onClick={goPrev} style={{position:"absolute",left:0,top:0,width:"30%",height:"100%",cursor:"pointer"}}/>
+          <div onClick={goNext} style={{position:"absolute",right:0,top:0,width:"30%",height:"100%",cursor:"pointer"}}/>
+        </div>
+      )}
+
+      <div style={{display:"flex",justifyContent:"center",gap:4,padding:"8px 0",background:"#0F0F0F"}}>
+        {slides.map((_,i)=>(
+          <div key={i} onClick={()=>setSlideIdx(i)} style={{width:i===slideIdx?16:5,height:5,borderRadius:3,background:i===slideIdx?"#fff":"rgba(255,255,255,0.25)",transition:"all 0.2s",cursor:"pointer"}}/>
         ))}
       </div>
     </div>
   );
 }
+
 
 function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles, lastWeekArticles }) {
   const feed = (cat==="All" ? articles.filter(a=>!a.feat) : articles.filter(a=>a.cat===cat));
