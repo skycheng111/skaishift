@@ -811,7 +811,9 @@ function StorySlideshow({ articles, onSelect }) {
     return ()=>window.removeEventListener('resize', update);
   },[]);
 
-  const story = articles.find(a => a.videos && a.videos.length) ||
+  const story = articles.find(a => a.visual === true) ||
+                articles.find(a => a.videos && a.videos.length) ||
+                articles.find(a => ['Models','Tools','Earn','Robotics'].includes(a.cat) && (a.significance||0) >= 8) ||
                 articles.find(a => a.feat || a.significance >= 8);
   if (!story) return null;
 
