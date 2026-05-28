@@ -692,12 +692,12 @@ function LiveSection() {
 function APIPriceMarquee() {
   // Fallback prices if API fails
   const FALLBACK = [
-    { model:"GPT-5.4",           input:"$1.75", output:"$14.00", color:"#10A37F" },
+    { model:"GPT-5.5",           input:"$5.00", output:"$30.00", color:"#10A37F" },
     { model:"GPT-4.1 Nano",      input:"$0.10", output:"$0.40",  color:"#10A37F" },
     { model:"Claude Sonnet 4.6", input:"$3.00", output:"$15.00", color:"#CC785C" },
     { model:"Claude Haiku 4.5",  input:"$1.00", output:"$5.00",  color:"#CC785C" },
-    { model:"Gemini 2.5 Flash",  input:"$0.30", output:"$2.50",  color:"#4285F4" },
-    { model:"Gemini 2.5 Pro",    input:"$1.25", output:"$10.00", color:"#4285F4" },
+    { model:"Gemini 3.5 Flash",  input:"$0.30", output:"$2.50",  color:"#4285F4" },
+    { model:"Gemini 3.5 Pro",    input:"$1.25", output:"$10.00", color:"#4285F4" },
     { model:"DeepSeek Chat V3",  input:"$0.20", output:"$0.77",  color:"#4D9EFF" },
     { model:"Mistral Large",     input:"$2.00", output:"$6.00",  color:"#FF7000" },
     { model:"Llama 3.3 70B",     input:"$0.10", output:"$0.32",  color:"#0866FF" },
@@ -705,13 +705,13 @@ function APIPriceMarquee() {
 
   // OpenRouter model IDs → display names + colors
   const MODEL_MAP = [
-    { id:"openai/gpt-5.4",                      name:"GPT-5.4",           color:"#10A37F" },
+    { id:"openai/gpt-5.5",                      name:"GPT-5.5",           color:"#10A37F" },
     { id:"openai/gpt-4.1-nano",                 name:"GPT-4.1 Nano",      color:"#10A37F" },
     { id:"anthropic/claude-sonnet-4.6",         name:"Claude Sonnet 4.6", color:"#CC785C" },
     { id:"anthropic/claude-haiku-4.5",          name:"Claude Haiku 4.5",  color:"#CC785C" },
-    { id:"anthropic/claude-opus-4",             name:"Claude Opus 4",     color:"#CC785C" },
-    { id:"google/gemini-2.5-flash",             name:"Gemini 2.5 Flash",  color:"#4285F4" },
-    { id:"google/gemini-2.5-pro",               name:"Gemini 2.5 Pro",    color:"#4285F4" },
+    { id:"anthropic/claude-opus-4-7",           name:"Claude Opus 4.7",   color:"#CC785C" },
+    { id:"google/gemini-3.5-flash",             name:"Gemini 3.5 Flash",  color:"#4285F4" },
+    { id:"google/gemini-3.5-pro",               name:"Gemini 3.5 Pro",    color:"#4285F4" },
     { id:"deepseek/deepseek-chat-v3-0324",      name:"DeepSeek Chat V3",  color:"#4D9EFF" },
     { id:"mistralai/mistral-large-2411",        name:"Mistral Large",     color:"#FF7000" },
     { id:"meta-llama/llama-3.3-70b-instruct",  name:"Llama 3.3 70B",     color:"#0866FF" },
@@ -1230,9 +1230,9 @@ const LEARN_SECTIONS = [
     color:CATS.Robotics,
     intro:"The AI landscape is dominated by a handful of companies whose model releases directly affect what's possible in any AI product. Knowing who makes what helps you follow the news intelligently.",
     content:[
-      {q:"Anthropic — Claude",a:"Anthropic is an AI safety company founded by former OpenAI researchers including Dario and Daniela Amodei. They make the Claude family of models: Claude Haiku (fast, cheap, good for automation), Claude Sonnet (balanced performance and cost, best for most applications), and Claude Opus (most capable, premium pricing). Claude is known for being particularly good at nuanced writing, following complex instructions, and refusing genuinely harmful requests while staying helpful."},
-      {q:"OpenAI — GPT & o-series",a:"OpenAI is the most prominent AI company, known for ChatGPT and the GPT model series. Their current lineup includes GPT-4o (their primary model, multimodal), the o-series reasoning models (o1, o3 — slower but much better at complex logic and math), and DALL-E for image generation. OpenAI also built Sora (video generation) and Whisper (speech recognition). They pioneered the current AI boom with ChatGPT in late 2022."},
-      {q:"Google — Gemini",a:"Google DeepMind makes the Gemini model family: Gemini Flash (fast/cheap), Gemini Pro (balanced), and Gemini Ultra (most capable). Gemini 1.5 Pro has a 1-million-token context window, making it best-in-class for processing very long documents. Google also has unique advantages in search integration, YouTube data, and Android distribution. Their AI is embedded in Google Workspace (Docs, Gmail, Sheets) as 'Gemini' features."},
+      {q:"Anthropic — Claude",a:"Anthropic is an AI safety company founded by former OpenAI researchers including Dario and Daniela Amodei. They make the Claude family of models: Claude Haiku (fast, cheap, good for automation), Claude Sonnet (balanced performance and cost, best for most applications), and Claude Opus 4.7 (most capable generally available model, $5/$25 per million tokens, exceptional at agentic coding and visual reasoning). Claude Mythos Preview is Anthropic's most powerful model but remains restricted. Claude is known for being particularly good at nuanced writing, following complex instructions, and agentic task execution."},
+      {q:"OpenAI — GPT & o-series",a:"OpenAI is the most prominent AI company, known for ChatGPT and the GPT model series. Their current lineup includes GPT-5.5 (April 2026, $5/$30 per million tokens, leads on agentic coding and long-context retrieval), GPT-4.1 Nano (ultra fast and cheap), and GPT Image 2.0 for image generation. Codex is their cloud-based async coding agent. Note: Sora (video) is being discontinued in 2026 — API sunset in September. They pioneered the current AI boom with ChatGPT in late 2022."},
+      {q:"Google — Gemini",a:"Google DeepMind makes the Gemini model family. As of I/O 2026: Gemini 3.5 Flash (fast, agentic, 4× faster than other frontier models), Gemini 3.5 Pro (in testing), and Gemini Omni (natively multimodal — generates video from text, images, or audio input). Antigravity 2.0 is Google's free agentic coding tool. Google Flow is their AI creative studio for video generation. Gemini is embedded in Google Workspace and Android."},
       {q:"Meta — Llama (open-source)",a:"Meta releases Llama models as open-source — meaning anyone can download, run, and modify them for free. This is significant because it enables private AI deployments with no API costs, and has spawned thousands of specialized models fine-tuned from Llama. Llama 3 70B runs on a single high-end GPU and performs competitively with commercial models. Meta's open-source strategy is intentional — they benefit from the AI ecosystem improving while giving the models away free."},
       {q:"Mistral — efficient & local",a:"Mistral is a French AI company making highly efficient models — particularly good at running on limited hardware. Their models can run on a laptop or small server with no internet connection, making them ideal for regulated industries where data can't leave the building. Mistral also makes Mixtral, a mixture-of-experts model that punches well above its size."},
       {q:"xAI — Grok",a:"xAI is Elon Musk's AI company, making the Grok model. Grok is integrated into X (Twitter) and has real-time access to posts on the platform. It's positioned as a less restricted alternative to ChatGPT. Grok 3 is competitive with top-tier models on benchmarks. xAI raised $6B in 2024 and is building massive GPU clusters in Memphis, Tennessee."},
@@ -1525,7 +1525,8 @@ const AI_TOOLS = [
   { name:"GitHub Copilot",  cat:"Coding",      desc:"AI pair programmer built into your editor. Suggests code as you type.", url:"https://github.com/features/copilot" },
   { name:"Windsurf",        cat:"Coding",      desc:"Agentic IDE that can write and run entire features autonomously.", url:"https://codeium.com/windsurf" },
   { name:"Claude Code",     cat:"Coding",      desc:"Anthropic's agentic coding tool. Runs in the terminal and can edit entire codebases autonomously.", url:"https://claude.ai/code" },
-  { name:"Codex",           cat:"Coding",      desc:"OpenAI's cloud-based software engineering agent. Runs tasks in parallel in isolated environments.", url:"https://openai.com/codex" },
+  { name:"Codex",           cat:"Coding",      desc:"OpenAI's cloud-based software engineering agent powered by GPT-5.5. Runs tasks in parallel in isolated environments.", url:"https://openai.com/codex" },
+  { name:"Antigravity 2.0", cat:"Coding",      desc:"Google's agentic coding tool released at I/O 2026. Free globally. Can orchestrate 93 parallel sub-agents, 12× faster with Gemini 3.5 Flash.", url:"https://antigravity.dev" },
   // Image
   { name:"Midjourney",      cat:"Image",       desc:"Best-in-class AI image generation. Produces photorealistic and artistic images.", url:"https://midjourney.com" },
   { name:"GPT Image 2.0",   cat:"Image",       desc:"OpenAI's latest image model. Exceptional at following complex instructions and text-in-image.", url:"https://openai.com/research/gpt-image" },
@@ -1538,10 +1539,13 @@ const AI_TOOLS = [
   { name:"Udio",            cat:"Music",       desc:"High-quality AI music generation. Strong at specific genres and instruments.", url:"https://udio.com" },
   // Video
   { name:"Runway",          cat:"Video",       desc:"AI video generation and editing. Industry standard for AI video production.", url:"https://runwayml.com" },
-  { name:"Kling AI",        cat:"Video",       desc:"High-quality AI video generation from text or image. Strong at realistic motion.", url:"https://klingai.com" },
+  { name:"Kling 3.0",       cat:"Video",       desc:"Kuaishou's latest video model. Cinema-grade motion control and native 4K image generation.", url:"https://klingai.com" },
   { name:"Seedance 2.0",    cat:"Video",       desc:"ByteDance's latest AI video model. Produces highly realistic motion and cinematic quality.", url:"https://seedance.bytedance.com" },
-  { name:"Sora",            cat:"Video",       desc:"OpenAI's video generation model. Strong at consistency and complex scene composition.", url:"https://sora.com" },
+  { name:"Sora",            cat:"Video",       desc:"OpenAI's video generation model. Note: web/app discontinued April 2026, API sunset September 2026. Migrate to an alternative before then.", url:"https://sora.com" },
   { name:"Descript",        cat:"Video",       desc:"Edit video and podcast by editing the transcript. Includes AI voice and filler removal.", url:"https://descript.com" },
+  { name:"Gemini Omni",     cat:"Video",       desc:"Google's natively multimodal model from I/O 2026. Takes text, images, audio, and video as input and generates cinematic video output. Available in Google Flow.", url:"https://flow.google.com" },
+  { name:"Google Flow",     cat:"Video",       desc:"Google's AI creative studio for video and image generation. Powered by Gemini Omni and Veo 3. Available globally to Google AI subscribers.", url:"https://flow.google.com" },
+  { name:"Veo 3",           cat:"Video",       desc:"Google DeepMind's flagship video model. Best-in-class prompt adherence, native audio generation, and photorealism. Available via Google Flow and API.", url:"https://deepmind.google/models/veo" },
   // Automation
   { name:"Zapier",          cat:"Automation",  desc:"Connect 6,000+ apps with AI-powered workflows. No code required.", url:"https://zapier.com" },
   { name:"Make",            cat:"Automation",  desc:"Visual workflow builder for complex automations. More powerful than Zapier.", url:"https://make.com" },
@@ -1664,13 +1668,13 @@ function EarnPage() {
 
 // ── MODEL COMPARISON (live prices from OpenRouter) ────────────────────────────
 const MODELS_META = [
-  { id:"openai/gpt-5.4",                     name:"GPT-5.4",          maker:"OpenAI",    best:"Complex reasoning, coding",         speed:"Fast",    tier:"Frontier" },
+  { id:"openai/gpt-5.5",                     name:"GPT-5.5",          maker:"OpenAI",    best:"Agentic coding, long-context retrieval", speed:"Fast", tier:"Frontier" },
   { id:"openai/gpt-4.1-nano",                name:"GPT-4.1 Nano",     maker:"OpenAI",    best:"Speed, cost-sensitive tasks",       speed:"Fastest", tier:"Budget" },
-  { id:"anthropic/claude-opus-4",            name:"Claude Opus 4",    maker:"Anthropic", best:"Long docs, deep analysis",          speed:"Slow",    tier:"Frontier" },
+  { id:"anthropic/claude-opus-4-7",          name:"Claude Opus 4.7",  maker:"Anthropic", best:"Agentic coding, visual reasoning, long-horizon tasks", speed:"Slow", tier:"Frontier" },
   { id:"anthropic/claude-sonnet-4.6",        name:"Claude Sonnet 4.6",maker:"Anthropic", best:"Everyday tasks, best value",        speed:"Fast",    tier:"Standard" },
   { id:"anthropic/claude-haiku-4.5",         name:"Claude Haiku 4.5", maker:"Anthropic", best:"Fast, cheap, high volume",          speed:"Fastest", tier:"Budget" },
-  { id:"google/gemini-2.5-pro",              name:"Gemini 2.5 Pro",   maker:"Google",    best:"Huge context, multimodal",          speed:"Medium",  tier:"Frontier" },
-  { id:"google/gemini-2.5-flash",            name:"Gemini 2.5 Flash", maker:"Google",    best:"Speed + large context",             speed:"Fastest", tier:"Budget" },
+  { id:"google/gemini-3.5-pro",              name:"Gemini 3.5 Pro",   maker:"Google",    best:"Huge context, multimodal, agentic",  speed:"Medium",  tier:"Frontier" },
+  { id:"google/gemini-3.5-flash",            name:"Gemini 3.5 Flash", maker:"Google",    best:"Speed + agentic tasks, 4× faster than frontier", speed:"Fastest", tier:"Budget" },
   { id:"deepseek/deepseek-chat-v3-0324",     name:"DeepSeek Chat V3", maker:"DeepSeek",  best:"Open source, ultra cheap",          speed:"Fast",    tier:"Budget" },
   { id:"meta-llama/llama-3.3-70b-instruct",  name:"Llama 3.3 70B",    maker:"Meta",      best:"Self-hosted, no API costs",         speed:"Fast",    tier:"Open Source" },
   { id:"mistralai/mistral-large-2411",       name:"Mistral Large",    maker:"Mistral",   best:"European data residency, coding",   speed:"Fast",    tier:"Standard" },
