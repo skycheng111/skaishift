@@ -212,26 +212,26 @@ function buildYouTubeQuery(article) {
   for (const name of AI_MODEL_NAMES) {
     const regex = new RegExp(name.replace(/[-]/g, '[-\\s]?'), 'i');
     if (regex.test(text)) {
-      return `${name} demo review 2026`;
+      return `${name} official reveal showcase 2026`;
     }
   }
 
   // Fall back to unsplash_query if it's short and specific
   if (article.unsplash_query && article.unsplash_query.length < 40) {
-    return `${article.unsplash_query} AI demo 2026`;
+    return `${article.unsplash_query} AI reveal showcase 2026`;
   }
 
-  // Last resort: first 5 words of headline + demo
+  // Last resort: first 5 words of headline
   const shortTitle = article.headline.split(' ').slice(0, 5).join(' ');
-  return `${shortTitle} AI demo`;
+  return `${shortTitle} AI reveal`;
 }
 
 async function getYouTubeVideos(query, maxResults=3) {
   const YOUTUBE_KEY = process.env.YOUTUBE_API_KEY;
   if (!YOUTUBE_KEY) return [];
   try {
-    // Use medium duration to get proper demo/review videos (4–20 min), not shorts
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=${maxResults}&videoDuration=medium&order=relevance&key=${YOUTUBE_KEY}`;
+    // No duration filter — let YouTube return the most relevant results regardless of length
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=${maxResults}&order=relevance&key=${YOUTUBE_KEY}`;
     const res = await nodeFetch(url);
     const data = await res.json();
     if (!data.items) return [];
@@ -455,8 +455,8 @@ async function main() {
   // Fetch YouTube videos for the best visual story (slideshow)
   console.log('\n    Fetching YouTube videos for slideshow...');
 
-  // Priority 1: any Models/Tools article with significance >= 8 (new model releases)
-  // Priority 2: visual=true article
+  // Priority 1: new model release today (Models cat, significance >= 8)
+  // Priority 2: visual=true article today
   // Priority 3: high significance Tools/Models/Robotics
   // Priority 4: anything significant
   const MODEL_RELEASE_KEYWORDS = /new|launch|release|announc|introduc|unveil|debut|update|v\d|2\.0|3\.0|4\.0/i;
@@ -465,13 +465,40 @@ async function main() {
     summaries.find(a => ['Models','Tools'].includes(a.cat) && (a.significance||0) >= 8 && MODEL_RELEASE_KEYWORDS.test(a.headline)) ||
     summaries.find(a => a.visual === true) ||
     summaries.find(a => (a.significance||0) >= 8 && ['Models','Tools','Robotics'].includes(a.cat)) ||
-    summaries.find(a => (a.significance||0) >= 8);
+    summaries.find(a => (a.significance||0) >= 8) ||
+    summaries[0];
+
+  // Topic persistence: load last exciting topic in case today has nothing new
+  const TOPIC_FILE = path.join(__dirname, '../public/slideshow-topic.json');
+  let savedTopic = null;
+  try {
+    if (fs.existsSync(TOPIC_FILE)) {
+      savedTopic = JSON.parse(fs.readFileSync(TOPIC_FILE, 'utf8'));
+    }
+  } catch(e) { /* ignore */ }
 
   if (visualStory) {
-    visualStory.visual = true; // ensure it's flagged for the slideshow
+    visualStory.visual = true;
     // Clear visual flag from all other articles — frontend picks first visual=true
     summaries.forEach(a => { if (a !== visualStory) a.visual = false; });
-    const query = buildYouTubeQuery(visualStory);
+
+    // Decide whether to use today's story or carry forward last exciting topic
+    const isExciting = (visualStory.cat === 'Models' || visualStory.cat === 'Robotics') && (visualStory.significance||0) >= 8;
+    let query;
+    if (isExciting) {
+      query = buildYouTubeQuery(visualStory);
+      // Save this as the current hot topic for future slow days
+      try {
+        fs.writeFileSync(TOPIC_FILE, JSON.stringify({ query, headline: visualStory.headline, date: todayISO }));
+      } catch(e) { /* ignore */ }
+    } else if (savedTopic && savedTopic.query) {
+      // Not a great day — reuse last exciting topic but still get fresh videos
+      query = savedTopic.query;
+      console.log(`    No exciting story today — reusing topic: "${savedTopic.headline}"`);
+    } else {
+      query = buildYouTubeQuery(visualStory);
+    }
+
     const videos = await getYouTubeVideos(query, 3);
     visualStory.videos = videos;
     process.stdout.write(`    YouTube: ${videos.length} videos — query: "${query}"\n`);
