@@ -231,11 +231,13 @@ async function getYouTubeVideos(query, maxResults=3) {
   const YOUTUBE_KEY = process.env.YOUTUBE_API_KEY;
   if (!YOUTUBE_KEY) return [];
   try {
-    // No duration filter — let YouTube return the most relevant results regardless of length
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=${maxResults}&order=relevance&key=${YOUTUBE_KEY}`;
+    // publishedAfter: last 7 days — catches recent videos without being so tight
+    // that a brand-new release has nothing yet
+    const sevenDaysAgo = new Date(Date.now() - 7*24*60*60*1000).toISOString();
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=${maxResults}&order=relevance&publishedAfter=${sevenDaysAgo}&key=${YOUTUBE_KEY}`;
     const res = await nodeFetch(url);
     const data = await res.json();
-    if (!data.items) return [];
+    if (!data.items || data.items.length === 0) return [];
     return data.items.map(item => ({
       videoId: item.id.videoId,
       title: item.snippet.title,
@@ -500,7 +502,15 @@ async function main() {
       query = buildYouTubeQuery(visualStory);
     }
 
-    const videos = await getYouTubeVideos(query, 3);
+    let videos = await getYouTubeVideos(query, 3);
+
+    // If today's exciting story returned no videos (too new), fall back to saved topic
+    if (videos.length === 0 && isExciting && savedTopic && savedTopic.query && savedTopic.query !== query) {
+      console.log(`    No videos for today's topic yet — falling back to: "${savedTopic.headline}"`);
+      videos = await getYouTubeVideos(savedTopic.query, 3);
+      await new Promise(r => setTimeout(r, 300));
+    }
+
     visualStory.videos = videos;
     process.stdout.write(`    YouTube: ${videos.length} videos — query: "${query}"\n`);
     await new Promise(r => setTimeout(r, 300));
