@@ -469,6 +469,8 @@ async function main() {
 
   if (visualStory) {
     visualStory.visual = true; // ensure it's flagged for the slideshow
+    // Clear visual flag from all other articles — frontend picks first visual=true
+    summaries.forEach(a => { if (a !== visualStory) a.visual = false; });
     const query = buildYouTubeQuery(visualStory);
     const videos = await getYouTubeVideos(query, 3);
     visualStory.videos = videos;
