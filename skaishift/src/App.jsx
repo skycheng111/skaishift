@@ -182,7 +182,7 @@ function BriefStrip({ onNav, onSelect, weeklyArticles }) {
               </div>
             </div>
             <div style={{padding:"10px 12px"}}>
-              <CatBadge cat={story.cat}/>
+              <CatBadge cat={topic.cat}/>
               <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:12,color:T.ink,lineHeight:1.35,margin:"7px 0 0",display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{story.headline}</p>
             </div>
           </div>
@@ -206,7 +206,7 @@ function StoryCard({ story, onSelect }) {
         <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:CATS[story.cat]||T.amber,fontWeight:600}}>{story.cat}</span>
         <h3 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:14,color:T.ink,lineHeight:1.3,margin:0}}>{story.headline}</h3>
         <div style={{display:"flex",alignItems:"center",gap:5,marginTop:"auto"}}>
-          <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.source}</span>
+          <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{topic.source}</span>
           <span style={{color:T.light}}>·</span>
           <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.time} ago</span>
         </div>
@@ -245,7 +245,7 @@ function ArticleDetail({ story, onBack }) {
         </div>
         <div style={{padding:`20px ${INSET}px`}}>
           <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:10}}>
-            <CatBadge cat={story.cat}/>
+            <CatBadge cat={topic.cat}/>
             <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.source} · {story.time} ago</span>
           </div>
           <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:"clamp(20px,4vw,28px)",color:T.ink,lineHeight:1.25,margin:"0 0 16px"}}>{story.headline}</h1>
@@ -408,7 +408,7 @@ function LastWeekSection({ lastWeekArticles, onSelect, onNav }) {
               <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
             </div>
             <div style={{flex:1,padding:"10px 12px 10px 0",display:"flex",flexDirection:"column",gap:4,minWidth:0}}>
-              <CatBadge cat={story.cat}/>
+              <CatBadge cat={topic.cat}/>
               <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:13,color:T.ink,lineHeight:1.3,margin:"4px 0 0",display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{story.headline}</p>
             </div>
           </div>
@@ -799,7 +799,7 @@ function ResourcesTeaser({ onNav }) {
 
 
 // ── STORY SLIDESHOW (consistent height, YouTube videos, nav arrows) ─────────────
-function StorySlideshow({ articles, onSelect }) {
+function StorySlideshow({ articles, onSelect, slideshowTopic }) {
   const [slideIdx, setSlideIdx] = useState(0);
   const [slideH, setSlideH] = useState(460);
   const touchStartX = useRef(null);
@@ -811,22 +811,19 @@ function StorySlideshow({ articles, onSelect }) {
     return ()=>window.removeEventListener('resize', update);
   },[]);
 
-  const story = articles.find(a => a.visual === true && a.videos && a.videos.length > 0) ||
-                articles.find(a => a.videos && a.videos.length > 0) ||
-                articles.find(a => a.visual === true) ||
-                articles.find(a => ['Models','Tools','Earn','Robotics'].includes(a.cat) && (a.significance||0) >= 8) ||
-                articles.find(a => a.feat || a.significance >= 8);
-  if (!story) return null;
+  // Reset slide index when topic changes
+  useEffect(()=>{ setSlideIdx(0); },[slideshowTopic]);
 
-  const videos = story.videos || [];
+  // Primary source: slideshow-topic.json (always has videos, always consistent)
+  // Fallback: find a visual article with videos in today's feed
+  const topicFromFeed = articles.find(a => a.visual === true && a.videos && a.videos.length > 0) ||
+                        articles.find(a => a.videos && a.videos.length > 0);
+
+  const topic = slideshowTopic || topicFromFeed;
+  if (!topic || !topic.videos || topic.videos.length === 0) return null;
+
+  const videos = topic.videos;
   const slides = [{ type:'hook' }, ...videos.map(v=>({ type:'video', ...v }))];
-  if (videos.length === 0) {
-    const examples = Array.isArray(story.examples) && story.examples.length
-      ? story.examples
-      : (story.body||'').split('. ').filter(s=>s.trim().length>40).slice(0,3);
-    examples.forEach(e => slides.push({ type:'fact', text: e.trim() }));
-  }
-
   const total = slides.length;
   const slide = slides[slideIdx];
   const goNext = () => { if(slideIdx<total-1) setSlideIdx(s=>s+1); };
@@ -853,16 +850,16 @@ function StorySlideshow({ articles, onSelect }) {
 
         {slide.type==="hook"&&(
           <>
-            <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.4}}/>
+            <NewsImg src={topic.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.4}}/>
             <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.88) 100%)"}}/>
             <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 24px 20px"}}>
               <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:10}}>
-                <CatBadge cat={story.cat}/>
-                <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.55)"}}>{story.source}</span>
+                <CatBadge cat={topic.cat}/>
+                <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.55)"}}>{topic.source}</span>
               </div>
-              <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:slideH<350?26:34,color:"#fff",lineHeight:1.08,margin:"0 0 10px",letterSpacing:"0.02em"}}>{story.hook || story.headline}</p>
+              <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:slideH<350?26:34,color:"#fff",lineHeight:1.08,margin:"0 0 10px",letterSpacing:"0.02em"}}>{topic.hook || topic.headline}</p>
               <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.amber,fontWeight:700,margin:0,letterSpacing:"0.1em",textTransform:"uppercase"}}>
-                {videos.length>0?`${videos.length} demo videos — tap arrow or swipe`:"Swipe or tap arrow to see more"}
+                {`${videos.length} videos — tap arrow or swipe`}
               </p>
             </div>
           </>
@@ -884,17 +881,6 @@ function StorySlideshow({ articles, onSelect }) {
               <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:"rgba(255,255,255,0.4)",margin:0}}>{slide.channel}</p>
             </div>
           </div>
-        )}
-
-        {slide.type==="fact"&&(
-          <>
-            <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover",opacity:0.35}}/>
-            <div style={{position:"absolute",inset:0,background:"rgba(0,0,0,0.75)"}}/>
-            <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"flex-end",padding:"20px 20px 24px 20px"}}>
-              <div style={{width:32,height:3,background:T.amber,borderRadius:2,marginBottom:12}}/>
-              <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.4,margin:0}}>{slide.text}</p>
-            </div>
-          </>
         )}
 
       </div>
@@ -920,7 +906,7 @@ function StorySlideshow({ articles, onSelect }) {
 
 
 
-function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles, lastWeekArticles }) {
+function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav, weeklyArticles, lastWeekArticles, slideshowTopic }) {
   const feed = (cat==="All" ? articles.filter(a=>!a.feat) : articles.filter(a=>a.cat===cat));
   const shown = feed.slice(0,(page+1)*6);
   const more = (page+1)*6 < feed.length;
@@ -928,7 +914,7 @@ function HomeView({ articles, date, cat, setCat, page, setPage, onSelect, onNav,
   return (
     <div>
       <Marquee/>
-      <StorySlideshow articles={articles} onSelect={onSelect}/>
+      <StorySlideshow articles={articles} onSelect={onSelect} slideshowTopic={slideshowTopic}/>
       <div style={{background:T.bg,maxWidth:1200,margin:"0 auto"}}>
         <div style={{height:1,background:T.light,margin:`0 ${INSET}px`}}/>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:`16px ${INSET}px 6px`}}>
@@ -1032,12 +1018,12 @@ function BriefPage({ articles, onSelect }) {
                   <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:11,color:"#fff",letterSpacing:"0.08em"}}>#{i+1} THIS WEEK</span>
                 </div>
                 <div style={{position:"absolute",bottom:10,left:12}}>
-                  <CatBadge cat={story.cat}/>
+                  <CatBadge cat={topic.cat}/>
                 </div>
               </div>
               <div style={{padding:`14px ${INSET}px`}}>
                 <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:6}}>
-                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.source}</span>
+                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{topic.source}</span>
                   <span style={{color:T.light}}>·</span>
                   <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.time} ago</span>
                 </div>
@@ -1850,6 +1836,7 @@ export default function App() {
   const [briefData,setBriefData]=useState(null);
   const [weeklyArticles,setWeeklyArticles]=useState([]);
   const [lastWeekArticles,setLastWeekArticles]=useState([]);
+  const [slideshowTopic,setSlideshowTopic]=useState(null);
 
   // Load fresh news.json + weekly-brief.json (updated daily by GitHub Actions)
   useEffect(()=>{
@@ -1871,6 +1858,10 @@ export default function App() {
           setWeeklyArticles(filtered);
         }
       })
+      .catch(()=>{});
+    fetch("/slideshow-topic.json")
+      .then(r=>{ if(r.ok) return r.json(); throw new Error(); })
+      .then(d=>{ if(d?.videos?.length) setSlideshowTopic(d); })
       .catch(()=>{});
     fetch("/last-week-articles.json")
       .then(r=>{ if(r.ok) return r.json(); throw new Error(); })
@@ -1989,7 +1980,7 @@ export default function App() {
       {!art&&<Header onNav={onNav} onBack={null}/>}
 
       <main style={{flex:1}}>
-        {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav} weeklyArticles={weeklyArticles} lastWeekArticles={lastWeekArticles}/>}
+        {view==="home"      &&<HomeView articles={newsData.articles} date={newsData.date} cat={cat} setCat={c=>{setCat(c);setPage(0);}} page={page} setPage={setPage} onSelect={onSelect} onNav={onNav} weeklyArticles={weeklyArticles} lastWeekArticles={lastWeekArticles} slideshowTopic={slideshowTopic}/>}
         {view==="brief"     &&<BriefPage articles={lastWeekArticles} onBack={()=>setView('home')} onSelect={onSelect}/>}
         {view==="subscribe" &&<SubPage/>}
         {view==="learn"      &&<LearnPage onNav={onNav}/>}
