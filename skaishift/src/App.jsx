@@ -860,7 +860,7 @@ function StorySlideshow({ articles, onSelect }) {
                 <CatBadge cat={story.cat}/>
                 <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:"rgba(255,255,255,0.55)"}}>{story.source}</span>
               </div>
-              <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:slideH<350?26:34,color:"#fff",lineHeight:1.08,margin:"0 0 10px",letterSpacing:"0.02em"}}>{story.headline}</p>
+              <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:slideH<350?26:34,color:"#fff",lineHeight:1.08,margin:"0 0 10px",letterSpacing:"0.02em"}}>{story.hook || story.headline}</p>
               <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:T.amber,fontWeight:700,margin:0,letterSpacing:"0.1em",textTransform:"uppercase"}}>
                 {videos.length>0?`${videos.length} demo videos — tap arrow or swipe`:"Swipe or tap arrow to see more"}
               </p>
