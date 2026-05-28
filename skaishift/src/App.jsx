@@ -182,7 +182,7 @@ function BriefStrip({ onNav, onSelect, weeklyArticles }) {
               </div>
             </div>
             <div style={{padding:"10px 12px"}}>
-              <CatBadge cat={topic.cat}/>
+              <CatBadge cat={story.cat}/>
               <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:12,color:T.ink,lineHeight:1.35,margin:"7px 0 0",display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{story.headline}</p>
             </div>
           </div>
@@ -206,7 +206,7 @@ function StoryCard({ story, onSelect }) {
         <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:CATS[story.cat]||T.amber,fontWeight:600}}>{story.cat}</span>
         <h3 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:14,color:T.ink,lineHeight:1.3,margin:0}}>{story.headline}</h3>
         <div style={{display:"flex",alignItems:"center",gap:5,marginTop:"auto"}}>
-          <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{topic.source}</span>
+          <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.source}</span>
           <span style={{color:T.light}}>·</span>
           <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.time} ago</span>
         </div>
@@ -245,7 +245,7 @@ function ArticleDetail({ story, onBack }) {
         </div>
         <div style={{padding:`20px ${INSET}px`}}>
           <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:10}}>
-            <CatBadge cat={topic.cat}/>
+            <CatBadge cat={story.cat}/>
             <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.source} · {story.time} ago</span>
           </div>
           <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:"clamp(20px,4vw,28px)",color:T.ink,lineHeight:1.25,margin:"0 0 16px"}}>{story.headline}</h1>
@@ -408,7 +408,7 @@ function LastWeekSection({ lastWeekArticles, onSelect, onNav }) {
               <NewsImg src={story.img} style={{width:"100%",height:"100%",objectFit:"cover"}}/>
             </div>
             <div style={{flex:1,padding:"10px 12px 10px 0",display:"flex",flexDirection:"column",gap:4,minWidth:0}}>
-              <CatBadge cat={topic.cat}/>
+              <CatBadge cat={story.cat}/>
               <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:13,color:T.ink,lineHeight:1.3,margin:"4px 0 0",display:"-webkit-box",WebkitLineClamp:3,WebkitBoxOrient:"vertical",overflow:"hidden"}}>{story.headline}</p>
             </div>
           </div>
@@ -1018,12 +1018,12 @@ function BriefPage({ articles, onSelect }) {
                   <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:11,color:"#fff",letterSpacing:"0.08em"}}>#{i+1} THIS WEEK</span>
                 </div>
                 <div style={{position:"absolute",bottom:10,left:12}}>
-                  <CatBadge cat={topic.cat}/>
+                  <CatBadge cat={story.cat}/>
                 </div>
               </div>
               <div style={{padding:`14px ${INSET}px`}}>
                 <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:6}}>
-                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{topic.source}</span>
+                  <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.source}</span>
                   <span style={{color:T.light}}>·</span>
                   <span style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:11,color:T.mid}}>{story.time} ago</span>
                 </div>
