@@ -184,11 +184,54 @@ async function summarize(article, index) {
 
 
 // ── STEP: YOUTUBE VIDEO SEARCH ────────────────────────────────────────────────
+
+// Known AI model/product names to extract from headlines for better YouTube queries
+const AI_MODEL_NAMES = [
+  'GPT-5','GPT-4o','GPT-4.1','GPT Image','Sora','o3','o4',
+  'Claude Opus','Claude Sonnet','Claude Haiku','Claude 4','Claude 3',
+  'Gemini 2.5','Gemini Ultra','Gemini Flash','Gemini Omni','Gemini',
+  'Llama 4','Llama 3','Llama',
+  'Grok 3','Grok',
+  'Mistral Large','Mistral',
+  'DeepSeek R2','DeepSeek V3','DeepSeek',
+  'Seedance 2','Seedance',
+  'Kling 2','Kling',
+  'Runway Gen-4','Runway Gen-3','Runway',
+  'Midjourney V7','Midjourney',
+  'Stable Diffusion','FLUX',
+  'Gemma','Phi-4','Phi-3','Qwen',
+  'Veo 3','Veo 2','Veo',
+  'Imagen 4','Imagen',
+  'Whisper','ElevenLabs','Suno','Udio',
+];
+
+function buildYouTubeQuery(article) {
+  const text = `${article.headline} ${article.body || ''}`;
+
+  // Try to extract a known model/product name first
+  for (const name of AI_MODEL_NAMES) {
+    const regex = new RegExp(name.replace(/[-]/g, '[-\\s]?'), 'i');
+    if (regex.test(text)) {
+      return `${name} demo review 2026`;
+    }
+  }
+
+  // Fall back to unsplash_query if it's short and specific
+  if (article.unsplash_query && article.unsplash_query.length < 40) {
+    return `${article.unsplash_query} AI demo 2026`;
+  }
+
+  // Last resort: first 5 words of headline + demo
+  const shortTitle = article.headline.split(' ').slice(0, 5).join(' ');
+  return `${shortTitle} AI demo`;
+}
+
 async function getYouTubeVideos(query, maxResults=3) {
   const YOUTUBE_KEY = process.env.YOUTUBE_API_KEY;
   if (!YOUTUBE_KEY) return [];
   try {
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=${maxResults}&videoDuration=short&key=${YOUTUBE_KEY}`;
+    // Use medium duration to get proper demo/review videos (4–20 min), not shorts
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=${maxResults}&videoDuration=medium&order=relevance&key=${YOUTUBE_KEY}`;
     const res = await nodeFetch(url);
     const data = await res.json();
     if (!data.items) return [];
@@ -411,15 +454,25 @@ async function main() {
   }
   // Fetch YouTube videos for the best visual story (slideshow)
   console.log('\n    Fetching YouTube videos for slideshow...');
-  // Prefer: visual=true stories, then high significance tools/models, then anything significant
-  const visualStory = summaries.find(a => a.visual === true) ||
-    summaries.find(a => (a.significance||0) >= 8 && ['Models','Tools','Earn','Robotics'].includes(a.cat)) ||
+
+  // Priority 1: any Models/Tools article with significance >= 8 (new model releases)
+  // Priority 2: visual=true article
+  // Priority 3: high significance Tools/Models/Robotics
+  // Priority 4: anything significant
+  const MODEL_RELEASE_KEYWORDS = /new|launch|release|announc|introduc|unveil|debut|update|v\d|2\.0|3\.0|4\.0/i;
+  const visualStory =
+    summaries.find(a => a.cat === 'Models' && (a.significance||0) >= 8) ||
+    summaries.find(a => ['Models','Tools'].includes(a.cat) && (a.significance||0) >= 8 && MODEL_RELEASE_KEYWORDS.test(a.headline)) ||
+    summaries.find(a => a.visual === true) ||
+    summaries.find(a => (a.significance||0) >= 8 && ['Models','Tools','Robotics'].includes(a.cat)) ||
     summaries.find(a => (a.significance||0) >= 8);
+
   if (visualStory) {
-    const query = `${visualStory.headline.slice(0,60)} AI demo tutorial`;
+    visualStory.visual = true; // ensure it's flagged for the slideshow
+    const query = buildYouTubeQuery(visualStory);
     const videos = await getYouTubeVideos(query, 3);
     visualStory.videos = videos;
-    process.stdout.write(`    YouTube: ${videos.length} videos for "${visualStory.headline.slice(0,40)}..."\n`);
+    process.stdout.write(`    YouTube: ${videos.length} videos — query: "${query}"\n`);
     await new Promise(r => setTimeout(r, 300));
   }
 
