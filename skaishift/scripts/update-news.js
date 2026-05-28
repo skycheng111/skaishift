@@ -463,15 +463,13 @@ async function main() {
   // Priority 3: high significance Tools/Models/Robotics
   // Priority 4: anything significant
   const MODEL_RELEASE_KEYWORDS = /new|launch|release|announc|introduc|unveil|debut|update|v\d|2\.0|3\.0|4\.0/i;
-  const visualStory =
+  const excitingStory =
     summaries.find(a => a.cat === 'Models' && (a.significance||0) >= 8) ||
     summaries.find(a => ['Models','Tools'].includes(a.cat) && (a.significance||0) >= 8 && MODEL_RELEASE_KEYWORDS.test(a.headline)) ||
-    summaries.find(a => a.visual === true) ||
-    summaries.find(a => (a.significance||0) >= 8 && ['Models','Tools','Robotics'].includes(a.cat)) ||
-    summaries.find(a => (a.significance||0) >= 8) ||
-    summaries[0];
+    summaries.find(a => a.visual === true && (a.significance||0) >= 8) ||
+    summaries.find(a => (a.significance||0) >= 8 && ['Models','Tools','Robotics'].includes(a.cat));
 
-  // Topic persistence: load last exciting topic in case today has nothing new
+  // Slideshow topic persistence — stores full story so slide 1 + videos always match
   const TOPIC_FILE = path.join(__dirname, '../public/slideshow-topic.json');
   let savedTopic = null;
   try {
@@ -480,40 +478,52 @@ async function main() {
     }
   } catch(e) { /* ignore */ }
 
-  if (visualStory) {
-    visualStory.visual = true;
-    // Clear visual flag from all other articles — frontend picks first visual=true
-    summaries.forEach(a => { if (a !== visualStory) a.visual = false; });
+  // Clear visual flag from all articles — slideshow is driven by slideshow-topic.json, not news.json
+  summaries.forEach(a => a.visual = false);
 
-    // Decide whether to use today's story or carry forward last exciting topic
-    const isExciting = (visualStory.cat === 'Models' || visualStory.cat === 'Robotics') && (visualStory.significance||0) >= 8;
-    let query;
-    if (isExciting) {
-      query = buildYouTubeQuery(visualStory);
-      // Save this as the current hot topic for future slow days
-      try {
-        fs.writeFileSync(TOPIC_FILE, JSON.stringify({ query, headline: visualStory.headline, date: todayISO }));
-      } catch(e) { /* ignore */ }
-    } else if (savedTopic && savedTopic.query) {
-      // Not a great day — reuse last exciting topic but still get fresh videos
-      query = savedTopic.query;
-      console.log(`    No exciting story today — reusing topic: "${savedTopic.headline}"`);
-    } else {
-      query = buildYouTubeQuery(visualStory);
-    }
-
-    let videos = await getYouTubeVideos(query, 3);
-
-    // If today's exciting story returned no videos (too new), fall back to saved topic
-    if (videos.length === 0 && isExciting && savedTopic && savedTopic.query && savedTopic.query !== query) {
-      console.log(`    No videos for today's topic yet — falling back to: "${savedTopic.headline}"`);
-      videos = await getYouTubeVideos(savedTopic.query, 3);
-      await new Promise(r => setTimeout(r, 300));
-    }
-
-    visualStory.videos = videos;
+  if (excitingStory) {
+    // Today has something exciting — try to get videos for it
+    const query = buildYouTubeQuery(excitingStory);
+    const videos = await getYouTubeVideos(query, 3);
     process.stdout.write(`    YouTube: ${videos.length} videos — query: "${query}"\n`);
     await new Promise(r => setTimeout(r, 300));
+
+    if (videos.length > 0) {
+      // Perfect — today's story has videos. Save everything to slideshow-topic.json
+      const slideshowData = {
+        query,
+        hook:      excitingStory.hook || excitingStory.headline,
+        headline:  excitingStory.headline,
+        img:       excitingStory.img,
+        cat:       excitingStory.cat,
+        source:    excitingStory.source,
+        videos,
+        date:      todayISO,
+      };
+      try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(slideshowData, null, 2)); } catch(e) { /* ignore */ }
+      console.log(`    ✓ Slideshow updated: "${excitingStory.headline.slice(0,50)}..."`);
+    } else {
+      // Today's story is too new — no YouTube videos yet.
+      // Keep saved topic but search fresh videos for it so the slideshow stays current.
+      console.log(`    No videos for today's topic yet — keeping saved topic with fresh video search`);
+      if (savedTopic && savedTopic.query) {
+        const freshVideos = await getYouTubeVideos(savedTopic.query, 3);
+        await new Promise(r => setTimeout(r, 300));
+        const updated = { ...savedTopic, videos: freshVideos.length > 0 ? freshVideos : savedTopic.videos };
+        try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
+        console.log(`    ✓ Slideshow refreshed with saved topic: "${savedTopic.headline.slice(0,50)}..."`);
+      }
+    }
+  } else {
+    // Slow news day — reuse saved topic but get fresh videos
+    console.log(`    Slow news day — refreshing saved topic videos`);
+    if (savedTopic && savedTopic.query) {
+      const freshVideos = await getYouTubeVideos(savedTopic.query, 3);
+      await new Promise(r => setTimeout(r, 300));
+      const updated = { ...savedTopic, videos: freshVideos.length > 0 ? freshVideos : savedTopic.videos };
+      try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
+      console.log(`    ✓ Slideshow refreshed: "${savedTopic.headline.slice(0,50)}..."`);
+    }
   }
 
   // 4. Sort + feature
