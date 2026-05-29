@@ -231,14 +231,32 @@ async function getYouTubeVideos(query, maxResults=3) {
   const YOUTUBE_KEY = process.env.YOUTUBE_API_KEY;
   if (!YOUTUBE_KEY) return [];
   try {
-    // publishedAfter: last 7 days — catches recent videos without being so tight
-    // that a brand-new release has nothing yet
+    // videoDuration=medium caps at 20 min — eliminates podcasts and long-form content
+    // Request 8 results so we have room to filter for relevance
     const sevenDaysAgo = new Date(Date.now() - 7*24*60*60*1000).toISOString();
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=${maxResults}&order=relevance&publishedAfter=${sevenDaysAgo}&key=${YOUTUBE_KEY}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=8&order=relevance&videoDuration=medium&publishedAfter=${sevenDaysAgo}&key=${YOUTUBE_KEY}`;
     const res = await nodeFetch(url);
     const data = await res.json();
     if (!data.items || data.items.length === 0) return [];
-    return data.items.map(item => ({
+
+    // Extract meaningful keywords from query (skip short/common words)
+    const stopWords = new Set(['the','and','for','with','from','this','that','are','was','were','has','have','been','will','its','our','their','your','about','into','also','than','more','very','just','over','some','such','when','then','them','they','what','which','there','where','after','before','during','while','would','could','should','does','here','been','being','than','upon','these','those','might','most','other','well','only']);
+    const queryKeywords = query.toLowerCase()
+      .replace(/[^a-z0-9 ]/g, ' ')
+      .split(' ')
+      .filter(w => w.length > 3 && !stopWords.has(w));
+
+    // Filter: title must contain at least one keyword from the query
+    const relevant = data.items.filter(item => {
+      const title = item.snippet.title.toLowerCase();
+      const channel = item.snippet.channelTitle.toLowerCase();
+      return queryKeywords.some(kw => title.includes(kw) || channel.includes(kw));
+    });
+
+    // Use filtered results if we have enough, otherwise fall back to raw results
+    const pool = relevant.length >= maxResults ? relevant : data.items;
+
+    return pool.slice(0, maxResults).map(item => ({
       videoId: item.id.videoId,
       title: item.snippet.title,
       channel: item.snippet.channelTitle,
