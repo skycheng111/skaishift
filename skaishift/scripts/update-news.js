@@ -524,25 +524,35 @@ async function main() {
       console.log(`    ✓ Slideshow updated: "${excitingStory.headline.slice(0,50)}..."`);
     } else {
       // Today's story is too new — no YouTube videos yet.
-      // Keep saved topic but search fresh videos for it so the slideshow stays current.
+      // Try to refresh saved topic videos, but ONLY overwrite if we get relevant results.
+      // If zero relevant videos come back, keep yesterday's content untouched.
       console.log(`    No videos for today's topic yet — keeping saved topic with fresh video search`);
       if (savedTopic && savedTopic.query) {
         const freshVideos = await getYouTubeVideos(savedTopic.query, 3);
         await new Promise(r => setTimeout(r, 300));
-        const updated = { ...savedTopic, videos: freshVideos.length > 0 ? freshVideos : savedTopic.videos };
-        try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
-        console.log(`    ✓ Slideshow refreshed with saved topic: "${savedTopic.headline.slice(0,50)}..."`);
+        if (freshVideos.length > 0) {
+          const updated = { ...savedTopic, videos: freshVideos };
+          try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
+          console.log(`    ✓ Slideshow refreshed with saved topic: "${savedTopic.headline.slice(0,50)}..."`);
+        } else {
+          console.log(`    ✓ No relevant videos found — keeping yesterday's slideshow content untouched`);
+        }
       }
     }
   } else {
-    // Slow news day — reuse saved topic but get fresh videos
+    // Slow news day — try to refresh saved topic videos.
+    // ONLY overwrite if relevant videos come back — otherwise keep yesterday's content.
     console.log(`    Slow news day — refreshing saved topic videos`);
     if (savedTopic && savedTopic.query) {
       const freshVideos = await getYouTubeVideos(savedTopic.query, 3);
       await new Promise(r => setTimeout(r, 300));
-      const updated = { ...savedTopic, videos: freshVideos.length > 0 ? freshVideos : savedTopic.videos };
-      try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
-      console.log(`    ✓ Slideshow refreshed: "${savedTopic.headline.slice(0,50)}..."`);
+      if (freshVideos.length > 0) {
+        const updated = { ...savedTopic, videos: freshVideos };
+        try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
+        console.log(`    ✓ Slideshow refreshed: "${savedTopic.headline.slice(0,50)}..."`);
+      } else {
+        console.log(`    ✓ No relevant videos found — keeping yesterday's slideshow content untouched`);
+      }
     }
   }
 
