@@ -254,7 +254,9 @@ async function getYouTubeVideos(query, maxResults=3) {
     });
 
     // Use filtered results if we have enough, otherwise fall back to raw results
-    const pool = relevant.length >= maxResults ? relevant : data.items;
+    // Use relevant videos if any pass — even if fewer than maxResults
+    // Only fall back to raw results if zero videos pass the relevance filter
+    const pool = relevant.length > 0 ? relevant : data.items;
 
     return pool.slice(0, maxResults).map(item => ({
       videoId: item.id.videoId,
