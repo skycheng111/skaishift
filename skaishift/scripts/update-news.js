@@ -234,7 +234,7 @@ async function getYouTubeVideos(query, maxResults=3) {
     // videoDuration=medium caps at 20 min — eliminates podcasts and long-form content
     // Request 8 results so we have room to filter for relevance
     const sevenDaysAgo = new Date(Date.now() - 7*24*60*60*1000).toISOString();
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=8&order=relevance&videoDuration=medium&publishedAfter=${sevenDaysAgo}&key=${YOUTUBE_KEY}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=8&order=relevance&videoDuration=short&publishedAfter=${sevenDaysAgo}&key=${YOUTUBE_KEY}`;
     const res = await nodeFetch(url);
     const data = await res.json();
     if (!data.items || data.items.length === 0) return [];
