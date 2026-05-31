@@ -1516,23 +1516,23 @@ function TermsPage() {
 // ── TOOL DIRECTORY ────────────────────────────────────────────────────────────
 const AI_TOOLS = [
   // Chat
-  { name:"ChatGPT",         cat:"Chat",        desc:"OpenAI's flagship conversational AI. Best all-rounder for writing, research, and ideation.", url:"https://chat.openai.com" },
-  { name:"Claude",          cat:"Chat",        desc:"Anthropic's AI. Excellent for long documents, nuanced writing, and complex reasoning.", url:"https://claude.ai" },
+  { name:"ChatGPT",         cat:"Chat",        desc:"OpenAI's flagship conversational AI. GPT-5.5 powers the latest version. Best all-rounder for writing, research, coding, and image generation.", url:"https://chat.openai.com" },
+  { name:"Claude",          cat:"Chat",        desc:"Anthropic's AI. Excellent for long documents, nuanced writing, agentic coding, and complex reasoning. Claude Opus 4.8 is the current flagship.", url:"https://claude.ai" },
   { name:"Gemini",          cat:"Chat",        desc:"Google's AI, deeply integrated with Google Workspace and Search.", url:"https://gemini.google.com" },
-  { name:"Grok",            cat:"Chat",        desc:"xAI's conversational model. Strong at real-time information and uncensored analysis.", url:"https://grok.com" },
+  { name:"Grok",            cat:"Chat",        desc:"xAI's conversational model (Grok 4.3). Real-time X/Twitter data, DeepSearch for research, image generation, and Connectors for Google Workspace, GitHub, Notion and more.", url:"https://grok.com" },
   // Research
-  { name:"Perplexity",      cat:"Research",    desc:"AI-powered search engine that cites sources. Best for real-time research.", url:"https://perplexity.ai" },
+  { name:"NotebookLM",      cat:"Research",    desc:"Google's AI research assistant. Upload documents, PDFs, or URLs and have a conversation with your sources. Outstanding for literature review and source synthesis.", url:"https://notebooklm.google.com" },
+  { name:"Perplexity",      cat:"Research",    desc:"AI-powered search and research platform. Cites every source, 92% factual accuracy on real-time queries. Now includes Deep Research, Comet browser, and Model Council (runs queries across multiple frontier models simultaneously).", url:"https://perplexity.ai" },
   // Coding
-  { name:"Cursor",          cat:"Coding",      desc:"AI-native code editor built on VS Code. Best tool for AI-assisted development.", url:"https://cursor.sh" },
+  { name:"Cursor",          cat:"Coding",      desc:"AI-native code editor built on VS Code. Industry standard for AI-assisted development. Now supports MCP servers and background agents.", url:"https://cursor.sh" },
   { name:"GitHub Copilot",  cat:"Coding",      desc:"AI pair programmer built into your editor. Suggests code as you type.", url:"https://github.com/features/copilot" },
-  { name:"Windsurf",        cat:"Coding",      desc:"Agentic IDE that can write and run entire features autonomously.", url:"https://codeium.com/windsurf" },
-  { name:"Claude Code",     cat:"Coding",      desc:"Anthropic's agentic coding tool. Runs in the terminal and can edit entire codebases autonomously.", url:"https://claude.ai/code" },
+  { name:"Windsurf",        cat:"Coding",      desc:"Agentic IDE by Codeium that can write and run entire features autonomously. Now offers Windsurf Wave agents for background task execution.", url:"https://codeium.com/windsurf" },
+  { name:"Claude Code",     cat:"Coding",      desc:"Anthropic's agentic coding CLI. Edits entire codebases autonomously, runs tests, and commits to GitHub. Supports MCP servers for extended capabilities.", url:"https://claude.ai/code" },
   { name:"Codex",           cat:"Coding",      desc:"OpenAI's cloud-based software engineering agent powered by GPT-5.5. Runs tasks in parallel in isolated environments.", url:"https://openai.com/codex" },
   { name:"Antigravity 2.0", cat:"Coding",      desc:"Google's agentic coding tool released at I/O 2026. Free globally. Can orchestrate 93 parallel sub-agents, 12× faster with Gemini 3.5 Flash.", url:"https://antigravity.dev" },
   // Image
-  { name:"Midjourney",      cat:"Image",       desc:"Best-in-class AI image generation. Produces photorealistic and artistic images.", url:"https://midjourney.com" },
+  { name:"Midjourney V7",   cat:"Image",       desc:"Best-in-class AI image generation. V7 (2026) added Draft Mode for fast iterations and Character Reference for consistent subjects across images.", url:"https://midjourney.com" },
   { name:"GPT Image 2.0",   cat:"Image",       desc:"OpenAI's latest image model. Exceptional at following complex instructions and text-in-image.", url:"https://openai.com/research/gpt-image" },
-  { name:"DALL-E 3",        cat:"Image",       desc:"OpenAI's image generator, integrated into ChatGPT. Great for quick iterations.", url:"https://openai.com/dall-e-3" },
   { name:"Ideogram",        cat:"Image",       desc:"Excels at text-in-image generation. Best for logos and graphic design.", url:"https://ideogram.ai" },
   { name:"Flux",            cat:"Image",       desc:"Open-weight image model from Black Forest Labs. Highly customizable, popular with developers.", url:"https://blackforestlabs.ai" },
   // Voice
@@ -1540,7 +1540,7 @@ const AI_TOOLS = [
   { name:"Suno",            cat:"Music",       desc:"Generate full songs with vocals from a text prompt in seconds.", url:"https://suno.com" },
   { name:"Udio",            cat:"Music",       desc:"High-quality AI music generation. Strong at specific genres and instruments.", url:"https://udio.com" },
   // Video
-  { name:"Runway",          cat:"Video",       desc:"AI video generation and editing. Industry standard for AI video production.", url:"https://runwayml.com" },
+  { name:"Runway Gen-4",    cat:"Video",       desc:"Industry standard for AI video production. Gen-4 (May 2026) introduced world consistency — characters, environments, and objects stay coherent across multiple scenes.", url:"https://runwayml.com" },
   { name:"Kling 3.0",       cat:"Video",       desc:"Kuaishou's latest video model. Cinema-grade motion control and native 4K image generation.", url:"https://klingai.com" },
   { name:"Seedance 2.0",    cat:"Video",       desc:"ByteDance's latest AI video model. Produces highly realistic motion and cinematic quality.", url:"https://seedance.bytedance.com" },
   { name:"Sora",            cat:"Video",       desc:"OpenAI's video generation model. Note: web/app discontinued April 2026, API sunset September 2026. Migrate to an alternative before then.", url:"https://sora.com" },
@@ -1550,7 +1550,7 @@ const AI_TOOLS = [
   { name:"Veo 3",           cat:"Video",       desc:"Google DeepMind's flagship video model. Best-in-class prompt adherence, native audio generation, and photorealism. Available via Google Flow and API.", url:"https://deepmind.google/models/veo" },
   // Automation
   { name:"Zapier",          cat:"Automation",  desc:"Connect 6,000+ apps with AI-powered workflows. No code required.", url:"https://zapier.com" },
-  { name:"Make",            cat:"Automation",  desc:"Visual workflow builder for complex automations. More powerful than Zapier.", url:"https://make.com" },
+  { name:"Make",            cat:"Automation",  desc:"Visual workflow builder for complex automations. More powerful than Zapier. Now includes native AI modules for Claude, GPT, and Gemini without API setup.", url:"https://make.com" },
   { name:"n8n",             cat:"Automation",  desc:"Open-source workflow automation. Self-host or cloud. Preferred by developers.", url:"https://n8n.io" },
   // Productivity
   { name:"Notion AI",       cat:"Productivity",desc:"AI built into Notion. Summarize, write, and organize inside your workspace.", url:"https://notion.so/product/ai" },
@@ -1610,12 +1610,12 @@ function ToolsPage() {
 
 // ── EARN PAGE ─────────────────────────────────────────────────────────────────
 const EARN_STREAMS = [
-  { n:"AI Automation Agency", range:"$3K–$20K/mo", diff:"Medium", desc:"Build custom AI workflows for businesses — lead qualification, customer service, document processing. Package as monthly retainers. Target: SMBs in one vertical (legal, real estate, medical).", steps:["Pick one industry","Build 1 demo solving a common pain point","Cold outreach to 20 businesses per week","Charge $150–$500 setup + $100–$400/month retainer"] },
+  { n:"AI Automation Agency", range:"$3K–$20K/mo", diff:"Medium", desc:"Build custom AI workflows for businesses — lead qualification, customer service bots, document processing, email automation. Package as monthly retainers. Tools: Make.com, n8n, Claude API. Target: SMBs in one vertical (legal, real estate, medical, home services).", steps:["Pick one industry and one pain point","Build 1 working demo using Make.com or n8n","Cold outreach to 20 businesses per week","Charge $150–$500 setup + $100–$400/month retainer"] },
   { n:"AI Content Creation", range:"$2K–$10K/mo", diff:"Easy", desc:"Use AI tools to produce content at scale for clients — social media, blog posts, email newsletters, ad copy. Position as a 'content studio' not a freelancer.", steps:["Pick 2-3 content types you'll specialize in","Build a portfolio of 5 samples using AI tools","Price per deliverable or on retainer","Automate your own workflow to increase margins"] },
   { n:"Prompt Engineering Services", range:"$1K–$8K/mo", diff:"Easy", desc:"Businesses using AI need their prompts optimized. Audit existing prompts, build prompt libraries, and train teams. Often done as a one-time project.", steps:["Learn advanced prompting techniques","Offer a free prompt audit to get first clients","Package into: audit ($500), library build ($1500), training ($2000)","Target companies already using AI tools"] },
-  { n:"AI SaaS Product", range:"$0–$50K+/mo", diff:"Hard", desc:"Build a niche software product powered by AI — a specific tool for a specific audience. High upside, high effort. Examples: AI for real estate listings, AI for personal trainers, AI for HR.", steps:["Find a niche with a painful repetitive task","Validate with 5 conversations before building","Build MVP in 2-4 weeks using Claude/GPT APIs","Charge $29–$199/month per user"] },
+  { n:"AI SaaS Product", range:"$0–$50K+/mo", diff:"Hard", desc:"Build a niche software product powered by AI — a specific tool for a specific audience. High upside, high effort. Examples: AI for real estate listings, AI for personal trainers, AI for HR screening, AI diagnostic tools.", steps:["Find a niche with a painful repetitive task","Validate with 5 real conversations before building","Build MVP in 2-4 weeks using Claude or GPT APIs + Supabase","Charge $29–$199/month per user — start with a free trial"] },
   { n:"AI Consulting", range:"$5K–$30K/mo", diff:"Medium", desc:"Help businesses develop an AI strategy — what tools to use, what to automate, how to train staff. Usually project-based. Requires credibility and case studies.", steps:["Define your consulting niche (marketing, ops, HR, etc.)","Do 3 free or discounted engagements to build case studies","Package: AI Audit ($2K), Strategy ($5K), Implementation ($15K+)","Market through LinkedIn content and speaking"] },
-  { n:"Online Course or Community", range:"$1K–$30K/mo", diff:"Medium", desc:"Teach what you know about AI. Courses, cohorts, or paid communities around specific skills — prompting, building agents, using specific tools.", steps:["Pick a specific skill you can teach","Validate with a $97 workshop before building a full course","Use Gumroad, Podia, or Circle to host","Promote through social content and email list"] },
+  { n:"Online Course or Community", range:"$1K–$30K/mo", diff:"Medium", desc:"Teach what you know about AI. Courses, cohorts, or paid communities around specific skills — prompting, building agents, automations, using specific tools. Demand for practical AI skills is at an all-time high.", steps:["Pick a specific skill you can teach that's in demand now (agents, Make.com, Claude API)","Validate with a $97 workshop before building a full course","Use Gumroad, Podia, or Circle to host","Promote through short-form video content and an email list"] },
 ];
 
 function EarnPage() {
@@ -1773,16 +1773,17 @@ function ModelsPage() {
 
 // ── COMMUNITY PAGE ─────────────────────────────────────────────────────────────
 const COMMUNITIES = [
-  { name:"r/MachineLearning", type:"Reddit", desc:"The largest ML research community. Where papers get discussed the day they drop.", url:"https://reddit.com/r/MachineLearning", members:"4M+" },
-  { name:"r/artificial", type:"Reddit", desc:"General AI news and discussion. Good mix of technical and business coverage.", url:"https://reddit.com/r/artificial", members:"1.5M+" },
+  { name:"r/MachineLearning", type:"Reddit", desc:"The largest ML research community. Where papers get discussed the day they drop.", url:"https://reddit.com/r/MachineLearning", members:"3M+" },
+  { name:"r/ChatGPT",    type:"Reddit", desc:"The largest general AI discussion community on Reddit. Practical tips, use cases, and news for everyday users.", url:"https://reddit.com/r/ChatGPT", members:"6M+" },
   { name:"Hugging Face Discord", type:"Discord", desc:"The AI developer community. Model releases, datasets, and implementation help.", url:"https://discord.gg/hugging-face-879548962464493619", members:"100K+" },
   { name:"Latent Space", type:"Discord", desc:"AI engineers and researchers. High signal, low noise.", url:"https://discord.gg/latentspacepod", members:"20K+" },
   { name:"AI Jason Community", type:"Discord", desc:"Focused on building with AI. Automation, agents, and making money with AI tools.", url:"https://discord.gg/aijason", members:"30K+" },
   { name:"OpenAI Developer Forum", type:"Forum", desc:"Official forum for developers building on OpenAI's API. Direct answers from OpenAI staff.", url:"https://community.openai.com", members:"Official" },
   { name:"Anthropic Discord", type:"Discord", desc:"Claude API developers and prompt engineers.", url:"https://discord.gg/anthropic", members:"Active" },
   { name:"Simon Willison's Blog", type:"Blog", desc:"The most consistently useful writing on practical AI. Updated daily.", url:"https://simonwillison.net", members:"" },
-  { name:"AI Twitter/X", type:"Social", desc:"Follow: @sama, @karpathy, @ylecun, @emollick, @goodside, @gdb, @swyx", url:"https://x.com", members:"" },
-  { name:"The Rundown AI", type:"Newsletter", desc:"Daily AI newsletter with 600K+ subscribers. Good benchmark for what mainstream is covering.", url:"https://therundown.ai", members:"600K+" },
+  { name:"Latent Space Podcast", type:"Blog", desc:"The best technical AI podcast. Founders, researchers, and builders explaining how things actually work.", url:"https://www.latent.space", members:"" },
+  { name:"AI Twitter/X", type:"Social", desc:"Follow: @sama (OpenAI), @karpathy (educator), @emollick (research), @goodside (prompting), @swyx (builders), @alexalbert__ (Anthropic), @gdb (OpenAI)", url:"https://x.com", members:"" },
+  { name:"The Rundown AI", type:"Newsletter", desc:"Daily AI newsletter. Good benchmark for what mainstream is covering.", url:"https://therundown.ai", members:"700K+" },
   { name:"TLDR AI", type:"Newsletter", desc:"Technical AI newsletter. Model papers and research in plain English.", url:"https://tldr.tech/ai", members:"500K+" },
 ];
 const TYPE_COLOR={Reddit:"#FF4500",Discord:"#5865F2",Forum:"#16A34A",Blog:"#0F0F0F",Social:"#1D9BF0",Newsletter:"#7C3AED"};
