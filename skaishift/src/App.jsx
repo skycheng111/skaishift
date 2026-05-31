@@ -700,7 +700,7 @@ function APIPriceMarquee() {
     { model:"Gemini 3.5 Flash",  input:"$0.30", output:"$2.50",  color:"#4285F4" },
     { model:"Gemini 3.1 Pro",    input:"$2.00", output:"$12.00", color:"#4285F4" },
     { model:"DeepSeek Chat V3",  input:"$0.20", output:"$0.77",  color:"#4D9EFF" },
-    { model:"Mistral Large",     input:"$2.00", output:"$6.00",  color:"#FF7000" },
+    { model:"Mistral Large",     input:"$0.50", output:"$1.50",  color:"#FF7000" },
     { model:"Llama 3.3 70B",     input:"$0.10", output:"$0.32",  color:"#0866FF" },
   ];
 
@@ -715,7 +715,7 @@ function APIPriceMarquee() {
     { id:"google/gemini-3.5-flash",             name:"Gemini 3.5 Flash",  color:"#4285F4" },
     { id:"google/gemini-3.1-pro-preview",        name:"Gemini 3.1 Pro",    color:"#4285F4" },
     { id:"deepseek/deepseek-chat-v3-0324",      name:"DeepSeek Chat V3",  color:"#4D9EFF" },
-    { id:"mistralai/mistral-large-2411",        name:"Mistral Large",     color:"#FF7000" },
+    { id:"mistralai/mistral-large-2512",        name:"Mistral Large",     color:"#FF7000" },
     { id:"meta-llama/llama-3.3-70b-instruct",  name:"Llama 3.3 70B",     color:"#0866FF" },
   ];
 
@@ -1680,7 +1680,7 @@ const MODELS_META = [
   { id:"google/gemini-3.5-flash",            name:"Gemini 3.5 Flash", maker:"Google",    best:"Speed + agentic tasks, 4× faster than frontier", speed:"Fastest", tier:"Budget" },
   { id:"deepseek/deepseek-chat-v3-0324",     name:"DeepSeek Chat V3", maker:"DeepSeek",  best:"Open source, ultra cheap",          speed:"Fast",    tier:"Budget" },
   { id:"meta-llama/llama-3.3-70b-instruct",  name:"Llama 3.3 70B",    maker:"Meta",      best:"Self-hosted, no API costs",         speed:"Fast",    tier:"Open Source" },
-  { id:"mistralai/mistral-large-2411",       name:"Mistral Large",    maker:"Mistral",   best:"European data residency, coding",   speed:"Fast",    tier:"Standard" },
+  { id:"mistralai/mistral-large-2512",       name:"Mistral Large",    maker:"Mistral",   best:"European data residency, efficient coding", speed:"Fast", tier:"Standard" },
 ];
 const TIER_COLOR={Frontier:T?.red||"#E8001C",Standard:"#2563EB",Budget:"#16A34A","Open Source":"#7C3AED"};
 
