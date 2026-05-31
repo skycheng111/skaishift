@@ -231,10 +231,9 @@ async function getYouTubeVideos(query, maxResults=3) {
   const YOUTUBE_KEY = process.env.YOUTUBE_API_KEY;
   if (!YOUTUBE_KEY) return [];
   try {
-    // videoDuration=medium caps at 20 min — eliminates podcasts and long-form content
-    // Request 8 results so we have room to filter for relevance
-    const sevenDaysAgo = new Date(Date.now() - 7*24*60*60*1000).toISOString();
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=8&order=relevance&videoDuration=short&publishedAfter=${sevenDaysAgo}&key=${YOUTUBE_KEY}`;
+    // No date filter — best showcase clips for a model release are often the official
+    // ones published at launch, not necessarily within the last 7 days
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=8&order=relevance&videoDuration=short&key=${YOUTUBE_KEY}`;
     const res = await nodeFetch(url);
     const data = await res.json();
     if (!data.items || data.items.length === 0) return [];
