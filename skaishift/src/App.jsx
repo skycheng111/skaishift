@@ -1868,7 +1868,9 @@ export default function App() {
           // Only show articles from previous days — not today
           const today = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD in local time
           const filtered = d.articles.filter(a => !a.published_date || a.published_date < today);
-          setWeeklyArticles(filtered);
+          // On Monday the week resets — filtered will be empty since all articles are from today.
+          // Fall back to today's articles so the section isn't blank on week-start.
+          setWeeklyArticles(filtered.length > 0 ? filtered : (d.articles || []));
         }
       })
       .catch(()=>{});
