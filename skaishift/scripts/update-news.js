@@ -400,6 +400,15 @@ async function main() {
   // Filter out articles already published in the last 7 days (reads from Supabase)
   const prevUrls = new Set();
   const prevKeys = new Set();
+  // Returns all significant words from a headline for overlap-based dedup
+  const significantWords = (h='') => new Set(
+    h.toLowerCase()
+     .replace(/[^a-z0-9 ]/g,' ')
+     .split(' ')
+     .filter(w => w.length > 4 && !['about','after','could','would','their','there','where','which','while','announces','launches','releases','using','builds','today','gives','joins','shows','takes','makes','helps','says','with','from','into','news','will','just','that','this','have','been','more','than','when','then','them','they','what','also','only','here','were','does'].includes(w))
+  );
+
+  // Legacy exact key for Supabase dedup (kept for backward compat)
   const headlineKey = (h='') => h.toLowerCase()
     .replace(/[^a-z0-9 ]/g,'')
     .split(' ')
@@ -599,17 +608,21 @@ async function main() {
   // But only keep articles NOT from today in the displayed strip
   const wNotToday = wCombined.filter(a => a.published_date !== todayISO);
   const wSeenUrls = new Set();
-  const wSeenKeys = new Set();
-
+  const wSeenWordSets = []; // array of Sets for overlap comparison
 
   const wDeduped = wNotToday.filter(a => {
     // Primary: deduplicate by source URL
     if (a.link && wSeenUrls.has(a.link)) return false;
-    // Secondary: deduplicate by distinctive headline keywords
-    const hk = headlineKey(a.headline);
-    if (hk && wSeenKeys.has(hk)) return false;
+    // Secondary: flag as duplicate if headline shares 2+ significant words with any seen headline
+    const words = significantWords(a.headline);
+    const isDuplicate = wSeenWordSets.some(seen => {
+      let overlap = 0;
+      for (const w of words) { if (seen.has(w)) overlap++; }
+      return overlap >= 2;
+    });
+    if (isDuplicate) return false;
     if (a.link) wSeenUrls.add(a.link);
-    if (hk) wSeenKeys.add(hk);
+    wSeenWordSets.push(words);
     return true;
   });
   wDeduped.sort((a,b) => (b.significance||0)-(a.significance||0));
