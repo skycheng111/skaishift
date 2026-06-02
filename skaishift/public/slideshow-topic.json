@@ -1,10 +1,9 @@
 {
   "query": "Gemini Omni official reveal showcase",
-  "hook": "Google just made every other AI model nervous.",
-  "headline": "Google releases 9 Gemini Omni demos showing real-time multimodal AI in action",
-  "img": "https://images.unsplash.com/photo-1592096304832-62463bfdc822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA0MDQ2NTB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "topicName": "Gemini Omni",
+  "hook": "Gemini Omni is about to blow your mind.",
+  "img": "https://images.unsplash.com/photo-1739115808579-332e261428bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA0MTg0OTd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Models",
-  "source": "Google AI",
   "videos": [
     {
       "videoId": "uW4B6ziQqvY",
@@ -12,13 +11,13 @@
       "channel": "Google"
     },
     {
-      "videoId": "s4Lav_gsMPo",
-      "title": "Sneak Peek: Intelligent Eyewear | Gemini is Coming to Your Glasses",
+      "videoId": "wPGH9XOJOHo",
+      "title": "Meet Gemini Spark",
       "channel": "Google"
     },
     {
-      "videoId": "wPGH9XOJOHo",
-      "title": "Meet Gemini Spark",
+      "videoId": "s4Lav_gsMPo",
+      "title": "Sneak Peek: Intelligent Eyewear | Gemini is Coming to Your Glasses",
       "channel": "Google"
     }
   ],
