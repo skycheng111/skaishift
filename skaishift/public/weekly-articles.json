@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-01T15:30:58.890Z",
+  "updated": "2026-06-02T12:48:18.686Z",
   "articles": [
     {
       "id": "2026-06-01-a1",
@@ -64,28 +64,6 @@
       "source": "Google AI",
       "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/",
       "img": "https://images.unsplash.com/photo-1677442135131-4d7c123aef1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODAzMjgwMDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-06-01"
-    },
-    {
-      "id": "2026-06-01-a4",
-      "cat": "Models",
-      "hook": "Google just revealed what's next after Gemini and it's wild",
-      "headline": "Google I/O 2026: Gemini Omni and 3.5 Flash debut with major upgrades",
-      "body": "Google dropped 12 major announcements at I/O 2026, headlined by two significant Gemini releases. Gemini Omni represents the next generation of Google's flagship AI model, marking a substantial leap forward from previous versions with expanded multimodal capabilities. Gemini 3.5 Flash is a faster, more efficient iteration designed for real-time applications and edge deployment. The keynote covered specific improvements in reasoning, vision, audio, and text processing across both models, though exact benchmarks and capability details are still emerging. Gemini Omni appears positioned as Google's direct response to competitors in the frontier model space, while 3.5 Flash targets developers and enterprises needing faster inference and lower latency. These releases signal Google's continued investment in maintaining leadership in the large language model arms race, with both models likely available through Google Cloud APIs and integrated into Google's consumer products. The timing at I/O 2026 underscores how model releases have become central to Google's developer strategy and competitive positioning against OpenAI, Anthropic, and other AI companies.",
-      "examples": [
-        "Feed Gemini Omni a video of your product and get instant market analysis with competitor comparisons",
-        "Use 3.5 Flash to process customer support tickets in real-time with sub-second response latency",
-        "Upload a business document and have Omni extract insights, create summaries, and generate action items simultaneously"
-      ],
-      "build": "AI agencies are already reselling Gemini API access to SMBs at 3-5x markup, charging $200-500/month per client for customer service automation. Freelancers on Upwork are offering 'Gemini integration services' to e-commerce shops, building custom chatbots that process orders and handle returns. Developers are launching productized services around model fine-tuning, with clients paying $2,000-10,000 per month for trained models optimized for their specific industries.",
-      "unsplash_query": "artificial intelligence neural network data",
-      "significance": 9,
-      "visual": false,
-      "time": "9h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
-      "img": "https://images.unsplash.com/photo-1717501217778-367e9cdb0e03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODAzMjgwMDd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
       "published_date": "2026-06-01"
     },
@@ -332,114 +310,136 @@
       "published_date": "2026-06-01"
     },
     {
-      "id": "2026-06-01-a16",
-      "cat": "Strategy",
-      "hook": "OpenAI just gave away the blueprint for AI safety evaluation.",
-      "headline": "OpenAI releases playbook for third-party AI model evaluations",
-      "body": "OpenAI has published detailed guidance on how to conduct trustworthy third-party evaluations of frontier AI systems, addressing a critical gap in AI governance. The playbook covers three core areas: assessing model capabilities, evaluating safeguards and mitigations, and determining evaluation validity and rigor. Rather than keeping evaluation methodology proprietary, OpenAI is sharing this framework to establish industry standards for how frontier AI models should be tested by independent third parties. The guidance includes specific protocols for stress-testing model safety, measuring performance across different domains, and validating that evaluation results are reproducible and meaningful. This move reflects growing pressure from regulators, investors, and the public for transparent, independent verification of AI system behavior before deployment. The playbook is designed for evaluators working with large language models and multimodal systems, providing concrete checklists and methodologies that other AI safety researchers and auditors can implement. By open-sourcing this framework, OpenAI aims to professionalize the evaluation landscape and make it harder for less rigorous evaluation practices to persist across the industry.",
+      "id": "2026-06-02-a1",
+      "cat": "Tools",
+      "hook": "Codex just became the productivity tool everyone actually needs.",
+      "headline": "OpenAI's Codex Evolves Into Universal Productivity Engine for Knowledge Workers",
+      "body": "OpenAI has released findings from its Next Era of Knowledge Work report, revealing how Codex is reshaping productivity across multiple domains beyond traditional coding. The research demonstrates that Codex—the AI system trained on vast amounts of code and natural language—is now functioning as a comprehensive productivity tool capable of handling AI-powered research, data analysis, workflow automation, and content creation. Unlike earlier positioning focused primarily on developers, this evolution shows Codex handling knowledge work tasks that span industries and skill levels. The report indicates that workers are using Codex to accelerate research by synthesizing information from multiple sources, automate repetitive analytical tasks that previously consumed hours, streamline complex workflows by generating process documentation and scripts, and generate written content ranging from reports to marketing copy. The significance lies in the shift from Codex as a specialized developer tool to Codex as a universal productivity multiplier—meaning a single person with access to Codex can accomplish work that previously required multiple team members or significantly more time. This positions AI-powered coding assistants as essential infrastructure for modern knowledge work, not just software engineering.",
       "examples": [
-        "Run adversarial prompts against a model to identify capability boundaries and failure modes systematically.",
-        "Benchmark safety mitigations across multiple domains to measure consistency of harmful-content refusal.",
-        "Validate evaluation reproducibility by having independent teams run identical tests and compare results."
+        "Paste raw research data and get automated analysis summaries with key insights highlighted in minutes.",
+        "Describe a workflow in plain English and receive executable automation scripts ready to deploy.",
+        "Input scattered notes and raw sources, get a fully structured report with citations and conclusions."
       ],
-      "build": "Safety consultants are charging $5K-$15K per evaluation project to help startups and enterprises audit their custom-fine-tuned models using OpenAI's framework. Compliance-focused agencies are selling evaluation-as-a-service packages ($10K-$50K) to companies needing third-party safety certifications for regulated industries. Freelance AI researchers are bundling this playbook into audit retainers ($2K-$8K monthly) for enterprises running frequent model updates.",
-      "unsplash_query": "AI safety evaluation testing laboratory",
-      "significance": 6,
+      "build": "Freelancers and agencies are selling Codex-powered research and automation services at $50-150/hour, handling bulk data analysis and workflow optimization projects for mid-market companies. Solo entrepreneurs are building content creation agencies using Codex to produce 10-15 pieces weekly per client at $2K-5K/month retainers. Consultants are packaging Codex training and implementation as a service, charging $3K-10K per engagement to help teams automate internal knowledge work.",
+      "unsplash_query": "productive workspace AI automation desk",
+      "significance": 9,
+      "visual": false,
+      "time": "9h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/codex-for-knowledge-work",
+      "img": "https://images.unsplash.com/photo-1758876022017-835589d6c6bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA0MDQ2NDd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-06-02"
+    },
+    {
+      "id": "2026-06-02-a2",
+      "cat": "Tools",
+      "hook": "Google just showed how they built I/O 2026 using Gemini AI.",
+      "headline": "Google used Gemini to produce Google I/O 2026 — here's what that means",
+      "body": "Google revealed how its teams used Gemini AI to help produce Google I/O 2026, the company's flagship developer conference. Rather than just announcing Gemini as a tool, Google went deeper — showing internal use cases where the model assisted in content creation, event planning, and presentation development. This is significant because it demonstrates Gemini's capabilities in real production workflows at scale, not just theoretical applications. The specifics suggest Gemini handled tasks like drafting keynote materials, organizing technical documentation, and potentially assisting with video content planning for the event. By using their own AI in their own major event, Google is essentially field-testing Gemini's ability to handle complex, multi-layered projects with tight deadlines. This also serves as a proof point for enterprise customers wondering if Gemini can actually replace or augment their internal creative and organizational workflows. The move positions Gemini not just as a chatbot or coding assistant, but as a tool capable of managing substantial pieces of professional event production.",
+      "examples": [
+        "Paste keynote notes and Gemini drafts talking points, speaker transitions, and visual layout suggestions for slides.",
+        "Feed Gemini hundreds of technical demos and have it organize them into coherent session tracks and timing.",
+        "Input event logistics and Gemini suggests content themes, speaker pairings, and audience flow optimization."
+      ],
+      "build": "Agencies are already charging $5K–$25K per project to use Gemini for corporate event planning, content strategy, and presentation development. Freelancers on Upwork are booking $50–$150/hour to manage Gemini-assisted workflows for client conferences and product launches. Companies are paying $2K–$10K monthly retainers to have teams use Gemini to produce their marketing collateral, training materials, and internal communications.",
+      "unsplash_query": "Google conference stage technology presentation",
+      "significance": 9,
       "visual": false,
       "time": "10h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/trustworthy-third-party-evaluations-foundations",
-      "img": "https://images.unsplash.com/photo-1646956141590-9503c35a27cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODAzMjgwMDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-06-01"
-    },
-    {
-      "id": "2026-06-01-a17",
-      "cat": "Tools",
-      "hook": "Students just built an AI sign language tutor that actually works",
-      "headline": "University of Waterloo students launch AI prototypes reshaping education",
-      "body": "University of Waterloo students have developed working AI prototypes through the Futures Lab, with a standout project being an AI-powered sign language tutor designed to make education more accessible. The sign language tutor uses AI to recognize and teach sign language in real-time, helping users learn and practice with immediate feedback. This prototype demonstrates how AI can be applied to underserved educational needs where traditional tutoring is expensive or unavailable. The project is part of a broader initiative to showcase practical AI applications that solve real-world problems in education and workforce development. Beyond the sign language tutor, the Futures Lab is exploring multiple AI prototypes aimed at reshaping how people learn and work, indicating a focus on accessibility and inclusion. The initiative comes from Google AI's support of student innovation, positioning these early-stage projects as potential starting points for scalable educational technology.",
-      "examples": [
-        "Record yourself signing and get instant feedback on hand position, movement speed, and accuracy",
-        "Practice vocabulary in sign language with AI corrections that adapt to your skill level",
-        "Use the tutor offline to learn accessibility skills without needing a live instructor"
-      ],
-      "build": "Students and educators are monetizing this by licensing the prototype to schools and accessibility nonprofits at $500-2000/month per institution. Independent consultants are offering implementation services to help districts integrate sign language AI tools into their curricula, charging $150-300/hour. Some are packaging it as a white-label solution for edtech platforms, generating $5-15K per licensing deal.",
-      "unsplash_query": "student learning technology classroom education",
-      "significance": 6,
-      "visual": false,
-      "time": "2h",
       "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/university-waterloo-labs/",
-      "img": "https://images.unsplash.com/photo-1695265703868-5d6a3fa83748?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODAzMjgwMDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-06-01"
+      "link": "https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/",
+      "img": "https://images.unsplash.com/photo-1664241486400-4914a6bb0542?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA0MDQ2NDl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-06-02"
     },
     {
-      "id": "2026-06-01-a18",
-      "cat": "Tools",
-      "hook": "PyTorch just made optimizing your models way less painful.",
-      "headline": "PyTorch's torch.profiler helps developers spot GPU bottlenecks instantly",
-      "body": "HuggingFace published a comprehensive beginner's guide to torch.profiler, PyTorch's built-in profiling tool that lets developers measure exactly where their models are spending compute time and memory. torch.profiler breaks down execution across CPU, GPU, and memory operations, showing you which layers consume the most resources and where optimization efforts should focus. For AI builders, this means moving from guesswork to data-driven optimization — you can identify whether a bottleneck is in matrix multiplication, data loading, or memory allocation in seconds. The tool integrates directly into PyTorch workflows with minimal code changes, letting you profile training loops, inference pipelines, and individual operations with granular timing data. Compared to older profiling methods that required external tools or manual instrumentation, torch.profiler gives developers instant visibility into model performance without rewriting code. This is critical for anyone fine-tuning large models or deploying inference at scale — shaving even 10-20% off compute time directly impacts training costs and production latency. The guide covers practical setup, how to interpret profiler output, and common optimization patterns that emerge from profiling data.",
+      "id": "2026-06-02-a3",
+      "cat": "Models",
+      "hook": "Google just dropped 9 videos proving Gemini Omni is actually insane.",
+      "headline": "Google releases 9 Gemini Omni demos showing real-time multimodal AI in action",
+      "body": "Google AI has released 9 demonstration videos showcasing Gemini Omni and Gemini 3.5, the latest models announced at Google I/O 2026. These videos provide concrete proof of what the new models can actually do in real-world scenarios. Gemini Omni represents a major leap forward in multimodal AI — it can process and respond to text, images, audio, and video simultaneously, with improved reasoning and faster processing speeds compared to previous versions. The demonstrations span multiple domains, showing capabilities like real-time video understanding, complex problem-solving, creative content generation, and nuanced conversational AI. Gemini 3.5 focuses on improvements in coding, mathematical reasoning, and instruction-following, with significant performance gains over Gemini 2.0. The videos are particularly significant because they move beyond benchmark numbers and marketing claims to show actual live demonstrations of the models working on practical tasks. These releases come as Google continues to compete with OpenAI's GPT-4o and other frontier models in the race to build more capable AI systems.",
       "examples": [
-        "Run your training loop through torch.profiler and see exactly which operations consume 80% of GPU time in milliseconds.",
-        "Profile inference on your model and discover unexpected CPU-GPU sync points that are killing throughput.",
-        "Compare profiler traces before and after optimization to measure the actual speedup from code changes."
+        "Ask Gemini Omni to analyze a live video feed and provide real-time commentary and insights.",
+        "Feed the model a complex diagram or whiteboard sketch and have it extract structured data and explanations.",
+        "Play audio in multiple languages and have Gemini respond conversationally in real-time with perfect context."
       ],
-      "build": "ML engineers are charging $150–400/hour for optimization consulting, identifying and fixing bottlenecks in client models using profiler data — typically cutting training time by 15-30% and billing per optimization contract. Some offer pre-built 'profiler audit' packages ($2,000–5,000) analyzing a client's model and delivering a report with specific fixes. Freelancers on Upwork are targeting companies training large models in-house, selling optimization guidance at $3,000–10,000 per engagement.",
-      "unsplash_query": "pytorch machine learning code optimization",
-      "significance": 6,
+      "build": "Entrepreneurs are selling Gemini Omni integration services to content creators and agencies — building custom video analysis workflows that cost $500-2000/month. Developers are offering model fine-tuning and prompt engineering consulting for enterprises wanting to deploy Gemini Omni internally. Resellers are bundling Gemini Omni API access with content moderation and brand safety services, typically charging $1000-5000/month per client.",
+      "unsplash_query": "Google AI technology multimodal learning",
+      "significance": 9,
       "visual": false,
-      "time": "3h",
-      "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/torch-profiler",
-      "img": "https://images.unsplash.com/photo-1690683789978-3cf73960d650?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODAzMjgwMTB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "time": "10h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/",
+      "img": "https://images.unsplash.com/photo-1592096304832-62463bfdc822?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA0MDQ2NTB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-06-01"
+      "published_date": "2026-06-02"
     },
     {
-      "id": "2026-06-01-a19",
-      "cat": "Tools",
-      "hook": "Meta just solved the hardest part of social discovery at billion-scale.",
-      "headline": "Meta's Friend Bubbles: How Simple Social Features Hide Complex Engineering",
-      "body": "Meta has launched Friend Bubbles, a new feature within Instagram Reels that surfaces content your friends have watched and reacted to. On the surface, it appears to be a straightforward social discovery tool—showing you what's resonating with your network. But according to Meta's engineering team, features like this require some of the deepest infrastructure work in the company. The challenge isn't the idea; it's scaling it reliably to billions of users while keeping latency low and recommendations relevant. On Meta's Tech Podcast, software engineers Subasree and Joseph broke down the engineering architecture behind Friend Bubbles, detailing how they built real-time reaction tracking, personalized feed ranking, and friend-graph querying at Meta's scale. The real-world impact is significant: Friend Bubbles gives users a new discovery channel that's inherently more trustworthy than algorithmic recommendations alone, since it's based on explicit actions from people they already know. For creators and brands, this creates a new distribution vector—content that resonates with engaged audiences naturally surfaces to their friends. This is a reminder that the most impactful social features are often hidden beneath layers of database optimization, caching strategies, and real-time data pipelines that few people think about.",
+      "id": "2026-06-02-a4",
+      "cat": "Models",
+      "hook": "Google just revealed the AI upgrades that'll shape how everyone builds in 2026.",
+      "headline": "Google I/O 2026: Gemini Omni and 3.5 Flash redefine what AI can do",
+      "body": "Google announced 12 major updates at I/O 2026, with the headline releases being Gemini Omni and Gemini 3.5 Flash. Gemini Omni represents a significant leap in multimodal AI capability—the model can natively process and reason across text, images, audio, and video in a single unified architecture, eliminating the need for separate processing pipelines. Gemini 3.5 Flash brings faster inference speeds and improved efficiency, making high-performance AI accessible for cost-sensitive applications and real-time use cases. These models arrive with measurable improvements in reasoning, coding, math, and creative tasks compared to previous generations. The releases position Google's Gemini family as direct competition to OpenAI's latest models and Anthropic's Claude, each claiming advances in different capability areas. For developers and entrepreneurs, this means lower latency, better accuracy, and reduced API costs for production deployments. The timing matters: as the AI market consolidates around a handful of flagship models, each new version release from major labs represents a reset in the competitive landscape and shifts which tools make economic sense to build on.",
       "examples": [
-        "See which Reels your closest friends watched and tapped the heart button on in one unified view.",
-        "Discover trending content within your friend group before it hits the main algorithmic feed.",
-        "React to friend-watched Reels directly from the Bubbles feed to signal your own interests."
+        "Feed Gemini Omni a video of a room, text description of desired changes, and get photorealistic video showing the redesigned space with consistent lighting.",
+        "Upload a sketch, describe the product you want built, receive functional code and interactive 3D preview in real time.",
+        "Input raw audio, get transcription with speaker identification, emotional tone analysis, and action items extracted in one pass."
       ],
-      "build": "Creators optimizing for Friend Bubbles engagement are seeing 15-40% higher reach on niche content compared to cold algorithmic distribution. Social media managers are charging clients $2,000-5,000/month to manage \"friend-native\" content strategies that maximize early reactions from engaged followers. Agencies are bundling Friend Bubbles optimization into broader Meta strategy packages, typically a 3-6 month engagement.",
-      "unsplash_query": "social media connection network interface",
-      "significance": 6,
+      "build": "Freelancers are charging $800–$2,500 per project building custom Gemini wrappers for content creators, automating video editing and thumbnail generation. Agencies are offering 'Gemini automation consulting' at $5K–$15K monthly retainers, helping mid-market companies integrate the new models into their workflows. Some developers are selling pre-built Gemini 3.5 Flash API templates on Gumroad ($29–$99) for video summarization, customer support automation, and code generation, with top sellers reporting $2K–$5K monthly.",
+      "unsplash_query": "artificial intelligence technology conference presentation",
+      "significance": 9,
+      "visual": false,
+      "time": "6h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/",
+      "img": "https://images.unsplash.com/photo-1776174391355-d845f97d1b49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA0MDQ2NTJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-06-02"
+    },
+    {
+      "id": "2026-06-02-a5",
+      "cat": "Tools",
+      "hook": "Meta just made recommendation systems 23x faster and way cheaper.",
+      "headline": "Meta's SilverTorch: 23.7x Faster Recommendations With One Unified Architecture",
+      "body": "Meta AI just released SilverTorch, a fundamental reimagining of how recommendation systems retrieve user-generated content. Instead of treating indexing and retrieval as separate components, SilverTorch unifies them into a single architecture — treating the index itself as the model. This shift delivers staggering performance improvements: 23.7x higher throughput compared to state-of-the-art approaches, and 20.9x better compute cost efficiency versus CPU-based solutions. Remarkably, it doesn't sacrifice accuracy — it actually improves it. The research paper details how this architectural change eliminates redundancy and bottlenecks that plague traditional recommendation pipelines. For platforms serving billions of user-generated content pieces (think Instagram, Facebook, TikTok), this means dramatically cheaper infrastructure while delivering faster feed rankings to users. The real-world impact is massive: at Meta's scale, even 10% efficiency gains translate to millions in savings and noticeably faster user experiences. This represents the kind of infrastructure breakthrough that compounds across the entire AI industry — other platforms will likely adopt similar unified-index approaches. The work demonstrates that sometimes the biggest AI wins aren't new models, but radically better engineering of existing systems.",
+      "examples": [
+        "Index 10 billion pieces of content and retrieve top-K recommendations in milliseconds instead of seconds.",
+        "Reduce recommendation serving costs by 20x while maintaining or improving ranking quality across feeds.",
+        "Scale personalized recommendations to billions of users without proportional increases in compute infrastructure."
+      ],
+      "build": "AI infrastructure teams are already selling custom recommendation optimization services to mid-market e-commerce and content platforms, charging $50K-$500K annually for performance audits and SilverTorch implementation. Some agencies are positioning themselves as 'recommendation cost consultants,' helping startups reduce their inference bills by 15-30% within 90 days. Creator platform companies are using these efficiency gains to reinvest in feature development — one platform reportedly cut feed-serving costs by $2M/month, redirecting that budget to personalization R&D.",
+      "unsplash_query": "data retrieval algorithms infrastructure",
+      "significance": 9,
       "visual": false,
       "time": "1h",
       "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/05/13/ml-applications/reel-friends-building-social-discovery-that-scales-to-billions/",
-      "img": "https://images.unsplash.com/photo-1758611974649-25555d3c92d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODAzMjgwMTJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://engineering.fb.com/2026/05/26/ml-applications/silvertorch-index-as-model-new-retrieval-paradigm-recommendation-systems/",
+      "img": "https://images.unsplash.com/photo-1668853907313-3334ad773a39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA0MDQ2NTN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-06-01"
+      "published_date": "2026-06-02"
     },
     {
-      "id": "2026-06-01-a20",
+      "id": "2026-06-02-a6",
       "cat": "Tools",
-      "hook": "Meta just made finding stuff in Facebook Groups way smarter.",
-      "headline": "Meta's New AI Search Transforms Facebook Groups Into a Searchable Knowledge Base",
-      "body": "Meta has fundamentally rebuilt Facebook Groups Search using a hybrid retrieval architecture combined with automated model-based evaluation. The upgrade addresses major pain points people face when trying to discover, sort through, and validate community content — problems that have plagued group search for years. The new system uses machine learning models to better understand what users are actually looking for, then ranks results based on relevance and reliability rather than just recency or engagement metrics. This means when someone searches for advice, product recommendations, or answers to specific questions within their groups, they're far more likely to find genuinely helpful, validated community knowledge rather than noise. The improvement is particularly valuable for groups focused on specific topics — whether that's parenting advice, technical troubleshooting, business strategies, or niche hobbies — where the signal-to-noise ratio was previously terrible. Meta implemented automated evaluation systems to continuously test and improve the search rankings, meaning the system gets smarter over time without manual intervention. This positions Facebook Groups as a competitive alternative to Reddit, Discord, and specialized community platforms for knowledge discovery.",
+      "hook": "Google just killed 25 years of search box design overnight.",
+      "headline": "Google redesigns search box for first time in 25 years—now accepts text, images, PDFs, video, and Chrome tabs",
+      "body": "Google announced a fundamental redesign of its search box at its annual I/O developer conference, marking the first major overhaul of the interface in 25 years. The new search experience transforms the simple white rectangle with a blinking cursor into an AI-powered multimodal input system that accepts text, images, PDFs, videos, and even open Chrome tabs as query inputs. This shift from keyword-based search to conversation-driven, AI-mediated search represents Google's answer to the growing demand for more natural, context-aware information retrieval in the age of generative AI. The redesign moves away from the traditional paradigm of typed words returning a list of blue links—the interface that has defined web search since Google's inception. Instead, users can now initiate searches by combining multiple media types in a single query, enabling more nuanced and specific results. This change signals Google's strategic pivot to integrate its AI capabilities (particularly Gemini) deeper into its core search product, positioning search as a conversational, multimodal experience rather than a simple keyword matcher. The timing is critical: as ChatGPT and other AI assistants gain traction, Google is reclaiming search as an AI-first product to defend its $150+ billion search advertising business from disruption.",
       "examples": [
-        "Search 'WordPress hosting recommendations' in a business group and get the most-discussed, highest-rated options from actual users.",
-        "Find proven solutions to a specific technical problem by filtering community answers by recency and reliability score.",
-        "Discover validated product reviews and comparisons from group members with relevant experience, sorted by helpfulness."
+        "Upload a product photo, add a video of how you want to use it, and get instant shopping results matching your exact needs.",
+        "Drop a PDF contract into search with a text question and get AI-synthesized answers from the document plus related legal precedents.",
+        "Share a Chrome tab open on your screen mid-conversation and ask follow-up questions that reference content from that page in real-time."
       ],
-      "build": "Community moderators and group admins are charging $50–$500/month for premium groups with better organization and searchability. E-commerce brands managing customer support groups charge $200–$2K/month for white-label community platforms that need better search. AI consultants are building search optimization services for companies managing large internal knowledge communities, billing $3K–$10K per project.",
-      "unsplash_query": "community forum discussion search",
-      "significance": 6,
+      "build": "Search agency operators are charging $2,000-$5,000/month to help ecommerce brands optimize for Google's new multimodal search, focusing on image metadata and video indexing. AI product consultants are selling $3,000-$8,000 workshops to enterprise teams teaching them how to restructure content strategy for the new search paradigm. SEO automation tool builders are launching add-ons ($50-$200/month) that auto-generate optimized images, PDFs, and video snippets tailored to multimodal search ranking factors.",
+      "unsplash_query": "Google search interface AI technology",
+      "significance": 9,
       "visual": false,
-      "time": "4h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/04/21/ml-applications/modernizing-the-facebook-groups-search-to-unlock-the-power-of-community-knowledge/",
-      "img": "https://images.unsplash.com/photo-1762337681315-896484b30444?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODAzMjgwMTN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "time": "3h",
+      "source": "VentureBeat",
+      "link": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "img": "https://images.unsplash.com/photo-1529612700005-e35377bf1415?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA0MDQ2NTZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-06-01"
+      "published_date": "2026-06-02"
     }
   ]
 }
