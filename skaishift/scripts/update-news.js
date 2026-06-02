@@ -299,7 +299,7 @@ function extractTopicName(headline, body = '') {
 // ── STEP: SLIDESHOW HOOK GENERATION ──────────────────────────────────────────
 // Generates a standalone Instagram-style hook based on topic name + video titles
 // Hook is written to match what the videos are actually about — not the article
-async function generateSlideshowHook(topicName, videos, anthropic) {
+async function generateSlideshowHook(topicName, videos, claudeClient) {
   const videoTitles = videos.map(v => `"${v.title}"`).join(', ');
   const prompt = `Write a single punchy Instagram-style hook sentence for a video slideshow about ${topicName}.
 The slideshow features these videos: ${videoTitles}.
@@ -313,7 +313,7 @@ Good examples: "Gemini Omni just changed everything." / "Google just made every 
 Return ONLY the hook sentence. Nothing else.`;
 
   try {
-    const res = await anthropic.messages.create({
+    const res = await claudeClient.messages.create({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 60,
       messages: [{ role: 'user', content: prompt }],
@@ -576,7 +576,7 @@ async function main() {
     if (videos.length > 0) {
       // Generate a standalone hook from topic name + video titles
       // Hook is written to match what the videos are actually about
-      const hook = await generateSlideshowHook(topicName || excitingStory.headline.split(' ').slice(0,3).join(' '), videos, anthropic);
+      const hook = await generateSlideshowHook(topicName || excitingStory.headline.split(' ').slice(0,3).join(' '), videos, claude);
       console.log(`    ✓ Hook: "${hook}"`);
 
       const slideshowData = {
