@@ -188,11 +188,18 @@ async function summarize(article, index) {
 
 // Known AI model/product names to extract from headlines for better YouTube queries
 const AI_MODEL_NAMES = [
-  'GPT-5','GPT-4o','GPT-4.1','GPT Image','Sora','o3','o4',
+  // Google first — prioritize since most common current slideshow topic
+  'Gemini Omni','Gemini 3.5','Gemini 2.5','Gemini Ultra','Gemini Flash','Gemini',
+  'Veo 3','Veo 2','Veo','Imagen 4','Imagen',
+  // Anthropic
   'Claude Opus','Claude Sonnet','Claude Haiku','Claude 4','Claude 3',
-  'Gemini 2.5','Gemini Ultra','Gemini Flash','Gemini Omni','Gemini',
+  // OpenAI
+  'GPT-5','GPT-4o','GPT-4.1','GPT Image','Sora','o3','o4',
+  // Meta
   'Llama 4','Llama 3','Llama',
-  'Grok 3','Grok',
+  // xAI
+  'Grok 4','Grok 3','Grok',
+  // Others
   'Mistral Large','Mistral',
   'DeepSeek R2','DeepSeek V3','DeepSeek',
   'Seedance 2','Seedance',
@@ -201,29 +208,36 @@ const AI_MODEL_NAMES = [
   'Midjourney V7','Midjourney',
   'Stable Diffusion','FLUX',
   'Gemma','Phi-4','Phi-3','Qwen',
-  'Veo 3','Veo 2','Veo',
-  'Imagen 4','Imagen',
   'Whisper','ElevenLabs','Suno','Udio',
 ];
 
 function buildYouTubeQuery(article) {
-  const text = `${article.headline} ${article.body || ''}`;
+  const headline = article.headline || '';
+  const body = article.body || '';
 
-  // Try to extract a known model/product name first
+  // Check headline FIRST — never let body comparison text override the main topic
   for (const name of AI_MODEL_NAMES) {
     const regex = new RegExp(name.replace(/[-]/g, '[-\\s]?'), 'i');
-    if (regex.test(text)) {
-      return `${name} official reveal showcase 2026`;
+    if (regex.test(headline)) {
+      return `${name} official reveal showcase`;
     }
   }
 
-  // Fall back to unsplash_query if it's short and specific
+  // Only check body if headline had no match
+  for (const name of AI_MODEL_NAMES) {
+    const regex = new RegExp(name.replace(/[-]/g, '[-\\s]?'), 'i');
+    if (regex.test(body)) {
+      return `${name} official reveal showcase`;
+    }
+  }
+
+  // Fall back to unsplash_query if short and specific
   if (article.unsplash_query && article.unsplash_query.length < 40) {
-    return `${article.unsplash_query} AI reveal showcase 2026`;
+    return `${article.unsplash_query} AI reveal showcase`;
   }
 
   // Last resort: first 5 words of headline
-  const shortTitle = article.headline.split(' ').slice(0, 5).join(' ');
+  const shortTitle = headline.split(' ').slice(0, 5).join(' ');
   return `${shortTitle} AI reveal`;
 }
 
