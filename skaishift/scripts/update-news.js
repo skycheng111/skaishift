@@ -282,6 +282,49 @@ async function getYouTubeVideos(query, maxResults=3) {
   }
 }
 
+// ── STEP: TOPIC EXTRACTION ────────────────────────────────────────────────────
+// Returns the specific model/product name from a headline, headline-first
+function extractTopicName(headline, body = '') {
+  for (const name of AI_MODEL_NAMES) {
+    const regex = new RegExp(name.replace(/[-]/g, '[-\\s]?'), 'i');
+    if (regex.test(headline)) return name;
+  }
+  for (const name of AI_MODEL_NAMES) {
+    const regex = new RegExp(name.replace(/[-]/g, '[-\\s]?'), 'i');
+    if (regex.test(body)) return name;
+  }
+  return null;
+}
+
+// ── STEP: SLIDESHOW HOOK GENERATION ──────────────────────────────────────────
+// Generates a standalone Instagram-style hook based on topic name + video titles
+// Hook is written to match what the videos are actually about — not the article
+async function generateSlideshowHook(topicName, videos, anthropic) {
+  const videoTitles = videos.map(v => `"${v.title}"`).join(', ');
+  const prompt = `Write a single punchy Instagram-style hook sentence for a video slideshow about ${topicName}.
+The slideshow features these videos: ${videoTitles}.
+Rules:
+- Max 10 words
+- Conversational and exciting, like talking to followers
+- Never mention specific numbers of videos, demos, or announcements
+- Focus on the feeling, impact, or name of ${topicName}
+- No quotes, no hashtags, no emojis
+Good examples: "Gemini Omni just changed everything." / "Google just made every other AI model nervous." / "This is the AI drop everyone has been waiting for."
+Return ONLY the hook sentence. Nothing else.`;
+
+  try {
+    const res = await anthropic.messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 60,
+      messages: [{ role: 'user', content: prompt }],
+    });
+    return res.content[0].text.trim().replace(/^["']|["']$/g, '');
+  } catch(e) {
+    console.warn('    Hook generation failed:', e.message);
+    return `${topicName} just changed the game.`;
+  }
+}
+
 // ── STEP 4: UNSPLASH ──────────────────────────────────────────────────────────
 async function getUnsplashImage(query, cat) {
   if (!UNSPLASH_KEY) return FALLBACK_IMGS[cat] || FALLBACK_IMGS.Tools;
@@ -500,18 +543,14 @@ async function main() {
   // Fetch YouTube videos for the best visual story (slideshow)
   console.log('\n    Fetching YouTube videos for slideshow...');
 
-  // Priority 1: new model release today (Models cat, significance >= 8)
-  // Priority 2: visual=true article today
-  // Priority 3: high significance Tools/Models/Robotics
-  // Priority 4: anything significant
+  // Priority: Models sig>=8 first, then Tools/Robotics sig>=8
   const MODEL_RELEASE_KEYWORDS = /new|launch|release|announc|introduc|unveil|debut|update|v\d|2\.0|3\.0|4\.0/i;
   const excitingStory =
     summaries.find(a => a.cat === 'Models' && (a.significance||0) >= 8) ||
     summaries.find(a => ['Models','Tools'].includes(a.cat) && (a.significance||0) >= 8 && MODEL_RELEASE_KEYWORDS.test(a.headline)) ||
-    summaries.find(a => a.visual === true && (a.significance||0) >= 8) ||
     summaries.find(a => (a.significance||0) >= 8 && ['Models','Tools','Robotics'].includes(a.cat));
 
-  // Slideshow topic persistence — stores full story so slide 1 + videos always match
+  // Slideshow topic persistence
   const TOPIC_FILE = path.join(__dirname, '../public/slideshow-topic.json');
   let savedTopic = null;
   try {
@@ -520,34 +559,39 @@ async function main() {
     }
   } catch(e) { /* ignore */ }
 
-  // Clear visual flag from all articles — slideshow is driven by slideshow-topic.json, not news.json
+  // Clear visual flag — slideshow is driven by slideshow-topic.json only
   summaries.forEach(a => a.visual = false);
 
   if (excitingStory) {
-    // Today has something exciting — try to get videos for it
-    const query = buildYouTubeQuery(excitingStory);
+    // Extract the specific model/product name from the headline (headline-first)
+    const topicName = extractTopicName(excitingStory.headline, excitingStory.body);
+    const query = topicName
+      ? `${topicName} official reveal showcase`
+      : buildYouTubeQuery(excitingStory);
+
     const videos = await getYouTubeVideos(query, 3);
     process.stdout.write(`    YouTube: ${videos.length} videos — query: "${query}"\n`);
     await new Promise(r => setTimeout(r, 300));
 
     if (videos.length > 0) {
-      // Perfect — today's story has videos. Save everything to slideshow-topic.json
+      // Generate a standalone hook from topic name + video titles
+      // Hook is written to match what the videos are actually about
+      const hook = await generateSlideshowHook(topicName || excitingStory.headline.split(' ').slice(0,3).join(' '), videos, anthropic);
+      console.log(`    ✓ Hook: "${hook}"`);
+
       const slideshowData = {
         query,
-        hook:      excitingStory.hook || excitingStory.headline,
-        headline:  excitingStory.headline,
-        img:       excitingStory.img,
-        cat:       excitingStory.cat,
-        source:    excitingStory.source,
+        topicName: topicName || null,
+        hook,
+        img:    excitingStory.img,
+        cat:    excitingStory.cat,
         videos,
-        date:      todayISO,
+        date:   todayISO,
       };
       try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(slideshowData, null, 2)); } catch(e) { /* ignore */ }
-      console.log(`    ✓ Slideshow updated: "${excitingStory.headline.slice(0,50)}..."`);
+      console.log(`    ✓ Slideshow updated — topic: "${topicName || 'extracted from headline'}"`);
     } else {
-      // Today's story is too new — no YouTube videos yet.
-      // Try to refresh saved topic videos, but ONLY overwrite if we get relevant results.
-      // If zero relevant videos come back, keep yesterday's content untouched.
+      // No videos yet — keep saved topic, refresh its videos only
       console.log(`    No videos for today's topic yet — keeping saved topic with fresh video search`);
       if (savedTopic && savedTopic.query) {
         const freshVideos = await getYouTubeVideos(savedTopic.query, 3);
@@ -555,15 +599,14 @@ async function main() {
         if (freshVideos.length > 0) {
           const updated = { ...savedTopic, videos: freshVideos };
           try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
-          console.log(`    ✓ Slideshow refreshed with saved topic: "${savedTopic.headline.slice(0,50)}..."`);
+          console.log(`    ✓ Slideshow refreshed with saved topic videos`);
         } else {
-          console.log(`    ✓ No relevant videos found — keeping yesterday's slideshow content untouched`);
+          console.log(`    ✓ No relevant videos — keeping yesterday's slideshow untouched`);
         }
       }
     }
   } else {
-    // Slow news day — try to refresh saved topic videos.
-    // ONLY overwrite if relevant videos come back — otherwise keep yesterday's content.
+    // Slow news day — refresh saved topic videos only, keep hook/topic unchanged
     console.log(`    Slow news day — refreshing saved topic videos`);
     if (savedTopic && savedTopic.query) {
       const freshVideos = await getYouTubeVideos(savedTopic.query, 3);
@@ -571,9 +614,9 @@ async function main() {
       if (freshVideos.length > 0) {
         const updated = { ...savedTopic, videos: freshVideos };
         try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
-        console.log(`    ✓ Slideshow refreshed: "${savedTopic.headline.slice(0,50)}..."`);
+        console.log(`    ✓ Slideshow refreshed: topic="${savedTopic.topicName || savedTopic.query}"`);
       } else {
-        console.log(`    ✓ No relevant videos found — keeping yesterday's slideshow content untouched`);
+        console.log(`    ✓ No relevant videos — keeping yesterday's slideshow untouched`);
       }
     }
   }
