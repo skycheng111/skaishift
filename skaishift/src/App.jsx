@@ -308,7 +308,7 @@ function NewsletterPopup({ onClose }) {
         <div style={{background:"#0F0F0F",padding:"24px 24px 20px",position:"relative"}}>
           <button onClick={onClose} style={{position:"absolute",top:14,right:16,background:"none",border:"none",color:"rgba(255,255,255,0.5)",fontSize:20,cursor:"pointer",lineHeight:1}}>×</button>
           <p style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em",margin:"0 0 6px"}}>FREE DAILY NEWSLETTER</p>
-          <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.25,margin:0}}>The AI shift in your inbox every morning at 6AM ET.</h2>
+          <h2 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:"#fff",lineHeight:1.25,margin:0}}>The AI shift in your inbox every morning.</h2>
         </div>
         {/* Body */}
         <div style={{padding:"20px 24px 24px"}}>
@@ -316,7 +316,7 @@ function NewsletterPopup({ onClose }) {
           {(status==="done"||status==="already") ? (
             <div style={{background:status==="already"?"#FFFBF0":"#F0FDF4",border:`1px solid ${status==="already"?"#F5A623":"#16A34A"}`,borderRadius:12,padding:"16px",textAlign:"center"}}>
               <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:"#0F0F0F",margin:"0 0 4px"}}>{status==="already"?"You're already subscribed.":"You're in."}</p>
-              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"#6B6B6B",margin:0}}>{status==="already"?"We'll see you at 6AM ET every morning.":"First issue tomorrow at 6AM ET."}</p>
+              <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"#6B6B6B",margin:0}}>{status==="already"?"We'll see you every morning.":"First issue tomorrow morning."}</p>
             </div>
           ) : (
             <div style={{display:"flex",flexDirection:"column",gap:8}}>
@@ -340,7 +340,7 @@ function NewsletterPopup({ onClose }) {
 
 function Marquee() {
   const ITEMS = [
-    "AI News — Daily at 6AM ET",
+    "AI News — Every Morning",
     "Learn AI from scratch",
     "Weekly intelligence brief",
     "Model releases & updates",
@@ -348,7 +348,7 @@ function Marquee() {
     "LLMs, Agents & Tools",
     "Covering OpenAI, Google, Anthropic & more",
     "AI business & strategy",
-    "Delivered every morning at 6AM ET",
+    "Delivered every morning",
     "The shift is happening. Stay ahead.",
   ];
   const repeated = [...ITEMS, ...ITEMS]; // duplicate for seamless loop
@@ -471,13 +471,13 @@ function NewsletterCTA({ compact=false }) {
   if (status==="done"||status==="already") return (
     <div style={{background:compact?"#FFFBF0":"#0F0F0F",padding:`${compact?16:28}px ${INSET}px`,borderRadius:compact?12:0}}>
       <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:compact?T.ink:"#fff",margin:"0 0 4px",textAlign:"center"}}>{status==="already"?"Already subscribed.":"You're in."}</p>
-      <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:compact?"#6B6B6B":"rgba(255,255,255,0.5)",margin:0,textAlign:"center"}}>{status==="already"?"We'll see you at 6AM ET every morning.":"First issue tomorrow at 6AM ET."}</p>
+      <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:compact?"#6B6B6B":"rgba(255,255,255,0.5)",margin:0,textAlign:"center"}}>{status==="already"?"We'll see you every morning.":"First issue tomorrow morning."}</p>
     </div>
   );
 
   return (
     <div style={{background:compact?"#F8F8F6":"#0F0F0F",padding:`${compact?20:28}px ${INSET}px`,borderRadius:compact?12:0,border:compact?T.border:"none"}}>
-      {!compact&&<span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:T.amber,letterSpacing:"0.18em",display:"block",marginBottom:8}}>FREE · DAILY · 6AM ET</span>}
+      {!compact&&<span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:9,color:T.amber,letterSpacing:"0.18em",display:"block",marginBottom:8}}>FREE · DAILY · EVERY MORNING</span>}
       <h3 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:compact?15:19,color:compact?T.ink:"#fff",lineHeight:1.25,margin:`0 0 ${compact?10:12}px`}}>
         {compact?"Get AI news delivered every morning.":"The AI shift in your inbox before the market opens."}
       </h3>
@@ -1066,7 +1066,7 @@ function SubPage() {
 
       {/* Hero */}
       <div style={{background:T.ink,padding:`40px ${INSET}px 36px`,textAlign:"center"}}>
-        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>FREE · DAILY · 6AM ET</span>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:10,color:T.amber,letterSpacing:"0.18em"}}>FREE · DAILY · EVERY MORNING</span>
         <h1 style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:28,color:"#fff",lineHeight:1.2,margin:"12px 0 14px"}}>
           The AI shift in your inbox before the market opens.
         </h1>
@@ -1079,7 +1079,7 @@ function SubPage() {
 
         {/* Stats row */}
         <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,margin:"20px 0"}}>
-          {[{n:"6AM",l:"Daily delivery"},{n:"Free",l:"Forever"},{n:"2min",l:"Read time"}].map(s=>(
+          {[{n:"Daily",l:"Every morning"},{n:"Free",l:"Forever"},{n:"2min",l:"Read time"}].map(s=>(
             <div key={s.l} style={{background:"#fff",border:T.border,borderRadius:12,padding:"14px 10px",textAlign:"center"}}>
               <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:T.ink,margin:"0 0 2px"}}>{s.n}</p>
               <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:10,color:T.mid,margin:0}}>{s.l}</p>
@@ -1110,13 +1110,13 @@ function SubPage() {
           <div style={{background:"#F0FDF4",border:"1px solid #16A34A",borderRadius:16,padding:"28px",textAlign:"center"}}>
             <p style={{fontSize:32,margin:"0 0 8px"}}>✓</p>
             <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:T.ink,margin:"0 0 6px"}}>You're in.</p>
-            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>First issue hits your inbox tomorrow at 6AM ET.</p>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>First issue hits your inbox tomorrow morning.</p>
           </div>
         ) : status==="already" ? (
           <div style={{background:"#FFFBF0",border:"1px solid #F5A623",borderRadius:16,padding:"28px",textAlign:"center"}}>
             
             <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:20,color:T.ink,margin:"0 0 6px"}}>You're already subscribed.</p>
-            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>We'll see you at 6AM ET every morning.</p>
+            <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,color:T.mid,margin:0}}>We'll see you every morning.</p>
           </div>
         ) : (
           <div style={{background:T.ink,borderRadius:16,padding:"24px",marginBottom:16}}>
@@ -1401,7 +1401,7 @@ function Footer({ onNav }) {
           </span>
         </div>
         <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"rgba(255,255,255,0.4)",margin:"0 0 24px",lineHeight:1.5}}>
-          Daily AI intelligence for entrepreneurs and builders.<br/>Delivered every morning at 6AM ET.
+          Daily AI intelligence for entrepreneurs and builders.<br/>Delivered every morning.
         </p>
 
         {/* Nav links */}
