@@ -1515,7 +1515,7 @@ function TermsPage() {
 // ── TOOL DIRECTORY ────────────────────────────────────────────────────────────
 const AI_TOOLS = [
   // Chat
-  { name:"ChatGPT",         cat:"Chat",        desc:"OpenAI's flagship conversational AI. GPT-5.5 powers the latest version. Best all-rounder for writing, research, coding, and image generation.", url:"https://chat.openai.com" },
+  { name:"ChatGPT",         cat:"Chat",        desc:"OpenAI's flagship conversational AI. GPT-5.5 powers the latest version. Best all-rounder for writing, research, coding, and image generation.", url:"https://chatgpt.com" },
   { name:"Claude",          cat:"Chat",        desc:"Anthropic's AI. Excellent for long documents, nuanced writing, agentic coding, and complex reasoning. Claude Opus 4.8 is the current flagship.", url:"https://claude.ai" },
   { name:"Gemini",          cat:"Chat",        desc:"Google's AI, deeply integrated with Google Workspace and Search.", url:"https://gemini.google.com" },
   { name:"Grok",            cat:"Chat",        desc:"xAI's conversational model (Grok 4.3). Real-time X/Twitter data, DeepSearch for research, image generation, and Connectors for Google Workspace, GitHub, Notion and more.", url:"https://grok.com" },
@@ -1523,29 +1523,29 @@ const AI_TOOLS = [
   { name:"NotebookLM",      cat:"Research",    desc:"Google's AI research assistant. Upload documents, PDFs, or URLs and have a conversation with your sources. Outstanding for literature review and source synthesis.", url:"https://notebooklm.google.com" },
   { name:"Perplexity",      cat:"Research",    desc:"AI-powered search and research platform. Cites every source, 92% factual accuracy on real-time queries. Now includes Deep Research, Comet browser, and Model Council (runs queries across multiple frontier models simultaneously).", url:"https://perplexity.ai" },
   // Coding
-  { name:"Cursor",          cat:"Coding",      desc:"AI-native code editor built on VS Code. Industry standard for AI-assisted development. Now supports MCP servers and background agents.", url:"https://cursor.sh" },
+  { name:"Cursor",          cat:"Coding",      desc:"AI-native code editor built on VS Code. Industry standard for AI-assisted development. Now supports MCP servers and background agents.", url:"https://cursor.com" },
   { name:"GitHub Copilot",  cat:"Coding",      desc:"AI pair programmer built into your editor. Suggests code as you type.", url:"https://github.com/features/copilot" },
-  { name:"Windsurf",        cat:"Coding",      desc:"Agentic IDE by Codeium that can write and run entire features autonomously. Now offers Windsurf Wave agents for background task execution.", url:"https://codeium.com/windsurf" },
+  { name:"Windsurf",        cat:"Coding",      desc:"Agentic IDE by Codeium that can write and run entire features autonomously. Now offers Windsurf Wave agents for background task execution.", url:"https://windsurf.com" },
   { name:"Claude Code",     cat:"Coding",      desc:"Anthropic's agentic coding CLI. Edits entire codebases autonomously, runs tests, and commits to GitHub. Supports MCP servers for extended capabilities.", url:"https://claude.ai/code" },
   { name:"Codex",           cat:"Coding",      desc:"OpenAI's cloud-based software engineering agent powered by GPT-5.5. Runs tasks in parallel in isolated environments.", url:"https://openai.com/codex" },
   { name:"Antigravity 2.0", cat:"Coding",      desc:"Google's agentic coding tool released at I/O 2026. Free globally. Can orchestrate 93 parallel sub-agents, 12× faster with Gemini 3.5 Flash.", url:"https://antigravity.dev" },
   // Image
   { name:"Midjourney V7",   cat:"Image",       desc:"Best-in-class AI image generation. V7 (2026) added Draft Mode for fast iterations and Character Reference for consistent subjects across images.", url:"https://midjourney.com" },
-  { name:"GPT Image 2.0",   cat:"Image",       desc:"OpenAI's latest image model. Exceptional at following complex instructions and text-in-image.", url:"https://openai.com/research/gpt-image" },
+  { name:"GPT Image 2.0",   cat:"Image",       desc:"OpenAI's latest image model. Exceptional at following complex instructions and text-in-image.", url:"https://openai.com/index/introducing-gpt-image-1" },
   { name:"Ideogram",        cat:"Image",       desc:"Excels at text-in-image generation. Best for logos and graphic design.", url:"https://ideogram.ai" },
-  { name:"Flux",            cat:"Image",       desc:"Open-weight image model from Black Forest Labs. Highly customizable, popular with developers.", url:"https://blackforestlabs.ai" },
+  { name:"Flux",            cat:"Image",       desc:"Open-weight image model from Black Forest Labs. Highly customizable, popular with developers.", url:"https://bfl.ai" },
   // Voice
   { name:"ElevenLabs",      cat:"Voice",       desc:"Best AI voice cloning and text-to-speech. Used by podcasters and content creators.", url:"https://elevenlabs.io" },
   { name:"Suno",            cat:"Music",       desc:"Generate full songs with vocals from a text prompt in seconds.", url:"https://suno.com" },
   { name:"Udio",            cat:"Music",       desc:"High-quality AI music generation. Strong at specific genres and instruments.", url:"https://udio.com" },
   // Video
   { name:"Runway Gen-4",    cat:"Video",       desc:"Industry standard for AI video production. Gen-4 (May 2026) introduced world consistency — characters, environments, and objects stay coherent across multiple scenes.", url:"https://runwayml.com" },
-  { name:"Kling 3.0",       cat:"Video",       desc:"Kuaishou's latest video model. Cinema-grade motion control and native 4K image generation.", url:"https://klingai.com" },
-  { name:"Seedance 2.0",    cat:"Video",       desc:"ByteDance's latest AI video model. Produces highly realistic motion and cinematic quality.", url:"https://seedance.bytedance.com" },
+  { name:"Kling 3.0",       cat:"Video",       desc:"Kuaishou's latest video model. Cinema-grade motion control and native 4K image generation.", url:"https://kling.ai" },
+  { name:"Seedance 2.0",    cat:"Video",       desc:"ByteDance's latest AI video model. Produces highly realistic motion and cinematic quality.", url:"https://seed.bytedance.com/en/seedance2_0" },
   { name:"Sora",            cat:"Video",       desc:"OpenAI's video generation model. Note: web/app discontinued April 2026, API sunset September 2026. Migrate to an alternative before then.", url:"https://sora.com" },
   { name:"Descript",        cat:"Video",       desc:"Edit video and podcast by editing the transcript. Includes AI voice and filler removal.", url:"https://descript.com" },
-  { name:"Gemini Omni",     cat:"Video",       desc:"Google's natively multimodal model from I/O 2026. Takes text, images, audio, and video as input and generates cinematic video output. Available in Google Flow.", url:"https://flow.google.com" },
-  { name:"Google Flow",     cat:"Video",       desc:"Google's AI creative studio for video and image generation. Powered by Gemini Omni and Veo 3. Available globally to Google AI subscribers.", url:"https://flow.google.com" },
+  { name:"Gemini Omni",     cat:"Video",       desc:"Google's natively multimodal model from I/O 2026. Takes text, images, audio, and video as input and generates cinematic video output. Available in Google Flow.", url:"https://labs.google/flow" },
+  { name:"Google Flow",     cat:"Video",       desc:"Google's AI creative studio for video and image generation. Powered by Gemini Omni and Veo 3. Available globally to Google AI subscribers.", url:"https://labs.google/flow" },
   { name:"Veo 3",           cat:"Video",       desc:"Google DeepMind's flagship video model. Best-in-class prompt adherence, native audio generation, and photorealism. Available via Google Flow and API.", url:"https://deepmind.google/models/veo" },
   // Automation
   { name:"Zapier",          cat:"Automation",  desc:"Connect 6,000+ apps with AI-powered workflows. No code required.", url:"https://zapier.com" },
