@@ -340,7 +340,6 @@ function NewsletterPopup({ onClose }) {
 
 function Marquee() {
   const ITEMS = [
-    "AI News — Every Morning",
     "Learn AI from scratch",
     "Weekly intelligence brief",
     "Model releases & updates",
