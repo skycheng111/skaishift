@@ -574,23 +574,32 @@ async function main() {
     await new Promise(r => setTimeout(r, 300));
 
     if (videos.length > 0) {
-      // Generate a standalone hook from topic name + video titles
-      // Hook is written to match what the videos are actually about
-      const hook = await generateSlideshowHook(topicName || excitingStory.headline.split(' ').slice(0,3).join(' '), videos, claude);
-      console.log(`    ✓ Hook: "${hook}"`);
+      // Only update the full slideshow (hook + topic) when the topic is genuinely new
+      // If same topic as yesterday, just refresh the videos silently
+      const isSameTopic = savedTopic && savedTopic.topicName &&
+        topicName && topicName.toLowerCase() === savedTopic.topicName.toLowerCase();
 
-      const slideshowData = {
-        query,
-        topicName: topicName || null,
-        hook,
-        img:    excitingStory.img,
-        cat:    excitingStory.cat,
-        videos,
-        date:   todayISO,
-      };
-      try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(slideshowData, null, 2)); } catch(e) { /* ignore */ }
-      console.log(`    ✓ Slideshow updated — topic: "${topicName || 'extracted from headline'}"`);
-    } else {
+      if (isSameTopic) {
+        // Same topic — refresh videos only, keep existing hook
+        const updated = { ...savedTopic, videos, date: todayISO };
+        try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
+        console.log(`    ✓ Same topic ("${topicName}") — videos refreshed, hook unchanged`);
+      } else {
+        // New topic — generate a fresh hook to match the new videos
+        const hook = await generateSlideshowHook(topicName || excitingStory.headline.split(' ').slice(0,3).join(' '), videos, claude);
+        console.log(`    ✓ New topic: "${topicName}" — Hook: "${hook}"`);
+        const slideshowData = {
+          query,
+          topicName: topicName || null,
+          hook,
+          img:  excitingStory.img,
+          cat:  excitingStory.cat,
+          videos,
+          date: todayISO,
+        };
+        try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(slideshowData, null, 2)); } catch(e) { /* ignore */ }
+        console.log(`    ✓ Slideshow updated — new topic: "${topicName || 'extracted from headline'}"`);
+      }
       // No videos yet — keep saved topic, refresh its videos only
       console.log(`    No videos for today's topic yet — keeping saved topic with fresh video search`);
       if (savedTopic && savedTopic.query) {
