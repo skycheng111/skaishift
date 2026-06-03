@@ -49,7 +49,7 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         from: FROM_EMAIL,
         to: [email],
-        subject: "You're in. First issue tomorrow at 6AM ET.",
+        subject: "You're in. First issue tomorrow morning.",
         html: welcomeEmail(email),
       }),
     });
@@ -78,7 +78,7 @@ function welcomeEmail(email) {
   </div>
   <div style="background:#fff;border-radius:16px;padding:28px;margin-bottom:16px;border:1px solid #E4E4E0;">
     <h1 style="font-size:22px;color:#0F0F0F;margin:0 0 16px;line-height:1.3;">
-      You're in. First issue lands tomorrow at 6AM ET.
+      You're in. First issue lands tomorrow morning.
     </h1>
     <p style="color:#4A4A4A;font-size:14px;line-height:1.8;margin:0 0 20px;">
       Every morning you'll get the AI shifts that matter — what moved, who's making money from it, and what you should do about it. Plain English. No jargon.
@@ -93,7 +93,7 @@ function welcomeEmail(email) {
       <p style="font-size:11px;color:#B45309;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 4px;">HEADS UP</p>
       <p style="color:#78350F;font-size:12px;line-height:1.6;margin:0;">Your first issue may land in your junk or spam folder. If it does, mark it as "Not Junk" or move it to your inbox — this tells your email provider to trust us going forward.</p>
     </div>
-    <p style="color:#6B6B6B;font-size:13px;line-height:1.7;margin:0;">See you at 6AM.</p>
+    <p style="color:#6B6B6B;font-size:13px;line-height:1.7;margin:0;">See you tomorrow morning.</p>
   </div>
   <p style="text-align:center;color:#9B9B9B;font-size:11px;margin:0;">
     skaishift.com · <a href="https://skaishift.com/unsubscribe?email=${email}" style="color:#9B9B9B;">Unsubscribe</a>
