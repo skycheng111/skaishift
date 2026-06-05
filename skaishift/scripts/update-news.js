@@ -213,6 +213,7 @@ const AI_MODEL_NAMES = [
   'Gemma','Phi-4','Phi-3','Qwen',
   'Whisper','ElevenLabs','Suno','Udio',
   'Copilot','Jules','Codex',
+  'Higgsfield',
 ];
 
 function buildYouTubeQuery(article) {
