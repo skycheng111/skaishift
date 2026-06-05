@@ -545,15 +545,8 @@ async function main() {
     process.stdout.write('✓ ');
     await new Promise(r => setTimeout(r, 200));
   }
-  // Fetch YouTube videos for the best visual story (slideshow)
+  // Fetch YouTube videos for slideshow
   console.log('\n    Fetching YouTube videos for slideshow...');
-
-  // Priority: Models sig>=8 first, then Tools/Robotics sig>=8
-  const MODEL_RELEASE_KEYWORDS = /new|launch|release|announc|introduc|unveil|debut|update|v\d|2\.0|3\.0|4\.0/i;
-  const excitingStory =
-    summaries.find(a => a.cat === 'Models' && (a.significance||0) >= 8) ||
-    summaries.find(a => ['Models','Tools'].includes(a.cat) && (a.significance||0) >= 8 && MODEL_RELEASE_KEYWORDS.test(a.headline)) ||
-    summaries.find(a => (a.significance||0) >= 8 && ['Models','Tools','Robotics'].includes(a.cat));
 
   // Slideshow topic persistence
   const TOPIC_FILE = path.join(__dirname, '../public/slideshow-topic.json');
@@ -564,75 +557,81 @@ async function main() {
     }
   } catch(e) { /* ignore */ }
 
-  // Clear visual flag — slideshow is driven by slideshow-topic.json only
+  // How many days has the current topic been showing?
+  const savedDate = savedTopic && savedTopic.date ? savedTopic.date : null;
+  const daysSameTopic = savedDate
+    ? Math.floor((new Date(todayISO) - new Date(savedDate)) / (1000 * 60 * 60 * 24))
+    : 99;
+  const topicIsStale = daysSameTopic >= 2; // force change after 2 days
+
+  // Clear visual flag — slideshow driven by slideshow-topic.json only
   summaries.forEach(a => a.visual = false);
 
-  if (excitingStory) {
-    // Extract the specific model/product name from the headline (headline-first)
-    const topicName = extractTopicName(excitingStory.headline, excitingStory.body);
+  // Candidate pool: top 5 articles by significance, any category
+  // Sorted by significance already (done later), so take first 5 from all summaries
+  const sortedByRel = [...summaries].sort((a,b) => (b.significance||0)-(a.significance||0));
+  const candidates = sortedByRel.slice(0, 5);
+
+  let slideshowUpdated = false;
+
+  for (const candidate of candidates) {
+    const topicName = extractTopicName(candidate.headline, candidate.body);
     const query = topicName
       ? `${topicName} official reveal showcase`
-      : buildYouTubeQuery(excitingStory);
+      : buildYouTubeQuery(candidate);
 
-    const videos = await getYouTubeVideos(query, 3);
-    process.stdout.write(`    YouTube: ${videos.length} videos — query: "${query}"\n`);
-    await new Promise(r => setTimeout(r, 300));
+    // Skip if same topic and not yet stale (under 2 days)
+    const isSameTopic = savedTopic && savedTopic.topicName && topicName &&
+      topicName.toLowerCase() === savedTopic.topicName.toLowerCase();
 
-    if (videos.length > 0) {
-      // Only update the full slideshow (hook + topic) when the topic is genuinely new
-      // If same topic as yesterday, just refresh the videos silently
-      const isSameTopic = savedTopic && savedTopic.topicName &&
-        topicName && topicName.toLowerCase() === savedTopic.topicName.toLowerCase();
-
-      if (isSameTopic) {
-        // Same topic — refresh videos only, keep existing hook
+    if (isSameTopic && !topicIsStale) {
+      // Just refresh the videos for the same topic
+      const videos = await getYouTubeVideos(query, 3);
+      await new Promise(r => setTimeout(r, 300));
+      if (videos.length > 0) {
         const updated = { ...savedTopic, videos, date: todayISO };
         try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
-        console.log(`    ✓ Same topic ("${topicName}") — videos refreshed, hook unchanged`);
+        console.log(`    ✓ Same topic "${topicName}" (day ${daysSameTopic+1}) — videos refreshed`);
       } else {
-        // New topic — generate a fresh hook to match the new videos
-        const hook = await generateSlideshowHook(topicName || excitingStory.headline.split(' ').slice(0,3).join(' '), videos, claude);
-        console.log(`    ✓ New topic: "${topicName}" — Hook: "${hook}"`);
-        const slideshowData = {
-          query,
-          topicName: topicName || null,
-          hook,
-          img:  excitingStory.img,
-          cat:  excitingStory.cat,
-          videos,
-          date: todayISO,
-        };
-        try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(slideshowData, null, 2)); } catch(e) { /* ignore */ }
-        console.log(`    ✓ Slideshow updated — new topic: "${topicName || 'extracted from headline'}"`);
+        console.log(`    ✓ Same topic "${topicName}" — no fresh videos, keeping yesterday's`);
       }
-      // No videos yet — keep saved topic, refresh its videos only
-      console.log(`    No videos for today's topic yet — keeping saved topic with fresh video search`);
-      if (savedTopic && savedTopic.query) {
-        const freshVideos = await getYouTubeVideos(savedTopic.query, 3);
-        await new Promise(r => setTimeout(r, 300));
-        if (freshVideos.length > 0) {
-          const updated = { ...savedTopic, videos: freshVideos };
-          try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
-          console.log(`    ✓ Slideshow refreshed with saved topic videos`);
-        } else {
-          console.log(`    ✓ No relevant videos — keeping yesterday's slideshow untouched`);
-        }
-      }
+      slideshowUpdated = true;
+      break;
     }
-  } else {
-    // Slow news day — refresh saved topic videos only, keep hook/topic unchanged
-    console.log(`    Slow news day — refreshing saved topic videos`);
-    if (savedTopic && savedTopic.query) {
-      const freshVideos = await getYouTubeVideos(savedTopic.query, 3);
-      await new Promise(r => setTimeout(r, 300));
-      if (freshVideos.length > 0) {
-        const updated = { ...savedTopic, videos: freshVideos };
-        try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(updated, null, 2)); } catch(e) { /* ignore */ }
-        console.log(`    ✓ Slideshow refreshed: topic="${savedTopic.topicName || savedTopic.query}"`);
-      } else {
-        console.log(`    ✓ No relevant videos — keeping yesterday's slideshow untouched`);
-      }
+
+    // New topic or stale topic — try to get videos
+    const videos = await getYouTubeVideos(query, 3);
+    await new Promise(r => setTimeout(r, 300));
+    process.stdout.write(`    Trying "${topicName || candidate.headline.slice(0,30)}": ${videos.length} videos\n`);
+
+    if (videos.length > 0) {
+      // Generate a fresh hook matching the new topic + videos
+      const hook = await generateSlideshowHook(
+        topicName || candidate.headline.split(' ').slice(0, 3).join(' '),
+        videos,
+        claude
+      );
+      const slideshowData = {
+        query,
+        topicName: topicName || null,
+        hook,
+        img:  candidate.img,
+        cat:  candidate.cat,
+        videos,
+        date: todayISO,
+      };
+      try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(slideshowData, null, 2)); } catch(e) { /* ignore */ }
+      console.log(`    ✓ Slideshow updated — topic: "${topicName || 'headline'}" | Hook: "${hook}"`);
+      slideshowUpdated = true;
+      break;
     }
+    // No videos for this candidate — try the next one
+    await new Promise(r => setTimeout(r, 200));
+  }
+
+  if (!slideshowUpdated) {
+    // Nothing worked — keep yesterday's content entirely
+    console.log(`    ✓ No candidates returned videos — keeping yesterday's slideshow`);
   }
 
   // 4. Sort + feature
