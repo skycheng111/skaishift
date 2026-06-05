@@ -559,8 +559,10 @@ async function main() {
 
   // How many days has the current topic been showing?
   const savedDate = savedTopic && savedTopic.date ? savedTopic.date : null;
-  const daysSameTopic = savedDate
-    ? Math.floor((new Date(todayISO) - new Date(savedDate)) / (1000 * 60 * 60 * 24))
+  // Use firstDate (set once per new topic) not date (updates daily on video refresh)
+  const savedFirstDate = savedTopic && (savedTopic.firstDate || savedTopic.date);
+  const daysSameTopic = savedFirstDate
+    ? Math.floor((new Date(todayISO) - new Date(savedFirstDate)) / (1000 * 60 * 60 * 24))
     : 99;
   const topicIsStale = daysSameTopic >= 2; // force change after 2 days
 
@@ -618,6 +620,7 @@ async function main() {
         img:  candidate.img,
         cat:  candidate.cat,
         videos,
+        firstDate: todayISO,
         date: todayISO,
       };
       try { fs.writeFileSync(TOPIC_FILE, JSON.stringify(slideshowData, null, 2)); } catch(e) { /* ignore */ }
