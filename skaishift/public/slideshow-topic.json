@@ -1,21 +1,26 @@
 {
-  "query": "OpenAI releases AI-powered biodefense action AI reveal",
-  "topicName": null,
-  "hook": "OpenAI just shifted how we think about AI forever.",
-  "img": "https://images.unsplash.com/photo-1582560486415-e67bced0ca2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA2OTM3ODN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Strategy",
+  "query": "Higgsfield Claude AI",
+  "topicName": "Higgsfield",
+  "hook": "Claude + Higgsfield is the content creation combo everyone is talking about.",
+  "img": "https://images.unsplash.com/photo-1761223976145-a85ffe11fc57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4OTQxMTR8MHwxfHNlYXJjaHwxfHx2aWRlbyUyMHByb2R1Y3Rpb24lMjBjaW5lbWF0aWMlMjBBSXxlbnwwfDB8fHwxNzgwNjk0NjMzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "cat": "Tools",
   "videos": [
     {
-      "videoId": "9fogzZ_6kR0",
-      "title": "Is Generative AI an Existential Threat to the Human Species?",
-      "channel": "Bloomberg News"
+      "videoId": "RQck4CUKu5g",
+      "title": "Higgsfield MCP + Claude Just Changed Marketing Forever",
+      "channel": "Higgsfield AI"
     },
     {
-      "videoId": "T2g8FF8-RLA",
-      "title": "Sam Altman on AGI: people will freak out then move on",
-      "channel": "The Economist"
+      "videoId": "qxQIz9H6mNY",
+      "title": "Claude Builds Motion Websites in 30 Seconds (Higgsfield MCP)",
+      "channel": "geekslab"
+    },
+    {
+      "videoId": "4lXB3BCA15Q",
+      "title": "CLAUDE CODE IS INSANE WITH HIGGSFIELD AI",
+      "channel": "STUDY TECH TOOLS"
     }
   ],
-  "date": "2026-06-05",
-  "firstDate": "2026-06-05"
+  "firstDate": "2026-06-05",
+  "date": "2026-06-05"
 }
