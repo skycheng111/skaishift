@@ -188,13 +188,16 @@ async function summarize(article, index) {
 
 // Known AI model/product names to extract from headlines for better YouTube queries
 const AI_MODEL_NAMES = [
-  // Google first — prioritize since most common current slideshow topic
+  // Google — most common current slideshow topic
   'Gemini Omni','Gemini 3.5','Gemini 2.5','Gemini Ultra','Gemini Flash','Gemini',
   'Veo 3','Veo 2','Veo','Imagen 4','Imagen',
   // Anthropic
   'Claude Opus','Claude Sonnet','Claude Haiku','Claude 4','Claude 3',
   // OpenAI
-  'GPT-5','GPT-4o','GPT-4.1','GPT Image','Sora','o3','o4',
+  'GPT-6','GPT-5','GPT-4o','GPT-4.1','GPT Image','Sora','o3','o4',
+  'GPT-Rosalind','Rosalind',
+  // Nvidia
+  'Nemotron','Llama-Nemotron',
   // Meta
   'Llama 4','Llama 3','Llama',
   // xAI
@@ -209,6 +212,7 @@ const AI_MODEL_NAMES = [
   'Stable Diffusion','FLUX',
   'Gemma','Phi-4','Phi-3','Qwen',
   'Whisper','ElevenLabs','Suno','Udio',
+  'Copilot','Jules','Codex',
 ];
 
 function buildYouTubeQuery(article) {
