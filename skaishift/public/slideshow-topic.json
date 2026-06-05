@@ -1,25 +1,20 @@
 {
-  "query": "Gemini Omni official reveal showcase",
-  "topicName": "Gemini Omni",
-  "hook": "Gemini Omni is about to blow your mind.",
-  "img": "https://images.unsplash.com/photo-1716436329836-208bea5a55e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA0OTMwNzF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Models",
+  "query": "OpenAI releases AI-powered biodefense action AI reveal",
+  "topicName": null,
+  "hook": "OpenAI just shifted how we think about AI forever.",
+  "img": "https://images.unsplash.com/photo-1582560486415-e67bced0ca2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA2OTM3ODN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Strategy",
   "videos": [
     {
-      "videoId": "2m5BCWB02jY",
-      "title": "Meet Gemini Omni",
-      "channel": "Google"
+      "videoId": "9fogzZ_6kR0",
+      "title": "Is Generative AI an Existential Threat to the Human Species?",
+      "channel": "Bloomberg News"
     },
     {
-      "videoId": "uW4B6ziQqvY",
-      "title": "What is Gemini Omni?",
-      "channel": "Google"
-    },
-    {
-      "videoId": "wPGH9XOJOHo",
-      "title": "Meet Gemini Spark",
-      "channel": "Google"
+      "videoId": "T2g8FF8-RLA",
+      "title": "Sam Altman on AGI: people will freak out then move on",
+      "channel": "The Economist"
     }
   ],
-  "date": "2026-06-03"
+  "date": "2026-06-05"
 }
