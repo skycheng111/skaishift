@@ -274,9 +274,10 @@ async function getYouTubeVideos(query, maxResults=3) {
     // Use filtered results if we have enough, otherwise fall back to raw results
     // Use relevant videos if any pass — even if fewer than maxResults
     // Only fall back to raw results if zero videos pass the relevance filter
-    const pool = relevant.length > 0 ? relevant : data.items;
-
-    return pool.slice(0, maxResults).map(item => ({
+    // Never fall back to raw results — bad videos are worse than no update
+    // Return empty so candidate loop tries the next story
+    if (relevant.length === 0) return [];
+    return relevant.slice(0, maxResults).map(item => ({
       videoId: item.id.videoId,
       title: item.snippet.title,
       channel: item.snippet.channelTitle,
