@@ -1,26 +1,26 @@
 {
-  "query": "GPT-Rosalind official reveal showcase",
-  "topicName": "GPT-Rosalind",
-  "hook": "GPT-Rosalind just rewrote the rules entirely.",
-  "img": "https://images.unsplash.com/photo-1692607038295-d651a294abd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA4MzA4OTV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Models",
+  "query": "Higgsfield Claude AI reveal showcase",
+  "topicName": "Higgsfield",
+  "hook": "This Claude + Higgsfield combo is breaking the internet right now.",
+  "img": "https://images.unsplash.com/photo-1497015289639-54688650d173?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4OTQxMTR8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjB2aWRlbyUyMHByb2R1Y3Rpb24lMjBjcmVhdGl2ZXxlbnwwfDB8fHwxNzgwODU1ODcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "cat": "Tools",
   "videos": [
     {
-      "videoId": "blGtYq9mL18",
-      "title": "Introducing GPT-5.5",
-      "channel": "OpenAI"
+      "videoId": "vo6fs511v20",
+      "title": "How To Create UGC Ads With Higgsfield",
+      "channel": "AI Tools Watch"
     },
     {
-      "videoId": "j-AGXZx6E94",
-      "title": "I wish I knew this before | Github tricks and tricks | Why Should You Use GitHub?",
-      "channel": "Ritik Singh"
+      "videoId": "gslMMfs5SjM",
+      "title": "Motion Design is Now Easier than Ever",
+      "channel": "Higgsfield AI"
     },
     {
-      "videoId": "NARViMemgqw",
-      "title": "Cyberpunk 2077 - Ariana Grande screams at 2 chooms and blows up their van with a washed up artist.",
-      "channel": "Cheese"
+      "videoId": "pIVwECrp1xs",
+      "title": "Create Cinematic AI Transitions with Higgsfield",
+      "channel": "Seb Jefferies"
     }
   ],
-  "firstDate": "2026-06-07",
-  "date": "2026-06-07"
+  "firstDate": "2026-06-06",
+  "date": "2026-06-06"
 }
