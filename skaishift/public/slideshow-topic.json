@@ -1,26 +1,26 @@
 {
-  "query": "Gemini official reveal showcase",
-  "topicName": "Gemini",
-  "hook": "Gemini just entered its ultimate form and we're obsessed.",
-  "img": "https://images.unsplash.com/photo-1657551422833-86712ab9f02b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODA5MjQ1MDl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Models",
+  "query": "ChatGPT's new memory system keeps AI reveal",
+  "topicName": null,
+  "hook": "ChatGPT just got a memory that actually sticks around.",
+  "img": "https://images.unsplash.com/photo-1667984436026-99b165e3672b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODEwMDcxODB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Tools",
   "videos": [
     {
-      "videoId": "_fuimO6ErKI",
-      "title": "Google – Welcome to the Gemini era",
-      "channel": "Google"
+      "videoId": "WnDJYKK2tak",
+      "title": "ChatGPT&#39;s New Memory Features and Updates | December 2025",
+      "channel": "NILC Training"
     },
     {
-      "videoId": "1UWtn4XCJAU",
-      "title": "Dual Fates Revealed! ♊✨ Ultimate Gemini Gold Cloth Showcase!#saintseiya #gemini #armor #anime #aiart",
-      "channel": "Anime Realize"
+      "videoId": "LqoilZWOPDI",
+      "title": "ChatGPT&#39;s New Memory Isn&#39;t What You Think",
+      "channel": "The AI Advantage"
     },
     {
-      "videoId": "2m5BCWB02jY",
-      "title": "Meet Gemini Omni",
-      "channel": "Google"
+      "videoId": "FAUt4Wy8FKQ",
+      "title": "ChatGPT Remembers Everything Now",
+      "channel": "Goodie AI"
     }
   ],
-  "firstDate": "2026-06-08",
-  "date": "2026-06-08"
+  "firstDate": "2026-06-09",
+  "date": "2026-06-09"
 }
