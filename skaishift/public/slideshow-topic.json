@@ -1,26 +1,26 @@
 {
-  "query": "Codex official reveal showcase",
+  "query": "OpenAI Codex AI coding agent reveal",
   "topicName": "Codex",
-  "hook": "Codex just changed the game.",
-  "img": "https://images.unsplash.com/photo-1719255416441-ed77915f28de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODEwOTQ3NDF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "hook": "OpenAI Codex is quietly replacing entire engineering teams.",
+  "img": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4OTQxMTR8MHwxfHNlYXJjaHwxfHxjb2RpbmclMjBzb2Z0d2FyZSUyMEFJJTIwZGV2ZWxvcGVyfGVufDB8MHx8fDE3ODEwOTg1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "fMv63yBt2fc",
-      "title": "Codex Eternal Eclipse | Announcement Trailer | Latin American Games Showcase",
-      "channel": "Glorbo"
+      "videoId": "0e-Brv-gS9Q",
+      "title": "A first look at the Codex app",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "ct2Q4aJpdCM",
-      "title": "Introducing The Human Codex",
-      "channel": "The Human Codex"
+      "videoId": "Lm7-yFZ5fZQ",
+      "title": "Codex for (almost) everything",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "g1lxtXccIR8",
-      "title": "Space Marine Codex Reveal",
-      "channel": "Sonoran Wargaming"
+      "videoId": "8hNcRChDrNk",
+      "title": "The Codex app is now on Windows",
+      "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-06-10",
-  "date": "2026-06-10"
+  "firstDate": "2026-06-07",
+  "date": "2026-06-07"
 }
