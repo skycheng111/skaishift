@@ -216,6 +216,13 @@ const AI_MODEL_NAMES = [
   'Higgsfield',
 ];
 
+// Company context for ambiguous model names — prevents gaming/history/other Codex etc. from appearing
+const TOPIC_COMPANY = {
+  'Codex': 'OpenAI', 'Jules': 'Google', 'Copilot': 'Microsoft', 'Rosalind': 'OpenAI',
+  'GPT-Rosalind': 'OpenAI', 'Nemotron': 'Nvidia', 'Gemma': 'Google', 'Phi-4': 'Microsoft',
+  'Phi-3': 'Microsoft', 'Qwen': 'Alibaba', 'Whisper': 'OpenAI', 'Flux': 'Black Forest Labs',
+};
+
 function buildYouTubeQuery(article) {
   const headline = article.headline || '';
   const body = article.body || '';
@@ -224,7 +231,8 @@ function buildYouTubeQuery(article) {
   for (const name of AI_MODEL_NAMES) {
     const regex = new RegExp(name.replace(/[-]/g, '[-\\s]?'), 'i');
     if (regex.test(headline)) {
-      return `${name} official reveal showcase`;
+      const company = TOPIC_COMPANY[name] ? `${TOPIC_COMPANY[name]} ` : '';
+      return `${company}${name} AI official reveal`;
     }
   }
 
@@ -232,7 +240,8 @@ function buildYouTubeQuery(article) {
   for (const name of AI_MODEL_NAMES) {
     const regex = new RegExp(name.replace(/[-]/g, '[-\\s]?'), 'i');
     if (regex.test(body)) {
-      return `${name} official reveal showcase`;
+      const company = TOPIC_COMPANY[name] ? `${TOPIC_COMPANY[name]} ` : '';
+      return `${company}${name} AI official reveal`;
     }
   }
 
@@ -257,18 +266,22 @@ async function getYouTubeVideos(query, maxResults=3) {
     const data = await res.json();
     if (!data.items || data.items.length === 0) return [];
 
-    // Extract meaningful keywords from query (skip short/common words)
-    const stopWords = new Set(['the','and','for','with','from','this','that','are','was','were','has','have','been','will','its','our','their','your','about','into','also','than','more','very','just','over','some','such','when','then','them','they','what','which','there','where','after','before','during','while','would','could','should','does','here','been','being','than','upon','these','those','might','most','other','well','only']);
-    const queryKeywords = query.toLowerCase()
-      .replace(/[^a-z0-9 ]/g, ' ')
-      .split(' ')
-      .filter(w => w.length > 3 && !stopWords.has(w));
+    // Relevance filter: title must contain the topic name itself (first significant word)
+    // This prevents "Codex" gaming videos, "Gemini" astrology, etc. from passing
+    const topicWord = query.toLowerCase().split(' ').find(w => w.length > 3) || '';
+    const aiContextWords = ['openai','google','anthropic','microsoft','meta','nvidia','apple',
+      'ai','llm','model','gpt','claude','gemini','llama','agent','coding','code','chatbot',
+      'machine learning','artificial intelligence','language model','higgsfield','runway',
+      'midjourney','stability','deepseek','mistral','groq','perplexity'];
 
-    // Filter: title must contain at least one keyword from the query
     const relevant = data.items.filter(item => {
       const title = item.snippet.title.toLowerCase();
       const channel = item.snippet.channelTitle.toLowerCase();
-      return queryKeywords.some(kw => title.includes(kw) || channel.includes(kw));
+      const combined = `${title} ${channel}`;
+      // Must contain the topic name itself
+      if (!combined.includes(topicWord)) return false;
+      // Must also contain at least one AI context word (filters out gaming/history/etc.)
+      return aiContextWords.some(w => combined.includes(w));
     });
 
     // Use filtered results if we have enough, otherwise fall back to raw results
@@ -579,8 +592,9 @@ async function main() {
 
   for (const candidate of candidates) {
     const topicName = extractTopicName(candidate.headline, candidate.body);
+    const company = topicName && TOPIC_COMPANY[topicName] ? `${TOPIC_COMPANY[topicName]} ` : '';
     const query = topicName
-      ? `${topicName} official reveal showcase`
+      ? `${company}${topicName} AI official reveal`
       : buildYouTubeQuery(candidate);
 
     // Skip if same topic and not yet stale (under 2 days)
