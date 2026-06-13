@@ -715,7 +715,7 @@ function APIPriceMarquee() {
     { id:"google/gemini-3.1-pro-preview",        name:"Gemini 3.1 Pro",    color:"#4285F4" },
     { id:"deepseek/deepseek-chat-v3-0324",      name:"DeepSeek Chat V3",  color:"#4D9EFF" },
     { id:"mistralai/mistral-large-2512",        name:"Mistral Large",     color:"#FF7000" },
-    { id:"meta-llama/llama-3.3-70b-instruct",  name:"Llama 3.3 70B",     color:"#0866FF" },
+    { id:"meta-llama/llama-4-scout",            name:"Llama 4 Scout",     color:"#0866FF" },
   ];
 
   const [prices, setPrices] = useState(FALLBACK);
@@ -1194,7 +1194,7 @@ const LEARN_SECTIONS = [
     intro:"Generative AI refers to AI systems that create new content — text, images, audio, video, and code — rather than just analyzing or classifying existing content.",
     content:[
       {q:"What it generates",a:"Generative AI can produce: text (articles, emails, code, scripts), images (photos, illustrations, logos), audio (voices, music, sound effects), video (short clips, animations), and 3D models. Each modality has specialized models: GPT-5.5 and Claude for text, GPT Image 2.0 and Midjourney for images, ElevenLabs and Suno for audio, Veo 3 and Runway Gen-4 for video. Note: Sora (OpenAI's video model) is being discontinued in 2026."},
-      {q:"How image generation works",a:"Image generation models (like DALL-E, Midjourney, Stable Diffusion) work differently from LLMs. They're typically trained using a process called diffusion — starting with random noise and learning to gradually remove that noise to produce a coherent image that matches a text description. The result is a model that can generate an image matching almost any text prompt."},
+      {q:"How image generation works",a:"Image generation models (like GPT Image 2.0, Midjourney, Stable Diffusion) work differently from LLMs. They're typically trained using a process called diffusion — starting with random noise and learning to gradually remove that noise to produce a coherent image that matches a text description. The result is a model that can generate an image matching almost any text prompt."},
       {q:"Multimodal AI",a:"Multimodal AI can handle multiple types of input and output simultaneously. Modern frontier models like GPT-5.5, Claude Opus 4.7, and Gemini Omni can see images and hear audio as input, and respond with text, speech, or even video. Gemini Omni is natively multimodal — trained on text, images, audio, and video from the ground up, not retrofitted. Multimodal models are better at tasks like describing photos, reading handwritten notes, analyzing charts, and having voice conversations."},
       {q:"Hallucination",a:"Hallucination is when an AI generates confident-sounding text that is factually wrong. It happens because LLMs are trained to produce plausible text, not necessarily true text. They don't have a fact-checker — they predict what a good response looks like based on patterns. Always verify specific facts, dates, names, and statistics that come from an AI. Newer models with web search access hallucinate less, but the problem isn't solved."},
     ]
@@ -1270,7 +1270,7 @@ const LEARN_SECTIONS = [
       {q:"Benchmark",a:"A standardized test used to compare AI model performance. Common benchmarks: MMLU (general knowledge), HumanEval (coding), MATH (mathematics), GPQA (graduate-level reasoning). When a company says their model 'tops the benchmark,' take it with some skepticism — companies often optimize for specific benchmarks and real-world performance may differ."},
       {q:"Foundation model",a:"A large AI model trained on broad data that can be adapted to many different tasks. GPT-4, Claude, and Gemini are foundation models. They're called 'foundation' because they serve as the base for building more specialized applications — fine-tuned versions, RAG systems, agents, etc."},
       {q:"Latency",a:"How long an AI takes to respond. For real-time applications (voice assistants, chat), latency matters enormously — users expect responses in under 1-2 seconds. For batch processing (summarizing 1,000 documents overnight), latency is less important than cost and accuracy. Different models are optimized for different latency/quality tradeoffs."},
-      {q:"Multimodal",a:"An AI model that can process multiple types of input (text, images, audio, video) or produce multiple types of output. GPT-4o is multimodal — it can see images, hear audio, and respond with text or speech. Earlier models were unimodal — text only, or image only."},
+      {q:"Multimodal",a:"An AI model that can process multiple types of input (text, images, audio, video) or produce multiple types of output. Modern frontier models like GPT-5.5 and Claude Opus 4.8 are multimodal — they can see images, hear audio, and respond with text or speech. Gemini Omni goes further, generating video output natively. Earlier models were unimodal — text only, or image only."},
       {q:"On-premise / on-device AI",a:"Running AI locally on your own hardware rather than sending data to a cloud API. Important for: privacy (data never leaves your server), regulated industries (healthcare, legal, finance), offline use cases, and cost reduction at scale. Mistral and Llama are commonly used for on-premise deployments."},
       {q:"Quantization",a:"A technique to reduce model size and memory requirements by using lower-precision numbers internally. A quantized model runs faster and uses less RAM, with minimal quality loss. This is what makes large models practical to run on consumer hardware — a 70B parameter model normally requires 140GB of RAM, but a 4-bit quantized version needs only about 40GB."},
       {q:"RLHF (Reinforcement Learning from Human Feedback)",a:"The technique used to make AI models behave helpfully and safely. After initial training, human raters compare pairs of AI responses and say which is better. The model is then further trained to produce responses like the ones humans preferred. This is a major reason why ChatGPT and Claude feel more natural and helpful than earlier AI systems."},
@@ -1539,7 +1539,7 @@ const AI_TOOLS = [
   { name:"Suno",            cat:"Music",       desc:"Generate full songs with vocals from a text prompt in seconds.", url:"https://suno.com" },
   { name:"Udio",            cat:"Music",       desc:"High-quality AI music generation. Strong at specific genres and instruments.", url:"https://udio.com" },
   // Video
-  { name:"Runway Gen-4",    cat:"Video",       desc:"Industry standard for AI video production. Gen-4 (May 2026) introduced world consistency — characters, environments, and objects stay coherent across multiple scenes.", url:"https://runwayml.com" },
+  { name:"Runway Gen-4.5",  cat:"Video",       desc:"Industry standard for AI video production. Gen-4.5 (Dec 2025) tops the Artificial Analysis text-to-video benchmark — best-in-class character consistency, physics-accurate motion, and Act One facial capture.", url:"https://runwayml.com" },
   { name:"Kling 3.0",       cat:"Video",       desc:"Kuaishou's latest video model. Cinema-grade motion control and native 4K image generation.", url:"https://kling.ai" },
   { name:"Seedance 2.0",    cat:"Video",       desc:"ByteDance's latest AI video model. Produces highly realistic motion and cinematic quality.", url:"https://seed.bytedance.com/en/seedance2_0" },
   { name:"Sora",            cat:"Video",       desc:"OpenAI's video generation model. Note: web/app discontinued April 2026, API sunset September 2026. Migrate to an alternative before then.", url:"https://sora.com" },
@@ -1684,7 +1684,7 @@ const MODELS_META = [
   { id:"google/gemini-3.1-pro-preview",      name:"Gemini 3.1 Pro",   maker:"Google",    best:"Huge context, multimodal, agentic tasks", speed:"Medium", tier:"Frontier" },
   { id:"google/gemini-3.5-flash",            name:"Gemini 3.5 Flash", maker:"Google",    best:"Speed + agentic tasks, 4× faster than frontier", speed:"Fastest", tier:"Budget" },
   { id:"deepseek/deepseek-chat-v3-0324",     name:"DeepSeek Chat V3", maker:"DeepSeek",  best:"Open source, ultra cheap",          speed:"Fast",    tier:"Budget" },
-  { id:"meta-llama/llama-3.3-70b-instruct",  name:"Llama 3.3 70B",    maker:"Meta",      best:"Self-hosted, no API costs",         speed:"Fast",    tier:"Open Source" },
+  { id:"meta-llama/llama-4-scout",           name:"Llama 4 Scout",    maker:"Meta",      best:"10M token context, self-hosted, no API costs", speed:"Fast", tier:"Open Source" },
   { id:"mistralai/mistral-large-2512",       name:"Mistral Large",    maker:"Mistral",   best:"European data residency, efficient coding", speed:"Fast", tier:"Standard" },
 ];
 const TIER_COLOR={Frontier:T?.red||"#E8001C",Standard:"#2563EB",Budget:"#16A34A","Open Source":"#7C3AED"};
