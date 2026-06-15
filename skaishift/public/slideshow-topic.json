@@ -1,26 +1,26 @@
 {
-  "query": "Gemini AI official reveal",
-  "topicName": "Gemini",
-  "hook": "Gemini just changed the game.",
-  "img": "https://images.unsplash.com/photo-1618758992242-2d4bc63a1be7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODEzNDk3OTd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "OpenAI Codex AI official reveal",
+  "topicName": "Codex",
+  "hook": "Codex just changed the game.",
+  "img": "https://images.unsplash.com/photo-1745247468022-162b7f4d2be0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODE1MzcwMjV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "_fuimO6ErKI",
-      "title": "Google – Welcome to the Gemini era",
-      "channel": "Google"
+      "videoId": "0e-Brv-gS9Q",
+      "title": "A first look at the Codex app",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "Xm7ySx8VJXo",
-      "title": "ChatGPT vs Gemini – AI Image Generation Test (Mind-Blowing Results!)",
-      "channel": "TechSimplify"
+      "videoId": "Lm7-yFZ5fZQ",
+      "title": "Codex for (almost) everything",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "2m5BCWB02jY",
-      "title": "Meet Gemini Omni",
-      "channel": "Google"
+      "videoId": "bJcA23ckzcY",
+      "title": "It&#39;s time to fly | Codex",
+      "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-06-13",
-  "date": "2026-06-14"
+  "firstDate": "2026-06-15",
+  "date": "2026-06-15"
 }
