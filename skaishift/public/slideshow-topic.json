@@ -1,26 +1,26 @@
 {
-  "query": "OpenAI Codex AI official reveal",
-  "topicName": "Codex",
-  "hook": "Codex just changed the game.",
-  "img": "https://images.unsplash.com/photo-1745247468022-162b7f4d2be0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODE1MzcwMjV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "Gemini AI official reveal",
+  "topicName": "Gemini",
+  "hook": "Gemini just changed the game.",
+  "img": "https://images.unsplash.com/photo-1575727310029-c4bc7e271df4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODE2MTk4ODJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "0e-Brv-gS9Q",
-      "title": "A first look at the Codex app",
-      "channel": "OpenAI"
+      "videoId": "_fuimO6ErKI",
+      "title": "Google – Welcome to the Gemini era",
+      "channel": "Google"
     },
     {
-      "videoId": "Lm7-yFZ5fZQ",
-      "title": "Codex for (almost) everything",
-      "channel": "OpenAI"
+      "videoId": "2m5BCWB02jY",
+      "title": "Meet Gemini Omni",
+      "channel": "Google"
     },
     {
-      "videoId": "bJcA23ckzcY",
-      "title": "It&#39;s time to fly | Codex",
-      "channel": "OpenAI"
+      "videoId": "KUyRq7szZsM",
+      "title": "Introducing Gemini Omni: Create Anything from Anything",
+      "channel": "Google"
     }
   ],
-  "firstDate": "2026-06-15",
-  "date": "2026-06-15"
+  "firstDate": "2026-06-16",
+  "date": "2026-06-16"
 }
