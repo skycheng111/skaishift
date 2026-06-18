@@ -1,26 +1,16 @@
 {
-  "query": "Gemini AI official reveal",
-  "topicName": "Gemini",
-  "hook": "Gemini just changed the game.",
-  "img": "https://images.unsplash.com/photo-1575727310029-c4bc7e271df4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODE2MTk4ODJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Tools",
+  "query": "AI model simulation strategy AI reveal showcase",
+  "topicName": null,
+  "hook": "OpenAI's Deployment Simulation just changed the game.",
+  "img": "https://images.unsplash.com/photo-1730303055577-c8bdba043b19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODE3ODU5NDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
     {
-      "videoId": "_fuimO6ErKI",
-      "title": "Google – Welcome to the Gemini era",
-      "channel": "Google"
-    },
-    {
-      "videoId": "Xm7ySx8VJXo",
-      "title": "ChatGPT vs Gemini – AI Image Generation Test (Mind-Blowing Results!)",
-      "channel": "TechSimplify"
-    },
-    {
-      "videoId": "2m5BCWB02jY",
-      "title": "Meet Gemini Omni",
-      "channel": "Google"
+      "videoId": "QEzhnCMJiEw",
+      "title": "The TRUTH About In-House AI Models Nobody Tells You",
+      "channel": "Innovate Insider"
     }
   ],
-  "firstDate": "2026-06-16",
-  "date": "2026-06-17"
+  "firstDate": "2026-06-18",
+  "date": "2026-06-18"
 }
