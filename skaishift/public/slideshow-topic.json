@@ -1,16 +1,26 @@
 {
-  "query": "AI model simulation strategy AI reveal showcase",
-  "topicName": null,
-  "hook": "OpenAI's Deployment Simulation just changed the game.",
-  "img": "https://images.unsplash.com/photo-1730303055577-c8bdba043b19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODE3ODU5NDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Models",
+  "query": "GPT-5 AI official reveal",
+  "topicName": "GPT-5",
+  "hook": "GPT-5 just changed the game.",
+  "img": "https://images.unsplash.com/photo-1631556759597-96df19797d7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODE4NzM2NjN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Tools",
   "videos": [
     {
-      "videoId": "QEzhnCMJiEw",
-      "title": "The TRUTH About In-House AI Models Nobody Tells You",
-      "channel": "Innovate Insider"
+      "videoId": "boJG84Jcf-4",
+      "title": "Introducing GPT-5",
+      "channel": "OpenAI"
+    },
+    {
+      "videoId": "5eHrV6tth5E",
+      "title": "Microsoft Leaks GPT-5! 🤯 #ai  #robot #openai #microsoft  #news",
+      "channel": "Coaxis AI"
+    },
+    {
+      "videoId": "_MrdtIADOyE",
+      "title": "ChatGPT-5 Revealed: The Ultimate Chatbot is Coming Soon!",
+      "channel": "AI Global"
     }
   ],
-  "firstDate": "2026-06-18",
-  "date": "2026-06-18"
+  "firstDate": "2026-06-19",
+  "date": "2026-06-19"
 }
