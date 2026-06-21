@@ -1,26 +1,16 @@
 {
-  "query": "GPT-5 AI official reveal",
-  "topicName": "GPT-5",
-  "hook": "GPT-5 just changed the game.",
-  "img": "https://images.unsplash.com/photo-1631556759597-96df19797d7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODE4NzM2NjN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "OpenAI Model Diagnoses 18 Previously AI reveal",
+  "topicName": null,
+  "hook": "OpenAI just made every doctor nervous.",
+  "img": "https://images.unsplash.com/photo-1758273241090-b7d744465ce6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIwNDI2ODB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "boJG84Jcf-4",
-      "title": "Introducing GPT-5",
-      "channel": "OpenAI"
-    },
-    {
-      "videoId": "DyVfBRaoU4M",
-      "title": "Sam Altman: GPT-5 Is Smarter Than Us",
-      "channel": "ControlAI"
-    },
-    {
-      "videoId": "fAxj_GOuFe8",
-      "title": "Unveiling GPT-5: AI Technology&#39;s Future Revealed",
-      "channel": "AI Guide"
+      "videoId": "NE8STc17X6s",
+      "title": "5 Ways ChatGPT-4 Will Replace Your Doctor | OpenAI vs Physician",
+      "channel": "Medtech & Genetics"
     }
   ],
-  "firstDate": "2026-06-19",
-  "date": "2026-06-20"
+  "firstDate": "2026-06-21",
+  "date": "2026-06-21"
 }
