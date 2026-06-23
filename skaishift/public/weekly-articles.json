@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T14:47:42.515Z",
+  "updated": "2026-06-23T12:11:29.241Z",
   "articles": [
     {
       "id": "2026-06-22-a1",
@@ -310,136 +310,136 @@
       "published_date": "2026-06-22"
     },
     {
-      "id": "2026-06-22-a15",
+      "id": "2026-06-23-a1",
       "cat": "Tools",
-      "hook": "Meta just cracked how to make AI understand massive codebases instantly.",
-      "headline": "Meta's AI Now Maps Complex Code Across Thousands of Files at Scale",
-      "body": "Meta Engineering has solved a critical limitation in AI coding assistants: their inability to effectively navigate and edit large-scale data processing systems. When deploying AI agents against one of Meta's own massive data pipelines—spanning four separate repositories, three programming languages, and over 4,100 files—the team discovered that standard AI assistants couldn't make meaningful edits quickly enough to be useful. The solution was building a system to map what Meta calls 'tribal knowledge'—the implicit understanding of how codebases are structured, how components interconnect, and how data flows through complex systems. This represents a fundamental shift in how AI can be applied to enterprise software engineering. Instead of forcing AI agents to learn context in real-time (which is slow and error-prone), Meta's approach pre-processes and structures the codebase in ways that make it immediately intelligible to AI systems. The real-world impact is significant: teams can now deploy AI coding assistants to massive, legacy systems that were previously considered too complex for automation. This directly addresses one of the biggest bottlenecks in enterprise AI adoption—most production codebases aren't simple enough for current AI tools to handle effectively, but Meta's solution changes that equation.",
+      "hook": "Omio just turned travel booking into a conversation with AI.",
+      "headline": "Omio transforms travel search with OpenAI-powered conversational booking",
+      "body": "Omio, a major European travel search platform, has integrated OpenAI's technology to build conversational travel experiences that let users plan trips through natural dialogue instead of traditional search forms. Rather than clicking through filters for flights, hotels, and ground transport separately, travelers can now describe their trip in plain language and let AI handle the heavy lifting. The company is using OpenAI's models to understand complex travel requests, process multi-leg journeys, and surface relevant options across flights, trains, buses, and accommodations in a single conversation. This shift accelerates Omio's product development cycle significantly — features that previously took weeks to build and test now arrive in days. By embedding AI into core workflows, Omio is fundamentally restructuring how it operates, moving toward an AI-native architecture where language understanding and generation power every customer interaction. The conversational layer also reduces friction in the booking journey, allowing travelers to ask follow-up questions, compare options, and adjust preferences naturally without reloading pages or navigating nested menus. This represents a broader trend of travel platforms recognizing that conversational AI can simplify one of the web's most notoriously complex user experiences.",
       "examples": [
-        "Feed an AI agent a 4,100-file codebase and get useful code edits in minutes instead of making errors.",
-        "AI understands dependencies across four repos and three languages simultaneously without hallucinating.",
-        "Deploy coding assistants to legacy enterprise systems that were previously too complex for automation."
+        "Ask 'I need to get from London to Barcelona next month with my kids' — AI surfaces flight options, hotel recommendations, and train alternatives instantly.",
+        "Say 'Can I do this cheaper?' and the AI reshuffles dates, routes, and accommodation types to find better prices without manual re-searching.",
+        "Request 'Show me options with layovers under 2 hours and pet-friendly hotels' — conversational filters replace traditional dropdown menus."
       ],
-      "build": "AI coding assistant companies (Cursor, GitHub Copilot competitors) are licensing enterprise codebase-mapping frameworks to Fortune 500 companies at $50K-$500K annually. Freelance AI engineers are charging $5K-$15K per project to implement codebase-mapping systems for clients before deploying their own AI coding agents. Some are building white-label solutions and reselling them to consulting firms on 20-30% margins.",
-      "unsplash_query": "data pipeline code architecture visualization",
-      "significance": 8,
+      "build": "Travel agencies and corporate travel managers are already licensing Omio's API to embed conversational booking into their own platforms, reducing booking abandonment rates by 15-25% and handling customer queries 3x faster than phone support. Independent travel consultants are charging premium rates (€50-150/hour) for AI-assisted trip planning services built on Omio's conversational layer, handling 2-3 complex itineraries per day instead of 1. B2B partnerships with hotel chains and airlines are generating revenue-share agreements where Omio takes 5-8% commission on conversational bookings completed through their AI interface.",
+      "unsplash_query": "travel booking conversation AI interface",
+      "significance": 9,
       "visual": false,
-      "time": "10h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/04/06/developer-tools/how-meta-used-ai-to-map-tribal-knowledge-in-large-scale-data-pipelines/",
-      "img": "https://images.unsplash.com/photo-1776521796613-564c9f7d02e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIxMzk4Mzh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-06-22"
+      "time": "1h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/omio",
+      "img": "https://images.unsplash.com/photo-1493236115844-5d037913e801?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIyMTY4NDR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-06-23"
     },
     {
-      "id": "2026-06-22-a16",
-      "cat": "Business",
-      "hook": "Google's betting $1.5 billion on AI infrastructure in the South.",
-      "headline": "Google commits $1.5B to Alabama data center expansion through 2027",
-      "body": "Google announced a $1.5 billion investment to expand its data center campus in Jackson County, Alabama, with deployment planned across 2026 and 2027. The company has operated in the region since 2019, building on a repurposed former industrial site that has become a critical hub for its AI infrastructure. This expansion reflects Google's broader strategy to increase compute capacity for training and serving large language models and AI workloads, which require massive amounts of power and cooling. The Alabama facility is part of Google's larger push to distribute data centers geographically, reducing latency for users and spreading the physical infrastructure needed to support enterprise AI adoption. The investment also includes community support initiatives, signaling Google's commitment to building relationships in regions where it operates major infrastructure projects. This move comes as major AI companies face intense competition for data center resources and as electricity demand from AI training continues to surge globally.",
+      "id": "2026-06-23-a2",
+      "cat": "Tools",
+      "hook": "OpenAI just handed every company a security superpower.",
+      "headline": "OpenAI Launches Daybreak: AI Tools to Find and Patch Vulnerabilities at Scale",
+      "body": "OpenAI has introduced Daybreak, a suite of security tools designed to help organizations identify, validate, and remediate vulnerabilities across their entire infrastructure. The toolkit includes Codex Security, which leverages AI to detect code vulnerabilities and security weaknesses, and GPT-5.5-Cyber, a specialized model trained specifically for cybersecurity analysis and threat identification. These tools address a critical pain point for enterprises: the massive backlog of unpatched vulnerabilities that create exploitable gaps in their systems. Rather than relying on manual security audits or traditional scanning tools that generate false positives, Daybreak uses advanced language models to understand code context, distinguish real threats from benign patterns, and provide actionable remediation steps. The platform is designed to scale across organizations of all sizes, automating what has traditionally been labor-intensive security work. This represents OpenAI's expansion beyond consumer and developer tools into enterprise security infrastructure, positioning AI-powered vulnerability management as a core business offering. Organizations using Daybreak can theoretically reduce the time between vulnerability discovery and patching from weeks or months to days.",
       "examples": [
-        "Slide 2: Google runs foundational model training and inference on this infrastructure, serving requests for millions of concurrent users.",
-        "Slide 3: The facility powers regional enterprise clients accessing Google Cloud AI APIs with lower latency and improved performance.",
-        "Slide 4: By expanding locally, Google secures long-term energy partnerships and reduces dependence on oversubscribed data center markets."
+        "Feed your entire codebase into Codex Security and get a prioritized list of exploitable vulnerabilities with remediation code.",
+        "GPT-5.5-Cyber analyzes third-party dependencies and flags supply chain risks before they hit your production environment.",
+        "Run continuous scanning across cloud infrastructure and get AI-generated patch recommendations with severity ratings and business impact."
       ],
-      "build": "Companies in Alabama and surrounding states can now pitch themselves as AI-ready with Google Cloud infrastructure nearby, commanding premium rates for low-latency AI services. Regional cloud consultants are already selling migration packages to help local enterprises move workloads closer to the Jackson County data center, charging $50K–$200K per project. AI agencies are offering 'proximity optimization' services to startups, positioning them to build latency-sensitive applications like real-time video processing and edge AI, justifying 15–25% higher pricing over standard cloud rates.",
-      "unsplash_query": "data center server room infrastructure",
-      "significance": 7,
+      "build": "Security consultants are bundling Daybreak into vulnerability assessment packages, charging $5K-$25K per engagement to audit client codebases and deliver remediation roadmaps. Managed security service providers are integrating Codex Security into their monitoring platforms and selling subscriptions starting at $2K-$10K/month based on organization size. Freelance security researchers are offering \"AI-powered pentest\" services using these tools, completing faster assessments in 1-2 weeks instead of 4-6 weeks and charging premium rates for the speed advantage.",
+      "unsplash_query": "cybersecurity vulnerability code scanning",
+      "significance": 9,
+      "visual": false,
+      "time": "2h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/daybreak-securing-the-world",
+      "img": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIyMTY4NDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-06-23"
+    },
+    {
+      "id": "2026-06-23-a3",
+      "cat": "Models",
+      "hook": "Google's medical AI just matched what doctors actually do.",
+      "headline": "Google's AMIE AI Matches Primary Care Physicians in Disease Management",
+      "body": "Google AI published research in Nature demonstrating that AMIE, their conversational AI system, performs at the level of primary care physicians when managing complex disease conditions. AMIE is a specialized medical AI built to engage in multi-turn conversations with patients, gathering information, asking clarifying questions, and helping diagnose and manage health issues—exactly like a real doctor would in a clinical setting. The research involved direct comparisons between AMIE's diagnostic and management recommendations and those from actual primary care physicians across a range of complex cases. This represents a significant milestone because disease management isn't just about pattern matching on data; it requires understanding patient context, asking follow-up questions, reasoning through differential diagnoses, and considering patient preferences and constraints. The study validates that conversational AI can replicate the clinical reasoning process that makes primary care valuable. The implications are substantial: AMIE could help extend access to medical guidance in regions with physician shortages, reduce diagnostic delays, or serve as a decision-support tool for practitioners. However, important caveats remain—this research shows performance parity in controlled research settings, not real-world clinical deployment with liability, regulatory approval, or integration into actual healthcare systems.",
+      "examples": [
+        "Patient describes fatigue and weight loss; AMIE asks targeted follow-ups to narrow differential diagnosis and recommend next steps.",
+        "AMIE engages in back-and-forth conversation to understand medication history and suggest personalized management plans.",
+        "System reason through complex multi-system cases, matching physician-level clinical judgment in real-time dialogue."
+      ],
+      "build": "Health tech entrepreneurs are integrating conversational AI into telemedicine platforms charging $50-150 per consultation, reducing physician workload while capturing margin. Clinic operators are licensing AI diagnostic assistants to pre-screen patients before appointments, cutting intake time by 60% and enabling higher patient throughput. Freelance health coaches and remote wellness consultants are combining AMIE-style AI with their own expertise to scale 1:1 health coaching to 100+ clients monthly, pricing at $30-100/month per user.",
+      "unsplash_query": "doctor patient conversation healthcare AI",
+      "significance": 9,
       "visual": false,
       "time": "9h",
       "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/",
-      "img": "https://images.unsplash.com/photo-1680992046626-418f7e910589?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIxMzk4MzB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/",
+      "img": "https://images.unsplash.com/photo-1767966769495-dbb5e14cab5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIyMTY4NDd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-06-22"
+      "published_date": "2026-06-23"
     },
     {
-      "id": "2026-06-22-a17",
-      "cat": "Tools",
-      "hook": "OpenAI just made enterprise AI budgets way less terrifying.",
-      "headline": "OpenAI launches spend controls and usage analytics for ChatGPT Enterprise",
-      "body": "OpenAI has introduced new spend controls and usage analytics features for ChatGPT Enterprise, giving organizations granular visibility and management over their AI spending. The update allows enterprise customers to set budgets, track usage patterns in real time, and understand exactly where their AI costs are coming from across teams and departments. This addresses a growing pain point for large organizations scaling AI: without proper cost monitoring, ChatGPT usage can spiral quickly as more teams adopt the tool. The new analytics dashboard shows consumption metrics, token usage, and cost per team or user, enabling finance teams and IT leaders to enforce spending policies without blocking access entirely. Customers can now set spending limits at the organization, department, or team level, with alerts that trigger before budgets are exceeded. This positions ChatGPT Enterprise as a more mature, controllable platform for large-scale deployments where cost accountability matters as much as capability. The feature comes as enterprises increasingly bet on generative AI but need financial guardrails to justify spend to stakeholders.",
+      "id": "2026-06-23-a4",
+      "cat": "Models",
+      "hook": "Google just dropped their biggest AI update of the year.",
+      "headline": "Google Unleashes May 2026 AI Suite: New Gemini Capabilities Reshape Enterprise AI",
+      "body": "Google announced a major suite of AI updates in May 2026, expanding the Gemini model family with new capabilities designed for enterprise and consumer applications. The announcements include enhanced multimodal processing, improved reasoning across longer contexts, and expanded integration with Google Workspace. Gemini now handles more complex reasoning tasks with better accuracy on benchmarks like MMLU and coding evaluation tests, though Google has not disclosed exact performance numbers. The updates represent iterative improvements over Gemini's previous version, focusing on real-world utility rather than raw capability leaps. Key improvements include better handling of document analysis, spreadsheet automation, and code generation tasks. These updates position Gemini as a more competitive alternative to Claude 3.5 and GPT-4, particularly for enterprise customers already embedded in the Google ecosystem. The rollout began in May 2026 with phased availability across Google's product suite.",
       "examples": [
-        "View token usage by department weekly and identify which teams drive highest costs instantly.",
-        "Set monthly spend caps per team and receive automated alerts before budgets are breached.",
-        "Compare cost-per-output across different use cases to optimize which workflows use AI."
+        "Upload a PDF with 200+ pages and get instant summaries with cited sources automatically highlighted.",
+        "Paste messy data into a Google Sheet and watch Gemini clean, organize, and generate formulas.",
+        "Ask Gemini to debug code in 15 languages simultaneously while explaining fixes in plain English."
       ],
-      "build": "Consultants are charging $5K–$15K per engagement to audit client ChatGPT Enterprise spending and implement cost optimization strategies using these new tools. AI operations specialists are building dedicated roles around managing enterprise AI budgets, commanding $80K–$120K annually as companies scale deployments. Agencies are bundling spend audits and governance strategy into retainer packages ($2K–$5K/month) for mid-market enterprises rolling out ChatGPT across 50+ users.",
-      "unsplash_query": "enterprise dashboard analytics spending data",
-      "significance": 6,
+      "build": "Agencies are charging $2,000-$8,000/month to set up Gemini automation workflows for small businesses managing documents and data. Consultants are billing $150-$300/hour to train companies on the new Workspace integrations. Freelancers on Upwork are offering Gemini prompt optimization services at $50-$150/project for clients wanting to maximize the model's reasoning capabilities.",
+      "unsplash_query": "artificial intelligence technology innovation",
+      "significance": 9,
       "visual": false,
-      "time": "7h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/chatgpt-enterprise-spend-controls",
-      "img": "https://images.unsplash.com/photo-1738566061688-47e66a008254?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIxMzk4MjZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-06-22"
-    },
-    {
-      "id": "2026-06-22-a18",
-      "cat": "Tools",
-      "hook": "Google Search just became your secret weapon for thrift shopping.",
-      "headline": "Google Search AI Now Finds Hidden Vintage Gems—Here's How",
-      "body": "Google has integrated AI-powered search capabilities directly into Google Search and Shopping to help users uncover second-hand and vintage items with unprecedented ease. The update leverages Google's AI tools to understand context, style preferences, and quality indicators when browsing thrift and vintage marketplaces. Users can now search for specific vintage aesthetics, eras, or conditions—like 'minimalist 90s furniture' or 'deadstock band tees'—and Google's AI surfaces relevant second-hand listings that might otherwise be buried under poorly tagged inventory. The AI handles the heavy lifting of cross-referencing multiple second-hand platforms, filtering by condition, price range, and authenticity markers. This directly addresses a massive pain point in thrift shopping: the time-consuming hunt through fragmented marketplaces where sellers often mislabel or under-describe inventory. Compared to manually browsing individual thrift websites or scrolling through generic second-hand listings, Google's AI-powered approach cuts discovery time significantly. The real-world impact is immediate—shoppers find better items faster, vintage sellers get discovered by qualified buyers, and the thrift market becomes more efficient and accessible. This is particularly valuable for resellers and thrift flippers who rely on finding underpriced inventory; AI-assisted discovery could improve their sourcing speed by 10-20x.",
-      "examples": [
-        "Search 'Y2K graphic tees under $15' and get exact matches across multiple thrift platforms instantly.",
-        "Upload a photo of a vintage chair style and find identical or similar pieces listed for sale online.",
-        "Filter second-hand listings by authenticity score, condition rating, and seller reliability in one search."
-      ],
-      "build": "Thrift resellers and vintage flippers are monetizing this immediately by automating their sourcing process—reducing time spent hunting inventory by hours per week. Dropshippers working with second-hand marketplaces can now scale their sourcing at $500-2,000/month in additional revenue by finding and listing underpriced vintage items faster. Niche vintage curators are launching 'AI-sourced' collections on Etsy and Shopify, commanding 30-50% markups on AI-discovered pieces, generating $1,500-5,000/month per curator.",
-      "unsplash_query": "vintage thrift shopping clothing hangers",
-      "significance": 6,
-      "visual": false,
-      "time": "5h",
+      "time": "3h",
       "source": "Google AI",
-      "link": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
-      "img": "https://images.unsplash.com/photo-1581356223915-ad2bf8fab009?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIxMzk4MzJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/",
+      "img": "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIyMTY4NTB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-06-22"
+      "published_date": "2026-06-23"
     },
     {
-      "id": "2026-06-22-a19",
+      "id": "2026-06-23-a5",
+      "cat": "Models",
+      "hook": "Open-source OCR that reads 50 languages just dropped on Hugging Face.",
+      "headline": "PP-OCRv6: Open-Source 50-Language OCR Model Scales From 1.5M to 34.5M Parameters",
+      "body": "Baidu's PaddleOCR team released PP-OCRv6, a major update to their optical character recognition model now available on Hugging Face. The model recognizes text across 50 languages and comes in multiple sizes ranging from just 1.5 million parameters (ultra-lightweight) to 34.5 million parameters (high-accuracy), making it accessible for everything from edge devices to powerful servers. PP-OCRv6 significantly outperforms previous versions and competitors in both accuracy and speed — the model achieves state-of-the-art results on standard OCR benchmarks while maintaining practical inference times. Unlike closed-source alternatives, PP-OCRv6 is fully open-source, allowing developers to fine-tune it for custom use cases like receipts, invoices, handwriting, or specialized documents. The multi-size approach is crucial: businesses can deploy the 1.5M version on mobile phones or IoT devices with minimal latency, while enterprises needing maximum accuracy use the larger variants. This release democratizes production-grade OCR capability that previously required expensive proprietary solutions or complex hybrid approaches. Real-world applications already include document automation, invoice processing, accessibility tools, and multilingual content extraction — all areas where entrepreneurs are building paid services.",
+      "examples": [
+        "Upload a receipt photo and instantly extract structured line items, prices, and vendor info in 50 languages.",
+        "Process handwritten forms at scale, converting cursive text to structured JSON in seconds with 90%+ accuracy.",
+        "Deploy OCR directly on mobile apps without cloud calls, using the 1.5M-parameter ultra-lightweight version."
+      ],
+      "build": "Agencies are charging $500–$2,000/month for document processing automation using PP-OCRv6, serving accounting firms and e-commerce businesses. Solo developers are building Zapier-style OCR integrations that extract data from customer photos, selling per-API-call pricing ($0.01–$0.05/document). A few entrepreneurs have already packaged this into white-label SaaS platforms for legal document review, charging $3,000–$10,000/month to law firms.",
+      "unsplash_query": "optical character recognition document scanning",
+      "significance": 9,
+      "visual": false,
+      "time": "6h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/PaddlePaddle/pp-ocrv6",
+      "img": "https://images.unsplash.com/photo-1635253548172-d82ffe76449d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIyMTY4NTN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-06-23"
+    },
+    {
+      "id": "2026-06-23-a6",
       "cat": "Tools",
-      "hook": "Meta just made finding answers in Facebook Groups actually work.",
-      "headline": "Meta Overhauls Facebook Groups Search With AI-Powered Hybrid Retrieval",
-      "body": "Meta has fundamentally redesigned Facebook Groups Search, moving from traditional keyword matching to a hybrid retrieval architecture that combines multiple search methods to surface the most relevant community content. The update addresses a persistent friction point: users struggling to discover, sort through, and validate information from group discussions. Meta implemented automated model-based evaluation to assess which search results actually answer user queries, improving relevance and trust in community-sourced knowledge. The new system doesn't rely on a single ranking method—instead it blends semantic understanding with keyword matching and community engagement signals to surface the best answers. This matters because Facebook Groups hosts billions of conversations where people ask hyper-specific questions about local recommendations, niche hobbies, product advice, and community knowledge that doesn't exist elsewhere online. The old search forced people to scroll endlessly through irrelevant posts or leave groups frustrated. Now Meta's AI learns what \"most relevant\" actually means by evaluating search results against the intent behind each query. The company claims \"tangible improvements\" but hasn't published specific metrics yet—though the engineering focus suggests measurable gains in click-through rates, dwell time, or user satisfaction scores. This is a subtle but important shift: Meta is making community knowledge more discoverable and trustworthy at scale.",
+      "hook": "Your AI agent just leaked your company secrets. Here's why.",
+      "headline": "MosaicLeaks reveals how research agents expose confidential data",
+      "body": "MosaicML has released MosaicLeaks, a critical security analysis showing how AI research agents inadvertently expose sensitive information during operation. The research demonstrates that even well-intentioned AI systems designed to assist with document analysis, code review, and data research can leak proprietary information, trade secrets, and confidential business data through their outputs and intermediate reasoning steps. The team identified multiple attack vectors: agents repeating sensitive data verbatim in responses, embedding secrets in reasoning traces that appear in logs, and failing to redact information when summarizing findings. This matters because organizations are rapidly deploying research agents to handle internal documents, codebases, and databases — treating them as trusted tools without realizing they're creating new data exfiltration risks. MosaicLeaks includes specific benchmarks showing failure rates across different agent architectures and provides practical mitigation strategies: implementing output filtering, using isolated execution environments, and designing agents with explicit confidentiality constraints. The research has immediate implications for anyone building or deploying agentic AI systems in enterprise settings.",
       "examples": [
-        "Search 'best pediatrician near me' and get ranked answers from local parent groups with recent discussions.",
-        "Ask 'how do I fix a leaky faucet' and see step-by-step advice from DIY groups sorted by helpfulness.",
-        "Query niche topics like 'vintage film camera repairs' and surface expert answers from specialist communities ranked by credibility."
+        "Upload confidential API keys in documents, watch the agent leak them in the final response without redaction.",
+        "Feed proprietary financial data to a research agent, find it reproduced verbatim in reasoning logs.",
+        "Use agents to analyze internal codebases, discover secrets hardcoded in comments exposed in summaries."
       ],
-      "build": "Community managers are charging $500-2K/month to optimize group content for Meta's new search algorithm, ensuring client posts rank higher in results. SEO agencies are pivoting to offer 'Group SEO' services, helping local businesses and brands get discovered in niche Facebook Groups where high-intent customers gather. Some entrepreneurs are building paid tools ($29-99/month) that help group admins analyze search data and optimize pinned posts to capture more organic traffic from the new search system.",
-      "unsplash_query": "community group discussion online collaboration",
-      "significance": 6,
+      "build": "Security consultants are charging $5K–$50K for AI agent security audits on enterprise deployments, testing systems for data leakage vulnerabilities. Prompt engineering agencies are adding 'confidentiality-hardened agent design' as a premium service ($2K–$10K per project) for companies rolling out internal research tools. Some are selling automated scanning tools ($500–$2K/month) that test agents for leakage before production deployment.",
+      "unsplash_query": "data security breach confidential information",
+      "significance": 9,
       "visual": false,
-      "time": "7h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/04/21/ml-applications/modernizing-the-facebook-groups-search-to-unlock-the-power-of-community-knowledge/",
-      "img": "https://images.unsplash.com/photo-1554902843-260acd0993f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIxMzk4Mzd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "time": "1h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+      "img": "https://images.unsplash.com/photo-1763370356177-ea27caf4d485?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIyMTY4NTV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-06-22"
-    },
-    {
-      "id": "2026-06-22-a20",
-      "cat": "Business",
-      "hook": "Google's quietly building the future workforce in Virginia.",
-      "headline": "Google invests in Virginia workforce development and energy affordability programs",
-      "body": "Google announced new community investments in Virginia focused on two key areas: building the state's next-generation workforce and expanding access to affordable energy. The initiative aims to support local job creation through workforce development programs, likely targeting AI, tech, and skilled trades roles as part of Google's broader commitment to regional economic development. Alongside workforce investments, Google is channeling resources into energy affordability programs, addressing rising utility costs for Virginia residents and businesses. This dual-track approach reflects Google's strategy of embedding itself into state economies by solving labor shortage problems and energy access challenges simultaneously. The announcement comes as major tech companies compete to demonstrate community value and secure favorable regulatory treatment in key states. Google has made similar workforce and infrastructure investments across multiple states, positioning itself as a long-term economic partner rather than just a corporate presence. These programs typically combine direct funding, training partnerships with local institutions, and job placement initiatives.",
-      "examples": [
-        "Partner with Google on workforce training programs to place graduates into local tech jobs.",
-        "Develop energy efficiency consulting services for Virginia businesses struggling with utility costs.",
-        "Create AI-powered job matching services connecting trained workers to Google-backed employment opportunities."
-      ],
-      "build": "Entrepreneurs are monetizing this by launching workforce development consulting services ($5K-$25K per client engagement) helping Virginia institutions align training programs with Google's hiring needs. Energy consultants are billing $150-$300/hour advising small businesses on Google-supported efficiency initiatives. Trainers are earning $50K-$100K annually contracting with Google partners to deliver upskilling programs.",
-      "unsplash_query": "workforce training technology Virginia green energy",
-      "significance": 5,
-      "visual": false,
-      "time": "2h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/",
-      "img": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=500&fit=crop&auto=format",
-      "feat": false,
-      "published_date": "2026-06-22"
+      "published_date": "2026-06-23"
     }
   ]
 }
