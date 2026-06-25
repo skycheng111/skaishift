@@ -1,26 +1,26 @@
 {
-  "query": "GPT-5 AI official reveal",
-  "topicName": "GPT-5",
-  "hook": "GPT-5 is here and it's absolutely mind-blowing.",
-  "img": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIyMTY4NDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "AI chip technology hardware AI reveal showcase",
+  "topicName": null,
+  "hook": "OpenAI and Broadcom's just changed the game.",
+  "img": "https://images.unsplash.com/photo-1782088554629-57759e2129b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIzODgxMzN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "boJG84Jcf-4",
-      "title": "Introducing GPT-5",
-      "channel": "OpenAI"
+      "videoId": "QuKbDm6GB6M",
+      "title": "AMD unveils new AI chips at CES",
+      "channel": "News of the World"
     },
     {
-      "videoId": "5eHrV6tth5E",
-      "title": "Microsoft Leaks GPT-5! 🤯 #ai  #robot #openai #microsoft  #news",
-      "channel": "Coaxis AI"
+      "videoId": "e3PIvqig1MM",
+      "title": "The NVIDIA Rubin Platform: Six New Chips, One AI Supercomputer",
+      "channel": "NVIDIA"
     },
     {
-      "videoId": "_MrdtIADOyE",
-      "title": "ChatGPT-5 Revealed: The Ultimate Chatbot is Coming Soon!",
-      "channel": "AI Global"
+      "videoId": "BI3YycDZMPc",
+      "title": "Next-Gen AI Chips Revealed by NVIDIA Robotics Healthcare &amp; Self-Driving AI Breakthroughs at GTC 2026",
+      "channel": "The Animated YT"
     }
   ],
-  "firstDate": "2026-06-23",
-  "date": "2026-06-24"
+  "firstDate": "2026-06-25",
+  "date": "2026-06-25"
 }
