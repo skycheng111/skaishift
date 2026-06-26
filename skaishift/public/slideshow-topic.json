@@ -1,26 +1,26 @@
 {
-  "query": "AI chip technology hardware AI reveal showcase",
-  "topicName": null,
-  "hook": "OpenAI and Broadcom's just changed the game.",
-  "img": "https://images.unsplash.com/photo-1782088554629-57759e2129b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODIzODgxMzN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Tools",
+  "query": "GPT-5 AI official reveal",
+  "topicName": "GPT-5",
+  "hook": "GPT-5 just changed the game.",
+  "img": "https://images.unsplash.com/photo-1668600372062-f247a5bc575b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0NzQ3OTF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
     {
-      "videoId": "QuKbDm6GB6M",
-      "title": "AMD unveils new AI chips at CES",
-      "channel": "News of the World"
+      "videoId": "boJG84Jcf-4",
+      "title": "Introducing GPT-5",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "e3PIvqig1MM",
-      "title": "The NVIDIA Rubin Platform: Six New Chips, One AI Supercomputer",
-      "channel": "NVIDIA"
+      "videoId": "_MrdtIADOyE",
+      "title": "ChatGPT-5 Revealed: The Ultimate Chatbot is Coming Soon!",
+      "channel": "AI Global"
     },
     {
-      "videoId": "BI3YycDZMPc",
-      "title": "Next-Gen AI Chips Revealed by NVIDIA Robotics Healthcare &amp; Self-Driving AI Breakthroughs at GTC 2026",
-      "channel": "The Animated YT"
+      "videoId": "soNEuFIycnk",
+      "title": "GPT-5 Revealed: The Future of AI is Here #ai #gtp5 #openai",
+      "channel": "Gogivo Creatives"
     }
   ],
-  "firstDate": "2026-06-25",
-  "date": "2026-06-25"
+  "firstDate": "2026-06-26",
+  "date": "2026-06-26"
 }
