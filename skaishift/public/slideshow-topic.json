@@ -2,7 +2,7 @@
   "query": "GPT-5 AI official reveal",
   "topicName": "GPT-5",
   "hook": "GPT-5 just changed the game.",
-  "img": "https://images.unsplash.com/photo-1668600372062-f247a5bc575b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0NzQ3OTF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "img": "https://images.unsplash.com/photo-1763568258235-f40425a94af9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI2NDU0MDF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Models",
   "videos": [
     {
@@ -11,16 +11,16 @@
       "channel": "OpenAI"
     },
     {
-      "videoId": "_MrdtIADOyE",
-      "title": "ChatGPT-5 Revealed: The Ultimate Chatbot is Coming Soon!",
-      "channel": "AI Global"
+      "videoId": "5eHrV6tth5E",
+      "title": "Microsoft Leaks GPT-5! 🤯 #ai  #robot #openai #microsoft  #news",
+      "channel": "Coaxis AI"
     },
     {
-      "videoId": "DyVfBRaoU4M",
-      "title": "Sam Altman: GPT-5 Is Smarter Than Us",
-      "channel": "ControlAI"
+      "videoId": "n7cG9twTrms",
+      "title": "The new ChatGPT-5 is CRAZY",
+      "channel": "Mrwhosetheboss"
     }
   ],
-  "firstDate": "2026-06-26",
-  "date": "2026-06-27"
+  "firstDate": "2026-06-28",
+  "date": "2026-06-28"
 }
