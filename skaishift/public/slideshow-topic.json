@@ -1,26 +1,16 @@
 {
-  "query": "GPT-5 AI official reveal",
-  "topicName": "GPT-5",
-  "hook": "GPT-5 just changed the game.",
-  "img": "https://images.unsplash.com/photo-1527427337751-fdca2f128ce5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI4MjAzMjJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Models",
+  "query": "global communication technology AI reveal showcase",
+  "topicName": null,
+  "hook": "ChatGPT adoption surges just changed the game.",
+  "img": "https://images.unsplash.com/photo-1547265789-33afb037965c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI5OTI2MDh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Tools",
   "videos": [
     {
-      "videoId": "boJG84Jcf-4",
-      "title": "Introducing GPT-5",
-      "channel": "OpenAI"
-    },
-    {
-      "videoId": "DyVfBRaoU4M",
-      "title": "Sam Altman: GPT-5 Is Smarter Than Us",
-      "channel": "ControlAI"
-    },
-    {
-      "videoId": "_MrdtIADOyE",
-      "title": "ChatGPT-5 Revealed: The Ultimate Chatbot is Coming Soon!",
-      "channel": "AI Global"
+      "videoId": "abstSNKwofc",
+      "title": "AI-Driven Mobility: Yamaha’s Bold Reveals, NTT’s Level 4 Autonomy, and the Global Push for SmartCars",
+      "channel": "What The Prompt?"
     }
   ],
-  "firstDate": "2026-06-30",
-  "date": "2026-06-30"
+  "firstDate": "2026-07-02",
+  "date": "2026-07-02"
 }
