@@ -1,26 +1,26 @@
 {
-  "query": "Google Gemma AI official reveal",
-  "topicName": "Gemma",
-  "hook": "Gemma just went next level, and you need to see this.",
-  "img": "https://images.unsplash.com/photo-1581548708095-7158f2e63857?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODMwNzg3OTl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Tools",
+  "query": "Gemini AI official reveal",
+  "topicName": "Gemini",
+  "hook": "Google's new AI just entered the chat and it's insane.",
+  "img": "https://images.unsplash.com/photo-1781444504263-231cc860f263?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODMxNjI3NjF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
     {
-      "videoId": "jZVBoFOJK-Q",
-      "title": "What’s new in Gemma 4",
-      "channel": "Google for Developers"
+      "videoId": "_fuimO6ErKI",
+      "title": "Google – Welcome to the Gemini era",
+      "channel": "Google"
     },
     {
-      "videoId": "RiG1Pn4vaEw",
-      "title": "Google’s April 2026 AI Announcements: Gemma 4, Google Vids, Deep Research Max &amp; the Future of Age...",
-      "channel": "Adexpert"
+      "videoId": "Xm7ySx8VJXo",
+      "title": "ChatGPT vs Gemini – AI Image Generation Test (Mind-Blowing Results!)",
+      "channel": "TechSimplify"
     },
     {
-      "videoId": "LrVe3Sqiks0",
-      "title": "Run AI locally, with Gemma!",
-      "channel": "Google for Developers"
+      "videoId": "2m5BCWB02jY",
+      "title": "Meet Gemini Omni",
+      "channel": "Google"
     }
   ],
-  "firstDate": "2026-07-03",
-  "date": "2026-07-03"
+  "firstDate": "2026-07-04",
+  "date": "2026-07-04"
 }
