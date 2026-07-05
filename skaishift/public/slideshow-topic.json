@@ -1,26 +1,26 @@
 {
-  "query": "Gemini AI official reveal",
-  "topicName": "Gemini",
-  "hook": "Google's new AI just entered the chat and it's insane.",
-  "img": "https://images.unsplash.com/photo-1781444504263-231cc860f263?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODMxNjI3NjF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Models",
+  "query": "Kling AI official reveal",
+  "topicName": "Kling",
+  "hook": "Kling just made AI video creation actually accessible.",
+  "img": "https://images.unsplash.com/photo-1593720218365-b2076cfdefee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODMyNDk4MTR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Tools",
   "videos": [
     {
-      "videoId": "_fuimO6ErKI",
-      "title": "Google – Welcome to the Gemini era",
-      "channel": "Google"
+      "videoId": "XD_7FNPhZQY",
+      "title": "Kling 3.0 Model: Everyone a Director. It’s Time.",
+      "channel": "Kling AI"
     },
     {
-      "videoId": "Xm7ySx8VJXo",
-      "title": "ChatGPT vs Gemini – AI Image Generation Test (Mind-Blowing Results!)",
-      "channel": "TechSimplify"
+      "videoId": "U-4Ke6deDuU",
+      "title": "Kling 3.0 Review: #1 AI Video Generator but There&#39;s a Catch (2026)",
+      "channel": "Savage Reviews"
     },
     {
-      "videoId": "2m5BCWB02jY",
-      "title": "Meet Gemini Omni",
-      "channel": "Google"
+      "videoId": "3pHyNBpLKk8",
+      "title": "Kling AI｜Here&#39;s my pet! What about yours?",
+      "channel": "Kling AI"
     }
   ],
-  "firstDate": "2026-07-04",
-  "date": "2026-07-04"
+  "firstDate": "2026-07-05",
+  "date": "2026-07-05"
 }
