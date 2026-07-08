@@ -1,9 +1,9 @@
 {
   "query": "Gemini AI official reveal",
   "topicName": "Gemini",
-  "hook": "Gemini Omni just became the creative superpower you didn't know you needed.",
-  "img": "https://images.unsplash.com/photo-1616499535171-a3ca97f87a7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODMzNDI2MTB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Models",
+  "hook": "Gemini just raised the bar for everything.",
+  "img": "https://images.unsplash.com/photo-1758626042818-b05e9c91b84a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM1MDkxMjh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Tools",
   "videos": [
     {
       "videoId": "_fuimO6ErKI",
@@ -11,16 +11,16 @@
       "channel": "Google"
     },
     {
-      "videoId": "Xm7ySx8VJXo",
-      "title": "ChatGPT vs Gemini – AI Image Generation Test (Mind-Blowing Results!)",
-      "channel": "TechSimplify"
-    },
-    {
       "videoId": "KUyRq7szZsM",
       "title": "Introducing Gemini Omni: Create Anything from Anything",
       "channel": "Google"
+    },
+    {
+      "videoId": "Xm7ySx8VJXo",
+      "title": "ChatGPT vs Gemini – AI Image Generation Test (Mind-Blowing Results!)",
+      "channel": "TechSimplify"
     }
   ],
-  "firstDate": "2026-07-06",
-  "date": "2026-07-07"
+  "firstDate": "2026-07-08",
+  "date": "2026-07-08"
 }
