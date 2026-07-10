@@ -1,26 +1,26 @@
 {
-  "query": "Gemini AI official reveal",
-  "topicName": "Gemini",
-  "hook": "Gemini just raised the bar for everything.",
-  "img": "https://images.unsplash.com/photo-1758626042818-b05e9c91b84a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM1MDkxMjh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Tools",
+  "query": "GPT-5 AI official reveal",
+  "topicName": "GPT-5",
+  "hook": "GPT-5 is here and AI will never be the same.",
+  "img": "https://images.unsplash.com/photo-1681164315393-8d2850f570fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM2ODUwMDB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
     {
-      "videoId": "_fuimO6ErKI",
-      "title": "Google – Welcome to the Gemini era",
-      "channel": "Google"
+      "videoId": "boJG84Jcf-4",
+      "title": "Introducing GPT-5",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "2m5BCWB02jY",
-      "title": "Meet Gemini Omni",
-      "channel": "Google"
+      "videoId": "_MrdtIADOyE",
+      "title": "ChatGPT-5 Revealed: The Ultimate Chatbot is Coming Soon!",
+      "channel": "AI Global"
     },
     {
-      "videoId": "uW4B6ziQqvY",
-      "title": "What is Gemini Omni?",
-      "channel": "Google"
+      "videoId": "fAxj_GOuFe8",
+      "title": "Unveiling GPT-5: AI Technology&#39;s Future Revealed",
+      "channel": "AI Guide"
     }
   ],
-  "firstDate": "2026-07-08",
-  "date": "2026-07-09"
+  "firstDate": "2026-07-10",
+  "date": "2026-07-10"
 }
