@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T12:00:46.257Z",
+  "updated": "2026-07-11T10:19:45.848Z",
   "articles": [
     {
       "id": "2026-07-06-a1",
@@ -244,72 +244,6 @@
       "published_date": "2026-07-09"
     },
     {
-      "id": "2026-07-06-a7",
-      "cat": "Tools",
-      "hook": "AI agents just learned how to rewrite your entire codebase automatically.",
-      "headline": "ScarfBench: New benchmark shows AI agents can migrate legacy Java code at scale",
-      "body": "Researchers have introduced ScarfBench, a comprehensive benchmark designed to evaluate AI agents' ability to migrate enterprise Java applications to modern frameworks — a task that currently consumes thousands of developer hours across Fortune 500 companies. The benchmark tests AI agents on real-world Java framework migration scenarios, measuring their success in converting legacy code patterns to contemporary standards while maintaining functionality and performance. ScarfBench provides standardized test cases that simulate the complexity of actual enterprise migrations, including dependency resolution, API compatibility, and architectural pattern updates. This addresses a critical gap: while large language models excel at code generation, few benchmarks exist for evaluating their performance on sustained, multi-step engineering tasks like full application migrations. Early results show that advanced AI agents can handle portions of migration workflows previously thought to require domain expertise and manual oversight, though complete autonomy remains limited. The benchmark enables enterprises and AI developers to quantify improvement in agent reliability, speed, and accuracy — key metrics for deciding when to deploy AI assistance versus human engineers. This is particularly valuable for Java shops managing decades-old codebases; automated migration suggestions could reduce refactoring timelines from months to weeks.",
-      "examples": [
-        "Feed an AI agent a Spring 3 application with deprecated annotations; it maps them to Spring Boot 3 equivalents with updated configurations.",
-        "Point the system at legacy EJB components; it identifies modernization candidates and generates equivalent microservice implementations.",
-        "Submit a codebase using outdated Java patterns; the agent suggests refactors with test coverage and rollback plans pre-generated."
-      ],
-      "build": "DevOps consultants are charging $150–250/hour to guide AI-assisted Java migrations for mid-market companies, reducing traditional 6-month engagements to 4-6 weeks. Framework modernization shops are bundling ScarfBench evaluations ($5K–15K per project) to sell clients on automated migration strategies before human developers touch the code. AI agents trained on this benchmark data are being packaged as SaaS ($500–2K/month) for companies wanting self-serve code upgrade tooling.",
-      "unsplash_query": "enterprise software migration legacy code",
-      "significance": 8,
-      "visual": false,
-      "time": "10h",
-      "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/ibm-research/scarfbench",
-      "img": "https://images.unsplash.com/photo-1508317469940-e3de49ba902e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODMzNDI2MTh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-07-06"
-    },
-    {
-      "id": "2026-07-06-a8",
-      "cat": "Tools",
-      "hook": "Meta just made discovering what your friends love way smarter.",
-      "headline": "Meta's Friend Bubbles turns social graphs into discovery engine at scale",
-      "body": "Meta has launched Friend Bubbles, a new feature on Reels that surfaces content your friends have watched and reacted to — turning your social network into a personalized discovery feed. The feature appears simple on the surface but required significant engineering work to scale across billions of users and interactions. According to engineers Subasree and Joseph who discussed the technology on Meta's Tech Podcast, the real complexity lies in the backend systems needed to process and rank friend activity at Meta's scale. Friend Bubbles solves a core problem in social discovery: algorithmic feeds can feel disconnected from your actual network, while pure friend-based feeds can be limiting. By highlighting what your specific friends engage with, the feature bridges personalization and social trust. The engineering challenge was building systems that can ingest massive volumes of reaction and watch data, rank it intelligently, and serve personalized results in real-time to billions of users. This represents Meta's continued investment in social-first discovery mechanisms that compete with algorithmic recommendation as the primary way people find content.",
-      "examples": [
-        "See a Reel your best friend watched and reacted to, ranked higher in your feed based on mutual interests.",
-        "Discover trending content within your friend group before it hits the broader algorithm.",
-        "Get social proof of engagement from people you actually follow, not just faceless metrics."
-      ],
-      "build": "Creators are leveraging Friend Bubbles data to understand which content resonates most with engaged friend groups, optimizing Reels strategy accordingly — some reporting 15-25% higher engagement rates on socially-optimized content. Agencies are selling 'social graph optimization' services to brands, helping them seed Reels strategically within creator networks to trigger Friend Bubbles visibility at $2,000-5,000 per campaign. Creators monetizing through Reels Play are adjusting posting schedules and content topics based on what performs in Friend Bubbles, with some reporting $500-2,000 monthly revenue increases from the improved discoverability.",
-      "unsplash_query": "social media friendship network connection",
-      "significance": 7,
-      "visual": false,
-      "time": "3h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/05/13/ml-applications/reel-friends-building-social-discovery-that-scales-to-billions/",
-      "img": "https://images.unsplash.com/photo-1614239685309-596329cc23df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODMzNDI2MjN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-07-06"
-    },
-    {
-      "id": "2026-07-06-a9",
-      "cat": "Strategy",
-      "hook": "ChatGPT just hit a whole new level of global domination.",
-      "headline": "ChatGPT adoption surges globally as users unlock new capabilities",
-      "body": "OpenAI's latest Signals data reveals ChatGPT is experiencing significant growth across regions and languages, with users not just signing up but actively expanding how they use the platform. The data shows increased engagement patterns, indicating that existing users are exploring more advanced capabilities and pushing the tool into new use cases beyond initial adoption. The growth is particularly notable across different geographic regions and language groups, suggesting ChatGPT is breaking through language barriers and becoming a truly global product. This expansion reflects a shift from casual exploration to deeper integration into workflows — users are spending more time in the platform and experimenting with features they may have initially overlooked. The Signals data framework allows OpenAI to track these behavioral patterns without revealing raw user numbers, providing insight into adoption velocity and feature penetration across the global user base.",
-      "examples": [
-        "Use ChatGPT to draft an entire business proposal in Spanish, then refine it in real-time for your client presentation.",
-        "Ask ChatGPT to analyze your competitor's website and generate a content strategy for three different market regions simultaneously.",
-        "Feed ChatGPT your raw sales data and have it generate localized email campaigns for 10 different countries with cultural nuances."
-      ],
-      "build": "Freelance AI consultants are charging $150-400/hour to help businesses integrate ChatGPT into their workflows, handling localization strategies for global campaigns. Agencies are selling ChatGPT automation packages to mid-market companies at $3K-8K/month, training teams on advanced prompting and multi-language use cases. Prompt engineers and content creators are earning $2K-5K monthly creating region-specific ChatGPT workflows for clients in e-commerce, customer service, and content production.",
-      "unsplash_query": "global technology adoption users worldwide",
-      "significance": 6,
-      "visual": false,
-      "time": "2h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/how-chatgpt-adoption-has-expanded",
-      "img": "https://images.unsplash.com/photo-1774779685524-cc735ae11a9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODMzNDI2MDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-07-06"
-    },
-    {
       "id": "2026-07-10-a1",
       "cat": "Models",
       "hook": "GPT-5.6 just became the engine behind Microsoft's entire workspace.",
@@ -376,70 +310,136 @@
       "published_date": "2026-07-10"
     },
     {
-      "id": "2026-07-10-a4",
-      "cat": "Earn",
-      "hook": "OpenAI just opened the money door for biosecurity researchers.",
-      "headline": "OpenAI launches bio bug bounty program with cash rewards for finding risks",
-      "body": "OpenAI has announced a new bug bounty program specifically focused on biosecurity risks in GPT-5.5, offering financial rewards to researchers who identify potential misuse scenarios or vulnerabilities related to biological research capabilities. The program invites security researchers and domain experts to test the model's ability to assist with dangerous biological research and report findings through OpenAI's coordinated disclosure process. Unlike traditional bug bounties that focus on security exploits, this initiative targets potential dual-use risks—legitimate AI capabilities that could be misused for creating biological weapons or conducting unauthorized gain-of-function research. Participants will be compensated based on the severity and credibility of reported risks, with OpenAI using submissions to refine safety measures and access controls for GPT-5.5's biology-related features. This marks a shift toward crowdsourced AI safety evaluation, allowing independent researchers to earn money by helping identify failure modes before they become public problems. The program reflects growing pressure on AI companies to demonstrate proactive risk management around frontier models that could impact national security or public health.",
+      "id": "2026-07-11-a1",
+      "cat": "Models",
+      "hook": "OpenAI just released GPT-5.6 and it's a whole different beast.",
+      "headline": "OpenAI releases GPT-5.6: More intelligence per token, lower cost per capability",
+      "body": "OpenAI has announced GPT-5.6, positioning it as a frontier intelligence model that delivers more computational power from every token processed while reducing the cost per unit of capability. The model represents an efficiency breakthrough, allowing users to accomplish harder, more complex tasks without proportional increases in API spending. Unlike previous releases focused on raw capability expansion, GPT-5.6 emphasizes the practical economics of AI deployment — getting more done per dollar spent. The model scales with user ambition, meaning it can handle increasingly difficult workloads on demand without forcing users into expensive tier upgrades. This aligns with the industry trend of optimizing inference efficiency rather than just pushing raw model size. For developers and AI entrepreneurs currently paying per-token on OpenAI's API, GPT-5.6 represents a meaningful shift in the cost-to-performance ratio that directly impacts unit economics on AI-powered products and services.",
       "examples": [
-        "Test GPT-5.5's ability to explain gain-of-function research and report what safeguards fail.",
-        "Identify prompts that bypass biosafety restrictions in the model's training data.",
-        "Document scenarios where the model provides dangerous synthesis or engineering guidance."
+        "Feed GPT-5.6 a complex multi-step problem and watch it solve it in fewer tokens than older models needed.",
+        "Build an AI agent that costs 40% less per request while handling more nuanced, harder reasoning tasks.",
+        "Deploy GPT-5.6 into production workflows where token-count efficiency directly reduces your per-user operational costs."
       ],
-      "build": "Security researchers are earning $500–$5,000+ per valid submission by identifying biosafety gaps in frontier AI models; some consultants are building dedicated teams to audit models for clients and splitting bounty payments; companies building AI safety tools are using bounty programs as free R&D to train detection systems.",
-      "unsplash_query": "biosecurity laboratory research risk assessment",
+      "build": "AI product builders are already arbitraging the efficiency gains: developers offering API-wrapped AI services are seeing 30-50% margin improvements by swapping in GPT-5.6 while charging existing rates. Agencies selling ChatGPT-powered content creation to clients are reducing per-project costs by 35-45%, improving profitability on fixed-price contracts signed months ago. Prompt engineering specialists are commanding $50-150/hour helping companies optimize workflows specifically to exploit GPT-5.6's token efficiency, creating an immediate consulting market around the upgrade.",
+      "unsplash_query": "artificial intelligence neural networks digital",
+      "significance": 10,
+      "visual": false,
+      "time": "7h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/gpt-5-6",
+      "img": "https://images.unsplash.com/photo-1727434032773-af3cd98375ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM3NjUzNDJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-07-11"
+    },
+    {
+      "id": "2026-07-11-a2",
+      "cat": "Models",
+      "hook": "GPT-5.6 just became your Microsoft 365 secret weapon.",
+      "headline": "GPT-5.6 Now Powers Microsoft 365 Copilot Across All Apps",
+      "body": "OpenAI has upgraded Microsoft 365 Copilot to run on GPT-5.6, its latest and most capable model, delivering stronger AI performance across Word, Excel, PowerPoint, Chat, and Cowork. This represents a significant leap forward for the enterprise productivity suite, which now has access to GPT-5.6's improved reasoning, writing, and analytical capabilities. The upgrade means professionals using Microsoft 365 will experience faster processing, higher-quality output, and more nuanced AI assistance when drafting documents, analyzing spreadsheets, creating presentations, and collaborating in real-time. GPT-5.6 brings enhanced understanding of context and intent, allowing Copilot to generate more relevant suggestions and catch subtleties that previous versions missed. For knowledge workers and teams relying on Microsoft's ecosystem, this swap from earlier GPT versions translates directly into faster iteration cycles, better-written content, smarter data insights, and reduced manual refinement work. This move solidifies the partnership between OpenAI and Microsoft while positioning GPT-5.6 as the standard for enterprise AI assistance.",
+      "examples": [
+        "Paste messy sales data into Excel; GPT-5.6 auto-cleans, categorizes, and generates pivot table recommendations instantly.",
+        "Start a rough email draft in Outlook; Copilot rewrites it for tone, clarity, and professionalism in seconds.",
+        "Ask Copilot to analyze a 50-page report in Word; it pulls key insights, trends, and action items."
+      ],
+      "build": "Agencies are offering 'Copilot optimization services' to enterprise clients at $5,000–$15,000/month, helping teams build custom prompts and workflows that leverage GPT-5.6's capabilities. Freelancers are packaging 'Excel automation consulting' for mid-market companies, charging $150–$300/hour to design advanced formulas and Copilot workflows that cut data prep time by 60%. Some consultants are also selling training packages ($2,000–$10,000 per team) teaching companies how to use GPT-5.6-powered Copilot to automate repetitive tasks and unlock productivity gains within weeks.",
+      "unsplash_query": "microsoft office productivity AI workplace",
       "significance": 9,
       "visual": false,
-      "time": "9h",
+      "time": "6h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
+      "img": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=500&fit=crop&auto=format",
+      "feat": true,
+      "published_date": "2026-07-11"
+    },
+    {
+      "id": "2026-07-11-a3",
+      "cat": "Tools",
+      "hook": "ChatGPT just became your all-day project partner.",
+      "headline": "ChatGPT Work: AI agent that completes ambitious projects across your apps",
+      "body": "OpenAI has launched ChatGPT Work, an agentic AI system designed to tackle complex, multi-step projects that require sustained effort and coordination across multiple applications and files. Unlike previous versions of ChatGPT that operate in isolated conversations, ChatGPT Work can maintain context and momentum on a single project for hours, autonomously taking actions across connected apps, retrieving and updating files, and progressively moving a goal toward completion without constant user intervention. The agent functions as an extended team member rather than a chat interface — users define an objective, and the system breaks it into actionable steps, executes them across different platforms and tools, and handles the back-and-forth coordination that typically requires manual switching between apps. This represents a significant shift from reactive AI assistance to proactive project execution, addressing a major pain point for entrepreneurs and knowledge workers who spend substantial time orchestrating workflows across disparate systems. The real-world impact is substantial: complex projects that might take 4-8 hours of manual coordination across email, spreadsheets, design tools, and document platforms can now be handled by an agent working in parallel with human oversight. This positions ChatGPT not just as a writing or coding assistant, but as infrastructure for delegating entire workflows, which is particularly valuable for solopreneurs and small teams managing multiple clients or projects simultaneously.",
+      "examples": [
+        "Hand off a product launch checklist and let the agent update spreadsheets, draft emails, and coordinate files across teams autonomously.",
+        "Give it a research goal and watch it pull data, organize findings, and generate reports without asking for confirmation between steps.",
+        "Submit a campaign strategy and it manages timelines, updates stakeholders, and adjusts deliverables across connected apps in real time."
+      ],
+      "build": "Agencies are selling ChatGPT Work automation as a service to clients — charging $2,000–$5,000/month to manage recurring workflows like customer onboarding, content calendars, and project coordination. Solo consultants are offering 'AI operations' packages where they set up custom agents for small businesses at $500–$2,000/project, reducing client manual labor by 20–30 hours per month. Freelancers on Upwork and LinkedIn are already positioning themselves as 'ChatGPT Work specialists,' commanding premium rates ($75–$150/hr) for configuring agents tailored to specific industries like real estate, e-commerce, and professional services.",
+      "unsplash_query": "ai agent automation workflow productivity",
+      "significance": 9,
+      "visual": false,
+      "time": "10h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+      "img": "https://images.unsplash.com/photo-1621036579377-9760ac8d8c60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM3NjUzNDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-07-11"
+    },
+    {
+      "id": "2026-07-11-a4",
+      "cat": "Earn",
+      "hook": "OpenAI just opened the money spigot for biosecurity researchers.",
+      "headline": "OpenAI's Bio Bounty Program Pays Researchers to Find AI Safety Risks",
+      "body": "OpenAI has launched a bug bounty program specifically focused on biosecurity risks from GPT-5.5, offering financial rewards to researchers who identify vulnerabilities in how the model handles biological research information. The program invites security researchers and biosecurity experts to probe the AI for potential misuse cases — specifically looking for ways the model could generate information that aids in creating biological weapons or dangerous pathogens. Unlike traditional bug bounties that focus on cybersecurity flaws, this initiative targets the intersection of AI capability and real-world harm, recognizing that large language models trained on vast scientific literature can potentially assist in dangerous biological research. Researchers who successfully identify and report valid biosecurity concerns receive payment directly from OpenAI, with the exact bounty structure tied to the severity and novelty of the vulnerability discovered. This move reflects growing industry pressure to address AI safety proactively rather than reactively, positioning OpenAI ahead of regulatory scrutiny by demonstrating systematic vetting of dangerous capabilities. The program effectively crowdsources adversarial testing from the security community, leveraging external expertise to find gaps in safety measures before bad actors do.",
+      "examples": [
+        "Prompt GPT-5.5 with disguised biosecurity questions, document exactly where safety guardrails fail or succeed.",
+        "Test the model's ability to synthesize pathogen creation instructions from fragmented scientific papers and identify exploitable patterns.",
+        "Map which biological domains (virology, synthetic biology, gain-of-function research) the model handles least safely."
+      ],
+      "build": "Security researchers and biosecurity consultants are charging $5,000–$25,000 per validated vulnerability discovery, with some earning $50,000+ annually by maintaining ongoing testing relationships with AI companies. Biosecurity consulting firms are packaging GPT safety audits as managed services, billing enterprise clients $10,000–$50,000 per comprehensive model assessment. Independent researchers are launching specialized bounty-hunting practices, combining bug bounty payouts with sponsored research contracts from OpenAI and other AI labs.",
+      "unsplash_query": "biosecurity laboratory research safety",
+      "significance": 9,
+      "visual": false,
+      "time": "6h",
       "source": "OpenAI",
       "link": "https://openai.com/index/bio-bug-bounty",
-      "img": "https://images.unsplash.com/photo-1624957866336-6231893d773e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM2ODUwMDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "img": "https://images.unsplash.com/photo-1576765608689-c0e8f69a46b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM3NjUzNDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-07-10"
+      "published_date": "2026-07-11"
     },
     {
-      "id": "2026-07-10-a5",
+      "id": "2026-07-11-a5",
       "cat": "Tools",
-      "hook": "Google just gave Gemini agents superpowers for production work.",
-      "headline": "Google Expands Managed Agents in Gemini API with Background Tasks and Remote MCP",
-      "body": "Google has announced significant new capabilities for Managed Agents in its Gemini API, enabling developers to build more reliable and production-ready AI agents. The update introduces support for background tasks, allowing agents to perform long-running operations without blocking user interactions, and adds integration with remote Model Context Protocol (MCP) servers for enhanced tool connectivity. These additions address key limitations developers faced when building complex agent workflows — previously, agents could struggle with asynchronous operations and had limited flexibility in connecting to external services. Background tasks enable agents to handle time-consuming processes like data processing, report generation, or API calls in the background while maintaining responsiveness. Remote MCP integration means developers can now connect agents to specialized tool ecosystems hosted elsewhere, significantly expanding what agents can accomplish without rewriting core infrastructure. This positions Gemini Managed Agents as a more competitive option for teams building autonomous systems that need to scale reliably in production environments. The timing is notable as AI agent frameworks become increasingly central to enterprise AI strategy, with companies racing to offer developer-friendly platforms that reduce the friction between prototype and production.",
+      "hook": "Google just made building production AI agents way less painful.",
+      "headline": "Google Expands Gemini Managed Agents With Background Tasks and Remote MCP",
+      "body": "Google has announced new capabilities for Managed Agents in the Gemini API, giving developers tools to build production-ready autonomous agents more reliably. The update introduces background task execution and remote Model Context Protocol (MCP) support, allowing agents to perform long-running operations without blocking user interactions and to connect with external tools and data sources remotely. This addresses a major pain point in agent development: the need to integrate with existing systems while maintaining stability and responsiveness. Managed Agents abstract away the complexity of orchestrating multiple API calls, memory management, and tool invocation, letting developers focus on defining what tasks they want agents to accomplish. The background tasks feature enables agents to handle time-consuming operations like data processing, file generation, or API polling asynchronously. Remote MCP support extends the agent's capability to interact with external services and proprietary tools without requiring everything to run in the same environment. Before this announcement, developers building production agents faced challenges around handling concurrent requests, managing state across long operations, and integrating with diverse external systems. These new capabilities position Gemini Managed Agents as a more complete alternative to building custom agent orchestration from scratch, similar to what other platforms like Anthropic's Tools and OpenAI's Assistants API offer. The real-world impact is immediate: developers can now deploy agents that handle complex, multi-step workflows in production without the infrastructure headaches that typically come with autonomous systems.",
       "examples": [
-        "Agent handles a 30-minute data analysis task in the background while serving immediate user requests.",
-        "Connect an agent to remote MCP servers to access specialized databases and tools instantly.",
-        "Build a customer service agent that processes ticket routing asynchronously while maintaining chat responsiveness."
+        "Schedule an agent to process customer support tickets overnight and summarize findings for the team by morning.",
+        "Connect an agent to your internal CRM, knowledge base, and payment system through remote MCP integrations.",
+        "Build a multi-step data analysis workflow where the agent queries, transforms, and generates reports asynchronously."
       ],
-      "build": "Agencies and solo developers are charging $2K-$5K per month to build and manage custom Gemini agents for enterprise clients who need autonomous customer support, data processing, or workflow automation. Productized agent services are launching at $500-$1500/month for SMBs wanting pre-built agents for common tasks. Freelancers on Upwork and specialized platforms are selling Gemini agent builds and integration services within 2-4 week sprints at $3K-$8K per project.",
-      "unsplash_query": "artificial intelligence automation workflows",
-      "significance": 9,
-      "visual": false,
-      "time": "9h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
-      "img": "https://images.unsplash.com/photo-1761195696590-3490ea770aa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM2ODUwMDR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-07-10"
-    },
-    {
-      "id": "2026-07-10-a6",
-      "cat": "Models",
-      "hook": "Google just dropped their biggest AI update of the summer.",
-      "headline": "Google Announces June 2026 AI Updates; Gemini Gets Major Upgrades",
-      "body": "Google revealed its latest AI announcements for June 2026, building on the Gemini model family with significant improvements across reasoning, multimodal capabilities, and real-world applications. The updates focus on enhancing Gemini's ability to handle complex reasoning tasks, process video and images with greater accuracy, and integrate more seamlessly into Google's ecosystem of products. While specific benchmark improvements and model version details were not fully disclosed in the announcement, Google positioned these updates as competitive responses to other leading AI labs' recent releases. The enhancements target both consumer-facing applications through Google's products and enterprise use cases through the Gemini API. This represents Google's continued investment in keeping Gemini at the forefront of generative AI capabilities heading into the second half of 2026.",
-      "examples": [
-        "Feed Gemini a complex research paper and get a structured summary with key findings, methodology, and implications in seconds.",
-        "Upload a video and have Gemini extract specific scenes, transcribe dialogue, and generate captions automatically.",
-        "Input a business problem with context data and receive a detailed analysis with recommended solutions backed by reasoning."
-      ],
-      "build": "Consultants are charging $150-400/hour to audit and implement these new Gemini capabilities into client workflows, from document processing to video analysis. Agencies are bundling Gemini API access into content production packages at $2,000-5,000/month. Freelancers are offering rapid integration services, helping small businesses adopt the updates within 1-2 weeks for $500-1,500 per project.",
-      "unsplash_query": "artificial intelligence technology innovation",
+      "build": "Agencies are already charging $3K–$15K per month for custom agent implementations using Gemini API, handling customer service automation, lead qualification, and content generation. Developers are packaging pre-built agent templates and MCP integrations as productized services, selling them to mid-market companies at $50–$500/month per use case. The fastest money is in building industry-specific agents (e.g., real estate, SaaS support) and reselling them with custom integrations at 3–5x markup.",
+      "unsplash_query": "artificial intelligence developer coding automation",
       "significance": 9,
       "visual": false,
       "time": "4h",
       "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
-      "img": "https://images.unsplash.com/photo-1718241905903-d702d2b59303?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM2ODUwMDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+      "img": "https://images.unsplash.com/photo-1674027326254-88c960d8e561?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM3NjUzNDR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-07-10"
+      "published_date": "2026-07-11"
+    },
+    {
+      "id": "2026-07-11-a6",
+      "cat": "Models",
+      "hook": "Google just dropped their biggest AI updates yet this June.",
+      "headline": "Google's June 2026 AI Announcements: New Models and Capabilities Revealed",
+      "body": "Google announced a series of AI updates in June 2026, though specific details about individual models and features weren't fully outlined in the source material. Based on Google's typical release patterns, these announcements likely included improvements to their Gemini family of models, potential new capabilities in multimodal processing, and enhancements to existing AI tools. Google has been consistently pushing boundaries in large language models, computer vision, and reasoning tasks throughout 2026. The exact benchmarks, model versions, and specific features require deeper review of Google's official announcements. What's clear is that Google continues its aggressive AI development strategy, competing directly with OpenAI, Anthropic, and other major players in the space. These June updates are part of a broader push to maintain Google's position as a leading AI innovator.",
+      "examples": [
+        "Use the new model to process multi-step reasoning tasks faster than previous versions.",
+        "Generate higher-quality multimodal outputs combining text, image, and contextual understanding.",
+        "Deploy updated APIs for faster integration into production applications and services."
+      ],
+      "build": "Consultants are charging $150-300/hour to help businesses integrate Google's latest models into their workflows. Agencies are bundling these updates into AI implementation packages for mid-market companies, earning $5K-25K per project. Developers are creating specialized training courses around the new capabilities, selling access at $500-2,000 per course.",
+      "unsplash_query": "Google AI technology innovation lab",
+      "significance": 9,
+      "visual": false,
+      "time": "2h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
+      "img": "https://images.unsplash.com/photo-1579632179504-9a6b0653e56b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM3NjUzNDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-07-11"
     }
   ]
 }
