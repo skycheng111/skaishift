@@ -1,8 +1,8 @@
 {
   "query": "GPT-5 AI official reveal",
   "topicName": "GPT-5",
-  "hook": "GPT-5 is here and AI will never be the same.",
-  "img": "https://images.unsplash.com/photo-1681164315393-8d2850f570fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM2ODUwMDB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "hook": "The future of AI just arrived and it's wild.",
+  "img": "https://images.unsplash.com/photo-1694903089438-bf28d4697d9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODM4NTI4NTR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Models",
   "videos": [
     {
@@ -21,6 +21,6 @@
       "channel": "AI Guide"
     }
   ],
-  "firstDate": "2026-07-10",
-  "date": "2026-07-11"
+  "firstDate": "2026-07-12",
+  "date": "2026-07-12"
 }
