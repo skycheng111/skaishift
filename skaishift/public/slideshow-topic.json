@@ -1,26 +1,16 @@
 {
-  "query": "Gemini Omni AI official reveal",
-  "topicName": "Gemini Omni",
-  "hook": "Gemini Omni is about to blow your mind.",
-  "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format",
-  "cat": "Tools",
+  "query": "OpenAI exposes safety gaps in AI reveal",
+  "topicName": null,
+  "hook": "OpenAI just revealed how they actually keep AI safe.",
+  "img": "https://images.unsplash.com/photo-1643917853964-434e78b21cf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ2MzI1MDR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
     {
-      "videoId": "KUyRq7szZsM",
-      "title": "Introducing Gemini Omni: Create Anything from Anything",
-      "channel": "Google"
-    },
-    {
-      "videoId": "2m5BCWB02jY",
-      "title": "Meet Gemini Omni",
-      "channel": "Google"
-    },
-    {
-      "videoId": "uW4B6ziQqvY",
-      "title": "What is Gemini Omni?",
-      "channel": "Google"
+      "videoId": "zn4Ri8ZcoT4",
+      "title": "Inside OpenAI&#39;s Framework: The Document That Reshaped AI Safety",
+      "channel": "Digestible AI"
     }
   ],
-  "firstDate": "2026-07-19",
-  "date": "2026-07-20"
+  "firstDate": "2026-07-21",
+  "date": "2026-07-21"
 }

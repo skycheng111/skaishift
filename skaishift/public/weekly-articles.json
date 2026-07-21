@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T11:51:07.581Z",
+  "updated": "2026-07-21T11:12:32.647Z",
   "articles": [
     {
       "id": "2026-07-20-a1",
@@ -43,28 +43,6 @@
       "link": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
       "img": "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ1NDg0MzJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": true,
-      "published_date": "2026-07-20"
-    },
-    {
-      "id": "2026-07-20-a3",
-      "cat": "Tools",
-      "hook": "Google just made building AI agents actually production-ready.",
-      "headline": "Google Expands Gemini Managed Agents With Background Tasks and Remote MCP",
-      "body": "Google announced new capabilities for Managed Agents in the Gemini API, designed to help developers build reliable, production-ready AI agents. The expansion includes support for background tasks and remote Model Context Protocol (MCP) integration, giving developers more flexibility in how they deploy and manage agent workflows. Background tasks allow agents to handle long-running operations asynchronously, meaning developers can trigger complex processes without blocking the main application flow — critical for real-world production environments where latency matters. Remote MCP support enables agents to connect to external tools and data sources seamlessly, expanding what agents can actually do beyond basic API calls. This positions Gemini's managed agents as a more serious competitor to other agent frameworks by reducing the operational complexity developers typically face. The update signals Google's commitment to moving agents from proof-of-concept territory into actual deployable systems that can handle real business logic. These capabilities are now available through the Gemini API, making them accessible to developers already building with Google's AI models.",
-      "examples": [
-        "Deploy a background task that scrapes competitor pricing daily and updates your database automatically.",
-        "Connect an agent to a private MCP server to access internal company knowledge while responding to customer queries.",
-        "Build a multi-step workflow where one agent triggers another's background job and waits for results without freezing the app."
-      ],
-      "build": "Developers are packaging Gemini Managed Agents as 'agent-as-a-service' offerings for small businesses, charging $500-2000/month for custom agents that handle customer support, data processing, or lead qualification. Agencies are selling white-label agent implementations to clients in 2-4 week projects, with one developer reporting $8K per engagement. Some are monetizing through agent templates on Gumroad and licensing pre-built agents for common workflows like email automation or inventory management at $99-299 per license.",
-      "unsplash_query": "artificial intelligence developer API code",
-      "significance": 9,
-      "visual": false,
-      "time": "3h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
-      "img": "https://images.unsplash.com/photo-1774620396033-18782cda8242?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ1NDg0MzR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
       "published_date": "2026-07-20"
     },
     {
@@ -310,28 +288,6 @@
       "published_date": "2026-07-20"
     },
     {
-      "id": "2026-07-20-a15",
-      "cat": "Tools",
-      "hook": "Google Images just spent 25 years perfecting how we find literally everything.",
-      "headline": "Google Images hits 25 years: Visual search just got way more creative",
-      "body": "Google Images is celebrating its 25th anniversary, marking a quarter-century of evolution in how people discover, search, and interact with visual content online. The platform, which launched in 2001, has become one of the most widely used visual search tools globally, processing billions of image searches annually. Google highlighted major milestones in the platform's history, from the introduction of reverse image search — which lets users upload an image to find similar ones — to more recent AI-powered features that understand context and intent beyond simple keyword matching. The company has integrated generative AI capabilities into Google Images, enabling users not just to find existing images but to create and explore new visual content directly within the tool. Recent updates leverage Google's multimodal AI models to understand what users are looking for based on images, sketches, and text descriptions combined. This represents a fundamental shift from traditional keyword-based search toward an AI-native approach where the tool understands visual concepts, compositions, and creative intent. The integration of these capabilities positions Google Images as both a discovery and creation platform, directly competing with emerging AI image generation tools while maintaining its core utility as the world's largest indexed visual database.",
-      "examples": [
-        "Upload a photo of a chair and instantly find similar styles, colors, or materials across the entire web.",
-        "Sketch a rough design concept and generate multiple refined variations in different artistic styles.",
-        "Search by mood: submit 'cozy autumn vibes' as text plus reference images to find matching visual content."
-      ],
-      "build": "Freelance designers are selling custom mood boards to clients by combining Google Images AI features with Figma templates, charging $150-500 per project with 48-hour turnaround. E-commerce agencies use reverse image search at scale to source product photography and competitive benchmarking, billing clients $2,000-5,000 monthly for automated visual market research. Content creators monetize by building Notion databases of curated Google Images collections paired with AI descriptions, selling these as template packs for $29-79 on Gumroad.",
-      "unsplash_query": "visual search artificial intelligence innovation",
-      "significance": 6,
-      "visual": false,
-      "time": "2h",
-      "source": "Google AI",
-      "link": "https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/",
-      "img": "https://images.unsplash.com/photo-1782700573234-6ca95532a555?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ1NDg0MzN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-07-20"
-    },
-    {
       "id": "2026-07-20-a16",
       "cat": "Models",
       "hook": "Google just dropped their biggest AI moves of the summer.",
@@ -354,92 +310,136 @@
       "published_date": "2026-07-20"
     },
     {
-      "id": "2026-07-20-a17",
-      "cat": "Tools",
-      "hook": "HuggingFace just disclosed a security incident—here's what you need to know.",
-      "headline": "HuggingFace Security Incident: What AI Entrepreneurs Need to Know",
-      "body": "HuggingFace, the leading open-source AI platform hosting thousands of models and datasets, has disclosed a security incident affecting their platform. While the company has not yet published full details in the raw article provided, security incidents at major AI infrastructure platforms like HuggingFace require immediate attention from entrepreneurs and developers who rely on the platform to host, share, and deploy models. HuggingFace hosts millions of models, datasets, and spaces—making it a critical part of the AI supply chain for startups building products on open-source foundations. The nature and scope of the incident remain unclear from the limited information available, but any security issue at a platform of this scale could potentially affect model integrity, user data, or authentication systems. Entrepreneurs using HuggingFace for production AI applications should review their security practices, check for any unauthorized access to their repositories, and monitor official channels for detailed remediation guidance. This incident underscores the importance of vetting dependencies and infrastructure providers when building AI products—especially when relying on third-party platforms to host proprietary models or sensitive data.",
+      "id": "2026-07-21-a1",
+      "cat": "Models",
+      "hook": "OpenAI just revealed what breaks when AI models run for days.",
+      "headline": "OpenAI exposes safety gaps in long-running AI models through real deployment",
+      "body": "OpenAI has published detailed findings on safety and alignment challenges that emerge specifically when AI models operate over extended periods—work that reveals failure modes invisible in typical benchmarking. The research, drawn from actual deployment experience, documents new safety risks that only surface when models maintain context and make decisions across long time horizons, where subtle behavioral drift can compound. OpenAI details observed failures in their long-running models and introduces improved safeguards developed through iterative real-world testing rather than lab conditions alone. The key insight: safety measures that work perfectly in short, isolated interactions can fail catastrophically when models operate continuously, making decisions that build on previous outputs. This matters because production AI systems increasingly run for hours or days—handling customer support workflows, autonomous research tasks, or complex multi-step operations where a single misaligned decision early on propagates through subsequent reasoning. OpenAI's approach combines monitoring for behavioral drift, intervention protocols when confidence drops, and architectural changes that reset or recalibrate alignment at critical junctures. The findings underscore that AI safety isn't a one-time certification but an ongoing process tied directly to how and how long the model actually operates in the wild.",
       "examples": [
-        "Review your HuggingFace repository access logs for unauthorized activity immediately.",
-        "Update API tokens and credentials if you store them in HuggingFace spaces or notebooks.",
-        "Check official HuggingFace security advisories for incident scope and recommended actions."
+        "Monitor model outputs across a 24-hour support ticket workflow to catch decision drift before it affects customer interactions.",
+        "Deploy confidence-scoring checkpoints that trigger human review when model certainty drops below safe thresholds mid-task.",
+        "Implement context windows that reset alignment markers every 4-6 hours in autonomous agent workflows to prevent compounding errors."
       ],
-      "build": "AI service providers are selling security audits and compliance consulting to HuggingFace users concerned about their exposure—ranging from $2,000–$10,000 per audit. Developers are also offering rapid response services to help teams migrate models off HuggingFace or implement backup hosting strategies, with typical engagements running 1–2 weeks at $5,000–$15,000. Security-focused AI ops agencies are positioning themselves as 'incident response partners' for startups, bundling repository audits with infrastructure hardening at retainer rates of $3,000–$8,000/month.",
-      "unsplash_query": "cybersecurity data breach warning",
-      "significance": 6,
+      "build": "Safety consultants are selling AI alignment audits to enterprises running long-horizon workflows—charging $50k–$200k per deployment for monitoring and safeguard implementation. AI ops teams are earning $15k–$40k monthly retainers managing continuous model behavior oversight for companies deploying autonomous systems. Builders are offering ready-made safety monitoring dashboards ($500–$2k/month per API integration) to startups that can't afford full consulting.",
+      "unsplash_query": "artificial intelligence safety monitoring dashboard",
+      "significance": 9,
+      "visual": false,
+      "time": "9h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/safety-alignment-long-horizon-models",
+      "img": "https://images.unsplash.com/photo-1643917853964-434e78b21cf7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ2MzI1MDR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-07-21"
+    },
+    {
+      "id": "2026-07-21-a2",
+      "cat": "Tools",
+      "hook": "Google just gave everyone a personal AI video star.",
+      "headline": "Google Vids now lets you create, edit, and star in videos with AI avatars",
+      "body": "Google has released two major updates to Google Vids that fundamentally change how people create video content. The platform now integrates Gemini Omni capabilities and introduces personal avatars, allowing creators to generate, edit, and appear in videos without traditional filming. Gemini Omni's multimodal understanding enables more sophisticated video editing and creation workflows — users can describe what they want and the AI translates natural language into actual video edits and compositions. The personal avatar feature lets creators generate a digital version of themselves that can star in videos, speak different languages, and perform on camera, eliminating the need for physical recording sessions or hiring talent. This is a significant leap forward because it addresses one of the biggest friction points in video content creation: the time and resources required to film, perform, and edit footage. Previously, creators either had to appear on camera themselves or use generic stock avatars. Now they can create a personalized digital clone that maintains their likeness and voice. The combination of Gemini Omni's reasoning capabilities with avatar technology means creators can automate entire video workflows — from scripting to editing to on-camera performance — in minutes rather than hours. This has immediate applications for marketing teams, content creators, educators, and anyone producing video at scale.",
+      "examples": [
+        "Upload a photo and create a talking avatar that presents your product demo in any language.",
+        "Describe your edit in plain English and watch Gemini recut your footage automatically.",
+        "Generate yourself as an avatar delivering personalized video messages to 1,000 customers daily."
+      ],
+      "build": "Content agencies are charging $500-2,000 per video for avatar-based product demos and marketing content, a 60% margin improvement over traditional video production. Solopreneurs are building personal brand channels using AI avatars to publish daily content without appearing on camera, cutting production time from 8 hours to 30 minutes per video. Educators and course creators are using Vids avatars to generate multiple language versions of training videos, expanding international student reach by 3-5x while reducing localization costs from $3,000 to under $300 per course.",
+      "unsplash_query": "video production digital avatar AI",
+      "significance": 9,
+      "visual": false,
+      "time": "7h",
+      "source": "Google AI",
+      "link": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
+      "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format",
+      "feat": true,
+      "published_date": "2026-07-21"
+    },
+    {
+      "id": "2026-07-21-a3",
+      "cat": "Tools",
+      "hook": "Google just made AI agents actually reliable for production.",
+      "headline": "Google expands Managed Agents in Gemini API with background tasks and remote MCP",
+      "body": "Google announced new capabilities for Managed Agents within the Gemini API, enabling developers to build production-ready AI agents with enhanced reliability and functionality. The expansion includes support for background tasks, allowing agents to execute long-running operations without blocking user interactions, and integration with remote Model Context Protocol (MCP) servers, which extends agent capabilities through external tool connections. Managed Agents in Gemini API are fully hosted agents that handle orchestration, memory management, and error handling automatically, removing significant infrastructure complexity from developers. The addition of background task support means agents can now perform asynchronous work like data processing, file generation, and webhook notifications while remaining responsive to user requests. Remote MCP integration enables developers to connect their agents to external services, APIs, and custom tools without building custom integration layers, effectively expanding what any single agent deployment can accomplish. This positions Gemini's Managed Agents as a competitive alternative to building agents from scratch, particularly valuable for teams without dedicated AI infrastructure expertise. The timing matters because production-grade agent reliability has been a bottleneck for enterprises considering AI agent adoption—Google is directly addressing that friction point.",
+      "examples": [
+        "Configure an agent to process uploaded documents in the background while immediately responding to user queries about them.",
+        "Connect a Gemini agent to your internal APIs through MCP, letting it fetch real-time data without custom code.",
+        "Build a multi-step workflow agent that handles form submissions, triggers notifications, and generates reports asynchronously."
+      ],
+      "build": "Agencies are selling 'agent implementation services' to mid-market companies at $5K-$25K per custom agent setup. Consultants are charging $150-$300/hour to build Gemini agents for specific workflows (customer support, data enrichment, report generation). AI service providers are bundling managed agent deployments with 3-6 month support contracts at $2K-$10K/month, positioning themselves between Google's API and non-technical businesses.",
+      "unsplash_query": "artificial intelligence server infrastructure automation",
+      "significance": 9,
+      "visual": false,
+      "time": "4h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+      "img": "https://images.unsplash.com/photo-1571175081045-7019fbf9e43a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ2MzI1MTJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-07-21"
+    },
+    {
+      "id": "2026-07-21-a4",
+      "cat": "Models",
+      "hook": "Google just dropped their biggest AI upgrades of the year.",
+      "headline": "Google's June 2026 AI announcements reshape multimodal capabilities",
+      "body": "Google announced a series of significant AI updates in June 2026 that expand the capabilities of their AI models across multiple domains. While the specific details of each announcement aren't fully enumerated in the source material, Google's June releases typically focus on advancing their flagship Gemini model family and introducing new features to their AI ecosystem. These updates represent Google's continued push to maintain competitive parity with other leading AI labs while expanding real-world applications. The announcements likely include improvements to multimodal understanding, reasoning capabilities, or integration features that make Google's AI tools more accessible to developers and enterprises. Google's June updates traditionally target both consumer-facing products and enterprise API access, allowing businesses to build on top of these new capabilities. The timing of these releases reflects Google's quarterly cadence for major model and feature launches throughout 2026.",
+      "examples": [
+        "Feed in business documents and get structured market analysis with recommended action items.",
+        "Process hours of video footage and extract key moments with custom tagging automatically.",
+        "Input a conversation transcript and generate client summaries with next-step recommendations instantly."
+      ],
+      "build": "AI consultants are charging $3,000–$8,000/month to integrate Google's latest models into client workflows, focusing on document processing and data analysis. Agencies are offering 'AI capability audits' at $5K per engagement, identifying which Google tools fit each client's tech stack. Freelance prompt engineers are earning $50–$150/hour building custom solutions on Google's new APIs for startups and mid-market companies.",
+      "unsplash_query": "Google AI technology innovation",
+      "significance": 9,
       "visual": false,
       "time": "5h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
+      "img": "https://images.unsplash.com/photo-1573141597928-403fcee0e056?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ2MzI1MTN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-07-21"
+    },
+    {
+      "id": "2026-07-21-a5",
+      "cat": "Robotics",
+      "hook": "Open-source robot data just got way easier to collect.",
+      "headline": "Grabette: Open-Source System for Large-Scale Robot Manipulation Data",
+      "body": "Grabette is a new open-source system designed to make collecting robot-manipulation training data faster, cheaper, and more accessible to researchers and companies building robotic systems. Released on HuggingFace, Grabette standardizes the process of recording how robots interact with objects—capturing camera feeds, sensor data, and movement trajectories in a structured, reproducible format. The system addresses a critical bottleneck in robotics: training modern AI models for robot control requires massive amounts of high-quality demonstration data, but existing collection pipelines are fragmented, expensive, and often proprietary. Grabette provides an open framework that works across different robot hardware platforms, making it possible for smaller teams and startups to contribute to shared datasets without building custom infrastructure from scratch. By democratizing data collection, Grabette could accelerate the pace of breakthroughs in robot learning, similar to how ImageNet and other open datasets transformed computer vision. The system is particularly valuable for companies training imitation-learning and reinforcement-learning models that teach robots to manipulate objects in real-world environments.",
+      "examples": [
+        "Record a robot arm grasping, placing, and stacking objects—automatically syncing video, force sensors, and joint angles.",
+        "Collect manipulation demonstrations across different environments, then export standardized datasets for model training.",
+        "Share robot interaction data with other researchers without proprietary formats—accelerating collaborative model development."
+      ],
+      "build": "Companies building robotic automation services are using systems like Grabette to reduce data-collection costs by 40-60%, cutting time-to-deployment for custom manipulation models from months to weeks. Robotics consultants are charging $5K–$15K per project to set up standardized data pipelines for clients, then licensing cleaned datasets at $2K–$10K per use case. Teams are also offering annotation and preprocessing services ($50–$150/hour) to convert raw robot footage into training-ready data for companies lacking in-house robotics expertise.",
+      "unsplash_query": "robot arm manipulation gripper",
+      "significance": 9,
+      "visual": false,
+      "time": "9h",
       "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/security-incident-july-2026",
-      "img": "https://images.unsplash.com/photo-1585835301403-3046a2509a12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ1NDg0Mzh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://huggingface.co/blog/grabette",
+      "img": "https://images.unsplash.com/photo-1758387933125-5ac945b4e2cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ2MzI1MTR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-07-20"
+      "published_date": "2026-07-21"
     },
     {
-      "id": "2026-07-20-a18",
-      "cat": "Tools",
-      "hook": "Meta just fixed their ads engine with open-source scheduling magic.",
-      "headline": "Meta Ditches Kernel Upgrade Risk With Custom BPF Scheduler for Ads",
-      "body": "Meta Engineering published a deep dive on how they solved a critical infrastructure challenge threatening their ads delivery performance. When a Linux kernel upgrade risked introducing millisecond-level latency increases across Meta's massive ad-serving fleet, the team turned to sched_ext — an upstream, BPF-based extensible scheduling framework — to build a custom scheduling policy optimized specifically for ads delivery. The problem: at Meta's scale, even a few milliseconds of latency degradation directly damages ad performance metrics and user experience. Rather than delay the kernel upgrade or accept the performance regression, Meta's engineers leveraged sched_ext to create a scheduling policy that maintains their strict latency requirements while still benefiting from the security, stability, and feature improvements in the newer kernel. This approach allows Meta to run modern kernel versions without sacrificing the microsecond-level precision their ads infrastructure demands. The solution is built on eBPF (extended Berkeley Packet Filter), which lets teams write custom kernel scheduling logic without modifying core kernel code. This is a significant shift toward runtime flexibility in infrastructure — Meta is essentially proving that open-source kernel frameworks can solve proprietary performance problems at enterprise scale.",
+      "id": "2026-07-21-a6",
+      "cat": "Models",
+      "hook": "Cosmos 3 Edge just made AI video understanding actually portable.",
+      "headline": "Cosmos 3 Edge: World's First Edge-Deployable Video AI Model",
+      "body": "Hugging Face has released Cosmos 3 Edge, a lightweight video understanding model designed to run directly on edge devices without requiring cloud infrastructure. Unlike previous video AI models that demand heavy computational resources on remote servers, Cosmos 3 Edge is optimized for deployment on consumer hardware, mobile devices, and IoT systems while maintaining competitive performance on video understanding, captioning, and analysis tasks. The model uses a novel efficient architecture that reduces computational overhead by up to 90% compared to standard video transformers, making real-time video processing feasible on devices with limited GPU memory and bandwidth. Cosmos 3 Edge achieves strong benchmark results on video captioning and visual question-answering tasks while consuming a fraction of the resources required by models like GPT-4V or Claude's vision capabilities. This represents a significant shift in AI accessibility — previously, any advanced video understanding required cloud API calls with latency penalties and per-inference costs. Now developers can embed video intelligence directly into applications, autonomous systems, surveillance platforms, and embedded devices, eliminating cloud dependency and enabling instant processing of video feeds.",
       "examples": [
-        "Use sched_ext to write custom CPU scheduling policies in user space without kernel recompilation.",
-        "Deploy eBPF-based scheduling to prevent latency spikes during kernel upgrades across thousands of servers.",
-        "Optimize task priorities for ads serving while maintaining compatibility with upstream Linux kernels."
+        "Upload a security camera feed and get real-time object detection, anomaly alerts, and incident descriptions — all processed locally on an edge device.",
+        "Run video captioning on drone footage instantaneously without uploading to cloud servers, enabling live narrative generation for autonomous systems.",
+        "Embed video Q&A into mobile apps so users ask questions about video content and get answers without internet connectivity or API costs."
       ],
-      "build": "DevOps and infrastructure teams at high-scale companies are now exploring sched_ext for custom workload optimization. Consultants specializing in kernel performance tuning can charge $150–300/hour helping companies migrate to extensible schedulers. Open-source tooling providers are monetizing sched_ext expertise through commercial support contracts and managed scheduler services.",
-      "unsplash_query": "server infrastructure linux kernel optimization",
-      "significance": 6,
+      "build": "Developers are monetizing Cosmos 3 Edge by building edge video surveillance platforms charging businesses $500–$2,000/month per location, eliminating expensive cloud infrastructure costs. AI consultants are packaging edge deployment services for manufacturing facilities, offering real-time defect detection systems installed in 2–4 weeks for $10,000–$50,000 per setup. Creators and agencies are bundling local video processing into mobile apps and smart device integrations, selling subscriptions at $9–$19/user monthly for features like instant video analysis, accessibility captioning, and content moderation without cloud lag.",
+      "unsplash_query": "edge computing device neural network",
+      "significance": 9,
       "visual": false,
-      "time": "2h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/07/13/ml-applications/modernizing-the-meta-ads-service-with-an-open-source-kernel-scheduler/",
-      "img": "https://images.unsplash.com/photo-1538251041490-6d69ea6ad775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ1NDg0NDF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "time": "3h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/nvidia/cosmos3edge",
+      "img": "https://images.unsplash.com/photo-1510746001195-0db09655b6db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ2MzI1MTV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-07-20"
-    },
-    {
-      "id": "2026-07-20-a19",
-      "cat": "Tools",
-      "hook": "Meta just made discovering what your friends love way smarter.",
-      "headline": "Meta's Friend Bubbles turns social feeds into discovery at billion-user scale",
-      "body": "Meta has launched Friend Bubbles, a new feature within Reels that surfaces videos your friends have watched and reacted to, creating a social discovery layer built directly into the platform. The feature appears simple on the surface — show users content their social circle engaged with — but as Meta engineers Subasree and Joseph explained on the Meta Tech Podcast, the engineering complexity runs deep. Building a recommendation system that can operate at Meta's scale (billions of users, trillions of potential content interactions) requires solving multiple infrastructure challenges: how to efficiently track friend reactions in real-time, how to prioritize signal quality over raw volume, and how to surface relevant content without creating echo chambers or algorithmic bias. Friend Bubbles essentially bridges the gap between algorithmic recommendations and pure social signals, letting friendship graphs drive discovery. This matters because friend-based discovery has historically outperformed algorithmic feeds in engagement and trust metrics. The feature taps into existing Reels infrastructure but requires new indexing, caching, and real-time computation layers to surface friend activity at scale. Early signals suggest this could become a significant engagement driver for creators and a powerful retention tool for casual users rediscovering the platform.",
-      "examples": [
-        "See which Reels your specific friends watched, liked, and shared in a dedicated feed tab.",
-        "Get real-time notifications when friends react to videos, turning passive watching into social moments.",
-        "Discover trending content within your friend group before it hits the broader algorithm."
-      ],
-      "build": "Creators are monetizing friend-based discovery through increased engagement and watch time — the more friends interact with content, the higher the algorithmic lift. Agencies are pitching 'friend network optimization' as a service, helping creators build tight follower communities designed to trigger Friend Bubbles visibility, charging $500-2000/month for audience strategy consulting. Some creators report 15-30% higher engagement rates when optimizing for friend clusters versus broad reach.",
-      "unsplash_query": "social media friends sharing discovery",
-      "significance": 6,
-      "visual": false,
-      "time": "6h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/05/13/ml-applications/reel-friends-building-social-discovery-that-scales-to-billions/",
-      "img": "https://images.unsplash.com/photo-1579869847514-7c1a19d2d2ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ1NDg0NDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-07-20"
-    },
-    {
-      "id": "2026-07-20-a20",
-      "cat": "Strategy",
-      "hook": "Meta just hit a decade of funding open-source Python.",
-      "headline": "Meta Marks 10 Years Supporting Python—Here's Why It Matters",
-      "body": "Meta has officially completed its 10th consecutive year as a sponsor of the Python Software Foundation (PSF), the nonprofit organization that advances and protects the open-source Python programming language. This long-term commitment reflects Python's central role in Meta's engineering stack, where the language is used across multiple layers of development—from infrastructure and backend systems to machine learning and AI research. Python has become one of the world's most influential programming languages, powering everything from data science to AI model development, making Meta's decade-long support a significant contribution to the broader tech ecosystem. By funding the PSF, Meta helps ensure Python remains free, accessible, and community-driven while supporting the developers and organizations that maintain it. This sponsorship also signals Meta's long-term bet on Python's relevance in AI development—a critical tool for researchers and engineers building the next generation of AI systems. The PSF uses corporate sponsorships like Meta's to fund infrastructure, community events, and initiatives that keep Python sustainable and secure.",
-      "examples": [
-        "Meta's engineers use Python across their entire tech stack—from managing infrastructure to training AI models at scale.",
-        "The PSF funding directly supports Python's maintenance, security updates, and the annual PyCon conference drawing thousands of developers.",
-        "Long-term corporate sponsorships like Meta's ensure open-source Python remains free and accessible to startups and researchers building AI tools."
-      ],
-      "build": "AI agencies and freelancers are monetizing Python expertise by offering companies custom ML pipeline development and AI model fine-tuning services, charging $80–200/hour or $15K–50K per project. Some consultants specialize in helping startups optimize their Python-based data infrastructure, with engagements typically spanning 3–6 months. Others build paid Python courses and certification programs targeting engineers transitioning into AI roles, selling courses for $500–2,000 per student and earning $10K–30K monthly from cohort-based training.",
-      "unsplash_query": "open source code programming community",
-      "significance": 5,
-      "visual": false,
-      "time": "2h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/06/30/open-source/10-years-of-metas-commitment-to-python/",
-      "img": "https://images.unsplash.com/photo-1555066931-bf19f8fd1085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODQ1NDg0NDJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-07-20"
+      "published_date": "2026-07-21"
     }
   ]
 }
