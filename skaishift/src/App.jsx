@@ -691,30 +691,30 @@ function LiveSection() {
 function APIPriceMarquee() {
   // Fallback prices if API fails
   const FALLBACK = [
-    { model:"GPT-5.5",           input:"$5.00", output:"$30.00", color:"#10A37F" },
+    { model:"GPT-5.6 Sol",       input:"$5.00", output:"$30.00", color:"#10A37F" },
     { model:"GPT-4.1 Nano",      input:"$0.10", output:"$0.40",  color:"#10A37F" },
-    { model:"Claude Sonnet 4.6", input:"$3.00", output:"$15.00", color:"#CC785C" },
+    { model:"Claude Sonnet 5",   input:"$2.00", output:"$10.00", color:"#CC785C" },
     { model:"Claude Opus 4.8",   input:"$5.00", output:"$25.00", color:"#CC785C" },
     { model:"Claude Haiku 4.5",  input:"$1.00", output:"$5.00",  color:"#CC785C" },
     { model:"Gemini 3.5 Flash",  input:"$0.30", output:"$2.50",  color:"#4285F4" },
     { model:"Gemini 3.1 Pro",    input:"$2.00", output:"$12.00", color:"#4285F4" },
     { model:"DeepSeek Chat V3",  input:"$0.20", output:"$0.77",  color:"#4D9EFF" },
-    { model:"Mistral Large",     input:"$0.50", output:"$1.50",  color:"#FF7000" },
+    { model:"Grok 4.5",          input:"$2.00", output:"$6.00",  color:"#1DA1F2" },
     { model:"Llama 3.3 70B",     input:"$0.10", output:"$0.32",  color:"#0866FF" },
   ];
 
   // OpenRouter model IDs → display names + colors
   const MODEL_MAP = [
-    { id:"openai/gpt-5.5",                      name:"GPT-5.5",           color:"#10A37F" },
+    { id:"openai/gpt-5.6-sol",                  name:"GPT-5.6 Sol",       color:"#10A37F" },
     { id:"openai/gpt-4.1-nano",                 name:"GPT-4.1 Nano",      color:"#10A37F" },
-    { id:"anthropic/claude-sonnet-4.6",         name:"Claude Sonnet 4.6", color:"#CC785C" },
+    { id:"anthropic/claude-sonnet-5",           name:"Claude Sonnet 5",   color:"#CC785C" },
     { id:"anthropic/claude-haiku-4.5",          name:"Claude Haiku 4.5",  color:"#CC785C" },
     { id:"anthropic/claude-opus-4.8",           name:"Claude Opus 4.8",   color:"#CC785C" },
     { id:"~anthropic/claude-fable-latest",      name:"Claude Fable 5",    color:"#CC785C" },
-    { id:"google/gemini-3.5-flash",             name:"Gemini 3.5 Flash",  color:"#4285F4" },
+    { id:"google/gemini-3.6-flash",             name:"Gemini 3.6 Flash",  color:"#4285F4" },
     { id:"google/gemini-3.1-pro-preview",        name:"Gemini 3.1 Pro",    color:"#4285F4" },
     { id:"deepseek/deepseek-chat-v3-0324",      name:"DeepSeek Chat V3",  color:"#4D9EFF" },
-    { id:"mistralai/mistral-large-2512",        name:"Mistral Large",     color:"#FF7000" },
+    { id:"x-ai/grok-4.5",                      name:"Grok 4.5",          color:"#1DA1F2" },
     { id:"qwen/qwen3.7-max",                    name:"Qwen 3.7 Max",      color:"#6B21A8" },
   ];
 
@@ -1171,7 +1171,7 @@ const LEARN_SECTIONS = [
       {q:"How it works",a:"An LLM is trained by reading an enormous amount of text — websites, books, code, articles — and learning to predict what word comes next in a sentence. Done at massive scale (billions of examples, billions of parameters), this simple task produces a system that can write, reason, answer questions, summarize, translate, and hold conversations. The 'large' in LLM refers to both the size of the training data and the number of parameters (internal settings) the model uses."},
       {q:"What 'parameters' means",a:"Parameters are the numerical values inside the model that determine how it responds to any input. A model with 70 billion parameters has 70 billion internal dials that were tuned during training. More parameters generally means a more capable model, but also more computing power required to run it. GPT-4 is estimated to have around 1.8 trillion parameters."},
       {q:"Context window",a:"The context window is how much text an LLM can 'see' at once — its short-term memory. Early models had context windows of around 4,000 tokens (about 3,000 words). Today's best models handle 1–10 million tokens — Llama 4 Scout holds the open-weight record at 10 million tokens (equivalent to about 7.5 million words, or a full year of documentation). Larger context windows let you feed entire codebases, legal document sets, or research libraries in a single prompt."},
-      {q:"The main LLMs and who makes them",a:"OpenAI makes GPT-5.5. Anthropic makes Claude (Haiku, Sonnet, Opus 4.8) and the new Claude Fable 5 for long-horizon agentic work. Google makes Gemini (3.5 Flash, 3.1 Pro) and Gemini Omni for video. Meta makes Llama 4 (open-source — Scout and Maverick). Alibaba makes Qwen 3.7 Max, a frontier-competitive model at a fraction of the cost. Mistral makes efficient models. xAI makes Grok 4.3. DeepSeek (China) makes powerful open-source models. Each has different strengths — some are faster and cheaper, others are better at reasoning, coding, or long documents."},
+      {q:"The main LLMs and who makes them",a:"OpenAI makes GPT-5.6 (Sol/Terra/Luna family, GA July 9 2026). Anthropic makes Claude Sonnet 5 (the new default as of June 30), Opus 4.8, and Fable 5. Google makes Gemini 3.6 Flash and Gemini Omni. Meta makes Llama 4 (open-source). Alibaba makes Qwen 3.7 Max. SpaceXAI (formerly xAI, now a SpaceX division) makes Grok 4.5 — a Cursor-trained coding model at $2/$6 per MTok. DeepSeek (China) makes powerful open-source models."},
       {q:"Tokens — what they are",a:"LLMs don't read word by word — they read in 'tokens,' which are chunks of text roughly 3-4 characters long. '1,000 tokens' is about 750 words. Token limits matter for pricing (you pay per token) and context length. When people say a model 'runs out of context,' it means it's processed too many tokens and can no longer see earlier parts of the conversation."},
     ]
   },
@@ -1231,12 +1231,12 @@ const LEARN_SECTIONS = [
     color:CATS.Robotics,
     intro:"The AI landscape is dominated by a handful of companies whose model releases directly affect what's possible in any AI product. Knowing who makes what helps you follow the news intelligently.",
     content:[
-      {q:"Anthropic — Claude",a:"Anthropic is an AI safety company founded by former OpenAI researchers including Dario and Daniela Amodei. They make the Claude family of models: Claude Haiku (fast, cheap, good for automation), Claude Sonnet (balanced performance and cost, best for most applications), and Claude Opus 4.7 (most capable generally available model, $5/$25 per million tokens, exceptional at agentic coding and visual reasoning). Claude Mythos Preview is Anthropic's most powerful model but remains restricted. Claude is known for being particularly good at nuanced writing, following complex instructions, and agentic task execution."},
-      {q:"OpenAI — GPT & o-series",a:"OpenAI is the most prominent AI company, known for ChatGPT and the GPT model series. Their current lineup includes GPT-5.5 (April 2026, $5/$30 per million tokens, leads on agentic coding and long-context retrieval), GPT-4.1 Nano (ultra fast and cheap), and GPT Image 2.0 for image generation. Codex is their cloud-based async coding agent. Note: Sora (video) is being discontinued in 2026 — API sunset in September. They pioneered the current AI boom with ChatGPT in late 2022."},
-      {q:"Google — Gemini",a:"Google DeepMind makes the Gemini model family. As of I/O 2026: Gemini 3.5 Flash (fast, agentic, 4× faster than other frontier models), Gemini 3.5 Pro (in testing), and Gemini Omni (natively multimodal — generates video from text, images, or audio input). Antigravity 2.0 is Google's free agentic coding tool. Google Flow is their AI creative studio for video generation. Gemini is embedded in Google Workspace and Android."},
+      {q:"Anthropic — Claude",a:"Anthropic is an AI safety company founded by former OpenAI researchers. As of July 2026, their lineup is: Claude Haiku 4.5 (fast, cheap), Claude Sonnet 5 (new June 30 default — near-Opus agentic performance at $2/$10 intro), Claude Opus 4.8 (most capable general model, $5/$25), and Fable 5 (frontier-class, $10/$50). Mythos 5 is restricted to Project Glasswing partners. Sonnet 5 closed much of the gap with Opus on coding and agentic benchmarks."},
+      {q:"OpenAI — GPT & o-series",a:"OpenAI makes ChatGPT and the GPT model series. As of July 9, 2026, GPT-5.6 is their flagship family: Sol ($5/$30) for complex agentic work, Terra ($2.50/$15) for everyday tasks at half the cost, Luna ($1/$6) for high-volume speed work. GPT-4.1 Nano remains ultra cheap. Codex is their cloud-based coding agent. Sora (video) discontinued — web/app gone April 26, API sunset September 2026. ChatGPT pioneered the current AI boom in late 2022."},
+      {q:"Google — Gemini",a:"Google DeepMind makes the Gemini model family. Current lineup (July 2026): Gemini 3.6 Flash (July 21, fastest + cheapest output at $7.50/MTok out), Gemini 3.1 Pro Preview (API testing), and Gemini Omni (natively multimodal — generates video from text, images, or audio). Google Flow is their AI creative studio for video. Veo 3.1 is their flagship video model. Gemini is embedded in Google Workspace and Android."},
       {q:"Meta — Llama (open-source)",a:"Meta releases Llama models as open-source — meaning anyone can download, run, and modify them for free. Llama 4 (released April 2025) introduced two key variants: Scout (17B active parameters, 10M token context window — largest of any open-weight model) and Maverick (400B total parameters, frontier-competitive performance). Both use Mixture-of-Experts architecture and are natively multimodal. Llama 4 is embedded in Meta AI across WhatsApp, Instagram, and Facebook. Self-hosting Scout on an RTX 4090 costs ~$46/month in electricity vs. hundreds in API fees."},
       {q:"Mistral — efficient & local",a:"Mistral is a French AI company making highly efficient models. Mistral Large 2512 is their current flagship ($0.50/$1.50 per million tokens — significantly cheaper than US frontier models). Their models can run on a laptop or small server with no internet connection, making them ideal for regulated industries where data can't leave the building. Mistral Medium 3.5 and Mistral Small 3.2 are strong options for cost-sensitive applications. European data residency compliance is a key advantage for EU-based businesses."},
-      {q:"xAI — Grok",a:"xAI is Elon Musk's AI company, making the Grok model. The current flagship is Grok 4.3, which leads on agentic tool calling, instruction following, and legal reasoning (ranked #1 on CaseLaw benchmark). New in June 2026: native video input (mp4/mov/webm up to 5 minutes), continuous always-on reasoning, and Custom Voices voice cloning. Grok is integrated into X (Twitter) and Tesla vehicles, with Connectors for Google Workspace, Notion, GitHub, and more."},
+      {q:"SpaceXAI — Grok",a:"xAI was acquired by SpaceX in February 2026 and is now operating as SpaceXAI. Current flagship: Grok 4.5 (July 8, 2026) — a Cursor-trained MoE coding model at $2/$6 per MTok, ranked #4 on the Artificial Analysis Intelligence Index. Beats Opus 4.8 on DeepSWE 1.0 and Terminal-Bench 2.1 at 60%+ lower cost. Features: real-time X data, DeepSearch, native video input, Grok Build CLI. SpaceXAI also acquired Cursor (the AI code editor) in June 2026 for $60B."},
       {q:"DeepSeek",a:"DeepSeek is a Chinese AI company that released highly capable open-source models — including DeepSeek-V3 and DeepSeek-R1 — that match or beat frontier US models at a fraction of the training cost. DeepSeek R1's release in January 2025 caused significant market disruption and drew comparisons to Sputnik. Their efficiency innovations have been widely adopted across the industry. Important caveat: DeepSeek models send data to servers in China — regulated industries and privacy-conscious users should self-host the open weights rather than using their API."},
     ]
   },
@@ -1515,10 +1515,10 @@ function TermsPage() {
 // ── TOOL DIRECTORY ────────────────────────────────────────────────────────────
 const AI_TOOLS = [
   // Chat
-  { name:"ChatGPT",         cat:"Chat",        desc:"OpenAI's flagship conversational AI. GPT-5.5 powers the latest version. Best all-rounder for writing, research, coding, and image generation.", url:"https://chatgpt.com" },
-  { name:"Claude",          cat:"Chat",        desc:"Anthropic's AI. Excellent for long documents, nuanced writing, agentic coding, and complex reasoning. Claude Opus 4.8 is the current flagship.", url:"https://claude.ai" },
-  { name:"Gemini",          cat:"Chat",        desc:"Google's AI. Gemini 3.5 Flash is the fastest free option — now matches Claude Sonnet on professional tasks. Deeply integrated with Google Workspace, Search, and YouTube.", url:"https://gemini.google.com" },
-  { name:"Grok",            cat:"Chat",        desc:"xAI's conversational model (Grok 4.3). Real-time X/Twitter data, DeepSearch, native video input (mp4/mov/webm), image generation, and Connectors for Google Workspace, GitHub, Notion and more.", url:"https://grok.com" },
+  { name:"ChatGPT",         cat:"Chat",        desc:"OpenAI's flagship conversational AI. GPT-5.6 (Sol/Terra/Luna) is ChatGPT's new default as of July 9, 2026. Sol is the frontier tier, Terra matches GPT-5.5 at half the cost, Luna is the fastest for high-volume work.", url:"https://chatgpt.com" },
+  { name:"Claude",          cat:"Chat",        desc:"Anthropic's AI. Claude Sonnet 5 (June 30, 2026) is now the default for Free and Pro — near-Opus agentic performance at Sonnet pricing. Opus 4.8 and Fable 5 available for the most demanding tasks.", url:"https://claude.ai" },
+  { name:"Gemini",          cat:"Chat",        desc:"Google's AI. Gemini 3.6 Flash (July 21, 2026) is the fastest free option with cheaper output pricing. Deeply integrated with Google Workspace, Search, and YouTube.", url:"https://gemini.google.com" },
+  { name:"Grok",            cat:"Chat",        desc:"SpaceXAI's conversational model (Grok 4.5, July 8 2026). Coding-focused MoE model trained on Cursor data. $2/$6 per MTok — undercuts Opus 4.8 by 3×. Real-time X data, DeepSearch, native video input, Grok Build CLI.", url:"https://grok.com" },
   // Research
   { name:"NotebookLM",      cat:"Research",    desc:"Google's AI research assistant. Upload documents, PDFs, or URLs and have a conversation with your sources. Outstanding for literature review and source synthesis.", url:"https://notebooklm.google.com" },
   { name:"Perplexity",      cat:"Research",    desc:"AI-powered search and research platform. Cites every source, 92% factual accuracy on real-time queries. Now includes Deep Research, Comet browser, and Model Council (runs queries across multiple frontier models simultaneously).", url:"https://perplexity.ai" },
@@ -1676,17 +1676,17 @@ function EarnPage() {
 
 // ── MODEL COMPARISON (live prices from OpenRouter) ────────────────────────────
 const MODELS_META = [
-  { id:"openai/gpt-5.5",                     name:"GPT-5.5",          maker:"OpenAI",    best:"Agentic coding, long-context retrieval", speed:"Fast", tier:"Frontier" },
+  { id:"openai/gpt-5.6-sol",                 name:"GPT-5.6 Sol",      maker:"OpenAI",    best:"Frontier agentic coding, biology, cybersecurity", speed:"Fast", tier:"Frontier" },
   { id:"openai/gpt-4.1-nano",                name:"GPT-4.1 Nano",     maker:"OpenAI",    best:"Speed, cost-sensitive tasks",       speed:"Fastest", tier:"Budget" },
   { id:"anthropic/claude-opus-4.8",          name:"Claude Opus 4.8",  maker:"Anthropic", best:"Agentic coding, clean tool use, fastest Opus yet", speed:"Medium", tier:"Frontier" },
   { id:"~anthropic/claude-fable-latest",     name:"Claude Fable 5",   maker:"Anthropic", best:"Mythos-class reasoning, 1M context, long-horizon agentic work", speed:"Medium", tier:"Frontier" },
   { id:"anthropic/claude-sonnet-4.6",        name:"Claude Sonnet 4.6",maker:"Anthropic", best:"Everyday tasks, best value",        speed:"Fast",    tier:"Standard" },
   { id:"anthropic/claude-haiku-4.5",         name:"Claude Haiku 4.5", maker:"Anthropic", best:"Fast, cheap, high volume",          speed:"Fastest", tier:"Budget" },
   { id:"google/gemini-3.1-pro-preview",      name:"Gemini 3.1 Pro",   maker:"Google",    best:"Huge context, multimodal, agentic tasks", speed:"Medium", tier:"Frontier" },
-  { id:"google/gemini-3.5-flash",            name:"Gemini 3.5 Flash", maker:"Google",    best:"Speed + agentic tasks, 4× faster than frontier", speed:"Fastest", tier:"Budget" },
+  { id:"google/gemini-3.6-flash",            name:"Gemini 3.6 Flash", maker:"Google",    best:"Speed + agentic tasks, cheapest output at $7.50/MTok", speed:"Fastest", tier:"Budget" },
   { id:"deepseek/deepseek-chat-v3-0324",     name:"DeepSeek Chat V3", maker:"DeepSeek",  best:"Open source, ultra cheap",          speed:"Fast",    tier:"Budget" },
   { id:"qwen/qwen3.7-max",                   name:"Qwen 3.7 Max",     maker:"Alibaba",   best:"Best mid-tier value — frontier-competitive at $1.25/$3.75/MTok", speed:"Fast", tier:"Standard" },
-  { id:"mistralai/mistral-large-2512",       name:"Mistral Large",    maker:"Mistral",   best:"European data residency, efficient coding", speed:"Fast", tier:"Standard" },
+  { id:"x-ai/grok-4.5",                     name:"Grok 4.5",         maker:"xAI",       best:"Coding + agentic work, #4 Intelligence Index at $2/$6/MTok", speed:"Fast", tier:"Standard" },
 ];
 const TIER_COLOR={Frontier:T?.red||"#E8001C",Standard:"#2563EB",Budget:"#16A34A","Open Source":"#7C3AED"};
 
