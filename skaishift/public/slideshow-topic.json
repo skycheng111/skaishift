@@ -1,26 +1,26 @@
 {
-  "query": "OpenAI Launches Presence: Enterprise Voice AI reveal",
-  "topicName": null,
-  "hook": "OpenAI just made AI feel completely human.",
+  "query": "Gemini Omni AI official reveal",
+  "topicName": "Gemini Omni",
+  "hook": "Gemini Omni just changed the game completely.",
   "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "EAN5Cj347PY",
-      "title": "This is the new ChatGPT Voice, powered by GPT-Live",
-      "channel": "OpenAI"
+      "videoId": "KUyRq7szZsM",
+      "title": "Introducing Gemini Omni: Create Anything from Anything",
+      "channel": "Google"
     },
     {
-      "videoId": "m8uUUUsMD3Y",
-      "title": "Introducing the Codex Micro",
-      "channel": "OpenAI"
+      "videoId": "2m5BCWB02jY",
+      "title": "Meet Gemini Omni",
+      "channel": "Google"
     },
     {
-      "videoId": "rqA1_LyqsRU",
-      "title": "ChatGPT AVM Voices | OpenAI | TechCrunch",
-      "channel": "TechCrunch"
+      "videoId": "uW4B6ziQqvY",
+      "title": "What is Gemini Omni?",
+      "channel": "Google"
     }
   ],
-  "firstDate": "2026-07-24",
-  "date": "2026-07-24"
+  "firstDate": "2026-07-25",
+  "date": "2026-07-25"
 }
