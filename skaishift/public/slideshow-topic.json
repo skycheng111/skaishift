@@ -1,26 +1,26 @@
 {
-  "query": "Udio AI official reveal",
-  "topicName": "Udio",
-  "hook": "Udio is about to replace your music production setup.",
-  "img": "https://images.unsplash.com/photo-1558089687-f282ffcbc126?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODU5MjkyNzR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Tools",
+  "query": "GPT-5 AI official reveal",
+  "topicName": "GPT-5",
+  "hook": "GPT-5 is here and it's absolutely wild.",
+  "img": "https://images.unsplash.com/photo-1717501218603-1fc7cca58d6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODYwOTcyNDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
     {
-      "videoId": "PDyZHDbQv-U",
-      "title": "Udio AI Complete Guide (2026) | Create Studio-Quality AI Music Easily",
-      "channel": "FUTURE OF AI"
+      "videoId": "boJG84Jcf-4",
+      "title": "Introducing GPT-5",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "jLu2uSQfUeA",
-      "title": "Suno vs Udio: Which AI Music Tool Wins? 🎧",
-      "channel": "AI Battle Grounds"
+      "videoId": "_MrdtIADOyE",
+      "title": "ChatGPT-5 Revealed: The Ultimate Chatbot is Coming Soon!",
+      "channel": "AI Global"
     },
     {
-      "videoId": "CEjxZwtaARw",
-      "title": "Udio for AI Music Generation Honest Review - Watch Before Using",
-      "channel": "HelperMan"
+      "videoId": "fAxj_GOuFe8",
+      "title": "Unveiling GPT-5: AI Technology&#39;s Future Revealed",
+      "channel": "AI Guide"
     }
   ],
-  "firstDate": "2026-08-05",
-  "date": "2026-08-06"
+  "firstDate": "2026-08-07",
+  "date": "2026-08-07"
 }
