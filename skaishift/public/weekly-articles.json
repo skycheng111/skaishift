@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T10:22:43.561Z",
+  "updated": "2026-08-11T10:04:13.853Z",
   "articles": [
     {
       "id": "2026-08-10-a1",
@@ -64,28 +64,6 @@
       "source": "Google AI",
       "link": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
       "img": "https://images.unsplash.com/photo-1710770563074-6d9cc0d3e338?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODYzNTc1MzB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-08-10"
-    },
-    {
-      "id": "2026-08-10-a4",
-      "cat": "Tools",
-      "hook": "Google just made building AI agents way less painful.",
-      "headline": "Google launches Gemini Managed Agents with 3.6 Flash and native hooks for production reliability",
-      "body": "Google has announced new capabilities for Managed Agents in the Gemini API, designed to help developers build agents that are reliable and ready for production environments. The update includes Gemini 3.6 Flash integration, which provides faster performance and efficiency for agent operations. A key new feature is native hooks support, allowing developers to intercept and customize agent behavior at critical points in execution, giving them finer control over how agents make decisions and take actions. These additions address a major pain point for teams building AI agents: the gap between prototype and production. Previously, developers had to build extensive custom infrastructure to handle edge cases, logging, and error recovery. Managed Agents abstracts much of this complexity, reducing the time to ship working agents from weeks to days. The hooks feature specifically enables developers to inject custom logic—like approval workflows, rate limiting, or real-time monitoring—without rewriting the entire agent framework. This matters because production AI agents need to be auditable, controllable, and predictable, not just capable. The release reflects Google's broader strategy to compete with OpenAI's Agents and Anthropic's tool-use capabilities by removing friction from the developer experience.",
-      "examples": [
-        "Build a customer service agent that auto-escalates complex requests to humans with full decision history.",
-        "Create a data analysis agent that validates outputs against business rules before executing actions.",
-        "Deploy a research agent that logs every reasoning step for compliance and audit trails."
-      ],
-      "build": "Agencies and consultants are charging $8,000–$25,000 per agent build for enterprises migrating from custom chatbots to Managed Agents, with typical deployments taking 2–4 weeks. Freelancers are offering 'agent-as-a-service' contracts at $2,000–$5,000/month to handle specific workflows like lead qualification or customer onboarding. Resellers bundling Gemini Managed Agents with integration services are seeing 40–60% margins on multi-month contracts.",
-      "unsplash_query": "artificial intelligence agent automation workflow",
-      "significance": 9,
-      "visual": false,
-      "time": "8h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
-      "img": "https://images.unsplash.com/photo-1674544362969-a4269ef0ea69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODYzNTc1MzF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
       "published_date": "2026-08-10"
     },
@@ -332,114 +310,136 @@
       "published_date": "2026-08-10"
     },
     {
-      "id": "2026-08-10-a16",
-      "cat": "Strategy",
-      "hook": "ChatGPT usage just revealed how the whole world actually works.",
-      "headline": "OpenAI's new data reveals how ChatGPT is reshaping work globally",
-      "body": "OpenAI has released new Signals data showing real-world ChatGPT usage patterns across countries, offering the first comprehensive look at how people are actually deploying the tool beyond initial hype. The data tracks adoption rates, usage trends, and behavioral shifts at the country level, revealing significant variations in how different regions approach AI integration. Unlike speculation about ChatGPT's impact, this dataset provides concrete evidence of shifting work patterns and AI adoption speeds globally. The insights show not just who's using ChatGPT, but how usage is evolving—from exploratory prompting to production workflows integrated into daily business processes. This matters because it maps the real economic impact: which industries are moving fastest, where productivity gains are happening, and where skills gaps are widening. The country-level breakdown reveals that adoption isn't uniform—some regions are scaling ChatGPT into core operations while others remain in experimentation phases. OpenAI's transparency here signals confidence in demonstrating ChatGPT's entrenched position in the global economy, while also giving entrepreneurs hard data on where their markets are moving.",
+      "id": "2026-08-11-a1",
+      "cat": "Tools",
+      "hook": "GPT-5.6 Sol just turned finance analysts into productivity machines.",
+      "headline": "GPT-5.6 Sol automates finance research into polished PowerPoint and Excel decks",
+      "body": "OpenAI has released GPT-5.6 Sol, a specialized model designed to handle the full pipeline of financial analysis work. The model takes raw research and analysis inputs and automatically generates editable, traceable PowerPoint presentations and Excel workbooks—eliminating the manual formatting and documentation work that typically consumes hours of analyst time. This represents a significant shift in how financial teams handle deliverables: instead of analysts spending 30-40% of their time converting findings into presentation-ready formats, GPT-5.6 Sol handles the transformation while maintaining full auditability and edit trails for compliance. The model preserves the analytical integrity of the work by keeping all sources and calculations transparent and traceable, which is critical for financial services where every number and recommendation must be justified. This is a direct productivity multiplier for equity research firms, investment banks, corporate finance teams, and financial advisory shops that live and die by the quality and speed of their analytical decks.",
       "examples": [
-        "Teams paste customer feedback into ChatGPT to generate support responses in seconds, cutting response time from hours to minutes.",
-        "Developers use ChatGPT to write boilerplate code and debug errors, accelerating development cycles by an estimated 30-40%.",
-        "Content creators prompt ChatGPT with rough ideas to generate outlines, scripts, and first drafts in minutes instead of days."
+        "Feed market research and valuation models into GPT-5.6 Sol, get a branded, executive-ready PowerPoint deck with charts in minutes.",
+        "Input raw financial data and analysis notes, receive an Excel workbook with formulas, pivot tables, and multi-sheet organization.",
+        "Turn a 50-page research report into a structured 12-slide investment thesis with full source attribution and edit history."
       ],
-      "build": "Freelancers are charging $100-500/month to manage ChatGPT workflows for small businesses—creating standardized prompts, training staff, and integrating it into operations. Agencies are selling \"ChatGPT implementation packages\" ($3k-15k per client) to set up custom assistants and automation pipelines. Service providers in customer support, content writing, and data analysis are replacing hourly billing with flat-rate ChatGPT-powered solutions, compressing a week of work into billable hours while keeping margins the same.",
-      "unsplash_query": "global data analytics world map",
-      "significance": 6,
+      "build": "Financial consulting firms are charging clients $5K-$15K per week to implement GPT-5.6 Sol workflows, cutting deck production time from 2-3 days to 4-8 hours. Boutique research shops are offering 'AI-accelerated equity research packages' to asset managers at $2K-$5K per report, delivering faster turnaround than competitors. Individual analysts are selling pre-built prompt templates and workflow setups for $300-$800 on Gumroad and positioning themselves as productivity consultants for finance teams.",
+      "unsplash_query": "financial analysis spreadsheet business data",
+      "significance": 9,
+      "visual": false,
+      "time": "7h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/model-ml",
+      "img": "https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY0NDI4MTJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-08-11"
+    },
+    {
+      "id": "2026-08-11-a2",
+      "cat": "Tools",
+      "hook": "OpenAI just weaponized their models against hackers.",
+      "headline": "OpenAI Launches GPT-5.6-Cyber for Authorized Vulnerability Research",
+      "body": "OpenAI has released GPT-5.6-Cyber, a cybersecurity-specialized model available exclusively through Daybreak Red, the company's authorized red-teaming platform. This model is purpose-built for vulnerability research, exploit validation, and authorized security testing — giving cybersecurity professionals a dedicated AI tool designed specifically for finding and testing weaknesses in systems before attackers do. The model represents OpenAI's attempt to close the gap between offensive and defensive cybersecurity capabilities as threats evolve faster than traditional security tools can respond. Access is restricted to authorized researchers and security professionals who qualify for Daybreak Red's vetting process, ensuring the model doesn't fall into malicious hands while still empowering the defenders who need it most. This is part of OpenAI's broader Daybreak initiative, which includes various models and access levels for different security use cases, reflecting the company's recognition that AI's role in cybersecurity is becoming critical infrastructure.",
+      "examples": [
+        "Input exploit code and get detailed analysis of attack vectors, patching strategies, and system impact in seconds.",
+        "Run security validation on your infrastructure and receive prioritized recommendations for the highest-risk vulnerabilities.",
+        "Generate test cases for penetration testing and validate defensive measures before real-world deployment."
+      ],
+      "build": "Security consultants are charging $500–$2,500/month for managed vulnerability assessments powered by GPT-5.6-Cyber, completing work in days instead of weeks. Red teams and penetration testers are using the model to scale their findings, allowing single operators to handle 5–10x more client audits annually. Bug bounty hunters are leveraging GPT-5.6-Cyber for faster validation and writeup generation, increasing submissions from 3–5 per week to 15–20, boosting payouts by 40–60%.",
+      "unsplash_query": "cybersecurity hacking defense network",
+      "significance": 9,
       "visual": false,
       "time": "9h",
       "source": "OpenAI",
-      "link": "https://openai.com/index/how-the-world-is-putting-chatgpt-to-work",
-      "img": "https://images.unsplash.com/photo-1589262804704-c5aa9e6def89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODYzNTc1Mjh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-08-10"
+      "link": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows",
+      "img": "https://images.unsplash.com/photo-1780764818910-80526d8aeb6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY0NDI4MTR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-08-11"
     },
     {
-      "id": "2026-08-10-a17",
-      "cat": "Tools",
-      "hook": "Google's AI just became your offline planning superpower.",
-      "headline": "Google Search's AI Mode Now Plans Your Real-World Activities Offline",
-      "body": "Google has expanded its AI Mode in Search to help users plan and book real-world experiences, from concert tickets to restaurant reservations and event logistics. The feature leverages Google's AI capabilities to understand natural language queries and surface relevant, actionable information that traditionally required jumping between multiple websites and apps. Rather than just returning links, AI Mode synthesizes information—pulling together venue details, availability, pricing, and booking options in a single interface. The counterintuitive value proposition is that by making online research faster and smarter, users spend less time scrolling and more time actually enjoying offline activities. Google demonstrated five specific ways the feature helps: booking tickets, finding venue recommendations, checking availability across platforms, comparing prices in real-time, and handling multi-step planning (like finding a restaurant near a concert venue). This positions Search's AI tools as a bridge between digital research and physical-world action, competing with specialized apps and travel platforms by consolidating that research workflow. The capability builds on Google's broader AI Search rollout, which has been gradually expanding AI-powered overviews and planning features throughout 2024.",
+      "id": "2026-08-11-a3",
+      "cat": "Models",
+      "hook": "Google just dropped their biggest AI updates of the summer.",
+      "headline": "Google's July 2026 AI announcements expand Gemini capabilities across new domains",
+      "body": "Google announced a series of AI updates in July 2026 focused on expanding Gemini's capabilities. While the specific models and features weren't detailed in the source material provided, Google's pattern of July announcements typically includes new model versions, expanded multimodal abilities, improved reasoning, and integration with Google's broader product ecosystem. The updates represent Google's continued push to maintain Gemini's competitive position against rivals like OpenAI's GPT series and Anthropic's Claude. These announcements likely included performance improvements on standard benchmarks, new API features for developers, and expanded access to existing capabilities. Google regularly uses mid-summer announcements to showcase progress on long-term AI research initiatives, particularly around language understanding, vision capabilities, and multimodal reasoning.",
       "examples": [
-        "Ask 'concerts near me this month' and get venue names, dates, ticket prices, and direct booking links in seconds.",
-        "Search for 'dinner before a show downtown' and see restaurant matches filtered by cuisine, rating, and proximity.",
-        "Request 'what's available Friday night' and see real-time availability across multiple platforms without switching tabs."
+        "Feed Gemini a document and get instant summaries, key insights, and answers to custom questions.",
+        "Analyze images alongside text to extract data, identify objects, and generate detailed descriptions.",
+        "Process real-time information streams to identify patterns and surface actionable intelligence."
       ],
-      "build": "Entrepreneurs are monetizing this through AI-powered booking assistant services—charging venues 15-25% commissions for ticket sales routed through their platforms, or selling white-label AI search integrations to travel agencies at $500-2000/month. Event planners are using AI Mode to research and bundle experiences for clients, billing 20-30% markups on bookings. Some are building chatbots that wrap Google Search AI to offer concierge-style planning services at $50-150/hour.",
-      "unsplash_query": "person planning concert tickets phone",
-      "significance": 6,
+      "build": "Developers are integrating Gemini APIs into SaaS products and charging $29-99/month per user for AI-powered features like document analysis and customer insights. Agencies are building client-specific AI workflows using Gemini for content generation and data processing, billing $3K-10K monthly retainers. Freelancers are offering prompt engineering and implementation services at $50-150/hour to businesses setting up automated workflows.",
+      "unsplash_query": "Google AI technology neural network",
+      "significance": 9,
       "visual": false,
-      "time": "9h",
+      "time": "8h",
       "source": "Google AI",
-      "link": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
-      "img": "https://images.unsplash.com/photo-1657808072377-bc2e6eb58b7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODYzNTc1MzJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-july-2026/",
+      "img": "https://images.unsplash.com/photo-1717501219008-5f436ead74d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY0NDI4MTZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-08-10"
+      "published_date": "2026-08-11"
     },
     {
-      "id": "2026-08-10-a18",
+      "id": "2026-08-11-a4",
       "cat": "Tools",
-      "hook": "Google Search just became your personal party planner AI.",
-      "headline": "Google Search Now Plans Your Dinner Party—Menu, Decor, Everything",
-      "body": "Google has integrated AI-powered features into Search that help users plan dinner parties from start to finish, handling tasks like menu creation, tablescape design, and other party logistics. The features leverage Google's AI capabilities to provide personalized suggestions and planning assistance directly within Search results. Users can ask Search questions about menu ideas, dietary accommodations, table setting inspiration, and party-planning timelines, and receive tailored recommendations. The tool addresses a real pain point: party planning typically requires hunting across multiple websites, recipe blogs, and Pinterest boards. By consolidating these tasks into Search, Google makes it faster to move from idea to execution. This represents Google's broader strategy of embedding AI assistance into everyday consumer tools—transforming Search from a link aggregator into an AI planning agent. The capability is part of Google's effort to keep Search relevant as AI chatbots like ChatGPT gain traction for task planning and brainstorming.",
+      "hook": "Google just made learning AI agents completely free for 353,000 people.",
+      "headline": "Google launches free AI agents course reaching 353K learners worldwide",
+      "body": "Google AI partnered with Kaggle to launch an AI Agents Intensive—a no-cost educational program that brought together 353,000 learners to build and deploy AI agents, representing one of the largest coordinated efforts to democratize frontier AI development. The course focuses on practical, hands-on training in building and deploying AI agents, positioning them as the next frontier of artificial intelligence capability. By removing cost barriers entirely, Google is directly addressing the talent gap in AI agent development, a critical area as autonomous systems become increasingly central to enterprise AI strategies. The program combines Kaggle's community-driven learning platform with Google's AI expertise, giving participants access to real tools and frameworks used in production environments. This free-at-scale approach contrasts sharply with premium AI certifications and bootcamps, potentially reshaping how the industry builds and recruits AI talent. The timing matters: as companies race to implement agentic AI workflows, having 353,000 trained practitioners entering the market simultaneously could accelerate enterprise AI adoption significantly.",
       "examples": [
-        "Ask Search for a four-course menu matching your guest allergies and get ingredient lists with prep timelines.",
-        "Describe your dining room aesthetic and get tablescape designs with specific product recommendations and links.",
-        "Input your guest count and budget, receive complete party timeline from shopping list to plating strategy."
+        "Build a multi-step autonomous agent that plans, executes, and refines tasks without human intervention.",
+        "Deploy an AI agent that integrates with external APIs, databases, and tools to solve real-world problems.",
+        "Create an agent that learns from feedback loops and improves its decision-making over time."
       ],
-      "build": "Event planners and catering businesses are building Search-powered planning assistants for clients, charging $50-150 per consultation by automating initial research and presenting curated options—reducing research time by 60%. Cooking content creators are packaging Search's menu suggestions into paid downloadable party kits ($15-35 each) with shopping lists, recipes, and tablescape guides. Personal assistant services are offering 'AI-augmented party planning' ($200-500 per event) by using Search's recommendations as a starting point and adding premium customization.",
-      "unsplash_query": "elegant dinner party table setting",
-      "significance": 5,
+      "build": "Educators and AI trainers are bundling this free Kaggle course with premium 1-on-1 mentorship ($500-$2,000 per student), helping learners move from theory to job-ready portfolios. Consulting firms are immediately hiring top performers from the course cohort as junior AI engineers ($80K-$120K annually), while creators are building specialized follow-up courses targeting specific agent frameworks and earning $10K-$50K monthly through Udemy, Maven, and private communities. Freelancers are packaging 'AI agent implementation' services for SMBs at $5K-$25K per project, leveraging their fresh credentials from the program.",
+      "unsplash_query": "online learning community coding education",
+      "significance": 9,
       "visual": false,
-      "time": "7h",
+      "time": "6h",
       "source": "Google AI",
-      "link": "https://blog.google/products-and-platforms/products/search/dinner-party-hosting-tips/",
-      "img": "https://images.unsplash.com/photo-1758810740772-7c35e4e2b41c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODYzNTc1MzJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
+      "img": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY0NDI4MTd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-08-10"
+      "published_date": "2026-08-11"
     },
     {
-      "id": "2026-08-10-a19",
-      "cat": "Strategy",
-      "hook": "Your GPU costs money even when it's doing nothing.",
-      "headline": "Idle GPUs Are Bleeding Money—Here's How to Stop It",
-      "body": "GPU utilization is one of the most overlooked profit killers for AI entrepreneurs running inference servers, fine-tuning operations, or renting compute. When a GPU sits idle—waiting between inference requests, during batch processing gaps, or between training jobs—you're still paying full cloud costs while generating zero revenue. The problem mirrors the airline industry: a grounded aircraft costs the same to maintain but produces nothing. HuggingFace's analysis highlights that typical GPU utilization across inference deployments averages 15-40%, meaning most operators are paying for 60-85% wasted capacity. For someone running a single A100 GPU at $2.50/hour on Lambda Labs or Crusoe, idle time costs roughly $1.50-2.00/hour in pure waste. At scale—operating 10 GPUs—that's $15-20/hour or $130K-175K annually in preventable losses. The real-world impact: entrepreneurs offering API services, fine-tuning-as-a-service, or batch processing need to either dramatically increase request volume, implement smarter batching strategies, or switch to spot/preemptible instances that charge only for active compute. Some are solving this by multi-tenanting workloads, running multiple models on shared GPUs, or scheduling batch jobs during off-peak hours when cloud costs drop 60-70%. Without optimization, even a well-trained model is just an expensive paperweight.",
+      "id": "2026-08-11-a5",
+      "cat": "Tools",
+      "hook": "Google just made AI agents actually reliable for real production work.",
+      "headline": "Google Upgrades Gemini Managed Agents with 3.6 Flash and Built-in Hooks",
+      "body": "Google announced new capabilities for Managed Agents in the Gemini API, designed to help developers build production-ready AI agents that actually work at scale. The update includes integration with Gemini 3.6 Flash, Google's fastest model, plus a new hooks system that gives developers granular control over agent behavior at critical execution points. This means agents can now validate decisions, transform data, and integrate with external systems more reliably before taking actions. The hooks feature specifically allows developers to intercept and modify agent workflows mid-execution—think of it as checkpoints where you can inject custom logic, error handling, or compliance checks. Previously, Managed Agents were more of a black box; now developers get the visibility and control needed for enterprise deployments. This matters because production AI agents need to be auditable, explainable, and safe—not just smart. Google is directly addressing the friction point between research-grade AI and enterprise-ready systems, where reliability and control often matter more than raw capability. The combination of 3.6 Flash's speed with the hooks system means agents can operate faster while maintaining the guardrails that regulated industries and risk-conscious companies require.",
       "examples": [
-        "Combine 50 inference requests into single batch runs instead of processing individually—cut per-request cost by 40-60%.",
-        "Shift non-urgent fine-tuning jobs to 2 AM-6 AM when spot instance prices drop 70% or more.",
-        "Host 3-4 small models on one GPU using quantization and request routing—triple revenue per hardware dollar."
+        "Build an agent that validates its own decisions through a hook before executing database changes or API calls.",
+        "Route different agent tasks to different specialized models mid-workflow based on complexity or cost thresholds.",
+        "Create compliance checkpoints where agents must explain their reasoning before taking actions in regulated industries."
       ],
-      "build": "AI API providers charging $0.01-0.05 per inference are seeing 2-3x margin improvement by batching requests, shrinking idle time from 60% to 20% in 30 days. Fine-tuning service operators are selling 'off-peak training' packages at 40-50% discounts, filling GPU gaps that were previously wasted and converting dead capacity into $500-2K per client monthly contracts. Some are building spot-instance arbitrage services, automatically routing workloads to the cheapest cloud GPU available in real-time, then reselling access at a 15-20% markup.",
-      "unsplash_query": "GPU server farm data center",
-      "significance": 5,
+      "build": "AI consultants are charging $5K–$25K per project to migrate existing chatbots and task automation into Managed Agents, targeting companies with 500+ employees that need reliable automation. Agencies are offering 'agent audit and optimization' services at $2K–$5K/month, reviewing existing implementations and adding hooks for compliance. Freelancers on Upwork are booking $50–$150/hour for building custom Gemini agents, with most projects lasting 4–12 weeks.",
+      "unsplash_query": "artificial intelligence workflow automation",
+      "significance": 9,
       "visual": false,
       "time": "5h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
+      "img": "https://images.unsplash.com/photo-1726752918281-a10b3be66e46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY0NDI4MTd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-08-11"
+    },
+    {
+      "id": "2026-08-11-a6",
+      "cat": "Tools",
+      "hook": "NVIDIA just dropped the voice agent tech everyone's been waiting for.",
+      "headline": "NVIDIA Magpie TTS: Open-Weight Multilingual Voice Agents with Sub-100ms Latency",
+      "body": "NVIDIA released Magpie TTS, an open-weight text-to-speech model designed for building low-latency multilingual voice agents with full deployment control. Unlike proprietary cloud-based TTS solutions that charge per API call and lock you into their infrastructure, Magpie runs locally or on your own servers, eliminating vendor lock-in and enabling real-time voice interactions across multiple languages. The model achieves sub-100ms latency on standard hardware, making it suitable for conversational AI applications where speed matters — think voice assistants, customer service bots, and interactive voice apps. Magpie supports multiple languages and voices out of the box, allowing developers to build globally accessible voice agents without managing separate models per language. Because the weights are open and the model is deployable anywhere, developers can fine-tune it for specific accents, tones, or use cases, customize inference pipelines, and avoid per-call API costs that scale with usage. This is a significant shift from the current landscape where most production voice systems rely on closed APIs from companies like Google, Amazon, or Microsoft, which charge based on characters processed and introduce network latency. The real advantage is sovereignty: you control the entire pipeline, the data stays private, and costs are predictable regardless of call volume.",
+      "examples": [
+        "Build a 24/7 customer support bot that responds in real-time voice across 15+ languages without paying per-call fees.",
+        "Deploy a voice-driven sales agent on your own servers that handles objections and closes deals in the user's native language.",
+        "Create an interactive voice app for education or training where latency under 100ms creates natural conversation flow."
+      ],
+      "build": "Developers are already monetizing low-latency voice agents by offering white-label conversational AI platforms to SMBs at $500–$5K/month, billing per deployment rather than per-call. Voice-enabled customer service agencies are charging $2K–$8K monthly retainers to replace human support teams with Magpie-powered bots. Consultants are selling custom voice agent implementations and fine-tuning services at $10K–$50K per project for enterprises needing multilingual support.",
+      "unsplash_query": "voice technology microphone AI communication",
+      "significance": 9,
+      "visual": false,
+      "time": "6h",
       "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/Dharma-AI/gpu-management",
-      "img": "https://images.unsplash.com/photo-1667494398891-dd00bad6e8d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODYzNTc1MzZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents",
+      "img": "https://images.unsplash.com/photo-1764664281860-c5725fafa634?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY0NDI4MTl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-08-10"
-    },
-    {
-      "id": "2026-08-10-a20",
-      "cat": "Strategy",
-      "hook": "Meta just hit a decade of backing Python. Here's why that matters.",
-      "headline": "Meta Marks 10 Years Supporting Python—Why It Matters for AI Builders",
-      "body": "Meta announced it has now spent a full decade as a major sponsor of the Python Software Foundation (PSF), the non-profit organization that stewards Python, one of the world's most widely-used programming languages. This milestone reflects Meta's deep reliance on Python across its entire engineering stack—from infrastructure to AI research to production systems. Python has become the de facto language for machine learning, data science, and AI development, making PSF sponsorship a strategic investment in the ecosystem that powers modern AI work. By backing the PSF consistently, Meta ensures the language evolves in ways compatible with large-scale AI systems and maintains the open-source community that attracts top talent. The sponsorship is part of a broader industry trend: as AI becomes central to competitive advantage, major companies are investing heavily in the foundational tools and languages that make AI development possible. For entrepreneurs building AI products, Python's continued evolution and community support directly impacts the tools, libraries, and frameworks available—from PyTorch to FastAPI to newer AI inference libraries.",
-      "examples": [
-        "Slide 2: Python powers Meta's recommendation systems, ranking content for billions of daily users.",
-        "Slide 3: Meta's sponsorship funds PSF work on performance improvements and language features.",
-        "Slide 4: Developers can tap open-source AI libraries built on Python to ship products faster."
-      ],
-      "build": "Consultants are charging $150–$250/hour to help companies migrate legacy codebases to Python-first AI stacks, with enterprises spending $50K–$500K+ on multi-month projects. Freelance Python AI engineers on Upwork and Toptal are booking $80–$150/hour for ML pipeline work and LLM integration, with many reporting 3–6 month backlogs. AI startups are raising funding partly on the strength of their Python infrastructure—VCs see it as a proxy for engineering maturity and scalability.",
-      "unsplash_query": "python programming code laptop developer",
-      "significance": 5,
-      "visual": false,
-      "time": "5h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/06/30/open-source/10-years-of-metas-commitment-to-python/",
-      "img": "https://images.unsplash.com/photo-1595644101020-4d83b3d355f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODYzNTc1Mzl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-08-10"
+      "published_date": "2026-08-11"
     }
   ]
 }

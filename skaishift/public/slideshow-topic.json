@@ -1,9 +1,9 @@
 {
   "query": "GPT-5 AI official reveal",
   "topicName": "GPT-5",
-  "hook": "GPT-5 just made every other AI look outdated.",
-  "img": "https://images.unsplash.com/photo-1717501218661-0322e4bc4c81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODYyNjg5ODR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Models",
+  "hook": "GPT-5 is about to blow your mind wide open.",
+  "img": "https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY0NDI4MTJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Tools",
   "videos": [
     {
       "videoId": "boJG84Jcf-4",
@@ -21,6 +21,6 @@
       "channel": "AI Guide"
     }
   ],
-  "firstDate": "2026-08-09",
-  "date": "2026-08-10"
+  "firstDate": "2026-08-11",
+  "date": "2026-08-11"
 }
