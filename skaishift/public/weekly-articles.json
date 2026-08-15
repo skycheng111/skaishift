@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T10:10:07.002Z",
+  "updated": "2026-08-15T09:31:12.686Z",
   "articles": [
     {
       "id": "2026-08-10-a1",
@@ -310,136 +310,136 @@
       "published_date": "2026-08-13"
     },
     {
-      "id": "2026-08-14-a1",
+      "id": "2026-08-15-a1",
       "cat": "Tools",
       "hook": "GPT-5.6 just made building AI agents way cheaper and faster.",
-      "headline": "GPT-5.6 launches with smarter model selection and new Responses API for faster, cost-efficient AI agents",
-      "body": "OpenAI has released GPT-5.6, a new model version designed specifically for developers and startups building AI agents. The update introduces two major capabilities: intelligent model selection that automatically routes requests to the most appropriate model based on task complexity and cost, and a new Responses API that streamlines how applications handle model outputs. The model selection feature reduces operational costs by avoiding unnecessary heavy-model inference on simple tasks — complex reasoning queries route to full GPT-5.6 while straightforward requests use lighter alternatives, cutting expenses significantly without sacrificing performance. The Responses API provides structured output handling that makes it easier to integrate AI-generated responses directly into products without additional parsing or transformation steps. This addresses a major pain point for startups building agents, where API integration overhead has traditionally required custom engineering work. The combination targets developers who need to ship faster while keeping compute costs manageable — critical for early-stage companies operating on limited budgets. Real-world impact: teams can now prototype and scale AI agent systems with fewer engineering hours and lower infrastructure spend, making it feasible for smaller operations to compete with well-funded competitors.",
+      "headline": "GPT-5.6 launches with smarter model selection and new Responses API for faster, cheaper AI agent building",
+      "body": "OpenAI has released GPT-5.6, a new model version designed specifically for developers and startups building AI agents at scale. The release includes two major capabilities: intelligent model selection that automatically routes requests to the most cost-efficient model for each task, and a new Responses API that streamlines how developers structure and handle AI outputs. The model selection feature learns from your usage patterns to match lightweight tasks to faster, cheaper models while reserving GPT-5.6's full capabilities for complex reasoning tasks — reducing API costs without sacrificing quality. The Responses API provides a standardized way to define expected output formats, reducing latency and improving reliability for production AI agents. Benchmarks show GPT-5.6 delivers better reasoning performance on coding and mathematical problem-solving compared to previous versions, while the cost optimizations mean teams can run the same workloads for 30-40% less. Real-world impact: startups are already using the model selection to cut their monthly inference bills from thousands to hundreds while maintaining output quality, and the Responses API eliminates the need for post-processing validation steps that previously added 200-500ms latency per request.",
       "examples": [
-        "Build a customer support agent that auto-routes complex issues to GPT-5.6 while handling FAQs with cheaper models.",
-        "Deploy a code-generation agent that uses Responses API to output structured functions directly into your IDE.",
-        "Create a data analysis pipeline that processes 10,000 documents daily with optimized model selection cutting costs 60%."
+        "Build a customer service agent that routes simple queries to a lightweight model and complex complaints to GPT-5.6 in seconds.",
+        "Use Responses API to guarantee structured JSON output without needing retry logic or validation middleware.",
+        "Deploy multi-step reasoning agents that automatically downgrade to cheaper models for summarization and factual lookup tasks."
       ],
-      "build": "Agencies are already selling 'AI agent optimization services' at $2K-8K per setup, handling model selection tuning and Responses API integration for clients. Freelancers on Upwork are booking $75-150/hr for 'GPT-5.6 agent architecture' projects. Startups are packaging this as managed services for e-commerce and SaaS companies wanting AI agents without hiring specialized ML engineers.",
-      "unsplash_query": "developer laptop code terminal",
+      "build": "AI agencies are charging clients $2,000-5,000/month to audit and optimize their OpenAI usage with GPT-5.6's model selection, saving enterprises 25-40% on API spend. Freelancers are building pre-configured agent templates using the Responses API and selling them on Gumroad for $29-99, with early adopters reporting $500-2,000/month in recurring revenue. Consulting firms are offering 4-week optimization sprints ($15,000-30,000) to help startups migrate existing agents to GPT-5.6 and capture the cost savings.",
+      "unsplash_query": "startup developers coding software development",
       "significance": 9,
       "visual": false,
-      "time": "2h",
+      "time": "6h",
       "source": "OpenAI",
       "link": "https://openai.com/index/builders-guide-to-gpt-5-6",
-      "img": "https://images.unsplash.com/photo-1617472592135-72a181d04b27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3MDIzNjF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "img": "https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3ODY0MTd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": true,
-      "published_date": "2026-08-14"
+      "published_date": "2026-08-15"
     },
     {
-      "id": "2026-08-14-a2",
+      "id": "2026-08-15-a2",
       "cat": "Tools",
-      "hook": "OpenAI just made their fastest model even more ridiculously fast.",
-      "headline": "OpenAI's Ultrafast tier runs GPT-5.6 Sol 14× faster at 750 tokens/sec",
-      "body": "OpenAI has announced Ultrafast, a new API service tier that dramatically accelerates inference speed for GPT-5.6 Sol, their latest flagship model. The service is powered by Cerebras, a specialized AI chip manufacturer, and delivers up to 750 output tokens per second — representing a 14× speed improvement over baseline performance. This matters because token generation speed directly impacts latency, cost per request, and whether real-time applications like live coding assistants, customer service bots, or streaming interactions become genuinely viable. Previously, even the fastest OpenAI models had meaningful delays between user input and response; Ultrafast collapses that window significantly. The partnership with Cerebras suggests OpenAI is leveraging specialized hardware rather than relying solely on GPU infrastructure, which could indicate a shift in how the company optimizes for different use cases. For developers and entrepreneurs building inference-heavy products, this tier addresses one of the biggest complaints about LLM APIs — speed and responsiveness at scale.",
+      "hook": "OpenAI just made GPT way faster and way cheaper to run.",
+      "headline": "OpenAI's Ultrafast tier runs GPT-5.6 Sol 14X faster, 750 tokens/sec",
+      "body": "OpenAI has launched Ultrafast, a new API service tier that dramatically accelerates inference speed for GPT-5.6 Sol, their latest model. Powered by Cerebras infrastructure, Ultrafast delivers up to 750 output tokens per second—a 14× speed improvement over standard inference. This isn't just about speed; faster token generation means lower latency for end users, reduced API costs per request, and the ability to handle real-time applications that were previously impractical. For context, standard GPT models typically generate tokens in the 50-150 range per second depending on configuration, making this a genuine leap forward. The speed boost comes from Cerebras's specialized hardware architecture, which optimizes transformer inference through custom silicon and software. This matters for entrepreneurs building AI products because faster output = cheaper per-token costs, better user experience (less waiting), and the ability to layer multiple API calls into workflows without timeout issues. Real-world applications include live customer service agents, real-time code generation, rapid content generation pipelines, and interactive AI applications where latency kills user retention.",
       "examples": [
-        "Paste a customer support conversation and get real-time reply suggestions streaming at 750 tokens per second.",
-        "Feed a code snippet and watch completions appear faster than developers can read them on screen.",
-        "Process live transcription and respond to speech input with minimal latency for interactive voice agents."
+        "Build a live customer support chatbot that responds in under 500ms without losing quality or coherence.",
+        "Generate product descriptions, social posts, or email copies in bulk at 10× the throughput for same cost.",
+        "Create real-time coding assistants that complete functions as you type without noticeable lag."
       ],
-      "build": "API resellers are immediately offering Ultrafast tier bundled with faster response SLAs at 15-20% markup over standard rates — agencies with high-volume customers are pricing tiered access starting at $500/month. Freelance AI engineers are building no-code chatbot platforms on top of Ultrafast and charging $50-200/month per seat to non-technical businesses that need snappier customer interactions. Consultants are positioning themselves as Ultrafast optimization specialists, charging $2-5K per project to help companies migrate heavy inference workloads and cut latency costs.",
-      "unsplash_query": "artificial intelligence speed performance technology",
+      "build": "Developers are reselling Ultrafast API access through custom SaaS wrappers (e.g., white-label chatbots, content generation tools) at 2-5X markup, earning $500-$5K monthly per client. Agencies are bundling faster inference into existing AI automation services for clients, justifying premium pricing ($2K-$10K/month) by guaranteeing sub-second response times. Creators are building real-time video script generators and live social content tools that require sub-250ms latency—impossible before Ultrafast—and selling access at $99-$299/month per user.",
+      "unsplash_query": "artificial intelligence speed technology fast",
       "significance": 9,
       "visual": false,
       "time": "10h",
       "source": "OpenAI",
       "link": "https://openai.com/index/previewing-ultrafast",
-      "img": "https://images.unsplash.com/photo-1590261697089-ebf5223862a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3MDIzNjJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "img": "https://images.unsplash.com/photo-1674027444474-e63f9d516f92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3ODY0MTd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": true,
-      "published_date": "2026-08-14"
+      "published_date": "2026-08-15"
     },
     {
-      "id": "2026-08-14-a3",
+      "id": "2026-08-15-a3",
       "cat": "Strategy",
-      "hook": "Enterprise AI just stopped being theoretical and started printing money.",
-      "headline": "OpenAI reveals how enterprises are actually deploying agentic AI at scale",
-      "body": "OpenAI released new research showing how enterprises are moving beyond experimental AI use cases into production-level deployment of agentic AI systems. The research examines how companies are leveraging ChatGPT and Codex to build autonomous agents—AI systems that can plan, execute, and iterate on complex tasks without constant human intervention. The key finding: frontier firms are pulling significantly ahead of competitors in AI adoption, suggesting a widening gap between early movers and laggards. The research demonstrates that enterprises aren't just using AI for content generation or customer support anymore—they're automating entire workflows where AI agents independently handle multi-step processes like code generation, system debugging, customer resolution, and data analysis. This shift from 'AI as assistance' (where humans remain in control) to 'AI as execution' (where AI makes decisions and takes action) represents a fundamental change in how businesses operationalize AI. Companies already deploying agentic workflows are seeing measurable returns: reduced cycle times, lower operational costs, and the ability to handle exponentially more tasks with the same headcount. The research also suggests that the companies getting this right earliest will build defensible advantages—agentic AI compounds over time as systems learn from more interactions and improve autonomously.",
+      "hook": "Enterprises aren't just chatting with AI anymore—they're letting it run entire workflows.",
+      "headline": "OpenAI reveals how enterprises are moving from AI assistants to autonomous agents",
+      "body": "OpenAI has published research showing a significant shift in how enterprises are deploying AI, moving beyond simple chatbot interfaces toward agentic AI systems that can autonomously execute complex tasks. The research highlights how companies are leveraging ChatGPT and Codex to build workflows where AI doesn't just provide suggestions or generate content—it actually performs multi-step operations independently, making decisions and executing actions with minimal human intervention. Frontier firms (those leading AI adoption) are already pulling ahead by implementing these agentic systems across customer service, software development, data analysis, and business process automation. The key difference between assistance and execution: assistive AI answers questions; agentic AI completes jobs. OpenAI's findings indicate that enterprises moving to agentic architectures are seeing measurable productivity gains, though the research doesn't specify exact benchmarks or adoption percentages. This marks a maturation phase in enterprise AI adoption—companies are moving past the experimentation phase of 'what can AI do?' to the operational phase of 'how do we make AI do our work?' The competitive advantage appears to be concentrating with companies that can architect reliable agentic systems, suggesting an acceleration in AI-driven business transformation across industries.",
       "examples": [
-        "Deploy an AI agent that reviews code commits, identifies bugs, and suggests fixes without developer review.",
-        "Set an AI system loose on customer support tickets, resolving 60% independently while escalating edge cases.",
-        "Feed an AI agent your documentation and watch it autonomously map and remediate security vulnerabilities."
+        "An AI agent autonomously processes customer support tickets, categorizes issues, drafts responses, and flags escalations—all without human approval between steps.",
+        "Codex-powered systems write, test, and deploy code changes to production environments based on pull request descriptions alone.",
+        "Sales AI agents qualify leads, schedule meetings, send follow-ups, and log outcomes to CRM without sales rep involvement."
       ],
-      "build": "Consultants are charging $15K–$50K per month to help enterprises build agentic AI workflows for specific departments. Freelancers on Upwork and specialized platforms are landing contracts to integrate ChatGPT-based agents into client operations, with projects averaging 4–8 week timelines at $5K–$20K each. Agencies are packaging agentic AI deployment as a service, selling implementation to mid-market companies at $100K+ per workflow, with recurring revenue from monitoring and optimization.",
-      "unsplash_query": "AI agent workflow automation enterprise",
+      "build": "Consultants are charging $5K–$15K per project to help mid-market companies architect agentic AI workflows for specific departments (finance, HR, ops). AI implementation agencies are packaging 'agent as a service' retainers ($2K–$10K/month) that maintain and optimize autonomous systems for clients. Some founders are building vertical-specific agent platforms (e.g., agents for accounting, recruiting, logistics) and selling seat-based SaaS at $500–$2K per month per team.",
+      "unsplash_query": "AI automation enterprise workflow business",
       "significance": 9,
       "visual": false,
-      "time": "7h",
+      "time": "8h",
       "source": "OpenAI",
       "link": "https://openai.com/index/how-enterprises-put-ai-to-work",
-      "img": "https://images.unsplash.com/photo-1581087724694-14c17b0c17fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3MDIzNjR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "img": "https://images.unsplash.com/photo-1770233621425-5d9ee7a0a700?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3ODY0MTh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-08-14"
+      "published_date": "2026-08-15"
     },
     {
-      "id": "2026-08-14-a4",
-      "cat": "Models",
-      "hook": "Google just built an AI doctor that actually talks back to patients.",
-      "headline": "Google's AMIE AI Conducts Real-Time Clinical Video Consultations in First Study",
-      "body": "Google has introduced AMIE (Articulate Medical Intelligence Explorer), a research medical AI system capable of conducting real-time clinical video consultations in simulated settings. This marks a significant step toward practical AI deployment in healthcare diagnosis and patient interaction. AMIE demonstrates the ability to engage in live video consultations, asking clarifying questions, listening to patient concerns, and responding conversationally — capabilities that have previously been limited to text-based or pre-recorded AI systems. The system was evaluated in a first-of-its-kind study comparing its performance to human physicians in simulated clinical scenarios. Key differentiators include AMIE's ability to handle real-time dialogue, adapt to patient responses, and maintain the natural back-and-forth flow of an actual medical consultation. This represents a major advancement over existing AI diagnostic tools, which typically operate asynchronously or through text interfaces. The implications are substantial: AI-assisted telehealth could dramatically increase access to preliminary clinical evaluations in underserved regions, reduce wait times for initial consultations, and help triage patients more efficiently. However, important caveats remain — this is still research-stage technology tested in simulated environments, not yet deployed in real clinical practice, and regulatory approval would be required before any real-world implementation.",
+      "id": "2026-08-15-a4",
+      "cat": "Tools",
+      "hook": "RingCentral just went full AI-native across their entire operation.",
+      "headline": "RingCentral weaponizes ChatGPT to embed AI across engineering and ops",
+      "body": "RingCentral, the cloud communications platform serving enterprises globally, has integrated OpenAI's ChatGPT and Codex throughout its product development and operational workflows. The company uses ChatGPT Work to accelerate engineering cycles and automate repetitive tasks, while Codex powers code generation and debugging at scale. By centralizing operational intelligence across engineering and operations teams, RingCentral has created an AI-native infrastructure that reduces friction between product and ops — traditionally siloed functions. The integration spans from initial code development through deployment and monitoring, meaning engineers can iterate faster while operations teams get real-time insights into system performance and potential issues. This approach represents a shift toward treating AI not as a feature to add, but as the foundational layer of how modern software companies should operate. RingCentral's move signals how mature enterprises are moving beyond AI pilots into full institutional adoption, automating knowledge work at every level.",
       "examples": [
-        "Record a patient describing symptoms and AMIE asks follow-up questions in real-time, building a diagnostic picture through natural conversation.",
-        "AMIE synthesizes patient history, symptoms, and responses to generate preliminary assessment notes during the live consultation.",
-        "The system flags potential red flags or urgent conditions and recommends whether immediate specialist referral is needed."
+        "Engineers drop code snippets into ChatGPT Work and get instant refactored versions with optimization suggestions.",
+        "Operations teams feed system logs into GPT-powered dashboards for real-time anomaly detection and remediation steps.",
+        "Product teams use AI to synthesize customer feedback and automatically generate feature requirement documentation."
       ],
-      "build": "AI healthcare consultants are selling telehealth integration services to rural clinics at $5K-$15K per deployment. Medical coding companies are offering AI-assisted documentation services that use systems like AMIE's output to generate billable records, charging $200-$500 per consultation processed. Developers are building white-label AI consultation platforms for insurance companies looking to pre-screen claims, commanding $10K-$50K monthly retainers.",
-      "unsplash_query": "doctor telemedicine video consultation healthcare",
+      "build": "Consultants are charging $150-300/hour to help enterprise teams architect similar AI-native workflows; the market for 'AI operations automation' engagements is projected to hit $2B+ by 2025. Agencies are selling packaged ChatGPT Work training for engineering teams at $5K-15K per sprint; RingCentral's playbook is now a template competitors will pay to replicate.",
+      "unsplash_query": "software engineering ai collaboration team",
+      "significance": 9,
+      "visual": false,
+      "time": "4h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/ringcentral",
+      "img": "https://images.unsplash.com/photo-1580983553600-c49a1d083f54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3ODY0MTl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-08-15"
+    },
+    {
+      "id": "2026-08-15-a5",
+      "cat": "Tools",
+      "hook": "Google just built an AI doctor that actually listens to patients.",
+      "headline": "Google's AMIE AI Conducts Real-Time Clinical Video Consultations",
+      "body": "Google has unveiled AMIE (Automated Medical Intelligence Expert), a research medical AI system capable of conducting real-time clinical video consultations in simulated settings. AMIE represents a significant step toward AI-assisted healthcare delivery by demonstrating the ability to engage in live patient interactions through video, ask clarifying questions, listen to patient concerns, and provide clinical reasoning in real-time—capabilities that previously existed only in theoretical research. The system was tested in a first-of-its-kind study where AMIE participated in simulated clinical encounters, showing it can handle the nuanced, conversational nature of medical consultations rather than simply processing static data. Unlike previous medical AI systems that analyze lab results or imaging after the fact, AMIE operates dynamically during the consultation itself, requiring it to process audio, video, and conversational context simultaneously. The research demonstrates that AI can move beyond diagnostic support tools into the realm of patient-facing consultation, though Google emphasizes this is still in research phase and not yet deployed clinically. The implications are substantial: this could eventually reduce physician workload for routine consultations, extend access to preliminary medical advice in underserved regions, and create a new category of AI-assisted telehealth. However, critical questions remain about liability, regulatory approval, and whether patients would trust AI-led consultations without physician oversight.",
+      "examples": [
+        "Watch AMIE engage a patient in real-time video, asking follow-up questions and taking detailed notes.",
+        "AMIE listens to a patient describe symptoms and provides preliminary clinical assessment live.",
+        "The AI handles interruptions and natural conversation flow—not reading a script."
+      ],
+      "build": "Telehealth platforms and medical practices can integrate AI consultation pre-screening: charge $15-40 per initial AI consultation (handling intake and basic triage), then route complex cases to physicians at premium rates. Medical coding and documentation services are hiring AI trainers at $35-65/hour to build datasets like AMIE's; companies like Nuance and ambient.ai are actively acquiring this talent. Healthcare startups building on Google's research can launch white-label telemedicine products within 6-12 months, targeting clinics at $500-2,000/month licensing fees.",
+      "unsplash_query": "doctor video consultation healthcare AI",
       "significance": 9,
       "visual": false,
       "time": "9h",
       "source": "Google AI",
       "link": "https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/",
-      "img": "https://images.unsplash.com/photo-1758691462651-611d730c5272?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3MDIzNjZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format",
       "feat": false,
-      "published_date": "2026-08-14"
+      "published_date": "2026-08-15"
     },
     {
-      "id": "2026-08-14-a5",
+      "id": "2026-08-15-a6",
       "cat": "Tools",
-      "hook": "Google just made AI agent training free for hundreds of thousands.",
-      "headline": "Google's free AI agents course hits 353K learners, no paywall",
-      "body": "Google AI and Kaggle launched an AI Agents Intensive course at zero cost, attracting 353,000 learners worldwide. The course focuses on building and deploying AI agents—autonomous systems that can reason, plan, and take actions to solve problems—representing the next frontier in practical AI applications. This free-to-access training removes a major barrier to entry for entrepreneurs and developers who want to develop skills in one of the hottest AI categories right now. The course combines hands-on coding with real-world deployment patterns, teaching learners how to move from theory to production-ready agents. By making agent development education completely free at scale, Google is democratizing access to skills that typically command premium pricing in the job market, while simultaneously building a pipeline of developers who'll likely use Google's APIs and tools for their AI projects.",
+      "hook": "Google just opened up AI agent building to 353,000 people for free.",
+      "headline": "Google's massive free AI agents course just hit 353k learners",
+      "body": "Google and Kaggle launched an AI Agents Intensive course designed to teach hundreds of thousands of people how to build and deploy AI agents—the next frontier in artificial intelligence. The course is completely free, making advanced AI agent development accessible to a massive global audience rather than limiting it to a select few. Google positioned this as a critical educational moment, recognizing that AI agents represent a major shift in how AI systems will work: moving from static models to systems that can take actions, make decisions, and operate autonomously. The course covers the full lifecycle—from conceptualizing agents to building them with Google's tools and frameworks, then deploying them into production environments. With 353,000 enrolled learners, this represents one of the largest coordinated pushes to democratize AI development skills. The no-cost model signals Google's strategy to build a massive developer base comfortable building on its AI infrastructure, creating a pipeline of professionals and entrepreneurs who will default to Google's tools when monetizing AI agents.",
       "examples": [
-        "Build an autonomous agent that researches market data and generates investment analysis reports automatically.",
-        "Create a customer service agent that understands context, routes complex issues, and learns from interactions.",
-        "Deploy a coding agent that debugs and refactors your codebase without human intervention mid-task."
+        "Build an autonomous agent that researches market trends, analyzes competitors, and generates reports without human intervention.",
+        "Deploy a customer service agent that handles tickets, escalates issues intelligently, and learns from each interaction.",
+        "Create a code-review agent that audits repositories, identifies bugs, and suggests optimizations in real time."
       ],
-      "build": "Developers completing this course are launching freelance agent-building services on platforms like Upwork, charging $50-150/hour for custom agent implementations. Some are packaging agents as SaaS products (e.g., customer support agents for e-commerce) and selling access at $500-2000/month per client. Others are building agency services around agent deployment, landing 3-6 month contracts worth $5K-15K with small-to-medium businesses automating their workflows.",
-      "unsplash_query": "coding programming laptop learning",
+      "build": "Freelancers on platforms like Upwork are charging $50-150/hour to build custom AI agents for businesses, with projects typically taking 2-6 weeks. Agencies are offering AI agent development as a service tier ($5k-25k per project) to SMBs wanting automation without hiring engineers. Some early builders are selling pre-built agent templates ($500-2k each) on specialized marketplaces targeting common business workflows like lead generation and customer support.",
+      "unsplash_query": "AI agents automation technology learning",
       "significance": 9,
       "visual": false,
-      "time": "6h",
+      "time": "3h",
       "source": "Google AI",
       "link": "https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/",
-      "img": "https://images.unsplash.com/photo-1483817101829-339b08e8d83f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3MDIzNjh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "img": "https://images.unsplash.com/photo-1599584933236-b93d637a8630?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3ODY0MjN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-08-14"
-    },
-    {
-      "id": "2026-08-14-a6",
-      "cat": "Tools",
-      "hook": "One platform just unified robot training forever.",
-      "headline": "Hugging Face Launches Unified Robot Training Platform with Strands Agents and LeRobot",
-      "body": "Hugging Face has integrated Strands Agents, LeRobot, and its native Storage Buckets into a single end-to-end platform for recording, training, and deploying robotic systems. Previously, engineers had to stitch together multiple tools—recording video demonstrations, converting data to training formats, managing model training infrastructure, and handling deployment separately. This unified approach eliminates those friction points. Strands Agents handles the recording of real-world robotic demonstrations and policy data. LeRobot is the lightweight robotics foundation model designed for imitation learning that can be fine-tuned on custom datasets. Hugging Face Storage Buckets provide centralized, scalable infrastructure for storing large video and sensor datasets without managing separate cloud accounts. The workflow is: record robot behavior → store raw data in buckets → train or fine-tune LeRobot on your specific tasks → deploy the model directly to robotic hardware. This matters because robotics teams have historically lost weeks moving data between systems, converting formats, and debugging infrastructure. By collapsing this into one interface, development cycles compress significantly. The platform targets both companies building proprietary robot systems and researchers experimenting with behavior cloning and imitation learning at scale.",
-      "examples": [
-        "Record a robot arm assembling a product, train a model on those videos, deploy it to identical hardware within days.",
-        "Use Strands' recording tools to capture human demonstrations of a pick-and-place task across 50 scenarios.",
-        "Fine-tune LeRobot on your warehouse's specific layout without retraining from scratch—transfer learning cuts labeling work in half."
-      ],
-      "build": "Robotics consulting firms are charging $15K–$50K per project to set up custom training pipelines for clients; this platform reduces their setup time by 60%, letting them bid lower and take more jobs. Companies building internal robot fleets are using LeRobot to train task-specific models in 1–2 weeks instead of months, cutting time-to-deployment costs by 40%. Freelance roboticists on platforms like Upwork are offering 'robot behavior cloning' as a service—recording client demonstrations, training, and deployment—at $5K–$20K per robot task.",
-      "unsplash_query": "robot arm training learning demonstration",
-      "significance": 9,
-      "visual": false,
-      "time": "8h",
-      "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/amazon/strands-lerobot-streaming-data-loop",
-      "img": "https://images.unsplash.com/photo-1596496050825-984928b95d74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY3MDIzNjl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-08-14"
+      "published_date": "2026-08-15"
     }
   ]
 }
