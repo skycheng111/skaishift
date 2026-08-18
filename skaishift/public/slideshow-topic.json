@@ -1,8 +1,8 @@
 {
   "query": "GPT-5 AI official reveal",
   "topicName": "GPT-5",
-  "hook": "The future of AI just arrived and it's mind-blowing.",
-  "img": "https://images.unsplash.com/photo-1763568258121-3538ac983f31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODY4NzI5MTF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "hook": "GPT-5 just arrived and it's absolutely game-changing.",
+  "img": "https://images.unsplash.com/photo-1556379098-77d331d21a3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODcwNDYwOTN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
@@ -11,16 +11,16 @@
       "channel": "OpenAI"
     },
     {
-      "videoId": "_MrdtIADOyE",
-      "title": "ChatGPT-5 Revealed: The Ultimate Chatbot is Coming Soon!",
-      "channel": "AI Global"
-    },
-    {
       "videoId": "fAxj_GOuFe8",
       "title": "Unveiling GPT-5: AI Technology&#39;s Future Revealed",
       "channel": "AI Guide"
+    },
+    {
+      "videoId": "n7cG9twTrms",
+      "title": "The new ChatGPT-5 is CRAZY",
+      "channel": "Mrwhosetheboss"
     }
   ],
-  "firstDate": "2026-08-16",
-  "date": "2026-08-17"
+  "firstDate": "2026-08-18",
+  "date": "2026-08-18"
 }
