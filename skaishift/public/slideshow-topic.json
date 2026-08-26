@@ -1,26 +1,26 @@
 {
-  "query": "GPT-5 AI official reveal",
-  "topicName": "GPT-5",
-  "hook": "GPT-5 just arrived and honestly it's absolutely wild.",
-  "img": "https://images.unsplash.com/photo-1675495277087-10598bf7bcd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODc1NjU0MjZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "computer chip circuit board technology AI reveal showcase",
+  "topicName": null,
+  "hook": "Jalapeño just turned AI power into pocket-sized reality.",
+  "img": "https://images.unsplash.com/photo-1532883031962-d3574f99541b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODc3Mzc5MjB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "boJG84Jcf-4",
-      "title": "Introducing GPT-5",
-      "channel": "OpenAI"
+      "videoId": "rT_bOEzCz74",
+      "title": "NVIDIA unveils its most affordable tiny supercomputer",
+      "channel": "Cheddar"
     },
     {
-      "videoId": "fAxj_GOuFe8",
-      "title": "Unveiling GPT-5: AI Technology&#39;s Future Revealed",
-      "channel": "AI Guide"
+      "videoId": "OFvwl6Tzjbw",
+      "title": "NVIDIA reveals an AI computer, the Jetson Nano aimed at developers, manufacturers and enthusiasts.",
+      "channel": "Science and more"
     },
     {
-      "videoId": "n7cG9twTrms",
-      "title": "The new ChatGPT-5 is CRAZY",
-      "channel": "Mrwhosetheboss"
+      "videoId": "kZRMshaNrSA",
+      "title": "NVIDIA DGX Spark | A Grace Blackwell AI Supercomputer on your desk",
+      "channel": "NVIDIA"
     }
   ],
-  "firstDate": "2026-08-24",
-  "date": "2026-08-25"
+  "firstDate": "2026-08-26",
+  "date": "2026-08-26"
 }
