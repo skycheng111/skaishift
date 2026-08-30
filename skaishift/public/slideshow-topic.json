@@ -1,26 +1,26 @@
 {
-  "query": "Udio AI official reveal",
-  "topicName": "Udio",
-  "hook": "Udio just made your music production dreams actually possible.",
-  "img": "https://images.unsplash.com/photo-1657727534442-d436ab275ce2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODgwMTMzMzh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "Gemini AI official reveal",
+  "topicName": "Gemini",
+  "hook": "Gemini just rewrote what AI can actually do.",
+  "img": "https://images.unsplash.com/photo-1778342183373-21306fc45480?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODgwOTk4NDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "PDyZHDbQv-U",
-      "title": "Udio AI Complete Guide (2026) | Create Studio-Quality AI Music Easily",
-      "channel": "FUTURE OF AI"
+      "videoId": "KUyRq7szZsM",
+      "title": "Introducing Gemini Omni: Create Anything from Anything",
+      "channel": "Google"
     },
     {
-      "videoId": "jLu2uSQfUeA",
-      "title": "Suno vs Udio: Which AI Music Tool Wins? 🎧",
-      "channel": "AI Battle Grounds"
+      "videoId": "Xm7ySx8VJXo",
+      "title": "ChatGPT vs Gemini – AI Image Generation Test (Mind-Blowing Results!)",
+      "channel": "TechSimplify"
     },
     {
-      "videoId": "CEjxZwtaARw",
-      "title": "Udio for AI Music Generation Honest Review - Watch Before Using",
-      "channel": "HelperMan"
+      "videoId": "_fuimO6ErKI",
+      "title": "Google – Welcome to the Gemini era",
+      "channel": "Google"
     }
   ],
-  "firstDate": "2026-08-29",
-  "date": "2026-08-29"
+  "firstDate": "2026-08-30",
+  "date": "2026-08-30"
 }
