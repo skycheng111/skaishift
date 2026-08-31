@@ -1,26 +1,26 @@
 {
-  "query": "Gemini AI official reveal",
-  "topicName": "Gemini",
-  "hook": "Gemini just rewrote what AI can actually do.",
-  "img": "https://images.unsplash.com/photo-1778342183373-21306fc45480?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODgwOTk4NDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "Llama AI official reveal",
+  "topicName": "Llama",
+  "hook": "Llama just made the AI competition sweat.",
+  "img": "https://images.unsplash.com/photo-1730303827725-6cc9143877e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODgxOTU2NDh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "KUyRq7szZsM",
-      "title": "Introducing Gemini Omni: Create Anything from Anything",
-      "channel": "Google"
+      "videoId": "cFjF0_t9avA",
+      "title": "Llama 4 vs. ChatGPT: Meta’s AI Game-Changer? Visit llama.com 🚀 #Llama4 #MetaAI #AIRevolution",
+      "channel": "Finely AI"
     },
     {
-      "videoId": "Xm7ySx8VJXo",
-      "title": "ChatGPT vs Gemini – AI Image Generation Test (Mind-Blowing Results!)",
-      "channel": "TechSimplify"
+      "videoId": "P4M9wfJH-yI",
+      "title": "Meta’s Llama 4 is mindblowing… but did it cheat?",
+      "channel": "Fireship"
     },
     {
-      "videoId": "_fuimO6ErKI",
-      "title": "Google – Welcome to the Gemini era",
-      "channel": "Google"
+      "videoId": "l9xZDkhRhyw",
+      "title": "LLaMA vs Ollama explained in 15 seconds! #ai #automation #divyaimproves #llm #llama #ollama #metaai",
+      "channel": "Divya Rajpurohit | AI Automation"
     }
   ],
-  "firstDate": "2026-08-30",
-  "date": "2026-08-30"
+  "firstDate": "2026-08-31",
+  "date": "2026-08-31"
 }
