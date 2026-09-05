@@ -6,21 +6,21 @@
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "j2iwBG2VjIg",
-      "title": "GPT-6 Astra: AGI Era Begins?",
-      "channel": "Yihuang Tech"
-    },
-    {
       "videoId": "R6FAd5n5b30",
       "title": "OpenAI Unveils GPT-6 Astra: Major Power Boost Sparks Monitoring Concerns | WION",
       "channel": "WION"
     },
     {
-      "videoId": "w1rbnM6A4AA",
-      "title": "Is GPT-6 the Future of AI Innovation?",
-      "channel": "Satoshi Talks"
+      "videoId": "j2iwBG2VjIg",
+      "title": "GPT-6 Astra: AGI Era Begins?",
+      "channel": "Yihuang Tech"
+    },
+    {
+      "videoId": "G-ducBCee98",
+      "title": "GPT-6 LEAKS: Everything We Know So Far",
+      "channel": "Codedigipt"
     }
   ],
   "firstDate": "2026-09-04",
-  "date": "2026-09-04"
+  "date": "2026-09-05"
 }
