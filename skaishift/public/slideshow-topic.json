@@ -1,26 +1,26 @@
 {
   "query": "GPT-6 AI official reveal",
   "topicName": "GPT-6",
-  "hook": "GPT-6 Astra just arrived and everything changed.",
-  "img": "https://images.unsplash.com/photo-1635859890085-ec8cb5466806?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODg1MjgzMDR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Tools",
+  "hook": "GPT-6 Astra just changed the game forever.",
+  "img": "https://images.unsplash.com/photo-1721066115321-eb0eec055296?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODg2OTg5NzZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
+    {
+      "videoId": "1QNsdr-Qx_I",
+      "title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
+      "channel": "OpenAI"
+    },
     {
       "videoId": "R6FAd5n5b30",
       "title": "OpenAI Unveils GPT-6 Astra: Major Power Boost Sparks Monitoring Concerns | WION",
       "channel": "WION"
     },
     {
-      "videoId": "j2iwBG2VjIg",
-      "title": "GPT-6 Astra: AGI Era Begins?",
-      "channel": "Yihuang Tech"
-    },
-    {
-      "videoId": "G-ducBCee98",
-      "title": "GPT-6 LEAKS: Everything We Know So Far",
-      "channel": "Codedigipt"
+      "videoId": "zu10UFDNS6E",
+      "title": "GPT-6 Astra: OpenAI lança IA &quot;superpoderosa&quot;",
+      "channel": "Olhar Digital"
     }
   ],
-  "firstDate": "2026-09-04",
-  "date": "2026-09-05"
+  "firstDate": "2026-09-06",
+  "date": "2026-09-06"
 }
