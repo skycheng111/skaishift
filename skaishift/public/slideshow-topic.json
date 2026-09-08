@@ -1,16 +1,26 @@
 {
-  "query": "Inside OpenAI: Coding agents accelerating AI reveal",
+  "query": "OpenAI commits $1B to cyber AI reveal",
   "topicName": null,
-  "hook": "Watch how OpenAI's coding agents are reshaping research forever.",
-  "img": "https://images.unsplash.com/photo-1596560292551-97c0d8871dd4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODg3OTMyMDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "hook": "OpenAI just went all in and changed the game.",
+  "img": "https://images.unsplash.com/photo-1556116593-1938fcd6c972?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODg4NzQxOTJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "DBmOzcdVVRI",
-      "title": "OpenAI Inside Look: Coding Agents Accelerating Research",
-      "channel": "Sanjay Ray"
+      "videoId": "YPYboYnDkyg",
+      "title": "OpenAI says its AI went rogue and launched cyber-attack. #BBCNews",
+      "channel": "BBC News"
+    },
+    {
+      "videoId": "ZtKuXrlWJSU",
+      "title": "OpenAI rolls out GPT-5.4, warns &quot;AI is being used by attackers&quot;",
+      "channel": "Global News"
+    },
+    {
+      "videoId": "rM5rEoYDaSk",
+      "title": "OpenAI supera a Mythos de Anthropic con GPT-5.5 Cyber",
+      "channel": "EDteam"
     }
   ],
-  "firstDate": "2026-09-07",
-  "date": "2026-09-07"
+  "firstDate": "2026-09-08",
+  "date": "2026-09-08"
 }
