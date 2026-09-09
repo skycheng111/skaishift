@@ -1,26 +1,26 @@
 {
-  "query": "OpenAI commits $1B to cyber AI reveal",
-  "topicName": null,
-  "hook": "OpenAI just went all in and changed the game.",
-  "img": "https://images.unsplash.com/photo-1556116593-1938fcd6c972?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODg4NzQxOTJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "GPT-5 AI official reveal",
+  "topicName": "GPT-5",
+  "hook": "GPT-5 just made every AI before it obsolete.",
+  "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "YPYboYnDkyg",
-      "title": "OpenAI says its AI went rogue and launched cyber-attack. #BBCNews",
-      "channel": "BBC News"
+      "videoId": "boJG84Jcf-4",
+      "title": "Introducing GPT-5",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "ZtKuXrlWJSU",
-      "title": "OpenAI rolls out GPT-5.4, warns &quot;AI is being used by attackers&quot;",
-      "channel": "Global News"
+      "videoId": "TRhXTZfPqEM",
+      "title": "GPT-5 Launched: OpenAI’s Most Powerful AI Ever | Sam Altman’s Bold New Move #unxnews",
+      "channel": "UNX News"
     },
     {
-      "videoId": "rM5rEoYDaSk",
-      "title": "OpenAI supera a Mythos de Anthropic con GPT-5.5 Cyber",
-      "channel": "EDteam"
+      "videoId": "DyVfBRaoU4M",
+      "title": "Sam Altman: GPT-5 Is Smarter Than Us",
+      "channel": "ControlAI"
     }
   ],
-  "firstDate": "2026-09-08",
-  "date": "2026-09-08"
+  "firstDate": "2026-09-09",
+  "date": "2026-09-09"
 }
