@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10T13:28:51.334Z",
+  "updated": "2026-09-11T13:27:00.018Z",
   "articles": [
     {
       "id": "2026-09-07-a1",
@@ -310,136 +310,136 @@
       "published_date": "2026-09-09"
     },
     {
-      "id": "2026-09-10-a1",
-      "cat": "Models",
-      "hook": "OpenAI just dropped GPT-6 Astra and it uses computers like we do.",
-      "headline": "GPT-6 Astra: OpenAI's most capable model adds computer use and advanced reasoning",
-      "body": "OpenAI has released GPT-6 Astra, its most advanced model designed specifically for business applications. The model introduces computer use capabilities, allowing it to interact with digital interfaces the way humans do—reading screens, clicking buttons, and navigating software. Beyond computer interaction, GPT-6 Astra demonstrates enhanced reasoning abilities that enable it to tackle complex, multi-step problems with greater accuracy and nuance. The model also brings stronger judgment in writing and design work, making it capable of producing higher-quality content and design recommendations. This positions GPT-6 Astra as a significant upgrade for knowledge workers and businesses relying on AI for productivity, reasoning, and creative tasks. The computer use feature is particularly notable because it bridges the gap between AI understanding information and AI actually taking action within existing business software and tools.",
-      "examples": [
-        "Feed GPT-6 Astra a screenshot and watch it navigate your CRM, pull data, and generate client summaries autonomously.",
-        "Drop a design brief and get multiple mockups with reasoning for color, layout, and typography choices explained.",
-        "Give it a complex business problem and track its step-by-step reasoning as it breaks down the solution."
-      ],
-      "build": "Agencies are charging $5k-$15k/month for GPT-6 Astra automation workflows that handle customer service, data entry, and report generation for mid-market clients. Freelancers are offering $200-$500/project \"prompt engineering + computer use automation\" gigs on Upwork for businesses wanting to automate their workflows without coding. AI consultants are building custom implementations for enterprises at $50k+ projects, setting up GPT-6 Astra to autonomously manage internal processes.",
-      "unsplash_query": "artificial intelligence business automation workflow",
-      "significance": 9,
-      "visual": false,
-      "time": "1h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/gpt-6-astra-next-generation-work",
-      "img": "https://images.unsplash.com/photo-1677442135136-760c813028c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkwNDcwOTB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": true,
-      "published_date": "2026-09-10"
-    },
-    {
-      "id": "2026-09-10-a2",
+      "id": "2026-09-11-a1",
       "cat": "Tools",
-      "hook": "GPT-5.6 Sol just became a quantum researcher's lab assistant.",
-      "headline": "GPT-5.6 Sol autonomously runs quantum computing experiments end-to-end",
-      "body": "OpenAI has demonstrated GPT-5.6 Sol running quantum computing experiments autonomously, marking a significant leap in AI-assisted scientific research. An MIT researcher used GPT-5.6 Sol integrated with Codex to design experiments, execute them on quantum hardware, analyze the resulting data, and make real-time calibration adjustments to qubits without human intervention between steps. The system combines language understanding with code generation to interpret quantum computing protocols, translate them into executable quantum circuits, and interpret measurement outcomes to optimize qubit parameters. This capability represents a meaningful advance over previous AI models that could generate code but couldn't close the loop between hypothesis, execution, analysis, and iterative refinement in a specialized domain like quantum computing. The real-world impact is substantial: quantum researchers typically spend weeks manually running experiments, interpreting noisy data, and tweaking calibrations—tasks that require both domain expertise and tedious iteration. GPT-5.6 Sol compresses this timeline by autonomously handling the execution-analysis-calibration cycle, freeing researchers to focus on higher-level experimental design and interpretation. This also reduces human error in the feedback loop and enables researchers to explore parameter spaces more thoroughly than manual methods would allow, potentially accelerating quantum computing development.",
+      "hook": "AI is literally hunting for new antibiotics inside ancient DNA.",
+      "headline": "Researcher uses Codex and ChatGPT to discover antimicrobial molecules from genomes",
+      "body": "César de la Fuente's lab at the University of Pennsylvania is leveraging OpenAI's Codex and ChatGPT to search through living and extinct genomes in search of new antimicrobial candidates to combat drug-resistant infections. The approach represents a significant acceleration in the drug discovery process, which traditionally takes years and millions of dollars. By using AI to analyze genomic sequences at scale, the lab can identify promising antimicrobial peptides and compounds that would be virtually impossible to find through manual screening. Codex helps parse and understand complex genomic data structures, while ChatGPT assists in hypothesis generation and literature synthesis to prioritize candidates for validation. This workflow addresses a critical global health crisis: antimicrobial resistance kills an estimated 1.27 million people annually and threatens to make common infections untreatable. The real-world impact is immediate—promising candidates can move to lab testing within weeks rather than months, dramatically reducing the time between computational discovery and experimental validation. This represents a new paradigm where AI doesn't just assist researchers but fundamentally changes the speed and scale at which drug discovery can operate.",
       "examples": [
-        "Describe a quantum protocol in natural language and GPT-5.6 Sol translates it into optimized quantum circuits and runs the experiment.",
-        "The AI analyzes qubit measurement data in real-time and automatically adjusts calibration parameters to reduce error rates.",
-        "GPT-5.6 Sol iterates through multiple experimental configurations overnight, logging results and recommending the most promising setup."
+        "Input genomic sequences and get ranked lists of novel antimicrobial peptides with predicted efficacy scores.",
+        "Cross-reference extinct organism genomes to find evolved resistance mechanisms still relevant today.",
+        "Generate research hypotheses about why specific molecular structures kill drug-resistant bacteria strains."
       ],
-      "build": "Quantum computing consulting firms are charging $5K–$15K per week to deploy AI-assisted experiment automation for enterprise clients running quantum research. AI research engineers are freelancing as 'quantum-AI integration specialists' to help labs implement autonomous experiment loops, earning $80–$150/hour. Research institutions are licensing turnkey quantum-AI systems that monetize internal discoveries through faster publication cycles and grant competitiveness.",
-      "unsplash_query": "quantum computing lab qubit research",
-      "significance": 9,
-      "visual": false,
-      "time": "10h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/codex-quantum-computing-experiments",
-      "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format",
-      "feat": true,
-      "published_date": "2026-09-10"
-    },
-    {
-      "id": "2026-09-10-a3",
-      "cat": "Tools",
-      "hook": "Google just used AI to resurrect 70 years of memories frame by frame.",
-      "headline": "Google DeepMind recreates lost footage of couple's entire love story with AI",
-      "body": "Google DeepMind and a team of filmmakers created 'Love, Rendered,' a short film that uses artificial intelligence to reconstruct and visualize a couple's 70-year relationship that was never formally recorded on video. The project demonstrates a creative application of generative AI that goes beyond typical use cases—instead of generating fictional content, the technology was trained to interpret photographs, memories, and personal stories to create a continuous visual narrative spanning decades. The filmmakers worked with AI researchers to develop a pipeline that could convert still images and archival materials into coherent video sequences while maintaining emotional authenticity and historical accuracy. This represents a significant shift in how AI can be applied to personal storytelling and archival work, allowing families and historians to visualize and preserve memories that might otherwise remain frozen in photographs. The technical achievement shows how AI can bridge the gap between static documentation and dynamic storytelling, making inaccessible memories tangible. While the project itself is a one-off artistic piece, it opens possibilities for consumer applications in family history preservation, documentary filmmaking, and personalized memory reconstruction services.",
-      "examples": [
-        "Feed the AI old photographs from different decades and watch it animate them into continuous scenes of a couple's life together.",
-        "The system generated entire sequences showing how locations, fashion, and settings changed across seven decades of memories.",
-        "AI reconstructed emotional moments between frames—sitting together, dancing, aging—without original footage to reference."
-      ],
-      "build": "Filmmakers are already monetizing similar AI reconstruction services for documentary projects and family history productions at $5,000–$50,000 per project. Archivists and genealogy service providers are starting to offer AI-enhanced memory visualization as a premium tier. Wedding videographers are experimenting with AI frame interpolation to create extended highlight reels from limited footage, charging 20–40% premiums for the service.",
-      "unsplash_query": "old photographs memories family archive",
+      "build": "Biotech consultants are charging $15K-$50K per project to integrate Codex and ChatGPT into drug discovery workflows for mid-size pharmaceutical companies and research institutions. Contract research organizations (CROs) are offering AI-accelerated screening services at $5K-$10K monthly retainers. Individual researchers are licensing custom Python scripts built on the Codex API for $2K-$8K per institution.",
+      "unsplash_query": "DNA molecule microscope research laboratory",
       "significance": 9,
       "visual": false,
       "time": "3h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
-      "img": "https://images.unsplash.com/photo-1774566188743-11ac13cba2dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkwNDcwOTJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-09-10"
+      "source": "OpenAI",
+      "link": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+      "img": "https://images.unsplash.com/photo-1702802120585-7b682d4e73de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkxMzMzNzR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-09-11"
     },
     {
-      "id": "2026-09-10-a4",
-      "cat": "Models",
-      "hook": "Google just dropped their biggest AI update of the summer.",
-      "headline": "Google Unleashes August 2026 AI Suite: Gemini Gets Faster, Smarter, More Capable",
-      "body": "Google announced a comprehensive suite of AI updates in August 2026, advancing their Gemini model family and releasing new capabilities across multiple product lines. While the specific details of each announcement were not fully disclosed in the source material provided, Google's pattern of August releases typically includes performance improvements to their flagship Gemini models, expanded API capabilities, and integration of advanced features like improved reasoning, multimodal processing, and real-time inference. These updates represent Google's continued effort to keep Gemini competitive with rival models like OpenAI's GPT-4 and Anthropic's Claude, addressing speed, accuracy, and context window limitations that emerged from previous versions. The announcements likely included benchmarks showing Gemini's performance against other leading models, new integration options for developers, and expanded availability across Google's ecosystem including Workspace, Android, and third-party applications. For AI-focused entrepreneurs, these releases typically mean access to more capable APIs, better rate limits, and new capabilities to build products around—from content generation to code assistance to multimodal analysis.",
+      "id": "2026-09-11-a2",
+      "cat": "Tools",
+      "hook": "ChatGPT just turned your company data into a goldmine.",
+      "headline": "ChatGPT's Data Agent lets anyone build dashboards and find insights with AI",
+      "body": "OpenAI has launched a Data agent within ChatGPT Work that fundamentally changes how non-technical employees interact with company data. The new feature allows users to connect their company databases and data sources directly to ChatGPT, then use natural language to explore, analyze, and visualize that data without writing a single line of code. Instead of waiting for a data analyst or SQL query, anyone can now ask questions like 'Show me our top customers by revenue this quarter' or 'What's driving churn in the enterprise segment?' and get instant answers. The Data agent automatically interprets these natural language requests, queries the connected data, uncovers patterns and insights, and builds interactive dashboards that teams can explore further. This democratizes data access across organizations—finance teams, marketing managers, sales leaders, and operations staff can all self-serve answers that previously required technical skills. The tool integrates with ChatGPT Work's existing capabilities, meaning users get the full power of GPT-4 combined with their actual business data, enabling discovery of insights that might have been missed or delayed. The real-world impact is significant: companies can make faster, data-driven decisions, reduce bottlenecks in their analytics workflows, and empower every team member to become a data explorer.",
       "examples": [
-        "Feed Gemini a complex research paper and get structured summaries, key citations, and critical gaps identified instantly.",
-        "Use the updated multimodal model to analyze screenshots, PDFs, and images in a single query without preprocessing.",
-        "Integrate real-time voice conversations into applications with lower latency and improved accent recognition."
+        "Upload sales data and ask 'Which products are trending?' to instantly see interactive charts and trends.",
+        "Connect your customer database and generate a dashboard showing churn risk by segment and cohort.",
+        "Ask natural language questions about company metrics and get both answers and visual breakdowns in seconds."
       ],
-      "build": "Agencies are charging $2,500-$5,000/month retainers to integrate the latest Gemini APIs into client workflows—automating content pipelines, customer support, and data analysis. Some consultants are selling '30-day Gemini audit' services ($800-$2,000) that identify which new capabilities fit a client's existing stack. Freelancers on Upwork are landing $50-$150/hour implementing these updates for small businesses trying to stay current.",
-      "unsplash_query": "artificial intelligence neural network technology",
+      "build": "Consultants are charging $150–300/hour to help mid-market companies set up Data agents and build custom dashboards for their teams. Agencies are selling 'data democratization' packages ($5K–25K) to companies wanting to train 50+ employees on the new tool. Freelancers on Upwork are offering rapid dashboard-building services, typically completing projects in 3–7 days for clients who need quick analytics wins.",
+      "unsplash_query": "data analytics dashboard business intelligence",
+      "significance": 9,
+      "visual": false,
+      "time": "5h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/put-data-to-work",
+      "img": "https://images.unsplash.com/photo-1686061593213-98dad7c599b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkxMzMzNzV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-09-11"
+    },
+    {
+      "id": "2026-09-11-a3",
+      "cat": "Tools",
+      "hook": "OpenAI just built financial AI that actually knows the numbers.",
+      "headline": "OpenAI Launches ChatGPT for Financial Services With Built-In Data and GPT-6 Astra",
+      "body": "OpenAI has released ChatGPT for Financial Services, a specialized version of its AI platform designed to help financial professionals conduct research, build financial models, and create client-ready materials. The tool combines GPT-6 Astra — OpenAI's latest multimodal model — with integrated financial datasets, enabling analysts and advisors to process vast amounts of market data, historical trends, and economic indicators without manual data entry or switching between platforms. Unlike the general-purpose ChatGPT, this financial variant has been trained on domain-specific knowledge relevant to investment analysis, risk assessment, and portfolio management. The built-in financial data eliminates friction in the workflow: users can ask questions about market conditions, company fundamentals, or economic indicators and receive research-backed answers formatted for client presentations. GPT-6 Astra's advanced reasoning capabilities allow it to handle complex financial modeling tasks — stress testing scenarios, forecasting revenue streams, or comparing investment options across multiple variables. This targets a real pain point: financial professionals spend hours compiling data from Bloomberg, Yahoo Finance, SEC filings, and other sources before they can even begin analysis. ChatGPT for Financial Services automates that initial layer, letting professionals focus on strategy and interpretation rather than data wrangling. The release signals OpenAI's push into vertical AI solutions, where general models are customized with specialized data and fine-tuning for specific industries.",
+      "examples": [
+        "Paste a client's portfolio and get a personalized risk analysis with recommendations formatted for an advisory presentation.",
+        "Ask for a market comparison: the AI generates side-by-side analysis of competing stocks with sentiment, valuation, and growth metrics.",
+        "Input historical earnings data and get forward-looking financial projections with confidence intervals for a three-year outlook."
+      ],
+      "build": "Financial advisors are charging clients $500–$2,000 per month for AI-powered research and portfolio analysis services, using ChatGPT for Financial Services to cut research time by 60–70% and deliver faster client reports. Wealth management firms are packaging this as a premium offering: traditional advisory at $1,500/month becomes 'AI-Enhanced Advisory' at $2,500/month with faster turnarounds and deeper analysis. RIAs (Registered Investment Advisors) managing $10M–$100M in assets are already adopting it to compete with larger firms, turning the tool into a client retention and acquisition weapon.",
+      "unsplash_query": "financial data analysis business charts",
+      "significance": 9,
+      "visual": false,
+      "time": "7h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-chatgpt-financial-services",
+      "img": "https://images.unsplash.com/photo-1762427354251-f008b64dbc32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkxMzMzNzZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-09-11"
+    },
+    {
+      "id": "2026-09-11-a4",
+      "cat": "Tools",
+      "hook": "OpenAI just made voice AI actually sound like a real conversation.",
+      "headline": "GPT-Live-1 brings full-duplex voice to API with custom voices and phone support",
+      "body": "OpenAI announced GPT-Live-1, a new model bringing natural, full-duplex voice conversations directly to their API. Full-duplex means both people can talk at the same time — no awkward turn-taking delays like older voice systems. The model brings three major improvements: stronger instruction following (meaning it actually listens to what you ask it to do), custom voice options (so you're not stuck with generic robotic voices), and native telephony support (meaning you can integrate it into actual phone systems and IVR applications). This is a significant leap from previous voice implementations because it handles interruptions, maintains context through overlapping speech, and sounds genuinely conversational rather than stilted. The telephony support is particularly important for entrepreneurs — it means you can build AI customer service systems, outbound calling applications, and voice bots that work on traditional phone networks, not just web apps. The stronger instruction following means the model will actually respect nuanced prompts and voice-specific directives, making it viable for professional use cases like multilingual support, accessible technology, and premium customer experiences. OpenAI hasn't disclosed specific pricing or availability details yet, but the API rollout suggests this will be accessible to developers building commercial applications.",
+      "examples": [
+        "Build a customer service bot that handles phone calls, understanding interruptions and speaking naturally like a human agent.",
+        "Create multilingual support lines where the AI switches languages mid-conversation while maintaining context and tone.",
+        "Deploy outbound calling campaigns for surveys or notifications with voices that sound like actual people, not AI."
+      ],
+      "build": "Agencies are already packaging voice AI as a service: build custom phone systems for small businesses at $500-2K/month, offer multilingual customer support outsourcing at $3-8K/month per language, or create AI receptionist services replacing human phone staff ($1-3K/month). The telephony support means you can start selling these within days of API access—no complex integrations needed.",
+      "unsplash_query": "voice AI conversation technology microphone",
       "significance": 9,
       "visual": false,
       "time": "9h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/",
-      "img": "https://images.unsplash.com/photo-1650327034304-a78be54cb60d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkwNDcwOTN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+      "img": "https://images.unsplash.com/photo-1582978710249-01c412b637ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkxMzMzNzd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-09-10"
+      "published_date": "2026-09-11"
     },
     {
-      "id": "2026-09-10-a5",
+      "id": "2026-09-11-a5",
       "cat": "Tools",
-      "hook": "Google just dropped an AI image tool built into Workspace.",
-      "headline": "Google Pics: AI Image Creation and Editing Now Live in Workspace",
-      "body": "Google has launched Google Pics, a new image creation and editing tool now available within Google Workspace. Built on Google's latest Nano Banana model, the tool enables users to generate and edit images directly within their workflow. Google Pics integrates seamlessly into Workspace, allowing teams to create visual content without leaving their productivity suite. The Nano Banana model underpins the tool's capabilities, representing Google's latest advancement in efficient, lightweight AI for image generation. This positions Google Pics as a direct competitor to standalone image creation tools like Canva, Adobe Express, and DALL-E integrations, but with the advantage of native Workspace integration. The real-world impact is immediate for teams that rely on Google's ecosystem—marketers, designers, content creators, and business users can now prototype visuals, create social media assets, and edit images without context switching. The timing matters: as AI image tools become table stakes for productivity suites, Google's native integration removes friction for its 3+ billion Workspace users.",
+      "hook": "Google just used AI to film a love story that never happened.",
+      "headline": "Google DeepMind recreates 70 years of unseen memories with AI film",
+      "body": "Google DeepMind and filmmakers collaborated on 'Love, Rendered,' a short film that uses AI to reconstruct and visualize a couple's entire 70-year relationship—moments that were never actually recorded on camera. The project demonstrates how generative AI can fill gaps in human storytelling by creating cinematically coherent sequences that capture the emotional arc of a lifelong partnership. Rather than simple image generation, the filmmakers trained models to understand narrative continuity, character consistency, and emotional progression across decades of fictional moments. The result is a emotionally resonant short film that looks like it was shot across seven decades, complete with period-appropriate cinematography, locations, and visual styles that evolve over time. This marks a significant shift in how AI can be applied to creative storytelling—not just generating individual frames or clips, but constructing coherent visual narratives that maintain thematic and emotional integrity. The project raises interesting questions about AI's role in documentary-style filmmaking, legacy preservation, and how future generations might reconstruct or reimagine untold stories from their family histories.",
       "examples": [
-        "Generate marketing graphics and product mockups directly in Google Docs or Slides without opening another app.",
-        "Edit existing images, adjust backgrounds, and refine compositions using AI-powered editing within your Workspace project.",
-        "Create social media thumbnails, email headers, and presentation visuals on-demand during workflow without export delays."
+        "Input key moments from a couple's life story, let AI generate cinematic sequences showing their relationship arc across decades.",
+        "Feed historical context and personal details into the model; it creates period-accurate visuals matching each era of their shared history.",
+        "Generate multiple stylistic interpretations of the same memory—black and white, color film, modern cinematography—showing how the story could have been told."
       ],
-      "build": "Freelance designers and agencies are charging $500–$2,500/month for clients wanting 'AI-enhanced design workflows'—bundling Pics with Canva and Figma to offer faster asset creation. Content creators are offering Workspace-based template packages ($99–$299 each) pre-configured for image generation. Consultants are helping small businesses migrate their design workflows to Workspace, billing $150–$300/hour for training and setup, with projects typically taking 3–5 weeks.",
-      "unsplash_query": "AI image generation workspace collaboration",
+      "build": "Filmmakers and production studios are licensing AI-assisted storytelling tools to create legacy films and family documentaries at a fraction of traditional production costs—charging $5K-$50K for personalized narrative films compared to $100K+ for conventional documentary work. Content creators are selling 'memory visualization' services to families wanting to create films from old photos and stories, building recurring revenue through tiered packages ($500-$5K per family project). Agencies are positioning AI narrative generation as a premium offering for high-end brands creating emotional brand films and heritage content, completing projects in weeks instead of months.",
+      "unsplash_query": "couple vintage photography nostalgic memories",
       "significance": 9,
       "visual": false,
       "time": "6h",
       "source": "Google AI",
-      "link": "https://blog.google/products-and-platforms/products/workspace/google-pics/",
-      "img": "https://images.unsplash.com/photo-1676275773827-f6554c1ef62a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkwNDcwOTR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
+      "img": "https://images.unsplash.com/photo-1780597257818-6018cbf11362?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkxMzMzNzl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-09-10"
+      "published_date": "2026-09-11"
     },
     {
-      "id": "2026-09-10-a6",
-      "cat": "Tools",
-      "hook": "AUTOMATIC1111 just got rebuilt from the ground up with Gradio.",
-      "headline": "AUTOMATIC1111 Rebuilt with Gradio: Faster, Cleaner, More Modular",
-      "body": "AUTOMATIC1111, the beloved open-source UI for Stable Diffusion, is being reconstructed using Gradio workflows instead of its original architecture. This rebuild maintains all the core functionality users rely on — image generation, upscaling, inpainting, and control net support — but with a cleaner codebase and better modularity. The new version leverages Gradio's workflow system, which allows users to chain operations together visually and programmatically, making it easier to extend and customize. The rebuild addresses long-standing pain points: slower development cycles, difficulty onboarding contributors, and tight coupling between components. By moving to Gradio, the maintainers gain access to a more modern, actively-maintained foundation that's already used across the HuggingFace ecosystem. Early testing shows improved performance for common workflows and significantly faster iteration on new features. This is significant because AUTOMATIC1111 remains the most widely-used Stable Diffusion interface in production, powering hundreds of thousands of creator workflows. The transition doesn't break existing installations, but newcomers will benefit from the cleaner architecture and better long-term maintainability.",
+      "id": "2026-09-11-a6",
+      "cat": "Models",
+      "hook": "IBM just dropped a time series model that actually works at scale.",
+      "headline": "IBM releases Granite PatchTST-FM-r2 with commercial license for time series forecasting",
+      "body": "IBM has released Granite PatchTST-FM-r2, a state-of-the-art foundation model specifically designed for time series forecasting tasks. The model is built on the PatchTST architecture and comes with a commercial-friendly license, making it immediately available for production use in enterprise applications. Time series forecasting is critical for businesses that need to predict stock prices, weather patterns, demand fluctuations, equipment failures, and other sequential data — and most existing solutions either require expensive proprietary tools or open-source models that lack enterprise-grade performance. The Granite version brings improved accuracy and efficiency compared to earlier iterations, with particular strength in long-horizon forecasting where traditional models often struggle. IBM's commercial license removes typical restrictions on model use, meaning companies can deploy it directly into revenue-generating products without licensing concerns. This positions Granite PatchTST-FM-r2 as a direct alternative to specialized forecasting platforms that traditionally cost thousands per month, and it's available immediately on HuggingFace for developers to integrate into existing workflows.",
       "examples": [
-        "Build a multi-step image pipeline: upscale output, apply control net, then inpaint details — all in one saved Gradio workflow.",
-        "Chain Stable Diffusion models together in sequence: generate base image, pass to LoRA refinement, send to upscaler automatically.",
-        "Create reusable workflows and share them as Gradio links without touching code — others fork and modify instantly."
+        "Feed 6 months of historical sales data, get accurate 90-day demand forecasts for inventory planning.",
+        "Input equipment sensor readings over time, predict maintenance failures 2-3 weeks before they happen.",
+        "Use stock market OHLCV data to forecast price movements for algorithmic trading strategies."
       ],
-      "build": "Freelancers are charging $50-300/hour to set up custom Stable Diffusion workflows for agencies running batch image generation. API builders are wrapping the new Gradio-based AUTOMATIC1111 as managed services, selling to design studios at $200-800/month per seat. Some are packaging pre-built workflows (product photography, character design, social media content) as templates and selling on Gumroad for $15-50 each.",
-      "unsplash_query": "AI image generation interface workflow",
+      "build": "Consultants are charging $3K–$8K per project to implement Granite forecasting for mid-market companies replacing expensive legacy systems like SAP Analytics. Agencies are bundling the model with custom data pipelines as managed forecasting services ($500–$2K/month per client). Time series specialists are building white-label SaaS platforms on top of Granite, selling to retailers and logistics companies at $1K–$5K/month.",
+      "unsplash_query": "financial data charts time series forecasting",
       "significance": 9,
       "visual": false,
-      "time": "7h",
+      "time": "10h",
       "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/gradio-workflow-1111",
-      "img": "https://images.unsplash.com/photo-1687125114671-d45714b4631d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkwNDcwOTR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+      "img": "https://images.unsplash.com/photo-1648098893250-1d03dce92467?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkxMzMzODJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-09-10"
+      "published_date": "2026-09-11"
     }
   ]
 }
