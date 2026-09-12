@@ -1,26 +1,26 @@
 {
-  "query": "OpenAI Codex AI official reveal",
-  "topicName": "Codex",
-  "hook": "Codex just turned your wildest building dreams into reality.",
-  "img": "https://images.unsplash.com/photo-1702802120585-7b682d4e73de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkxMzMzNzR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Tools",
+  "query": "GPT-6 AI official reveal",
+  "topicName": "GPT-6",
+  "hook": "Astra just made every other AI model nervous.",
+  "img": "https://images.unsplash.com/photo-1602468432285-0fe26e8352ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODkyMTczNzB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
     {
-      "videoId": "m8uUUUsMD3Y",
-      "title": "Introducing the Codex Micro",
+      "videoId": "1QNsdr-Qx_I",
+      "title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
       "channel": "OpenAI"
     },
     {
-      "videoId": "Lm7-yFZ5fZQ",
-      "title": "Codex for (almost) everything",
+      "videoId": "bOC3DisEOfg",
+      "title": "Introducing GPT-6 Astra for developers",
       "channel": "OpenAI"
     },
     {
-      "videoId": "aCN9iCXNJqQ",
-      "title": "OpenAI Super Bowl 2026 | Codex | You Can Just Build Things",
+      "videoId": "QDLlQ5IL2Bk",
+      "title": "GPT-6 Astra with Tom Krcha",
       "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-09-11",
-  "date": "2026-09-11"
+  "firstDate": "2026-09-12",
+  "date": "2026-09-12"
 }
