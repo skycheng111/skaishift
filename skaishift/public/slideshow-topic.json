@@ -1,21 +1,26 @@
 {
-  "query": "data center servers global network AI reveal showcase",
-  "topicName": null,
-  "hook": "OpenAI's Habitat is reshaping how AI infrastructure works.",
-  "img": "https://images.unsplash.com/photo-1783683783819-e6cb806bba69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODk0MDExMDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "GPT-6 AI official reveal",
+  "topicName": "GPT-6",
+  "hook": "Astra just changed the game forever.",
+  "img": "https://images.unsplash.com/photo-1753450298481-362990f811ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODk0ODE5MDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "VXyRkw8RbAg",
-      "title": "Next-Generation Datacenter Designs",
-      "channel": "AI at Meta"
+      "videoId": "1QNsdr-Qx_I",
+      "title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "n13ReD-hNU8",
-      "title": "Exclusive Tour: Mumbai Data Center Summit Revealed",
-      "channel": "TheWasifWay"
+      "videoId": "bOC3DisEOfg",
+      "title": "Introducing GPT-6 Astra for developers",
+      "channel": "OpenAI"
+    },
+    {
+      "videoId": "kuGjypoJKwk",
+      "title": "ChatGPT Work, now powered by GPT-6 Astra",
+      "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-09-14",
-  "date": "2026-09-14"
+  "firstDate": "2026-09-15",
+  "date": "2026-09-15"
 }
