@@ -1,26 +1,26 @@
 {
-  "query": "GPT-6 AI official reveal",
-  "topicName": "GPT-6",
-  "hook": "Astra just changed the game forever.",
-  "img": "https://images.unsplash.com/photo-1753450298481-362990f811ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODk0ODE5MDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "OpenAI launches Sponsored Agents, bringing AI reveal",
+  "topicName": null,
+  "hook": "OpenAI just leveled up the entire AI game.",
+  "img": "https://images.unsplash.com/photo-1521931961826-fe48677230a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODk1Njc4MjZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
-    {
-      "videoId": "1QNsdr-Qx_I",
-      "title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
-      "channel": "OpenAI"
-    },
-    {
-      "videoId": "bOC3DisEOfg",
-      "title": "Introducing GPT-6 Astra for developers",
-      "channel": "OpenAI"
-    },
     {
       "videoId": "kuGjypoJKwk",
       "title": "ChatGPT Work, now powered by GPT-6 Astra",
       "channel": "OpenAI"
+    },
+    {
+      "videoId": "2YHa1vhnmK0",
+      "title": "Introducing the Agents API",
+      "channel": "OpenAI"
+    },
+    {
+      "videoId": "MSiAd36bGeQ",
+      "title": "Data agent in ChatGPT Work",
+      "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-09-15",
-  "date": "2026-09-15"
+  "firstDate": "2026-09-16",
+  "date": "2026-09-16"
 }
