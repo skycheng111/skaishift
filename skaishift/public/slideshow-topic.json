@@ -1,15 +1,10 @@
 {
   "query": "OpenAI launches Sponsored Agents, bringing AI reveal",
   "topicName": null,
-  "hook": "OpenAI just leveled up the entire AI game.",
-  "img": "https://images.unsplash.com/photo-1521931961826-fe48677230a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODk1Njc4MjZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "hook": "OpenAI just unleashed agents that actually get stuff done.",
+  "img": "https://images.unsplash.com/photo-1706749519260-53840d39c536?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODk2NTQ1NTh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
-    {
-      "videoId": "kuGjypoJKwk",
-      "title": "ChatGPT Work, now powered by GPT-6 Astra",
-      "channel": "OpenAI"
-    },
     {
       "videoId": "2YHa1vhnmK0",
       "title": "Introducing the Agents API",
@@ -19,8 +14,13 @@
       "videoId": "MSiAd36bGeQ",
       "title": "Data agent in ChatGPT Work",
       "channel": "OpenAI"
+    },
+    {
+      "videoId": "yyvVUEPSCu0",
+      "title": "Introducing workspace agents in ChatGPT",
+      "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-09-16",
-  "date": "2026-09-16"
+  "firstDate": "2026-09-17",
+  "date": "2026-09-17"
 }
