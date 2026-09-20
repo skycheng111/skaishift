@@ -1,7 +1,7 @@
 {
-  "query": "OpenAI launches Astra for Law AI reveal",
+  "query": "OpenAI Launches Astra for Law AI reveal",
   "topicName": null,
-  "hook": "Astra just made every other AI look ancient.",
+  "hook": "Astra just made every other AI nervous.",
   "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format",
   "cat": "Tools",
   "videos": [
@@ -16,11 +16,11 @@
       "channel": "OpenAI"
     },
     {
-      "videoId": "k0IpFiMeBRI",
-      "title": "Amazon Breaks Silence on AI Safety, OpenAI&#39;s Astra for Law, Claude Now Builds Itself",
-      "channel": "The AI Bulletin"
+      "videoId": "kuGjypoJKwk",
+      "title": "ChatGPT Work, now powered by GPT-6 Astra",
+      "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-09-19",
-  "date": "2026-09-19"
+  "firstDate": "2026-09-20",
+  "date": "2026-09-20"
 }
