@@ -1,26 +1,26 @@
 {
-  "query": "OpenAI Codex AI official reveal",
-  "topicName": "Codex",
-  "hook": "Codex just changed what's actually possible.",
-  "img": "https://images.unsplash.com/photo-1485575301924-6891ef935dcd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2MTY4NDF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Earn",
+  "query": "GPT-6 AI official reveal",
+  "topicName": "GPT-6",
+  "hook": "GPT-6 Astra just rewrote what's possible with AI.",
+  "img": "https://images.unsplash.com/photo-1781246435700-afec19012b45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2OTYzNTd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
     {
-      "videoId": "m8uUUUsMD3Y",
-      "title": "Introducing the Codex Micro",
+      "videoId": "1QNsdr-Qx_I",
+      "title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
       "channel": "OpenAI"
     },
     {
-      "videoId": "Lm7-yFZ5fZQ",
-      "title": "Codex for (almost) everything",
+      "videoId": "kuGjypoJKwk",
+      "title": "ChatGPT Work, now powered by GPT-6 Astra",
       "channel": "OpenAI"
     },
     {
-      "videoId": "bJcA23ckzcY",
-      "title": "It&#39;s time to fly | Codex",
+      "videoId": "bOC3DisEOfg",
+      "title": "Introducing GPT-6 Astra for developers",
       "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-09-28",
-  "date": "2026-09-28"
+  "firstDate": "2026-09-29",
+  "date": "2026-09-29"
 }

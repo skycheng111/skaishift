@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T17:31:41.829Z",
+  "updated": "2026-09-29T15:36:44.136Z",
   "articles": [
     {
       "id": "2026-09-28-a1",
@@ -310,114 +310,136 @@
       "published_date": "2026-09-28"
     },
     {
-      "id": "2026-09-28-a15",
+      "id": "2026-09-29-a1",
+      "cat": "Models",
+      "hook": "GPT-6 Astra just made tax season half as painful.",
+      "headline": "GPT-6 Astra crushes tax workbooks 2x faster than GPT-5.6 Sol",
+      "body": "OpenAI's GPT-6 Astra has demonstrated a significant leap in processing speed and reasoning capability by completing a complex 50-tab tax workbook in half the time it took GPT-5.6 Sol. The newer model didn't just move faster — it showed stronger understanding of user intent, which gives Basis (the accounting platform testing it) real confidence to deploy it in production environments where accuracy and speed directly impact customer outcomes. This matters because tax preparation involves juggling dozens of interconnected spreadsheets, cross-referencing rules, and catching edge cases — tasks that demand both raw processing power and contextual reasoning. The 2x speed improvement combined with better intent understanding means GPT-6 Astra can handle enterprise-grade document complexity that previously required either multiple model calls or human review loops. For accounting firms and tax software companies, this translates to faster turnaround times, lower computational costs per job, and fewer validation steps before client delivery.",
+      "examples": [
+        "Load a messy 50-tab tax workbook and get a complete analysis with flagged deductions in minutes instead of hours.",
+        "Ask the model complex follow-up questions about specific line items and watch it navigate the entire workbook context accurately.",
+        "Use it to catch inconsistencies across multiple tax schedules that human preparers might miss on first pass."
+      ],
+      "build": "Tax preparation agencies are now integrating GPT-6 Astra into their workflows to complete client returns 2x faster, cutting per-return labor from 8 hours to 4 hours and billing the same rate — pure margin expansion. Bookkeeping services are selling 'AI-accelerated tax prep' as a premium offering, charging $200-500 per return (vs. $100-200 manual) by positioning the speed and accuracy as a feature. Accounting firms are also using the model to handle overflow work during tax season without hiring temp staff, recovering the API costs within the first week of heavy usage.",
+      "unsplash_query": "accountant spreadsheet data analysis",
+      "significance": 9,
+      "visual": false,
+      "time": "5h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/basis-tax-workbook-with-astra",
+      "img": "https://images.unsplash.com/photo-1781246435700-afec19012b45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2OTYzNTd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-09-29"
+    },
+    {
+      "id": "2026-09-29-a2",
+      "cat": "Models",
+      "hook": "NVIDIA just made tabular AI actually good at being fast.",
+      "headline": "NVIDIA Kumo Tabular Breaks Speed-Accuracy Tradeoff for Data Tables",
+      "body": "NVIDIA has released Kumo Tabular, a new model specifically engineered for tabular data prediction that achieves a significant breakthrough in the classic tradeoff between accuracy and computational efficiency. Unlike general-purpose large language models that struggle with structured data in spreadsheets and databases, Kumo Tabular is purpose-built to handle the kind of data that powers most enterprise decision-making—customer records, financial transactions, sales forecasts, and sensor readings. The model demonstrates substantial improvements over existing tabular prediction methods, delivering higher accuracy on standard benchmarks while requiring dramatically less computational overhead, making it viable for real-time inference on edge devices and cost-sensitive production environments. This matters because tabular data remains the dominant format in enterprise AI applications; most machine learning problems in business involve tables, not unstructured text or images, yet existing solutions either sacrifice accuracy for speed or require expensive GPU clusters. Kumo Tabular appears to resolve this by leveraging architectural innovations that were previously unavailable in the open-source space, making it immediately applicable for companies building pricing models, churn prediction systems, fraud detection pipelines, and demand forecasting tools. Early benchmarks show it outperforms gradient boosting methods like XGBoost and CatBoost while maintaining inference latency suitable for real-time applications.",
+      "examples": [
+        "Feed historical customer purchase data and get next-month revenue predictions in milliseconds without GPU cost.",
+        "Drop a fraud detection dataset and identify suspicious transactions 10x faster than XGBoost baseline.",
+        "Upload sales records and generate pricing recommendations that update in real-time as new transactions arrive."
+      ],
+      "build": "Consultants are charging $8k-$25k to migrate clients from XGBoost pipelines to Kumo Tabular, capturing infrastructure savings. SaaS founders are adding Kumo-powered predictive features to their platforms (churn scoring, upsell recommendations) and billing customers $200-$500/month extra per feature. Data teams are selling internal tabular AI as a service to other departments, recovering costs within 2-3 months through faster model iterations and reduced cloud spend.",
+      "unsplash_query": "data science spreadsheet analytics",
+      "significance": 9,
+      "visual": false,
+      "time": "1h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/nvidia/kumo-tabular",
+      "img": "https://images.unsplash.com/photo-1723987251277-18fc0a1effd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2OTYzNjJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-09-29"
+    },
+    {
+      "id": "2026-09-29-a3",
+      "cat": "Models",
+      "hook": "Computer-use agents just got way smarter and more general.",
+      "headline": "Holo4 brings generalist computer-use capabilities to frontier models",
+      "body": "HuggingFace has released Holo4, a new framework designed to power generalist computer-use agents that can interact with digital environments across diverse tasks and applications. Unlike previous iterations that were narrowly specialized, Holo4 enables frontier AI models to understand and execute sequences of computer actions—clicking, typing, scrolling, navigating—with significantly improved reasoning and adaptability. The framework improves upon earlier computer-use benchmarks by enabling models to handle complex, multi-step workflows that require understanding context, maintaining state, and making decisions across varied software interfaces and platforms. Holo4 achieves this through enhanced visual understanding, action space optimization, and better task decomposition, allowing agents to handle everything from data entry and web research to file management and cross-application workflows. The real-world impact is substantial: this unlocks a new category of AI workers that can automate knowledge work at scale without requiring specialized training data for each use case. Early applications are being deployed for customer service automation, data processing, and workflow orchestration, fundamentally changing how businesses think about automating repetitive digital tasks.",
+      "examples": [
+        "Navigate a complex web application, extract specific data from multiple pages, and compile it into a spreadsheet automatically.",
+        "Open an email, read instructions, access relevant files, and generate a formatted report without human intervention.",
+        "Handle multi-step customer service tasks: retrieve account info, check order status, process refunds, send confirmation."
+      ],
+      "build": "Agencies are charging $2k-$5k/month retainers to deploy Holo4-powered agents for client workflows like data entry automation and customer service triage. Freelancers are offering custom agent development at $50-$150/hour to build task-specific computer-use workflows. SaaS founders are embedding Holo4 into products to unlock white-label automation features, creating new revenue streams from existing user bases.",
+      "unsplash_query": "artificial intelligence automation workflow digital",
+      "significance": 9,
+      "visual": false,
+      "time": "5h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/Hcompany/holo4",
+      "img": "https://images.unsplash.com/photo-1712238107648-4e94c158ab3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2OTYzNjN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-09-29"
+    },
+    {
+      "id": "2026-09-29-a4",
+      "cat": "Models",
+      "hook": "Vision-language models just got way faster without losing quality.",
+      "headline": "LFM2.5-VL-DSpark speeds up vision-language AI while keeping accuracy intact",
+      "body": "A new optimized version of the LFM2.5-VL vision-language model has been released, designed to accelerate inference speed without sacrificing performance on image understanding tasks. The model, called LFM2.5-VL-DSpark, represents a significant engineering achievement in making multimodal AI more efficient for real-world deployment. Vision-language models that can process both images and text are computationally expensive, making faster inference critical for applications like image captioning, visual question answering, and content analysis at scale. LFM2.5-VL-DSpark achieves speedups through architectural optimizations and quantization techniques that reduce memory footprint while maintaining benchmark performance on standard vision-language evaluation sets. The release is particularly valuable for entrepreneurs building image-based AI applications where latency and inference costs directly impact profitability — faster models mean lower cloud compute bills and better user experience. This follows the broader industry trend of optimization-focused releases as companies realize that raw capability matters less than efficient, deployable models for commercial applications.",
+      "examples": [
+        "Upload a product photo and get instant detailed descriptions, tags, and recommended categories for e-commerce listings.",
+        "Feed in customer images of damaged items and receive structured damage assessments and repair recommendations.",
+        "Analyze product images at scale to detect defects, counterfeit indicators, and quality issues in bulk."
+      ],
+      "build": "Freelancers are selling image analysis workflows at $50–$200 per project, processing 50–500 images for e-commerce clients and insurance companies. Agencies are bundling faster vision models into content automation services for $2K–$10K/month retainers, charging clients per-image processing or time-based fees. Solo operators are building white-label visual inspection tools for manufacturing clients at $500–$2K/month, using faster inference to reduce per-unit costs and increase margins.",
+      "unsplash_query": "artificial intelligence vision processing neural network",
+      "significance": 9,
+      "visual": false,
+      "time": "7h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+      "img": "https://images.unsplash.com/photo-1572012097462-b674dba1098a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2OTYzNjR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-09-29"
+    },
+    {
+      "id": "2026-09-29-a5",
       "cat": "Tools",
-      "hook": "Google just unlocked the world's data for everyone.",
-      "headline": "Google & UN launch searchable global statistics platform",
-      "body": "Google and the United Nations system have jointly launched the UN System Data Commons, an open platform designed to make global statistics accessible and searchable for anyone. The platform aggregates data from across the UN system, enabling researchers, entrepreneurs, policymakers, and developers to easily explore and analyze global datasets without friction. Previously, accessing UN data required navigating multiple disparate databases and systems — this new commons consolidates that information into a single, intuitive interface. The initiative directly addresses a critical pain point: while massive amounts of global data exist on poverty, health, climate, economy, and development, they've historically been fragmented and difficult to discover. By making this data freely available and easy to search, the platform removes barriers to building data-driven solutions, conducting research, and identifying business opportunities in global markets. This is particularly valuable for entrepreneurs building AI applications that depend on reliable, authoritative datasets — startup founders can now quickly access UN-verified statistics for model training, market analysis, and impact measurement without subscription fees or bureaucratic friction.",
+      "hook": "Meta just built an AI that remembers everything your experts know.",
+      "headline": "Meta's AI Agent Preserves Expert Knowledge as Organizational Memory",
+      "body": "Meta has developed an AI agent designed to function as a secondary expert system within organizations, capturing and making specialized domain knowledge accessible to all employees. The system's innovation lies in its dual-layer architecture: it combines a structured, auditable knowledge base with an intelligent agent interface, allowing deep specialist insights to be preserved, shared, and built upon across teams. Unlike generic domain-specific chatbots, this agent learns from actual experts within an organization rather than relying solely on training data, creating a living knowledge repository that grows with institutional experience. The structured knowledge architecture ensures transparency—users can see exactly why the AI recommended something and trace it back to source expertise. This approach solves a critical organizational problem: when key experts leave or retire, their specialized knowledge often walks out the door with them. By encoding expertise into an AI system, companies create a scalable way to distribute hard-won knowledge that previously would have required years of mentorship to transfer. The real-world impact extends beyond knowledge preservation; it democratizes access to expert-level thinking across departments, reduces onboarding time for new employees, and creates competitive advantages by ensuring consistent, high-quality decision-making informed by the organization's most experienced people.",
       "examples": [
-        "Search 'malnutrition rates by country 2024' and instantly pull verified UN health data across 195 nations.",
-        "Query climate emissions by sector and region, then export cleaned datasets for AI model training.",
-        "Cross-reference poverty statistics with infrastructure investment data to identify emerging market opportunities."
+        "Upload domain documentation and expert interviews; AI surfaces relevant knowledge when team members ask domain-specific questions in real time.",
+        "Query the system on complex decisions and receive answers traced back to documented expert reasoning and organizational best practices.",
+        "New employees access the same institutional wisdom as veterans, compressing the learning curve from months to weeks."
       ],
-      "build": "Data brokers and consultants are already charging $500–$2K per month to corporations needing cleaned UN datasets; now they can offer faster turnarounds by using this free source as a foundation. AI entrepreneurs are building custom search tools and APIs on top of the commons, selling data pipelines to NGOs and impact investors who need quarterly insight reports. Research consulting firms are reducing data acquisition costs by 60–70%, passing savings to clients while maintaining premium margins on analysis and visualization work.",
-      "unsplash_query": "global data statistics world map",
-      "significance": 6,
+      "build": "Consultants are charging $15K–$40K to implement expert AI systems for mid-market companies, setting up knowledge bases from client documentation and training internal teams on the tool. Agencies are offering 'Expert AI as a Service'—capturing client knowledge for $5K–$10K monthly retainers while handling maintenance and updates. High-value use cases include law firms (preserving partner expertise), manufacturing (capturing process knowledge), and professional services (scaling senior consultant insights across offices).",
+      "unsplash_query": "artificial intelligence knowledge management team learning",
+      "significance": 9,
       "visual": false,
-      "time": "10h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/",
-      "img": "https://images.unsplash.com/photo-1692765110860-845d8b3bf496?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2MTY4NDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-09-28"
-    },
-    {
-      "id": "2026-09-28-a16",
-      "cat": "Tools",
-      "hook": "Meta just open-sourced the secret sauce behind their ad empire.",
-      "headline": "Meta Open-Sources Kernel Scheduler to Fix Ad Latency at Massive Scale",
-      "body": "Meta has adopted sched_ext, an upstream BPF-based extensible scheduling framework, to build a custom scheduling policy for its massive ad serving fleet. The problem: at Meta's scale, even a few milliseconds of latency degradation can significantly harm ads performance and revenue. When a Linux kernel upgrade threatened to regress latency across their entire ad delivery infrastructure, Meta turned to sched_ext to create a specialized scheduler that maintains performance without sacrificing security or stability. Rather than keeping this solution proprietary, Meta is contributing the work back to the open-source community, making it available to other companies operating at similar scales. The framework allows engineers to write custom scheduling policies in BPF (Berkeley Packet Filter) code that runs in the Linux kernel, giving them fine-grained control over CPU scheduling without requiring kernel modifications. This approach lets organizations optimize for their specific workloads—in Meta's case, ultra-low-latency ad delivery—while staying synchronized with upstream Linux releases. The implications are significant for any infrastructure team managing latency-sensitive workloads at scale, from payment processors to real-time bidding systems.",
-      "examples": [
-        "Write custom CPU scheduling logic in BPF code that adapts to your workload without recompiling the kernel.",
-        "Maintain kernel performance improvements during upgrades while keeping your latency-critical optimizations intact.",
-        "Deploy scheduling policies that prioritize specific services—ads, payments, feeds—based on business priorities."
-      ],
-      "build": "Infrastructure consulting firms are charging enterprise clients $50K–$200K to implement custom sched_ext policies for latency-sensitive systems. Some engineers are offering managed kernel optimization services on a retainer basis ($5K–$15K/month) for companies upgrading to the framework. Open-source developers are creating sched_ext plugins and documentation tools, monetizing through sponsorships, workshops, and enterprise support contracts.",
-      "unsplash_query": "linux kernel server infrastructure optimization",
-      "significance": 6,
-      "visual": false,
-      "time": "9h",
+      "time": "2h",
       "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/07/13/ml-applications/modernizing-the-meta-ads-service-with-an-open-source-kernel-scheduler/",
-      "img": "https://images.unsplash.com/photo-1517134062979-e1234be8a085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2MTY4NTJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://engineering.fb.com/2026/09/02/ml-applications/organizational-second-brain-ai-learns-from-experts/",
+      "img": "https://images.unsplash.com/photo-1632835254927-12db1c11522f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2OTYzNjZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-09-28"
+      "published_date": "2026-09-29"
     },
     {
-      "id": "2026-09-28-a17",
-      "cat": "Strategy",
-      "hook": "Google's doubling down on AI economics research.",
-      "headline": "Google expands AI & Economy team with top academic researchers",
-      "body": "Google announced it is significantly expanding its AI & Economy team by bringing on world-class academic advisors, fellows, and core internal researchers. This move signals Google's commitment to understanding the intersection of artificial intelligence and economic systems — a critical area as AI increasingly impacts labor markets, productivity, and business models. The expansion suggests Google is building deeper research capacity to study how AI affects the economy at scale, from job displacement to new opportunities for entrepreneurs. By recruiting top academic talent, Google is positioning itself to lead conversations around AI policy, economic impact measurement, and responsible AI deployment. This is particularly relevant for entrepreneurs who need to understand macroeconomic trends as they build AI-powered businesses, since Google's research will likely influence how regulators, investors, and enterprises approach AI adoption.",
+      "id": "2026-09-29-a6",
+      "cat": "Models",
+      "hook": "Meta just doubled how fast it trains its ads AI model.",
+      "headline": "Meta Doubles LLM-Scale Ads Model Training Efficiency to 25% MFU",
+      "body": "Meta announced a major optimization breakthrough for GEM (Generative Ads Recommendation Model), the foundation model powering ad recommendations across Facebook and Instagram. The company achieved a 2x improvement in end-to-end training efficiency, pushing Model FLOPs Utilization (MFU) to 20–25%, while simultaneously scaling training compute 4x across several thousand of the latest-generation GPUs. This is significant because training efficiency directly impacts how quickly Meta can iterate on its recommendation models and how much infrastructure cost scales with capability gains. The breakthrough came from detailed engineering work on how to better utilize GPU hardware when training at LLM scale—a problem that had plagued the industry as models grew larger. For context, MFU (the percentage of a GPU's theoretical peak compute actually used during training) is one of the most important metrics in AI infrastructure; most models train at 30–50% MFU, so reaching 20–25% while scaling 4x represents genuine optimization, not just throwing more hardware at the problem. The improvements likely involved optimizations across multiple layers: communication efficiency between GPUs, better batch processing strategies, memory management, and algorithmic changes specific to recommendation models. This matters for entrepreneurs because it shows how foundation models for specific domains (in this case, ads) can be optimized differently than general-purpose LLMs, and the techniques Meta developed could influence how other companies approach their own model training pipelines.",
       "examples": [
-        "Economists modeling how AI automation reshapes labor markets and wage growth.",
-        "Research forecasting which industries see highest productivity gains from AI.",
-        "Studies quantifying ROI for companies adopting AI tools in specific sectors."
+        "Train GEM recommendation models 4x faster on the same GPU cluster by optimizing hardware utilization.",
+        "Reduce training cost per iteration by 50% through better MFU optimization techniques.",
+        "Scale ad recommendation foundations to LLM-level complexity without proportional compute increases."
       ],
-      "build": "Academic researchers and economists are being hired at six-figure salaries to join Google's team, creating consulting opportunities for AI practitioners offering economic impact assessments to enterprises. Entrepreneurs can monetize this by offering custom economic modeling services to companies trying to understand their AI ROI, charging $5K-$25K per project. AI policy consultants are already selling advisory services to governments and NGOs seeking to understand AI's economic implications — this Google expansion validates that market.",
-      "unsplash_query": "research team collaboration academic",
-      "significance": 5,
+      "build": "AI infrastructure consultants are charging $15K–$50K per engagement to audit companies' GPU utilization and recommend optimization patterns inspired by Meta's approach. Agencies reselling Meta's ad tech are already using these efficiency gains to offer faster A/B testing cycles to clients, reducing time-to-insight from weeks to days. Some boutique ML ops firms are building optimization services specifically for recommendation models, targeting mid-market e-commerce and SaaS companies looking to train in-house ranking systems without massive capital expenditure.",
+      "unsplash_query": "data center GPU server farm",
+      "significance": 9,
       "visual": false,
-      "time": "4h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/",
-      "img": "https://images.unsplash.com/photo-1576089275954-40cd98bfcfdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2MTY4NDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-09-28"
-    },
-    {
-      "id": "2026-09-28-a18",
-      "cat": "Strategy",
-      "hook": "Google just showed how AI can actually help everyone, not just tech people.",
-      "headline": "Google releases AI toolkit for social impact leaders and local communities",
-      "body": "Google AI has published a curated collection designed to help experts, nonprofit leaders, and local government officials understand and implement AI breakthroughs for societal benefit. The collection focuses specifically on ensuring equitable access to AI opportunities across different communities and sectors. Rather than a single product announcement, this is a resource hub that aggregates Google's existing AI research, tools, and case studies showing real-world applications in areas like healthcare, education, and economic development. The initiative addresses a critical gap: most AI breakthroughs are documented for technologists, leaving policymakers and community leaders without accessible guidance on implementation. Google's collection includes documented examples of how organizations have deployed AI to improve outcomes in underserved populations, alongside frameworks for evaluating AI projects in social contexts. The significance lies in democratizing AI knowledge — making Google's substantial research accessible to decision-makers who typically lack direct AI expertise but control resources and policy that shape community impact. This positions Google as a thought leader in responsible AI deployment while creating a new category of demand for AI consultants and implementation specialists who can bridge the gap between this technical knowledge and local execution.",
-      "examples": [
-        "A nonprofit uses Google's AI framework to predict where healthcare resources are needed most in rural regions.",
-        "Local government deploys AI-powered tools to identify and reduce food desert zones in underserved neighborhoods.",
-        "Educational organizations implement AI tutoring systems tailored to communities with limited teacher access."
-      ],
-      "build": "Consultants are charging $5,000-$15,000 per project to help nonprofits and local governments interpret Google's frameworks and implement AI solutions specific to their communities. Implementation specialists are offering 8-12 week engagements to build custom AI systems for schools and health departments, with typical contracts ranging $20,000-$50,000. Service providers are packaging this knowledge into fractional CTO roles for social impact organizations at $3,000-$8,000 monthly, positioning themselves as translators between Google's technical resources and on-the-ground execution.",
-      "unsplash_query": "community technology collaboration social impact",
-      "significance": 5,
-      "visual": false,
-      "time": "9h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/",
-      "img": "https://images.unsplash.com/photo-1571868200845-4fe0659ffd61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2MTY4NDd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-09-28"
-    },
-    {
-      "id": "2026-09-28-a19",
-      "cat": "Strategy",
-      "hook": "Meta just quietly showed their 10-year Python bet is paying off.",
-      "headline": "Meta's Decade-Long Python Investment Shapes AI Engineering Stack",
-      "body": "Meta has now completed its 10th consecutive year as a sponsor of the Python Software Foundation (PSF), the charitable organization responsible for developing and maintaining Python—one of the world's most widely adopted programming languages. This sustained commitment reflects Meta's deep reliance on Python across its entire engineering infrastructure, from backend systems to machine learning pipelines. Python has become essential to AI development because of its simplicity, readability, and the massive ecosystem of libraries (NumPy, PyTorch, TensorFlow) built around it. By funding the PSF annually, Meta ensures the language continues evolving to meet the demands of modern AI, data science, and infrastructure challenges. The contribution matters because Python powers much of the AI economy—from startups building LLMs to researchers running experiments to production systems serving billions of users. Meta's decade-long commitment signals confidence in Python's staying power and directly supports the developers, maintainers, and community that keep the language competitive against alternatives. For enterprises and AI teams, this validates Python's position as the de facto standard for AI engineering, not a temporary trend.",
-      "examples": [
-        "Use Python libraries to build recommendation engines that process billions of user interactions daily.",
-        "Deploy PyTorch models in Meta's data centers to power real-time AI features across apps.",
-        "Train large language models using Python frameworks optimized for distributed computing at scale."
-      ],
-      "build": "AI engineers and data scientists are monetizing Python expertise by offering consulting services ($150-300/hr) to companies migrating legacy systems to Python-based ML stacks. Freelancers are building and selling pre-trained PyTorch models and fine-tuning services on platforms like Gumroad and specialized AI marketplaces. Training companies charge $2,000-$15,000 for corporate Python-for-AI bootcamps, with demand accelerating as enterprises scale AI teams.",
-      "unsplash_query": "Python programming code data science",
-      "significance": 5,
-      "visual": false,
-      "time": "8h",
+      "time": "7h",
       "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/06/30/open-source/10-years-of-metas-commitment-to-python/",
-      "img": "https://images.unsplash.com/photo-1763568258179-fa561d623323?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2MTY4NTN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://engineering.fb.com/2026/08/03/ml-applications/training-gem-at-llm-scale-meta-ads-recommendation-foundation-model/",
+      "img": "https://images.unsplash.com/photo-1560805971-55ea6e2acd76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA2OTYzNjd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-09-28"
+      "published_date": "2026-09-29"
     }
   ]
 }
