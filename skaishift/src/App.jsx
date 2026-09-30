@@ -693,14 +693,15 @@ function APIPriceMarquee() {
   const FALLBACK = [
     { model:"GPT-5.6 Sol",       input:"$5.00", output:"$30.00", color:"#10A37F" },
     { model:"GPT-4.1 Nano",      input:"$0.10", output:"$0.40",  color:"#10A37F" },
-    { model:"Claude Sonnet 5",   input:"$2.00", output:"$10.00", color:"#CC785C" },
-    { model:"Claude Opus 4.8",   input:"$5.00", output:"$25.00", color:"#CC785C" },
-    { model:"Claude Haiku 4.5",  input:"$1.00", output:"$5.00",  color:"#CC785C" },
-    { model:"Gemini 3.5 Flash",  input:"$0.30", output:"$2.50",  color:"#4285F4" },
+    { model:"Claude Sonnet 5",   input:"$3.00", output:"$15.00", color:"#CC785C" },
+    { model:"Claude Opus 4.8",   input:"$15.00",output:"$75.00", color:"#CC785C" },
+    { model:"Claude Haiku 4.5",  input:"$0.80", output:"$4.00",  color:"#CC785C" },
+    { model:"Claude Fable 5.1",  input:"$3.00", output:"$15.00", color:"#CC785C" },
+    { model:"Gemini 3.6 Flash",  input:"$0.30", output:"$2.50",  color:"#4285F4" },
     { model:"Gemini 3.1 Pro",    input:"$2.00", output:"$12.00", color:"#4285F4" },
-    { model:"DeepSeek Chat V3",  input:"$0.20", output:"$0.77",  color:"#4D9EFF" },
+    { model:"DeepSeek V4 Pro",   input:"$0.43", output:"$0.87",  color:"#4D9EFF" },
     { model:"Grok 4.5",          input:"$2.00", output:"$6.00",  color:"#1DA1F2" },
-    { model:"Llama 3.3 70B",     input:"$0.10", output:"$0.32",  color:"#0866FF" },
+    { model:"Qwen 3.7 Max",      input:"$0.40", output:"$1.20",  color:"#6B21A8" },
   ];
 
   // OpenRouter model IDs → display names + colors
@@ -710,10 +711,10 @@ function APIPriceMarquee() {
     { id:"anthropic/claude-sonnet-5",           name:"Claude Sonnet 5",   color:"#CC785C" },
     { id:"anthropic/claude-haiku-4.5",          name:"Claude Haiku 4.5",  color:"#CC785C" },
     { id:"anthropic/claude-opus-4.8",           name:"Claude Opus 4.8",   color:"#CC785C" },
-    { id:"~anthropic/claude-fable-latest",      name:"Claude Fable 5",    color:"#CC785C" },
+    { id:"anthropic/claude-fable-5.1",          name:"Claude Fable 5.1",  color:"#CC785C" },
     { id:"google/gemini-3.6-flash",             name:"Gemini 3.6 Flash",  color:"#4285F4" },
-    { id:"google/gemini-3.1-pro-preview",        name:"Gemini 3.1 Pro",    color:"#4285F4" },
-    { id:"deepseek/deepseek-chat-v3-0324",      name:"DeepSeek Chat V3",  color:"#4D9EFF" },
+    { id:"google/gemini-3.1-pro-preview",       name:"Gemini 3.1 Pro",    color:"#4285F4" },
+    { id:"deepseek/deepseek-v4-pro",            name:"DeepSeek V4 Pro",   color:"#4D9EFF" },
     { id:"x-ai/grok-4.5",                      name:"Grok 4.5",          color:"#1DA1F2" },
     { id:"qwen/qwen3.7-max",                    name:"Qwen 3.7 Max",      color:"#6B21A8" },
   ];
@@ -1543,13 +1544,13 @@ const AI_TOOLS = [
   { name:"Runway Gen-4.5",  cat:"Video",       desc:"Industry standard for AI video production. Gen-4.5 (Dec 2025) tops the Artificial Analysis text-to-video benchmark — best-in-class character consistency, physics-accurate motion, and Act One facial capture.", url:"https://runwayml.com" },
   { name:"Kling 3.0",       cat:"Video",       desc:"Kuaishou's latest video model. Cinema-grade motion control and native 4K image generation.", url:"https://kling.ai" },
   { name:"Seedance 2.0",    cat:"Video",       desc:"ByteDance's latest AI video model. Produces highly realistic motion and cinematic quality.", url:"https://seed.bytedance.com/en/seedance2_0" },
-  { name:"OpenAI Dots",     cat:"Automation",  desc:"OpenAI's always-on AI agent platform launched September 29, 2026 at DevDay. Create named personal agents ('dots') that run 24/7 in the cloud, connect to 4,000+ apps, and handle multi-step tasks autonomously — scheduling, research, email, purchasing. Powered by GPT-6 Astra. Pro and Business Premium only.", url:"https://openai.com/dots" },
   { name:"Descript",        cat:"Video",       desc:"Edit video and podcast by editing the transcript. Includes AI voice and filler removal.", url:"https://descript.com" },
   { name:"Higgsfield",      cat:"Video",       desc:"AI video generation platform known for cinematic, photorealistic output. Popular for real estate walkthroughs, lifestyle content, and commercial video. Integrates with Claude for script-to-scene workflows.", url:"https://higgsfield.ai" },
   { name:"Gemini Omni",     cat:"Video",       desc:"Google's natively multimodal model from I/O 2026. Takes text, images, audio, and video as input and generates cinematic video output. Available in Google Flow.", url:"https://labs.google/flow" },
   { name:"Google Flow",     cat:"Video",       desc:"Google's AI creative studio for video and image generation. Powered by Gemini Omni and Veo 3. Available globally to Google AI subscribers.", url:"https://labs.google/flow" },
   { name:"Veo 3.1",         cat:"Video",       desc:"Google DeepMind's flagship video model. Best-in-class prompt adherence, native audio generation, and photorealism. Available via Google Flow and Vertex AI.", url:"https://deepmind.google/models/veo" },
   // Automation
+  { name:"OpenAI Dots",     cat:"Automation",  desc:"OpenAI's always-on AI agent platform launched September 29, 2026 at DevDay. Create named personal agents ('dots') that run 24/7 in the cloud, connect to 4,000+ apps, and handle multi-step tasks autonomously — scheduling, research, email, purchasing. Powered by GPT-6 Astra. Pro and Business Premium only.", url:"https://openai.com/dots" },
   { name:"Zapier",          cat:"Automation",  desc:"Connect 6,000+ apps with AI-powered workflows. No code required.", url:"https://zapier.com" },
   { name:"Make",            cat:"Automation",  desc:"Visual workflow builder for complex automations. More powerful than Zapier. Now includes native AI modules for Claude, GPT, and Gemini without API setup.", url:"https://make.com" },
   { name:"n8n",             cat:"Automation",  desc:"Open-source workflow automation. Self-host or cloud. Preferred by developers.", url:"https://n8n.io" },
@@ -1670,7 +1671,7 @@ function EarnPage({ onNav }) {
       <div style={{margin:`24px ${INSET}px 0`,background:T.ink,borderRadius:16,padding:"20px",textAlign:"center"}}>
         <p style={{fontFamily:"'Lora',serif",fontWeight:700,fontSize:16,color:"#fff",margin:"0 0 10px"}}>See real examples every morning.</p>
         <p style={{fontFamily:"'IBM Plex Sans',sans-serif",fontSize:12,color:"rgba(255,255,255,0.5)",margin:"0 0 14px"}}>Every article on skAIshift includes a "What People Are Building" section with concrete income moves.</p>
-        <button style={{background:T.red,color:"#fff",border:"none",borderRadius:24,padding:"10px 24px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,fontWeight:600,cursor:"pointer"}}>Read Today's News →</button>
+        <button onClick={()=>onNav("home")} style={{background:T.red,color:"#fff",border:"none",borderRadius:24,padding:"10px 24px",fontFamily:"'IBM Plex Sans',sans-serif",fontSize:13,fontWeight:600,cursor:"pointer"}}>Read Today's News →</button>
       </div>
     </div>
   );
@@ -1787,8 +1788,8 @@ const COMMUNITIES = [
   { name:"Hugging Face Discord", type:"Discord", desc:"The AI developer community. Model releases, datasets, and implementation help.", url:"https://discord.gg/hugging-face-879548962464493619", members:"120K+" },
   { name:"Latent Space", type:"Discord", desc:"AI engineers and researchers. High signal, low noise.", url:"https://discord.gg/latentspacepod", members:"25K+" },
   { name:"AI Jason Community", type:"Discord", desc:"Focused on building with AI. Automation, agents, and making money with AI tools.", url:"https://discord.gg/aijason", members:"35K+" },
-  { name:"OpenAI Developer Forum", type:"Forum", desc:"Official forum for developers building on OpenAI's API. Direct answers from OpenAI staff.", url:"https://community.openai.com", members:"Official" },
   { name:"Anthropic Discord", type:"Discord", desc:"Claude API developers, Claude Code users, and MCP server builders.", url:"https://discord.gg/anthropic", members:"Active" },
+  { name:"OpenAI Developer Forum", type:"Forum", desc:"Official forum for developers building on OpenAI's API. Direct answers from OpenAI staff.", url:"https://community.openai.com", members:"Official" },
   { name:"Simon Willison's Blog", type:"Blog", desc:"The most consistently useful writing on practical AI. Updated daily.", url:"https://simonwillison.net", members:"" },
   { name:"Latent Space Podcast", type:"Blog", desc:"The best technical AI podcast. Founders, researchers, and builders explaining how things actually work.", url:"https://www.latent.space", members:"" },
   { name:"AI Twitter/X", type:"Social", desc:"Follow: @sama (OpenAI), @karpathy (educator), @emollick (research), @goodside (prompting), @swyx (builders), @alexalbert__ (Anthropic), @gdb (OpenAI)", url:"https://x.com", members:"" },
