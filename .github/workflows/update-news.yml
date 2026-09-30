@@ -51,9 +51,20 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: |
-          npx netlify-cli deploy \
-            --prod \
-            --dir=dist \
-            --site=de55a3b6-f116-46f1-9d0a-0d84ce781de4 \
-            --auth=$NETLIFY_AUTH_TOKEN \
-            --message="Daily update $(date -u '+%Y-%m-%d')"
+          # Zip the dist directory and upload directly via Netlify API (most reliable method)
+          cd dist && zip -r ../deploy.zip . && cd ..
+          DEPLOY_RESPONSE=$(curl -s -X POST \
+            "https://api.netlify.com/api/v1/sites/de55a3b6-f116-46f1-9d0a-0d84ce781de4/deploys" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            -H "Content-Type: application/zip" \
+            --data-binary @deploy.zip)
+          echo "$DEPLOY_RESPONSE" | python3 -c "
+          import json, sys
+          d = json.load(sys.stdin)
+          print('Deploy ID:', d.get('id'))
+          print('State:', d.get('state'))
+          print('URL:', d.get('deploy_ssl_url', d.get('ssl_url', '')))
+          if d.get('state') not in ('ready', 'processing', 'uploading', 'uploaded', 'preparing'):
+              print('ERROR:', d.get('error_message', 'Unknown error'))
+              sys.exit(1)
+          "
