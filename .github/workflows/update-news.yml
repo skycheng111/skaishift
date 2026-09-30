@@ -42,5 +42,18 @@ jobs:
           git diff --staged --quiet || git commit -m "Daily update $(date -u '+%Y-%m-%d')"
           git push
 
-      - name: Trigger Netlify redeploy
-        run: curl -s -X POST "${{ secrets.NETLIFY_DEPLOY_HOOK }}"
+      - name: Build site
+        working-directory: skaishift
+        run: npm install && npm run build
+
+      - name: Deploy to Netlify
+        working-directory: skaishift
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          npx netlify-cli deploy \
+            --prod \
+            --dir=dist \
+            --site=de55a3b6-f116-46f1-9d0a-0d84ce781de4 \
+            --auth=$NETLIFY_AUTH_TOKEN \
+            --message="Daily update $(date -u '+%Y-%m-%d')"
