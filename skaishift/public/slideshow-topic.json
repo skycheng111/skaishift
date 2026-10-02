@@ -1,26 +1,16 @@
 {
-  "query": "GPT-6 AI official reveal",
-  "topicName": "GPT-6",
-  "hook": "Astra just rewrote what's possible in AI.",
-  "img": "https://images.unsplash.com/photo-1758874383464-f6d432209862?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA4NzEzNzJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "AI document generation report analysis AI reveal showcase",
+  "topicName": null,
+  "hook": "Asta just made document review actually intelligent.",
+  "img": "https://images.unsplash.com/photo-1546437593-3d0258c28037?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTA5NTU2MzF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Models",
   "videos": [
     {
-      "videoId": "1QNsdr-Qx_I",
-      "title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
-      "channel": "OpenAI"
-    },
-    {
-      "videoId": "kuGjypoJKwk",
-      "title": "ChatGPT Work, now powered by GPT-6 Astra",
-      "channel": "OpenAI"
-    },
-    {
-      "videoId": "bOC3DisEOfg",
-      "title": "Introducing GPT-6 Astra for developers",
-      "channel": "OpenAI"
+      "videoId": "VMSLyvQeutU",
+      "title": "AI Document Compering (Data Review) - Asking Complex Questions regarding Commercial Lease Agreement",
+      "channel": "v500 Systems | AI for the Minds"
     }
   ],
-  "firstDate": "2026-10-01",
-  "date": "2026-10-01"
+  "firstDate": "2026-10-02",
+  "date": "2026-10-02"
 }
