@@ -1,8 +1,8 @@
 {
   "query": "GPT-6 AI official reveal",
   "topicName": "GPT-6",
-  "hook": "Astra just changed what AI can actually do.",
-  "img": "https://images.unsplash.com/photo-1563289141-935a1768a69c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTEwMzY5NjV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "hook": "GPT-6 Astra just changed what's actually possible.",
+  "img": "https://images.unsplash.com/photo-1621858436649-25dedba0eb38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTEyMjQxNTN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Models",
   "videos": [
     {
@@ -21,6 +21,6 @@
       "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-10-03",
-  "date": "2026-10-04"
+  "firstDate": "2026-10-05",
+  "date": "2026-10-05"
 }
