@@ -1,21 +1,26 @@
 {
-  "query": "AI agent automation professional work AI reveal showcase",
-  "topicName": null,
-  "hook": "OpenAI and Ironclad just leveled up the entire game.",
-  "img": "https://images.unsplash.com/photo-1694188039935-a516dd8a502b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTEzODk5NDh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Tools",
+  "query": "GPT-6 AI official reveal",
+  "topicName": "GPT-6",
+  "hook": "GPT-6 Astra is here to change the game.",
+  "img": "https://images.unsplash.com/photo-1764549906172-0153db0825bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTE0NzY0MTh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
     {
-      "videoId": "ivUxsDkrNn0",
-      "title": "OpenClaw + Obsidian is crazy! #aiagents #openclaw #obsidian #brain",
-      "channel": "Steven Shoaf"
+      "videoId": "1QNsdr-Qx_I",
+      "title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "G89seGr1b5o",
-      "title": "Staying Ahead of AI: Sharon&#39;s Automated News Curator Agent",
-      "channel": "ANCHR AI Labs"
+      "videoId": "kuGjypoJKwk",
+      "title": "ChatGPT Work, now powered by GPT-6 Astra",
+      "channel": "OpenAI"
+    },
+    {
+      "videoId": "bOC3DisEOfg",
+      "title": "Introducing GPT-6 Astra for developers",
+      "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-10-07",
-  "date": "2026-10-07"
+  "firstDate": "2026-10-08",
+  "date": "2026-10-08"
 }
