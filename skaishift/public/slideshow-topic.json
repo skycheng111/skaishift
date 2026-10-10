@@ -1,9 +1,9 @@
 {
   "query": "GPT-6 AI official reveal",
   "topicName": "GPT-6",
-  "hook": "GPT-6 Astra is here to change the game.",
-  "img": "https://images.unsplash.com/photo-1764549906172-0153db0825bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTE0NzY0MTh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Models",
+  "hook": "GPT-6 Astra just changed the entire AI game forever.",
+  "img": "https://images.unsplash.com/photo-1744627049721-73c27008ad28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTE2NDUxODR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Tools",
   "videos": [
     {
       "videoId": "1QNsdr-Qx_I",
@@ -16,11 +16,11 @@
       "channel": "OpenAI"
     },
     {
-      "videoId": "QDLlQ5IL2Bk",
-      "title": "GPT-6 Astra with Tom Krcha",
+      "videoId": "bOC3DisEOfg",
+      "title": "Introducing GPT-6 Astra for developers",
       "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-10-08",
-  "date": "2026-10-09"
+  "firstDate": "2026-10-10",
+  "date": "2026-10-10"
 }
