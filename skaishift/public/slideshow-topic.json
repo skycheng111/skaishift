@@ -1,21 +1,26 @@
 {
-  "query": "OpenAI Hardens Frontier Model Training AI reveal",
-  "topicName": null,
-  "hook": "OpenAI just locked down AI's wildest security nightmare.",
-  "img": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&h=500&fit=crop&auto=format",
-  "cat": "Models",
+  "query": "GPT-6 AI official reveal",
+  "topicName": "GPT-6",
+  "hook": "Astra just made every other AI model look slow.",
+  "img": "https://images.unsplash.com/photo-1764182130428-01fcf5f1b068?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTMxMTQyNDF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Tools",
   "videos": [
     {
-      "videoId": "xwwbikMcijA",
-      "title": "The Day AI Broke Out of the Sandbox | OpenAI Crisis",
-      "channel": "The Shortman On Tech"
+      "videoId": "1QNsdr-Qx_I",
+      "title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "k6Iykl6rY9Q",
-      "title": "OpenAI Just Disclosed GPT-6 Astra Cyber Escaping MicroVM &amp; Linux Sandboxes!",
-      "channel": "The Ai Cube"
+      "videoId": "kuGjypoJKwk",
+      "title": "ChatGPT Work, now powered by GPT-6 Astra",
+      "channel": "OpenAI"
+    },
+    {
+      "videoId": "bOC3DisEOfg",
+      "title": "Introducing GPT-6 Astra for developers",
+      "channel": "OpenAI"
     }
   ],
-  "firstDate": "2026-10-26",
-  "date": "2026-10-26"
+  "firstDate": "2026-10-27",
+  "date": "2026-10-27"
 }
