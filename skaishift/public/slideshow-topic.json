@@ -6,21 +6,21 @@
   "cat": "Tools",
   "videos": [
     {
+      "videoId": "Lm7-yFZ5fZQ",
+      "title": "Codex for (almost) everything",
+      "channel": "OpenAI"
+    },
+    {
       "videoId": "m8uUUUsMD3Y",
       "title": "Introducing the Codex Micro",
       "channel": "OpenAI"
     },
     {
-      "videoId": "PUBc2G0Tj5E",
-      "title": "Meet the New Codex CLI",
-      "channel": "OpenAI"
-    },
-    {
-      "videoId": "Lm7-yFZ5fZQ",
-      "title": "Codex for (almost) everything",
-      "channel": "OpenAI"
+      "videoId": "KBCDe4PtA_A",
+      "title": "OpenAI Launches Codex Micro, Its First-Ever Hardware Product | #shorts",
+      "channel": "CEO VINE"
     }
   ],
   "firstDate": "2026-10-28",
-  "date": "2026-10-28"
+  "date": "2026-10-29"
 }
