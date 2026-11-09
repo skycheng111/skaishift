@@ -1,26 +1,26 @@
 {
-  "query": "GPT-6 AI official reveal",
-  "topicName": "GPT-6",
-  "hook": "Astra just changed what AI is capable of.",
-  "img": "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQxNTMzMDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Tools",
+  "query": "Gemini Omni AI official reveal",
+  "topicName": "Gemini Omni",
+  "hook": "Gemini Omni just broke the internet and here's why.",
+  "img": "https://images.unsplash.com/photo-1709316130071-dd3afcbb1dfc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQyNTMzNzV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Models",
   "videos": [
     {
-      "videoId": "1QNsdr-Qx_I",
-      "title": "Introducing GPT-6 Astra: the most intelligent and aligned model in the world.",
-      "channel": "OpenAI"
+      "videoId": "N28OfTegEzM",
+      "title": "Gemini Omni: AI Video Generator Leak!",
+      "channel": "Stephen W. Thomas | AI, Agents & Azure Integration"
     },
     {
-      "videoId": "kuGjypoJKwk",
-      "title": "ChatGPT Work, now powered by GPT-6 Astra",
-      "channel": "OpenAI"
+      "videoId": "uW4B6ziQqvY",
+      "title": "What is Gemini Omni?",
+      "channel": "Google"
     },
     {
-      "videoId": "IsL4dVezs18",
-      "title": "Introducing GPT-6 in ChatGPT with Intelligent UI",
-      "channel": "OpenAI"
+      "videoId": "KUyRq7szZsM",
+      "title": "Introducing Gemini Omni: Create Anything from Anything",
+      "channel": "Google"
     }
   ],
-  "firstDate": "2026-11-08",
-  "date": "2026-11-08"
+  "firstDate": "2026-11-09",
+  "date": "2026-11-09"
 }
