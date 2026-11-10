@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T19:40:39.758Z",
+  "updated": "2026-11-10T16:54:58.887Z",
   "articles": [
     {
       "id": "2026-11-09-a1",
@@ -310,92 +310,136 @@
       "published_date": "2026-11-09"
     },
     {
-      "id": "2026-11-09-a15",
+      "id": "2026-11-10-a1",
       "cat": "Tools",
-      "hook": "Finding a 70-year-old drawing in 4.5 minutes instead of an hour.",
-      "headline": "Kuken Industries cuts drawing searches from 1 hour to 4.5 minutes with AI",
-      "body": "Kuken Industries, a cooling tower manufacturer, deployed OpenAI's API to search through seven decades of engineering drawings—a massive archive that would have been nearly impossible to navigate manually. The system now lets engineers locate the exact drawing they need for repairs in just 4.5 minutes, compared to the previous process that took close to an hour. This dramatic speedup solves a real operational problem: when equipment needs repair, technicians need historical specifications fast, and digging through decades of paper or unorganized digital files costs time and money. The API processes visual and textual data from the entire drawing library, understanding context and matching queries to the right designs even when search terms aren't exact. This is a textbook example of how enterprise AI adoption works—it's not about flashy features, it's about taking existing workflows and collapsing the friction out of them. For Kuken, faster repairs mean less downtime for clients, higher customer satisfaction, and engineers spending time on skilled work instead of document hunting.",
+      "hook": "Google just built AI for the healthcare chaos nobody talks about.",
+      "headline": "Google Cloud Launches Gemini for Healthcare to Automate Clinical Workflows",
+      "body": "Google Cloud has released Gemini for healthcare, a specialized version of its AI model designed to unify fragmented clinical data and automate administrative workflows in medical settings. The tool addresses a critical pain point in healthcare: administrative burnout caused by manual data entry, chart management, and workflow coordination that pulls clinicians away from patient care. Gemini for healthcare integrates with existing clinical data systems to aggregate information from multiple sources—EHRs, lab results, imaging records—into a unified interface that AI can reason over in real time. The model can automate repetitive tasks like appointment scheduling, documentation, and data entry while maintaining compliance with healthcare regulations like HIPAA. Unlike general-purpose Gemini, this version has been fine-tuned on healthcare-specific terminology and workflows, giving it deeper understanding of clinical contexts and reducing hallucination risks in medical settings. Google Cloud positioned this as a way to reduce clinician burnout and free up time for actual patient interaction, addressing a well-documented crisis in healthcare worker retention and mental health.",
       "examples": [
-        "Upload a cooling tower model number and get all matching schematics, specifications, and repair history in seconds.",
-        "Search for 'pressure valve assembly 1987' and surface the exact drawing even if filed under different naming conventions.",
-        "Cross-reference a component across the entire 70-year archive to understand design evolution and identify compatibility issues."
+        "Feed unstructured patient notes and lab data—AI auto-populates clinical records and flags priority cases instantly.",
+        "Ask the AI to schedule follow-ups across multiple departments and it coordinates availability automatically.",
+        "Submit a patient's history and Gemini drafts clinical summaries that clinicians review and finalize."
       ],
-      "build": "Service providers are charging manufacturing clients $2,000–$8,000 per month to implement similar AI document search systems for their archives—typically recouping the cost within weeks through faster operations and fewer errors. Freelance AI consultants are building these systems for small manufacturers and engineering firms as fixed-price projects ($5,000–$15,000), positioning them as turnkey solutions to legacy document chaos. Companies offering 'AI document digitization and search' are winning contracts because they combine archive scanning, API integration, and training—a full-service offering that's hard for in-house teams to execute quickly.",
-      "unsplash_query": "technical drawing blueprint engineering archive",
-      "significance": 6,
-      "visual": false,
-      "time": "7h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/kuken",
-      "img": "https://images.unsplash.com/photo-1753162657600-211fdc95ecaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQyNTMzNzJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-09"
-    },
-    {
-      "id": "2026-11-09-a16",
-      "cat": "Tools",
-      "hook": "OpenAI just brought in the hackers to break their own systems.",
-      "headline": "OpenAI partners with Hacktron to stress-test AI security defenses",
-      "body": "OpenAI has partnered with Hacktron, a security-focused organization, to systematically identify vulnerabilities in its systems and strengthen defenses against potential attacks. The partnership focuses on three key areas: discovering security gaps in OpenAI's infrastructure, testing the robustness of connections with third-party services and integrations, and leveraging frontier AI models to simulate and defend against emerging threats. This is a proactive security measure aimed at identifying weaknesses before malicious actors can exploit them. By bringing in external security specialists through Hacktron, OpenAI is moving beyond traditional internal security audits to stress-test its systems against real-world attack vectors. The partnership reflects growing industry recognition that as AI systems become more powerful and integrated into critical applications, security testing must evolve alongside them. This collaboration combines human security expertise with AI-powered vulnerability detection, creating a multi-layered approach to protecting OpenAI's platform and its users' data.",
-      "examples": [
-        "Hacktron security team attempts to breach OpenAI API connections to third-party services, mapping weak points.",
-        "Frontier AI models simulate sophisticated attack patterns to identify novel vulnerabilities humans might miss.",
-        "Security findings feed back into product updates, patching exploits before they reach production systems."
-      ],
-      "build": "Security consultants and penetration testers are charging $150–$500/hour to conduct similar vulnerability assessments for enterprise AI deployments. AI security auditing services are emerging as a premium offering, with firms bundling threat modeling, API stress-testing, and compliance reporting for $10K–$50K per engagement. Companies integrating multiple AI tools into their stack are paying for third-party security validation before deployment, creating immediate demand for this expertise.",
-      "unsplash_query": "cybersecurity hacking vulnerability testing",
-      "significance": 6,
-      "visual": false,
-      "time": "9h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/partnering-with-hacktron",
-      "img": "https://images.unsplash.com/photo-1778259205831-cf8f8bfebc80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQyNTMzNzN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-09"
-    },
-    {
-      "id": "2026-11-09-a17",
-      "cat": "Strategy",
-      "hook": "Australian universities are breeding the next generation of AI-native workers.",
-      "headline": "Australian universities embed ChatGPT into curriculum to create AI-ready graduates",
-      "body": "Australian universities are systematically integrating ChatGPT and AI tools into their teaching and learning frameworks, preparing students for an AI-enabled workforce. This initiative represents a major shift in higher education strategy—rather than treating AI as a separate subject, institutions are weaving it into existing coursework across disciplines. The expansion gives students direct access to ChatGPT while teaching them how to work alongside AI as a core professional skill. This approach acknowledges that AI literacy is no longer optional; it's becoming a baseline expectation for employability. By embedding these tools early, Australian universities are creating graduates who don't need to \"catch up\" to AI but who are native to working with it from day one. The real-world impact is significant: students graduating with hands-on AI experience will command higher salaries and fit more immediately into AI-forward companies, while universities position themselves as innovation hubs attracting tech talent and investment.",
-      "examples": [
-        "Use ChatGPT to brainstorm research questions, generate outlines, and refine arguments across engineering, business, and humanities courses.",
-        "Build AI-assisted coding projects where students pair with ChatGPT to debug, optimize, and ship software faster than traditional methods.",
-        "Collaborate with AI on creative work—writing, design, marketing campaigns—learning to prompt, iterate, and ship real projects as part of coursework."
-      ],
-      "build": "Educators and AI trainers are earning $5K–$15K per month consulting with universities to build AI-integrated curricula and training faculty on effective AI use. EdTech companies are licensing AI integration platforms to institutions, with annual contracts ranging $50K–$500K depending on university size. Individual tutors are charging $30–$75/hour for AI-assisted tutoring services, helping students learn to leverage ChatGPT effectively for their coursework.",
-      "unsplash_query": "students learning technology classroom university",
-      "significance": 6,
-      "visual": false,
-      "time": "1h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/australian-universities-ai-native-graduates",
-      "img": "https://images.unsplash.com/photo-1705579610984-910ad33fe2db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQyNTMzNzR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-09"
-    },
-    {
-      "id": "2026-11-09-a18",
-      "cat": "Tools",
-      "hook": "Google just turned neuroscience into an interactive AI learning experience.",
-      "headline": "Google Launches 'Polar Peaks' AI Quest: Learn Neuroscience Through Hands-On AI Lessons",
-      "body": "Google has released a new AI Quest called 'Polar Peaks,' an interactive educational module designed to teach AI literacy through the lens of neuroscience. Part of Google's broader AI Quests initiative, Polar Peaks is structured as a guided learning experience that combines practical AI concepts with real-world neuroscience applications. The lesson walks users through how AI techniques are being applied to understand the human brain, covering topics like neural mapping, pattern recognition in brain imaging, and computational neuroscience. This release positions AI education as increasingly hands-on and thematic rather than purely theoretical. Google's AI Quests series aims to democratize AI knowledge by making complex topics accessible to entrepreneurs and learners who want to understand cutting-edge AI applications without requiring advanced technical backgrounds. The Polar Peaks quest is immediately available to users and represents Google's investment in practical AI literacy education that connects AI capabilities to real scientific challenges.",
-      "examples": [
-        "Explore how machine learning algorithms identify patterns in brain imaging data that humans might miss.",
-        "Learn to apply neural network concepts by mapping simulated brain activity across different regions.",
-        "Discover how AI helps neuroscientists predict brain responses to stimuli in real-time experiments."
-      ],
-      "build": "Educators and corporate trainers are packaging AI Quests into internal upskilling programs, charging $200-500 per employee cohort for custom modules. Freelance instructors are building supplementary courses around Google's quests on platforms like Udemy, earning $1,000-5,000 monthly per course. Consulting firms are using AI Quests as entry-point materials for enterprise AI literacy workshops billed at $5,000-15,000 per engagement.",
-      "unsplash_query": "neuroscience brain mapping artificial intelligence",
-      "significance": 6,
+      "build": "Healthcare consultants and medical practice managers are charging $5K-$15K per implementation to set up Gemini integrations for mid-sized practices (50-200 staff). Agencies are bundling this as 'AI workflow automation' retainers at $2K-$5K/month for ongoing training and optimization. EHR integration specialists are landing contracts within 2-4 weeks by positioning Gemini as a quick ROI play for reducing administrative FTE costs.",
+      "unsplash_query": "doctor AI technology healthcare digital",
+      "significance": 9,
       "visual": false,
       "time": "9h",
       "source": "Google AI",
-      "link": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
-      "img": "https://images.unsplash.com/photo-1745030262849-d3dd61ce3a31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQyNTMzNzZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/",
+      "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format",
+      "feat": true,
+      "published_date": "2026-11-10"
+    },
+    {
+      "id": "2026-11-10-a2",
+      "cat": "Models",
+      "hook": "Google just made video AI faster and way cheaper.",
+      "headline": "Gemini Omni 1.2 Flash: Native video gen, 30% price cut",
+      "body": "Google has released Gemini Omni 1.2 Flash, an updated version of its multimodal AI model with native video generation and editing capabilities built directly into the model. The key improvements include the ability to generate and edit video clips up to 15 seconds long natively, improved consistency in outputs, and a significant 30% reduction in pricing compared to previous versions. This makes the model more accessible to developers and entrepreneurs building video-based AI applications. The native video generation means users no longer need to rely on separate video models or post-processing pipelines—everything happens within Gemini Omni 1.2 Flash itself. The price reduction is a major competitive move by Google, making it substantially cheaper to build video generation features into applications at scale. This update positions Gemini Omni 1.2 Flash as a cost-effective solution for anyone looking to add video creation and editing to their AI products without breaking the budget.",
+      "examples": [
+        "Upload raw footage and generate edited B-roll with specific visual styles in seconds.",
+        "Create 15-second product demo videos from a single product image and description.",
+        "Edit existing video clips with AI—adjust pacing, add effects, remove elements seamlessly."
+      ],
+      "build": "Creators are selling video editing services using Gemini Omni 1.2 Flash at $50-$200 per edited video clip, targeting TikTok creators and small e-commerce brands. Agencies are packaging this into monthly retainer services ($800-$2,500/mo) for clients who need weekly video content production. Developers are integrating the 30% cheaper API into SaaS products and charging per video generated—margins improved immediately without raising customer prices.",
+      "unsplash_query": "artificial intelligence video generation editing",
+      "significance": 9,
+      "visual": false,
+      "time": "3h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "img": "https://images.unsplash.com/photo-1695624825373-3e1f01204f5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQzMjk4Mzd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-10"
+    },
+    {
+      "id": "2026-11-10-a3",
+      "cat": "Models",
+      "hook": "NVIDIA just built Japan's financial AI brain.",
+      "headline": "NVIDIA Releases Nemotron-Personas-Finance-Japan: Synthetic Dataset for Localized Financial AI",
+      "body": "NVIDIA has released Nemotron-Personas-Finance-Japan, a specialized synthetic dataset designed to train AI models that understand Japan's unique demographic and financial landscape. The dataset captures realistic personas reflecting Japanese population characteristics, financial behaviors, and cultural contexts—enabling developers to build finance-focused AI systems that work accurately for Japanese users and markets. This addresses a critical gap: most financial AI models are trained on Western data, causing them to misunderstand local banking systems, payment preferences, regulatory requirements, and consumer behavior patterns specific to Japan. The synthetic persona approach means developers can generate unlimited training examples without privacy concerns or the expensive process of collecting real customer data. NVIDIA designed this specifically for the fintech and banking sector, where localization directly impacts accuracy, compliance, and user trust. The dataset is available on HuggingFace, making it accessible to startups, enterprises, and researchers building Japanese financial applications. This is part of NVIDIA's broader Nemotron initiative to democratize high-quality synthetic data for domain-specific AI training.",
+      "examples": [
+        "Fine-tune a Japanese banking chatbot that understands regional payment methods, credit systems, and financial products specific to Japan.",
+        "Train a loan approval system that accurately assesses creditworthiness using Japanese employment patterns and savings behaviors.",
+        "Build a financial advisory AI that recommends products aligned with Japanese retirement planning, tax systems, and investment preferences."
+      ],
+      "build": "Fintech startups and regional banks in Japan are immediately using this to reduce training costs by 60-80% compared to collecting real data. Consultants are selling 'Japanese-localized AI finance model' packages to regional banks ($50K-$200K per deployment), with training and fine-tuning included. Some are offering subscription-based API access to these localized models, charging $2K-$10K monthly to smaller banks that can't build models in-house.",
+      "unsplash_query": "Japan finance technology banking data",
+      "significance": 9,
+      "visual": false,
+      "time": "5h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan",
+      "img": "https://images.unsplash.com/photo-1767286694319-503ce83f986d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQzMjk4Mzl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-11-09"
+      "published_date": "2026-11-10"
+    },
+    {
+      "id": "2026-11-10-a4",
+      "cat": "Robotics",
+      "hook": "Robots finally got a sandbox to actually learn in.",
+      "headline": "ToyBlocks: The controlled training world helping robots learn faster",
+      "body": "ToyBlocks is a new simulation environment designed specifically for training and evaluating robot learning systems. Created by researchers and released through HuggingFace, ToyBlocks provides a controlled, standardized world where robots can practice tasks repeatedly without the unpredictability and costs of real-world training. The environment consists of interactive toy blocks and objects that robots must manipulate, grasp, and arrange according to specific goals—tasks that require both perception and motor control. Unlike unstructured real-world environments, ToyBlocks offers consistent physics, repeatable scenarios, and detailed performance metrics, making it easier to benchmark different robotic learning algorithms against each other fairly. The platform addresses a critical bottleneck in robot AI: most breakthrough learning models train on massive datasets or trial-and-error in the real world, which is expensive, time-consuming, and hard to iterate on. By providing a shared, open-source simulation space, ToyBlocks lets researchers and companies rapidly prototype, test, and validate robot behaviors before deploying them to physical hardware. This is similar to how game engines like Unity and Unreal accelerated computer vision research, but specifically tailored for embodied AI and robotic manipulation tasks.",
+      "examples": [
+        "Train a robot gripper to stack colored blocks in sequence, measuring success rate across 1,000 repeated trials.",
+        "Test different grasping strategies on simulated objects with varying shapes, weights, and surface textures.",
+        "Benchmark your reinforcement learning model against baseline algorithms using identical task conditions."
+      ],
+      "build": "Robotics companies are using ToyBlocks to cut training time and costs for manipulation models before real-world deployment, reducing iteration cycles from weeks to days. AI service providers are offering 'sim-to-real optimization' consulting—helping clients train models in ToyBlocks environments then transfer learned behaviors to physical robots, typically charging $5K–$50K per project depending on complexity. Researchers are using the platform to publish benchmarked papers faster, and some are monetizing by selling pre-trained model weights optimized for specific manipulation tasks on HuggingFace.",
+      "unsplash_query": "robot learning simulation blocks",
+      "significance": 9,
+      "visual": false,
+      "time": "5h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/allenai/toyblocks",
+      "img": "https://images.unsplash.com/photo-1678225867994-e7a5b071ebfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQzMjk4NDF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-10"
+    },
+    {
+      "id": "2026-11-10-a5",
+      "cat": "Tools",
+      "hook": "Meta just automated the thing developers hate most: finding bugs.",
+      "headline": "Meta's JiTTesting catches bugs in real-time using AI—no human review needed",
+      "body": "Meta has deployed JiTTesting (Just-in-Time Testing) into production at scale, a novel approach that uses large language models to automatically generate and catch bugs as code is written. The system uses a human-on-the-loop methodology, meaning AI flags potential issues but humans validate before deployment. According to their paper 'Just-in-Time Catching Test Generation at Meta,' the approach has shown positive impact across Meta's production systems over the past year. Unlike traditional testing that happens after code is written, JiTTesting generates test cases dynamically during development, catching issues before they reach production. The system leverages LLMs to understand code context and predict edge cases that human developers might miss, then routes these for human verification before merging. This represents a fundamental shift in how large tech companies handle quality assurance—turning testing from a batch process into a continuous, AI-augmented workflow. The human-in-the-loop design ensures that AI speed is paired with developer judgment, preventing false positives while maintaining the efficiency gains of automation.",
+      "examples": [
+        "LLM analyzes your code commit and generates edge-case tests automatically within seconds.",
+        "Flag catches a null-pointer exception risk before code reaches the repository.",
+        "Test suite grows contextually as developers write new functions, no manual test writing."
+      ],
+      "build": "QA automation agencies are reselling JiTTesting-style workflows to enterprise clients at $50K-$200K annually. Freelance developers are building internal tools that wrap LLM-based test generation and charging clients for reduced bug escape rates (typically 20-40% improvement). Some are offering managed QA services that integrate AI test generation with human review, billing on a per-sprint basis.",
+      "unsplash_query": "developer testing code bug detection",
+      "significance": 9,
+      "visual": false,
+      "time": "9h",
+      "source": "Meta AI",
+      "link": "https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/",
+      "img": "https://images.unsplash.com/photo-1742072593996-ebdc5d605a54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQzMjk4NDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-10"
+    },
+    {
+      "id": "2026-11-10-a6",
+      "cat": "Tools",
+      "hook": "Meta just made ads retrieval as smart as ranking models at scale.",
+      "headline": "Meta Andromeda: Next-Gen Ads Engine Reaches Ranking-Level Performance at Retrieval Speed",
+      "body": "Meta has unveiled the next generation of Andromeda, its personalized ads retrieval system, built through a novel approach of co-designing the model, system architecture, and GPU hardware together. The breakthrough allows the system to score every eligible ad with near ranking-level model performance while operating at the speed and scale of traditional retrieval systems — a combination that was previously thought to require major tradeoffs. In production, Andromeda surfaces top ad candidates with significantly improved quality compared to earlier versions. The system represents a shift away from the traditional separation between fast-but-crude retrieval and slow-but-accurate ranking; instead, Meta engineered a unified pipeline where retrieval itself achieves ranking-level intelligence. This matters enormously for Meta's business because ads quality directly drives advertiser ROI and user experience. The co-design approach—where engineers optimized the machine learning model, the distributed computing infrastructure, and hardware allocation simultaneously—unlocked efficiency gains that wouldn't have been possible by tweaking any single component. This is the kind of infrastructure innovation that compounds over time: better ads retrieval means higher-quality impressions, which means advertisers spend more, which means more revenue at scale.",
+      "examples": [
+        "Feed-scroll surfaces the highest-intent ads first without waiting for slow ranking models.",
+        "Ads matching user intent improve by processing billions of eligible ads instantly.",
+        "System scales across Meta's entire ad inventory using GPU hardware optimized for this exact workload."
+      ],
+      "build": "Agencies and performance marketing teams are already optimizing for Andromeda's improved retrieval by testing new ad creative formats and bid strategies that take advantage of smarter candidate selection—some report 15-25% efficiency gains on ad spend within weeks. Consultants are charging $5K-$25K per audit to help mid-market brands align their campaigns with Andromeda's new capabilities. Ad tech companies building on Meta's API are creating specialized tools to forecast and monitor these retrieval improvements for clients, billing monthly retainers of $2K-$10K depending on ad spend volume.",
+      "unsplash_query": "data center GPU server infrastructure",
+      "significance": 9,
+      "visual": false,
+      "time": "6h",
+      "source": "Meta AI",
+      "link": "https://engineering.fb.com/2026/10/28/ml-applications/meta-andromeda-next-gen-ads-retrieval-gpu-co-design/",
+      "img": "https://images.unsplash.com/photo-1618209076877-3b577b275eef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQzMjk4NDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-10"
     }
   ]
 }
