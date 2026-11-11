@@ -1,26 +1,26 @@
 {
-  "query": "Gemini AI official reveal",
-  "topicName": "Gemini",
-  "hook": "Gemini Omni is about to blow your mind.",
-  "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&h=500&fit=crop&auto=format",
+  "query": "OpenAI Launches Business Profiles in AI reveal",
+  "topicName": null,
+  "hook": "OpenAI just went all in on business.",
+  "img": "https://images.unsplash.com/photo-1790614108104-337c880ec536?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQ0MTY1MTB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "KUyRq7szZsM",
-      "title": "Introducing Gemini Omni: Create Anything from Anything",
-      "channel": "Google"
+      "videoId": "Q2mlCneUi5k",
+      "title": "OpenAI Launches Business Profiles and Business Hub for ChatGPT",
+      "channel": "HighTech News"
     },
     {
-      "videoId": "_fuimO6ErKI",
-      "title": "Google – Welcome to the Gemini era",
-      "channel": "Google"
+      "videoId": "YsIoiIdo_v0",
+      "title": "OpenAI Launches &quot;ChatGPT Space&quot;! The Google Docs &amp; Notion Rival Is Here",
+      "channel": "Silent Broadcast"
     },
     {
-      "videoId": "2m5BCWB02jY",
-      "title": "Meet Gemini Omni",
-      "channel": "Google"
+      "videoId": "jm6QC9QqI2k",
+      "title": "OpenAI developer conference draws protests as company unveils new AI agents",
+      "channel": "NBC Bay Area"
     }
   ],
-  "firstDate": "2026-11-10",
-  "date": "2026-11-10"
+  "firstDate": "2026-11-11",
+  "date": "2026-11-11"
 }
