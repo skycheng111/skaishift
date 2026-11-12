@@ -1,26 +1,26 @@
 {
-  "query": "OpenAI Launches Business Profiles in AI reveal",
+  "query": "data center server infrastructure scale AI reveal showcase",
   "topicName": null,
-  "hook": "OpenAI just went all in on business.",
-  "img": "https://images.unsplash.com/photo-1790614108104-337c880ec536?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQ0MTY1MTB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Tools",
+  "hook": "JioStar's building the future of AI infrastructure before your eyes.",
+  "img": "https://images.unsplash.com/photo-1793957347445-fb38c7b98c2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQ1MDQ2ODl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Strategy",
   "videos": [
     {
-      "videoId": "Q2mlCneUi5k",
-      "title": "OpenAI Launches Business Profiles and Business Hub for ChatGPT",
-      "channel": "HighTech News"
+      "videoId": "3Yh9OddmgS0",
+      "title": "How data centers work and why AI is driving their growth",
+      "channel": "Associated Press"
     },
     {
-      "videoId": "YsIoiIdo_v0",
-      "title": "OpenAI Launches &quot;ChatGPT Space&quot;! The Google Docs &amp; Notion Rival Is Here",
-      "channel": "Silent Broadcast"
+      "videoId": "50pp-FeoWxs",
+      "title": "Inside a Data Center that trains Meta AI!",
+      "channel": "Tom Shaw"
     },
     {
-      "videoId": "jm6QC9QqI2k",
-      "title": "OpenAI developer conference draws protests as company unveils new AI agents",
-      "channel": "NBC Bay Area"
+      "videoId": "YDSwb4DqD90",
+      "title": "We took a look inside a #datacenter in Wyoming. #AI #energy #sustainability",
+      "channel": "Business Insider"
     }
   ],
-  "firstDate": "2026-11-11",
-  "date": "2026-11-11"
+  "firstDate": "2026-11-12",
+  "date": "2026-11-12"
 }
