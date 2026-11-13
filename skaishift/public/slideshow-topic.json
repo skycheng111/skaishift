@@ -1,26 +1,26 @@
 {
-  "query": "data center server infrastructure scale AI reveal showcase",
-  "topicName": null,
-  "hook": "JioStar's building the future of AI infrastructure before your eyes.",
-  "img": "https://images.unsplash.com/photo-1793957347445-fb38c7b98c2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQ1MDQ2ODl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Strategy",
+  "query": "OpenAI Codex AI official reveal",
+  "topicName": "Codex",
+  "hook": "Codex just made coding feel effortless.",
+  "img": "https://images.unsplash.com/photo-1705948353932-505cb52be4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQ1ODk1NjJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Tools",
   "videos": [
     {
-      "videoId": "3Yh9OddmgS0",
-      "title": "How data centers work and why AI is driving their growth",
-      "channel": "Associated Press"
+      "videoId": "m8uUUUsMD3Y",
+      "title": "Introducing the Codex Micro",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "50pp-FeoWxs",
-      "title": "Inside a Data Center that trains Meta AI!",
-      "channel": "Tom Shaw"
+      "videoId": "ttEKkrcK0Lg",
+      "title": "OpenAI Codex reveals token-saving workflow using GitHub integrations for #AI #AITools #OpenAI",
+      "channel": "Dean Kowalski"
     },
     {
-      "videoId": "YDSwb4DqD90",
-      "title": "We took a look inside a #datacenter in Wyoming. #AI #energy #sustainability",
-      "channel": "Business Insider"
+      "videoId": "2RPxqaJ2mZo",
+      "title": "OpenAI just built a keyboard, It&#39;s called the Codex Micro",
+      "channel": "AI adventurer"
     }
   ],
-  "firstDate": "2026-11-12",
-  "date": "2026-11-12"
+  "firstDate": "2026-11-13",
+  "date": "2026-11-13"
 }
