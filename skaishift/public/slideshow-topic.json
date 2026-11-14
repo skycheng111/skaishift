@@ -1,26 +1,26 @@
 {
-  "query": "OpenAI Codex AI official reveal",
-  "topicName": "Codex",
-  "hook": "Codex just made coding feel effortless.",
-  "img": "https://images.unsplash.com/photo-1705948353932-505cb52be4a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQ1ODk1NjJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "Gemini AI official reveal",
+  "topicName": "Gemini",
+  "hook": "Gemini just got smarter and way more creative.",
+  "img": "https://images.unsplash.com/photo-1654124803479-b4a33e120af0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQ2NzEwMTl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "m8uUUUsMD3Y",
-      "title": "Introducing the Codex Micro",
-      "channel": "OpenAI"
+      "videoId": "_fuimO6ErKI",
+      "title": "Google – Welcome to the Gemini era",
+      "channel": "Google"
     },
     {
-      "videoId": "ttEKkrcK0Lg",
-      "title": "OpenAI Codex reveals token-saving workflow using GitHub integrations for #AI #AITools #OpenAI",
-      "channel": "Dean Kowalski"
+      "videoId": "KUyRq7szZsM",
+      "title": "Introducing Gemini Omni: Create Anything from Anything",
+      "channel": "Google"
     },
     {
-      "videoId": "2RPxqaJ2mZo",
-      "title": "OpenAI just built a keyboard, It&#39;s called the Codex Micro",
-      "channel": "AI adventurer"
+      "videoId": "PSTQ0wWAzME",
+      "title": "evolution of Google Gemini logo #google #shorts #viralshort #viral #gemini #googlegemini",
+      "channel": "Aqua7002 | ⛄️"
     }
   ],
-  "firstDate": "2026-11-13",
-  "date": "2026-11-13"
+  "firstDate": "2026-11-14",
+  "date": "2026-11-14"
 }
