@@ -1,26 +1,21 @@
 {
-  "query": "Microsoft Copilot AI official reveal",
-  "topicName": "Copilot",
-  "hook": "Your AI sidekick just got impossibly smarter.",
-  "img": "https://images.unsplash.com/photo-1537111261224-6fa49cecda2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQ3NTkyNDR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "query": "OpenAI Expands Free ChatGPT Access AI reveal",
+  "topicName": null,
+  "hook": "OpenAI just made AI accessible to literally everyone.",
+  "img": "https://images.unsplash.com/photo-1582719366767-dbbb6c6bf4aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTQ4NTczODd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
   "cat": "Tools",
   "videos": [
     {
-      "videoId": "l4B1UflAty8",
-      "title": "Microsoft Copilot: Your everyday AI companion",
-      "channel": "Microsoft"
+      "videoId": "vjkpGF6x5qk",
+      "title": "OpenAI discloses 6 new instances of rogue AI models",
+      "channel": "CBS News"
     },
     {
-      "videoId": "IAxNt-nd7lw",
-      "title": "Introducing Microsoft Copilot: Your everyday AI companion #microsoft #copilot #ai #microsoftevent",
-      "channel": "Microsoft"
-    },
-    {
-      "videoId": "F639s6sWoxY",
-      "title": "What is Microsoft Copilot?",
-      "channel": "Microsoft Copilot"
+      "videoId": "gdAFNk7hyqY",
+      "title": "OpenAI has launched the GPT Store | Moyeez Academy #chatgpt #gpt4 #ai #shorts",
+      "channel": "Moyeez Academy"
     }
   ],
-  "firstDate": "2026-11-15",
-  "date": "2026-11-15"
+  "firstDate": "2026-11-16",
+  "date": "2026-11-16"
 }
