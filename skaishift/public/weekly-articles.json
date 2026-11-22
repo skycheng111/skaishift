@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T16:41:58.743Z",
+  "updated": "2026-11-22T17:00:22.111Z",
   "articles": [
     {
       "id": "2026-11-16-a1",
@@ -310,136 +310,136 @@
       "published_date": "2026-11-20"
     },
     {
-      "id": "2026-11-21-a1",
+      "id": "2026-11-22-a1",
       "cat": "Models",
       "hook": "GPT-6 Astra just leveled up financial research overnight.",
-      "headline": "Hebbia's Financial AI Gets Sharper With GPT-6 Astra",
-      "body": "Hebbia, an AI platform built for financial research, has completed prerelease testing of OpenAI's GPT-6 Astra model and found measurable improvements across three critical dimensions: source coverage, citation relevance, and presentation quality. The testing demonstrates that the upgraded model can better identify and pull from a wider range of financial sources while ensuring the citations it provides are more directly relevant to the query at hand. Beyond raw accuracy, the model also formats research outputs in a cleaner, more presentation-ready way — meaning less post-processing work for financial analysts and researchers. This matters because financial research is high-stakes work where a single misattributed source or vague citation can derail decisions involving millions of dollars. By reducing manual verification and cleanup time, Hebbia users can accelerate research cycles and increase confidence in the data they're working with. The improvement signals that newer model versions are getting better at domain-specific tasks, not just general-purpose capabilities.",
+      "headline": "Hebbia's GPT-6 Astra shows major gains in financial research accuracy",
+      "body": "OpenAI's GPT-6 Astra has delivered measurable improvements in financial research capabilities, according to prerelease evaluations conducted by Hebbia, an AI research platform serving the finance industry. The testing revealed three key gains: improved source coverage (the model can now access and synthesize a broader range of financial data and documents), enhanced citation relevance (financial citations are more accurate and directly tied to claims), and better presentation quality (research findings are formatted more clearly for professional use). These improvements matter because financial research relies on precision — a single misquoted earnings figure or overlooked regulatory filing can cost money. Hebbia's tests suggest GPT-6 Astra handles these edge cases better than previous versions. The model appears to have stronger reasoning about financial documents and market context, which translates to research outputs that require less manual verification from analysts. This positions GPT-6 Astra as a potential replacement for older AI models in finance workflows, where accuracy and citation quality directly impact client trust and decision-making.",
       "examples": [
-        "Drop a ticker symbol and get cited financial reports ranked by relevance with verified sources attached.",
-        "Paste earnings call transcripts and extract multi-year trends with proper source attribution automatically.",
-        "Compare competitor financial data across markets with citations linking back to original SEC filings or publications."
+        "Drop a SEC filing and get automatic extraction of key financial metrics with direct citations to source documents.",
+        "Compare earnings statements across competitor portfolios and get structured analysis highlighting anomalies and trends.",
+        "Summarize complex merger agreements with inline references, flagging regulatory risks automatically."
       ],
-      "build": "Financial research firms are charging $5,000-$15,000 monthly for AI-powered research assistant subscriptions using tools like Hebbia, handling 50+ client queries per week. Boutique consulting firms are reselling Hebbia-powered research packages to hedge funds and PE firms at $500-$2,000 per custom report. Independent financial analysts are offering AI-assisted due diligence reports to startups raising capital, billing $3,000-$10,000 per engagement with 2-3 day turnarounds.",
-      "unsplash_query": "financial data analysis charts research",
-      "significance": 9,
-      "visual": false,
-      "time": "10h",
-      "source": "OpenAI",
-      "link": "https://openai.com/business/customer-stories/hebbia",
-      "img": "https://images.unsplash.com/photo-1787839227786-17f3149942a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUyNzk0NzR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": true,
-      "published_date": "2026-11-21"
-    },
-    {
-      "id": "2026-11-21-a2",
-      "cat": "Tools",
-      "hook": "AI just got way better at finding drugs that actually work.",
-      "headline": "OpenAI's MedChemBench shows AI can reason through drug discovery like a chemist",
-      "body": "OpenAI released MedChemBench, a new evaluation framework that measures how well AI models understand molecular structures, interpret experimental data, and identify promising drug candidates in early-stage discovery. This isn't just about pattern matching — the benchmark tests whether AI can reason through complex chemical evidence the way experienced medicinal chemists do. MedChemBench evaluates models on their ability to analyze molecular properties, predict compound behavior, and make strategic decisions about which candidates deserve further investigation. The framework addresses a real bottleneck in pharma: the early discovery phase requires sifting through millions of potential molecules to find the handful worth developing, a process that's expensive, time-consuming, and heavily dependent on expert intuition. By creating a standardized benchmark, OpenAI is pushing AI models to demonstrate genuine reasoning about chemistry, not just memorization of training data. This matters because if AI can reliably shortlist promising compounds, pharmaceutical companies could cut months off discovery timelines and reduce costs significantly. The benchmark sets a new standard for evaluating AI in drug discovery — one that goes beyond raw prediction accuracy to test whether models can explain their reasoning and handle the messy, incomplete data scientists actually encounter in labs.",
-      "examples": [
-        "Feed an AI model a molecular structure and experimental assay results, it identifies which compounds warrant synthesis testing.",
-        "AI analyzes failed compound data and suggests structural modifications that could improve efficacy and reduce toxicity.",
-        "Model ranks candidate molecules by drug-likeness, predicting which will survive metabolism and reach target tissues."
-      ],
-      "build": "Biotech consulting firms are charging $150–300/hour to run AI-assisted compound screening for mid-size pharma companies, cutting discovery costs by 30–40%. Contract research organizations (CROs) are embedding these benchmarks into their pipelines and upselling AI-enhanced screening as a premium service. Individual medicinal chemists and startups are building drug discovery tools on top of these models, selling subscriptions ($500–2000/month) to academic labs and smaller biotech firms.",
-      "unsplash_query": "molecular structure chemistry laboratory",
-      "significance": 9,
-      "visual": false,
-      "time": "1h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/introducing-medchembench",
-      "img": "https://images.unsplash.com/photo-1743000149748-8facc78e75e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUyNzk0NzV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": true,
-      "published_date": "2026-11-21"
-    },
-    {
-      "id": "2026-11-21-a3",
-      "cat": "Tools",
-      "hook": "Google just made AI agents way smarter without breaking the token bank.",
-      "headline": "Google's Tool Retrieval cuts token costs while giving agents access to hundreds of tools",
-      "body": "Google has introduced Tool Retrieval, a new feature now in preview for the Gemini API that fundamentally changes how AI agents access and use external tools. Instead of forcing agents to load every available tool into context—which consumes massive amounts of tokens and slows down responses—Tool Retrieval intelligently selects only the most relevant tools for each task. This means developers can now give their agents access to hundreds of tools while dramatically reducing token consumption and latency. The feature works by understanding what an agent needs to accomplish and retrieving just the right subset of tools, rather than making the model sift through irrelevant options. This is a game-changer for cost-sensitive applications where token usage directly impacts margins. Before Tool Retrieval, teams building agent systems had to make painful tradeoffs: either limit tools to keep costs down, or accept massive token bloat by including everything. Now there's a third path that gets you both capability and efficiency. The preview launch signals Google is doubling down on making Gemini competitive for real-world agent workflows, where scale and cost matter as much as raw intelligence.",
-      "examples": [
-        "Build a customer service agent with access to 200+ APIs—it automatically retrieves only the APIs needed to solve each customer issue.",
-        "Create a research agent that filters through 50 data sources and grabs only the ones relevant to the current query.",
-        "Deploy a workflow automation agent across your company that intelligently selects from hundreds of internal and external tools without token overhead."
-      ],
-      "build": "Agencies are already selling 'AI agent optimization' services—taking clients' existing tool libraries and implementing Tool Retrieval to cut API costs by 30-50%. Freelancers are building Gemini agent workflows for e-commerce companies at $2,500-$8,000 per implementation, charging based on tool count and expected monthly API savings. Companies offering managed AI agent platforms are integrating Tool Retrieval to undercut competitors on per-query costs, allowing them to serve price-sensitive enterprise customers faster.",
-      "unsplash_query": "artificial intelligence API tools integration",
+      "build": "Financial research firms are charging $500-$2,000/month for AI-powered research workflows using models like this. Research agencies are selling '24-hour market analysis reports' leveraging GPT-6 Astra to cut production time from days to hours, billing clients $5,000-$15,000 per report. Individual analysts are building subscription research letters ($50-$200/month per subscriber) powered by automated financial data synthesis, reaching profitability with 100-200 paying subscribers.",
+      "unsplash_query": "financial data analysis charts markets",
       "significance": 9,
       "visual": false,
       "time": "5h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
-      "img": "https://images.unsplash.com/photo-1739036868260-c26b292cd85d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUyNzk0Nzd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-21"
+      "source": "OpenAI",
+      "link": "https://openai.com/business/customer-stories/hebbia",
+      "img": "https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUzNjY5NzJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-22"
     },
     {
-      "id": "2026-11-21-a4",
+      "id": "2026-11-22-a2",
       "cat": "Tools",
-      "hook": "Inkling 2 Mini just made running cutting-edge AI locally actually feasible.",
-      "headline": "Inkling 2 Mini brings high-performance AI to your local machine",
-      "body": "Inkling has released Inkling 2 Mini, a lightweight version of their latest model optimized for local deployment without sacrificing performance. The model is designed to run efficiently on consumer hardware while maintaining the capabilities of its full-scale counterpart, making advanced AI accessible to developers, entrepreneurs, and teams who want to avoid cloud costs and keep data on-premise. Inkling 2 Mini delivers competitive performance on standard benchmarks while consuming significantly less memory and compute resources than previous versions. This positions it as a practical alternative to larger cloud-based models for tasks like text generation, reasoning, and coding assistance. The release addresses a growing demand from builders who want model quality without monthly API bills or latency concerns. Local execution also means no data leaves your infrastructure—critical for privacy-sensitive applications, proprietary workflows, and teams operating in restricted environments.",
+      "hook": "AI just got way better at finding the next billion-dollar drug.",
+      "headline": "OpenAI's MedChemBench shows AI can reason through molecular drug discovery",
+      "body": "OpenAI released MedChemBench, a new evaluation framework that measures how well AI models can interpret molecular structures, reason from experimental data, and select promising drug candidates in early-stage discovery. This addresses a critical gap in AI development: while large language models excel at language tasks, drug discovery requires spatial reasoning about 3D molecular structures combined with scientific reasoning about biochemical evidence. MedChemBench tests AI models on tasks that real medicinal chemists face—analyzing compound properties, predicting how molecules will behave, and prioritizing candidates worth synthesizing and testing. The benchmark evaluates models on their ability to move beyond pattern matching and actually reason through experimental results to make informed compound selection decisions. This matters because pharmaceutical companies spend billions on drug discovery, and the early stages involve screening thousands of potential molecules; AI that can intelligently narrow this search could dramatically reduce time and cost. MedChemBench provides concrete metrics showing which models perform best at this specific scientific reasoning task, helping companies understand whether current AI tools are ready to assist medicinal chemists or if more development is needed. The framework represents a step toward AI systems that can handle domain-specific scientific work, not just general knowledge tasks.",
       "examples": [
-        "Run inference on your laptop with response times under 2 seconds for complex reasoning tasks.",
-        "Fine-tune Inkling 2 Mini on custom datasets using a single GPU without streaming to the cloud.",
-        "Deploy the model on-premise as an internal coding assistant or document analyzer with zero external API calls."
+        "Feed AI a molecular structure and experimental data—it ranks which compounds are most likely to become viable drugs.",
+        "AI analyzes binding affinity predictions and toxicity profiles to filter candidate molecules before expensive lab synthesis.",
+        "AI reasons through mechanism-of-action data to identify structural modifications that improve a drug's efficacy and safety profile."
       ],
-      "build": "Developers are charging clients $500-$2,000/month to deploy Inkling 2 Mini as a private AI assistant for internal teams, eliminating subscription costs for hosted alternatives. Agencies are offering fine-tuning services ($3,000-$5,000 per project) to customize the model on client data, delivering differentiated outputs without ongoing licensing fees. Consultants are packaging local deployment as a cost-reduction service for enterprises currently paying $50K+ annually in cloud API spend.",
-      "unsplash_query": "laptop computer neural network processing",
+      "build": "Biotech consulting firms are charging pharma companies $15K–$50K per project to integrate MedChemBench evaluations into their AI-assisted discovery workflows, reducing screening timelines from months to weeks. Contract research organizations are hiring AI specialists at $120K–$180K annually to build internal tools around benchmarks like this. Early-stage biotech founders are offering AI-powered compound screening as a service to larger pharma companies on retainers of $5K–$25K monthly.",
+      "unsplash_query": "molecular structure chemistry research lab",
       "significance": 9,
       "visual": false,
-      "time": "2h",
-      "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/inkling2mini",
-      "img": "https://images.unsplash.com/photo-1599588410456-91a0e0bdbe56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUyNzk0ODF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-21"
+      "time": "3h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-medchembench",
+      "img": "https://images.unsplash.com/photo-1777877714195-b7bad9c6ad85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUzNjY5NzN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-22"
     },
     {
-      "id": "2026-11-21-a5",
-      "cat": "Models",
-      "hook": "DaisyRose-27B just made fine-tuning way cheaper than anyone expected.",
-      "headline": "DaisyRose-27B Cracks Post-Training Efficiency—Smaller Model, Bigger Results",
-      "body": "DaisyRose-27B is a newly released 27-billion parameter language model from HuggingFace that fundamentally changes how efficiently AI teams can customize models for specific tasks. Unlike previous approaches requiring massive computational overhead during the fine-tuning phase, DaisyRose-27B achieves state-of-the-art performance on downstream tasks while dramatically reducing the memory, time, and cost required to adapt it to custom use cases. The model represents a major breakthrough in post-training efficiency—the phase where you take a base model and optimize it for your specific domain, whether that's customer support, code generation, or domain-specific reasoning. Benchmarks show DaisyRose-27B matches or exceeds the performance of much larger models on instruction-following and reasoning tasks, while consuming a fraction of the compute during training. This matters because for entrepreneurs building AI products, fine-tuning costs have been a major barrier to entry; DaisyRose-27B collapses those costs, making it viable for smaller teams to build competitive, specialized AI systems without enterprise-scale infrastructure. The release comes with full open-source weights and training methodology, allowing builders to either use it directly or learn from its architecture to optimize their own workflows.",
+      "id": "2026-11-22-a3",
+      "cat": "Tools",
+      "hook": "Google just made AI agents way smarter and cheaper to run.",
+      "headline": "Google's Tool Retrieval cuts token costs while giving agents access to hundreds of tools",
+      "body": "Google has introduced Tool Retrieval, a new feature now in preview for the Gemini API that fundamentally changes how AI agents access and use tools. Rather than loading all available tools into context at once — a practice that wastes tokens and slows down response times — Tool Retrieval intelligently identifies and retrieves only the specific tools an agent needs for each task. This means developers can now connect their Gemini-powered agents to hundreds of tools simultaneously while dramatically reducing token consumption and latency. The capability is particularly valuable for complex agent workflows where tool relevance matters: instead of forcing the model to process irrelevant tool descriptions, Tool Retrieval acts as an intelligent filter that matches the user's request to the most applicable tools in real time. For builders creating multi-tool AI agents, this represents a significant cost optimization and performance improvement over previous architectures where you had to choose between limiting available tools or accepting massive token overhead. The feature is available now in preview on the Gemini API, allowing entrepreneurs and developers to start building more efficient, scalable agent systems without waiting for general availability.",
       "examples": [
-        "Fine-tune DaisyRose-27B on 10K customer support tickets and deploy a specialized support agent in under 2 hours on a single GPU.",
-        "Adapt DaisyRose-27B to your proprietary business documents and get domain-specific Q&A without hallucination, costing under $50 to train.",
-        "Layer DaisyRose-27B with retrieval systems and get production-grade RAG without needing a $500K infrastructure bill."
+        "Build a customer service agent with access to 200+ internal tools, only loading the 3-5 most relevant per query.",
+        "Connect an AI assistant to your entire API library without token bloat or slowdowns between tool calls.",
+        "Deploy multi-step workflows where agents automatically find and sequence the right tools for complex requests."
       ],
-      "build": "AI teams are immediately monetizing DaisyRose-27B by offering fine-tuning-as-a-service to mid-market companies—charging $2K–$10K per custom model deployment for tasks like legal document review, medical coding, or industry-specific copywriting. Boutique AI agencies are packaging DaisyRose-27B with their own datasets and selling 4–8 week consulting engagements to train specialized models, with margins improving 60% because compute costs dropped. Individual developers on Gumroad and Lemon Squeezy are selling pre-fine-tuned DaisyRose variants (compliance models, creative writing models, code models) for $29–$199 each, with early adopters reporting 20–40 sales per model in the first month.",
-      "unsplash_query": "artificial intelligence neural network efficiency",
+      "build": "Agencies are charging $500-2,000/month to migrate existing AI agent setups to Tool Retrieval architecture, reducing client token costs by 40-60%. SaaS founders building on Gemini are selling 'Tool Retrieval optimization' as an add-on service, bundling it with custom agent training for $200-500 per implementation. Some are offering managed agent infrastructure that leverages Tool Retrieval, charging monthly subscriptions ($1,000-5,000) based on query volume and tool complexity.",
+      "unsplash_query": "artificial intelligence API development tools",
       "significance": 9,
       "visual": false,
       "time": "8h",
-      "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
-      "img": "https://images.unsplash.com/photo-1749006590475-4592a5dbf99f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUyNzk0ODJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "img": "https://images.unsplash.com/photo-1618758992354-364bbe07b3bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUzNjY5NzV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-11-21"
+      "published_date": "2026-11-22"
     },
     {
-      "id": "2026-11-21-a6",
+      "id": "2026-11-22-a4",
       "cat": "Tools",
-      "hook": "Your GPU isn't the bottleneck—your pipeline is.",
-      "headline": "Fine-tuning takes way longer than compute costs suggest—here's why",
-      "body": "A deep dive from HuggingFace reveals a critical gap between theoretical training FLOPs and real-world fine-tuning wall-clock time. When engineers calculate how long a fine-tuning job should take based on floating-point operations, they consistently underestimate actual duration by significant margins. The culprit isn't GPU compute power—it's everything happening around it: data loading bottlenecks, communication overhead between distributed systems, checkpoint saving, validation loops, and I/O contention that doesn't show up in FLOP calculations. For teams fine-tuning open models like Llama or Mistral on cloud infrastructure, this means jobs that look like they should finish in 2 hours routinely take 6-8 hours, inflating costs and delaying iteration cycles. The analysis shows that memory bandwidth, storage throughput, and network latency often consume 40-60% of total training time, while actual computation occupies only 40-50%. This matters enormously for anyone building production AI products: underestimating time means underestimating costs, missing deployment windows, and failing to account for infrastructure constraints when scaling from single-GPU experiments to multi-node clusters. HuggingFace's breakdown provides specific profiling techniques to identify where your jobs actually stall and offers practical optimization strategies—from better data pipeline design to smarter batch scheduling—that can recover 30-40% of wasted time without buying more GPUs.",
+      "hook": "Google just made AI task automation actually free and useful.",
+      "headline": "Google's Gemini Tasks Goes Free Globally With Workspace Integration",
+      "body": "Google has expanded its Gemini Tasks feature to six countries at no cost, marking a significant shift toward making AI-powered task automation accessible to mainstream users. Tasks in Gemini allows users to delegate work directly to the AI, which can handle follow-ups, reminders, and execution on the user's behalf. The rollout begins in the United States with new capabilities, and Google is deepening integration with Google Workspace—meaning Gemini can now interact with Gmail, Calendar, Docs, and other productivity tools to complete work autonomously. This positions Gemini as a direct competitor to other AI agents like OpenAI's GPTs and Claude's autonomous features. The key differentiator is the native Workspace integration, allowing Gemini to access your calendar, emails, and documents to accomplish tasks without manual intervention. Previously, task automation required either manual setup or premium pricing; free access removes the barrier to adoption. The significance lies in democratizing AI agents for small business owners, solopreneurs, and remote workers who can now automate scheduling, email management, meeting coordination, and document preparation without technical skills or additional software.",
       "examples": [
-        "Profile your fine-tuning job to discover I/O waits hidden beneath GPU utilization charts.",
-        "Reorganize data loading to stream examples asynchronously while GPUs train previous batches.",
-        "Switch checkpoint formats and storage backends to cut validation overhead by half."
+        "Create a meeting schedule by telling Gemini 'Book 1-hour calls with my top 5 clients' and watch it coordinate calendars.",
+        "Draft and send follow-up emails automatically based on conversation context from your Gmail thread.",
+        "Generate a weekly status report by pulling data from your Calendar, Docs, and email conversations."
       ],
-      "build": "AI agencies and consultants now offer fine-tuning optimization as a standalone service, charging $500–$2,000 per engagement to audit and refactor client training pipelines, cutting costs by 25–40% per job. Freelancers on Upwork are charging $50–$150/hour to profile and debug slow fine-tuning setups for startups. SaaS platforms like Lambda Labs and Paperspace are starting to market 'optimized fine-tuning' as a premium tier, charging 10–15% premiums for pre-configured pipelines that eliminate these bottlenecks.",
-      "unsplash_query": "GPU server data center training",
+      "build": "Freelancers and agencies are charging $50-200/month for Gemini Tasks setup and optimization services, managing client workflows and saving 10+ hours weekly per client. AI consultants are selling 'task automation audits' ($500-2000 per business) to identify which workflows should be delegated to Gemini, then implementing and training teams. Some are building white-label task automation solutions for small businesses, bundling Gemini with custom prompts and charging $300-800/month as a managed service.",
+      "unsplash_query": "productivity automation workflow digital",
+      "significance": 9,
+      "visual": false,
+      "time": "1h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+      "img": "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUzNjY5Nzd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-22"
+    },
+    {
+      "id": "2026-11-22-a5",
+      "cat": "Tools",
+      "hook": "Inkling 2 Mini just made running cutting-edge AI actually feasible.",
+      "headline": "Inkling 2 Mini delivers high-performance AI for local, offline setups",
+      "body": "Inkling has released Inkling 2 Mini, a lightweight version of its latest model optimized for local deployment and offline inference. Unlike larger model variants that demand enterprise-grade infrastructure, the Mini version runs efficiently on consumer-grade hardware and edge devices, bringing cutting-edge performance to setups where cloud connectivity isn't guaranteed or desirable. The model maintains core reasoning and task-completion capabilities while dramatically reducing memory footprint, latency, and computational overhead compared to full-size versions. Inkling 2 Mini competes with other efficient models like Llama 2-7B and Mistral 7B, positioning itself as a practical choice for developers building on-device AI applications, local automation workflows, and privacy-sensitive deployments. The release matters because it removes a major friction point: until now, teams wanting state-of-the-art performance typically had to choose between cloud dependency or accepting older, slower local alternatives. With Inkling 2 Mini, builders can run recent-generation models offline, keeping data private, reducing API costs, and enabling deployment in air-gapped or bandwidth-constrained environments. This is particularly valuable for edge AI applications, local LLM-powered tools, and organizations with strict data residency requirements.",
+      "examples": [
+        "Run inference on a laptop or Raspberry Pi without cloud calls or network latency.",
+        "Build privacy-first chatbots and automation that never transmit data externally.",
+        "Deploy reasoning models in factories, vehicles, or remote locations offline."
+      ],
+      "build": "Developers are charging $500–$2,500/month for managed inference services wrapping Inkling 2 Mini, offering clients white-label APIs without paying for cloud compute. Others are selling turnkey local AI applications—document processors, customer support bots, code assistants—as one-time software licenses ($1,000–$10,000) or SaaS tiers ($99–$499/month) for small businesses wanting on-prem AI. Consulting shops are packaging 'local AI implementation' as a service, charging $5,000–$50,000 per project to migrate clients off cloud-dependent systems.",
+      "unsplash_query": "laptop computer neural network local",
       "significance": 9,
       "visual": false,
       "time": "3h",
       "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
-      "img": "https://images.unsplash.com/photo-1790660974699-b87a044388b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUyNzk0ODN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://huggingface.co/blog/inkling2mini",
+      "img": "https://images.unsplash.com/photo-1710959781834-11a12ff8d8af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUzNjY5Nzh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-11-21"
+      "published_date": "2026-11-22"
+    },
+    {
+      "id": "2026-11-22-a6",
+      "cat": "Models",
+      "hook": "DaisyRose-27B just made fine-tuning cheap and fast.",
+      "headline": "DaisyRose-27B Cracks Post-Training Efficiency—Train Faster, Cheaper",
+      "body": "DaisyRose-27B is a new open-source language model that fundamentally reimagines how efficiently you can fine-tune and adapt AI models after initial training. Released on HuggingFace, DaisyRose-27B focuses on post-training efficiency—the phase where you customize a base model for specific tasks, domains, or personas. The model achieves significant speedups in adaptation with dramatically lower compute costs compared to standard fine-tuning approaches on comparable 27-billion-parameter models. Rather than requiring massive GPU clusters and weeks of training, DaisyRose-27B can be customized for specialized tasks in hours using consumer-grade hardware. This represents a major shift for entrepreneurs and developers who've traditionally been priced out of custom model development—the barrier to entry just dropped substantially. The model is fully open-source, meaning you can run it locally, integrate it into production systems without API costs, and retain complete control over your data and model weights. Early benchmarks show DaisyRose-27B matches or exceeds the performance of larger closed-source models on instruction-following and domain-specific tasks when properly fine-tuned, making it a genuine alternative to paying for API access to proprietary models.",
+      "examples": [
+        "Fine-tune on your proprietary customer service chats in 4 hours; deploy a custom support agent immediately.",
+        "Adapt DaisyRose for medical document classification without hiring ML engineers or cloud infrastructure.",
+        "Build a personalized writing assistant trained on your brand voice using a single GPU, start monetizing in days."
+      ],
+      "build": "AI agencies are already charging $3,000–$8,000 per month to fine-tune and deploy DaisyRose-27B for clients in customer service, content generation, and legal document automation. Some builders are offering it as a managed service: provide your data, they optimize and host, you get a white-labeled API within 1–2 weeks. Freelancers on Upwork are selling 'custom LLM implementation' packages starting at $1,500 per model, with recurring revenue from hosting ($200–$500/month) as the real profit driver.",
+      "unsplash_query": "artificial intelligence model training efficiency",
+      "significance": 9,
+      "visual": false,
+      "time": "1h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "img": "https://images.unsplash.com/photo-1646583288948-24548aedffd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTUzNjY5Nzl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-22"
     }
   ]
 }
