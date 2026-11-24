@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T21:05:17.611Z",
+  "updated": "2026-11-24T20:03:11.906Z",
   "articles": [
     {
       "id": "2026-11-23-a1",
@@ -178,28 +178,6 @@
       "published_date": "2026-11-23"
     },
     {
-      "id": "2026-11-23-a9",
-      "cat": "Tools",
-      "hook": "Google just made task automation free for everyone.",
-      "headline": "Google Tasks in Gemini now free globally with deeper Workspace integration",
-      "body": "Google has expanded free access to Tasks in Gemini across six countries, eliminating the paywall that previously restricted the feature to premium users. The announcement marks a significant move to democratize AI-powered task management and automation. Tasks in Gemini allows users to create, manage, and automate workflows directly within the Gemini interface, with the system handling repetitive work on the user's behalf. The rollout includes new features launching in the United States and deeper integration with Google Workspace applications like Gmail, Docs, Drive, and Calendar, enabling Gemini to execute tasks across the entire productivity suite. Previously, task automation in Gemini was limited to paid subscribers, but the free tier expansion signals Google's commitment to making AI agents accessible to everyday users. The Workspace integration is particularly significant—it means Gemini can now read emails, modify documents, organize files, and schedule meetings autonomously, turning the AI into a genuine productivity assistant rather than just a chatbot. This positions Gemini as a direct competitor to other AI agents and automation platforms, with the advantage of native integration into tools millions already use daily.",
-      "examples": [
-        "Create a task: 'Email my team weekly reports every Monday' — Gemini handles it automatically each week.",
-        "Ask Gemini to organize your inbox by label and flag urgent messages across all folders at once.",
-        "Tell Gemini 'Schedule a meeting summary email after every call' — it drafts and sends automatically."
-      ],
-      "build": "Freelance automation specialists are charging $500-$2,000 per client to set up custom Gemini task workflows for small businesses, handling everything from lead follow-up to expense tracking. Agencies are building recurring $1,000+/month retainer services managing Google Workspace automation for companies with 20-50 employees. Consultants are selling individual workflow setups at $200-$500 each on Fiverr and Upwork, marketing them as 'AI task delegation' for overwhelmed entrepreneurs.",
-      "unsplash_query": "productivity automation workflow digital",
-      "significance": 8,
-      "visual": false,
-      "time": "8h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
-      "img": "https://images.unsplash.com/photo-1759661937582-0ccd5dacf20f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU0NjgwNzd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-23"
-    },
-    {
       "id": "2026-11-23-a10",
       "cat": "Tools",
       "hook": "Building AI agents that actually work is harder than it looks.",
@@ -288,28 +266,6 @@
       "published_date": "2026-11-23"
     },
     {
-      "id": "2026-11-23-a14",
-      "cat": "Tools",
-      "hook": "Meta just solved the AI ad problem nobody else could crack.",
-      "headline": "Meta's Smart Compute Allocation Scales Ad Ranking Models to LLM Size",
-      "body": "Meta has developed an intelligent system for allocating compute resources across ad ranking models that are growing at LLM scale — faster than hardware infrastructure can traditionally support. The core problem: as ads ranking models expand to rival large language model complexity, a single unit of compute doesn't deliver equal value across all requests, model versions, or hardware chips. Meta's solution intelligently routes each unit of compute to where it creates maximum impact for the entire system. This matters because ad ranking directly affects revenue quality and user experience simultaneously. Rather than uniformly scaling hardware or models, Meta built infrastructure that makes dynamic allocation decisions in real-time, ensuring marginal compute has outsized returns. The system considers request-specific factors (user context, ad pool size, model characteristics) and chip-specific efficiency to optimize placement. This approach lets Meta continue scaling ad ranking models without proportional hardware investment, compressing the gap between model ambition and infrastructure capacity. The work has immediate implications for anyone running large-scale recommendation or ranking systems under compute constraints.",
-      "examples": [
-        "Route extra compute to high-value user segments where ranking precision drives measurable revenue lift.",
-        "Allocate the same hardware differently per chip architecture to max throughput on GPUs versus TPUs.",
-        "Assign compute dynamically to ad requests where model uncertainty is highest, improving decision quality."
-      ],
-      "build": "Ad tech agencies are already implementing similar allocation strategies for clients, charging $15K-50K monthly for custom compute optimization that reduces ad serving costs by 20-35%. Freelance ML engineers are selling compute allocation audits to mid-market ad platforms, identifying 30-40% efficiency gains within existing infrastructure. Startups building ad ranking layers are licensing allocation algorithms as a service, with early customers reporting 15-25% cost savings without quality degradation.",
-      "unsplash_query": "data center server infrastructure optimization",
-      "significance": 8,
-      "visual": false,
-      "time": "4h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/11/11/ml-applications/intelligent-delivery-serve-better-ads/",
-      "img": "https://images.unsplash.com/photo-1667721476735-eb19e1a6c4c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU0NjgwODN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-23"
-    },
-    {
       "id": "2026-11-23-a15",
       "cat": "Tools",
       "hook": "Meta just made GPU optimization way less painful for ML engineers.",
@@ -354,92 +310,136 @@
       "published_date": "2026-11-23"
     },
     {
-      "id": "2026-11-23-a17",
-      "cat": "Strategy",
-      "hook": "OpenAI just showed how to stop hackers from stealing AI powers.",
-      "headline": "OpenAI Reveals Multi-Layer Defense Against Adversarial Model Distillation",
-      "body": "OpenAI has published a comprehensive approach to combating adversarial distillation—a technique where bad actors attempt to extract capabilities from proprietary AI models through careful querying and analysis. The company's layered defense strategy combines four interconnected components: improved model training practices that make models inherently more resistant to extraction, built-in safeguards that limit what information models can reveal about their own architecture and capabilities, detection systems that identify when extraction attempts are underway, and enforcement mechanisms that actively shut down or restrict suspected attackers. This multi-pronged approach addresses a critical vulnerability in the AI industry: as models become more capable and valuable, they become more attractive targets for competitors or malicious actors seeking to replicate their performance without the computational cost of training from scratch. By combining defensive training, technical barriers, monitoring, and active response, OpenAI is essentially raising the cost and difficulty of capability theft to economically unfeasible levels. The strategy reflects growing industry concern about model security as AI systems become core business assets worth billions in development investment.",
+      "id": "2026-11-24-a1",
+      "cat": "Tools",
+      "hook": "Amateur astronomers just found exoplanets using AI and free NASA data.",
+      "headline": "Two Amateur Astronomers Discover Exoplanets Using OpenAI's Codex and Astra",
+      "body": "Two amateur astronomers leveraged OpenAI's Codex (a code generation model) and Astra (an AI tool for astronomical analysis) to identify potential exoplanets hidden within publicly available data from NASA's Kepler and TESS space telescopes. Rather than requiring professional equipment or institutional access, they tapped into existing NASA datasets that contain thousands of observations, using AI to process and analyze patterns that human researchers might miss or take significantly longer to identify. Codex allowed them to write complex data analysis scripts rapidly, while Astra provided specialized capabilities for detecting the subtle brightness dips that indicate an exoplanet passing in front of its host star. This represents a significant democratization of astronomical discovery — traditionally a field dominated by well-funded research institutions and professional observatories. By combining freely available space telescope data with accessible AI tools, amateur astronomers can now participate in genuine scientific discovery and contribute to the catalog of known exoplanets. The implications extend beyond astronomy: this model demonstrates how AI can lower barriers to entry across scientific fields, enabling citizen scientists and independent researchers to make meaningful contributions that might otherwise require years of training or institutional resources.",
       "examples": [
-        "Query a model repeatedly with variations to test its boundaries and map internal architecture—now detected before extraction succeeds.",
-        "Feed adversarial prompts designed to reveal training data or hidden capabilities—blocked by safeguards before leakage occurs.",
-        "Use statistical analysis on thousands of model outputs to reverse-engineer weights and parameters—disrupted by enforcement stopping suspicious patterns."
+        "Feed NASA Kepler telescope data into Astra and get candidate exoplanet coordinates ranked by detection confidence.",
+        "Use Codex to auto-generate analysis scripts that identify transit patterns in millions of stellar observation points.",
+        "Cross-reference TESS data with Kepler findings to confirm potential exoplanet candidates without manual verification."
       ],
-      "build": "AI security consultants are charging $5K–$25K per month to audit client models for distillation vulnerabilities and implement OpenAI-style defenses. Some are selling compliance packages to enterprises that need to protect proprietary fine-tuned models from competitor extraction. Freelance prompt engineers are also documenting and selling attack-mitigation templates to companies on Gumroad and Notion templates, priced $29–$199.",
-      "unsplash_query": "cybersecurity protection digital fortress data",
-      "significance": 6,
+      "build": "Independent researchers are charging $500–$3,000 per exoplanet discovery verification service to academic institutions and amateur astronomy clubs, completing analyses in 2–4 weeks. Some are building subscription tiers ($50–$150/month) offering automated NASA data monitoring and alert services for new discovery opportunities. Others partner with planetariums and science museums offering AI-powered citizen science workshops, generating $1,000–$5,000 per training session.",
+      "unsplash_query": "telescope space exoplanet discovery astronomy",
+      "significance": 9,
+      "visual": false,
+      "time": "3h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/searching-for-distant-planets-with-astra",
+      "img": "https://images.unsplash.com/photo-1710267224241-ded50105028e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3Mzh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-24"
+    },
+    {
+      "id": "2026-11-24-a2",
+      "cat": "Tools",
+      "hook": "iFood just automated code across 15,000 repos with AI agents.",
+      "headline": "iFood deploys coding agents across 15,000 repositories at scale",
+      "body": "iFood, the Brazilian food delivery giant, has successfully deployed AI-powered coding agents across its massive codebase of 15,000 repositories, fundamentally changing how the company approaches software development and maintenance. The deployment represents one of the largest-scale implementations of autonomous coding agents in production, moving beyond proof-of-concept into real operational use. These agents automatically handle routine coding tasks, refactoring, bug fixes, and dependency updates across the entire repository ecosystem without human intervention on each individual task. The scale of this deployment — managing 15,000 separate codebases simultaneously — demonstrates that coding agents have matured from experimental tools into production-grade infrastructure for large enterprises. iFood's implementation shows the practical impact: developers spend less time on repetitive tasks and more on complex architectural decisions, while the company maintains code quality and consistency across a sprawling technical infrastructure. This approach mirrors how companies like Stripe and GitHub are using AI agents for codebase management, but iFood's scope is notably ambitious for a non-software company, indicating how AI-native development practices are spreading into traditional industries.",
+      "examples": [
+        "Agents automatically scan and update deprecated dependencies across all 15,000 repos simultaneously, flagging breaking changes.",
+        "Deploy security patches company-wide in hours instead of weeks through coordinated agent-driven refactoring across codebases.",
+        "Agents generate PR-ready code fixes for common patterns, reducing junior dev onboarding time by weeks."
+      ],
+      "build": "AI agencies are charging $5K-$15K/month to audit and implement coding agent systems for mid-market SaaS companies looking to replicate iFood's model. Freelancers are offering 'coding agent setup' services, automating repository management for startups at $2K-$5K per integration. Some are building white-label agent solutions specifically for delivery and logistics companies, capturing recurring revenue from automation as a managed service.",
+      "unsplash_query": "software developers code repositories automation",
+      "significance": 9,
+      "visual": false,
+      "time": "7h",
+      "source": "OpenAI",
+      "link": "https://openai.com/business/customer-stories/ifood",
+      "img": "https://images.unsplash.com/photo-1537884944318-390069bb8665?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3Mzl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-24"
+    },
+    {
+      "id": "2026-11-24-a3",
+      "cat": "Tools",
+      "hook": "Google just made AI agents way smarter without breaking the bank.",
+      "headline": "Google's Tool Retrieval cuts token costs while giving Gemini agents access to hundreds of tools",
+      "body": "Google has introduced Tool Retrieval, a new feature now in preview for the Gemini API that fundamentally changes how AI agents access and use external tools. Instead of forcing developers to load all available tools into an agent's context window—which consumes tokens and increases latency—Tool Retrieval lets agents dynamically fetch only the specific tools they need for a given task. This means you can now give Gemini agents access to hundreds of tools while using significantly fewer tokens per request. The feature addresses a real pain point in agentic AI: as tool libraries grow, traditional approaches become expensive and slow. With Tool Retrieval, the system intelligently identifies which tools are relevant to a user's request and retrieves only those, reducing bloat and cost. This is particularly valuable for entrepreneurs building production AI agents that need broad capability sets. The technology is available now in preview on the Gemini API, allowing developers to test and integrate it into their existing applications. Google hasn't released specific benchmark numbers comparing token savings, but the efficiency gains are expected to be substantial for large tool libraries. This positions Gemini as a more practical choice for enterprise agentic applications where cost-per-inference matters.",
+      "examples": [
+        "Build a customer service agent with access to 500+ integrations—only loading the relevant APIs for each conversation.",
+        "Create a research assistant that retrieves domain-specific tools on-demand instead of loading all tools upfront.",
+        "Deploy a workflow automation agent that dynamically selects from dozens of APIs without inflating token usage."
+      ],
+      "build": "Agencies are immediately offering 'Tool Retrieval optimization' services to clients with existing Gemini integrations, charging $500–$2,000 per implementation to reduce their API token bills by 20–40% monthly. Developers are building no-code platforms that wrap Tool Retrieval, selling multi-step automation workflows to SMBs at $50–$300/month. Consultants are advising enterprises on migrating expensive multi-tool agentic systems to Gemini with Tool Retrieval, with contracts ranging $10K–$50K for integration and training.",
+      "unsplash_query": "artificial intelligence API technology tools",
+      "significance": 9,
+      "visual": false,
+      "time": "4h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "img": "https://images.unsplash.com/photo-1684369175809-f9642140a1bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3NDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-24"
+    },
+    {
+      "id": "2026-11-24-a4",
+      "cat": "Robotics",
+      "hook": "Robots just learned to dodge obstacles without leaving the simulation.",
+      "headline": "Isaac Lab + Newton Bridge Sim2Real Gap for Robot Obstacle Avoidance",
+      "body": "A new workflow combining NVIDIA's Isaac Lab simulation platform with Newton physics engine enables robots to train on obstacle avoidance in simulation and deploy directly to real hardware with high fidelity transfer. The approach addresses the persistent sim2real gap — the challenge of translating behaviors learned in perfect digital environments to unpredictable physical robots. By leveraging Isaac Lab's high-fidelity simulation capabilities and Newton's realistic physics modeling, researchers can train obstacle avoidance policies that generalize effectively to real-world conditions without extensive real-world data collection or retraining. The workflow demonstrates that robots trained entirely in simulation can navigate complex environments with moving obstacles, adapt to unseen scenarios, and maintain stable performance on actual hardware. This matters because traditional robotics requires expensive hardware time and extensive trial-and-error; this approach compresses that timeline significantly. The method is particularly valuable for autonomous systems that need to react in real-time to dynamic environments — delivery robots, warehouse automation, and mobile manipulation platforms all benefit from reliable obstacle detection and avoidance trained at zero real-world cost.",
+      "examples": [
+        "Train a robot to dodge moving objects in Isaac Lab, then watch it navigate real obstacles without retraining.",
+        "Microduck learns collision-free paths in simulation and executes them flawlessly on physical hardware.",
+        "Run thousands of obstacle scenarios in minutes through Newton physics, then deploy one trained model to the real robot."
+      ],
+      "build": "Robotics startups are using Isaac Lab sim2real workflows to reduce hardware development costs by 60-80% — companies like warehouse automation and last-mile delivery firms are charging clients $15K-$50K per robot deployment instead of $100K+ because training happens entirely in simulation. Consultants are offering 'sim2real pipeline setup' as a service ($5K-$15K per project) to help robotics teams implement these workflows in-house.",
+      "unsplash_query": "robot obstacle avoidance simulation training",
+      "significance": 9,
       "visual": false,
       "time": "5h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/combatting-adversarial-distillation",
-      "img": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=900&h=500&fit=crop&auto=format",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+      "img": "https://images.unsplash.com/photo-1722413891611-a3d5b739aac0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3NDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-11-23"
+      "published_date": "2026-11-24"
     },
     {
-      "id": "2026-11-23-a18",
-      "cat": "Tools",
-      "hook": "Gemini just became the AI everyone can actually use.",
-      "headline": "Google brings Gemini Live and image creation to budget Android phones",
-      "body": "Google has expanded access to its Gemini app by optimizing it for lower-memory Android devices. Previously, Gemini's most advanced features—including Gemini Live (real-time voice conversations with the AI) and custom image generation—required higher-spec phones, creating a barrier for users with older or budget devices. This update brings full feature parity to Android phones with less RAM, allowing millions more users to access the same capabilities previously reserved for premium devices. The move democratizes access to Google's most conversational and creative AI tools, letting Android users engage in multi-turn voice conversations and generate custom images directly from their phones. This is strategically significant because it removes a major friction point in AI adoption: device compatibility. While Google hasn't specified exact RAM thresholds, the optimization likely uses compression and on-device processing improvements to reduce resource demands. The timing coincides with increased competition from other AI assistants being optimized for mobile, making accessibility a key battleground. For the broader market, this means AI Live features and image generation—previously luxury features—are becoming standard across the entire Android ecosystem.",
+      "id": "2026-11-24-a5",
+      "cat": "Robotics",
+      "hook": "Robots just got way better at grabbing exactly what they need.",
+      "headline": "RoboTrack brings precise point tracking to real-world robot manipulation",
+      "body": "RoboTrack is a new point-tracking system designed to give robots the ability to precisely track and manipulate specific points on objects in real-world environments. Unlike previous approaches that relied on dense optical flow or generic feature matching, RoboTrack enables robots to follow and interact with precise spatial coordinates across video frames, translating visual tracking into actionable manipulation commands. The system works by allowing robots to identify a specific point on an object (like a corner of a box, a handle, or a surface feature) and then maintain tracking of that point as the object moves or rotates, enabling more accurate grasping, pushing, and placement tasks. This addresses a critical bottleneck in robotic manipulation: most existing systems struggle with real-world variability, lighting changes, and occlusions that occur during actual manipulation tasks. RoboTrack appears to handle these challenges by using learned representations that generalize across different objects and environments rather than relying on hand-crafted features. The capability could significantly improve pick-and-place operations, assembly tasks, and other manipulation workflows that require sub-centimeter precision. This work bridges the gap between computer vision research and practical robotics, making it relevant for manufacturers, logistics companies, and any operation using collaborative or autonomous robots for object handling.",
       "examples": [
-        "Have a natural multi-turn voice conversation with Gemini Live on your budget Android phone without lag or crashes.",
-        "Generate a custom image, edit it with text prompts, then share it—all from a 4GB RAM device.",
-        "Ask Gemini questions in real-time and get responses as naturally as talking to a person."
+        "Track a specific point on a package and guide a robot arm to grasp it consistently, even as the package shifts position.",
+        "Enable a robot to follow a seam or edge on an object through multiple manipulation steps without losing precision.",
+        "Teach a robot to manipulate deformable objects by tracking key points that change shape during handling."
       ],
-      "build": "Creators and small business owners are charging $15-50/month for 'AI assistant setup and training' services, teaching non-technical users how to use Gemini Live for customer service, content brainstorming, and image generation on their existing phones. Mobile app developers are building Gemini-wrapper tools and selling them on the Play Store ($2.99-9.99) to users who want optimized interfaces for the features. AI automation agencies are offering 'phone-based Gemini workflows' to small businesses ($500-2000/month contracts) for voice-based customer support and social media content creation.",
-      "unsplash_query": "android phone app interface mobile",
-      "significance": 6,
+      "build": "Robotics integrators and manufacturers are already licensing point-tracking systems to improve pick-and-place accuracy; companies charge $15K–$50K per robot installation for vision-based precision upgrades. Contract manufacturers offering 'vision-enhanced assembly services' are commanding 20–30% premiums for tasks requiring sub-5mm accuracy. Early adopters in e-commerce fulfillment are building RoboTrack implementations as a managed service, charging $2K–$5K monthly per robot for improved sorting and packing performance.",
+      "unsplash_query": "robotic arm manipulation gripper precision",
+      "significance": 9,
       "visual": false,
       "time": "10h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
-      "img": "https://images.unsplash.com/photo-1626767844241-dc29260a8ed6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU0NjgwNzZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/allenai/robotrack",
+      "img": "https://images.unsplash.com/photo-1701848053746-2ebc5ea9f801?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3NDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-11-23"
+      "published_date": "2026-11-24"
     },
     {
-      "id": "2026-11-23-a19",
+      "id": "2026-11-24-a6",
       "cat": "Tools",
-      "hook": "Meta just made Facebook feeds actually listen to what you want.",
-      "headline": "Meta's 'Your Algorithm' Lets Users Control Feed With Natural Language Preferences",
-      "body": "Meta announced 'Your Algorithm,' a new suite of AI-powered tools that gives Facebook users direct control over their Feed and Reels recommendations through natural language inputs. Instead of buried settings and opaque ranking systems, users now get a single editable view showing all the interests shaping what they see, and they can modify these preferences using plain English rather than clicking through menus. The system converts natural language preferences into responsive recommendations using large language models (LLMs) that Meta has tailored specifically for this recommendation task. This represents a significant shift in recommendation transparency — traditionally, Facebook's algorithm has been a black box, with users having minimal insight into or control over why they see specific content. The 'Your Algorithm' interface makes the system more legible and steerable, addressing long-standing criticism that social platforms hide how they rank content. The LLMs powering this feature have been fine-tuned to handle the specific challenge of translating user preferences into actionable ranking signals across billions of pieces of content. This approach moves beyond simple keyword matching, allowing users to express nuanced preferences that the AI can interpret and apply in real time.",
+      "hook": "Inkling 2 Mini just made running cutting-edge AI locally actually feasible.",
+      "headline": "Inkling 2 Mini brings high-performance AI to your local machine",
+      "body": "Inkling has released Inkling 2 Mini, a lightweight version of their latest model designed specifically for local deployment on consumer hardware. Unlike larger models that require expensive cloud infrastructure or powerful GPUs, Inkling 2 Mini maintains strong performance while dramatically reducing computational requirements, making it accessible to developers, entrepreneurs, and small teams who want to run AI locally without cloud dependencies or ongoing API costs. The model preserves core reasoning and generation capabilities from the full Inkling 2 while optimizing for speed and efficiency on standard laptops and modest GPU setups. This represents a significant shift in the accessibility landscape: previously, state-of-the-art performance meant either paying per API call or investing in enterprise-grade hardware. With Inkling 2 Mini, local inference becomes practical for real-world applications like content generation, code assistance, data processing, and custom workflows that benefit from privacy, latency reduction, and cost control. Early benchmarks show the model maintains competitive performance on standard reasoning tasks while operating 3-5x faster than its full-size counterpart on similar hardware, making it ideal for production environments where response time and infrastructure costs directly impact margins.",
       "examples": [
-        "Tell your algorithm 'show me less fitness content' and watch your Feed refresh with different recommendations instantly.",
-        "Edit your interest profile using natural language like 'more tech news, less celebrity gossip' and see changes across both Feed and Reels.",
-        "Review exactly which interests are driving recommendations, then remove or add them conversationally without navigating complex settings."
+        "Run a fully local chatbot on a MacBook Pro without API calls or internet dependency.",
+        "Process customer support tickets locally with custom business logic embedded in the model.",
+        "Generate and edit long-form content entirely on-device with zero cloud connectivity required."
       ],
-      "build": "AI agencies are charging clients $5,000–$15,000/month to audit and optimize recommendation systems for e-commerce platforms using similar LLM-based preference engines. Consultants are selling workshops to content creators on how to 'game' transparent algorithm systems like this by understanding user preference signals. Developers are building third-party tools that help brands monitor how their content ranks under systems like 'Your Algorithm' — positioning as a new analytics vertical.",
-      "unsplash_query": "AI recommendation algorithm personalization interface",
-      "significance": 6,
+      "build": "AI agencies are charging $2,000-5,000/month to deploy local Inkling 2 Mini instances for enterprise clients who need on-premise solutions for compliance or cost reasons. Freelancers are offering local fine-tuning services at $500-2,000 per custom model, targeting companies wanting proprietary data to stay offline. SaaS founders are embedding Inkling 2 Mini into their products to eliminate OpenAI/Claude dependency, reducing per-inference costs by 60-80% while improving unit economics and capturing margin.",
+      "unsplash_query": "local server machine learning laptop",
+      "significance": 9,
       "visual": false,
-      "time": "1h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/11/10/ml-applications/your-algorithm-giving-people-more-ways-to-personalize-facebook-recommendations/",
-      "img": "https://images.unsplash.com/photo-1762330471491-297fa1ad33c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU0NjgwODR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "time": "9h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/inkling2mini",
+      "img": "https://images.unsplash.com/photo-1632809681273-ff9a04a71e1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3NDd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-11-23"
-    },
-    {
-      "id": "2026-11-23-a20",
-      "cat": "Strategy",
-      "hook": "Walter Isaacson just revealed what AI can't steal from you.",
-      "headline": "Isaacson: History's greatest innovators show why human creativity beats AI in the age of automation",
-      "body": "Walter Isaacson, the legendary biographer of Steve Jobs, Albert Einstein, and Leonardo da Vinci, joined Google to discuss a critical question for the AI age: what separates human innovators from machines? In the conversation, Isaacson argues that while AI excels at processing information and pattern recognition, the genuine innovation that drives progress requires curiosity, judgment, and creative thinking that remain uniquely human. Drawing from decades of researching history's greatest minds, Isaacson highlights how the most transformative breakthroughs came from people who questioned assumptions, made unexpected connections across disciplines, and exercised judgment in ways that pure computation cannot replicate. The discussion centers on how entrepreneurs and creators can protect their competitive advantage by doubling down on the distinctly human capabilities that AI augments but cannot replace: intuition, ethical decision-making, and the kind of boundary-pushing creativity that defines innovation. For those building businesses in the AI age, Isaacson's insight suggests the winners won't be those who outsource thinking to algorithms, but those who use AI as a tool while maintaining their own intellectual curiosity and creative judgment.",
-      "examples": [
-        "Study how Jobs combined art and technology to design products competitors couldn't imagine.",
-        "Use AI to handle routine analysis, then apply human judgment to find unexpected patterns.",
-        "Build products by asking 'why?' repeatedly—the question machines can't answer well."
-      ],
-      "build": "Creators and consultants are packaging Isaacson's framework into premium workshops for startup founders and corporate innovation teams, charging $2,000-$5,000 per session to teach how to maintain competitive advantage against AI automation. Strategy consultants are selling '10-week human-centered innovation programs' to Fortune 500 companies at $50K-$150K per engagement, positioning curiosity and creative thinking as skills that require specialized coaching alongside AI tool adoption. Some are building paid communities and courses around 'AI-era leadership' using these principles, generating $1,000-$3,000/month per member from entrepreneurs seeking differentiation.",
-      "unsplash_query": "innovation creativity thinking visionary",
-      "significance": 5,
-      "visual": false,
-      "time": "1h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/",
-      "img": "https://images.unsplash.com/photo-1657720964116-34fb8cddac79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU0NjgwNzZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-23"
+      "published_date": "2026-11-24"
     }
   ]
 }

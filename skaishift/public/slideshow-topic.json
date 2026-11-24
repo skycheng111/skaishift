@@ -1,26 +1,26 @@
 {
-  "query": "Perplexity Is The New Shared AI reveal",
-  "topicName": null,
-  "hook": "Perplexity is the AI everyone's actually using now.",
-  "img": "https://images.unsplash.com/photo-1613441583079-89c728579a07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU0NjgwNzF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-  "cat": "Models",
+  "query": "OpenAI Codex AI official reveal",
+  "topicName": "Codex",
+  "hook": "Codex just became the coding AI you actually need.",
+  "img": "https://images.unsplash.com/photo-1710267224241-ded50105028e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3Mzh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+  "cat": "Tools",
   "videos": [
     {
-      "videoId": "HVdJVwdH6b4",
-      "title": "OpenAI Reveals GPT-4 Perplexity 0.91, Proposes Shared AI Limit #Shorts",
-      "channel": "Token Tape"
+      "videoId": "m8uUUUsMD3Y",
+      "title": "Introducing the Codex Micro",
+      "channel": "OpenAI"
     },
     {
-      "videoId": "fOc0pLVEsmQ",
-      "title": "4 Perplexity Numbers That Define AI Intelligence",
-      "channel": "I Tech AI"
+      "videoId": "KBCDe4PtA_A",
+      "title": "OpenAI Launches Codex Micro, Its First-Ever Hardware Product | #shorts",
+      "channel": "CEO VINE"
     },
     {
-      "videoId": "PrDBxXUNRL4",
-      "title": "PERPLEXITY FOUNDER REVEAL THISS ABOUT AI 😱💀 #perplexitypartner",
-      "channel": "bbreaks_moments15"
+      "videoId": "DdkNm2bDKxQ",
+      "title": "GPT-5.3 Codex: OpenAI&#39;s Most Capable Coding Agent REVEALED #openai",
+      "channel": "Brandon Melville"
     }
   ],
-  "firstDate": "2026-11-23",
-  "date": "2026-11-23"
+  "firstDate": "2026-11-24",
+  "date": "2026-11-24"
 }
