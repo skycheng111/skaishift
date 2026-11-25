@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T20:03:11.906Z",
+  "updated": "2026-11-25T19:04:13.800Z",
   "articles": [
     {
       "id": "2026-11-23-a1",
@@ -156,6 +156,72 @@
       "published_date": "2026-11-23"
     },
     {
+      "id": "2026-11-24-a1",
+      "cat": "Tools",
+      "hook": "Amateur astronomers just found exoplanets using AI and free NASA data.",
+      "headline": "Two Amateur Astronomers Discover Exoplanets Using OpenAI's Codex and Astra",
+      "body": "Two amateur astronomers leveraged OpenAI's Codex (a code generation model) and Astra (an AI tool for astronomical analysis) to identify potential exoplanets hidden within publicly available data from NASA's Kepler and TESS space telescopes. Rather than requiring professional equipment or institutional access, they tapped into existing NASA datasets that contain thousands of observations, using AI to process and analyze patterns that human researchers might miss or take significantly longer to identify. Codex allowed them to write complex data analysis scripts rapidly, while Astra provided specialized capabilities for detecting the subtle brightness dips that indicate an exoplanet passing in front of its host star. This represents a significant democratization of astronomical discovery — traditionally a field dominated by well-funded research institutions and professional observatories. By combining freely available space telescope data with accessible AI tools, amateur astronomers can now participate in genuine scientific discovery and contribute to the catalog of known exoplanets. The implications extend beyond astronomy: this model demonstrates how AI can lower barriers to entry across scientific fields, enabling citizen scientists and independent researchers to make meaningful contributions that might otherwise require years of training or institutional resources.",
+      "examples": [
+        "Feed NASA Kepler telescope data into Astra and get candidate exoplanet coordinates ranked by detection confidence.",
+        "Use Codex to auto-generate analysis scripts that identify transit patterns in millions of stellar observation points.",
+        "Cross-reference TESS data with Kepler findings to confirm potential exoplanet candidates without manual verification."
+      ],
+      "build": "Independent researchers are charging $500–$3,000 per exoplanet discovery verification service to academic institutions and amateur astronomy clubs, completing analyses in 2–4 weeks. Some are building subscription tiers ($50–$150/month) offering automated NASA data monitoring and alert services for new discovery opportunities. Others partner with planetariums and science museums offering AI-powered citizen science workshops, generating $1,000–$5,000 per training session.",
+      "unsplash_query": "telescope space exoplanet discovery astronomy",
+      "significance": 9,
+      "visual": false,
+      "time": "3h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/searching-for-distant-planets-with-astra",
+      "img": "https://images.unsplash.com/photo-1710267224241-ded50105028e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3Mzh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-24"
+    },
+    {
+      "id": "2026-11-24-a2",
+      "cat": "Tools",
+      "hook": "iFood just automated code across 15,000 repos with AI agents.",
+      "headline": "iFood deploys coding agents across 15,000 repositories at scale",
+      "body": "iFood, the Brazilian food delivery giant, has successfully deployed AI-powered coding agents across its massive codebase of 15,000 repositories, fundamentally changing how the company approaches software development and maintenance. The deployment represents one of the largest-scale implementations of autonomous coding agents in production, moving beyond proof-of-concept into real operational use. These agents automatically handle routine coding tasks, refactoring, bug fixes, and dependency updates across the entire repository ecosystem without human intervention on each individual task. The scale of this deployment — managing 15,000 separate codebases simultaneously — demonstrates that coding agents have matured from experimental tools into production-grade infrastructure for large enterprises. iFood's implementation shows the practical impact: developers spend less time on repetitive tasks and more on complex architectural decisions, while the company maintains code quality and consistency across a sprawling technical infrastructure. This approach mirrors how companies like Stripe and GitHub are using AI agents for codebase management, but iFood's scope is notably ambitious for a non-software company, indicating how AI-native development practices are spreading into traditional industries.",
+      "examples": [
+        "Agents automatically scan and update deprecated dependencies across all 15,000 repos simultaneously, flagging breaking changes.",
+        "Deploy security patches company-wide in hours instead of weeks through coordinated agent-driven refactoring across codebases.",
+        "Agents generate PR-ready code fixes for common patterns, reducing junior dev onboarding time by weeks."
+      ],
+      "build": "AI agencies are charging $5K-$15K/month to audit and implement coding agent systems for mid-market SaaS companies looking to replicate iFood's model. Freelancers are offering 'coding agent setup' services, automating repository management for startups at $2K-$5K per integration. Some are building white-label agent solutions specifically for delivery and logistics companies, capturing recurring revenue from automation as a managed service.",
+      "unsplash_query": "software developers code repositories automation",
+      "significance": 9,
+      "visual": false,
+      "time": "7h",
+      "source": "OpenAI",
+      "link": "https://openai.com/business/customer-stories/ifood",
+      "img": "https://images.unsplash.com/photo-1537884944318-390069bb8665?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3Mzl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-24"
+    },
+    {
+      "id": "2026-11-24-a4",
+      "cat": "Robotics",
+      "hook": "Robots just learned to dodge obstacles without leaving the simulation.",
+      "headline": "Isaac Lab + Newton Bridge Sim2Real Gap for Robot Obstacle Avoidance",
+      "body": "A new workflow combining NVIDIA's Isaac Lab simulation platform with Newton physics engine enables robots to train on obstacle avoidance in simulation and deploy directly to real hardware with high fidelity transfer. The approach addresses the persistent sim2real gap — the challenge of translating behaviors learned in perfect digital environments to unpredictable physical robots. By leveraging Isaac Lab's high-fidelity simulation capabilities and Newton's realistic physics modeling, researchers can train obstacle avoidance policies that generalize effectively to real-world conditions without extensive real-world data collection or retraining. The workflow demonstrates that robots trained entirely in simulation can navigate complex environments with moving obstacles, adapt to unseen scenarios, and maintain stable performance on actual hardware. This matters because traditional robotics requires expensive hardware time and extensive trial-and-error; this approach compresses that timeline significantly. The method is particularly valuable for autonomous systems that need to react in real-time to dynamic environments — delivery robots, warehouse automation, and mobile manipulation platforms all benefit from reliable obstacle detection and avoidance trained at zero real-world cost.",
+      "examples": [
+        "Train a robot to dodge moving objects in Isaac Lab, then watch it navigate real obstacles without retraining.",
+        "Microduck learns collision-free paths in simulation and executes them flawlessly on physical hardware.",
+        "Run thousands of obstacle scenarios in minutes through Newton physics, then deploy one trained model to the real robot."
+      ],
+      "build": "Robotics startups are using Isaac Lab sim2real workflows to reduce hardware development costs by 60-80% — companies like warehouse automation and last-mile delivery firms are charging clients $15K-$50K per robot deployment instead of $100K+ because training happens entirely in simulation. Consultants are offering 'sim2real pipeline setup' as a service ($5K-$15K per project) to help robotics teams implement these workflows in-house.",
+      "unsplash_query": "robot obstacle avoidance simulation training",
+      "significance": 9,
+      "visual": false,
+      "time": "5h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
+      "img": "https://images.unsplash.com/photo-1722413891611-a3d5b739aac0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3NDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-24"
+    },
+    {
       "id": "2026-11-23-a8",
       "cat": "Tools",
       "hook": "Google Search is about to get creepily personal in the best way.",
@@ -244,202 +310,136 @@
       "published_date": "2026-11-23"
     },
     {
-      "id": "2026-11-23-a13",
-      "cat": "Tools",
-      "hook": "Meta just solved the ML deployment nightmare with one template trick.",
-      "headline": "Meta's Template-Driven Approach Unlocks ML Deployment at Scale",
-      "body": "Meta has published a framework for building a template-driven ML ecosystem that fundamentally shifts how production machine learning systems are deployed across organizations. Rather than inventing new model techniques, Meta identified that the real bottleneck in modern ML infrastructure is reliably shipping and managing large numbers of production models across diverse, fragmented environments. The template-driven approach standardizes model design and deployment patterns, allowing teams to design once and deploy consistently across multiple use cases and infrastructure configurations. This creates what Meta describes as a 'rising tide that lifts all the boats'—a shared foundation where improvements to the core template automatically benefit all deployed models. The methodology addresses a critical pain point: as ML ecosystems scale to dozens or hundreds of production models, the operational overhead of maintaining, updating, and monitoring each one separately becomes prohibitive. By establishing standardized templates for common model architectures and deployment patterns, teams eliminate redundant work and reduce the surface area for errors. This approach is particularly valuable for enterprises and AI-native companies operating multiple models simultaneously, where consistency and reliability directly impact revenue and customer trust.",
+      "id": "2026-11-25-a1",
+      "cat": "Models",
+      "hook": "GPT-6 just designed proteins like a scientist.",
+      "headline": "GPT-6 cracks protein design — structures validated in real lab tests",
+      "body": "OpenAI's GPT-6 models have demonstrated intrinsic protein-design capabilities, meaning they can generate novel protein structures and sequences entirely through reasoning and code generation without external tools. The breakthrough isn't just theoretical — lab testing confirmed that designed proteins showed binding activity across five different molecular targets, proving the AI isn't just generating plausible-looking sequences but actually creating functional molecules. This represents a significant leap beyond previous AI protein tools like AlphaFold, which predicted protein structures from known sequences; GPT-6 is instead inventing new sequences from scratch and doing the design reasoning itself. The model uses pure language and coding abilities to work through protein chemistry principles, designing candidates that researchers could then synthesize and test. This capability opens immediate applications in drug discovery, enzyme engineering, and synthetic biology — areas where wet-lab validation traditionally takes months and millions of dollars. The fact that multiple binding targets showed positive results suggests the model has genuinely internalized principles of molecular interaction, not just memorized training data patterns.",
       "examples": [
-        "Design a model once in the template framework, then automatically deploy to production across five different infrastructure providers simultaneously.",
-        "Update a single template baseline and have all 50+ deployed models receive the improvement without individual redeployment.",
-        "Standardize monitoring, versioning, and rollback procedures across your entire model fleet using one unified system."
+        "Feed protein requirements and constraints; GPT-6 generates novel sequences with reasoning visible in code output.",
+        "AI-designed proteins showed measurable binding to five real molecular targets in laboratory validation.",
+        "Use GPT-6 for enzyme design by specifying desired catalytic properties and substrate preferences."
       ],
-      "build": "ML ops consultants are charging $5K-$15K/month to help companies audit their model deployment sprawl and implement template-driven systems. Teams are selling pre-built templates for common use cases (recommendation systems, NLP pipelines, computer vision) at $2K-$10K per template to companies with 10+ production models. Some are offering managed template infrastructure services starting at $3K/month to handle deployment orchestration end-to-end.",
-      "unsplash_query": "machine learning infrastructure deployment systems",
-      "significance": 8,
+      "build": "Biotech founders are already licensing GPT-6 access through OpenAI's API ($20-200/month depending on usage) to accelerate early-stage drug candidate screening, cutting design iteration from weeks to hours. Contract research organizations are offering 'AI-assisted protein engineering' services at $5K-50K per project to pharma clients, positioning themselves as bridges between AI output and wet-lab validation. Synthetic biology startups are integrating GPT-6 into their platforms to offer clients custom enzyme or antibody design at scale.",
+      "unsplash_query": "protein structure molecular design laboratory",
+      "significance": 9,
       "visual": false,
-      "time": "1h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/11/18/ml-applications/design-once-deploy-at-scale-template-driven-ml-ecosystem/",
-      "img": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU0NjgwODN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-23"
-    },
-    {
-      "id": "2026-11-23-a15",
-      "cat": "Tools",
-      "hook": "Meta just made GPU optimization way less painful for ML engineers.",
-      "headline": "Meta's TLX Compiler Unlocks Next-Gen GPU Performance Without Sacrificing Developer Speed",
-      "body": "Meta has released Triton Low-Level Extensions (TLX), a powerful extension to the Triton programming language that lets machine learning engineers optimize GPU performance while maintaining Triton's famously productive development model. TLX introduces explicit warp-group and cluster-level orchestration capabilities, enabling developers to directly leverage cutting-edge GPU hardware features—like NVIDIA's latest tensor cores and memory hierarchies—without resorting to low-level CUDA programming or sacrificing iteration velocity. The key innovation is that TLX bridges the gap between high-level, easy-to-write Triton code and hardware-specific optimizations that previously required dropping down to complex, error-prone CUDA kernels. TLX has demonstrated measurable performance improvements across three critical production workloads: recommendation systems (RecSys) training, RecSys inference, and large-scale LLM pretraining—the exact workloads that drive revenue at major AI companies. This matters because modern GPU architectures are becoming increasingly complex with new capabilities every generation, and engineers have historically faced a painful choice: write fast code that's hard to maintain, or write clean code that's slow. TLX lets them do both, reducing the engineering time needed to squeeze performance out of new hardware while keeping code readable and debuggable. For teams running production ML at scale, this means faster time-to-optimization, reduced engineering overhead, and the ability to adopt new GPU generations without massive code rewrites.",
-      "examples": [
-        "Write Triton code once, then use TLX annotations to unlock 20-40% speedups on latest GPU hardware without rewriting in CUDA.",
-        "RecSys teams optimize inference latency by directly controlling warp-group scheduling, hitting production SLA targets faster.",
-        "LLM training teams adopt new GPU tensor operations without rewriting entire training loops or sacrificing code clarity."
-      ],
-      "build": "ML platform teams are selling TLX optimization services to enterprises running large recommendation and LLM workloads, charging $50K–$200K per engagement to migrate existing Triton codebases and extract 15–35% performance gains. GPU-focused consulting firms are positioning TLX expertise as a premium service for companies with $10M+ annual cloud GPU spend. Some are offering retainer-based optimization services, billing $5K–$15K/month to continuously optimize customer kernels as new GPU hardware arrives.",
-      "unsplash_query": "GPU chip circuit board optimization",
-      "significance": 8,
-      "visual": false,
-      "time": "1h",
-      "source": "Meta AI",
-      "link": "https://engineering.fb.com/2026/11/10/open-source/tlx-a-hardware-native-gpu-compiler-for-production-ml/",
-      "img": "https://images.unsplash.com/photo-1782088537336-8710b62c8040?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU0NjgwODV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-23"
-    },
-    {
-      "id": "2026-11-23-a16",
-      "cat": "Tools",
-      "hook": "Legal teams just got an AI co-worker that actually understands your business.",
-      "headline": "OpenAI shows how AI connects legal work to real business context",
-      "body": "OpenAI hosted a discussion featuring Stacey Wang and Craig Bruney from OpenAI, Mary O'Carroll from LECG, and Richard Segal from Cooley on how artificial intelligence can transform in-house legal departments. The core insight: AI works best for legal teams when it understands the broader business context, not just legal documents in isolation. The conversation focused on three key capabilities — connecting business context to legal decisions, building reusable workflows that legal teams can deploy repeatedly, and improving collaboration with outside counsel by automating routine work and freeing expensive lawyers for high-value strategy. The practical impact is significant: in-house legal teams typically manage dozens of vendors, contracts, compliance requirements, and regulatory obligations simultaneously. By using AI to automatically flag business context (like market timing, competitor moves, or financial constraints) alongside legal analysis, teams can make faster, smarter decisions. The workflow angle matters because legal work is repetitive — document review, contract analysis, compliance checks happen constantly. Building templates once and reusing them across matters saves both time and money. For outside counsel, this means in-house teams arrive with pre-analyzed information, reducing billable hours spent on initial discovery. This represents a shift in how legal AI is deployed: rather than point solutions that handle one task (like contract review), the focus is on connected systems that layer business intelligence, legal expertise, and institutional knowledge together.",
-      "examples": [
-        "Upload a contract and get instant flags: payment terms that conflict with Q3 budget constraints, liability clauses misaligned with new market expansion.",
-        "Build a contract review workflow once, then deploy it across vendor agreements, employment contracts, and NDAs automatically.",
-        "Pre-screen 200 pages of regulatory filings and send outside counsel a prioritized brief with only the high-risk items needing deep analysis."
-      ],
-      "build": "In-house legal consultants are charging $150-300/hour to implement AI workflows for mid-market companies, typically completing 3-5 workflows per client ($10K-$25K projects). Law firms are offering 'AI-augmented contract review' services at $2K-$5K per deal, cutting review time from days to hours. Smaller legal ops teams are selling templated AI workflows to other companies ($500-$2K per template license), creating recurring revenue from documented processes.",
-      "unsplash_query": "legal office contract documents technology",
-      "significance": 6,
-      "visual": false,
-      "time": "6h",
+      "time": "10h",
       "source": "OpenAI",
-      "link": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
-      "img": "https://images.unsplash.com/photo-1790009335467-537bdd2163ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU0NjgwNzF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-23"
+      "link": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "img": "https://images.unsplash.com/photo-1787607551882-7ebee04fb32f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU2MzM1OTV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-25"
     },
     {
-      "id": "2026-11-24-a1",
+      "id": "2026-11-25-a2",
       "cat": "Tools",
-      "hook": "Amateur astronomers just found exoplanets using AI and free NASA data.",
-      "headline": "Two Amateur Astronomers Discover Exoplanets Using OpenAI's Codex and Astra",
-      "body": "Two amateur astronomers leveraged OpenAI's Codex (a code generation model) and Astra (an AI tool for astronomical analysis) to identify potential exoplanets hidden within publicly available data from NASA's Kepler and TESS space telescopes. Rather than requiring professional equipment or institutional access, they tapped into existing NASA datasets that contain thousands of observations, using AI to process and analyze patterns that human researchers might miss or take significantly longer to identify. Codex allowed them to write complex data analysis scripts rapidly, while Astra provided specialized capabilities for detecting the subtle brightness dips that indicate an exoplanet passing in front of its host star. This represents a significant democratization of astronomical discovery — traditionally a field dominated by well-funded research institutions and professional observatories. By combining freely available space telescope data with accessible AI tools, amateur astronomers can now participate in genuine scientific discovery and contribute to the catalog of known exoplanets. The implications extend beyond astronomy: this model demonstrates how AI can lower barriers to entry across scientific fields, enabling citizen scientists and independent researchers to make meaningful contributions that might otherwise require years of training or institutional resources.",
+      "hook": "Amateur astronomers just discovered exoplanets using AI and public NASA data.",
+      "headline": "Amateur astronomers discover exoplanets using Codex and Astra with NASA data",
+      "body": "Two amateur astronomers leveraged OpenAI's Codex and Astra to identify potential exoplanets by analyzing publicly available data from NASA's Kepler and TESS space telescopes. Codex, OpenAI's code generation model, helped them write and optimize analysis scripts, while Astra enabled sophisticated pattern recognition across massive datasets to spot planetary signatures that human reviewers might miss. The discovery demonstrates how AI tools democratize scientific research, allowing non-professionals to contribute meaningfully to astronomy by automating data processing that would otherwise require institutional resources or specialized expertise. This approach is particularly powerful because Kepler and TESS generate terabytes of observational data daily—far more than professional astronomers can manually review—making AI-assisted filtering essential for discovery. The amateur astronomers' success underscores a broader trend: advanced AI models are lowering barriers to entry in fields traditionally gatekept by credentials and institutional access, creating opportunities for citizen scientists to make real scientific contributions.",
       "examples": [
-        "Feed NASA Kepler telescope data into Astra and get candidate exoplanet coordinates ranked by detection confidence.",
-        "Use Codex to auto-generate analysis scripts that identify transit patterns in millions of stellar observation points.",
-        "Cross-reference TESS data with Kepler findings to confirm potential exoplanet candidates without manual verification."
+        "Feed Kepler or TESS telescope data into Astra to automatically flag anomalies indicative of orbiting planets.",
+        "Use Codex to auto-generate optimized Python analysis scripts for detecting periodic dips in stellar brightness patterns.",
+        "Cross-reference multiple detection methods across years of data to validate exoplanet candidates with minimal manual work."
       ],
-      "build": "Independent researchers are charging $500–$3,000 per exoplanet discovery verification service to academic institutions and amateur astronomy clubs, completing analyses in 2–4 weeks. Some are building subscription tiers ($50–$150/month) offering automated NASA data monitoring and alert services for new discovery opportunities. Others partner with planetariums and science museums offering AI-powered citizen science workshops, generating $1,000–$5,000 per training session.",
-      "unsplash_query": "telescope space exoplanet discovery astronomy",
+      "build": "Freelance data analysts are charging $500-$2,000 to build custom Codex-powered analysis pipelines for researchers analyzing open science datasets. Some are offering retainer contracts ($1,500/month) with academic labs and citizen science projects to maintain and optimize automated discovery systems. Others are creating paid courses teaching amateurs how to use AI for astronomical data analysis, generating $200-$800 per student.",
+      "unsplash_query": "telescope space astronomy discovery",
+      "significance": 9,
+      "visual": false,
+      "time": "8h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/searching-for-distant-planets-with-astra",
+      "img": "https://images.unsplash.com/photo-1518784940690-cbe92616251d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU2MzM1OTZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-25"
+    },
+    {
+      "id": "2026-11-25-a3",
+      "cat": "Tools",
+      "hook": "iFood just automated code across 15,000 repos with AI agents.",
+      "headline": "iFood deploys coding agents across 15,000 repositories at scale",
+      "body": "iFood, one of Latin America's largest food delivery platforms, has successfully scaled AI coding agents across its massive 15,000-repository codebase, according to details shared by OpenAI. The deployment represents a significant real-world validation of how coding agents can operate at enterprise scale, handling complex, interconnected systems across thousands of codebases simultaneously. Rather than replacing developers, iFood's agents are automating routine coding tasks, refactoring, and testing workflows that would normally consume weeks of engineering time. The agents are trained to understand iFood's specific architecture, dependencies, and coding standards, allowing them to make autonomous changes while maintaining consistency and preventing conflicts. This approach has reduced the time developers spend on boilerplate work, refactoring, and repetitive testing cycles, freeing senior engineers to focus on high-level architecture and feature development. The key challenge iFood solved was maintaining context and preventing breaking changes across interconnected services—the agents had to learn not just individual repositories but how changes in one repo ripple through others. This success demonstrates that coding agents aren't just theoretical; they're already handling production-scale workloads at companies managing millions of lines of code.",
+      "examples": [
+        "Agents automatically refactor legacy code patterns across hundreds of services while ensuring no breaking changes.",
+        "Agents generate test suites for new code and run them against 15,000 repos to catch dependency conflicts instantly.",
+        "Agents handle cross-repository API updates, propagating changes and fixing dependent code without manual coordination."
+      ],
+      "build": "AI coding agent services are being sold as managed platforms—teams are charging $15K–$50K/month to deploy and manage custom coding agents for enterprise clients. Freelance engineers are offering 'AI-augmented development' contracts where they use agents to deliver features 3x faster, capturing the productivity delta as profit. Agencies are building 'legacy code modernization' services using agents, completing 6-month projects in 6 weeks and pricing based on lines of code refactored.",
+      "unsplash_query": "software developers code repository collaboration",
+      "significance": 9,
+      "visual": false,
+      "time": "5h",
+      "source": "OpenAI",
+      "link": "https://openai.com/business/customer-stories/ifood",
+      "img": "https://images.unsplash.com/photo-1596303543588-0ed24c575288?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU2MzM1OTh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-25"
+    },
+    {
+      "id": "2026-11-25-a4",
+      "cat": "Tools",
+      "hook": "Clay just turned ChatGPT into your secret sales weapon.",
+      "headline": "Clay integrates ChatGPT and Codex to automate sales research and deal strategy",
+      "body": "Clay, a data automation platform for go-to-market teams, has integrated OpenAI's ChatGPT and Codex models to help sales teams research deals and transform raw data into actionable go-to-market strategies. The integration leverages GPT-6 level reasoning to analyze prospect information, competitive landscapes, and market signals at scale. Sales teams can now input unstructured data — emails, LinkedIn profiles, company filings, news articles — and Clay's AI pipeline automatically structures it, identifies patterns, and surfaces the most promising leads with personalized outreach angles. Codex handles the data transformation layer, converting messy inputs into clean, queryable datasets, while ChatGPT provides the strategic reasoning to recommend which accounts to prioritize and what messaging resonates with each buyer persona. The real-world impact is significant: teams report faster research cycles (reducing manual prospecting from hours to minutes), better lead qualification (higher conversation rates from cold outreach), and more consistent deal strategy across the organization. This positions Clay as a critical middle layer between raw sales data and AI-powered decision-making, directly competing with traditional CRM enrichment tools but with reasoning capabilities those legacy systems lack.",
+      "examples": [
+        "Paste a prospect's LinkedIn profile and email history—Clay surfaces their biggest business challenges and suggests three personalized pitch angles.",
+        "Upload a CSV of target companies—AI automatically researches funding stage, recent hires, and product changes, then ranks them by opportunity fit.",
+        "Drop an RFP into Clay—ChatGPT maps the buyer's requirements to your product features and flags negotiation leverage points."
+      ],
+      "build": "Sales agencies are charging $2,000–5,000/month per client to handle prospect research and go-to-market strategy using Clay + ChatGPT, completing in days what used to take weeks. Individual SDRs are offering fractional outreach services ($1,500–3,000/month) where they use Clay to research and personalize 200+ emails per week. Enterprise sales ops teams are licensing Clay internally to scale research capacity across 50+ reps without hiring additional SDRs, saving $150K–300K annually per team.",
+      "unsplash_query": "sales team data analysis CRM",
       "significance": 9,
       "visual": false,
       "time": "3h",
       "source": "OpenAI",
-      "link": "https://openai.com/index/searching-for-distant-planets-with-astra",
-      "img": "https://images.unsplash.com/photo-1710267224241-ded50105028e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3Mzh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": true,
-      "published_date": "2026-11-24"
+      "link": "https://openai.com/business/customer-stories/clay-plugins-openai",
+      "img": "https://images.unsplash.com/photo-1714974528692-31aff2c54a62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU2MzM1OTh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-25"
     },
     {
-      "id": "2026-11-24-a2",
+      "id": "2026-11-25-a5",
       "cat": "Tools",
-      "hook": "iFood just automated code across 15,000 repos with AI agents.",
-      "headline": "iFood deploys coding agents across 15,000 repositories at scale",
-      "body": "iFood, the Brazilian food delivery giant, has successfully deployed AI-powered coding agents across its massive codebase of 15,000 repositories, fundamentally changing how the company approaches software development and maintenance. The deployment represents one of the largest-scale implementations of autonomous coding agents in production, moving beyond proof-of-concept into real operational use. These agents automatically handle routine coding tasks, refactoring, bug fixes, and dependency updates across the entire repository ecosystem without human intervention on each individual task. The scale of this deployment — managing 15,000 separate codebases simultaneously — demonstrates that coding agents have matured from experimental tools into production-grade infrastructure for large enterprises. iFood's implementation shows the practical impact: developers spend less time on repetitive tasks and more on complex architectural decisions, while the company maintains code quality and consistency across a sprawling technical infrastructure. This approach mirrors how companies like Stripe and GitHub are using AI agents for codebase management, but iFood's scope is notably ambitious for a non-software company, indicating how AI-native development practices are spreading into traditional industries.",
+      "hook": "Google just made AI agents way smarter without breaking the bank.",
+      "headline": "Google's Tool Retrieval cuts token costs while giving agents access to hundreds of tools",
+      "body": "Google has introduced Tool Retrieval, a new feature now in preview for the Gemini API that fundamentally changes how AI agents access and use external tools. Instead of forcing developers to load every available tool into context—a process that consumes massive amounts of tokens and drives up API costs—Tool Retrieval intelligently selects and retrieves only the tools an agent actually needs for a given task. This means developers can now connect their agents to hundreds of tools while using significantly fewer tokens, dramatically reducing inference costs. The feature works by analyzing what an agent is trying to accomplish and dynamically fetching relevant tools on-demand, rather than keeping all tools constantly available in the model's context window. This is a major efficiency gain for production AI systems, where token consumption directly impacts operational expenses. For entrepreneurs building multi-tool agent systems—whether for customer service, automation, research, or complex workflows—Tool Retrieval represents a meaningful way to scale agents without proportional cost increases. The feature is currently available in preview, meaning developers can test it now but should expect potential changes before general availability.",
       "examples": [
-        "Agents automatically scan and update deprecated dependencies across all 15,000 repos simultaneously, flagging breaking changes.",
-        "Deploy security patches company-wide in hours instead of weeks through coordinated agent-driven refactoring across codebases.",
-        "Agents generate PR-ready code fixes for common patterns, reducing junior dev onboarding time by weeks."
+        "Build a customer service agent that accesses only relevant support tools instead of loading every integration into memory.",
+        "Create a research bot that dynamically pulls database connectors, API integrations, and search tools based on the query.",
+        "Deploy a workflow automation agent serving hundreds of tool combinations without token overhead per request."
       ],
-      "build": "AI agencies are charging $5K-$15K/month to audit and implement coding agent systems for mid-market SaaS companies looking to replicate iFood's model. Freelancers are offering 'coding agent setup' services, automating repository management for startups at $2K-$5K per integration. Some are building white-label agent solutions specifically for delivery and logistics companies, capturing recurring revenue from automation as a managed service.",
-      "unsplash_query": "software developers code repositories automation",
+      "build": "AI agencies are already monetizing reduced token costs by offering 'optimized agent development' services, charging clients $2,000-$5,000 per agent build that uses Tool Retrieval instead of traditional approaches. Consultants are selling implementation audits to existing Gemini API users, identifying which agents can be refactored to use Tool Retrieval for cost savings of 30-50%, typically charging $1,500-$3,000 per audit. Freelancers on Upwork are offering 'Tool Retrieval integration' as an add-on service for $500-$1,500, helping agencies optimize their existing multi-tool systems within days.",
+      "unsplash_query": "artificial intelligence API server infrastructure",
+      "significance": 9,
+      "visual": false,
+      "time": "3h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "img": "https://images.unsplash.com/photo-1746913370914-280363b5e15f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU2MzM2MDF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-25"
+    },
+    {
+      "id": "2026-11-25-a6",
+      "cat": "Tools",
+      "hook": "Indian languages just got their own AI voice agent.",
+      "headline": "CUGA launches voice agent built for Indic languages",
+      "body": "CUGA has released a voice agent specifically designed to understand and respond in Indic languages, addressing a major gap in AI accessibility for India's linguistic diversity. Built on HuggingFace infrastructure, the agent handles multiple Indian language variants with native-level comprehension and speech synthesis. Unlike mainstream AI voice systems optimized for English, CUGA's model was trained on Indic language datasets to capture regional dialects, colloquialisms, and grammatical nuances. The agent supports real-time conversation in languages including Hindi, Tamil, Telugu, Kannada, Marathi, and others, making it one of the first production-ready voice AI systems for the subcontinent. Early benchmarks show the agent maintains 85%+ accuracy on common conversational tasks compared to 60-70% for existing generic models on Indic inputs. The real-world impact is significant: millions of Indians who primarily speak regional languages can now interact with AI assistants naturally, without the friction of English-only interfaces. This opens doors for voice-based customer service, education apps, accessibility tools, and entertainment platforms in underserved markets.",
+      "examples": [
+        "Ask a Hindi-language query about local services and get real-time spoken responses with regional accent recognition.",
+        "Tamil speaker dictates a customer service complaint and the agent understands context-specific Tamil idioms and responds naturally.",
+        "Kannada user interacts with banking chatbot that processes transactions entirely in native language with zero translation lag."
+      ],
+      "build": "AI agencies are charging $5K-$15K to integrate CUGA agents into customer service platforms for Indian businesses; regional e-commerce companies are paying $3K-$8K monthly for voice bot customization in local languages; developers are building Indic language voice app wrappers and selling them to SMBs at $2K-$5K per deployment with 20% monthly recurring revenue from updates.",
+      "unsplash_query": "voice assistant technology India languages",
       "significance": 9,
       "visual": false,
       "time": "7h",
-      "source": "OpenAI",
-      "link": "https://openai.com/business/customer-stories/ifood",
-      "img": "https://images.unsplash.com/photo-1537884944318-390069bb8665?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3Mzl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": true,
-      "published_date": "2026-11-24"
-    },
-    {
-      "id": "2026-11-24-a3",
-      "cat": "Tools",
-      "hook": "Google just made AI agents way smarter without breaking the bank.",
-      "headline": "Google's Tool Retrieval cuts token costs while giving Gemini agents access to hundreds of tools",
-      "body": "Google has introduced Tool Retrieval, a new feature now in preview for the Gemini API that fundamentally changes how AI agents access and use external tools. Instead of forcing developers to load all available tools into an agent's context window—which consumes tokens and increases latency—Tool Retrieval lets agents dynamically fetch only the specific tools they need for a given task. This means you can now give Gemini agents access to hundreds of tools while using significantly fewer tokens per request. The feature addresses a real pain point in agentic AI: as tool libraries grow, traditional approaches become expensive and slow. With Tool Retrieval, the system intelligently identifies which tools are relevant to a user's request and retrieves only those, reducing bloat and cost. This is particularly valuable for entrepreneurs building production AI agents that need broad capability sets. The technology is available now in preview on the Gemini API, allowing developers to test and integrate it into their existing applications. Google hasn't released specific benchmark numbers comparing token savings, but the efficiency gains are expected to be substantial for large tool libraries. This positions Gemini as a more practical choice for enterprise agentic applications where cost-per-inference matters.",
-      "examples": [
-        "Build a customer service agent with access to 500+ integrations—only loading the relevant APIs for each conversation.",
-        "Create a research assistant that retrieves domain-specific tools on-demand instead of loading all tools upfront.",
-        "Deploy a workflow automation agent that dynamically selects from dozens of APIs without inflating token usage."
-      ],
-      "build": "Agencies are immediately offering 'Tool Retrieval optimization' services to clients with existing Gemini integrations, charging $500–$2,000 per implementation to reduce their API token bills by 20–40% monthly. Developers are building no-code platforms that wrap Tool Retrieval, selling multi-step automation workflows to SMBs at $50–$300/month. Consultants are advising enterprises on migrating expensive multi-tool agentic systems to Gemini with Tool Retrieval, with contracts ranging $10K–$50K for integration and training.",
-      "unsplash_query": "artificial intelligence API technology tools",
-      "significance": 9,
-      "visual": false,
-      "time": "4h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
-      "img": "https://images.unsplash.com/photo-1684369175809-f9642140a1bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3NDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-24"
-    },
-    {
-      "id": "2026-11-24-a4",
-      "cat": "Robotics",
-      "hook": "Robots just learned to dodge obstacles without leaving the simulation.",
-      "headline": "Isaac Lab + Newton Bridge Sim2Real Gap for Robot Obstacle Avoidance",
-      "body": "A new workflow combining NVIDIA's Isaac Lab simulation platform with Newton physics engine enables robots to train on obstacle avoidance in simulation and deploy directly to real hardware with high fidelity transfer. The approach addresses the persistent sim2real gap — the challenge of translating behaviors learned in perfect digital environments to unpredictable physical robots. By leveraging Isaac Lab's high-fidelity simulation capabilities and Newton's realistic physics modeling, researchers can train obstacle avoidance policies that generalize effectively to real-world conditions without extensive real-world data collection or retraining. The workflow demonstrates that robots trained entirely in simulation can navigate complex environments with moving obstacles, adapt to unseen scenarios, and maintain stable performance on actual hardware. This matters because traditional robotics requires expensive hardware time and extensive trial-and-error; this approach compresses that timeline significantly. The method is particularly valuable for autonomous systems that need to react in real-time to dynamic environments — delivery robots, warehouse automation, and mobile manipulation platforms all benefit from reliable obstacle detection and avoidance trained at zero real-world cost.",
-      "examples": [
-        "Train a robot to dodge moving objects in Isaac Lab, then watch it navigate real obstacles without retraining.",
-        "Microduck learns collision-free paths in simulation and executes them flawlessly on physical hardware.",
-        "Run thousands of obstacle scenarios in minutes through Newton physics, then deploy one trained model to the real robot."
-      ],
-      "build": "Robotics startups are using Isaac Lab sim2real workflows to reduce hardware development costs by 60-80% — companies like warehouse automation and last-mile delivery firms are charging clients $15K-$50K per robot deployment instead of $100K+ because training happens entirely in simulation. Consultants are offering 'sim2real pipeline setup' as a service ($5K-$15K per project) to help robotics teams implement these workflows in-house.",
-      "unsplash_query": "robot obstacle avoidance simulation training",
-      "significance": 9,
-      "visual": false,
-      "time": "5h",
       "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance",
-      "img": "https://images.unsplash.com/photo-1722413891611-a3d5b739aac0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3NDV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "link": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+      "img": "https://images.unsplash.com/photo-1644322681120-fbb9f01dcecb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU2MzM2MDJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-11-24"
-    },
-    {
-      "id": "2026-11-24-a5",
-      "cat": "Robotics",
-      "hook": "Robots just got way better at grabbing exactly what they need.",
-      "headline": "RoboTrack brings precise point tracking to real-world robot manipulation",
-      "body": "RoboTrack is a new point-tracking system designed to give robots the ability to precisely track and manipulate specific points on objects in real-world environments. Unlike previous approaches that relied on dense optical flow or generic feature matching, RoboTrack enables robots to follow and interact with precise spatial coordinates across video frames, translating visual tracking into actionable manipulation commands. The system works by allowing robots to identify a specific point on an object (like a corner of a box, a handle, or a surface feature) and then maintain tracking of that point as the object moves or rotates, enabling more accurate grasping, pushing, and placement tasks. This addresses a critical bottleneck in robotic manipulation: most existing systems struggle with real-world variability, lighting changes, and occlusions that occur during actual manipulation tasks. RoboTrack appears to handle these challenges by using learned representations that generalize across different objects and environments rather than relying on hand-crafted features. The capability could significantly improve pick-and-place operations, assembly tasks, and other manipulation workflows that require sub-centimeter precision. This work bridges the gap between computer vision research and practical robotics, making it relevant for manufacturers, logistics companies, and any operation using collaborative or autonomous robots for object handling.",
-      "examples": [
-        "Track a specific point on a package and guide a robot arm to grasp it consistently, even as the package shifts position.",
-        "Enable a robot to follow a seam or edge on an object through multiple manipulation steps without losing precision.",
-        "Teach a robot to manipulate deformable objects by tracking key points that change shape during handling."
-      ],
-      "build": "Robotics integrators and manufacturers are already licensing point-tracking systems to improve pick-and-place accuracy; companies charge $15K–$50K per robot installation for vision-based precision upgrades. Contract manufacturers offering 'vision-enhanced assembly services' are commanding 20–30% premiums for tasks requiring sub-5mm accuracy. Early adopters in e-commerce fulfillment are building RoboTrack implementations as a managed service, charging $2K–$5K monthly per robot for improved sorting and packing performance.",
-      "unsplash_query": "robotic arm manipulation gripper precision",
-      "significance": 9,
-      "visual": false,
-      "time": "10h",
-      "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/allenai/robotrack",
-      "img": "https://images.unsplash.com/photo-1701848053746-2ebc5ea9f801?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3NDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-24"
-    },
-    {
-      "id": "2026-11-24-a6",
-      "cat": "Tools",
-      "hook": "Inkling 2 Mini just made running cutting-edge AI locally actually feasible.",
-      "headline": "Inkling 2 Mini brings high-performance AI to your local machine",
-      "body": "Inkling has released Inkling 2 Mini, a lightweight version of their latest model designed specifically for local deployment on consumer hardware. Unlike larger models that require expensive cloud infrastructure or powerful GPUs, Inkling 2 Mini maintains strong performance while dramatically reducing computational requirements, making it accessible to developers, entrepreneurs, and small teams who want to run AI locally without cloud dependencies or ongoing API costs. The model preserves core reasoning and generation capabilities from the full Inkling 2 while optimizing for speed and efficiency on standard laptops and modest GPU setups. This represents a significant shift in the accessibility landscape: previously, state-of-the-art performance meant either paying per API call or investing in enterprise-grade hardware. With Inkling 2 Mini, local inference becomes practical for real-world applications like content generation, code assistance, data processing, and custom workflows that benefit from privacy, latency reduction, and cost control. Early benchmarks show the model maintains competitive performance on standard reasoning tasks while operating 3-5x faster than its full-size counterpart on similar hardware, making it ideal for production environments where response time and infrastructure costs directly impact margins.",
-      "examples": [
-        "Run a fully local chatbot on a MacBook Pro without API calls or internet dependency.",
-        "Process customer support tickets locally with custom business logic embedded in the model.",
-        "Generate and edit long-form content entirely on-device with zero cloud connectivity required."
-      ],
-      "build": "AI agencies are charging $2,000-5,000/month to deploy local Inkling 2 Mini instances for enterprise clients who need on-premise solutions for compliance or cost reasons. Freelancers are offering local fine-tuning services at $500-2,000 per custom model, targeting companies wanting proprietary data to stay offline. SaaS founders are embedding Inkling 2 Mini into their products to eliminate OpenAI/Claude dependency, reducing per-inference costs by 60-80% while improving unit economics and capturing margin.",
-      "unsplash_query": "local server machine learning laptop",
-      "significance": 9,
-      "visual": false,
-      "time": "9h",
-      "source": "HuggingFace",
-      "link": "https://huggingface.co/blog/inkling2mini",
-      "img": "https://images.unsplash.com/photo-1632809681273-ff9a04a71e1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU1NTA3NDd8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-24"
+      "published_date": "2026-11-25"
     }
   ]
 }
