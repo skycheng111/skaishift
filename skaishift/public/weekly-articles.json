@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T18:54:55.357Z",
+  "updated": "2026-11-27T18:47:21.109Z",
   "articles": [
     {
       "id": "2026-11-23-a1",
@@ -288,138 +288,6 @@
       "published_date": "2026-11-25"
     },
     {
-      "id": "2026-11-23-a8",
-      "cat": "Tools",
-      "hook": "Google Search is about to get creepily personal in the best way.",
-      "headline": "Google Search goes personal: Connect your wallet and files for AI-tailored results",
-      "body": "Google has rolled out a new personalization feature for its Search engine called Personal Intelligence in AI Mode, which lets users opt in to connect their Google Wallet, Drive, and Gemini app data directly to their search experience. The feature secures this connection and uses it to deliver more contextually relevant and helpful search responses based on your personal information and habits. This represents a significant shift in how Google Search operates — moving from one-size-fits-all results to deeply individualized answers powered by your own data ecosystem. For example, search queries could now pull from your Drive documents, your purchase history from Wallet, or your previous conversations in Gemini to provide answers that are specifically tailored to your situation. The integration highlights Google's strategy to make AI-powered search competitive against newer AI assistants like ChatGPT by offering capabilities those tools cannot match — namely, real-time access to your personal information within a secure framework. The key caveat is that this requires explicit user opt-in and relies on Google's privacy assurances, which will likely face scrutiny given existing concerns about data handling.",
-      "examples": [
-        "Ask about nearby restaurants and get recommendations based on your past Wallet purchases and favorite cuisines.",
-        "Query a work problem and get answers drawing from relevant documents stored in your Google Drive.",
-        "Search for travel advice and receive itineraries personalized to trips you've previously booked in your Wallet."
-      ],
-      "build": "AI agencies are charging $2,000–$5,000/month to set up personalized search workflows for small businesses, automating customer research and competitive intelligence. Consultants are selling $500–$2,000 implementation audits helping companies integrate their internal data with Google Search to improve team productivity. Some are building Zapier-style automation layers on top of this feature to resell personalized search as a B2B SaaS offering.",
-      "unsplash_query": "personalized technology data privacy smartphone",
-      "significance": 8,
-      "visual": false,
-      "time": "1h",
-      "source": "Google AI",
-      "link": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
-      "img": "https://images.unsplash.com/photo-1514996550219-62672472d03b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU0NjgwNzR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-23"
-    },
-    {
-      "id": "2026-11-26-a1",
-      "cat": "Models",
-      "hook": "GPT-6 just designed proteins like a scientist in a lab.",
-      "headline": "GPT-6 cracks protein design — structures and sequences from pure reasoning",
-      "body": "OpenAI's GPT-6 models have demonstrated intrinsic protein-design capabilities, meaning they can generate novel protein structures and sequences without external tools or databases. The models use reasoning and code-generation to work through protein design challenges, outputting both the structural blueprints and amino acid sequences. Lab validation tested the designed proteins against five different targets and found evidence of actual binding — suggesting the AI isn't just generating plausible-looking structures but creating proteins that functionally work. This is a leap beyond prior approaches that relied on retrieval-based methods or heavily supervised training on existing protein databases. The significance lies in speed and accessibility: instead of months of wet-lab experimentation or running expensive computational folding software, researchers can now prompt GPT-6 to ideate, design, and validate protein candidates in hours. This opens pathways for drug discovery, synthetic biology, and enzyme engineering to move faster and cheaper, though lab validation remains essential before clinical use.",
-      "examples": [
-        "Describe a protein's binding target, get a designed sequence that actually binds in lab tests.",
-        "Use reasoning to explore multiple protein designs for one therapeutic goal in minutes.",
-        "Generate novel enzyme structures from scratch without training on existing protein libraries."
-      ],
-      "build": "Biotech consultants are charging $5,000–$15,000 per project to run GPT-6 protein design workflows for small pharma and synthetic biology startups, cutting weeks off research timelines. Contract research organizations are bundling GPT-6 design with wet-lab validation, billing $50K–$200K per drug target. Indie researchers are offering $2K–$5K \"design sprints\" to validate protein hypotheses before expensive lab work.",
-      "unsplash_query": "protein structure molecular biology AI",
-      "significance": 10,
-      "visual": false,
-      "time": "8h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
-      "img": "https://images.unsplash.com/photo-1686009799252-a050bc211cea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU3MTk0NDB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": true,
-      "published_date": "2026-11-26"
-    },
-    {
-      "id": "2026-11-26-a2",
-      "cat": "Tools",
-      "hook": "Amateur astronomers just discovered exoplanets using AI.",
-      "headline": "Two hobbyists found potential exoplanets in NASA data using Codex and Astra",
-      "body": "Two amateur astronomers leveraged OpenAI's Codex and Astra to uncover potential exoplanet candidates hidden within publicly available data from NASA's Kepler and TESS space telescopes. Rather than requiring decades of specialized training or access to cutting-edge observatories, these enthusiasts used AI-powered tools to process and analyze massive astronomical datasets, demonstrating how AI is democratizing scientific discovery. Codex, OpenAI's code-generation model, helped them write and optimize analysis scripts, while Astra enabled sophisticated pattern recognition across the telescope data to identify anomalies consistent with exoplanet signatures. This breakthrough shows that the barrier to entry for scientific research is collapsing — anyone with curiosity and access to public data can now compete with traditional institutions. The implications are profound: citizen scientists, entrepreneurs, and researchers worldwide can now tackle problems previously reserved for well-funded labs, potentially accelerating everything from climate analysis to drug discovery.",
-      "examples": [
-        "Upload Kepler telescope data, get AI-flagged exoplanet candidates ranked by discovery probability.",
-        "Feed TESS observations into Astra to auto-detect transit signatures in thousands of stars.",
-        "Write exoplanet detection scripts in seconds using Codex, skip months of manual coding."
-      ],
-      "build": "Independent researchers are charging $500–$2,000 per analysis project to help amateur astronomy clubs process telescope data using Codex-powered scripts. Data scientists are offering consultation services ($100–$300/hour) teaching citizens how to build AI pipelines for public NASA datasets. Some are packaging Astra + Codex workflows as SaaS tools for educational institutions, targeting $50K–$200K annual contracts with universities and science centers.",
-      "unsplash_query": "telescope starfield exoplanet discovery space",
-      "significance": 9,
-      "visual": false,
-      "time": "1h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/searching-for-distant-planets-with-astra",
-      "img": "https://images.unsplash.com/photo-1781798486364-7da9fff1c28c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU3MTk0NDF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": true,
-      "published_date": "2026-11-26"
-    },
-    {
-      "id": "2026-11-26-a3",
-      "cat": "Tools",
-      "hook": "iFood just automated code across 15,000 repos simultaneously.",
-      "headline": "iFood scales AI coding agents to 15,000 repositories at once",
-      "body": "iFood, the Brazilian food delivery giant, has successfully deployed coding agents across 15,000 repositories in a single operation—a massive demonstration of how AI can be scaled for enterprise software maintenance. The company used AI-powered coding agents to simultaneously analyze, understand, and modify code across their entire repository ecosystem, something that would typically require teams of engineers working for months. This represents a significant leap in how organizations can apply autonomous coding agents beyond one-off projects to entire engineering infrastructures. The achievement shows that coding agents can handle the complexity of large polyglot codebases, maintaining consistency and safety across thousands of files while reducing manual engineering overhead. For iFood, this means faster feature deployments, quicker bug fixes, and the ability to standardize code practices across their entire platform without proportionally scaling their engineering team. The real-world impact is substantial: automating repository-wide changes that would normally require coordinated effort across multiple teams can now happen in hours or days instead of weeks.",
-      "examples": [
-        "Deploy a security patch across all 15,000 repos simultaneously, verifying compatibility before rollout.",
-        "Refactor deprecated dependencies across the entire codebase, testing each change automatically.",
-        "Standardize API contracts or naming conventions across thousands of services in one operation."
-      ],
-      "build": "AI agencies are charging $5,000–$15,000/month to help mid-market companies audit and refactor their codebases using similar agents. Some are selling 'repository intelligence' as a service—analyzing code health across 100+ repos and selling findings to CTOs. Others are offering \"AI-managed code standardization\" on retainer, automating the work and billing based on repos maintained.",
-      "unsplash_query": "software engineering code repository automation",
-      "significance": 9,
-      "visual": false,
-      "time": "10h",
-      "source": "OpenAI",
-      "link": "https://openai.com/business/customer-stories/ifood",
-      "img": "https://images.unsplash.com/photo-1517852058149-07c7a2e65cc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU3MTk0NDN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-26"
-    },
-    {
-      "id": "2026-11-26-a4",
-      "cat": "Tools",
-      "hook": "Clay just turned ChatGPT into your secret sales weapon.",
-      "headline": "Clay integrates ChatGPT and Codex to automate deal research and GTM strategies",
-      "body": "Clay, a data automation platform built for go-to-market teams, has integrated OpenAI's ChatGPT and Codex models to supercharge how sales teams research deals and convert raw data into actionable strategies. The integration leverages GPT-4 reasoning capabilities to analyze company information, prospect data, and market signals, then automatically structures that intelligence into go-to-market playbooks. Instead of manually researching each lead and stitching together fragmented data sources, Clay users can now feed their data into the platform and let the AI surface patterns, identify decision makers, uncover buying signals, and recommend targeted outreach sequences. This eliminates hours of manual research per deal and helps sales teams move faster by turning disparate data points into coherent, executable strategies. The ChatGPT and Codex integration means Clay can handle both natural language processing (understanding what matters in your data) and code generation (automating complex data transformation logic) simultaneously. For sales teams managing hundreds of prospects, this translates to dramatically faster deal qualification, better-prioritized pipelines, and more personalized outreach—all without requiring data analysts or developers on every deal.",
-      "examples": [
-        "Paste unstructured company data and get a ranked list of ideal prospects with verified contact info and buying signals.",
-        "Feed Clay a list of target accounts and get auto-generated competitor analysis and personalized pitch angles for each.",
-        "Connect your CRM and let Clay identify which deals are most likely to close based on engagement patterns and similar wins."
-      ],
-      "build": "Sales development representatives are charging clients $3-8K/month to use Clay for managed lead research and pipeline building, handling 50-200 leads monthly. Agencies are offering 'data enrichment and GTM strategy' packages powered by Clay + ChatGPT integration, billing $5-15K per engagement. Individual founders are reselling Clay-powered research as a $500-2K service to 5-10 clients monthly, automating the work in 10-15 hours total setup.",
-      "unsplash_query": "sales team collaboration data analytics",
-      "significance": 9,
-      "visual": false,
-      "time": "1h",
-      "source": "OpenAI",
-      "link": "https://openai.com/business/customer-stories/clay-plugins-openai",
-      "img": "https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU3MTk0NDR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-26"
-    },
-    {
-      "id": "2026-11-26-a5",
-      "cat": "Tools",
-      "hook": "Google just solved the token problem every AI builder was complaining about.",
-      "headline": "Google's Tool Retrieval cuts token costs while giving agents access to hundreds of tools",
-      "body": "Google has introduced Tool Retrieval, a new feature now in preview for the Gemini API that fundamentally changes how AI agents interact with tool ecosystems. Instead of forcing developers to load all available tools into context at once — which consumes massive amounts of tokens and balloons API costs — Tool Retrieval intelligently retrieves only the most relevant tools when needed. This means agents can now access hundreds of tools while using significantly fewer tokens per request, directly reducing operational costs for anyone building multi-tool AI systems. The feature works by understanding what an agent needs to accomplish and dynamically selecting the right tools on-the-fly, rather than the previous inefficient approach of including every possible tool in the prompt. This is a game-changer for developers building complex agent workflows where tool availability was previously a trade-off between capability and cost. For entrepreneurs running AI agents at scale, this means the same functionality now costs less money, making it feasible to build more sophisticated multi-tool systems without the economic penalty that existed before.",
-      "examples": [
-        "Build a customer service agent that accesses only relevant support tools instead of loading 500+ endpoints every request.",
-        "Create a research agent that dynamically pulls the right APIs for data gathering without token bloat.",
-        "Deploy a workflow automation system that picks optimal tools per task instead of maintaining all tools in memory."
-      ],
-      "build": "AI agencies are already charging clients 20-40% less for multi-tool agent implementations by switching to Tool Retrieval, cutting per-request API costs from $2-5 down to $1-2. Consultants are selling 'token optimization audits' to existing Gemini API users, identifying which clients can migrate workflows to save 30-50% on monthly bills. Resellers are packaging Tool Retrieval as a managed service, offering clients pre-built agent architectures with smart tool routing — typically $500-2000/month recurring revenue per client.",
-      "unsplash_query": "artificial intelligence API technology tools",
-      "significance": 9,
-      "visual": false,
-      "time": "8h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
-      "img": "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU3MTk0NDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-26"
-    },
-    {
       "id": "2026-11-26-a6",
       "cat": "Tools",
       "hook": "AMD just got a performance dashboard that changes everything for local AI.",
@@ -440,6 +308,138 @@
       "img": "https://images.unsplash.com/photo-1716436329475-4c55d05383bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU3MTk0NDh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
       "published_date": "2026-11-26"
+    },
+    {
+      "id": "2026-11-27-a1",
+      "cat": "Models",
+      "hook": "GPT-6 just designed proteins from scratch like a scientist.",
+      "headline": "GPT-6 designs functional protein structures without wet lab training",
+      "body": "OpenAI announced that GPT-6 models have demonstrated intrinsic protein-design capabilities, meaning they can design both protein structures and sequences using reasoning and code generation. The breakthrough was validated through laboratory testing, which confirmed that GPT-6-designed proteins showed evidence of binding across five different molecular targets. This represents a significant leap beyond previous language models, which could only analyze or describe proteins — GPT-6 can now autonomously design novel protein sequences that actually function in the real world. The model uses reasoning chains and code execution to work through protein design problems, essentially teaching itself structural biology principles learned during training. This capability opens immediate applications in drug discovery, enzyme engineering, and synthetic biology, where researchers previously needed years of specialized training and expensive trial-and-error experimentation. The lab validation is crucial because it proves these aren't theoretical designs — they actually bind to intended targets, suggesting GPT-6 has learned genuine biochemistry principles rather than just pattern-matching protein databases.",
+      "examples": [
+        "Input disease target protein, receive optimized binding protein sequence with predicted 3D structure.",
+        "Generate enzyme variants designed to catalyze specific reactions faster than natural versions.",
+        "Design protein scaffolds for mRNA delivery or immunotherapy applications with single prompt."
+      ],
+      "build": "Biotech consulting firms are charging $5,000-$15,000 per protein design project using GPT-6, with turnaround times of hours instead of weeks. Synthetic biology startups are offering 'AI-assisted protein engineering' as a service to pharma companies, bundling GPT-6 designs with wet lab validation for $20,000-$50,000 per target. Contract research organizations are adding GPT-6-powered design screening to their pipelines, reducing client timelines by 60% and charging premium rates for accelerated discovery.",
+      "unsplash_query": "protein structure molecular biology",
+      "significance": 10,
+      "visual": false,
+      "time": "2h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "img": "https://images.unsplash.com/photo-1657241861853-a7827568dd68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDUzODZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-27"
+    },
+    {
+      "id": "2026-11-27-a2",
+      "cat": "Tools",
+      "hook": "Google just made AI agents way smarter without breaking the bank.",
+      "headline": "Google's Tool Retrieval cuts token costs while giving agents access to hundreds of tools",
+      "body": "Google has introduced Tool Retrieval, a new capability now in preview for the Gemini API that fundamentally changes how AI agents access and use external tools. Instead of forcing developers to load all available tools into every API call—a process that wastes tokens and increases costs—Tool Retrieval lets agents dynamically select and retrieve only the specific tools they need for a given task. This means you can give your Gemini-powered agent access to hundreds of tools while using significantly fewer tokens per request. The key innovation is efficiency: by reducing unnecessary token consumption, Tool Retrieval lowers the cost per API call while expanding what agents can actually do. Previously, developers faced a tradeoff—either limit agents to a small set of tools to keep costs down, or pay premium rates to load massive tool libraries into every interaction. Tool Retrieval breaks that constraint. This is particularly valuable for entrepreneurs building multi-tool AI agents for customer support, data retrieval, automation, and complex workflows where agents need flexibility but costs matter. The feature is rolling out in preview, meaning developers can start experimenting with it now through the Gemini API, though it's not yet in full production. Early adoption gives builders a competitive advantage in creating cost-efficient, capable AI systems.",
+      "examples": [
+        "Agent retrieves only payment tools when processing a transaction, ignoring analytics tools entirely.",
+        "Customer support bot dynamically loads relevant knowledge bases and CRM tools based on ticket type.",
+        "Workflow automation agent selects the precise APIs needed for each step without loading every integration."
+      ],
+      "build": "Agencies are already charging $500-2,000/month for Gemini API integration services that implement Tool Retrieval for clients—automating customer support, lead qualification, and backend processes. Freelancers on Upwork are offering 'AI agent optimization' packages specifically for reducing token costs, billing $50-150/hour to audit existing agents and implement Tool Retrieval. SaaS founders are using this to cut their infrastructure costs by 30-40%, allowing them to pass savings to customers or improve margins significantly.",
+      "unsplash_query": "artificial intelligence API cloud computing",
+      "significance": 9,
+      "visual": false,
+      "time": "6h",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "img": "https://images.unsplash.com/photo-1595623654300-b27329804025?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDUzOTF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-27"
+    },
+    {
+      "id": "2026-11-27-a3",
+      "cat": "Tools",
+      "hook": "LTX-2.5 is generating videos that actually look cinematic.",
+      "headline": "LTX-2.5 brings Hollywood-quality video generation to your workflow",
+      "body": "Lightricks has released LTX-2.5, a significant upgrade to its video generation model that pushes the boundaries of AI-generated video quality and control. The new model demonstrates substantially improved visual fidelity, motion coherence, and scene consistency compared to its predecessor, making it viable for professional creative work rather than just experimentation. LTX-2.5 excels at generating cinematic sequences with complex camera movements, realistic lighting, and detailed environments—capabilities that previously required manual post-processing or hybrid approaches combining multiple AI tools. The model supports longer generation windows and improved prompt adherence, meaning creators can describe complex shots and get results closer to their vision on the first attempt. Early users report that LTX-2.5 output requires minimal cleanup and can be used directly in final edits, a major shift from earlier video generation tools that produced artifacts requiring extensive color correction and frame interpolation. The release comes as video generation becomes increasingly competitive, with models like Runway, Pika, and others pushing quality boundaries, but LTX-2.5's particular strength lies in cinematic camera work and lighting consistency that appeals to filmmakers and commercial producers rather than casual content creators.",
+      "examples": [
+        "Script a multi-shot scene with specific camera angles and watch it render as a cohesive, lit sequence.",
+        "Generate B-roll with realistic motion blur, depth of field, and consistent lighting across 30+ seconds.",
+        "Create product demos or explainer videos with smooth camera pans and professional color grading built-in."
+      ],
+      "build": "Agencies are selling LTX-2.5-generated B-roll packages to mid-market brands at $2,000–$5,000 per 60-second sequence, undercutting traditional stock footage and freelance videography. Freelance editors on Fiverr and Upwork are offering 'AI-enhanced video production' services, charging $500–$2,000 per project by using LTX-2.5 for backgrounds, transitions, and scene filling. Content creators are licensing LTX-2.5-generated clips to stock platforms like Shutterstock and Pond5, earning $200–$1,000 per month per asset as passive income.",
+      "unsplash_query": "cinematic video production camera lighting",
+      "significance": 9,
+      "visual": false,
+      "time": "5h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/video-trainium3",
+      "img": "https://images.unsplash.com/photo-1620651575627-2d83969add21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDUzOTJ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-27"
+    },
+    {
+      "id": "2026-11-27-a4",
+      "cat": "Tools",
+      "hook": "AMD just got a performance dashboard that changes everything for local AI.",
+      "headline": "llama.cpp benchmark dashboard shows AMD Ryzen and Radeon performance for local LLMs",
+      "body": "HuggingFace has introduced a new benchmark dashboard for llama.cpp that provides detailed performance metrics specifically for AMD Ryzen processors and Radeon GPUs running large language models locally. The dashboard gives developers real-world data on inference speed, throughput, and resource efficiency when running various open-source models like Llama, Mistral, and other quantized LLMs on AMD hardware. This addresses a critical gap: while llama.cpp is the dominant tool for running LLMs on consumer hardware, most benchmarks have historically focused on NVIDIA GPUs and Intel processors, leaving AMD users without clear performance visibility. The dashboard displays metrics like tokens per second, latency, memory usage, and power consumption across different model sizes and quantization levels on specific AMD CPU and GPU configurations. For entrepreneurs building local AI products—from RAG chatbots to code completion tools—this means they can finally make informed hardware decisions for AMD-based deployments, potentially unlocking significant cost savings compared to cloud inference. The benchmark data covers real-world scenarios including different batch sizes and prompt lengths, giving users accurate expectations for production workloads. This is particularly important as AMD's RDNA GPU architecture and Ryzen processors have become increasingly competitive for AI inference, but lacked the transparent performance data needed to justify their adoption over established alternatives.",
+      "examples": [
+        "Compare inference speed of Llama 2 7B quantized across five different AMD Ryzen processors side-by-side.",
+        "See exact tokens-per-second throughput when running Mistral 7B on Radeon GPU versus CPU inference.",
+        "Check memory footprint and power consumption for running multiple concurrent LLM requests on AMD hardware."
+      ],
+      "build": "AI agencies are charging $2,000-$5,000 monthly for managed local LLM deployment consulting, using this data to recommend AMD setups as cost-effective alternatives to cloud APIs. Developers are selling quantized model optimization services specifically for AMD hardware, with clients saving 40-60% on inference costs compared to cloud providers. SaaS founders are building AMD-optimized inference backends and selling API access at $0.0005-$0.001 per 1K tokens, undercutting cloud LLM providers.",
+      "unsplash_query": "computer processor benchmark performance data",
+      "significance": 9,
+      "visual": false,
+      "time": "7h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+      "img": "https://images.unsplash.com/photo-1782338938696-264d8c340684?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDUzOTN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-27"
+    },
+    {
+      "id": "2026-11-27-a5",
+      "cat": "Models",
+      "hook": "Nvidia just made parsing structured data stupid fast and open source.",
+      "headline": "Nvidia Open-Sources Nemotron 3.5 Parse: Faster Data Extraction, Fine-Tuning Ready",
+      "body": "Nvidia has released Nemotron 3.5 Parse, an open-source language model optimized for extracting structured data from unstructured text at significantly faster speeds than previous approaches. The model builds directly on Nemotron 3.5, Nvidia's existing instruction-tuned foundation model, but with specific architectural and training improvements for parsing tasks. This release includes not just the base model but also open training data and fine-tuning guidance, letting developers customize the parser for their own domain-specific extraction needs. Nemotron 3.5 Parse delivers faster inference speeds compared to larger general-purpose models while maintaining accuracy on extraction benchmarks, making it practical for production workloads that need to parse invoices, contracts, forms, emails, and other document types at scale. The open-source nature means no licensing costs, no API rate limits, and the ability to run locally or on your own infrastructure. For teams building data pipelines, this eliminates the need to either use expensive closed-model APIs or chain multiple models together to accomplish extraction tasks.",
+      "examples": [
+        "Upload a messy invoice PDF and extract line items, dates, vendor names, and totals into clean JSON instantly.",
+        "Feed customer support emails into Nemotron 3.5 Parse to automatically classify issues, extract key details, and populate CRM fields.",
+        "Parse handwritten form scans to extract structured fields for database entry without manual data entry."
+      ],
+      "build": "AI agencies are charging $2K–$8K monthly to build custom parsing pipelines for clients using Nemotron 3.5 Parse, handling document intake automation for insurance, real estate, and healthcare firms. Freelancers on Upwork are offering fine-tuning services ($500–$2K per project) to specialize the model for niche industries. SaaS founders are building vertical-specific tools (invoice software, contract analyzers, form processors) using this model as the backbone, reducing their inference costs by 60–80% compared to GPT-4 or Claude APIs.",
+      "unsplash_query": "structured data extraction document parsing",
+      "significance": 9,
+      "visual": false,
+      "time": "9h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+      "img": "https://images.unsplash.com/photo-1656863492763-23732b72ea4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDUzOTR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-27"
+    },
+    {
+      "id": "2026-11-27-a6",
+      "cat": "Tools",
+      "hook": "Meta just automated the entire ML optimization process for ads.",
+      "headline": "Meta's AI Agent Autonomously Scales Ad Ranking Model Improvements Across Fleet",
+      "body": "Meta has developed the Ranking Engineer Agent (REA), an autonomous AI system that generates hypotheses, designs experiments, and validates new machine learning techniques directly on Meta's ads ranking models at scale. Rather than requiring human engineers to manually test and propagate improvements across a large, diverse fleet of ads ranking systems, REA automates the entire workflow—from architectural advancements to training optimizations—and efficiently distributes proven innovations across Meta's infrastructure. This represents a significant shift in how ML teams can operate: instead of bottlenecking on human experimentation cycles, the system continuously tests new approaches, identifies what works, and rolls improvements across multiple ranking models simultaneously. The impact is direct and measurable—faster iteration cycles, more experiments conducted in parallel, and architectural improvements that would typically take months to validate and deploy now scale in weeks. This matters because ads ranking is one of Meta's most critical ML systems; even marginal improvements in ranking accuracy translate directly to better ad relevance, user engagement, and advertiser ROI. By automating the hypothesis-generation and experimental-validation loop, Meta is essentially removing the human engineering constraint from ML optimization—the agent can explore solution spaces faster and more systematically than teams can manually. The broader implication is that this model of autonomous ML engineering could extend beyond ads ranking to other complex ranking and recommendation systems across Meta's platform.",
+      "examples": [
+        "REA generates novel hypothesis about model architecture, auto-designs A/B test, validates against production metrics.",
+        "Agent tests training optimization technique on subset fleet, measures ranking accuracy improvement, deploys across full system.",
+        "System identifies interaction between feature engineering and loss function, propagates combined improvement to all ranking variants."
+      ],
+      "build": "ML consultants are charging $5K-$15K/month to help mid-market e-commerce companies build lightweight versions of autonomous ML validation pipelines for their recommendation systems. Agencies are offering 'ML ops automation' services specifically for companies with 50+ ranking/recommendation models, using open-source agent frameworks to replicate Meta's approach. Some are selling pre-built experiment orchestration templates that companies can deploy internally to auto-scale ML improvements across their product stack.",
+      "unsplash_query": "machine learning neural network optimization",
+      "significance": 9,
+      "visual": false,
+      "time": "4h",
+      "source": "Meta AI",
+      "link": "https://engineering.fb.com/2026/11/18/ml-applications/ai-agents-to-scale-ml-innovations-across-ads-ranking-models/",
+      "img": "https://images.unsplash.com/photo-1674027444636-ce7379d51252?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDUzOTZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-27"
     }
   ]
 }
