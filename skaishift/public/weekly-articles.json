@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T19:12:35.131Z",
+  "updated": "2026-11-28T17:27:10.168Z",
   "articles": [
     {
       "id": "2026-11-23-a1",
@@ -310,136 +310,136 @@
       "published_date": "2026-11-26"
     },
     {
-      "id": "2026-11-27-a1",
+      "id": "2026-11-28-a1",
       "cat": "Models",
-      "hook": "GPT-6 just designed proteins that actually work in labs.",
-      "headline": "GPT-6 designs functional proteins from scratch—lab-verified binding",
-      "body": "OpenAI's GPT-6 models have demonstrated intrinsic protein-design capabilities, generating novel protein structures and sequences entirely through reasoning and code-generation without external tools. Lab testing confirmed that these AI-designed proteins successfully bind across five different biological targets, marking a significant leap in AI's ability to solve real molecular biology problems. This represents a qualitative shift from previous AI protein-design tools: GPT-6 reasons through the design process step-by-step, using its language model architecture to predict amino acid sequences that fold into functional three-dimensional structures capable of genuine biochemical interactions. The binding validation across multiple targets indicates the models aren't just generating plausible-looking sequences—they're creating proteins that perform intended biological functions. This capability sits at the intersection of AI reasoning, structural biology, and wet-lab validation, suggesting GPT-6 has absorbed enough scientific knowledge to operate as a practical tool for protein engineering, drug discovery, and synthetic biology research.",
+      "hook": "GPT-6 just designed proteins from scratch like it's playing biological 3D chess.",
+      "headline": "GPT-6 cracks protein design—generates structures that actually bind to targets",
+      "body": "OpenAI's GPT-6 models have demonstrated intrinsic protein-design capabilities, meaning they can autonomously design both protein structures and sequences without being explicitly trained on protein data. The models use reasoning and code-generation to approach protein design as a problem-solving task. Lab testing confirmed the designed proteins showed binding activity across five different molecular targets, validating that the AI-generated designs have real biological function. This represents a significant leap from previous approaches that required specialized training datasets or structure prediction tools. The capability suggests GPT-6's reasoning abilities transfer effectively to complex 3D biological problems, where the model must balance multiple constraints simultaneously. This has immediate applications in drug discovery, enzyme engineering, and synthetic biology—domains where protein design has historically required teams of specialized researchers. The result signals that large language models trained on diverse reasoning tasks may solve scientific problems in ways that generalist training enables, without domain-specific fine-tuning.",
       "examples": [
-        "Describe target protein function, get back novel sequences that fold correctly and bind in lab tests.",
-        "Design antibodies targeting five different pathogens using pure reasoning—no external simulation software.",
-        "Generate drug-candidate proteins faster than traditional computational biology pipelines by weeks."
+        "Paste a protein target sequence, get back a novel protein structure designed to bind it with predicted binding affinity scores.",
+        "Design an enzyme from scratch that catalyzes a specific reaction by reasoning through molecular mechanics and 3D geometry.",
+        "Generate multiple protein variants for a therapeutic target, each with different stability-activity tradeoffs computed by the model."
       ],
-      "build": "Biotech consulting firms are charging $5K–$25K per project to have GPT-6 generate protein candidates, cutting design iteration time from months to weeks. Synthetic biology startups are integrating GPT-6 as a core tool in their discovery pipelines and billing clients $500–$2K per validated protein sequence. Research institutions are licensing access for internal drug-discovery programs, with contracts ranging from $50K–$500K annually depending on throughput.",
-      "unsplash_query": "protein structure molecular biology DNA",
+      "build": "AI scientists and biotech founders are offering protein-design-as-a-service to pharma companies at $5K–$50K per target, with turnaround times of days instead of months. Contract research labs are selling GPU credits bundled with GPT-6 access to validate designs before wet-lab synthesis, charging $200–$500 per design iteration. Early biotech startups are using this to pre-screen drug candidates and licensing the top designs to larger companies for 5–10% royalties.",
+      "unsplash_query": "protein structure molecular biology DNA helix",
+      "significance": 9,
+      "visual": false,
+      "time": "8h",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "img": "https://images.unsplash.com/photo-1693754080097-898467dcb10d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4ODY5NzF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-28"
+    },
+    {
+      "id": "2026-11-28-a2",
+      "cat": "Tools",
+      "hook": "Clay just turned ChatGPT into a sales weapon.",
+      "headline": "Clay integrates ChatGPT and Codex to automate sales research and go-to-market strategy",
+      "body": "Clay, a data automation platform for sales and go-to-market teams, has integrated OpenAI's ChatGPT and Codex models to help users research deals and transform raw data into actionable go-to-market plays. The integration leverages GPT-4 reasoning capabilities to analyze prospect information, identify patterns in deal data, and generate strategic recommendations without manual data wrangling. This means sales teams can feed Clay messy or unstructured data—company websites, LinkedIn profiles, news articles, CRM records—and have the AI automatically enrich it, score leads, and suggest personalized outreach strategies. The Codex integration enables users to generate custom scripts, formulas, and workflows directly within Clay without coding knowledge, dramatically reducing the time between data collection and actionable insights. Previously, sales teams had to manually research prospects, copy-paste information across tools, and manually build targeting lists—a process that could take hours per prospect. Now, Clay's GPT integration handles this in minutes, letting teams focus on actual selling. For high-velocity sales operations running 50+ qualified meetings per month, this automation can mean the difference between hitting quota and missing it.",
+      "examples": [
+        "Paste 100 prospect URLs and get enriched company data, decision-maker names, and buying signals in one click.",
+        "ChatGPT analyzes your past won deals to automatically identify which prospect profiles convert highest.",
+        "Generate personalized cold email sequences for 500 prospects with custom hooks based on their company news."
+      ],
+      "build": "Sales development teams using Clay are already bundling AI-enriched prospect lists as a service to other departments at $2,000-5,000 per month per buyer segment. Some are running white-label Clay workflows for smaller agencies, charging $1,500-3,000/month to manage outbound research and lead scoring. Early adopters report reducing research time by 70%, allowing them to run campaigns 10x faster and charge premium rates for speed-to-market.",
+      "unsplash_query": "sales team collaboration laptop data",
+      "significance": 9,
+      "visual": false,
+      "time": "9h",
+      "source": "OpenAI",
+      "link": "https://openai.com/business/customer-stories/clay-plugins-openai",
+      "img": "https://images.unsplash.com/photo-1758519289074-9de36003622b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4ODY5NzN8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": true,
+      "published_date": "2026-11-28"
+    },
+    {
+      "id": "2026-11-28-a3",
+      "cat": "Tools",
+      "hook": "Google just made AI agents way smarter without destroying your token budget.",
+      "headline": "Google's Tool Retrieval cuts token costs while giving agents access to hundreds of tools",
+      "body": "Google has introduced Tool Retrieval, a new feature now in preview for the Gemini API that fundamentally changes how AI agents access and use tools. Instead of forcing models to load every available tool into context—which consumes massive amounts of tokens and slows down responses—Tool Retrieval intelligently fetches only the most relevant tools when needed. This means developers can now give their agents access to hundreds of tools simultaneously while dramatically reducing token consumption and latency. The feature works by having the model identify which tools it actually needs for a given task, then retrieving just those tools before execution, rather than keeping all tools in the context window from the start. This is a game-changer for production AI applications where token costs directly impact margins and response speed affects user experience. Tool Retrieval is available now as a preview feature in the Gemini API, allowing developers to start building more efficient, scalable agent systems without the previous architectural constraints.",
+      "examples": [
+        "Build a customer service agent with access to 200+ internal tools, only loading 3-5 per query.",
+        "Create a research assistant that retrieves only relevant data APIs and analytics tools for each search.",
+        "Deploy a workflow automation system that dynamically selects tools based on the task without overhead."
+      ],
+      "build": "AI agencies are charging $5K-$15K monthly for custom agent implementations using Tool Retrieval, reducing client infrastructure costs by 40-60%. Freelancers are offering 'agent optimization audits' converting existing multi-tool systems to use Tool Retrieval, typically billing $2K-$5K per project. Some developers are building and selling ready-made agent templates on platforms like Gumroad that leverage Tool Retrieval for common use cases (customer support, data analysis, workflow automation), earning $500-$2K per template monthly.",
+      "unsplash_query": "artificial intelligence API technology tools",
       "significance": 9,
       "visual": false,
       "time": "1h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
-      "img": "https://images.unsplash.com/photo-1693920105404-c2208c22cfe4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDY4OTl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": true,
-      "published_date": "2026-11-27"
-    },
-    {
-      "id": "2026-11-27-a2",
-      "cat": "Tools",
-      "hook": "Amateur astronomers just discovered exoplanets using AI and public NASA data.",
-      "headline": "Two Amateur Astronomers Discover Potential Exoplanets Using OpenAI's Codex and Astra",
-      "body": "Two amateur astronomers leveraged OpenAI's Codex (a code-generation AI model) and Astra (an AI tool for astronomical analysis) to identify potential exoplanet candidates hidden in public data from NASA's Kepler and TESS space telescopes. Rather than requiring professional equipment or institutional access, these astronomers tapped into freely available NASA datasets and AI tools to conduct legitimate scientific discovery. Codex helped them write and optimize the code needed to process massive astronomical datasets, while Astra provided machine learning capabilities to identify anomalies and transit signatures characteristic of exoplanets orbiting distant stars. This demonstrates a significant democratization of scientific research: tasks that previously required PhDs, supercomputers, and institutional funding can now be accomplished by motivated amateurs with coding knowledge and access to AI tools. The discovery highlights how modern AI is lowering barriers to entry across domains traditionally gatekept by expertise and resources, opening new possibilities for citizen scientists and independent researchers to contribute to legitimate scientific advancement.",
-      "examples": [
-        "Feed NASA telescope data into Codex-powered scripts that automatically flag star dimming patterns indicating orbiting exoplanets.",
-        "Use Astra to analyze transit light curves and calculate orbital parameters of candidate exoplanets in seconds.",
-        "Cross-reference discovered candidates against existing exoplanet catalogs to confirm novel discoveries."
-      ],
-      "build": "Independent researchers are charging $500-$2,000 per month offering AI-powered astronomical analysis services to amateur astronomy clubs and citizen science projects. Some are building paid courses ($97-$497) teaching others how to replicate the Codex + Astra workflow for exoplanet discovery. Data analysis freelancers on Upwork are booking $50-$150/hour implementing similar AI workflows for researchers who lack coding skills but have scientific datasets.",
-      "unsplash_query": "telescope starfield distant exoplanet discovery",
-      "significance": 9,
-      "visual": false,
-      "time": "5h",
-      "source": "OpenAI",
-      "link": "https://openai.com/index/searching-for-distant-planets-with-astra",
-      "img": "https://images.unsplash.com/photo-1579518788238-fb03a5b6ca92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDY4OTl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": true,
-      "published_date": "2026-11-27"
-    },
-    {
-      "id": "2026-11-27-a3",
-      "cat": "Tools",
-      "hook": "AI dots just became your personal productivity army.",
-      "headline": "Intentful's Aria dot automates research, proposals, and customer support",
-      "body": "Intentful has introduced Aria, an AI dot designed to handle multiple layers of business work simultaneously. Created by Marina Petrova, Aria functions as a research assistant that can analyze websites and generate proposals while also proactively monitoring incoming messages and resolving issues before they escalate. The dot represents a shift toward multi-tasking AI agents that work in the background, freeing entrepreneurs to focus on strategic growth rather than operational firefighting. Aria's key advantage is its proactive capability — rather than waiting for a user to request action, it flags potential problems and tackles them autonomously. This approach differs from traditional chatbots that require explicit prompts for each task. The real-world impact is measurable: teams using Aria report reclaiming hours weekly previously spent on research, proposal refinement, and customer communication. This positions dots as a new category of AI tools that operate more like autonomous team members than on-demand assistants, blending automation with business intelligence.",
-      "examples": [
-        "Feed Aria a competitor's website and get a side-by-side proposal comparison within minutes.",
-        "Aria flags an angry customer email, drafts a response, and suggests resolution steps automatically.",
-        "Paste ten research links and receive a synthesized market analysis with key insights highlighted."
-      ],
-      "build": "Agencies are selling 'AI dot setup and optimization' services to small business owners at $500-2000/month, handling Aria configuration and monitoring. Consultants are packaging Aria as part of done-for-you proposal automation, charging clients $300-800 per month for hands-off business development. Customer support specialists are offering managed Aria deployment to e-commerce teams, capturing recurring revenue through monthly retainers starting at $400.",
-      "unsplash_query": "AI assistant automation workflow productivity",
-      "significance": 9,
-      "visual": false,
-      "time": "8h",
-      "source": "OpenAI",
-      "link": "https://openai.com/business/customer-stories/intentful-dots",
-      "img": "https://images.unsplash.com/photo-1787647562131-1946de332c38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDY5MDB8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "img": "https://images.unsplash.com/photo-1718241905559-f76f2718ddc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4ODY5NzV8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-11-27"
+      "published_date": "2026-11-28"
     },
     {
-      "id": "2026-11-27-a4",
+      "id": "2026-11-28-a4",
       "cat": "Tools",
-      "hook": "Clay just turned ChatGPT into your secret sales weapon.",
-      "headline": "Clay Integrates ChatGPT and Codex to Automate Deal Research and Go-to-Market Strategy",
-      "body": "Clay, a data automation platform built for sales teams, has integrated OpenAI's ChatGPT and Codex models to help users research deals and transform raw data into actionable go-to-market strategies. The integration leverages GPT-4 reasoning capabilities to analyze prospect information, identify patterns, and generate targeted sales plays automatically. What previously required hours of manual research and data wrangling can now be completed in minutes. Sales teams can feed Clay unstructured data about prospects, companies, or markets, and the AI models process, enrich, and contextualize the information to surface high-probability opportunities. This means Clay users can spend less time digging through spreadsheets and more time actually selling. The ChatGPT integration handles natural language queries and reasoning tasks, while Codex assists with data transformation and automation workflows. For teams managing hundreds or thousands of prospects, this workflow acceleration directly translates to faster deal cycles and higher win rates. Clay's platform already serves sales and revenue operations teams; this AI enhancement makes it a significantly more powerful tool for competitive intelligence and account-based marketing strategies.",
+      "hook": "LTX-2.5 just made video generation actually useful for creators.",
+      "headline": "LTX-2.5 Brings Fast, Controllable Video Generation to Trainium3 Hardware",
+      "body": "LTX-2.5, the latest video generation model, is now optimized to run on AWS Trainium3 accelerators, enabling faster inference and more practical deployment for creators and businesses building video tools. The model represents a significant step forward in making AI video generation accessible beyond research labs—it prioritizes speed and control over raw generation capacity. LTX-2.5 improves upon its predecessor with better prompt adherence, meaning users get videos that actually match what they describe, and faster generation times that make real-time workflows feasible. The integration with Trainium3 hardware specifically matters because it brings costs down compared to GPU-heavy alternatives like H100s, making commercial video generation services more profitable. Early use cases include marketing teams generating product demos, creators producing multiple video variations for A/B testing, and agencies automating short-form content production. The model handles multi-shot sequences with consistent character placement and motion, addressing one of the biggest pain points in previous AI video tools that struggled with coherence across scenes.",
       "examples": [
-        "Drop a prospect list and let ChatGPT auto-generate personalized cold email angles based on their company news.",
-        "Feed company data to Codex and automatically build segmented target account lists for ABM campaigns.",
-        "Use GPT reasoning to identify which prospects fit your ICP based on 50+ data signals in seconds."
+        "Describe a 30-second product demo, get a fully rendered video with matching visuals and motion in under a minute.",
+        "Generate five variations of the same scene with different camera angles—compare them instantly for client approval.",
+        "Create animated storyboards from scripts, complete with character consistency across shots."
       ],
-      "build": "Sales development reps are charging clients $2K-5K/month for \"AI-powered prospecting services\" using Clay + ChatGPT to automate list building and email personalization at scale. Agencies are offering \"go-to-market strategy audits\" where they feed client CRM data into Clay's AI pipeline and deliver account prioritization reports within 48 hours, commanding $5K-15K per engagement. Some SDRs are selling their Clay workflows as templates to other teams on Gumroad for $49-199, generating recurring revenue from license fees.",
-      "unsplash_query": "sales team meeting analytics dashboard",
-      "significance": 9,
-      "visual": false,
-      "time": "8h",
-      "source": "OpenAI",
-      "link": "https://openai.com/business/customer-stories/clay-plugins-openai",
-      "img": "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDY5MDF8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-27"
-    },
-    {
-      "id": "2026-11-27-a5",
-      "cat": "Tools",
-      "hook": "Google just solved the biggest problem with AI agents.",
-      "headline": "Google's Tool Retrieval cuts agent token costs while unlocking hundreds of tools",
-      "body": "Google AI has introduced Tool Retrieval, a new feature now in preview for the Gemini API that fundamentally changes how AI agents access and use external tools. Instead of forcing developers to load every available tool into an agent's context window—consuming massive amounts of tokens and driving up API costs—Tool Retrieval lets agents dynamically pull only the specific tools they need for each task. This means you can give your Gemini-powered agent access to hundreds of tools without the token bloat that previously made this impractical. The feature works by intelligently retrieving relevant tools based on the user's request, reducing unnecessary context and making agents faster and cheaper to run. For entrepreneurs building AI applications, this is a game-changer: it removes a major scaling bottleneck. Previously, the more tools you wanted your agent to access, the more you'd pay per request. Now you can build ambitious, multi-tool agents without watching your API bills explode. This is particularly valuable for customer service bots, automation platforms, and any application where an AI agent needs to juggle multiple APIs or databases. Tool Retrieval is rolling out as a preview feature, meaning early adopters can start building with it immediately while it's being refined.",
-      "examples": [
-        "Build a customer service agent with access to 200+ tools—billing, shipping, support tickets, refunds—that only loads the ones needed per request.",
-        "Create an automation workflow that retrieves payment APIs, CRM tools, and email systems dynamically without token overhead.",
-        "Deploy a multi-step research agent that pulls specialized tools for data lookup, analysis, and formatting on-demand."
-      ],
-      "build": "AI agencies are already charging $500-2000/month for managed agent setups that handle multi-tool workflows; Tool Retrieval lets them build these faster and cheaper, improving margins. Automation consultants are selling 'agent-as-a-service' offerings to SMBs for customer support, with pricing tied to per-request API usage—Tool Retrieval directly reduces their COGS and lets them compete on price while staying profitable.",
-      "unsplash_query": "AI agent automation tools integration",
+      "build": "Video production agencies are charging $500–$2,000 per project by using LTX-2.5 to handle rough cuts and variation generation, cutting production time from days to hours and keeping the margin. Creators are selling AI-generated short-form content packs to TikTok/Instagram growth agencies at $200–$500 per month per client. SaaS founders are integrating LTX-2.5 via API to offer 'one-click video' features to their users, adding $50–$200/month as an add-on tier.",
+      "unsplash_query": "AI video generation technology digital",
       "significance": 9,
       "visual": false,
       "time": "2h",
-      "source": "Google AI",
-      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
-      "img": "https://images.unsplash.com/photo-1658953229664-e8d5ebd039ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDY5MDR8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
-      "feat": false,
-      "published_date": "2026-11-27"
-    },
-    {
-      "id": "2026-11-27-a6",
-      "cat": "Tools",
-      "hook": "LTX-2.5 just made video generation actually useful for creators.",
-      "headline": "LTX-2.5 Brings Fast, High-Quality Video Generation to Creators",
-      "body": "Lightning Labs released LTX-2.5, a video generation model designed to produce broadcast-quality videos faster than previous iterations. The model generates full videos with improved consistency in motion, scene coherence, and visual fidelity compared to earlier versions. LTX-2.5 specifically targets the creator economy — enabling YouTubers, marketers, and content studios to generate video content without expensive production equipment or lengthy rendering times. The model runs on AWS Trainium3 hardware, which significantly reduces inference costs and generation time, making it economically viable for high-volume creators. Key improvements include better camera movement, smoother transitions between scenes, and more reliable adherence to prompts. Compared to competitors like Runway and Pika Labs, LTX-2.5 emphasizes speed and cost-efficiency rather than just visual quality. The model integrates with existing creator workflows and can be deployed via API, making it accessible to production teams and solo creators alike. Early benchmarks show the model can generate minutes of video content in under a minute of processing time. Lightning Labs positioned this as a tool for democratizing video production — removing the need for large budgets or technical expertise to create professional-looking content.",
-      "examples": [
-        "Write a 15-second product demo script and get broadcast-ready video with consistent lighting and smooth camera work.",
-        "Generate multiple video variations from one prompt to A/B test thumbnails, intros, and scenes before final edit.",
-        "Create full YouTube video scripts as animated scenes with AI narration, music, and visual effects in one render."
-      ],
-      "build": "Video agencies are charging $500–$2,000 per project to generate and edit client videos using LTX-2.5, cutting production time from weeks to days. Solo creators on YouTube and TikTok are using the model to batch-generate 5–10 video variations weekly, then monetize through YouTube Partner Program and sponsorships — earning $1,000–$5,000/month per channel. Production studios are licensing LTX-2.5 API access ($100–$500/month) to offer clients faster turnarounds on explainer videos, ads, and social content.",
-      "unsplash_query": "video production studio filmmaker camera",
-      "significance": 9,
-      "visual": false,
-      "time": "7h",
       "source": "HuggingFace",
       "link": "https://huggingface.co/blog/video-trainium3",
-      "img": "https://images.unsplash.com/photo-1670482204498-05120988d4cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4MDY5MDZ8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "img": "https://images.unsplash.com/photo-1696272440000-0808a203c852?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4ODY5Nzh8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
       "feat": false,
-      "published_date": "2026-11-27"
+      "published_date": "2026-11-28"
+    },
+    {
+      "id": "2026-11-28-a5",
+      "cat": "Models",
+      "hook": "Nvidia just made fine-tuning smaller models way less painful.",
+      "headline": "Nvidia's Nemotron 3.5 Parse: Faster Inference, Open Data, Custom Fine-Tuning",
+      "body": "Nvidia has released Nemotron 3.5 Parse, an open-source large language model optimized for structured data extraction and parsing tasks. The model is designed to handle complex document parsing, information extraction, and structured output generation with improved speed and efficiency compared to larger alternatives. Nemotron 3.5 Parse comes with open training data and is built to be easily fine-tuned on custom datasets, making it accessible for enterprises and developers who need production-grade parsing without the computational overhead of massive foundation models. The key advantage is faster inference — the model delivers competitive accuracy on parsing benchmarks while running significantly quicker than general-purpose LLMs, reducing latency and cost for real-time applications. This matters because document processing, invoice extraction, and form parsing are high-volume tasks where even milliseconds of latency multiply across thousands of requests. Nvidia is positioning this as a middle ground: smaller than GPT-4 or Claude, but purpose-built and fine-tunable, allowing teams to own their parsing pipeline without depending on API calls. The open data component means developers can inspect training materials and understand model behavior, critical for compliance-heavy industries like finance and healthcare.",
+      "examples": [
+        "Drop a messy invoice PDF, get structured JSON with line items, vendor details, and amounts extracted automatically.",
+        "Feed contract templates and extract custom clauses, obligations, and payment terms into a database.",
+        "Parse scientific papers to pull methodology, datasets, results, and citations into organized structured format."
+      ],
+      "build": "Developers are charging $2–5 per document processed through fine-tuned Nemotron parsers for law firms, accounting firms, and logistics companies handling high-volume document intake. Custom fine-tuning services are selling at $500–2,000 per model for companies wanting to build proprietary extractors trained on their specific document types. Agencies are bundling parse-as-a-service into automation products, adding 20–40% margins on top of Nvidia's open model for clients who want managed, monitored parsing pipelines without in-house infrastructure.",
+      "unsplash_query": "artificial intelligence data extraction processing",
+      "significance": 9,
+      "visual": false,
+      "time": "10h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+      "img": "https://images.unsplash.com/photo-1775185172785-4bbd6b0fc8f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4ODY5Nzl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-28"
+    },
+    {
+      "id": "2026-11-28-a6",
+      "cat": "Tools",
+      "hook": "Multi-agent AI systems are about to get way more powerful.",
+      "headline": "HuggingFace drops the playbook for building swarms of AI agents that actually work together",
+      "body": "HuggingFace has released comprehensive guidance on building, training, and evaluating multi-agent AI systems — essentially the architecture behind AI 'swarms,' 'flocks,' and 'gangs' that work in coordination. This isn't a single new model, but rather a framework and best practices for orchestrating multiple AI agents to solve complex problems collaboratively. The release addresses one of the biggest gaps in AI development: most builders understand single-agent systems, but coordinating multiple agents to cooperate, specialize, and scale introduces serious challenges in communication, task allocation, and performance measurement. HuggingFace's guidance covers the full lifecycle — how to structure agent teams, what training approaches actually make agents work together instead of against each other, and crucially, how to measure whether multi-agent systems are actually performing better than single agents. This matters because real-world problems often require different specialized skills: one agent might handle research, another validation, another execution. The framework provides concrete patterns for agent communication protocols, failure handling, and evaluation metrics that go beyond benchmarking individual agents. For entrepreneurs, this removes a massive friction point — previously, building multi-agent systems required reverse-engineering academic papers or trial-and-error. Now there's a playbook.",
+      "examples": [
+        "Deploy three specialized agents: one researches market data, one analyzes competitors, one generates reports—all coordinating autonomously.",
+        "Build a customer service swarm where agents specialize in billing, technical support, and escalations, routing problems intelligently.",
+        "Create a content production gang: one writes, one edits, one fact-checks, one formats—each agent optimized for its role."
+      ],
+      "build": "Agencies are already selling 'AI agent development' as a managed service, charging $5K–$50K per multi-agent system built for specific workflows (customer support, research, content ops). Freelancers on Upwork and specialized platforms are offering agent customization and integration at $50–$150/hour. The real money is in vertical solutions: building pre-trained multi-agent systems for specific industries (legal research, medical coding, e-commerce fulfillment) and licensing them, with contracts ranging from $2K–$10K/month.",
+      "unsplash_query": "collaborative robots teamwork artificial intelligence",
+      "significance": 9,
+      "visual": false,
+      "time": "1h",
+      "source": "HuggingFace",
+      "link": "https://huggingface.co/blog/training-swarms",
+      "img": "https://images.unsplash.com/photo-1578878917923-f143750cb520?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NjN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3OTU4ODY5Nzl8&ixlib=rb-4.1.0&q=80&w=1080&w=900&h=500&fit=crop",
+      "feat": false,
+      "published_date": "2026-11-28"
     }
   ]
 }
